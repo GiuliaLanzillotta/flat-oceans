@@ -1,0 +1,78 @@
+{
+  "pass": true,
+  "checks": {
+    "0": {
+      "dimensions": {
+        "G_1e-14": 3836,
+        "G_1e-12": 3890,
+        "G_1e-10": 5079,
+        "G_1e-08": 13098,
+        "G_1e-06": 21304,
+        "G_0.0001": 24283,
+        "ocean": 3619,
+        "generic": 25418
+      },
+      "membership_residuals_two_directions_per_band": {
+        "G_1e-14": 2.900466453730184e-15,
+        "G_1e-12": 2.945235089501725e-15,
+        "G_1e-10": 4.146998076126804e-15,
+        "G_1e-08": 8.294866896074334e-15,
+        "G_1e-06": 9.444390062008353e-15,
+        "G_0.0001": 9.506987115783483e-15
+      },
+      "operator_vector_residual_max": 1.8096185140990378e-13,
+      "controls_bitwise_equal": true,
+      "small_negative_eigenvalue_count": 2181,
+      "minimum_eigenvalue": -2.0157894905869e-14
+    },
+    "1": {
+      "dimensions": {
+        "G_1e-14": 4753,
+        "G_1e-12": 4768,
+        "G_1e-10": 4876,
+        "G_1e-08": 14492,
+        "G_1e-06": 22535,
+        "G_0.0001": 24247,
+        "ocean": 4573,
+        "generic": 25418
+      },
+      "membership_residuals_two_directions_per_band": {
+        "G_1e-14": 3.4927099395177014e-15,
+        "G_1e-12": 3.4841409940293493e-15,
+        "G_1e-10": 3.545845004212147e-15,
+        "G_1e-08": 8.488052109450155e-15,
+        "G_1e-06": 9.328684141563044e-15,
+        "G_0.0001": 9.244929362575768e-15
+      },
+      "operator_vector_residual_max": 1.4844416231404923e-13,
+      "controls_bitwise_equal": true,
+      "small_negative_eigenvalue_count": 2674,
+      "minimum_eigenvalue": -1.0191460060593042e-15
+    },
+    "2": {
+      "dimensions": {
+        "G_1e-14": 4281,
+        "G_1e-12": 4381,
+        "G_1e-10": 6557,
+        "G_1e-08": 13463,
+        "G_1e-06": 21501,
+        "G_0.0001": 24271,
+        "ocean": 4072,
+        "generic": 25418
+      },
+      "membership_residuals_two_directions_per_band": {
+        "G_1e-14": 3.1289988459844944e-15,
+        "G_1e-12": 3.1098266193225757e-15,
+        "G_1e-10": 4.460994742874296e-15,
+        "G_1e-08": 7.989641450048508e-15,
+        "G_1e-06": 9.168716695559727e-15,
+        "G_0.0001": 9.138511410669231e-15
+      },
+      "operator_vector_residual_max": 2.2959157721952817e-13,
+      "controls_bitwise_equal": true,
+      "small_negative_eigenvalue_count": 2396,
+      "minimum_eigenvalue": -2.8534930494421426e-14
+    }
+  },
+  "note": "Separate saved-array verification, not an independent-agent review. Absolute-eigenvalue cutoffs match the existing numerical-kernel comparison; tiny negative eigenvalues are numerical artifacts."
+}

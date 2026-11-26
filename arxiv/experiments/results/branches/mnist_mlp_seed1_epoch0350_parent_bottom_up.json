@@ -1,0 +1,223 @@
+{
+  "parent": "mnist_mlp_seed1",
+  "seed": 1,
+  "fork_epoch": 350,
+  "method": "parent_bottom_up: canonical W1-INCLUSIVE single-sketch bottom-up construction at the parent fork checkpoint, by authenticated reuse of the parent persistence factors (conventions of lmc_mlp_branch_build_reuse.py + w1_reuse_build_s1.py; canonical power-iteration sigma_ref)",
+  "sigma_ref_used": {
+    "W1": {
+      "value": 17.216886415896887,
+      "power_iters": 82,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    },
+    "W2": {
+      "value": 33.68227069815202,
+      "power_iters": 35,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    },
+    "W3": {
+      "value": 34.500244985885374,
+      "power_iters": 61,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    }
+  },
+  "label": "W1 candidates are numerically validated, not mathematically established exact kernels; the post-build exposure gate is first-order only and does not certify the multilayer branch -- certification rests on the validation record",
+  "w1_admission": {
+    "record": "w1_admission_parent_s1_e350.json",
+    "n_admitted": 2038,
+    "declared_kernel_dims": 2038,
+    "passed": true
+  },
+  "authentication": {
+    "W1": {
+      "dim": 2038,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 1.9984014443252818e-14,
+      "kernel_exposure_Jv_X_max": null,
+      "w1_admitted_from": "w1_admission_parent_s1_e350.json",
+      "factor_sha256": "80044ebd1ce6b8f2fcbd36253c1c0b3c94131d6a4b8e0c0855ce60dc1b31429a"
+    },
+    "W2": {
+      "dim": 8709,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 1.199040866595169e-14,
+      "kernel_exposure_Jv_X_max": 9.324869774532502e-16,
+      "w1_admitted_from": null,
+      "factor_sha256": "4fb30855419eea26717ac4a04c18b117298748cea557701ee41a5375e1ea5ac2"
+    },
+    "W3": {
+      "dim": 14845,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 7.549516567451064e-15,
+      "kernel_exposure_Jv_X_max": 2.7008876282926905e-14,
+      "w1_admitted_from": null,
+      "factor_sha256": "fdc48ffdc3d70ae7247f8214ed652449af63446966ba4d9ce65f251e968d5f4e"
+    },
+    "V": {
+      "dim": 830,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 3.552713678800501e-15,
+      "kernel_exposure_Jv_X_max": 1.1824492974188251e-14,
+      "w1_admitted_from": null,
+      "factor_sha256": "bb87d3186dd930bf80d630e66377f2f6db657c5db583924652d96270c2db47e6"
+    }
+  },
+  "branch_dims": {
+    "W1": 2038,
+    "W2": 5551,
+    "W3": 14761,
+    "V": 830
+  },
+  "branch_total": 23180,
+  "certified_branch": true,
+  "validation": {
+    "tolerance": 1e-09,
+    "polynomial_residual_rel": {
+      "0.1": 1.628388262513795e-15,
+      "1.0": 2.8141771977560798e-14,
+      "10.0": 2.6838744573720676e-12
+    },
+    "forward_criterion_sampled_max": {
+      "W1": 1.3562714245103149e-14,
+      "W2": 1.62582028845907e-12,
+      "W3": 3.549003620308265e-13,
+      "V": 1.3278620484590433e-15
+    },
+    "forward_criterion_full_max": {
+      "W1": 2.2962797497107594e-13,
+      "W2": 8.754063895700023e-11,
+      "W3": 1.581931151779679e-11,
+      "V": 6.446248242409049e-15
+    },
+    "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+    "svd_solver_counts": {
+      "gesdd": 10
+    },
+    "gram_fallback_used": false,
+    "residuals_within_tolerance": true,
+    "passed": true
+  },
+  "post_build_exposure": {
+    "W1": {
+      "dim": 2038,
+      "exposure_max": 5.696678793808089e-17,
+      "count_gt_gate": 0
+    },
+    "W2": {
+      "dim": 5551,
+      "exposure_max": 9.248668064492248e-16,
+      "count_gt_gate": 0
+    },
+    "W3": {
+      "dim": 14761,
+      "exposure_max": 2.231189911037819e-14,
+      "count_gt_gate": 0
+    },
+    "V": {
+      "dim": 830,
+      "exposure_max": 2.4495198058335456e-15,
+      "count_gt_gate": 0
+    }
+  },
+  "post_build_w1_autodiff_spot": [
+    {
+      "col": 605,
+      "autodiff": 6.0445558761001e-18
+    },
+    {
+      "col": 773,
+      "autodiff": 5.042773724526775e-18
+    },
+    {
+      "col": 941,
+      "autodiff": 4.608935802037445e-18
+    },
+    {
+      "col": 1385,
+      "autodiff": 5.819797211994259e-18
+    },
+    {
+      "col": 1503,
+      "autodiff": 3.1704834783617628e-18
+    },
+    {
+      "col": 1714,
+      "autodiff": 3.4203844372883396e-18
+    },
+    {
+      "col": 1924,
+      "autodiff": 4.3695569234180185e-18
+    },
+    {
+      "col": 1975,
+      "autodiff": 2.778057878196927e-18
+    }
+  ],
+  "svd_solver_counts_build_validate": {
+    "gesdd": 42
+  },
+  "gram_fallback_used": false,
+  "failures": [],
+  "steps": [
+    {
+      "dim": 2038,
+      "rank_within": 0,
+      "gap": null,
+      "sigma1": 9.075134428504957e-12,
+      "sigma_ref": 17.216886415896887,
+      "cutoff": 1.7216886415896887e-08,
+      "cutoff_mode": "relative_rtol_sigma_ref",
+      "largest_rejected_over_cut": 0.0005271065980969476,
+      "largest_rejected_over_ref": 5.271065980969476e-13,
+      "mean_dim_Zhat": 3.0858,
+      "block": "W1",
+      "mean_dim_U": 1.0,
+      "seconds": 37.50887060165405
+    },
+    {
+      "dim": 5551,
+      "rank_within": 2464,
+      "gap": 75653699.11334752,
+      "sigma1": 4.634446681032352,
+      "sigma_ref": 33.68227069815202,
+      "cutoff": 3.368227069815202e-08,
+      "cutoff_mode": "relative_rtol_sigma_ref",
+      "largest_rejected_over_cut": 0.012431255169800154,
+      "largest_rejected_over_ref": 1.2431255169800155e-11,
+      "mean_dim_Zhat": 3.0858,
+      "block": "W2",
+      "mean_dim_U": 50.5555,
+      "seconds": 980.85453748703
+    },
+    {
+      "dim": 14761,
+      "rank_within": 83,
+      "gap": 21508300.589994695,
+      "sigma1": 1.40463046395546,
+      "sigma_ref": 34.500244985885374,
+      "cutoff": 3.4500244985885374e-08,
+      "cutoff_mode": "relative_rtol_sigma_ref",
+      "largest_rejected_over_cut": 0.04733271583258307,
+      "largest_rejected_over_ref": 4.733271583258307e-11,
+      "mean_dim_Zhat": 3.1078,
+      "block": "W3",
+      "mean_dim_U": 4.1852,
+      "seconds": 911.503662109375
+    },
+    {
+      "dim": 830,
+      "rank_within": 46,
+      "gap": 843296037741.5835,
+      "sigma1": 38.55096649337379,
+      "cutoff": 3.85509664933738e-08,
+      "cutoff_mode": "relative_rtol_sigma1",
+      "block": "V",
+      "mean_dim_U": 1.0,
+      "seconds": 105.87137913703918
+    }
+  ],
+  "timings_sec": {
+    "load_authenticate": 80.72625803947449,
+    "construction": 2035.8312592506409,
+    "validation": 2938.603693008423
+  }
+}

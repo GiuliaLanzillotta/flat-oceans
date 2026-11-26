@@ -1,0 +1,1855 @@
+{
+ "meta": {
+  "model": "mnist_mlp width128",
+  "epoch": 500,
+  "tol": "1e-09",
+  "subset_seed": 30000,
+  "exposure_seed": 40000,
+  "seed_loop_outer": true,
+  "N_ascending": true,
+  "conditions": {
+   "subsample": "mnist_mlp (full data) restricted to subset",
+   "retrain": "mnist_mlp_p1_sub<N> (trained on subset)"
+  }
+ },
+ "subsample": {
+  "N1000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 29053,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29053,
+     "rank_J": 3843,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 65,
+     "dim_K": 12929,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 4802,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 66,
+     "r_d": 39,
+     "dim_K": 15439,
+     "feature_null": 8064,
+     "downstream_null": 5874,
+     "deficit": 1501,
+     "dead_units": 89
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 40,
+     "dim_K": 890,
+     "feature_null": 890,
+     "deficit": 0,
+     "dead_units": 89
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 29056,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29056,
+     "rank_J": 3840,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 65,
+     "dim_K": 12957,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 4830,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 66,
+     "r_d": 43,
+     "dim_K": 15470,
+     "feature_null": 8064,
+     "downstream_null": 5610,
+     "deficit": 1796,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 44,
+     "dim_K": 850,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   }
+  },
+  "N2000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 25261,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 25261,
+     "rank_J": 7635,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 70,
+     "dim_K": 11229,
+     "feature_null": 0,
+     "downstream_null": 7482,
+     "deficit": 3747,
+     "dead_units": 58
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 71,
+     "r_d": 43,
+     "dim_K": 15201,
+     "feature_null": 7424,
+     "downstream_null": 6035,
+     "deficit": 1742,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 42,
+     "dim_K": 870,
+     "feature_null": 870,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 25260,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 25260,
+     "rank_J": 7636,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 68,
+     "dim_K": 11283,
+     "feature_null": 0,
+     "downstream_null": 7740,
+     "deficit": 3543,
+     "dead_units": 60
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 69,
+     "r_d": 47,
+     "dim_K": 15178,
+     "feature_null": 7680,
+     "downstream_null": 5589,
+     "deficit": 1909,
+     "dead_units": 81
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 46,
+     "dim_K": 830,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 81
+    }
+   }
+  },
+  "N5000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 74,
+     "dim_K": 10180,
+     "feature_null": 0,
+     "downstream_null": 6966,
+     "deficit": 3214,
+     "dead_units": 54
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 75,
+     "r_d": 46,
+     "dim_K": 14939,
+     "feature_null": 6912,
+     "downstream_null": 6150,
+     "deficit": 1877,
+     "dead_units": 82
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 46,
+     "dim_K": 830,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 82
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 70,
+     "dim_K": 10236,
+     "feature_null": 0,
+     "downstream_null": 7482,
+     "deficit": 2754,
+     "dead_units": 58
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 71,
+     "r_d": 51,
+     "dim_K": 14839,
+     "feature_null": 7424,
+     "downstream_null": 5467,
+     "deficit": 1948,
+     "dead_units": 77
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 50,
+     "dim_K": 790,
+     "feature_null": 790,
+     "deficit": 0,
+     "dead_units": 77
+    }
+   }
+  },
+  "N1000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 29955,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29955,
+     "rank_J": 2941,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 55,
+     "dim_K": 13626,
+     "feature_null": 0,
+     "downstream_null": 9417,
+     "deficit": 4209,
+     "dead_units": 73
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 56,
+     "r_d": 32,
+     "dim_K": 15848,
+     "feature_null": 9344,
+     "downstream_null": 5376,
+     "deficit": 1128,
+     "dead_units": 96
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 33,
+     "dim_K": 960,
+     "feature_null": 960,
+     "deficit": 0,
+     "dead_units": 96
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 29959,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29959,
+     "rank_J": 2937,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 55,
+     "dim_K": 13646,
+     "feature_null": 0,
+     "downstream_null": 9417,
+     "deficit": 4229,
+     "dead_units": 73
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 55,
+     "r_d": 37,
+     "dim_K": 15801,
+     "feature_null": 9472,
+     "downstream_null": 5005,
+     "deficit": 1324,
+     "dead_units": 91
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 38,
+     "dim_K": 910,
+     "feature_null": 910,
+     "deficit": 0,
+     "dead_units": 91
+    }
+   }
+  },
+  "N2000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 27018,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 27018,
+     "rank_J": 5878,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 61,
+     "dim_K": 12135,
+     "feature_null": 0,
+     "downstream_null": 8643,
+     "deficit": 3492,
+     "dead_units": 67
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 62,
+     "r_d": 32,
+     "dim_K": 15719,
+     "feature_null": 8576,
+     "downstream_null": 5952,
+     "deficit": 1191,
+     "dead_units": 96
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 33,
+     "dim_K": 960,
+     "feature_null": 960,
+     "deficit": 0,
+     "dead_units": 96
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 27025,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 27025,
+     "rank_J": 5871,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 57,
+     "dim_K": 12225,
+     "feature_null": 0,
+     "downstream_null": 9159,
+     "deficit": 3066,
+     "dead_units": 71
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 57,
+     "r_d": 37,
+     "dim_K": 15607,
+     "feature_null": 9216,
+     "downstream_null": 5187,
+     "deficit": 1204,
+     "dead_units": 91
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 38,
+     "dim_K": 910,
+     "feature_null": 910,
+     "deficit": 0,
+     "dead_units": 91
+    }
+   }
+  },
+  "N5000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 18210,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 18210,
+     "rank_J": 14686,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 66,
+     "dim_K": 11015,
+     "feature_null": 0,
+     "downstream_null": 7998,
+     "deficit": 3017,
+     "dead_units": 62
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 67,
+     "r_d": 35,
+     "dim_K": 15492,
+     "feature_null": 7936,
+     "downstream_null": 6231,
+     "deficit": 1325,
+     "dead_units": 93
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 35,
+     "dim_K": 940,
+     "feature_null": 940,
+     "deficit": 0,
+     "dead_units": 93
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 18185,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 18185,
+     "rank_J": 14711,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 61,
+     "dim_K": 11188,
+     "feature_null": 0,
+     "downstream_null": 8643,
+     "deficit": 2545,
+     "dead_units": 67
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 62,
+     "r_d": 38,
+     "dim_K": 15359,
+     "feature_null": 8576,
+     "downstream_null": 5580,
+     "deficit": 1203,
+     "dead_units": 90
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 39,
+     "dim_K": 900,
+     "feature_null": 900,
+     "deficit": 0,
+     "dead_units": 90
+    }
+   }
+  },
+  "N1000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 28947,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 28947,
+     "rank_J": 3949,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 53,
+     "dim_K": 13282,
+     "feature_null": 0,
+     "downstream_null": 9675,
+     "deficit": 3607,
+     "dead_units": 75
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 54,
+     "r_d": 43,
+     "dim_K": 15571,
+     "feature_null": 9600,
+     "downstream_null": 4590,
+     "deficit": 1381,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 44,
+     "dim_K": 850,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 28955,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 28955,
+     "rank_J": 3941,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 56,
+     "dim_K": 13314,
+     "feature_null": 0,
+     "downstream_null": 9288,
+     "deficit": 4026,
+     "dead_units": 72
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 57,
+     "r_d": 52,
+     "dim_K": 15530,
+     "feature_null": 9216,
+     "downstream_null": 4332,
+     "deficit": 1982,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 50,
+     "dim_K": 790,
+     "feature_null": 790,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  },
+  "N2000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 24987,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 24987,
+     "rank_J": 7909,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 59,
+     "dim_K": 12206,
+     "feature_null": 0,
+     "downstream_null": 8901,
+     "deficit": 3305,
+     "dead_units": 69
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 60,
+     "r_d": 43,
+     "dim_K": 15382,
+     "feature_null": 8832,
+     "downstream_null": 5100,
+     "deficit": 1450,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 44,
+     "dim_K": 850,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 24976,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 24976,
+     "rank_J": 7920,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 60,
+     "dim_K": 12203,
+     "feature_null": 0,
+     "downstream_null": 8772,
+     "deficit": 3431,
+     "dead_units": 68
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 61,
+     "r_d": 52,
+     "dim_K": 15304,
+     "feature_null": 8704,
+     "downstream_null": 4636,
+     "deficit": 1964,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 51,
+     "dim_K": 780,
+     "feature_null": 780,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  },
+  "N5000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 64,
+     "dim_K": 11439,
+     "feature_null": 0,
+     "downstream_null": 8256,
+     "deficit": 3183,
+     "dead_units": 64
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 65,
+     "r_d": 45,
+     "dim_K": 15164,
+     "feature_null": 8192,
+     "downstream_null": 5395,
+     "deficit": 1577,
+     "dead_units": 83
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 46,
+     "dim_K": 830,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 83
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 65,
+     "dim_K": 11498,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 3371,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 66,
+     "r_d": 52,
+     "dim_K": 14993,
+     "feature_null": 8064,
+     "downstream_null": 5016,
+     "deficit": 1913,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 53,
+     "dim_K": 760,
+     "feature_null": 760,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  }
+ },
+ "retrain": {
+  "N1000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 127,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 6383,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 128,
+     "dim_K": 10,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 127,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 6383,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 128,
+     "dim_K": 10,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   }
+  },
+  "N2000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 613,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 613,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 754,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 754,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 600,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 600,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N5000_seed0": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 437,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 437,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 126,
+     "dim_K": 2036,
+     "feature_null": 0,
+     "downstream_null": 258,
+     "deficit": 1778,
+     "dead_units": 2
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 127,
+     "dim_K": 20,
+     "feature_null": 20,
+     "deficit": 0,
+     "dead_units": 2
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 377,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 377,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 127,
+     "dim_K": 1676,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 1547,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 128,
+     "dim_K": 10,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   }
+  },
+  "N1000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N2000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 345,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 345,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 1230,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1230,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 284,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 284,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 1118,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1118,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N5000_seed1": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 293,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 293,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 1305,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1305,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 218,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 218,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 1055,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1055,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N1000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 22896,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896,
+     "rank_J": 10000,
+     "rank_resolved": true,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 6512,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N2000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 436,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 436,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 466,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 466,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 421,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 421,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 404,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 404,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N5000_seed2": {
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 321,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 321,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 731,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 731,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 257,
+     "r_d": 128,
+     "dim_K": 16384,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384,
+     "rank_J": 16512,
+     "rank_resolved": false,
+     "matrix_free": true
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 260,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 260,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "r_d": 128,
+     "dim_K": 449,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 449,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "r_h": 129,
+     "dim_K": 0,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  }
+ }
+}

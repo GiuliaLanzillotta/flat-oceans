@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "checks": {
+    "0": {
+      "dimensions": {
+        "G_1e-14": 3836,
+        "G_1e-12": 3890,
+        "G_1e-10": 5079,
+        "G_1e-08": 13098,
+        "G_1e-06": 21304,
+        "G_0.0001": 24283,
+        "ocean": 3619,
+        "generic": 25418
+      },
+      "membership_residuals_two_directions_per_band": {
+        "G_1e-14": 2.900466453730184e-15,
+        "G_1e-12": 2.945235089501725e-15,
+        "G_1e-10": 4.146998076126804e-15,
+        "G_1e-08": 8.294866896074334e-15,
+        "G_1e-06": 9.444390062008353e-15,
+        "G_0.0001": 9.506987115783483e-15
+      },
+      "operator_vector_residual_max": 1.8096185140990378e-13,
+      "controls_bitwise_equal": true,
+      "small_negative_eigenvalue_count": 2181,
+      "minimum_eigenvalue": -2.0157894905869e-14
+    }
+  },
+  "note": "Separate saved-array verification, not an independent-agent review. Absolute-eigenvalue cutoffs match the existing numerical-kernel comparison; tiny negative eigenvalues are numerical artifacts."
+}

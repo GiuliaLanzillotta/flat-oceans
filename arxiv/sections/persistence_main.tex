@@ -1,0 +1,15 @@
+\begin{table}[!htbp]
+\centering
+\caption{Retained atomic invariant subspace mass (\%) in MNIST MLPs: mean $\pm$ one sample standard deviation over three seeds. HA and Int denote high accuracy and interpolation; numbers denote epochs.}
+\label{tab:persistence-main}
+\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrr}\toprule
+Earlier $\to$ later & L2 & L3\\\midrule
+HA $\to$ Int & $89.75 \pm 9.20$ & $97.39 \pm 0.29$\\
+Int $\to$ 100 & $93.41 \pm 0.82$ & $97.85 \pm 0.53$\\
+100 $\to$ 250 & $97.70 \pm 0.95$ & $98.96 \pm 0.32$\\
+250 $\to$ 500 & $99.56 \pm 0.42$ & $99.29 \pm 0.34$\\
+\midrule
+HA $\to$ 500 & $99.73 \pm 0.24$ & $99.37 \pm 0.11$\\
+\bottomrule\end{tabular}
+\end{table}

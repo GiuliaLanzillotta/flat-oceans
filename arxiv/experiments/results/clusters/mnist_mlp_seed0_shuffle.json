@@ -1,0 +1,491 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+ "results": {
+  "high_accuracy": {
+   "epoch": 40,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "c4b58c4606c8d65eca64b68aef5bbfba92c82fbcc2b3675aff69e2d787889f8f",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "a3975c59e475bb318e92a9695a0764b18299531b1c875dd1dbec467b15da3df2",
+       "phase": "shuffle",
+       "G": 10
+      },
+      "digest": "1e35cafb209eb1bd13afde4cfbef3fd300e85e8a5b2112f04a00494d75005739"
+     },
+     "rank_J": 13821,
+     "rank_J_ladder": {
+      "1e-06": 13820,
+      "1e-09": 13821,
+      "1e-12": 13821
+     },
+     "gap_J": 554861714.6476974,
+     "sigma1": 57.96022870867011,
+     "r_h": 129,
+     "r_d": 126,
+     "delta_joint": 2433,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "a3975c59e475bb318e92a9695a0764b18299531b1c875dd1dbec467b15da3df2",
+     "factor_status": "identity verified",
+     "global": {
+      "rank_J_permuted": {
+       "1e-06": 13821,
+       "1e-09": 13822,
+       "1e-12": 13822
+      },
+      "gap": 1758343538.7402992,
+      "delta_permuted": 2432,
+      "delta_preserved_fraction": 0.9995889847924373,
+      "seconds": 388.76971220970154
+     },
+     "labels": {
+      "rank_J_permuted": {
+       "1e-06": 13821,
+       "1e-09": 13822,
+       "1e-12": 13822
+      },
+      "gap": 690630431.9314139,
+      "delta_permuted": 2432,
+      "delta_preserved_fraction": 0.9995889847924373,
+      "n_groups": 10,
+      "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+      "seconds": 387.7282998561859
+     },
+     "kmeans_D": {
+      "rank_J_permuted": {
+       "1e-06": 13821,
+       "1e-09": 13822,
+       "1e-12": 13822
+      },
+      "gap": 1322064703.0666306,
+      "delta_permuted": 2432,
+      "delta_preserved_fraction": 0.9995889847924373,
+      "n_groups": 10,
+      "assignment_sha256": "df077976209c9894a3848e089a7cd6e10b946db344c1591f4a1aa95191344b80",
+      "seconds": 387.596310377121
+     },
+     "kmeans_Dn": {
+      "rank_J_permuted": {
+       "1e-06": 13822,
+       "1e-09": 13822,
+       "1e-12": 13822
+      },
+      "gap": 1059742182.682288,
+      "delta_permuted": 2432,
+      "delta_preserved_fraction": 0.9995889847924373,
+      "n_groups": 10,
+      "assignment_sha256": "05472df7ca802c582ec54127768a0ff71d05ec90a268e77958bc9d498abb5f1b",
+      "seconds": 387.7515094280243
+     },
+     "gates_suffix": {
+      "rank_J_permuted": {
+       "1e-06": 13822,
+       "1e-09": 13822,
+       "1e-12": 13822
+      },
+      "gap": 2858207868.3539414,
+      "delta_permuted": 2432,
+      "delta_preserved_fraction": 0.9995889847924373,
+      "n_groups": 10,
+      "assignment_sha256": "7384818093474eb1fb7cb07b1e9d844817b0408827eb741b8e175a42d72d1787",
+      "seconds": 388.079327583313
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "c4b58c4606c8d65eca64b68aef5bbfba92c82fbcc2b3675aff69e2d787889f8f",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "5304856b0302037a9dcb4e61ec66d866e0a71dc9ace0becae42d92c866491e8c",
+       "phase": "shuffle",
+       "G": 10
+      },
+      "digest": "70670a567d42b671d2a1d2333f18990f0a4fe51443c72c1ff75fcde96e9c87f7"
+     },
+     "rank_J": 8338,
+     "rank_J_ladder": {
+      "1e-06": 8188,
+      "1e-09": 8338,
+      "1e-12": 8338
+     },
+     "gap_J": 8351718.646438425,
+     "sigma1": 371.4786554514599,
+     "r_h": 127,
+     "r_d": 107,
+     "delta_joint": 5251,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "5304856b0302037a9dcb4e61ec66d866e0a71dc9ace0becae42d92c866491e8c",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.7e-08)",
+     "global": {
+      "rank_J_permuted": {
+       "1e-06": 8971,
+       "1e-09": 9026,
+       "1e-12": 9026
+      },
+      "gap": 2880004.070150493,
+      "delta_permuted": 4563,
+      "delta_preserved_fraction": 0.8689773376499714,
+      "seconds": 392.26622247695923
+     },
+     "labels": {
+      "rank_J_permuted": {
+       "1e-06": 8278,
+       "1e-09": 8424,
+       "1e-12": 8424
+      },
+      "gap": 5445531.268638697,
+      "delta_permuted": 5165,
+      "delta_preserved_fraction": 0.9836221672062464,
+      "n_groups": 10,
+      "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+      "seconds": 390.65314531326294
+     },
+     "kmeans_D": {
+      "rank_J_permuted": {
+       "1e-06": 8336,
+       "1e-09": 8479,
+       "1e-12": 8479
+      },
+      "gap": 1304893.2022866115,
+      "delta_permuted": 5110,
+      "delta_preserved_fraction": 0.9731479718148924,
+      "n_groups": 10,
+      "assignment_sha256": "052321fc27f9b1bc17692721175a4302a25b41d2c2ea305fde0997e4686de6aa",
+      "seconds": 389.62084221839905
+     },
+     "kmeans_Dn": {
+      "rank_J_permuted": {
+       "1e-06": 8289,
+       "1e-09": 8428,
+       "1e-12": 8429
+      },
+      "gap": 158.868302239289,
+      "delta_permuted": 5161,
+      "delta_preserved_fraction": 0.9828604075414207,
+      "n_groups": 10,
+      "assignment_sha256": "1ccda8e6b8c218bb6fd93e8d39fa281720138b750f33fddc38247e84a39d685b",
+      "seconds": 389.5666468143463
+     },
+     "gates_suffix": {
+      "rank_J_permuted": {
+       "1e-06": 8331,
+       "1e-09": 8474,
+       "1e-12": 8474
+      },
+      "gap": 1412405.5275960185,
+      "delta_permuted": 5115,
+      "delta_preserved_fraction": 0.9741001713959246,
+      "n_groups": 10,
+      "assignment_sha256": "fab36d712b6ca5db9dff15da5257b337eb0d01b161a8ecd61056052ed39fb6e0",
+      "seconds": 389.2750492095947
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0040.pt",
+    "checkpoint_sha256": "c4b58c4606c8d65eca64b68aef5bbfba92c82fbcc2b3675aff69e2d787889f8f",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "b2c7a2808e79a19093d7bc208b837ff22121def88d8461e12d2b4ba93351d946"
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "0f0acc0f6817e37cbd9ef59b4ca083f15ad95e8b9cb3c22f46277e128f3bffb5",
+       "phase": "shuffle",
+       "G": 10
+      },
+      "digest": "f85d88ec3fc8e36aad4e1a6aa097c8a83722cfa3afd74e5bf20fb4ac76795fd0"
+     },
+     "rank_J": 6929,
+     "rank_J_ladder": {
+      "1e-06": 6927,
+      "1e-09": 6929,
+      "1e-12": 6929
+     },
+     "gap_J": 187442033.15178078,
+     "sigma1": 10.072565813085367,
+     "r_h": 129,
+     "r_d": 86,
+     "delta_joint": 4165,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "0f0acc0f6817e37cbd9ef59b4ca083f15ad95e8b9cb3c22f46277e128f3bffb5",
+     "factor_status": "identity verified",
+     "global": {
+      "rank_J_permuted": {
+       "1e-06": 6932,
+       "1e-09": 6932,
+       "1e-12": 6932
+      },
+      "gap": 606900078.5576425,
+      "delta_permuted": 4162,
+      "delta_preserved_fraction": 0.999279711884754,
+      "seconds": 390.0819721221924
+     },
+     "labels": {
+      "rank_J_permuted": {
+       "1e-06": 6931,
+       "1e-09": 6932,
+       "1e-12": 6932
+      },
+      "gap": 302885937.2479209,
+      "delta_permuted": 4162,
+      "delta_preserved_fraction": 0.999279711884754,
+      "n_groups": 10,
+      "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+      "seconds": 389.25648069381714
+     },
+     "kmeans_D": {
+      "rank_J_permuted": {
+       "1e-06": 6932,
+       "1e-09": 6932,
+       "1e-12": 6932
+      },
+      "gap": 502119826.84590274,
+      "delta_permuted": 4162,
+      "delta_preserved_fraction": 0.999279711884754,
+      "n_groups": 10,
+      "assignment_sha256": "30569ab914455fd7d0a5a0c836aa63be4f6b6c3d43e261e2e41731d85e276c66",
+      "seconds": 389.78474712371826
+     },
+     "kmeans_Dn": {
+      "rank_J_permuted": {
+       "1e-06": 6932,
+       "1e-09": 6932,
+       "1e-12": 6932
+      },
+      "gap": 499153811.6447793,
+      "delta_permuted": 4162,
+      "delta_preserved_fraction": 0.999279711884754,
+      "n_groups": 10,
+      "assignment_sha256": "6403016fc5400b0fa11cd9906824c8e196f7bccd9ef9dd2ac2c95e7d54b9d42e",
+      "seconds": 390.87239146232605
+     },
+     "gates_suffix": {
+      "rank_J_permuted": {
+       "1e-06": 6931,
+       "1e-09": 6932,
+       "1e-12": 6932
+      },
+      "gap": 457722940.4965589,
+      "delta_permuted": 4162,
+      "delta_preserved_fraction": 0.999279711884754,
+      "n_groups": 10,
+      "assignment_sha256": "4c06f928b6496ff6bc911307a213b3e030c7db9158007c9c6b961f0ea6ea9f07",
+      "seconds": 389.212021112442
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "ae2fadf28e574d8aaf589697c4e4284b369aa5f24836b8589e53574fa8a5189d",
+       "phase": "shuffle",
+       "G": 10
+      },
+      "digest": "37a935c764e3a63af346d126fbb83cf23eabd49c09910b59560feb993b4347fe"
+     },
+     "rank_J": 1816,
+     "rank_J_ladder": {
+      "1e-06": 1579,
+      "1e-09": 1816,
+      "1e-12": 1817
+     },
+     "gap_J": 2.077018267377846,
+     "sigma1": 766.3457486487697,
+     "r_h": 87,
+     "r_d": 50,
+     "delta_joint": 2534,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "ae2fadf28e574d8aaf589697c4e4284b369aa5f24836b8589e53574fa8a5189d",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.9e-08)",
+     "global": {
+      "rank_J_permuted": {
+       "1e-06": 2626,
+       "1e-09": 2668,
+       "1e-12": 2668
+      },
+      "gap": 4727021.08502219,
+      "delta_permuted": 1682,
+      "delta_preserved_fraction": 0.6637726913970008,
+      "seconds": 387.49667859077454
+     },
+     "labels": {
+      "rank_J_permuted": {
+       "1e-06": 1630,
+       "1e-09": 1861,
+       "1e-12": 1862
+      },
+      "gap": 2.0836403072011103,
+      "delta_permuted": 2489,
+      "delta_preserved_fraction": 0.9822415153906867,
+      "n_groups": 10,
+      "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+      "seconds": 386.58571696281433
+     },
+     "kmeans_D": {
+      "rank_J_permuted": {
+       "1e-06": 1632,
+       "1e-09": 1874,
+       "1e-12": 1875
+      },
+      "gap": 2.083627230551509,
+      "delta_permuted": 2476,
+      "delta_preserved_fraction": 0.9771112865035517,
+      "n_groups": 10,
+      "assignment_sha256": "29bd5e6ff9fa149b2a99984a690b6bfd7621c234e4235a63d35bc5d92dac9154",
+      "seconds": 386.5753583908081
+     },
+     "kmeans_Dn": {
+      "rank_J_permuted": {
+       "1e-06": 1627,
+       "1e-09": 1868,
+       "1e-12": 1869
+      },
+      "gap": 2.089662068218421,
+      "delta_permuted": 2482,
+      "delta_preserved_fraction": 0.9794790844514601,
+      "n_groups": 10,
+      "assignment_sha256": "21a73937ccf700a7cdbd709484457fdfd641bf90c44662f3af895e57cc7656c2",
+      "seconds": 387.34275555610657
+     },
+     "gates_suffix": {
+      "rank_J_permuted": {
+       "1e-06": 1614,
+       "1e-09": 1847,
+       "1e-12": 1848
+      },
+      "gap": 2.0708086560541754,
+      "delta_permuted": 2503,
+      "delta_preserved_fraction": 0.9877663772691397,
+      "n_groups": 10,
+      "assignment_sha256": "2bdb62dbf35819477447aa9eb3efaf0a79e901d3042e84f2abca92c0be4a939b",
+      "seconds": 387.0882148742676
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "a7c0ace332092172838d509a2a9e8db7d4f80ca30fc306765a5ee1d29f24fb56"
+   }
+  }
+ }
+}

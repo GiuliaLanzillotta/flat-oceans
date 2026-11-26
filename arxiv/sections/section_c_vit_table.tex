@@ -1,0 +1,9 @@
+\begin{table}[!htbp]\centering
+\caption{ViT-B/16 on RESISC45. Constructed exact dimensions are checked in three fine-tuned seeds. Counting lower bounds use 10,000 images and 45 outputs; they bound tangent nullity without constructing additional invariant subspaces.}\label{tab:c-native-exact}
+\small\begin{tabular}{lrrrr}\toprule
+Layer & Parameters & Exact space & Kernel lower bound & \shortstack{Remaining kernel\\lower bound}\\\midrule
+First MLP affine layer & 2,362,368 & 3,072 & 1,912,368 & 1,909,296\\
+Second MLP affine layer & 2,360,064 & 3,073 & 1,910,064 & 1,906,991\\
+Readout & 34,605 & 45 & --- & ---\\
+\bottomrule\end{tabular}\par\smallskip\footnotesize The remaining-kernel bound subtracts the constructed exact dimension from the full-kernel counting bound.
+\end{table}

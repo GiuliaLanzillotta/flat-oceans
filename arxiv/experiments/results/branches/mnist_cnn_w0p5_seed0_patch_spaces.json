@@ -1,0 +1,1108 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (2026-09-22); identifier cnn-patch-spaces-v2",
+ "stages": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "f5c3fd2ae1b4df088f24885c9f5b5281494b5dc0d90910d4f1db2d098942b73c",
+    "preprocessing_sha256": "dc43f3d7f110183ddfac1b713040e94cf00d9f03dc2b685203a80b79a0b87682",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (2026-09-22); identifier cnn-patch-spaces-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09
+    },
+    "digest": "4c834d2df23a710f855534546609e72c60677e00e1eea7771a07efa6d535c67a"
+   },
+   "blocks": {
+    "conv1": {
+     "p": 80,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 8021166,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 1651892,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 3611066,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 2022405,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 8046371,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 1363425,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 1992879,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 7852532,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv2": {
+     "p": 584,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 3241465,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 2101389,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 3289453,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 2844101,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 7784921,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 7011488,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 7636136,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 7075802,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv3": {
+     "p": 1168,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 506876,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 575907,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 1463318,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 1664993,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 1393009,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 1757743,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 902081,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 987197,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 2087002,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 541770,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 1552429,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 891141,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 762930,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 1297330,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 2005945,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 251994,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv4": {
+     "p": 2320,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 416281,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 438885,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 780851,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 630152,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 639393,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 340122,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 592168,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 296829,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 513774,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 820517,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 467178,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 1845154,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 1696281,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 405285,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 455970,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 875687,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv5": {
+     "p": 4640,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 17791,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 40961,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 8387,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 1939,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 1287,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 3861,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 959,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 2079,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 17199,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 2308,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 40397,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 12569,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 689,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 11510,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 7473,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 10731,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 16,
+       "active_positions": 17302,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 17,
+       "active_positions": 1788,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 18,
+       "active_positions": 8949,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 19,
+       "active_positions": 3779,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 20,
+       "active_positions": 4328,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 21,
+       "active_positions": 12586,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 22,
+       "active_positions": 1905,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 23,
+       "active_positions": 4259,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 24,
+       "active_positions": 4258,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 25,
+       "active_positions": 5047,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 26,
+       "active_positions": 3619,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 27,
+       "active_positions": 675,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 28,
+       "active_positions": 14666,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 29,
+       "active_positions": 19010,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 30,
+       "active_positions": 2281,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 31,
+       "active_positions": 3213,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "readout": {
+     "p": 5130,
+     "dim": 1080,
+     "dim_ladder": {
+      "1e-06": 1080,
+      "1e-09": 1080,
+      "1e-12": 1080
+     },
+     "feature_rank": 405,
+     "feature_rank_ladder": {
+      "1e-06": 405,
+      "1e-09": 405,
+      "1e-12": 405
+     },
+     "gap": 194705086518062.78,
+     "atomic_kernel": null
+    }
+   },
+   "selective_sum_dim": 1080,
+   "selective_sum_validation": {
+    "tolerance": 1e-09,
+    "residual_rel": {
+     "0.1": 1.5319292493282458e-17,
+     "1.0": 5.3708628287271704e-17,
+     "10.0": 3.3423298398352567e-16
+    },
+    "passed": true,
+    "scope": "32 random combinations, weighted relative norms 0.1, 1, 10, six points per line"
+   },
+   "atomic_sum_dim": 0,
+   "atomic_sum_validation": {
+    "passed": null,
+    "note": "factors missing for ['conv1', 'conv2', 'conv3', 'conv4', 'conv5', 'readout']"
+   },
+   "atomic_sum_is_branch": null,
+   "certified_constructions_needed": false,
+   "basis_sha256": {
+    "selective": {
+     "conv1": "31d3d38bd312c1d0f5c0e079d2b420776a584380d210a8170e4cc8344d036537",
+     "conv2": "ece5ed1b8a11dff992e1cb62852cdf2937acdf9e51f4ca5a9ffd2853fd0edbe5",
+     "conv3": "ab1b1d9253d654e5788d41a858120daf170b4d03fb032489e4fc9fe0270e1e8b",
+     "conv4": "e5eed8a6b65e7730daa986859eed6b0655264e60a3f1d94fb54d51b7291e21ff",
+     "conv5": "6a716942bc851c5c1877780191c6c4b575262317132982d8ae0eebff03bdd9cb",
+     "readout": "de550919bb31bec993443eb5523bbdc16eb9f7f7037539e978c9b09736375128"
+    },
+    "atomic": {}
+   },
+   "seconds": 246.22404026985168,
+   "complete": true
+  }
+ }
+}

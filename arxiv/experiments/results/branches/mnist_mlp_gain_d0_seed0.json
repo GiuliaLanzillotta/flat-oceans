@@ -1,0 +1,253 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+ "run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_gain_d0/seed_0",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 1.4672211219222429,
+   "train_errors": 53253,
+   "test_acc": 0.1151,
+   "test_mse": 1.4754681340123361,
+   "param_norm": 19.904532618608222,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": 2,
+   "checkpoint_epoch": 2,
+   "train_mse": 0.02465857743516248,
+   "train_errors": 5584,
+   "test_acc": 0.904,
+   "test_mse": 0.024592522376422937,
+   "param_norm": 17.95134396351113,
+   "same_as": []
+  },
+  "high_accuracy": {
+   "milestone_epoch": 385,
+   "checkpoint_epoch": 385,
+   "train_mse": 0.0002504819810061927,
+   "train_errors": 60,
+   "test_acc": 0.9741,
+   "test_mse": 0.004335135296628386,
+   "param_norm": 121.37081438380162,
+   "same_as": []
+  },
+  "mse_interpolation": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 0.00020737836570575445,
+   "train_errors": 57,
+   "test_acc": 0.9736,
+   "test_mse": 0.00440868094395736,
+   "param_norm": 151.7840437087281,
+   "same_as": []
+  },
+  "epoch_50": {
+   "milestone_epoch": 50,
+   "checkpoint_epoch": 50,
+   "train_mse": 0.0009184401977013299,
+   "train_errors": 136,
+   "test_acc": 0.9772,
+   "test_mse": 0.004126847379324059,
+   "param_norm": 21.668192290569205,
+   "same_as": []
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.0005323645817736697,
+   "train_errors": 95,
+   "test_acc": 0.9768,
+   "test_mse": 0.0041459169949623655,
+   "param_norm": 37.60427483624146,
+   "same_as": []
+  },
+  "epoch_150": {
+   "milestone_epoch": 150,
+   "checkpoint_epoch": 150,
+   "train_mse": 0.0004083589044443811,
+   "train_errors": 78,
+   "test_acc": 0.9756,
+   "test_mse": 0.004122091758768566,
+   "param_norm": 53.135455877778554,
+   "same_as": []
+  },
+  "epoch_200": {
+   "milestone_epoch": 200,
+   "checkpoint_epoch": 200,
+   "train_mse": 0.0002992953374835656,
+   "train_errors": 71,
+   "test_acc": 0.9754,
+   "test_mse": 0.004249971356410109,
+   "param_norm": 68.0555482129586,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 0.00021589048515536206,
+   "train_errors": 67,
+   "test_acc": 0.9747,
+   "test_mse": 0.004213788833446452,
+   "param_norm": 82.89648461042927,
+   "same_as": []
+  }
+ },
+ "rank_tolerance": 1e-09,
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "c4dc23837f91572d66cfec101de8471f6ef52c8128d7916667f84411a1989a24",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+     "build_version": 2,
+     "rtol": 1e-09,
+     "valid_tol": 1e-09,
+     "samples": 10000,
+     "random_orders": 6,
+     "generator_seed": 1234
+    },
+    "digest": "32296b7e19ec0a7e87d9b6a2277719a2e470999e54e0d8bd2be25a53d053b934"
+   },
+   "constructions": {
+    "bottom_up": {
+     "order": [
+      "W1",
+      "W2",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 2578,
+      "W3": 3539,
+      "V": 390
+     },
+     "total": 6507,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 3.4716,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 0.7450230121612549
+      },
+      {
+       "dim": 2578,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 4.3458517522390094e-08,
+       "sigma_ref": 55.799213690286095,
+       "largest_rejected_over_ref": 7.788374539398868e-10,
+       "prepass": {
+        "dim": 2578,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 4.250900924538985e-09,
+        "sigma_ref": 55.799213690286095,
+        "largest_rejected_over_ref": 7.618209367848154e-11
+       },
+       "mean_dim_Zhat": 3.4732,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 12.65805196762085
+      },
+      {
+       "dim": 3539,
+       "rank_within": 42,
+       "gap": 1.6508419715860463,
+       "sigma1": 4.999999999999963,
+       "sigma_ref": 81.02215593192176,
+       "largest_rejected_over_ref": 6.215247516027578e-10,
+       "prepass": {
+        "dim": 3581,
+        "rank_within": 31,
+        "gap": 1.0252760689134879,
+        "sigma1": 14.352694234549324,
+        "sigma_ref": 81.02215593192176,
+        "largest_rejected_over_ref": 9.946405918079136e-10
+       },
+       "mean_dim_Zhat": 4.3938,
+       "block": "W3",
+       "mean_dim_U": 2.5538,
+       "seconds": 74.13223648071289
+      },
+      {
+       "dim": 390,
+       "rank_within": 26,
+       "gap": 24926485.560927656,
+       "sigma1": 99.99999999993734,
+       "block": "V",
+       "mean_dim_U": 2.7398,
+       "seconds": 13.309463500976562
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 7.479095506066597e-11,
+       "1.0": 7.479095275535265e-10,
+       "10.0": 7.479094772175435e-09
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 1.4855322171179453e-09,
+       "W3": 6.525979899325185e-10,
+       "V": 5.791064229105153e-10
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 2.4483025944174202e-08,
+       "W3": 2.0033206600853453e-08,
+       "V": 1.0211756817933224e-09
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": false
+     },
+     "certified_branch": false,
+     "basis_sha256": "f6ad8a0c303a3298fb412b2b71d22c8eac9d18a9619ab3340e64d0c6c36b4867",
+     "seconds": 191.36423540115356
+    }
+   },
+   "blocks": {
+    "W1": {
+     "p": 16448,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    },
+    "W2": {
+     "p": 4160,
+     "dim_atomic_kernel": 2578,
+     "gap": 1.2847196707963255
+    },
+    "W3": {
+     "p": 4160,
+     "dim_atomic_kernel": 3612,
+     "gap": 1.2242576110614547
+    },
+    "V": {
+     "p": 650,
+     "dim_atomic_kernel": 440,
+     "gap": 118295.89932510891
+    }
+   },
+   "sum_atomic": 6630,
+   "n_params": 25418
+  }
+ }
+}

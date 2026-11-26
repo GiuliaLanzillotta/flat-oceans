@@ -1,0 +1,1108 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (2026-09-22); identifier cnn-patch-spaces-v2",
+ "stages": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "fd677a436aeb5337c0a38c08f99cf078bf95d6229fa54df28d64dae5f3fbd9c4",
+    "preprocessing_sha256": "dc43f3d7f110183ddfac1b713040e94cf00d9f03dc2b685203a80b79a0b87682",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (2026-09-22); identifier cnn-patch-spaces-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09
+    },
+    "digest": "a64e10a1cc955e7c83804252a269514e9fbfe7560b3f8c8dded20eeaa5842923"
+   },
+   "blocks": {
+    "conv1": {
+     "p": 80,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 1674209,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 7754935,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 8313597,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 1874280,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 1293700,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 8763163,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 2535343,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 1518806,
+       "rank": 10,
+       "rank_ladder": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv2": {
+     "p": 584,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 1443340,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 3453909,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 4422582,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 1011564,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 2815722,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 7783300,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 7803950,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 7405387,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv3": {
+     "p": 1168,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 1027702,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 2044790,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 1517360,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 553253,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 1150975,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 443377,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 650174,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 1057574,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 728541,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 471781,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 833491,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 1929637,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 1450990,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 1576487,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 1312822,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 912235,
+       "rank": 73,
+       "rank_ladder": {
+        "1e-06": 73,
+        "1e-09": 73,
+        "1e-12": 73
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv4": {
+     "p": 2320,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 199131,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 930133,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 966418,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 743845,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 999556,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 866971,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 451074,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 1033940,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 1383173,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 788937,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 269741,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 699967,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 913971,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 747131,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 704131,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 1210944,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "conv5": {
+     "p": 4640,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "channels": [
+      {
+       "channel": 0,
+       "active_positions": 17879,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 1,
+       "active_positions": 9166,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 2,
+       "active_positions": 6845,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 3,
+       "active_positions": 16133,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 4,
+       "active_positions": 21331,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 5,
+       "active_positions": 1200,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 6,
+       "active_positions": 6737,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 7,
+       "active_positions": 14929,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 8,
+       "active_positions": 9241,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 9,
+       "active_positions": 7087,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 10,
+       "active_positions": 25648,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 11,
+       "active_positions": 27815,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 12,
+       "active_positions": 15997,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 13,
+       "active_positions": 27967,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 14,
+       "active_positions": 9121,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 15,
+       "active_positions": 3270,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 16,
+       "active_positions": 2906,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 17,
+       "active_positions": 25326,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 18,
+       "active_positions": 25898,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 19,
+       "active_positions": 15684,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 20,
+       "active_positions": 43308,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 21,
+       "active_positions": 21914,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 22,
+       "active_positions": 1809,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 23,
+       "active_positions": 10069,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 24,
+       "active_positions": 25109,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 25,
+       "active_positions": 5147,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 26,
+       "active_positions": 6729,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 27,
+       "active_positions": 5232,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 28,
+       "active_positions": 6734,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 29,
+       "active_positions": 27259,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 30,
+       "active_positions": 5530,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      },
+      {
+       "channel": 31,
+       "active_positions": 9166,
+       "rank": 145,
+       "rank_ladder": {
+        "1e-06": 145,
+        "1e-09": 145,
+        "1e-12": 145
+       },
+       "free": 0,
+       "gap": null
+      }
+     ],
+     "channels_selective": 0,
+     "min_gap": null,
+     "atomic_kernel": null
+    },
+    "readout": {
+     "p": 5130,
+     "dim": 430,
+     "dim_ladder": {
+      "1e-06": 430,
+      "1e-09": 430,
+      "1e-12": 430
+     },
+     "feature_rank": 470,
+     "feature_rank_ladder": {
+      "1e-06": 470,
+      "1e-09": 470,
+      "1e-12": 470
+     },
+     "gap": 6.604066198334583e+296,
+     "atomic_kernel": null
+    }
+   },
+   "selective_sum_dim": 430,
+   "selective_sum_validation": {
+    "tolerance": 1e-09,
+    "residual_rel": {
+     "0.1": 0.0,
+     "1.0": 0.0,
+     "10.0": 0.0
+    },
+    "passed": true,
+    "scope": "32 random combinations, weighted relative norms 0.1, 1, 10, six points per line"
+   },
+   "atomic_sum_dim": 0,
+   "atomic_sum_validation": {
+    "passed": null,
+    "note": "factors missing for ['conv1', 'conv2', 'conv3', 'conv4', 'conv5', 'readout']"
+   },
+   "atomic_sum_is_branch": null,
+   "certified_constructions_needed": false,
+   "basis_sha256": {
+    "selective": {
+     "conv1": "5ff30621c784cd01aa7034b1b5de2a17cdb3c536d2d49ba8f48d9f41a58c421a",
+     "conv2": "1a4cd1c1e60efd23e7daec503405638198e400b0ba158c4528da3aa28d1a14d8",
+     "conv3": "e200ea34c86d4c7af4e0242a35d5e6583852b3f1b7e11a3fecb867658752852a",
+     "conv4": "d632c78022a56444ce4e369c0677165b21092cdb856a80ac79278908e4081286",
+     "conv5": "9b560a42dbaf38843f33f147461dfcd47590d60d30dce230bdd6145a63481053",
+     "readout": "f26ddbfb75679cfd7447cbc783a7d936242d9a6a7dd2267f5cfd73835429ad71"
+    },
+    "atomic": {}
+   },
+   "seconds": 242.95481657981873,
+   "complete": true
+  }
+ }
+}

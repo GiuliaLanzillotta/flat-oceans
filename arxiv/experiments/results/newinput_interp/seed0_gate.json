@@ -1,0 +1,73 @@
+{
+ "passed": true,
+ "strict_pass": false,
+ "failures": [],
+ "qualified_flags": [
+  "alpha=0.0/3: union rank gap 6.3 < 10 (UNRESOLVED; ladder range [14290, 14500], band 7)",
+  "alpha=0.1/3: union rank gap 8.4 < 10 (UNRESOLVED; ladder range [14228, 14403], band 6)",
+  "alpha=0.2/3: union rank gap 1.3 < 10 (UNRESOLVED; ladder range [14145, 14293], band 9)",
+  "alpha=0.3/3: union rank gap 7.8 < 10 (UNRESOLVED; ladder range [14049, 14155], band 10)",
+  "alpha=0.5/3: union rank gap 2.1 < 10 (UNRESOLVED; ladder range [14211, 14371], band 8)",
+  "alpha=0.6/3: union rank gap 2.1 < 10 (UNRESOLVED; ladder range [14355, 14533], band 7)",
+  "alpha=0.7/3: union rank gap 2.1 < 10 (UNRESOLVED; ladder range [14478, 14674], band 9)",
+  "alpha=0.8/3: union rank gap 2.1 < 10 (UNRESOLVED; ladder range [14524, 14741], band 8)",
+  "alpha=0.9/3: union rank gap 2.1 < 10 (UNRESOLVED; ladder range [14555, 14792], band 8)",
+  "alpha=1.0/3: union rank gap 3.0 < 10 (UNRESOLVED; ladder range [14560, 14816], band 10)"
+ ],
+ "alpha0_reproduction": {
+  "2": {
+   "dim_K_X": [
+    9583,
+    9583
+   ],
+   "dim_K_union": [
+    9046,
+    9046
+   ],
+   "exposed": [
+    537,
+    537
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "3": {
+   "dim_K_X": [
+    14696,
+    14696
+   ],
+   "dim_K_union": [
+    14292,
+    14292
+   ],
+   "exposed": [
+    404,
+    404
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "readout": {
+   "dim_K_X": [
+    780,
+    780
+   ],
+   "dim_K_union": [
+    660,
+    660
+   ],
+   "exposed": [
+    120,
+    120
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  }
+ },
+ "sources": [
+  "results/newinput_interp/mnist_mlp_seed0_interp_partial_0p0.json",
+  "results/newinput_interp/mnist_mlp_seed0_interp.json"
+ ],
+ "label": "computed + automatically checked",
+ "policy": "hard failures: alpha=0 non-reproduction, union > X, negative exposure, missing identity or missing qualification; gap < 10 cells are QUALIFIED flags with ladder ranges (recorded, thresholds unchanged; precedent results/newinput/seed0_gate.json)"
+}

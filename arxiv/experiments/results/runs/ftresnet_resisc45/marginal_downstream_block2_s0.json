@@ -1,0 +1,211 @@
+{
+  "tag": "s0",
+  "block": 2,
+  "layer": "layer4.2.conv3",
+  "N": 4000,
+  "ncls": 45,
+  "val_acc": 0.9573333333333334,
+  "test_acc": 0.9555555555555556,
+  "local_vs_full_forward_rel_err": 8.010699161786761e-07,
+  "RGRID": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "M": 64,
+  "TAUS": [
+    0.1,
+    0.01
+  ],
+  "seed": 1,
+  "construction": "VJP_gauss_newton_per_channel",
+  "has_projection_shortcut": false,
+  "gated_mean_patch": {
+    "Cout": 2048,
+    "Cin": 512,
+    "sv_top_med": 1.7906562706608704,
+    "sv_min_med": 0.0004351448811102198,
+    "exact_null_dim_total": 12
+  },
+  "generic": {
+    "median": [
+      1.8848290892492514e-05,
+      3.291051871201489e-05,
+      6.591060082428157e-05,
+      0.00015268651623046026,
+      0.00046804545854683965,
+      0.0013921752106398344,
+      0.0046525090001523495,
+      0.014374532736837864
+    ],
+    "p5": [
+      1.6724900069675642e-05,
+      3.107228312728694e-05,
+      6.371110466716346e-05,
+      0.00014389990974450484,
+      0.0004489646293222904,
+      0.0013395873829722404,
+      0.00446052874904126,
+      0.01365880318917334
+    ],
+    "p95": [
+      2.0483692060224713e-05,
+      3.625183289841516e-05,
+      6.967661829548888e-05,
+      0.0001586309699632693,
+      0.0004918642895063386,
+      0.0014577852038200946,
+      0.004852875601500273,
+      0.015140489395707845
+    ],
+    "n_samples": 64
+  },
+  "tail": {
+    "0.1": {
+      "tail_dim_total": 1018244,
+      "tail_dim_median_per_channel": 497,
+      "tail": {
+        "median": [
+          1.645544671191601e-05,
+          2.753463741100859e-05,
+          4.652491043088958e-05,
+          7.502823063987307e-05,
+          0.0001734433535602875,
+          0.0004864984075538814,
+          0.0016132554737851024,
+          0.0050271612126380205
+        ],
+        "p5": [
+          1.4401914995687548e-05,
+          2.4583598951721795e-05,
+          4.33022056313348e-05,
+          7.306868501473218e-05,
+          0.0001707729905319866,
+          0.0004790843202499673,
+          0.0015868673159275203,
+          0.004938178439624607
+        ],
+        "p95": [
+          1.9370367499504934e-05,
+          3.049883343919646e-05,
+          5.00683829159243e-05,
+          7.815351527824532e-05,
+          0.00017642760431044736,
+          0.0004939684004057199,
+          0.0016389663389418275,
+          0.005115587310865521
+        ],
+        "n_samples": 64
+      },
+      "randsub": {
+        "median": [
+          1.8590545550978277e-05,
+          3.304882920929231e-05,
+          6.657129051745869e-05,
+          0.0001514313989900984,
+          0.0004674458905356005,
+          0.0013901670463383198,
+          0.004619663581252098,
+          0.01433772873133421
+        ],
+        "p5": [
+          1.707933479337953e-05,
+          3.0484188573609573e-05,
+          6.308546726359054e-05,
+          0.00014392025404958987,
+          0.00044587607844732703,
+          0.0013263436092529445,
+          0.004423711751587689,
+          0.013602022686973214
+        ],
+        "p95": [
+          2.1343982825783315e-05,
+          3.6086171712668146e-05,
+          7.05442904290976e-05,
+          0.00015932777532725594,
+          0.0004923566069919616,
+          0.0014537505398038773,
+          0.004899163148365915,
+          0.01577019290998578
+        ],
+        "n_samples": 64
+      }
+    },
+    "0.01": {
+      "tail_dim_total": 461725,
+      "tail_dim_median_per_channel": 224,
+      "tail": {
+        "median": [
+          1.3055715044174576e-05,
+          2.3227758902066853e-05,
+          3.8130190660012886e-05,
+          5.4095315135782585e-05,
+          8.029863238334656e-05,
+          0.00016157591016963124,
+          0.0004950614529661834,
+          0.001507285633124411
+        ],
+        "p5": [
+          1.1627892854448874e-05,
+          2.086773529299535e-05,
+          3.540180041454733e-05,
+          5.119493162055733e-05,
+          7.731710102234501e-05,
+          0.00015899835125310346,
+          0.00048740255297161637,
+          0.0014860322291497142
+        ],
+        "p95": [
+          1.4822402363279252e-05,
+          2.575911421445198e-05,
+          4.0759168587101155e-05,
+          5.7585993090469856e-05,
+          8.320948218170088e-05,
+          0.00016443203130620532,
+          0.000502617729944177,
+          0.0015314272954128683
+        ],
+        "n_samples": 64
+      },
+      "randsub": {
+        "median": [
+          1.8499386897019576e-05,
+          3.374256812094245e-05,
+          6.779035174986348e-05,
+          0.0001529357541585341,
+          0.00047183444257825613,
+          0.0014030773309059441,
+          0.0046980781480669975,
+          0.014701749663800001
+        ],
+        "p5": [
+          1.6641309593978802e-05,
+          3.080005590163637e-05,
+          6.440839060815052e-05,
+          0.0001460350162233226,
+          0.0004471553271287121,
+          0.001322618138510734,
+          0.004440134763717652,
+          0.013839720701798796
+        ],
+        "p95": [
+          2.1734020810981745e-05,
+          3.647039284260245e-05,
+          7.18621457053814e-05,
+          0.0001628080310183577,
+          0.0005035043781390413,
+          0.0014930912700947374,
+          0.004999369592405855,
+          0.015681211650371552
+        ],
+        "n_samples": 64
+      }
+    }
+  },
+  "CAVEATS": "block2-downstream-dist: layer4.2.conv3 DOWNSTREAM (least-excited) family via per-channel VJP Gauss-Newton Grams (G_c = sum_{n,k} M_c^n[:,k] M_c^n[:,k]^T, M_c^n[:,k]=sum_hw a2[:,h,w] (d logit_k/d Y3)[c,h,w]) through the REAL downstream (bn3 -> +residual -> relu -> avgpool -> fc); the residual is the IDENTITY for blocks 1,2 and the FIXED projection shortcut downsample(X_in) for block 0 (perturbing conv3 leaves it fixed; it is NOT an extra identity term in the parameter derivative). Threshold-defined per-channel tail SUBSPACES (sigma<=tau*sigma_max of each channel's Gram, tau in TAUS), M sampled unit directions/channel (random per-channel amplitude), drift DISTRIBUTION (median/p5/p95) vs matched controls (randsub = dimension-matched per-channel random subspace; generic = full-operator random). The downstream family CONTAINS the feature-null by construction; it is an APPROXIMATE tail (exact downstream-null near-empty: exact_null_dim_total=12 near-zero Gram-eigenvalue CANDIDATES |sigma|<=1e-9 sigma_max out of 1048576, UNVALIDATED against the original operator -- bounds the near-degeneracy, does not certify exact directions). Construction reduces EXACTLY to the gated-mean closed form for block 2 (validated rel err 1.7e-7). Finite-radius drift from the REAL nonlinear local forward (cross-checked to the full net). conv1/conv2 downstream and multilayer branches: separate. Env: RESNET_M, RESNET_TAUS, RESNET_SEED."
+}

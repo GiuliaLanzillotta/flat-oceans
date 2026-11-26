@@ -1,0 +1,1830 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+ "run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_leaky/seed_2",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 0.9420358980747182,
+   "train_errors": 56148,
+   "test_acc": 0.0639,
+   "test_mse": 0.9427107231656453,
+   "param_norm": 27.820887483862457,
+   "path_length": 0.0,
+   "dead_units": [
+    0,
+    0,
+    0
+   ]
+  },
+  "early_fitting": {
+   "milestone_epoch": 1,
+   "checkpoint_epoch": 1,
+   "train_mse": 0.028236668980569837,
+   "train_errors": 5417,
+   "test_acc": 0.908,
+   "test_mse": 0.028707656080815228,
+   "param_norm": 26.804959835031372,
+   "path_length": 8.759948879023064,
+   "dead_units": [
+    0,
+    0,
+    0
+   ]
+  },
+  "high_accuracy": {
+   "milestone_epoch": 47,
+   "checkpoint_epoch": 47,
+   "train_mse": 0.00019432366742058222,
+   "train_errors": 58,
+   "test_acc": 0.9786,
+   "test_mse": 0.0037239891130938503,
+   "param_norm": 31.614827803460894,
+   "path_length": 405.70689423519025,
+   "dead_units": [
+    0,
+    1,
+    12
+   ]
+  },
+  "mse_interpolation": {
+   "milestone_epoch": 81,
+   "checkpoint_epoch": 81,
+   "train_mse": 8.065093332035569e-05,
+   "train_errors": 19,
+   "test_acc": 0.9782,
+   "test_mse": 0.003796845048661609,
+   "param_norm": 35.87944320816292,
+   "path_length": 707.051556311289,
+   "dead_units": [
+    0,
+    1,
+    15
+   ]
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 3.6203413938386544e-05,
+   "train_errors": 0,
+   "test_acc": 0.9777,
+   "test_mse": 0.003851473694345705,
+   "param_norm": 60.53800496984039,
+   "path_length": 4261.08985731959,
+   "dead_units": [
+    0,
+    3,
+    15
+   ]
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 5.552515604888722e-05,
+   "train_errors": 14,
+   "test_acc": 0.9776,
+   "test_mse": 0.0037046981960190766,
+   "param_norm": 38.18181681765624,
+   "path_length": 904.5997929900276,
+   "dead_units": [
+    0,
+    2,
+    24
+   ]
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 4.576282605554732e-05,
+   "train_errors": 1,
+   "test_acc": 0.978,
+   "test_mse": 0.0038285977081093693,
+   "param_norm": 49.24507257851438,
+   "path_length": 2197.4018098521606,
+   "dead_units": [
+    0,
+    4,
+    23
+   ]
+  }
+ },
+ "rank_tolerance": 1e-09,
+ "results": {
+  "high_accuracy": {
+   "epoch": 47,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0047.pt",
+    "checkpoint_sha256": "3a49a08232c2ccc40eb79c6adbea7e4b307698b3cae075a0ae5255346fbe3ef6",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+     "build_version": 2,
+     "rtol": 1e-09,
+     "valid_tol": 1e-09,
+     "samples": 10000,
+     "random_orders": 6,
+     "generator_seed": 1234
+    },
+    "digest": "250564e56c8b999a3e6b776d33c259ee86b3676873c47f9865ff47e399c1c5d9"
+   },
+   "constructions": {
+    "feature_null": {
+     "order": null,
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 0,
+      "V": 0
+     },
+     "total": 0,
+     "steps": null,
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 0.0,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 0.0,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "cb893289ff44c157b7b3e75d218e07ded7ec60eca289e2103c6887a35b4b61fd",
+     "seconds": 0.1170809268951416
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.815614629215228e-15,
+       "1.0": 8.677803288619664e-15,
+       "10.0": 8.492089037474938e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.9753392149777096e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.9175350736114345e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "8197d3b575087b7f8d5524c0e80bc55a24817e5df050a01b24b250020b150cac",
+     "seconds": 138.63005304336548
+    },
+    "bottom_up": {
+     "order": [
+      "W1",
+      "W2",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.261467456817627
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.2719593048095703
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 62.10109806060791
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000003,
+       "block": "V",
+       "mean_dim_U": 34.9772,
+       "seconds": 39.367555141448975
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.888244134404048e-15,
+       "1.0": 9.762312899779607e-15,
+       "10.0": 9.64033846923765e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.8306889286834695e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "cb3c4f55387e084e6b2e6b9659163df6cabde18503356570412418fe4e56b061",
+     "seconds": 480.160409450531
+    },
+    "top_down": {
+     "order": [
+      "V",
+      "W3",
+      "W2",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 53.22068284685069,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.17265582084655762
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 61.60270547866821
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 116.92214441299438
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 117.48615598678589
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.8565009160103785e-15,
+       "1.0": 9.53114392725578e-15,
+       "10.0": 9.371701512439217e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.8110616417557404e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "675c86dbbea157dcde2139227799b856efe5dd17f285aebdf984517d9cd8a304",
+     "seconds": 434.1888997554779
+    },
+    "random_0": {
+     "order": [
+      "W2",
+      "W3",
+      "V",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.1156983375549316
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 63.336175203323364
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000001,
+       "block": "V",
+       "mean_dim_U": 34.9772,
+       "seconds": 38.62480187416077
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 113.83068656921387
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.8667610325204703e-15,
+       "1.0": 9.539197066567425e-15,
+       "10.0": 9.35260847982614e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 3.2301560693151264e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "626e41c7e9d8f96c90ea8243da335737f5f8fe79481366c71fd0f0ee0aa99729",
+     "seconds": 355.32884454727173
+    },
+    "random_1": {
+     "order": [
+      "V",
+      "W1",
+      "W2",
+      "W3"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 53.22068284685069,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.012298822402954102
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.2141931056976318
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.23482346534729
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 62.144670248031616
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.863020005032197e-15,
+       "1.0": 9.176426237925237e-15,
+       "10.0": 9.01648846015756e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.5269144034442866e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "3fb6790098e06ae046352c9d3fdfac9747a8cc9dc548a7259fc5f0cb713e02fc",
+     "seconds": 201.57751965522766
+    },
+    "random_2": {
+     "order": [
+      "W2",
+      "W1",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.059544563293457
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.026322603225708
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 61.642207622528076
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000001,
+       "block": "V",
+       "mean_dim_U": 34.9772,
+       "seconds": 39.30069589614868
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.9055025005297444e-15,
+       "1.0": 9.831491318601928e-15,
+       "10.0": 9.67204064190744e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.678604131576991e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "d0927b2cab10088fb325d889ddd5ebce9582736014e3f2fdb0fbca8d59850348",
+     "seconds": 239.20107650756836
+    },
+    "random_3": {
+     "order": [
+      "W1",
+      "V",
+      "W3",
+      "W2"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.074171781539917
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 53.22068284685069,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.012204408645629883
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 61.63784337043762
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 114.46230340003967
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.871959595156423e-15,
+       "1.0": 9.807171331526355e-15,
+       "10.0": 9.646825295641587e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.5573605284114365e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "4e15b8fe59aaa29a41477181ebe739a89610e52fa25cb47ca1d0ab4b53c37b7a",
+     "seconds": 316.32725715637207
+    },
+    "random_4": {
+     "order": [
+      "W3",
+      "W2",
+      "V",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 61.97550344467163
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 114.25610780715942
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000007,
+       "block": "V",
+       "mean_dim_U": 34.9772,
+       "seconds": 39.477001905441284
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 114.03617000579834
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.81906340343461e-15,
+       "1.0": 8.65463256605032e-15,
+       "10.0": 8.507236013466645e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.8325970134252594e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "543372a2a78a4d9e45e0759e9a396edae709a9919f2e4dd27c317f64445901fb",
+     "seconds": 467.0091321468353
+    },
+    "random_5": {
+     "order": [
+      "W1",
+      "W3",
+      "V",
+      "W2"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 4158,
+      "V": 0
+     },
+     "total": 4158,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.0719661712646484
+      },
+      {
+       "dim": 4158,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.2301802903669625e-13,
+       "sigma_ref": 61.63571672925174,
+       "largest_rejected_over_ref": 1.995888675669655e-15,
+       "prepass": {
+        "dim": 4158,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.8763516524825817e-14,
+        "sigma_ref": 61.63571672925174,
+        "largest_rejected_over_ref": 3.044260295900936e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 64.40566277503967
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000007,
+       "block": "V",
+       "mean_dim_U": 34.9772,
+       "seconds": 40.638731241226196
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 12.0181,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 116.9528648853302
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.840489100963785e-15,
+       "1.0": 9.24488492647142e-15,
+       "10.0": 9.084735101196436e-14
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.941606859889315e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.450135388680766e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "6a930e93ed8e95af62a78894993310f0d0ea9d8f470718179b14e44f8a314c80",
+     "seconds": 365.21024203300476
+    }
+   },
+   "blocks": {
+    "W1": {
+     "p": 32896,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    },
+    "W2": {
+     "p": 16512,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    },
+    "W3": {
+     "p": 16512,
+     "dim_atomic_kernel": 4158,
+     "gap": 17181226195.907837
+    },
+    "V": {
+     "p": 1290,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    }
+   },
+   "sum_atomic": 4158,
+   "n_params": 67210
+  },
+  "mse_interpolation": {
+   "epoch": 81,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0081.pt",
+    "checkpoint_sha256": "dd6e5f9bd19b887333761a64fc34ff22777a728688a9a31423a8a675b6003729",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+     "build_version": 2,
+     "rtol": 1e-09,
+     "valid_tol": 1e-09,
+     "samples": 10000,
+     "random_orders": 6,
+     "generator_seed": 1234
+    },
+    "digest": "6f3040f5815f85e0f6fb51474b3f631ca5b22dd189e8417a66c50ff6519af6e8"
+   },
+   "constructions": {
+    "feature_null": {
+     "order": null,
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 0,
+      "V": 0
+     },
+     "total": 0,
+     "steps": null,
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 0.0,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 0.0,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "0c12f9a62ed8da177622af8f20f6c75079c7c5248c54f61541518a94f7b58371",
+     "seconds": 0.21573400497436523
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.796171159432539e-15,
+       "1.0": 1.499627457693543e-14,
+       "10.0": 1.485729576090851e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 3.358656871170442e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 3.5644061141970885e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "c847f4d053de49590e2e61436f33cdd886379642c42c01ffe24e0ac9e097bf61",
+     "seconds": 173.65936756134033
+    },
+    "bottom_up": {
+     "order": [
+      "W1",
+      "W2",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.2316696643829346
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.2461237907409668
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 111.36797189712524
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000006,
+       "block": "V",
+       "mean_dim_U": 51.9551,
+       "seconds": 43.17813205718994
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.827378642087705e-15,
+       "1.0": 1.5292324147674157e-14,
+       "10.0": 1.5099185707392655e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 4.754529585385767e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "05bd2e45130094242b2bf9377251aaa0aa0928fa0c0530aeeb2d331ff17a6352",
+     "seconds": 321.9154574871063
+    },
+    "top_down": {
+     "order": [
+      "V",
+      "W3",
+      "W2",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 40.72663474542465,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.013692855834960938
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 109.42034339904785
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 118.8989589214325
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 116.41107225418091
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.835792687128162e-15,
+       "1.0": 1.5294654508245946e-14,
+       "10.0": 1.511725155586981e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 3.978488658651671e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "31ff01c1b9e206da4f94ec7a86cb2bbd5228f724ef910e77f3296be9603f9efd",
+     "seconds": 510.77412390708923
+    },
+    "random_0": {
+     "order": [
+      "W2",
+      "W3",
+      "V",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 0.9941794872283936
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 111.50450229644775
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000003,
+       "block": "V",
+       "mean_dim_U": 51.9551,
+       "seconds": 42.33489441871643
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 116.71400427818298
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.888980095336601e-15,
+       "1.0": 1.5529229629889644e-14,
+       "10.0": 1.540352526221448e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 3.808896505519142e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "af3d802a8637974540ffbff0a6d59dff496806f4e19b35ca794467e5c0a54d4b",
+     "seconds": 435.66830468177795
+    },
+    "random_1": {
+     "order": [
+      "V",
+      "W1",
+      "W2",
+      "W3"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 40.72663474542465,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.013777732849121094
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 0.9719979763031006
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 0.9704322814941406
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 109.79970145225525
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.8573512272425603e-15,
+       "1.0": 1.488911569171429e-14,
+       "10.0": 1.4629251736758257e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 4.4742031537177e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "5a800620fd13d2601d81e3b09b226e35f582ba61a36facb6d0d450cc4233ee2b",
+     "seconds": 275.67535185813904
+    },
+    "random_2": {
+     "order": [
+      "W2",
+      "W1",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 1.0544688701629639
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.0171513557434082
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 109.83523201942444
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.0000000000001,
+       "block": "V",
+       "mean_dim_U": 51.9551,
+       "seconds": 41.15507936477661
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.8303031054912474e-15,
+       "1.0": 1.536154844715356e-14,
+       "10.0": 1.5220001775944082e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 4.1432025858853935e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "0ea22dfb2f0a6753bf85def0f024305cf99cb13bb96403851f60215192ff75d6",
+     "seconds": 316.6445655822754
+    },
+    "random_3": {
+     "order": [
+      "W1",
+      "V",
+      "W3",
+      "W2"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.0564661026000977
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 40.72663474542465,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 0.011376380920410156
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 109.90098094940186
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 115.60975503921509
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.8517112375708256e-15,
+       "1.0": 1.5863731273768322e-14,
+       "10.0": 1.5675260014291878e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 4.3013282085322366e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "6165619ffa1b501cc6e6c57b9f2dbeb63eda3ba5a2ea7b85b2707bd94614384a",
+     "seconds": 386.775013923645
+    },
+    "random_4": {
+     "order": [
+      "W3",
+      "W2",
+      "V",
+      "W1"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 110.76762652397156
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 119.75971341133118
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 99.99999999999999,
+       "block": "V",
+       "mean_dim_U": 51.9551,
+       "seconds": 44.254573345184326
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 120.51969885826111
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.8433019191084345e-15,
+       "1.0": 1.515422839749192e-14,
+       "10.0": 1.491262561583906e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 4.321353050581095e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "4e233e0f38d482b5a3505710b39e31ba05c8234a3aa382aa2e05105854e4fdf3",
+     "seconds": 564.5598666667938
+    },
+    "random_5": {
+     "order": [
+      "W1",
+      "W3",
+      "V",
+      "W2"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 0,
+      "W3": 6130,
+      "V": 0
+     },
+     "total": 6130,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 10.0,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 1.076397180557251
+      },
+      {
+       "dim": 6130,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 1.6145737449941565e-13,
+       "sigma_ref": 61.57977056033439,
+       "largest_rejected_over_ref": 2.6219223136147214e-15,
+       "prepass": {
+        "dim": 6130,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 3.3276007953816293e-14,
+        "sigma_ref": 61.57977056033439,
+        "largest_rejected_over_ref": 5.403723926059981e-16
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 109.5445306301117
+      },
+      {
+       "dim": 0,
+       "rank_within": 129,
+       "gap": null,
+       "sigma1": 100.00000000000013,
+       "block": "V",
+       "mean_dim_U": 51.9551,
+       "seconds": 43.26012325286865
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 13.1673,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 118.79903769493103
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 2.8033893391411412e-15,
+       "1.0": 1.4476193630879202e-14,
+       "10.0": 1.4270147987196202e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 2.9677268754117745e-16,
+       "V": 0.0
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 0.0,
+       "W3": 1.795672734165046e-15,
+       "V": 0.0
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "466b3c01b3dc5a65081b04b269dd76529b830381b8fae29dcf3ceb6d8ff601ad",
+     "seconds": 436.23579692840576
+    }
+   },
+   "blocks": {
+    "W1": {
+     "p": 32896,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    },
+    "W2": {
+     "p": 16512,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    },
+    "W3": {
+     "p": 16512,
+     "dim_atomic_kernel": 6130,
+     "gap": 1568700220.6202912
+    },
+    "V": {
+     "p": 1290,
+     "dim_atomic_kernel": 0,
+     "gap": null
+    }
+   },
+   "sum_atomic": 6130,
+   "n_params": 67210
+  }
+ }
+}

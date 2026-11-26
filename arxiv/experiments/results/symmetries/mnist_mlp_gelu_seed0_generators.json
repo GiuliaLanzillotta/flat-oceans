@@ -1,0 +1,278 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+ "stages": {
+  "initialization": {
+   "epoch": 0,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.05231133267848775,
+   "response_generators_median": 0.02396514377673473,
+   "response_random_unit_direction_median": 0.19680458016607816,
+   "finite_transformation_max_abs_change_X": 1.181874645979177,
+   "finite_transformation_max_abs_change_random": 0.9588975100255175,
+   "output_scale_X": 4.563537186336502,
+   "param_norm": 27.964149812916347,
+   "seconds": 22.2809956073761,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0000.pt",
+    "checkpoint_sha256": "26380c1f21ca3a0a2c693acb6107383d18b69133fe1a705a68638ad1ea93566e",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "ce41569bb403d92add52155827e9344ad83b9f6aa0890bafa2ef6bf74ae7a62b"
+   }
+  },
+  "early_fitting": {
+   "epoch": 1,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.05834243067565502,
+   "response_generators_median": 0.01227633699992247,
+   "response_random_unit_direction_median": 0.0715879056019802,
+   "finite_transformation_max_abs_change_X": 0.5757969182950413,
+   "finite_transformation_max_abs_change_random": 0.5362576075523842,
+   "output_scale_X": 1.6682355218296152,
+   "param_norm": 26.70348787778009,
+   "seconds": 21.227878093719482,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0001.pt",
+    "checkpoint_sha256": "5d3db682cd940a0add97f107a56b0374cc018c59c3b44bfe938ea3fd3c4b8f41",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "39284113b006bb3f9e6704dc70539bfd5954b3013978ca6990ded2b80b6c3fe8"
+   }
+  },
+  "high_accuracy": {
+   "epoch": 22,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.0631472621642402,
+   "response_generators_median": 0.006881158158450699,
+   "response_random_unit_direction_median": 0.06792591883981577,
+   "finite_transformation_max_abs_change_X": 1.253761621347179,
+   "finite_transformation_max_abs_change_random": 0.9888933061474854,
+   "output_scale_X": 1.2559763373599304,
+   "param_norm": 28.664826540037595,
+   "seconds": 21.03450846672058,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0022.pt",
+    "checkpoint_sha256": "75211e4c3d63af4b58a4fe04809eadd0401e82888559be5c8377001fd94afd70",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "603683b2a5bdd036ff1fcd0bd58e6760381c4a33c3bb2fca9a60baaec32f67fc"
+   }
+  },
+  "mse_interpolation": {
+   "epoch": 42,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.09698896216396186,
+   "response_generators_median": 0.003283623925242092,
+   "response_random_unit_direction_median": 0.07906198327933836,
+   "finite_transformation_max_abs_change_X": 0.9600569167745118,
+   "finite_transformation_max_abs_change_random": 0.8466132297860394,
+   "output_scale_X": 1.3221766437470277,
+   "param_norm": 31.63883315997797,
+   "seconds": 22.133513689041138,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0042.pt",
+    "checkpoint_sha256": "cf6717b003f40cb207a99427a116330973027f346cdd1f70f4c96485b9bcffe1",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "21dfa1598fc1ea3e214859824b3e8269d1a517b0ab25b7cf19f66f15c70a20aa"
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.026494814390599017,
+   "response_generators_median": 0.0001055940168622205,
+   "response_random_unit_direction_median": 0.20916272609989225,
+   "finite_transformation_max_abs_change_X": 0.5630098713834149,
+   "finite_transformation_max_abs_change_random": 0.790488368049522,
+   "output_scale_X": 1.213370874028847,
+   "param_norm": 74.25026218919962,
+   "seconds": 22.36018204689026,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "053bc5db2405ff91af30a357a2f54e2c637d49dd0287ef6aeb4d3418b974c74d",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "850c2332e1118fc73b2b08f3440eda274d7f53a57aeaf1b20b0282f2a410d0f8"
+   }
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.14705800616459488,
+   "response_generators_median": 0.00030726680191491993,
+   "response_random_unit_direction_median": 0.11912948928124172,
+   "finite_transformation_max_abs_change_X": 0.8802927058928001,
+   "finite_transformation_max_abs_change_random": 0.7926401059243349,
+   "output_scale_X": 1.2947823250233668,
+   "param_norm": 40.47948945745865,
+   "seconds": 21.74806261062622,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0100.pt",
+    "checkpoint_sha256": "9f869cc3f244df7054de932153449e49270ccc4e2fa276e4e2faced6e34f297e",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "cb4e10791d313efc80c46627e41f1d2e6739f75ab5e1ed4f06ae876ded2491bf"
+   }
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "activation": "gelu",
+   "positively_homogeneous": false,
+   "widths": [
+    128,
+    128,
+    128
+   ],
+   "permutations_log10_count": 646.758480280626,
+   "n_generators": 384,
+   "generator_rank": 384,
+   "generator_gap": null,
+   "stabilizers_zero_generator": [],
+   "units_with_zero_incoming_block": [],
+   "units_with_zero_outgoing_block": [],
+   "response_generators_max_over_norm": 0.06627024857466948,
+   "response_generators_median": 7.436202599798617e-05,
+   "response_random_unit_direction_median": 0.19189449079737037,
+   "finite_transformation_max_abs_change_X": 0.7055427545192915,
+   "finite_transformation_max_abs_change_random": 0.9020769161483295,
+   "output_scale_X": 1.2112322474468384,
+   "param_norm": 56.239026808846305,
+   "seconds": 21.854816198349,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0250.pt",
+    "checkpoint_sha256": "2b4d26b07d9fc3670efcebc29104a67b72e5d35ca3fef938efa261fa8e5b66e3",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 items 3-4 (2026-09-22); identifier symmetries-v1",
+     "rtol": 1e-09
+    },
+    "digest": "d57bf8cc5a472d306030689c5d4969ea22b60eb1d0bbac4e9a34c0f6f405e1d8"
+   }
+  }
+ }
+}

@@ -1,0 +1,243 @@
+{
+  "n_images": 64,
+  "device": "cuda",
+  "dtype": "float64",
+  "n_gate_units_total": 33718272,
+  "frozen_base_vs_original_fullnet": {
+    "max_abs": 5.329070518200751e-15,
+    "max_rel": 2.732643387978626e-16,
+    "rms_rel_X": 2.2426397011175797e-16,
+    "note": "original torchvision fp64 forward vs frozen forward (shared bn_affine); differs only by BN-affine rounding (a*z+off vs fused batch_norm)"
+  },
+  "frozen_base_vs_local_actual": {
+    "max_abs": 0.0,
+    "note": "same code path with real ReLU vs fixed base masks at theta_0; expected exactly 0"
+  },
+  "gating_consistency": {
+    "layer4.1.conv2.weight": [
+      {
+        "r": 1e-06,
+        "flips_total": 0,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "actual_drift_X": 5.5086948675597554e-08,
+        "frozen_vs_actual_X": 0.0,
+        "frozen_vs_actual_rel_drift": 0.0
+      },
+      {
+        "r": 0.0001,
+        "flips_total": 0,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "actual_drift_X": 5.508694852317071e-06,
+        "frozen_vs_actual_X": 0.0,
+        "frozen_vs_actual_rel_drift": 0.0
+      },
+      {
+        "r": 0.01,
+        "flips_total": 239,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          48,
+          86,
+          25,
+          28,
+          52
+        ],
+        "actual_drift_X": 0.0005502732009743013,
+        "frozen_vs_actual_X": 5.943710373912652e-06,
+        "frozen_vs_actual_rel_drift": 0.010801380774838486
+      }
+    ],
+    "layer4.2.conv3.weight": [
+      {
+        "r": 1e-06,
+        "flips_total": 0,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "actual_drift_X": 1.1038059838955175e-07,
+        "frozen_vs_actual_X": 0.0,
+        "frozen_vs_actual_rel_drift": 0.0
+      },
+      {
+        "r": 0.0001,
+        "flips_total": 3,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        "actual_drift_X": 1.1038048382820741e-05,
+        "frozen_vs_actual_X": 2.768106395255284e-09,
+        "frozen_vs_actual_rel_drift": 0.00025077860680185773
+      },
+      {
+        "r": 0.01,
+        "flips_total": 160,
+        "flips_per_gate_layer": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          160
+        ],
+        "actual_drift_X": 0.0011036024524155896,
+        "frozen_vs_actual_X": 5.474759498820689e-06,
+        "frozen_vs_actual_rel_drift": 0.00496080765934999
+      }
+    ]
+  },
+  "single_layer_affinity": {
+    "layer4.0.conv1.weight": {
+      "max_abs": 2.1316282072803006e-14,
+      "rel": 1.0917944260036223e-15,
+      "scale": 19.524080326026763
+    },
+    "layer4.1.conv2.weight": {
+      "max_abs": 1.4210854715202004e-14,
+      "rel": 7.291726901612043e-16,
+      "scale": 19.489011186170853
+    },
+    "layer4.2.conv3.weight": {
+      "max_abs": 1.0658141036401503e-14,
+      "rel": 5.46606793785645e-16,
+      "scale": 19.49873502776322
+    },
+    "layer4.0.downsample.0.weight": {
+      "max_abs": 1.4210854715202004e-14,
+      "rel": 7.277416993373717e-16,
+      "scale": 19.527333294411147
+    },
+    "fc.weight": {
+      "max_abs": 1.4210854715202004e-14,
+      "rel": 7.335769254140824e-16,
+      "scale": 19.37200342987942
+    }
+  },
+  "multi_layer_polynomial": {
+    "serial_deg3": {
+      "names": [
+        "layer4.0.conv2.weight",
+        "layer4.1.conv3.weight",
+        "fc.weight"
+      ],
+      "bound_degree": 3,
+      "nodes_h": 0.5,
+      "fd_max_abs_by_order": [
+        0.043624541053617794,
+        0.00028935872593516265,
+        1.980516118216258e-06,
+        5.1514348342607263e-14
+      ],
+      "rel_Delta_top": 2.6415552750460055e-15,
+      "rel_Delta_deg": 1.0155700242180348e-07,
+      "scale": 19.501522012144942
+    },
+    "parallel_deg1": {
+      "names": [
+        "layer4.0.conv3.weight",
+        "layer4.0.downsample.0.weight"
+      ],
+      "bound_degree": 1,
+      "nodes_h": 0.5,
+      "fd_max_abs_by_order": [
+        0.056871443652479314,
+        1.9539925233402755e-14
+      ],
+      "rel_Delta_top": 1.0010540079396537e-15,
+      "rel_Delta_deg": 0.0029135928579863022,
+      "scale": 19.519351681753292,
+      "note": "degree bound #layers=2, measured affine (Delta^2 at machine floor): parallel residual branches add"
+    },
+    "all_layers_deg10": {
+      "names": [
+        "layer4.0.conv1.weight",
+        "layer4.0.conv2.weight",
+        "layer4.0.conv3.weight",
+        "layer4.1.conv1.weight",
+        "layer4.1.conv2.weight",
+        "layer4.1.conv3.weight",
+        "layer4.2.conv1.weight",
+        "layer4.2.conv2.weight",
+        "layer4.2.conv3.weight",
+        "layer4.0.downsample.0.weight",
+        "fc.weight",
+        "fc.bias"
+      ],
+      "bound_degree": 10,
+      "nodes_h": 0.3,
+      "fd_max_abs_by_order": [
+        0.02853594827333339,
+        0.00018281839387768173,
+        6.368369867004731e-07,
+        7.154504544359952e-09,
+        6.110578709694892e-11,
+        8.881784197001252e-13,
+        6.483702463810914e-13,
+        1.1759482276829658e-12,
+        2.3145929617385264e-12,
+        4.240163775648398e-12,
+        8.419931418757187e-12
+      ],
+      "rel_Delta_top": 4.3175765530062297e-13,
+      "rel_Delta_deg": 2.1742732557016603e-13,
+      "scale": 19.501522012144942,
+      "note": "degree bound holds (Delta^11 at floor); at these amplitudes the degree-10 coefficient (product of all ten small per-layer components) is itself numerically at the floor, so only the BOUND is informative for this case -- degree resolution is demonstrated by serial_deg3"
+    }
+  },
+  "serial_deg3_nontriviality": {
+    "Delta2_over_floor": 5617051078.870689,
+    "Delta3_over_floor": 38445912.29310345
+  },
+  "PASS": true,
+  "meta": {
+    "script": "scripts/analysis/resnet_frozen_forward.py",
+    "ckpt": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/runs/ftresnet_resisc45/ckpt_ft_resnet_lr1e-4_confirm_s0.pt",
+    "val_acc": 0.9573333333333334,
+    "test_acc": 0.9555555555555556,
+    "date": "2026-11-17",
+    "torch": "2.5.1+cu124",
+    "elapsed_s": 15.6,
+    "convention": "frozen_lib.py frozen-gate convention (fixed base masks 1{u>0}, edited affine maps); eval-BN as fixed per-channel affine via the shared bn_affine helper; BN gamma/beta and running stats held fixed; perturbable set = layer4 conv weights + projection-shortcut conv + fc (W, b); earlier layers cached at theta_0 (layer3 output as fixed input)"
+  }
+}

@@ -1,0 +1,65 @@
+{
+ "passed": true,
+ "strict_pass": false,
+ "failures": [],
+ "qualified_flags": [
+  "alpha=0.3/3: union rank gap 8.1 < 10 (UNRESOLVED; ladder range [14682, 14779], band 5)",
+  "alpha=0.5/3: union rank gap 1.8 < 10 (UNRESOLVED; ladder range [14919, 15039], band 9)",
+  "alpha=0.9/3: union rank gap 3.3 < 10 (UNRESOLVED; ladder range [15055, 15219], band 10)"
+ ],
+ "alpha0_reproduction": {
+  "2": {
+   "dim_K_X": [
+    10543,
+    10543
+   ],
+   "dim_K_union": [
+    10155,
+    10155
+   ],
+   "exposed": [
+    388,
+    388
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "3": {
+   "dim_K_X": [
+    15331,
+    15331
+   ],
+   "dim_K_union": [
+    15003,
+    15003
+   ],
+   "exposed": [
+    328,
+    328
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "readout": {
+   "dim_K_X": [
+    880,
+    880
+   ],
+   "dim_K_union": [
+    800,
+    800
+   ],
+   "exposed": [
+    80,
+    80
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  }
+ },
+ "sources": [
+  "results/newinput_interp/mnist_mlp_seed1_interp.json"
+ ],
+ "label": "computed + automatically checked",
+ "policy": "hard failures: alpha=0 non-reproduction, union > X, negative exposure, missing identity or missing qualification; gap < 10 cells are QUALIFIED flags with ladder ranges (recorded, thresholds unchanged; precedent results/newinput/seed0_gate.json)"
+}

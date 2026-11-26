@@ -1,0 +1,154 @@
+{
+ "dataset": "mnist",
+ "model": "cnn",
+ "seed": 1,
+ "init_seed": 1001,
+ "order_seed": 110100,
+ "d_out": 10,
+ "biases": true,
+ "n_params": 45114,
+ "loss": "mse_onehot_mean",
+ "optimizer": "adam",
+ "lr": 0.001,
+ "batch_size": 256,
+ "weight_decay": 0.0,
+ "schedule": "none",
+ "augment": false,
+ "epochs": 500,
+ "dtype": "float64",
+ "tf32": false,
+ "deterministic_kernels": true,
+ "analysis_seed": 12345,
+ "analysis_per_class": 1000,
+ "checkpoint_schedule": [
+  0,
+  1,
+  2,
+  5,
+  10,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90,
+  100,
+  110,
+  120,
+  130,
+  140,
+  150,
+  160,
+  170,
+  180,
+  190,
+  200,
+  210,
+  220,
+  230,
+  240,
+  250,
+  260,
+  270,
+  280,
+  290,
+  300,
+  310,
+  320,
+  330,
+  340,
+  350,
+  360,
+  370,
+  380,
+  390,
+  400,
+  410,
+  420,
+  430,
+  440,
+  450,
+  460,
+  470,
+  480,
+  490,
+  500
+ ],
+ "recovery_every": 50,
+ "interpolation_mse": 0.0001,
+ "device": "cuda",
+ "torch": "2.5.1+cu124",
+ "numpy": "1.26.4",
+ "python": "3.10.12",
+ "cuda": "12.4",
+ "gpu": "NVIDIA RTX A6000",
+ "high_accuracy_error": 0.001,
+ "spawn": {
+  "parent_run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_cnn/seed_1",
+  "parent_config_seed": 1,
+  "epoch": 50,
+  "parent_order_seed": 2001,
+  "adam_policy": "inherited (Adam moments and step counters from the parent's recovery file recovery_epoch_0050.pt, sha256 e99993dbb870; weights bitwise equal to the checkpoint)",
+  "adam_policy_kind": "inherited",
+  "state_file": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/lmc/spawn_states/mnist_cnn_seed1_epoch0050.pt",
+  "state_sha256": "607b18be4d731cb25792fc1396641f132d4c508e7f205d8b649cc0dd932106c4",
+  "verification": {
+   "epoch": 50,
+   "policy": "recovery",
+   "tolerance": 1e-12,
+   "recovery_file": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_cnn/seed_1/checkpoints/recovery_epoch_0050.pt",
+   "recovery_sha256": "e99993dbb87092f4c956c861ac3c0644dccfd4c45bcdc4d3ab20ed5ce57f2d04",
+   "weights_vs_checkpoint": {
+    "max_abs": 0.0,
+    "n_tensors": 12,
+    "n_bitwise_equal": 12
+   },
+   "steps": [
+    11750
+   ],
+   "steps_per_epoch": 235,
+   "moments": "exp_avg, exp_avg_sq and step of every parameter from the recovery file",
+   "passed": true,
+   "usable": true
+  }
+ },
+ "arch": [
+  [
+   "conv",
+   1,
+   16
+  ],
+  [
+   "conv",
+   16,
+   16
+  ],
+  [
+   "pool"
+  ],
+  [
+   "conv",
+   16,
+   32
+  ],
+  [
+   "conv",
+   32,
+   32
+  ],
+  [
+   "pool"
+  ],
+  [
+   "conv",
+   32,
+   64
+  ],
+  [
+   "pool"
+  ]
+ ],
+ "input": "raw 1x28x28 zero-padded to 1x32x32, per-channel standardized"
+}

@@ -1,0 +1,36 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+/build/
+/dist/
+/data/
+# Large regenerable measurements; scalar reference records remain versioned.
+/results/**/*.pt
+/results/**/*.npz
+/results/**/*.npy
+/results/**/checkpoints/
+/results/logs/
+/results/pids/
+/results/transition_v3/*.json
+!results/transition_v3/*_background_split.json
+/results/transition_v2/*.json
+/results/transition_bn/*.json
+# LaTeX intermediates; the published bibliography is intentionally retained.
+*.aux
+*.log
+*.out
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.apxleft
+*.apxright
+
+# Raw per-step/per-probe JSON is as regenerable as the tensor arrays above.
+/results/tier1_models/**/history.json
+/results/branches/*rays*.json
+/results/runs/ftvit_resisc45/phase0f*.json
+/results/runs/ftvit_resisc45/common_family*.json
+/results/runs/ftvit_resisc45/head_multilayer*.json

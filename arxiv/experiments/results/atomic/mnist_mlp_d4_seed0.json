@@ -1,0 +1,3262 @@
+{
+ "protocol": "memos/2026-09-10_protocol_stages_atomic_transition.md",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 1.2698575864574044,
+   "train_errors": 54302,
+   "test_acc": 0.0958,
+   "test_mse": 1.2733911923074381,
+   "param_norm": 32.222313170660115,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": 1,
+   "checkpoint_epoch": 1,
+   "train_mse": 0.0264686422047344,
+   "train_errors": 5630,
+   "test_acc": 0.9063,
+   "test_mse": 0.02656906462741485,
+   "param_norm": 31.626009932621727,
+   "same_as": []
+  },
+  "high_accuracy": {
+   "milestone_epoch": 26,
+   "checkpoint_epoch": 26,
+   "train_mse": 0.0002421176791662282,
+   "train_errors": 52,
+   "test_acc": 0.975,
+   "test_mse": 0.004089293089407531,
+   "param_norm": 34.23447973061632,
+   "same_as": []
+  },
+  "mse_interpolation": {
+   "milestone_epoch": 55,
+   "checkpoint_epoch": 55,
+   "train_mse": 8.19695759200373e-05,
+   "train_errors": 14,
+   "test_acc": 0.9751,
+   "test_mse": 0.004286909072612755,
+   "param_norm": 39.998620634196975,
+   "same_as": []
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 8.585011595296604e-06,
+   "train_errors": 2,
+   "test_acc": 0.9763,
+   "test_mse": 0.004299797472289808,
+   "param_norm": 80.83118409739095,
+   "same_as": []
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.00020700247697713167,
+   "train_errors": 51,
+   "test_acc": 0.9737,
+   "test_mse": 0.004407838712496311,
+   "param_norm": 46.47970334106413,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 1.0031214507005926e-05,
+   "train_errors": 2,
+   "test_acc": 0.9773,
+   "test_mse": 0.004141201256527716,
+   "param_norm": 62.646627251592584,
+   "same_as": []
+  }
+ },
+ "results": {
+  "initialization": {
+   "epoch": 0,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 5537,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 22060,
+      "0.01": 2,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 641269,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2670.049416780472,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16512,
+      "1e-09": 16512,
+      "1e-12": 16512
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 3147,
+      "0.001": 8,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 10367,
+      "0.01": 121,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 717889,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 384.93506693840027,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16486,
+      "1e-09": 16486,
+      "1e-12": 16486
+     },
+     "gap_J": {
+      "1e-06": 110307407238.90968,
+      "1e-09": 110307407238.90968,
+      "1e-12": 110307407238.90968
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 8906,
+      "0.001": 276,
+      "0.0001": 31,
+      "1e-05": 27,
+      "1e-06": 26,
+      "1e-07": 26,
+      "1e-08": 26,
+      "1e-09": 26,
+      "1e-10": 26,
+      "1e-11": 26,
+      "1e-12": 26
+     },
+     "k_abs": {
+      "0.1": 12390,
+      "0.01": 694,
+      "0.001": 41,
+      "0.0001": 27,
+      "1e-05": 26,
+      "1e-06": 26,
+      "1e-07": 26,
+      "1e-08": 26,
+      "1e-09": 26,
+      "1e-10": 26
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 639761,
+     "components@1e-06": {
+      "dim_K": 26,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 26
+     },
+     "components@1e-09": {
+      "dim_K": 26,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 26
+     },
+     "components@1e-12": {
+      "dim_K": 26,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 26
+     },
+     "seconds": 384.08743023872375,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16302,
+      "1e-09": 16302,
+      "1e-12": 16302
+     },
+     "gap_J": {
+      "1e-06": 82526893466.9626,
+      "1e-09": 82526893466.9626,
+      "1e-12": 82526893466.9626
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 12705,
+      "0.001": 1427,
+      "0.0001": 239,
+      "1e-05": 214,
+      "1e-06": 210,
+      "1e-07": 210,
+      "1e-08": 210,
+      "1e-09": 210,
+      "1e-10": 210,
+      "1e-11": 210,
+      "1e-12": 210
+     },
+     "k_abs": {
+      "0.1": 14065,
+      "0.01": 2326,
+      "0.001": 258,
+      "0.0001": 215,
+      "1e-05": 210,
+      "1e-06": 210,
+      "1e-07": 210,
+      "1e-08": 210,
+      "1e-09": 210,
+      "1e-10": 210
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 601348,
+     "components@1e-06": {
+      "dim_K": 210,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 210
+     },
+     "components@1e-09": {
+      "dim_K": 210,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 210
+     },
+     "components@1e-12": {
+      "dim_K": 210,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 210
+     },
+     "seconds": 384.4621641635895,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 50,
+      "0.001": 10,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 100,
+      "0.01": 10,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 601348,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "early_fitting": {
+   "epoch": 1,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 5841,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 30205,
+      "0.01": 6656,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 646817,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2676.0026440620422,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16281,
+      "1e-09": 16281,
+      "1e-12": 16281
+     },
+     "gap_J": {
+      "1e-06": 468798742706.4553,
+      "1e-09": 468798742706.4553,
+      "1e-12": 468798742706.4553
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 3109,
+      "0.001": 271,
+      "0.0001": 231,
+      "1e-05": 231,
+      "1e-06": 231,
+      "1e-07": 231,
+      "1e-08": 231,
+      "1e-09": 231,
+      "1e-10": 231,
+      "1e-11": 231,
+      "1e-12": 231
+     },
+     "k_abs": {
+      "0.1": 15460,
+      "0.01": 2622,
+      "0.001": 263,
+      "0.0001": 231,
+      "1e-05": 231,
+      "1e-06": 231,
+      "1e-07": 231,
+      "1e-08": 231,
+      "1e-09": 231,
+      "1e-10": 231
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 917826,
+     "components@1e-06": {
+      "dim_K": 231,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 231
+     },
+     "components@1e-09": {
+      "dim_K": 231,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 231
+     },
+     "components@1e-12": {
+      "dim_K": 231,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 231
+     },
+     "seconds": 383.70961475372314,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16042,
+      "1e-09": 16042,
+      "1e-12": 16042
+     },
+     "gap_J": {
+      "1e-06": 5242387197.453096,
+      "1e-09": 5242387197.453096,
+      "1e-12": 5242387197.453096
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 7335,
+      "0.001": 1026,
+      "0.0001": 532,
+      "1e-05": 479,
+      "1e-06": 470,
+      "1e-07": 470,
+      "1e-08": 470,
+      "1e-09": 470,
+      "1e-10": 470,
+      "1e-11": 470,
+      "1e-12": 470
+     },
+     "k_abs": {
+      "0.1": 15675,
+      "0.01": 5537,
+      "0.001": 844,
+      "0.0001": 521,
+      "1e-05": 475,
+      "1e-06": 470,
+      "1e-07": 470,
+      "1e-08": 470,
+      "1e-09": 470,
+      "1e-10": 470
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 908790,
+     "components@1e-06": {
+      "dim_K": 470,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 470
+     },
+     "components@1e-09": {
+      "dim_K": 470,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 470
+     },
+     "components@1e-12": {
+      "dim_K": 470,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 470
+     },
+     "seconds": 385.08346247673035,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 16181,
+      "1e-09": 16184,
+      "1e-12": 16184
+     },
+     "gap_J": {
+      "1e-06": 1.5047994189931728,
+      "1e-09": 290714893.6348191,
+      "1e-12": 290714893.6348191
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 11457,
+      "0.001": 1796,
+      "0.0001": 493,
+      "1e-05": 348,
+      "1e-06": 331,
+      "1e-07": 329,
+      "1e-08": 328,
+      "1e-09": 328,
+      "1e-10": 328,
+      "1e-11": 328,
+      "1e-12": 328
+     },
+     "k_abs": {
+      "0.1": 15841,
+      "0.01": 7300,
+      "0.001": 1039,
+      "0.0001": 415,
+      "1e-05": 340,
+      "1e-06": 330,
+      "1e-07": 328,
+      "1e-08": 328,
+      "1e-09": 328,
+      "1e-10": 328
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 839369,
+     "components@1e-06": {
+      "dim_K": 331,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 331
+     },
+     "components@1e-09": {
+      "dim_K": 328,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 328
+     },
+     "components@1e-12": {
+      "dim_K": 328,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 328
+     },
+     "seconds": 385.3564329147339,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 110,
+      "0.001": 10,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 570,
+      "0.01": 20,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 839369,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "high_accuracy": {
+   "epoch": 26,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 24888,
+      "0.001": 4012,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 32823,
+      "0.01": 30032,
+      "0.001": 14333,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 658769,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2705.651288509369,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 127,
+      "1e-09": 127,
+      "1e-12": 127
+     },
+     "rank_J": {
+      "1e-06": 15557,
+      "1e-09": 15557,
+      "1e-12": 15557
+     },
+     "gap_J": {
+      "1e-06": 16113378030.985882,
+      "1e-09": 16113378030.985882,
+      "1e-12": 16113378030.985882
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 161648552704447.4,
+      "1e-09": 161648552704447.4,
+      "1e-12": 161648552704447.4
+     },
+     "k_rel": {
+      "0.01": 13387,
+      "0.001": 2994,
+      "0.0001": 1028,
+      "1e-05": 956,
+      "1e-06": 955,
+      "1e-07": 955,
+      "1e-08": 955,
+      "1e-09": 955,
+      "1e-10": 955,
+      "1e-11": 955,
+      "1e-12": 955
+     },
+     "k_abs": {
+      "0.1": 16468,
+      "0.01": 14867,
+      "0.001": 5229,
+      "0.0001": 1152,
+      "1e-05": 961,
+      "1e-06": 955,
+      "1e-07": 955,
+      "1e-08": 955,
+      "1e-09": 955,
+      "1e-10": 955
+     },
+     "activation": "relu",
+     "dead_units": 1,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 1,
+     "units_derivative_below_1e-9": 1,
+     "exact_zero_derivatives": 1063040,
+     "components@1e-06": {
+      "dim_K": 955,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 826
+     },
+     "components@1e-09": {
+      "dim_K": 955,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 826
+     },
+     "components@1e-12": {
+      "dim_K": 955,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 826
+     },
+     "seconds": 405.6019401550293,
+     "dead_share": {
+      "downstream_null_from_dead": 129,
+      "feature_null_next_from_dead": 128
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "r_d": {
+      "1e-06": 124,
+      "1e-09": 124,
+      "1e-12": 124
+     },
+     "rank_J": {
+      "1e-06": 11196,
+      "1e-09": 11204,
+      "1e-12": 11204
+     },
+     "gap_J": {
+      "1e-06": 1.178543859186573,
+      "1e-09": 75044456.09402941,
+      "1e-12": 75044456.09402941
+     },
+     "gap_h": {
+      "1e-06": 5787500925071.169,
+      "1e-09": 5787500925071.169,
+      "1e-12": 5787500925071.169
+     },
+     "gap_d": {
+      "1e-06": 311785433323155.1,
+      "1e-09": 311785433323155.1,
+      "1e-12": 311785433323155.1
+     },
+     "k_rel": {
+      "0.01": 15475,
+      "0.001": 10373,
+      "0.0001": 6133,
+      "1e-05": 5398,
+      "1e-06": 5316,
+      "1e-07": 5309,
+      "1e-08": 5308,
+      "1e-09": 5308,
+      "1e-10": 5308,
+      "1e-11": 5308,
+      "1e-12": 5308
+     },
+     "k_abs": {
+      "0.1": 16401,
+      "0.01": 14702,
+      "0.001": 8921,
+      "0.0001": 5784,
+      "1e-05": 5371,
+      "1e-06": 5314,
+      "1e-07": 5309,
+      "1e-08": 5308,
+      "1e-09": 5308,
+      "1e-10": 5308
+     },
+     "activation": "relu",
+     "dead_units": 4,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 4,
+     "units_derivative_below_1e-9": 4,
+     "exact_zero_derivatives": 1070258,
+     "components@1e-06": {
+      "dim_K": 5316,
+      "feature_null": 128,
+      "downstream_null": 512,
+      "deficit": 4676
+     },
+     "components@1e-09": {
+      "dim_K": 5308,
+      "feature_null": 128,
+      "downstream_null": 512,
+      "deficit": 4668
+     },
+     "components@1e-12": {
+      "dim_K": 5308,
+      "feature_null": 128,
+      "downstream_null": 512,
+      "deficit": 4668
+     },
+     "seconds": 390.3912284374237,
+     "dead_share": {
+      "downstream_null_from_dead": 512,
+      "feature_null_next_from_dead": 512
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 125,
+      "1e-09": 125,
+      "1e-12": 125
+     },
+     "r_d": {
+      "1e-06": 120,
+      "1e-09": 120,
+      "1e-12": 120
+     },
+     "rank_J": {
+      "1e-06": 10327,
+      "1e-09": 10407,
+      "1e-12": 10407
+     },
+     "gap_J": {
+      "1e-06": 1.0922824044630322,
+      "1e-09": 12641576.430176422,
+      "1e-12": 12641576.430176422
+     },
+     "gap_h": {
+      "1e-06": 21822685222241.082,
+      "1e-09": 21822685222241.082,
+      "1e-12": 21822685222241.082
+     },
+     "gap_d": {
+      "1e-06": 48823427754853.96,
+      "1e-09": 48823427754853.96,
+      "1e-12": 48823427754853.96
+     },
+     "k_rel": {
+      "0.01": 15319,
+      "0.001": 11516,
+      "0.0001": 7976,
+      "1e-05": 6557,
+      "1e-06": 6185,
+      "1e-07": 6122,
+      "1e-08": 6106,
+      "1e-09": 6105,
+      "1e-10": 6105,
+      "1e-11": 6105,
+      "1e-12": 6105
+     },
+     "k_abs": {
+      "0.1": 16361,
+      "0.01": 14830,
+      "0.001": 10650,
+      "0.0001": 7565,
+      "1e-05": 6433,
+      "1e-06": 6165,
+      "1e-07": 6115,
+      "1e-08": 6105,
+      "1e-09": 6105,
+      "1e-10": 6105
+     },
+     "activation": "relu",
+     "dead_units": 8,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 8,
+     "units_derivative_below_1e-9": 8,
+     "exact_zero_derivatives": 957210,
+     "components@1e-06": {
+      "dim_K": 6185,
+      "feature_null": 512,
+      "downstream_null": 1000,
+      "deficit": 4673
+     },
+     "components@1e-09": {
+      "dim_K": 6105,
+      "feature_null": 512,
+      "downstream_null": 1000,
+      "deficit": 4593
+     },
+     "components@1e-12": {
+      "dim_K": 6105,
+      "feature_null": 512,
+      "downstream_null": 1000,
+      "deficit": 4593
+     },
+     "seconds": 390.0141272544861,
+     "dead_share": {
+      "downstream_null_from_dead": 1000,
+      "feature_null_next_from_dead": 80
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 121,
+      "1e-09": 121,
+      "1e-12": 121
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1210,
+      "1e-09": 1210,
+      "1e-12": 1210
+     },
+     "gap_J": {
+      "1e-06": 247553393390.61487,
+      "1e-09": 247553393390.61487,
+      "1e-12": 247553393390.61487
+     },
+     "gap_h": {
+      "1e-06": 906412762554.7096,
+      "1e-09": 906412762554.7096,
+      "1e-12": 906412762554.7096
+     },
+     "k_rel": {
+      "0.01": 590,
+      "0.001": 220,
+      "0.0001": 90,
+      "1e-05": 80,
+      "1e-06": 80,
+      "1e-07": 80,
+      "1e-08": 80,
+      "1e-09": 80,
+      "1e-10": 80,
+      "1e-11": 80,
+      "1e-12": 80
+     },
+     "k_abs": {
+      "0.1": 1010,
+      "0.01": 290,
+      "0.001": 130,
+      "0.0001": 80,
+      "1e-05": 80,
+      "1e-06": 80,
+      "1e-07": 80,
+      "1e-08": 80,
+      "1e-09": 80,
+      "1e-10": 80
+     },
+     "activation": "relu",
+     "dead_units": 8,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 8,
+     "units_derivative_below_1e-9": 8,
+     "exact_zero_derivatives": 957210,
+     "components@1e-06": {
+      "dim_K": 80,
+      "feature_null": 80,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 80,
+      "feature_null": 80,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 80,
+      "feature_null": 80,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "mse_interpolation": {
+   "epoch": 55,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 31658,
+      "0.001": 22391,
+      "0.0001": 1398,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 32867,
+      "0.01": 32402,
+      "0.001": 26809,
+      "0.0001": 7713,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 683391,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2676.267114162445,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 127,
+      "1e-09": 127,
+      "1e-12": 127
+     },
+     "rank_J": {
+      "1e-06": 15207,
+      "1e-09": 15207,
+      "1e-12": 15207
+     },
+     "gap_J": {
+      "1e-06": 10148569238.411543,
+      "1e-09": 10148569238.411543,
+      "1e-12": 10148569238.411543
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 9319072591231.385,
+      "1e-09": 9319072591231.385,
+      "1e-12": 9319072591231.385
+     },
+     "k_rel": {
+      "0.01": 14946,
+      "0.001": 6294,
+      "0.0001": 1511,
+      "1e-05": 1306,
+      "1e-06": 1305,
+      "1e-07": 1305,
+      "1e-08": 1305,
+      "1e-09": 1305,
+      "1e-10": 1305,
+      "1e-11": 1305,
+      "1e-12": 1305
+     },
+     "k_abs": {
+      "0.1": 16497,
+      "0.01": 16151,
+      "0.001": 12153,
+      "0.0001": 2584,
+      "1e-05": 1336,
+      "1e-06": 1305,
+      "1e-07": 1305,
+      "1e-08": 1305,
+      "1e-09": 1305,
+      "1e-10": 1305
+     },
+     "activation": "relu",
+     "dead_units": 1,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 1,
+     "units_derivative_below_1e-9": 1,
+     "exact_zero_derivatives": 1100176,
+     "components@1e-06": {
+      "dim_K": 1305,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 1176
+     },
+     "components@1e-09": {
+      "dim_K": 1305,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 1176
+     },
+     "components@1e-12": {
+      "dim_K": 1305,
+      "feature_null": 0,
+      "downstream_null": 129,
+      "deficit": 1176
+     },
+     "seconds": 387.1878914833069,
+     "dead_share": {
+      "downstream_null_from_dead": 129,
+      "feature_null_next_from_dead": 128
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "r_d": {
+      "1e-06": 108,
+      "1e-09": 108,
+      "1e-12": 108
+     },
+     "rank_J": {
+      "1e-06": 9537,
+      "1e-09": 9589,
+      "1e-12": 9589
+     },
+     "gap_J": {
+      "1e-06": 1.0206617167061613,
+      "1e-09": 38799552.86591825,
+      "1e-12": 38799552.86591825
+     },
+     "gap_h": {
+      "1e-06": 21273524566185.418,
+      "1e-09": 21273524566185.418,
+      "1e-12": 21273524566185.418
+     },
+     "gap_d": {
+      "1e-06": 10072387748407.771,
+      "1e-09": 10072387748407.771,
+      "1e-12": 10072387748407.771
+     },
+     "k_rel": {
+      "0.01": 15988,
+      "0.001": 13779,
+      "0.0001": 9450,
+      "1e-05": 7361,
+      "1e-06": 6975,
+      "1e-07": 6925,
+      "1e-08": 6923,
+      "1e-09": 6923,
+      "1e-10": 6923,
+      "1e-11": 6923,
+      "1e-12": 6923
+     },
+     "k_abs": {
+      "0.1": 16417,
+      "0.01": 15560,
+      "0.001": 12302,
+      "0.0001": 8380,
+      "1e-05": 7154,
+      "1e-06": 6944,
+      "1e-07": 6923,
+      "1e-08": 6923,
+      "1e-09": 6923,
+      "1e-10": 6923
+     },
+     "activation": "relu",
+     "dead_units": 20,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 20,
+     "units_derivative_below_1e-9": 20,
+     "exact_zero_derivatives": 1100981,
+     "components@1e-06": {
+      "dim_K": 6975,
+      "feature_null": 128,
+      "downstream_null": 2560,
+      "deficit": 4287
+     },
+     "components@1e-09": {
+      "dim_K": 6923,
+      "feature_null": 128,
+      "downstream_null": 2560,
+      "deficit": 4235
+     },
+     "components@1e-12": {
+      "dim_K": 6923,
+      "feature_null": 128,
+      "downstream_null": 2560,
+      "deficit": 4235
+     },
+     "seconds": 388.69167017936707,
+     "dead_share": {
+      "downstream_null_from_dead": 2560,
+      "feature_null_next_from_dead": 2560
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 109,
+      "1e-09": 109,
+      "1e-12": 109
+     },
+     "r_d": {
+      "1e-06": 112,
+      "1e-09": 112,
+      "1e-12": 112
+     },
+     "rank_J": {
+      "1e-06": 6991,
+      "1e-09": 7144,
+      "1e-12": 7148
+     },
+     "gap_J": {
+      "1e-06": 1.0247364883716,
+      "1e-09": 2.076403547286714,
+      "1e-12": 383.8262515635397
+     },
+     "gap_h": {
+      "1e-06": 571111788357.727,
+      "1e-09": 571111788357.727,
+      "1e-12": 571111788357.727
+     },
+     "gap_d": {
+      "1e-06": 29573243514281.812,
+      "1e-09": 29573243514281.812,
+      "1e-12": 29573243514281.812
+     },
+     "k_rel": {
+      "0.01": 15829,
+      "0.001": 13845,
+      "0.0001": 11316,
+      "1e-05": 9957,
+      "1e-06": 9521,
+      "1e-07": 9401,
+      "1e-08": 9374,
+      "1e-09": 9368,
+      "1e-10": 9364,
+      "1e-11": 9364,
+      "1e-12": 9364
+     },
+     "k_abs": {
+      "0.1": 16348,
+      "0.01": 15174,
+      "0.001": 12810,
+      "0.0001": 10631,
+      "1e-05": 9720,
+      "1e-06": 9452,
+      "1e-07": 9388,
+      "1e-08": 9372,
+      "1e-09": 9365,
+      "1e-10": 9364
+     },
+     "activation": "relu",
+     "dead_units": 16,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 16,
+     "units_derivative_below_1e-9": 16,
+     "exact_zero_derivatives": 962466,
+     "components@1e-06": {
+      "dim_K": 9521,
+      "feature_null": 2560,
+      "downstream_null": 1744,
+      "deficit": 5217
+     },
+     "components@1e-09": {
+      "dim_K": 9368,
+      "feature_null": 2560,
+      "downstream_null": 1744,
+      "deficit": 5064
+     },
+     "components@1e-12": {
+      "dim_K": 9364,
+      "feature_null": 2560,
+      "downstream_null": 1744,
+      "deficit": 5060
+     },
+     "seconds": 393.3492329120636,
+     "dead_share": {
+      "downstream_null_from_dead": 1744,
+      "feature_null_next_from_dead": 160
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 112,
+      "1e-09": 112,
+      "1e-12": 112
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1120,
+      "1e-09": 1120,
+      "1e-12": 1120
+     },
+     "gap_J": {
+      "1e-06": 29007962649.412445,
+      "1e-09": 29007962649.412445,
+      "1e-12": 29007962649.412445
+     },
+     "gap_h": {
+      "1e-06": 351306028465.11523,
+      "1e-09": 351306028465.11523,
+      "1e-12": 351306028465.11523
+     },
+     "k_rel": {
+      "0.01": 650,
+      "0.001": 270,
+      "0.0001": 190,
+      "1e-05": 170,
+      "1e-06": 170,
+      "1e-07": 170,
+      "1e-08": 170,
+      "1e-09": 170,
+      "1e-10": 170,
+      "1e-11": 170,
+      "1e-12": 170
+     },
+     "k_abs": {
+      "0.1": 990,
+      "0.01": 330,
+      "0.001": 240,
+      "0.0001": 170,
+      "1e-05": 170,
+      "1e-06": 170,
+      "1e-07": 170,
+      "1e-08": 170,
+      "1e-09": 170,
+      "1e-10": 170
+     },
+     "activation": "relu",
+     "dead_units": 16,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 16,
+     "units_derivative_below_1e-9": 16,
+     "exact_zero_derivatives": 962466,
+     "components@1e-06": {
+      "dim_K": 170,
+      "feature_null": 170,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 170,
+      "feature_null": 170,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 170,
+      "feature_null": 170,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 29441,
+      "1e-09": 30963,
+      "1e-12": 30963
+     },
+     "gap_J": {
+      "1e-06": 1.0002209666780062,
+      "1e-09": 2662865.180697839,
+      "1e-12": 2662865.180697839
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 32660,
+      "0.001": 29777,
+      "0.0001": 19113,
+      "1e-05": 8969,
+      "1e-06": 3455,
+      "1e-07": 2020,
+      "1e-08": 1935,
+      "1e-09": 1933,
+      "1e-10": 1933,
+      "1e-11": 1933,
+      "1e-12": 1933
+     },
+     "k_abs": {
+      "0.1": 32896,
+      "0.01": 32875,
+      "0.001": 32702,
+      "0.0001": 30382,
+      "1e-05": 20223,
+      "1e-06": 9656,
+      "1e-07": 3753,
+      "1e-08": 2044,
+      "1e-09": 1938,
+      "1e-10": 1934
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 726982,
+     "components@1e-06": {
+      "dim_K": 3455,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 3455
+     },
+     "components@1e-09": {
+      "dim_K": 1933,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 1933
+     },
+     "components@1e-12": {
+      "dim_K": 1933,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 1933
+     },
+     "seconds": 2691.633835554123,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 125,
+      "1e-09": 125,
+      "1e-12": 125
+     },
+     "rank_J": {
+      "1e-06": 14657,
+      "1e-09": 14741,
+      "1e-12": 14741
+     },
+     "gap_J": {
+      "1e-06": 1.0128699987276237,
+      "1e-09": 14192206.09838528,
+      "1e-12": 14192206.09838528
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 238610392917225.53,
+      "1e-09": 238610392917225.53,
+      "1e-12": 238610392917225.53
+     },
+     "k_rel": {
+      "0.01": 16301,
+      "0.001": 14268,
+      "0.0001": 6994,
+      "1e-05": 2501,
+      "1e-06": 1855,
+      "1e-07": 1784,
+      "1e-08": 1772,
+      "1e-09": 1771,
+      "1e-10": 1771,
+      "1e-11": 1771,
+      "1e-12": 1771
+     },
+     "k_abs": {
+      "0.1": 16512,
+      "0.01": 16497,
+      "0.001": 16336,
+      "0.0001": 14643,
+      "1e-05": 7612,
+      "1e-06": 2645,
+      "1e-07": 1868,
+      "1e-08": 1785,
+      "1e-09": 1772,
+      "1e-10": 1771
+     },
+     "activation": "relu",
+     "dead_units": 3,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 3,
+     "units_derivative_below_1e-9": 3,
+     "exact_zero_derivatives": 1181762,
+     "components@1e-06": {
+      "dim_K": 1855,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1468
+     },
+     "components@1e-09": {
+      "dim_K": 1771,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1384
+     },
+     "components@1e-12": {
+      "dim_K": 1771,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1384
+     },
+     "seconds": 389.2560601234436,
+     "dead_share": {
+      "downstream_null_from_dead": 387,
+      "feature_null_next_from_dead": 384
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 126,
+      "1e-09": 126,
+      "1e-12": 126
+     },
+     "r_d": {
+      "1e-06": 60,
+      "1e-09": 60,
+      "1e-12": 60
+     },
+     "rank_J": {
+      "1e-06": 3476,
+      "1e-09": 4037,
+      "1e-12": 4042
+     },
+     "gap_J": {
+      "1e-06": 1.0015831357143146,
+      "1e-09": 1.1502763938251053,
+      "1e-12": 5750.630653831728
+     },
+     "gap_h": {
+      "1e-06": 518640155960404.25,
+      "1e-09": 518640155960404.25,
+      "1e-12": 518640155960404.25
+     },
+     "gap_d": {
+      "1e-06": 613243186418.114,
+      "1e-09": 613243186418.114,
+      "1e-12": 613243186418.114
+     },
+     "k_rel": {
+      "0.01": 16395,
+      "0.001": 16186,
+      "0.0001": 15628,
+      "1e-05": 14256,
+      "1e-06": 13036,
+      "1e-07": 12593,
+      "1e-08": 12492,
+      "1e-09": 12475,
+      "1e-10": 12471,
+      "1e-11": 12470,
+      "1e-12": 12470
+     },
+     "k_abs": {
+      "0.1": 16477,
+      "0.01": 16304,
+      "0.001": 16043,
+      "0.0001": 15113,
+      "1e-05": 13641,
+      "1e-06": 12772,
+      "1e-07": 12527,
+      "1e-08": 12483,
+      "1e-09": 12471,
+      "1e-10": 12471
+     },
+     "activation": "relu",
+     "dead_units": 68,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 68,
+     "units_derivative_below_1e-9": 68,
+     "exact_zero_derivatives": 1240957,
+     "components@1e-06": {
+      "dim_K": 13036,
+      "feature_null": 384,
+      "downstream_null": 8568,
+      "deficit": 4084
+     },
+     "components@1e-09": {
+      "dim_K": 12475,
+      "feature_null": 384,
+      "downstream_null": 8568,
+      "deficit": 3523
+     },
+     "components@1e-12": {
+      "dim_K": 12470,
+      "feature_null": 384,
+      "downstream_null": 8568,
+      "deficit": 3518
+     },
+     "seconds": 386.7981946468353,
+     "dead_share": {
+      "downstream_null_from_dead": 8568,
+      "feature_null_next_from_dead": 8704
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 60,
+      "1e-09": 60,
+      "1e-12": 60
+     },
+     "r_d": {
+      "1e-06": 59,
+      "1e-09": 59,
+      "1e-12": 59
+     },
+     "rank_J": {
+      "1e-06": 754,
+      "1e-09": 863,
+      "1e-12": 863
+     },
+     "gap_J": {
+      "1e-06": 1.048556552444241,
+      "1e-09": 1418719.004115219,
+      "1e-12": 1418719.004115219
+     },
+     "gap_h": {
+      "1e-06": 37242176072.660446,
+      "1e-09": 37242176072.660446,
+      "1e-12": 37242176072.660446
+     },
+     "gap_d": {
+      "1e-06": 254597830450.76413,
+      "1e-09": 254597830450.76413,
+      "1e-12": 254597830450.76413
+     },
+     "k_rel": {
+      "0.01": 16427,
+      "0.001": 16250,
+      "0.0001": 16052,
+      "1e-05": 15894,
+      "1e-06": 15758,
+      "1e-07": 15672,
+      "1e-08": 15653,
+      "1e-09": 15649,
+      "1e-10": 15649,
+      "1e-11": 15649,
+      "1e-12": 15649
+     },
+     "k_abs": {
+      "0.1": 16447,
+      "0.01": 16284,
+      "0.001": 16082,
+      "0.0001": 15915,
+      "1e-05": 15776,
+      "1e-06": 15681,
+      "1e-07": 15654,
+      "1e-08": 15649,
+      "1e-09": 15649,
+      "1e-10": 15649
+     },
+     "activation": "relu",
+     "dead_units": 69,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 69,
+     "units_derivative_below_1e-9": 69,
+     "exact_zero_derivatives": 1217044,
+     "components@1e-06": {
+      "dim_K": 15758,
+      "feature_null": 8832,
+      "downstream_null": 4140,
+      "deficit": 2786
+     },
+     "components@1e-09": {
+      "dim_K": 15649,
+      "feature_null": 8832,
+      "downstream_null": 4140,
+      "deficit": 2677
+     },
+     "components@1e-12": {
+      "dim_K": 15649,
+      "feature_null": 8832,
+      "downstream_null": 4140,
+      "deficit": 2677
+     },
+     "seconds": 405.2457273006439,
+     "dead_share": {
+      "downstream_null_from_dead": 4140,
+      "feature_null_next_from_dead": 690
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 54,
+      "1e-09": 54,
+      "1e-12": 54
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 540,
+      "1e-09": 540,
+      "1e-12": 540
+     },
+     "gap_J": {
+      "1e-06": 6766930589.057772,
+      "1e-09": 6766930589.057772,
+      "1e-12": 6766930589.057772
+     },
+     "gap_h": {
+      "1e-06": 22663644942.35246,
+      "1e-09": 22663644942.35246,
+      "1e-12": 22663644942.35246
+     },
+     "k_rel": {
+      "0.01": 1030,
+      "0.001": 860,
+      "0.0001": 780,
+      "1e-05": 760,
+      "1e-06": 750,
+      "1e-07": 750,
+      "1e-08": 750,
+      "1e-09": 750,
+      "1e-10": 750,
+      "1e-11": 750,
+      "1e-12": 750
+     },
+     "k_abs": {
+      "0.1": 1050,
+      "0.01": 880,
+      "0.001": 780,
+      "0.0001": 770,
+      "1e-05": 750,
+      "1e-06": 750,
+      "1e-07": 750,
+      "1e-08": 750,
+      "1e-09": 750,
+      "1e-10": 750
+     },
+     "activation": "relu",
+     "dead_units": 69,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 69,
+     "units_derivative_below_1e-9": 69,
+     "exact_zero_derivatives": 1217044,
+     "components@1e-06": {
+      "dim_K": 750,
+      "feature_null": 750,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 750,
+      "feature_null": 750,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 750,
+      "feature_null": 750,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 32265,
+      "0.001": 25759,
+      "0.0001": 7924,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 32848,
+      "0.01": 32523,
+      "0.001": 28038,
+      "0.0001": 12325,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 702132,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2673.2956755161285,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 123,
+      "1e-09": 123,
+      "1e-12": 123
+     },
+     "rank_J": {
+      "1e-06": 14752,
+      "1e-09": 14753,
+      "1e-12": 14753
+     },
+     "gap_J": {
+      "1e-06": 2.5792739973008447,
+      "1e-09": 404243028.27049005,
+      "1e-12": 404243028.27049005
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 27879978133262.742,
+      "1e-09": 27879978133262.742,
+      "1e-12": 27879978133262.742
+     },
+     "k_rel": {
+      "0.01": 15681,
+      "0.001": 9133,
+      "0.0001": 2270,
+      "1e-05": 1775,
+      "1e-06": 1760,
+      "1e-07": 1759,
+      "1e-08": 1759,
+      "1e-09": 1759,
+      "1e-10": 1759,
+      "1e-11": 1759,
+      "1e-12": 1759
+     },
+     "k_abs": {
+      "0.1": 16480,
+      "0.01": 16219,
+      "0.001": 13009,
+      "0.0001": 3910,
+      "1e-05": 1829,
+      "1e-06": 1761,
+      "1e-07": 1759,
+      "1e-08": 1759,
+      "1e-09": 1759,
+      "1e-10": 1759
+     },
+     "activation": "relu",
+     "dead_units": 5,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 5,
+     "units_derivative_below_1e-9": 5,
+     "exact_zero_derivatives": 1128170,
+     "components@1e-06": {
+      "dim_K": 1760,
+      "feature_null": 0,
+      "downstream_null": 645,
+      "deficit": 1115
+     },
+     "components@1e-09": {
+      "dim_K": 1759,
+      "feature_null": 0,
+      "downstream_null": 645,
+      "deficit": 1114
+     },
+     "components@1e-12": {
+      "dim_K": 1759,
+      "feature_null": 0,
+      "downstream_null": 645,
+      "deficit": 1114
+     },
+     "seconds": 392.07997393608093,
+     "dead_share": {
+      "downstream_null_from_dead": 645,
+      "feature_null_next_from_dead": 640
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 124,
+      "1e-09": 124,
+      "1e-12": 124
+     },
+     "r_d": {
+      "1e-06": 100,
+      "1e-09": 100,
+      "1e-12": 100
+     },
+     "rank_J": {
+      "1e-06": 8233,
+      "1e-09": 8285,
+      "1e-12": 8285
+     },
+     "gap_J": {
+      "1e-06": 1.0850983152446378,
+      "1e-09": 21467102.558784798,
+      "1e-12": 21467102.558784798
+     },
+     "gap_h": {
+      "1e-06": 92615860009105.05,
+      "1e-09": 92615860009105.05,
+      "1e-12": 92615860009105.05
+     },
+     "gap_d": {
+      "1e-06": 4824271703571.294,
+      "1e-09": 4824271703571.294,
+      "1e-12": 4824271703571.294
+     },
+     "k_rel": {
+      "0.01": 16032,
+      "0.001": 14456,
+      "0.0001": 10764,
+      "1e-05": 8636,
+      "1e-06": 8279,
+      "1e-07": 8237,
+      "1e-08": 8227,
+      "1e-09": 8227,
+      "1e-10": 8227,
+      "1e-11": 8227,
+      "1e-12": 8227
+     },
+     "k_abs": {
+      "0.1": 16408,
+      "0.01": 15663,
+      "0.001": 13202,
+      "0.0001": 9601,
+      "1e-05": 8420,
+      "1e-06": 8255,
+      "1e-07": 8230,
+      "1e-08": 8227,
+      "1e-09": 8227,
+      "1e-10": 8227
+     },
+     "activation": "relu",
+     "dead_units": 28,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 28,
+     "units_derivative_below_1e-9": 28,
+     "exact_zero_derivatives": 1134396,
+     "components@1e-06": {
+      "dim_K": 8279,
+      "feature_null": 640,
+      "downstream_null": 3472,
+      "deficit": 4167
+     },
+     "components@1e-09": {
+      "dim_K": 8227,
+      "feature_null": 640,
+      "downstream_null": 3472,
+      "deficit": 4115
+     },
+     "components@1e-12": {
+      "dim_K": 8227,
+      "feature_null": 640,
+      "downstream_null": 3472,
+      "deficit": 4115
+     },
+     "seconds": 388.37846541404724,
+     "dead_share": {
+      "downstream_null_from_dead": 3472,
+      "feature_null_next_from_dead": 3584
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 99,
+      "1e-09": 99,
+      "1e-12": 99
+     },
+     "r_d": {
+      "1e-06": 107,
+      "1e-09": 107,
+      "1e-12": 107
+     },
+     "rank_J": {
+      "1e-06": 6097,
+      "1e-09": 6217,
+      "1e-12": 6219
+     },
+     "gap_J": {
+      "1e-06": 1.0137130550854003,
+      "1e-09": 2.1289019263267934,
+      "1e-12": 202393.66384030788
+     },
+     "gap_h": {
+      "1e-06": 998863457073.5194,
+      "1e-09": 998863457073.5194,
+      "1e-12": 998863457073.5194
+     },
+     "gap_d": {
+      "1e-06": 6179532304951.651,
+      "1e-09": 6179532304951.651,
+      "1e-12": 6179532304951.651
+     },
+     "k_rel": {
+      "0.01": 15968,
+      "0.001": 14318,
+      "0.0001": 12060,
+      "1e-05": 10824,
+      "1e-06": 10415,
+      "1e-07": 10314,
+      "1e-08": 10299,
+      "1e-09": 10295,
+      "1e-10": 10293,
+      "1e-11": 10293,
+      "1e-12": 10293
+     },
+     "k_abs": {
+      "0.1": 16344,
+      "0.01": 15306,
+      "0.001": 13217,
+      "0.0001": 11314,
+      "1e-05": 10575,
+      "1e-06": 10342,
+      "1e-07": 10306,
+      "1e-08": 10296,
+      "1e-09": 10293,
+      "1e-10": 10293
+     },
+     "activation": "relu",
+     "dead_units": 21,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 21,
+     "units_derivative_below_1e-9": 21,
+     "exact_zero_derivatives": 981349,
+     "components@1e-06": {
+      "dim_K": 10415,
+      "feature_null": 3840,
+      "downstream_null": 2079,
+      "deficit": 4496
+     },
+     "components@1e-09": {
+      "dim_K": 10295,
+      "feature_null": 3840,
+      "downstream_null": 2079,
+      "deficit": 4376
+     },
+     "components@1e-12": {
+      "dim_K": 10293,
+      "feature_null": 3840,
+      "downstream_null": 2079,
+      "deficit": 4374
+     },
+     "seconds": 403.0498297214508,
+     "dead_share": {
+      "downstream_null_from_dead": 2079,
+      "feature_null_next_from_dead": 210
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 106,
+      "1e-09": 106,
+      "1e-12": 106
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1060,
+      "1e-09": 1060,
+      "1e-12": 1060
+     },
+     "gap_J": {
+      "1e-06": 20672140650.773003,
+      "1e-09": 20672140650.773003,
+      "1e-12": 20672140650.773003
+     },
+     "gap_h": {
+      "1e-06": 82675309945.47726,
+      "1e-09": 82675309945.47726,
+      "1e-12": 82675309945.47726
+     },
+     "k_rel": {
+      "0.01": 630,
+      "0.001": 270,
+      "0.0001": 240,
+      "1e-05": 230,
+      "1e-06": 230,
+      "1e-07": 230,
+      "1e-08": 230,
+      "1e-09": 230,
+      "1e-10": 230,
+      "1e-11": 230,
+      "1e-12": 230
+     },
+     "k_abs": {
+      "0.1": 970,
+      "0.01": 350,
+      "0.001": 260,
+      "0.0001": 240,
+      "1e-05": 230,
+      "1e-06": 230,
+      "1e-07": 230,
+      "1e-08": 230,
+      "1e-09": 230,
+      "1e-10": 230
+     },
+     "activation": "relu",
+     "dead_units": 21,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 21,
+     "units_derivative_below_1e-9": 21,
+     "exact_zero_derivatives": 981349,
+     "components@1e-06": {
+      "dim_K": 230,
+      "feature_null": 230,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 230,
+      "feature_null": 230,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 230,
+      "feature_null": 230,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 128,
+      "1e-09": 128,
+      "1e-12": 128
+     },
+     "rank_J": {
+      "1e-06": 32896,
+      "1e-09": 32896,
+      "1e-12": 32896
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 32199,
+      "0.001": 26125,
+      "0.0001": 8401,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 32896,
+      "0.01": 32854,
+      "0.001": 32385,
+      "0.0001": 27363,
+      "1e-05": 10602,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 718133,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 2657.727660894394,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 125,
+      "1e-09": 125,
+      "1e-12": 125
+     },
+     "rank_J": {
+      "1e-06": 14995,
+      "1e-09": 14996,
+      "1e-12": 14996
+     },
+     "gap_J": {
+      "1e-06": 17.029082287414333,
+      "1e-09": 8338444.2134668585,
+      "1e-12": 8338444.2134668585
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 381316857313377.3,
+      "1e-09": 381316857313377.3,
+      "1e-12": 381316857313377.3
+     },
+     "k_rel": {
+      "0.01": 15820,
+      "0.001": 10481,
+      "0.0001": 2354,
+      "1e-05": 1549,
+      "1e-06": 1517,
+      "1e-07": 1517,
+      "1e-08": 1516,
+      "1e-09": 1516,
+      "1e-10": 1516,
+      "1e-11": 1516,
+      "1e-12": 1516
+     },
+     "k_abs": {
+      "0.1": 16512,
+      "0.01": 16483,
+      "0.001": 16091,
+      "0.0001": 12173,
+      "1e-05": 3030,
+      "1e-06": 1576,
+      "1e-07": 1517,
+      "1e-08": 1517,
+      "1e-09": 1516,
+      "1e-10": 1516
+     },
+     "activation": "relu",
+     "dead_units": 3,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 3,
+     "units_derivative_below_1e-9": 3,
+     "exact_zero_derivatives": 1161863,
+     "components@1e-06": {
+      "dim_K": 1517,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1130
+     },
+     "components@1e-09": {
+      "dim_K": 1516,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1129
+     },
+     "components@1e-12": {
+      "dim_K": 1516,
+      "feature_null": 0,
+      "downstream_null": 387,
+      "deficit": 1129
+     },
+     "seconds": 390.90520334243774,
+     "dead_share": {
+      "downstream_null_from_dead": 387,
+      "feature_null_next_from_dead": 384
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 126,
+      "1e-09": 126,
+      "1e-12": 126
+     },
+     "r_d": {
+      "1e-06": 86,
+      "1e-09": 86,
+      "1e-12": 86
+     },
+     "rank_J": {
+      "1e-06": 6239,
+      "1e-09": 6491,
+      "1e-12": 6492
+     },
+     "gap_J": {
+      "1e-06": 1.005273887301994,
+      "1e-09": 5.258971437252649,
+      "1e-12": 203683.38154208122
+     },
+     "gap_h": {
+      "1e-06": 129497535784545.17,
+      "1e-09": 129497535784545.17,
+      "1e-12": 129497535784545.17
+     },
+     "gap_d": {
+      "1e-06": 1459041187351.6099,
+      "1e-09": 1459041187351.6099,
+      "1e-12": 1459041187351.6099
+     },
+     "k_rel": {
+      "0.01": 16230,
+      "0.001": 15688,
+      "0.0001": 14151,
+      "1e-05": 11454,
+      "1e-06": 10273,
+      "1e-07": 10061,
+      "1e-08": 10023,
+      "1e-09": 10021,
+      "1e-10": 10020,
+      "1e-11": 10020,
+      "1e-12": 10020
+     },
+     "k_abs": {
+      "0.1": 16433,
+      "0.01": 16054,
+      "0.001": 15303,
+      "0.0001": 13109,
+      "1e-05": 10794,
+      "1e-06": 10142,
+      "1e-07": 10032,
+      "1e-08": 10022,
+      "1e-09": 10020,
+      "1e-10": 10020
+     },
+     "activation": "relu",
+     "dead_units": 42,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 42,
+     "units_derivative_below_1e-9": 42,
+     "exact_zero_derivatives": 1186247,
+     "components@1e-06": {
+      "dim_K": 10273,
+      "feature_null": 384,
+      "downstream_null": 5292,
+      "deficit": 4597
+     },
+     "components@1e-09": {
+      "dim_K": 10021,
+      "feature_null": 384,
+      "downstream_null": 5292,
+      "deficit": 4345
+     },
+     "components@1e-12": {
+      "dim_K": 10020,
+      "feature_null": 384,
+      "downstream_null": 5292,
+      "deficit": 4344
+     },
+     "seconds": 404.623042345047,
+     "dead_share": {
+      "downstream_null_from_dead": 5292,
+      "feature_null_next_from_dead": 5376
+     }
+    },
+    {
+     "layer": 4,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 87,
+      "1e-09": 87,
+      "1e-12": 87
+     },
+     "r_d": {
+      "1e-06": 82,
+      "1e-09": 82,
+      "1e-12": 82
+     },
+     "rank_J": {
+      "1e-06": 2559,
+      "1e-09": 2702,
+      "1e-12": 2703
+     },
+     "gap_J": {
+      "1e-06": 1.0108453907161605,
+      "1e-09": 4.192018074841688,
+      "1e-12": 272022.44697822136
+     },
+     "gap_h": {
+      "1e-06": 10159456916.324293,
+      "1e-09": 10159456916.324293,
+      "1e-12": 10159456916.324293
+     },
+     "gap_d": {
+      "1e-06": 1657080746864.5823,
+      "1e-09": 1657080746864.5823,
+      "1e-12": 1657080746864.5823
+     },
+     "k_rel": {
+      "0.01": 16308,
+      "0.001": 15756,
+      "0.0001": 14948,
+      "1e-05": 14281,
+      "1e-06": 13953,
+      "1e-07": 13838,
+      "1e-08": 13814,
+      "1e-09": 13810,
+      "1e-10": 13809,
+      "1e-11": 13809,
+      "1e-12": 13809
+     },
+     "k_abs": {
+      "0.1": 16388,
+      "0.01": 15947,
+      "0.001": 15194,
+      "0.0001": 14437,
+      "1e-05": 14019,
+      "1e-06": 13859,
+      "1e-07": 13818,
+      "1e-08": 13810,
+      "1e-09": 13809,
+      "1e-10": 13809
+     },
+     "activation": "relu",
+     "dead_units": 46,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 46,
+     "units_derivative_below_1e-9": 46,
+     "exact_zero_derivatives": 1143546,
+     "components@1e-06": {
+      "dim_K": 13953,
+      "feature_null": 5376,
+      "downstream_null": 4002,
+      "deficit": 4575
+     },
+     "components@1e-09": {
+      "dim_K": 13810,
+      "feature_null": 5376,
+      "downstream_null": 4002,
+      "deficit": 4432
+     },
+     "components@1e-12": {
+      "dim_K": 13809,
+      "feature_null": 5376,
+      "downstream_null": 4002,
+      "deficit": 4431
+     },
+     "seconds": 387.0774030685425,
+     "dead_share": {
+      "downstream_null_from_dead": 4002,
+      "feature_null_next_from_dead": 460
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 78,
+      "1e-09": 78,
+      "1e-12": 78
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 780,
+      "1e-09": 780,
+      "1e-12": 780
+     },
+     "gap_J": {
+      "1e-06": 119263107728.9249,
+      "1e-09": 119263107728.9249,
+      "1e-12": 119263107728.9249
+     },
+     "gap_h": {
+      "1e-06": 434938395038.80835,
+      "1e-09": 434938395038.80835,
+      "1e-12": 434938395038.80835
+     },
+     "k_rel": {
+      "0.01": 970,
+      "0.001": 610,
+      "0.0001": 530,
+      "1e-05": 510,
+      "1e-06": 510,
+      "1e-07": 510,
+      "1e-08": 510,
+      "1e-09": 510,
+      "1e-10": 510,
+      "1e-11": 510,
+      "1e-12": 510
+     },
+     "k_abs": {
+      "0.1": 1060,
+      "0.01": 670,
+      "0.001": 530,
+      "0.0001": 510,
+      "1e-05": 510,
+      "1e-06": 510,
+      "1e-07": 510,
+      "1e-08": 510,
+      "1e-09": 510,
+      "1e-10": 510
+     },
+     "activation": "relu",
+     "dead_units": 46,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 46,
+     "units_derivative_below_1e-9": 46,
+     "exact_zero_derivatives": 1143546,
+     "components@1e-06": {
+      "dim_K": 510,
+      "feature_null": 510,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 510,
+      "feature_null": 510,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 510,
+      "feature_null": 510,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  }
+ }
+}

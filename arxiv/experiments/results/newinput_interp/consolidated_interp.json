@@ -1,0 +1,1790 @@
+{
+ "protocol": "interp-exposure-v1 consolidation (PI 2026-11-23); post-processing only, no recomputation",
+ "spec": "PI 2026-11-23 interpolation ablation",
+ "rank_rule": "relative 1e-09; union rank resolved iff gap >= 10; unresolved cells keep their ladder ranges (1e-6/1e-9/1e-12) and band counts, thresholds NEVER changed",
+ "exposed_pct_definition": "100 * exposed / dim_K_X; mean and SAMPLE standard deviation (ddof=1) across seeds 0/1/2",
+ "alphas": [
+  "0.0",
+  "0.1",
+  "0.2",
+  "0.3",
+  "0.4",
+  "0.5",
+  "0.6",
+  "0.7",
+  "0.8",
+  "0.9",
+  "1.0"
+ ],
+ "blocks": [
+  "2",
+  "3",
+  "readout"
+ ],
+ "cells": {
+  "2": {
+   "0.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9046,
+      "exposed": 537,
+      "exposed_fraction": 0.05603673171240739,
+      "gap_union": 5914632.386427984,
+      "dim_K_union_ladder": {
+       "1e-06": 9055,
+       "1e-09": 9046,
+       "1e-12": 9046
+      },
+      "exposed_pct": 5.603673171240739,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10155,
+      "exposed": 388,
+      "exposed_fraction": 0.03680166935407379,
+      "gap_union": 3539014.9339914606,
+      "dim_K_union_ladder": {
+       "1e-06": 10183,
+       "1e-09": 10155,
+       "1e-12": 10155
+      },
+      "exposed_pct": 3.6801669354073794,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10516,
+      "exposed": 420,
+      "exposed_fraction": 0.03840526700804682,
+      "gap_union": 133298890.04647157,
+      "dim_K_union_ladder": {
+       "1e-06": 10519,
+       "1e-09": 10516,
+       "1e-12": 10516
+      },
+      "exposed_pct": 3.840526700804682,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 4.3747889358176,
+    "exposed_pct_sd": 1.067261055994832
+   },
+   "0.1": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 8989,
+      "exposed": 594,
+      "exposed_fraction": 0.06198476468746739,
+      "gap_union": 5351211.66437588,
+      "dim_K_union_ladder": {
+       "1e-06": 9000,
+       "1e-09": 8989,
+       "1e-12": 8989
+      },
+      "exposed_pct": 6.198476468746739,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10120,
+      "exposed": 423,
+      "exposed_fraction": 0.04012140756900313,
+      "gap_union": 2666825.291786969,
+      "dim_K_union_ladder": {
+       "1e-06": 10147,
+       "1e-09": 10120,
+       "1e-12": 10120
+      },
+      "exposed_pct": 4.012140756900313,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10480,
+      "exposed": 456,
+      "exposed_fraction": 0.04169714703730797,
+      "gap_union": 23199790.01962942,
+      "dim_K_union_ladder": {
+       "1e-06": 10485,
+       "1e-09": 10480,
+       "1e-12": 10480
+      },
+      "exposed_pct": 4.169714703730797,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 4.793443976459283,
+    "exposed_pct_sd": 1.219341878009428
+   },
+   "0.2": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9098,
+      "exposed": 485,
+      "exposed_fraction": 0.05061045601586142,
+      "gap_union": 37181284.869455114,
+      "dim_K_union_ladder": {
+       "1e-06": 9106,
+       "1e-09": 9098,
+       "1e-12": 9098
+      },
+      "exposed_pct": 5.061045601586142,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10149,
+      "exposed": 394,
+      "exposed_fraction": 0.037370767333775964,
+      "gap_union": 4688167.73728794,
+      "dim_K_union_ladder": {
+       "1e-06": 10186,
+       "1e-09": 10149,
+       "1e-12": 10149
+      },
+      "exposed_pct": 3.7370767333775965,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10472,
+      "exposed": 464,
+      "exposed_fraction": 0.04242867593269934,
+      "gap_union": 103304026.71626678,
+      "dim_K_union_ladder": {
+       "1e-06": 10485,
+       "1e-09": 10472,
+       "1e-12": 10472
+      },
+      "exposed_pct": 4.242867593269934,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 4.346996642744557,
+    "exposed_pct_sd": 0.6680984472401658
+   },
+   "0.3": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9234,
+      "exposed": 349,
+      "exposed_fraction": 0.03641865804027966,
+      "gap_union": 55049728.456120685,
+      "dim_K_union_ladder": {
+       "1e-06": 9245,
+       "1e-09": 9234,
+       "1e-12": 9234
+      },
+      "exposed_pct": 3.641865804027966,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10264,
+      "exposed": 279,
+      "exposed_fraction": 0.026463056056151,
+      "gap_union": 2180392.606280166,
+      "dim_K_union_ladder": {
+       "1e-06": 10327,
+       "1e-09": 10264,
+       "1e-12": 10264
+      },
+      "exposed_pct": 2.6463056056151,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10580,
+      "exposed": 356,
+      "exposed_fraction": 0.032553035844915874,
+      "gap_union": 31707268.687193073,
+      "dim_K_union_ladder": {
+       "1e-06": 10590,
+       "1e-09": 10580,
+       "1e-12": 10580
+      },
+      "exposed_pct": 3.2553035844915876,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 3.1811583313782177,
+    "exposed_pct_sd": 0.5019045388172939
+   },
+   "0.4": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9420,
+      "exposed": 163,
+      "exposed_fraction": 0.01700928727955755,
+      "gap_union": 10613349.47181836,
+      "dim_K_union_ladder": {
+       "1e-06": 9448,
+       "1e-09": 9420,
+       "1e-12": 9420
+      },
+      "exposed_pct": 1.700928727955755,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10370,
+      "exposed": 173,
+      "exposed_fraction": 0.016408991748079294,
+      "gap_union": 884830.4609797776,
+      "dim_K_union_ladder": {
+       "1e-06": 10521,
+       "1e-09": 10370,
+       "1e-12": 10370
+      },
+      "exposed_pct": 1.6408991748079294,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10623,
+      "exposed": 313,
+      "exposed_fraction": 0.02862106803218727,
+      "gap_union": 20757545.406673603,
+      "dim_K_union_ladder": {
+       "1e-06": 10643,
+       "1e-09": 10623,
+       "1e-12": 10623
+      },
+      "exposed_pct": 2.8621068032187273,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 2.067978235327471,
+    "exposed_pct_sd": 0.688390168123097
+   },
+   "0.5": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9515,
+      "exposed": 68,
+      "exposed_fraction": 0.007095898987790879,
+      "gap_union": 6357649.838567471,
+      "dim_K_union_ladder": {
+       "1e-06": 9571,
+       "1e-09": 9515,
+       "1e-12": 9515
+      },
+      "exposed_pct": 0.709589898779088,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10434,
+      "exposed": 109,
+      "exposed_fraction": 0.010338613297922792,
+      "gap_union": 1074092.2243591258,
+      "dim_K_union_ladder": {
+       "1e-06": 10631,
+       "1e-09": 10434,
+       "1e-12": 10434
+      },
+      "exposed_pct": 1.0338613297922792,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10679,
+      "exposed": 257,
+      "exposed_fraction": 0.023500365764447695,
+      "gap_union": 12565277.417127384,
+      "dim_K_union_ladder": {
+       "1e-06": 10715,
+       "1e-09": 10679,
+       "1e-12": 10679
+      },
+      "exposed_pct": 2.3500365764447695,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 1.364495935005379,
+    "exposed_pct_sd": 0.8687668025364517
+   },
+   "0.6": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9557,
+      "exposed": 26,
+      "exposed_fraction": 0.0027131378482729836,
+      "gap_union": 8080674.208469194,
+      "dim_K_union_ladder": {
+       "1e-06": 9663,
+       "1e-09": 9557,
+       "1e-12": 9557
+      },
+      "exposed_pct": 0.27131378482729834,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10497,
+      "exposed": 46,
+      "exposed_fraction": 0.004363084511049986,
+      "gap_union": 801083.4073115251,
+      "dim_K_union_ladder": {
+       "1e-06": 10734,
+       "1e-09": 10497,
+       "1e-12": 10497
+      },
+      "exposed_pct": 0.43630845110499855,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10745,
+      "exposed": 191,
+      "exposed_fraction": 0.01746525237746891,
+      "gap_union": 11259557.919606581,
+      "dim_K_union_ladder": {
+       "1e-06": 10794,
+       "1e-09": 10745,
+       "1e-12": 10745
+      },
+      "exposed_pct": 1.746525237746891,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 0.8180491578930625,
+    "exposed_pct_sd": 0.8083048206713678
+   },
+   "0.7": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9573,
+      "exposed": 10,
+      "exposed_fraction": 0.0010435145570280705,
+      "gap_union": 2251265.6441490143,
+      "dim_K_union_ladder": {
+       "1e-06": 9725,
+       "1e-09": 9573,
+       "1e-12": 9573
+      },
+      "exposed_pct": 0.10435145570280706,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10515,
+      "exposed": 28,
+      "exposed_fraction": 0.0026557905719434695,
+      "gap_union": 626458.7869533458,
+      "dim_K_union_ladder": {
+       "1e-06": 10804,
+       "1e-09": 10515,
+       "1e-12": 10515
+      },
+      "exposed_pct": 0.26557905719434693,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10840,
+      "exposed": 96,
+      "exposed_fraction": 0.008778346744696415,
+      "gap_union": 10984179.211035125,
+      "dim_K_union_ladder": {
+       "1e-06": 10903,
+       "1e-09": 10840,
+       "1e-12": 10840
+      },
+      "exposed_pct": 0.8778346744696416,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 0.4159217291222652,
+    "exposed_pct_sd": 0.4080701675941221
+   },
+   "0.8": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9579,
+      "exposed": 4,
+      "exposed_fraction": 0.0004174058228112282,
+      "gap_union": 6696566.196182335,
+      "dim_K_union_ladder": {
+       "1e-06": 9757,
+       "1e-09": 9579,
+       "1e-12": 9579
+      },
+      "exposed_pct": 0.041740582281122825,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10521,
+      "exposed": 22,
+      "exposed_fraction": 0.0020866925922412975,
+      "gap_union": 593229.9677923282,
+      "dim_K_union_ladder": {
+       "1e-06": 10855,
+       "1e-09": 10521,
+       "1e-12": 10521
+      },
+      "exposed_pct": 0.20866925922412977,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10885,
+      "exposed": 51,
+      "exposed_fraction": 0.004663496708119971,
+      "gap_union": 4446929.633179929,
+      "dim_K_union_ladder": {
+       "1e-06": 10960,
+       "1e-09": 10885,
+       "1e-12": 10885
+      },
+      "exposed_pct": 0.4663496708119971,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 0.2389198374390832,
+    "exposed_pct_sd": 0.21391480226367976
+   },
+   "0.9": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9580,
+      "exposed": 3,
+      "exposed_fraction": 0.00031305436710842114,
+      "gap_union": 6444384.185640973,
+      "dim_K_union_ladder": {
+       "1e-06": 9781,
+       "1e-09": 9580,
+       "1e-12": 9580
+      },
+      "exposed_pct": 0.03130543671084211,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10533,
+      "exposed": 10,
+      "exposed_fraction": 0.0009484966328369535,
+      "gap_union": 346998.9408364418,
+      "dim_K_union_ladder": {
+       "1e-06": 10894,
+       "1e-09": 10533,
+       "1e-12": 10533
+      },
+      "exposed_pct": 0.09484966328369535,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10905,
+      "exposed": 31,
+      "exposed_fraction": 0.002834674469641551,
+      "gap_union": 12750957.051050823,
+      "dim_K_union_ladder": {
+       "1e-06": 10987,
+       "1e-09": 10905,
+       "1e-12": 10905
+      },
+      "exposed_pct": 0.2834674469641551,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 0.13654084898623084,
+    "exposed_pct_sd": 0.13114890803094953
+   },
+   "1.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 9583,
+      "dim_K_union": 9582,
+      "exposed": 1,
+      "exposed_fraction": 0.00010435145570280705,
+      "gap_union": 8748434.365103774,
+      "dim_K_union_ladder": {
+       "1e-06": 9805,
+       "1e-09": 9582,
+       "1e-12": 9582
+      },
+      "exposed_pct": 0.010435145570280706,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 10543,
+      "dim_K_union": 10540,
+      "exposed": 3,
+      "exposed_fraction": 0.00028454898985108605,
+      "gap_union": 814092.9050837135,
+      "dim_K_union_ladder": {
+       "1e-06": 10908,
+       "1e-09": 10540,
+       "1e-12": 10540
+      },
+      "exposed_pct": 0.0284548989851086,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 10936,
+      "dim_K_union": 10916,
+      "exposed": 20,
+      "exposed_fraction": 0.0018288222384784199,
+      "gap_union": 9312242.470795305,
+      "dim_K_union_ladder": {
+       "1e-06": 11003,
+       "1e-09": 10916,
+       "1e-12": 10916
+      },
+      "exposed_pct": 0.182882223847842,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 0.07392408946774377,
+    "exposed_pct_sd": 0.09478968384785581
+   }
+  },
+  "3": {
+   "0.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14292,
+      "exposed": 404,
+      "exposed_fraction": 0.027490473598258028,
+      "gap_union": 6.297525368028411,
+      "dim_K_union_ladder": {
+       "1e-06": 14500,
+       "1e-09": 14292,
+       "1e-12": 14290
+      },
+      "exposed_pct": 2.749047359825803,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14290,
+        14500
+       ],
+       "band_sv_within_decade_of_cut": 7,
+       "exposed_fraction_uncertainty": 0.00047632008709853023,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15003,
+      "exposed": 328,
+      "exposed_fraction": 0.021394560041745482,
+      "gap_union": 1050138.6336092653,
+      "dim_K_union_ladder": {
+       "1e-06": 15178,
+       "1e-09": 15003,
+       "1e-12": 15003
+      },
+      "exposed_pct": 2.1394560041745483,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14565,
+      "exposed": 440,
+      "exposed_fraction": 0.029323558813728758,
+      "gap_union": 476224.8070940223,
+      "dim_K_union_ladder": {
+       "1e-06": 14710,
+       "1e-09": 14565,
+       "1e-12": 14565
+      },
+      "exposed_pct": 2.932355881372876,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 2.606953081791076,
+    "exposed_pct_sd": 0.41510919250594597
+   },
+   "0.1": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14230,
+      "exposed": 466,
+      "exposed_fraction": 0.03170930865541644,
+      "gap_union": 8.403512090568652,
+      "dim_K_union_ladder": {
+       "1e-06": 14403,
+       "1e-09": 14230,
+       "1e-12": 14228
+      },
+      "exposed_pct": 3.170930865541644,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14228,
+        14403
+       ],
+       "band_sv_within_decade_of_cut": 6,
+       "exposed_fraction_uncertainty": 0.00040827436037016874,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 14915,
+      "exposed": 416,
+      "exposed_fraction": 0.027134563955384515,
+      "gap_union": 52.0423178779048,
+      "dim_K_union_ladder": {
+       "1e-06": 15088,
+       "1e-09": 14915,
+       "1e-12": 14913
+      },
+      "exposed_pct": 2.7134563955384516,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14456,
+      "exposed": 549,
+      "exposed_fraction": 0.03658780406531156,
+      "gap_union": 2130063.816650275,
+      "dim_K_union_ladder": {
+       "1e-06": 14586,
+       "1e-09": 14456,
+       "1e-12": 14456
+      },
+      "exposed_pct": 3.6587804065311564,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 3.181055889203751,
+    "exposed_pct_sd": 0.47274333260020973
+   },
+   "0.2": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14148,
+      "exposed": 548,
+      "exposed_fraction": 0.03728905824714208,
+      "gap_union": 1.3466535245470492,
+      "dim_K_union_ladder": {
+       "1e-06": 14293,
+       "1e-09": 14148,
+       "1e-12": 14145
+      },
+      "exposed_pct": 3.7289058247142077,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14145,
+        14293
+       ],
+       "band_sv_within_decade_of_cut": 9,
+       "exposed_fraction_uncertainty": 0.0006124115405552531,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 14789,
+      "exposed": 542,
+      "exposed_fraction": 0.0353532059226404,
+      "gap_union": 1465001.5582022811,
+      "dim_K_union_ladder": {
+       "1e-06": 14908,
+       "1e-09": 14789,
+       "1e-12": 14789
+      },
+      "exposed_pct": 3.53532059226404,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14251,
+      "exposed": 754,
+      "exposed_fraction": 0.05024991669443519,
+      "gap_union": 15.813386011499079,
+      "dim_K_union_ladder": {
+       "1e-06": 14340,
+       "1e-09": 14251,
+       "1e-12": 14250
+      },
+      "exposed_pct": 5.024991669443519,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 4.096406028807256,
+    "exposed_pct_sd": 0.8099828884319664
+   },
+   "0.3": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14050,
+      "exposed": 646,
+      "exposed_fraction": 0.043957539466521506,
+      "gap_union": 7.753551498057295,
+      "dim_K_union_ladder": {
+       "1e-06": 14155,
+       "1e-09": 14050,
+       "1e-12": 14049
+      },
+      "exposed_pct": 4.3957539466521505,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14049,
+        14155
+       ],
+       "band_sv_within_decade_of_cut": 10,
+       "exposed_fraction_uncertainty": 0.0006804572672836146,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 14685,
+      "exposed": 646,
+      "exposed_fraction": 0.04213684691148653,
+      "gap_union": 8.13307037185616,
+      "dim_K_union_ladder": {
+       "1e-06": 14779,
+       "1e-09": 14685,
+       "1e-12": 14682
+      },
+      "exposed_pct": 4.213684691148653,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14682,
+        14779
+       ],
+       "band_sv_within_decade_of_cut": 5,
+       "exposed_fraction_uncertainty": 0.0003261365860022177,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14282,
+      "exposed": 723,
+      "exposed_fraction": 0.0481839386871043,
+      "gap_union": 1377044.5211643726,
+      "dim_K_union_ladder": {
+       "1e-06": 14366,
+       "1e-09": 14282,
+       "1e-12": 14282
+      },
+      "exposed_pct": 4.81839386871043,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0,
+     1
+    ],
+    "exposed_pct_mean": 4.475944168837078,
+    "exposed_pct_sd": 0.3102275796208508
+   },
+   "0.4": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14096,
+      "exposed": 600,
+      "exposed_fraction": 0.04082743603701688,
+      "gap_union": 284685.3647930397,
+      "dim_K_union_ladder": {
+       "1e-06": 14231,
+       "1e-09": 14096,
+       "1e-12": 14096
+      },
+      "exposed_pct": 4.0827436037016875,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 14783,
+      "exposed": 548,
+      "exposed_fraction": 0.035744569825843064,
+      "gap_union": 12.675256888405071,
+      "dim_K_union_ladder": {
+       "1e-06": 14896,
+       "1e-09": 14783,
+       "1e-12": 14781
+      },
+      "exposed_pct": 3.5744569825843064,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14424,
+      "exposed": 581,
+      "exposed_fraction": 0.038720426524491834,
+      "gap_union": 610069.9783904004,
+      "dim_K_union_ladder": {
+       "1e-06": 14517,
+       "1e-09": 14424,
+       "1e-12": 14424
+      },
+      "exposed_pct": 3.8720426524491836,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 3.843081079578392,
+    "exposed_pct_sd": 0.2553779587769736
+   },
+   "0.5": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14212,
+      "exposed": 484,
+      "exposed_fraction": 0.03293413173652695,
+      "gap_union": 2.074310201175502,
+      "dim_K_union_ladder": {
+       "1e-06": 14371,
+       "1e-09": 14212,
+       "1e-12": 14211
+      },
+      "exposed_pct": 3.2934131736526946,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14211,
+        14371
+       ],
+       "band_sv_within_decade_of_cut": 8,
+       "exposed_fraction_uncertainty": 0.0005443658138268917,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 14923,
+      "exposed": 408,
+      "exposed_fraction": 0.026612745417780966,
+      "gap_union": 1.845899002924781,
+      "dim_K_union_ladder": {
+       "1e-06": 15039,
+       "1e-09": 14923,
+       "1e-12": 14919
+      },
+      "exposed_pct": 2.6612745417780967,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14919,
+        15039
+       ],
+       "band_sv_within_decade_of_cut": 9,
+       "exposed_fraction_uncertainty": 0.0005870458548039919,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14634,
+      "exposed": 371,
+      "exposed_fraction": 0.024725091636121292,
+      "gap_union": 19.00949427407499,
+      "dim_K_union_ladder": {
+       "1e-06": 14745,
+       "1e-09": 14634,
+       "1e-12": 14633
+      },
+      "exposed_pct": 2.4725091636121292,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0,
+     1
+    ],
+    "exposed_pct_mean": 2.8090656263476403,
+    "exposed_pct_sd": 0.4299447661431077
+   },
+   "0.6": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14356,
+      "exposed": 340,
+      "exposed_fraction": 0.023135547087642896,
+      "gap_union": 2.0729149364327983,
+      "dim_K_union_ladder": {
+       "1e-06": 14533,
+       "1e-09": 14356,
+       "1e-12": 14355
+      },
+      "exposed_pct": 2.31355470876429,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14355,
+        14533
+       ],
+       "band_sv_within_decade_of_cut": 7,
+       "exposed_fraction_uncertainty": 0.00047632008709853023,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15012,
+      "exposed": 319,
+      "exposed_fraction": 0.020807514186941493,
+      "gap_union": 1084071.4302349105,
+      "dim_K_union_ladder": {
+       "1e-06": 15156,
+       "1e-09": 15012,
+       "1e-12": 15012
+      },
+      "exposed_pct": 2.080751418694149,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14776,
+      "exposed": 229,
+      "exposed_fraction": 0.01526157947350883,
+      "gap_union": 10482796.210167808,
+      "dim_K_union_ladder": {
+       "1e-06": 14891,
+       "1e-09": 14776,
+       "1e-12": 14776
+      },
+      "exposed_pct": 1.526157947350883,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 1.9734880249364408,
+    "exposed_pct_sd": 0.4045089513241904
+   },
+   "0.7": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14479,
+      "exposed": 217,
+      "exposed_fraction": 0.014765922700054437,
+      "gap_union": 2.0735227315611433,
+      "dim_K_union_ladder": {
+       "1e-06": 14674,
+       "1e-09": 14479,
+       "1e-12": 14478
+      },
+      "exposed_pct": 1.4765922700054437,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14478,
+        14674
+       ],
+       "band_sv_within_decade_of_cut": 9,
+       "exposed_fraction_uncertainty": 0.0006124115405552531,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15062,
+      "exposed": 269,
+      "exposed_fraction": 0.017546148326919316,
+      "gap_union": 1757734.0876575992,
+      "dim_K_union_ladder": {
+       "1e-06": 15215,
+       "1e-09": 15062,
+       "1e-12": 15062
+      },
+      "exposed_pct": 1.7546148326919313,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14840,
+      "exposed": 165,
+      "exposed_fraction": 0.010996334555148283,
+      "gap_union": 4524137.736827532,
+      "dim_K_union_ladder": {
+       "1e-06": 14967,
+       "1e-09": 14840,
+       "1e-12": 14840
+      },
+      "exposed_pct": 1.0996334555148284,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 1.443613519404068,
+    "exposed_pct_sd": 0.32873370622074094
+   },
+   "0.8": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14525,
+      "exposed": 171,
+      "exposed_fraction": 0.011635819270549809,
+      "gap_union": 2.073078890212386,
+      "dim_K_union_ladder": {
+       "1e-06": 14741,
+       "1e-09": 14525,
+       "1e-12": 14524
+      },
+      "exposed_pct": 1.163581927054981,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14524,
+        14741
+       ],
+       "band_sv_within_decade_of_cut": 8,
+       "exposed_fraction_uncertainty": 0.0005443658138268917,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15041,
+      "exposed": 290,
+      "exposed_fraction": 0.01891592198812863,
+      "gap_union": 1601574.4802381538,
+      "dim_K_union_ladder": {
+       "1e-06": 15208,
+       "1e-09": 15041,
+       "1e-12": 15041
+      },
+      "exposed_pct": 1.8915921988128628,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14875,
+      "exposed": 130,
+      "exposed_fraction": 0.00866377874041986,
+      "gap_union": 5167538.994491861,
+      "dim_K_union_ladder": {
+       "1e-06": 15009,
+       "1e-09": 14875,
+       "1e-12": 14875
+      },
+      "exposed_pct": 0.866377874041986,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 1.3071839999699433,
+    "exposed_pct_sd": 0.5274772691196814
+   },
+   "0.9": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14556,
+      "exposed": 140,
+      "exposed_fraction": 0.009526401741970605,
+      "gap_union": 2.0645834204188747,
+      "dim_K_union_ladder": {
+       "1e-06": 14792,
+       "1e-09": 14556,
+       "1e-12": 14555
+      },
+      "exposed_pct": 0.9526401741970604,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14555,
+        14792
+       ],
+       "band_sv_within_decade_of_cut": 8,
+       "exposed_fraction_uncertainty": 0.0005443658138268917,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15059,
+      "exposed": 272,
+      "exposed_fraction": 0.017741830278520644,
+      "gap_union": 3.299141641877113,
+      "dim_K_union_ladder": {
+       "1e-06": 15219,
+       "1e-09": 15059,
+       "1e-12": 15055
+      },
+      "exposed_pct": 1.7741830278520645,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        15055,
+        15219
+       ],
+       "band_sv_within_decade_of_cut": 10,
+       "exposed_fraction_uncertainty": 0.0006522731720044354,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14890,
+      "exposed": 115,
+      "exposed_fraction": 0.007664111962679107,
+      "gap_union": 2079634.8289230384,
+      "dim_K_union_ladder": {
+       "1e-06": 15024,
+       "1e-09": 14890,
+       "1e-12": 14890
+      },
+      "exposed_pct": 0.7664111962679107,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0,
+     1
+    ],
+    "exposed_pct_mean": 1.1644114661056786,
+    "exposed_pct_sd": 0.5362241380160948
+   },
+   "1.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 14696,
+      "dim_K_union": 14562,
+      "exposed": 134,
+      "exposed_fraction": 0.009118127381600435,
+      "gap_union": 2.9924477074650944,
+      "dim_K_union_ladder": {
+       "1e-06": 14816,
+       "1e-09": 14562,
+       "1e-12": 14560
+      },
+      "exposed_pct": 0.9118127381600436,
+      "resolved": false,
+      "cutoff_sensitivity": {
+       "dim_K_union_range": [
+        14560,
+        14816
+       ],
+       "band_sv_within_decade_of_cut": 10,
+       "exposed_fraction_uncertainty": 0.0006804572672836146,
+       "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+      }
+     },
+     "seed1": {
+      "dim_K_X": 15331,
+      "dim_K_union": 15066,
+      "exposed": 265,
+      "exposed_fraction": 0.01728523905811754,
+      "gap_union": 1663425.8170467366,
+      "dim_K_union_ladder": {
+       "1e-06": 15225,
+       "1e-09": 15066,
+       "1e-12": 15066
+      },
+      "exposed_pct": 1.7285239058117539,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 15005,
+      "dim_K_union": 14910,
+      "exposed": 95,
+      "exposed_fraction": 0.006331222925691436,
+      "gap_union": 2066693.7126040738,
+      "dim_K_union_ladder": {
+       "1e-06": 15047,
+       "1e-09": 14910,
+       "1e-12": 14910
+      },
+      "exposed_pct": 0.6331222925691437,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [
+     0
+    ],
+    "exposed_pct_mean": 1.0911529788469803,
+    "exposed_pct_sd": 0.5692963771366059
+   }
+  },
+  "readout": {
+   "0.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 660,
+      "exposed": 120,
+      "exposed_fraction": 0.15384615384615385,
+      "gap_union": 6351456177.519679,
+      "dim_K_union_ladder": {
+       "1e-06": 660,
+       "1e-09": 660,
+       "1e-12": 660
+      },
+      "exposed_pct": 15.384615384615385,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 800,
+      "exposed": 80,
+      "exposed_fraction": 0.09090909090909091,
+      "gap_union": 5714410999.002052,
+      "dim_K_union_ladder": {
+       "1e-06": 800,
+       "1e-09": 800,
+       "1e-12": 800
+      },
+      "exposed_pct": 9.090909090909092,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 680,
+      "exposed": 80,
+      "exposed_fraction": 0.10526315789473684,
+      "gap_union": 7447736717.885967,
+      "dim_K_union_ladder": {
+       "1e-06": 680,
+       "1e-09": 680,
+       "1e-12": 680
+      },
+      "exposed_pct": 10.526315789473685,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 11.667280088332722,
+    "exposed_pct_sd": 3.298338123405895
+   },
+   "0.1": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 650,
+      "exposed": 130,
+      "exposed_fraction": 0.16666666666666666,
+      "gap_union": 80784746504.8896,
+      "dim_K_union_ladder": {
+       "1e-06": 650,
+       "1e-09": 650,
+       "1e-12": 650
+      },
+      "exposed_pct": 16.666666666666668,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 800,
+      "exposed": 80,
+      "exposed_fraction": 0.09090909090909091,
+      "gap_union": 16214568944.128412,
+      "dim_K_union_ladder": {
+       "1e-06": 800,
+       "1e-09": 800,
+       "1e-12": 800
+      },
+      "exposed_pct": 9.090909090909092,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 670,
+      "exposed": 90,
+      "exposed_fraction": 0.11842105263157894,
+      "gap_union": 14304706882.85576,
+      "dim_K_union_ladder": {
+       "1e-06": 670,
+       "1e-09": 670,
+       "1e-12": 670
+      },
+      "exposed_pct": 11.842105263157896,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 12.533227006911218,
+    "exposed_pct_sd": 3.834874529913404
+   },
+   "0.2": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 650,
+      "exposed": 130,
+      "exposed_fraction": 0.16666666666666666,
+      "gap_union": 12703598961.213314,
+      "dim_K_union_ladder": {
+       "1e-06": 650,
+       "1e-09": 650,
+       "1e-12": 650
+      },
+      "exposed_pct": 16.666666666666668,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 780,
+      "exposed": 100,
+      "exposed_fraction": 0.11363636363636363,
+      "gap_union": 15439974080.79809,
+      "dim_K_union_ladder": {
+       "1e-06": 780,
+       "1e-09": 780,
+       "1e-12": 780
+      },
+      "exposed_pct": 11.363636363636363,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 670,
+      "exposed": 90,
+      "exposed_fraction": 0.11842105263157894,
+      "gap_union": 799500446.9227173,
+      "dim_K_union_ladder": {
+       "1e-06": 680,
+       "1e-09": 670,
+       "1e-12": 670
+      },
+      "exposed_pct": 11.842105263157896,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 13.290802764486976,
+    "exposed_pct_sd": 2.933355746663241
+   },
+   "0.3": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 630,
+      "exposed": 150,
+      "exposed_fraction": 0.19230769230769232,
+      "gap_union": 74728325703.3004,
+      "dim_K_union_ladder": {
+       "1e-06": 630,
+       "1e-09": 630,
+       "1e-12": 630
+      },
+      "exposed_pct": 19.23076923076923,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 750,
+      "exposed": 130,
+      "exposed_fraction": 0.14772727272727273,
+      "gap_union": 995913182.9979763,
+      "dim_K_union_ladder": {
+       "1e-06": 760,
+       "1e-09": 750,
+       "1e-12": 750
+      },
+      "exposed_pct": 14.772727272727273,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 680,
+      "exposed": 80,
+      "exposed_fraction": 0.10526315789473684,
+      "gap_union": 9789380049.988207,
+      "dim_K_union_ladder": {
+       "1e-06": 680,
+       "1e-09": 680,
+       "1e-12": 680
+      },
+      "exposed_pct": 10.526315789473685,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 14.843270764323398,
+    "exposed_pct_sd": 4.352655478679124
+   },
+   "0.4": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 590,
+      "exposed": 190,
+      "exposed_fraction": 0.24358974358974358,
+      "gap_union": 19312379937.96556,
+      "dim_K_union_ladder": {
+       "1e-06": 590,
+       "1e-09": 590,
+       "1e-12": 590
+      },
+      "exposed_pct": 24.358974358974358,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 710,
+      "exposed": 170,
+      "exposed_fraction": 0.19318181818181818,
+      "gap_union": 2631382339.8044252,
+      "dim_K_union_ladder": {
+       "1e-06": 710,
+       "1e-09": 710,
+       "1e-12": 710
+      },
+      "exposed_pct": 19.318181818181817,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 660,
+      "exposed": 100,
+      "exposed_fraction": 0.13157894736842105,
+      "gap_union": 6219206324.065332,
+      "dim_K_union_ladder": {
+       "1e-06": 660,
+       "1e-09": 660,
+       "1e-12": 660
+      },
+      "exposed_pct": 13.157894736842104,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 18.94501697133276,
+    "exposed_pct_sd": 5.609856074582441
+   },
+   "0.5": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 590,
+      "exposed": 190,
+      "exposed_fraction": 0.24358974358974358,
+      "gap_union": 6231620269.689505,
+      "dim_K_union_ladder": {
+       "1e-06": 590,
+       "1e-09": 590,
+       "1e-12": 590
+      },
+      "exposed_pct": 24.358974358974358,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 710,
+      "exposed": 170,
+      "exposed_fraction": 0.19318181818181818,
+      "gap_union": 2033277523.4820387,
+      "dim_K_union_ladder": {
+       "1e-06": 710,
+       "1e-09": 710,
+       "1e-12": 710
+      },
+      "exposed_pct": 19.318181818181817,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 680,
+      "exposed": 80,
+      "exposed_fraction": 0.10526315789473684,
+      "gap_union": 1135762754.6905105,
+      "dim_K_union_ladder": {
+       "1e-06": 680,
+       "1e-09": 680,
+       "1e-12": 680
+      },
+      "exposed_pct": 10.526315789473685,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 18.067823988876622,
+    "exposed_pct_sd": 7.000582604403272
+   },
+   "0.6": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 630,
+      "exposed": 150,
+      "exposed_fraction": 0.19230769230769232,
+      "gap_union": 17030025941.575851,
+      "dim_K_union_ladder": {
+       "1e-06": 630,
+       "1e-09": 630,
+       "1e-12": 630
+      },
+      "exposed_pct": 19.23076923076923,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 700,
+      "exposed": 180,
+      "exposed_fraction": 0.20454545454545456,
+      "gap_union": 244567345.71576625,
+      "dim_K_union_ladder": {
+       "1e-06": 710,
+       "1e-09": 700,
+       "1e-12": 700
+      },
+      "exposed_pct": 20.454545454545453,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 710,
+      "exposed": 50,
+      "exposed_fraction": 0.06578947368421052,
+      "gap_union": 9239750300.54432,
+      "dim_K_union_ladder": {
+       "1e-06": 710,
+       "1e-09": 710,
+       "1e-12": 710
+      },
+      "exposed_pct": 6.578947368421052,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 15.421420684578578,
+    "exposed_pct_sd": 7.68221373184113
+   },
+   "0.7": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 670,
+      "exposed": 110,
+      "exposed_fraction": 0.14102564102564102,
+      "gap_union": 28524328505.611866,
+      "dim_K_union_ladder": {
+       "1e-06": 670,
+       "1e-09": 670,
+       "1e-12": 670
+      },
+      "exposed_pct": 14.102564102564102,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 700,
+      "exposed": 180,
+      "exposed_fraction": 0.20454545454545456,
+      "gap_union": 5947564934.748287,
+      "dim_K_union_ladder": {
+       "1e-06": 700,
+       "1e-09": 700,
+       "1e-12": 700
+      },
+      "exposed_pct": 20.454545454545453,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 710,
+      "exposed": 50,
+      "exposed_fraction": 0.06578947368421052,
+      "gap_union": 1003556244.7664458,
+      "dim_K_union_ladder": {
+       "1e-06": 710,
+       "1e-09": 710,
+       "1e-12": 710
+      },
+      "exposed_pct": 6.578947368421052,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 13.71201897517687,
+    "exposed_pct_sd": 6.946038416558695
+   },
+   "0.8": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 670,
+      "exposed": 110,
+      "exposed_fraction": 0.14102564102564102,
+      "gap_union": 4855741244.929688,
+      "dim_K_union_ladder": {
+       "1e-06": 670,
+       "1e-09": 670,
+       "1e-12": 670
+      },
+      "exposed_pct": 14.102564102564102,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 670,
+      "exposed": 210,
+      "exposed_fraction": 0.23863636363636365,
+      "gap_union": 4286009310.166701,
+      "dim_K_union_ladder": {
+       "1e-06": 670,
+       "1e-09": 670,
+       "1e-12": 670
+      },
+      "exposed_pct": 23.863636363636363,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 730,
+      "exposed": 30,
+      "exposed_fraction": 0.039473684210526314,
+      "gap_union": 14140329597.008953,
+      "dim_K_union_ladder": {
+       "1e-06": 730,
+       "1e-09": 730,
+       "1e-12": 730
+      },
+      "exposed_pct": 3.9473684210526314,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 13.971189629084364,
+    "exposed_pct_sd": 9.95878389309702
+   },
+   "0.9": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 680,
+      "exposed": 100,
+      "exposed_fraction": 0.1282051282051282,
+      "gap_union": 9552518100.712788,
+      "dim_K_union_ladder": {
+       "1e-06": 680,
+       "1e-09": 680,
+       "1e-12": 680
+      },
+      "exposed_pct": 12.820512820512821,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 660,
+      "exposed": 220,
+      "exposed_fraction": 0.25,
+      "gap_union": 3642755314.7329683,
+      "dim_K_union_ladder": {
+       "1e-06": 660,
+       "1e-09": 660,
+       "1e-12": 660
+      },
+      "exposed_pct": 25.0,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 730,
+      "exposed": 30,
+      "exposed_fraction": 0.039473684210526314,
+      "gap_union": 11825082013.891983,
+      "dim_K_union_ladder": {
+       "1e-06": 730,
+       "1e-09": 730,
+       "1e-12": 730
+      },
+      "exposed_pct": 3.9473684210526314,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 13.922627080521815,
+    "exposed_pct_sd": 10.569499325006335
+   },
+   "1.0": {
+    "per_seed": {
+     "seed0": {
+      "dim_K_X": 780,
+      "dim_K_union": 690,
+      "exposed": 90,
+      "exposed_fraction": 0.11538461538461539,
+      "gap_union": 55731970700.44194,
+      "dim_K_union_ladder": {
+       "1e-06": 690,
+       "1e-09": 690,
+       "1e-12": 690
+      },
+      "exposed_pct": 11.538461538461538,
+      "resolved": true
+     },
+     "seed1": {
+      "dim_K_X": 880,
+      "dim_K_union": 640,
+      "exposed": 240,
+      "exposed_fraction": 0.2727272727272727,
+      "gap_union": 9983198601.798807,
+      "dim_K_union_ladder": {
+       "1e-06": 640,
+       "1e-09": 640,
+       "1e-12": 640
+      },
+      "exposed_pct": 27.272727272727273,
+      "resolved": true
+     },
+     "seed2": {
+      "dim_K_X": 760,
+      "dim_K_union": 730,
+      "exposed": 30,
+      "exposed_fraction": 0.039473684210526314,
+      "gap_union": 16406453121.166086,
+      "dim_K_union_ladder": {
+       "1e-06": 730,
+       "1e-09": 730,
+       "1e-12": 730
+      },
+      "exposed_pct": 3.9473684210526314,
+      "resolved": true
+     }
+    },
+    "qualified_seeds": [],
+    "exposed_pct_mean": 14.252852410747147,
+    "exposed_pct_sd": 11.897227817668691
+   }
+  }
+ },
+ "missing_cells": []
+}

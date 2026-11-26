@@ -1,0 +1,262 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+ "run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_mgn_l0/seed_1",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 1.0839839555658866,
+   "train_errors": 54634,
+   "test_acc": 0.0915,
+   "test_mse": 1.0904243650615129,
+   "param_norm": 19.804161397356218,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": 2,
+   "checkpoint_epoch": 2,
+   "train_mse": 0.024504874092686004,
+   "train_errors": 5269,
+   "test_acc": 0.9118,
+   "test_mse": 0.02461778570751227,
+   "param_norm": 18.65179900209984,
+   "same_as": []
+  },
+  "high_accuracy": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "mse_interpolation": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 0.0005186385929957112,
+   "train_errors": 172,
+   "test_acc": 0.9614,
+   "test_mse": 0.006788473813509148,
+   "param_norm": 91.99668219197622,
+   "same_as": []
+  },
+  "epoch_50": {
+   "milestone_epoch": 50,
+   "checkpoint_epoch": 50,
+   "train_mse": 0.0013830559656130923,
+   "train_errors": 358,
+   "test_acc": 0.9658,
+   "test_mse": 0.006010312333344671,
+   "param_norm": 32.73972433279007,
+   "same_as": []
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.00078693328714369,
+   "train_errors": 289,
+   "test_acc": 0.9638,
+   "test_mse": 0.006234964788951583,
+   "param_norm": 44.26229129180024,
+   "same_as": []
+  },
+  "epoch_150": {
+   "milestone_epoch": 150,
+   "checkpoint_epoch": 150,
+   "train_mse": 0.000947893516432722,
+   "train_errors": 286,
+   "test_acc": 0.9619,
+   "test_mse": 0.006574613999569939,
+   "param_norm": 52.877561592200685,
+   "same_as": []
+  },
+  "epoch_200": {
+   "milestone_epoch": 200,
+   "checkpoint_epoch": 200,
+   "train_mse": 0.0006168719366081684,
+   "train_errors": 226,
+   "test_acc": 0.9648,
+   "test_mse": 0.006317851744210023,
+   "param_norm": 59.531570830647446,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 0.0006847989964611043,
+   "train_errors": 216,
+   "test_acc": 0.9626,
+   "test_mse": 0.006529109187478505,
+   "param_norm": 65.74328411471605,
+   "same_as": []
+  }
+ },
+ "rank_tolerance": 1e-09,
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "92e7ffecdf81e1cb5912b4d6290fb80321b46f64daca3a0221f57588a30a9a9a",
+    "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+     "build_version": 2,
+     "rtol": 1e-09,
+     "valid_tol": 1e-09,
+     "samples": 10000,
+     "random_orders": 6,
+     "generator_seed": 1234
+    },
+    "digest": "546b5b534e2bc500e140792cffe23a683fadf0b8f19d111cf5c5ee2bdb995098"
+   },
+   "constructions": {
+    "bottom_up": {
+     "order": [
+      "W1",
+      "W2",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 1561,
+      "W3": 2914,
+      "V": 240
+     },
+     "total": 4715,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 9.9401,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 0.900627613067627
+      },
+      {
+       "dim": 1561,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 2.5187340244467466e-12,
+       "sigma_ref": 57.62981006292642,
+       "largest_rejected_over_ref": 4.3705402146849384e-14,
+       "prepass": {
+        "dim": 1561,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 6.175308193637358e-13,
+        "sigma_ref": 57.62981006292642,
+        "largest_rejected_over_ref": 1.0715475527152515e-14
+       },
+       "mean_dim_Zhat": 9.9401,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 8.831713676452637
+      },
+      {
+       "dim": 2914,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 8.381797835612409e-13,
+       "sigma_ref": 72.16367302685414,
+       "largest_rejected_over_ref": 1.1614982281311132e-14,
+       "prepass": {
+        "dim": 2914,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 1.855044412311703e-13,
+        "sigma_ref": 72.16367302685414,
+        "largest_rejected_over_ref": 2.570606975093117e-15
+       },
+       "mean_dim_Zhat": 10.0,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 39.31752681732178
+      },
+      {
+       "dim": 240,
+       "rank_within": 41,
+       "gap": 346214168914.4472,
+       "sigma1": 100.0,
+       "block": "V",
+       "mean_dim_U": 6.2543,
+       "seconds": 13.114306688308716
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 3.0670902392276782e-15,
+       "1.0": 2.9243642219379085e-14,
+       "10.0": 1.1330805423865187e-12
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 9.760983442293917e-16,
+       "W3": 1.4270804376810963e-15,
+       "V": 1.4851166055465283e-14
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 1.7105824426840383e-14,
+       "W3": 1.631219673624248e-14,
+       "V": 5.1941268173350647e-14
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "b8ead4130f5538975a24f1816c116f8b0c210de8ab57a893b177bf91b969a9d9",
+     "seconds": 107.84950709342957
+    }
+   },
+   "blocks": {
+    "W1": {
+     "p": 16448,
+     "dim_atomic_kernel": 0,
+     "gap": null,
+     "kernel_source": "measured"
+    },
+    "W2": {
+     "p": 4160,
+     "dim_atomic_kernel": 1561,
+     "gap": 205784481.9851628,
+     "kernel_source": "measured"
+    },
+    "W3": {
+     "p": 4160,
+     "dim_atomic_kernel": 2914,
+     "gap": 40301756.62094738,
+     "kernel_source": "measured"
+    },
+    "V": {
+     "p": 650,
+     "dim_atomic_kernel": 240,
+     "gap": 4196406936313.558,
+     "kernel_source": "measured"
+    }
+   },
+   "sum_atomic": 4715,
+   "n_params": 25418,
+   "block_scope": {
+    "restricted": false,
+    "allowed_blocks": [
+     "W1",
+     "W2",
+     "W3",
+     "V"
+    ],
+    "excluded_blocks": {},
+    "atomic_record": null
+   }
+  }
+ }
+}

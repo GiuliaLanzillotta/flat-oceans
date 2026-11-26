@@ -1,0 +1,182 @@
+{
+  "parent": "mnist_mlp_seed0",
+  "seed": 0,
+  "fork_epoch": 350,
+  "method": "parent_bottom_up: canonical W1-INCLUSIVE single-sketch bottom-up construction at the parent fork checkpoint, by authenticated reuse of the parent persistence factors (conventions of lmc_mlp_branch_build_reuse.py + w1_reuse_build_s1.py; canonical power-iteration sigma_ref)",
+  "sigma_ref_used": {
+    "W1": {
+      "value": 19.974543078982006,
+      "power_iters": 33,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    },
+    "W2": {
+      "value": 38.32976737672201,
+      "power_iters": 34,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    },
+    "W3": {
+      "value": 32.868403997181375,
+      "power_iters": 75,
+      "source": "sigma_ref_hidden power iteration on the unrestricted step operator at this checkpoint (canonical convention of lmc_mlp_branch_build_reuse.py)"
+    }
+  },
+  "label": "the W1 atomic input is a MEASURED ZERO (admission record), included, not frozen; the post-build exposure gate is first-order only and does not certify the multilayer branch -- certification rests on the validation record",
+  "w1_admission": {
+    "record": "w1_admission_parent_s0_e350.json",
+    "n_admitted": 0,
+    "declared_kernel_dims": 0,
+    "passed": true
+  },
+  "authentication": {
+    "W1": {
+      "dim": 0,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 0.0,
+      "kernel_exposure_Jv_X_max": null,
+      "w1_admitted_from": "w1_admission_parent_s0_e350.json",
+      "factor_sha256": "7cbb2242d9e845edb45edc14ce1cb6f3bedd9205106687874efb5b10bb5fddfe"
+    },
+    "W2": {
+      "dim": 7965,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 9.547918011776346e-15,
+      "kernel_exposure_Jv_X_max": 7.605036500822527e-16,
+      "w1_admitted_from": null,
+      "factor_sha256": "1c05ccaecffe15ef2b55ce75a055c02aaddbb1f0cf19bff235e65d06a8461a02"
+    },
+    "W3": {
+      "dim": 13951,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 8.992806499463768e-15,
+      "kernel_exposure_Jv_X_max": 4.095899315325843e-09,
+      "w1_admitted_from": null,
+      "factor_sha256": "ed25c257e767e9c34e0d52b53b30c91faf36d3ac5e4fe2bbe602968c3c8acf75"
+    },
+    "V": {
+      "dim": 720,
+      "auth_ck_pre_idx": "PASS",
+      "orthonormality_maxdev": 4.773959005888173e-15,
+      "kernel_exposure_Jv_X_max": 1.0054775439940203e-14,
+      "w1_admitted_from": null,
+      "factor_sha256": "99816acdb098790e2be606f623646844818fc74845404f7a1fe478d5eea01934"
+    }
+  },
+  "branch_dims": {
+    "W1": 0,
+    "W2": 7965,
+    "W3": 13946,
+    "V": 720
+  },
+  "branch_total": 22631,
+  "certified_branch": true,
+  "validation": {
+    "tolerance": 1e-09,
+    "polynomial_residual_rel": {
+      "0.1": 2.067935719902382e-15,
+      "1.0": 1.748710699500746e-14,
+      "10.0": 2.335514824780485e-13
+    },
+    "forward_criterion_sampled_max": {
+      "W1": 0.0,
+      "W2": 3.400303882071651e-15,
+      "W3": 5.960005957897683e-16,
+      "V": 7.5039381843392045e-16
+    },
+    "forward_criterion_full_max": {
+      "W1": 0.0,
+      "W2": 2.1658578975718947e-13,
+      "W3": 9.064522729048901e-15,
+      "V": 2.466572795390266e-15
+    },
+    "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+    "svd_solver_counts": {
+      "gesdd": 6
+    },
+    "gram_fallback_used": false,
+    "residuals_within_tolerance": true,
+    "passed": true
+  },
+  "post_build_exposure": {
+    "W1": {
+      "dim": 0
+    },
+    "W2": {
+      "dim": 7965,
+      "exposure_max": 7.852869657278539e-16,
+      "count_gt_gate": 0
+    },
+    "W3": {
+      "dim": 13946,
+      "exposure_max": 1.3997562379391382e-14,
+      "count_gt_gate": 0
+    },
+    "V": {
+      "dim": 720,
+      "exposure_max": 2.1954854953302816e-15,
+      "count_gt_gate": 0
+    }
+  },
+  "post_build_w1_autodiff_spot": [],
+  "svd_solver_counts_build_validate": {
+    "gesdd": 27
+  },
+  "gram_fallback_used": false,
+  "failures": [],
+  "steps": [
+    {
+      "dim": 0,
+      "rank_within": 0,
+      "gap": null,
+      "mean_dim_Zhat": 4.4462,
+      "block": "W1",
+      "mean_dim_U": 1.0,
+      "seconds": 1.1653242111206055
+    },
+    {
+      "dim": 7965,
+      "rank_within": 0,
+      "gap": null,
+      "sigma1": 5.803895672982148e-12,
+      "sigma_ref": 38.32976737672201,
+      "cutoff": 3.8329767376722014e-08,
+      "cutoff_mode": "relative_rtol_sigma_ref",
+      "largest_rejected_over_cut": 0.00015142005992206732,
+      "largest_rejected_over_ref": 1.5142005992206732e-13,
+      "mean_dim_Zhat": 4.4462,
+      "block": "W2",
+      "mean_dim_U": 1.0,
+      "seconds": 132.46939420700073
+    },
+    {
+      "dim": 13946,
+      "rank_within": 3,
+      "gap": 14133733396.396294,
+      "sigma1": 1.0000000000000044,
+      "sigma_ref": 32.868403997181375,
+      "cutoff": 3.2868403997181375e-08,
+      "cutoff_mode": "relative_rtol_sigma_ref",
+      "largest_rejected_over_cut": 0.0021525201378946924,
+      "largest_rejected_over_ref": 2.1525201378946927e-12,
+      "mean_dim_Zhat": 4.5925,
+      "block": "W3",
+      "mean_dim_U": 1.0004,
+      "seconds": 505.68233609199524
+    },
+    {
+      "dim": 720,
+      "rank_within": 57,
+      "gap": 210399274726.42694,
+      "sigma1": 33.194496954311155,
+      "cutoff": 3.319449695431116e-08,
+      "cutoff_mode": "relative_rtol_sigma1",
+      "block": "V",
+      "mean_dim_U": 1.0,
+      "seconds": 47.19593596458435
+    }
+  ],
+  "timings_sec": {
+    "load_authenticate": 77.6863923072815,
+    "construction": 686.557190656662,
+    "validation": 405.96999502182007
+  }
+}

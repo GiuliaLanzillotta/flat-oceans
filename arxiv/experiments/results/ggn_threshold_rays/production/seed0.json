@@ -1,0 +1,162 @@
+{
+  "seed": 0,
+  "n": 256,
+  "radii": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7,
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    7.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0,
+    50.0,
+    100.0
+  ],
+  "taus": [
+    1e-14,
+    1e-12,
+    1e-10,
+    1e-08,
+    1e-06,
+    0.0001
+  ],
+  "dimensions": {
+    "G_1e-14": 3836,
+    "G_1e-12": 3890,
+    "G_1e-10": 5079,
+    "G_1e-08": 13098,
+    "G_1e-06": 21304,
+    "G_0.0001": 24283,
+    "ocean": 3619,
+    "generic": 25418
+  },
+  "validation": {
+    "G_1e-14": {
+      "combination_norm_error": 3.219646771412954e-15,
+      "operator_vector_residual": 6.86887347853252e-15,
+      "max_abs_eigenvalue": 9.339695199243824e-15,
+      "independent_forward_checks": {
+        "reused_verified_GGN_kernel": "results/ggn_shell_rays/production/seed0.pt"
+      }
+    },
+    "G_1e-12": {
+      "combination_norm_error": 3.552713678800501e-15,
+      "operator_vector_residual": 1.9387189458356302e-14,
+      "max_abs_eigenvalue": 9.786508735812358e-13,
+      "independent_forward_checks": {
+        "0.001": {
+          "absolute_max_error": 8.881784197001252e-15,
+          "relative_max_error": 7.361906844265161e-15
+        },
+        "100.0": {
+          "absolute_max_error": 6.366462912410498e-12,
+          "relative_max_error": 1.6678752168292165e-15
+        }
+      }
+    },
+    "G_1e-10": {
+      "combination_norm_error": 5.551115123125783e-15,
+      "operator_vector_residual": 1.1620490350803135e-13,
+      "max_abs_eigenvalue": 9.998489579771423e-11,
+      "independent_forward_checks": {
+        "0.001": {
+          "absolute_max_error": 1.0658141036401503e-14,
+          "relative_max_error": 8.834288209835852e-15
+        },
+        "100.0": {
+          "absolute_max_error": 4.547473508864641e-12,
+          "relative_max_error": 1.949161965356909e-15
+        }
+      }
+    },
+    "G_1e-08": {
+      "combination_norm_error": 7.438494264988549e-15,
+      "operator_vector_residual": 1.8096185140990378e-13,
+      "max_abs_eigenvalue": 9.998629359768268e-09,
+      "independent_forward_checks": {
+        "0.001": {
+          "absolute_max_error": 1.354472090042691e-14,
+          "relative_max_error": 1.122690794122979e-14
+        },
+        "100.0": {
+          "absolute_max_error": 1.5631940186722204e-12,
+          "relative_max_error": 1.941421278836465e-15
+        }
+      }
+    },
+    "G_1e-06": {
+      "combination_norm_error": 7.993605777301127e-15,
+      "operator_vector_residual": 1.4868740028916633e-13,
+      "max_abs_eigenvalue": 9.992792462032113e-07,
+      "independent_forward_checks": {
+        "0.001": {
+          "absolute_max_error": 1.0658141036401503e-14,
+          "relative_max_error": 8.83428821938911e-15
+        },
+        "100.0": {
+          "absolute_max_error": 1.1652900866465643e-12,
+          "relative_max_error": 1.9126655361123728e-15
+        }
+      }
+    },
+    "G_0.0001": {
+      "combination_norm_error": 9.2148511043888e-15,
+      "operator_vector_residual": 1.3929610534382815e-13,
+      "max_abs_eigenvalue": 9.944838986823022e-05,
+      "independent_forward_checks": {
+        "0.001": {
+          "absolute_max_error": 1.3100631690576847e-14,
+          "relative_max_error": 1.0858811882555226e-14
+        },
+        "100.0": {
+          "absolute_max_error": 1.7053025658242404e-12,
+          "relative_max_error": 1.899944130242801e-15
+        }
+      }
+    },
+    "ocean": {
+      "combination_norm_error": 3.552713678800501e-15,
+      "independent_forward_checks": {
+        "reused_verified_Hessian_control": "results/hessian_threshold_rays/production/seed0.pt"
+      },
+      "original_grid_max_error": 0.0
+    },
+    "generic": {
+      "independent_forward_checks": {
+        "reused_verified_Hessian_control": "results/hessian_threshold_rays/production/seed0.pt"
+      },
+      "original_grid_max_error": 0.0
+    }
+  },
+  "provenance": {
+    "checkpoint_sha256": "ae4e372212215c1028a34ee6a15a4111523a2cc7dc130da15309d13b9e372dc6",
+    "analysis_indices_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "eigensystem": "results/hessian_gn/hgn_cov_w64_seed0_mats.pt",
+    "eigensystem_bytes": 24355125338,
+    "eigenvalues_sha256": "647cd23051e2f73ceb47841491a81432fae028ab6d9135b54269ab424791335a",
+    "script_sha256": "2e6fbdd80915a4f3367863ece3e62e2de5bfb990637190cc8501000d27072032",
+    "compatible_ocean_basis_sha256": "83759ce744422e2f3b100a935affad84cd65581ef907a2f458a9f103e743b241"
+  },
+  "runtime_s": 223.44800233840942,
+  "protocol": {
+    "directions": "normalized iid Gaussian coordinates in nested cumulative bands; controls reuse previous saved directions",
+    "spectral_band": "abs(lambda_G) <= tau; loss=sum_outputs/s; G=2 J^T J/s",
+    "drift": "sqrt(sum_i ||F(theta+rv)-F(theta)||^2/s)",
+    "loss_mse": "mean over samples and outputs",
+    "precision": "float64",
+    "epsilon": 0.001,
+    "failure": "any tested radius <=r exceeds epsilon; no between-grid guarantee"
+  }
+}

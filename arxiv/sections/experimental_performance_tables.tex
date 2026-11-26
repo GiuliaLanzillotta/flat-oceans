@@ -1,0 +1,380 @@
+\begin{table}[!htbp]\centering
+\caption{Reference and activations: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-0-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+ReLU, width 128 & Init. & 0 & 3 & 6.082--9.805 & 6.150--9.860\\
+ & Early fit & 1--2 & 3 & 90.433--93.617 & 90.200--93.000\\
+ & High accuracy & 40--50 & 3 & 99.900--99.927 & 97.310--97.650\\
+ & Interpolation & 50--61 & 3 & 99.945--99.953 & 97.350--97.620\\
+ & Epoch 50 & 50 & 3 & 99.927--99.945 & 97.310--97.590\\
+ & Epoch 100 & 100 & 3 & 99.963--99.982 & 97.440--97.480\\
+ & Epoch 150 & 150 & 3 & 99.968--99.998 & 97.450--97.680\\
+ & Epoch 200 & 200 & 3 & 99.957--99.990 & 97.440--97.530\\
+ & Epoch 250 & 250 & 3 & 99.978--100.000 & 97.380--97.580\\
+ & Endpoint & 500 & 3 & 99.987--99.998 & 97.300--97.640\\
+\midrule
+Leaky ReLU, width 128 & Init. & 0 & 3 & 6.420--10.210 & 6.390--10.150\\
+ & Early fit & 1--2 & 3 & 90.972--93.843 & 90.800--93.050\\
+ & High accuracy & 40--48 & 3 & 99.903--99.915 & 97.810--97.860\\
+ & Interpolation & 66--81 & 3 & 99.962--99.968 & 97.820--97.870\\
+ & Epoch 50 & 50 & 3 & 99.863--99.928 & 97.540--97.810\\
+ & Epoch 100 & 100 & 3 & 99.860--99.977 & 97.560--97.760\\
+ & Epoch 150 & 150 & 3 & 99.832--99.995 & 97.020--97.920\\
+ & Epoch 200 & 200 & 3 & 99.988--100.000 & 97.780--97.850\\
+ & Epoch 250 & 250 & 3 & 99.992--99.998 & 97.800--97.890\\
+ & Endpoint & 500 & 3 & 99.998--100.000 & 97.730--97.860\\
+\midrule
+GELU, width 128 & Init. & 0 & 3 & 6.612--10.407 & 6.530--10.710\\
+ & Early fit & 1 & 3 & 90.667--92.163 & 90.580--91.880\\
+ & High accuracy & 20--23 & 3 & 99.902--99.920 & 97.670--97.930\\
+ & Interpolation & 41--42 & 3 & 99.982--99.990 & 97.710--97.780\\
+ & Epoch 50 & 50 & 3 & 99.993 & 97.680--97.920\\
+ & Epoch 100 & 100 & 3 & 99.998--100.000 & 97.740--97.810\\
+ & Epoch 150 & 150 & 3 & 100.000 & 97.660--97.730\\
+ & Epoch 200 & 200 & 3 & 99.978--100.000 & 97.590--97.780\\
+ & Epoch 250 & 250 & 3 & 100.000 & 97.490--97.820\\
+ & Endpoint & 500 & 3 & 99.968--100.000 & 97.520--97.660\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Reference and activations: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row. Identity checkpoints follow its recorded comparison; its own high-accuracy and interpolation milestones are not attained.}\label{tab:perf-0-3}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Identity, width 128 & Init. & 0 & 3 & 10.770--14.468 & 10.630--14.330\\
+ & Epoch 50 & 50 & 3 & 85.227--85.492 & 85.940--86.030\\
+ & Epoch 100 & 100 & 3 & 85.113--85.173 & 85.410--85.890\\
+ & Epoch 150 & 150 & 3 & 85.128--85.202 & 85.730--85.920\\
+ & Epoch 200 & 200 & 3 & 85.053--85.583 & 85.880--86.340\\
+ & Epoch 250 & 250 & 3 & 85.270--85.312 & 85.880--85.990\\
+ & Endpoint & 500 & 3 & 85.125--85.397 & 85.770--86.210\\
+\midrule
+Leaky ReLU, width 64 & Init. & 0 & 3 & 8.305--11.187 & 8.220--11.150\\
+ & Early fit & 2 & 3 & 90.197--91.633 & 90.300--91.550\\
+ & High accuracy & 138--285 & 3 & 99.900--99.902 & 97.100--97.390\\
+ & Interpolation & 251--468 & 3 & 99.927--99.950 & 97.260--97.440\\
+ & Epoch 50 & 50 & 3 & 99.668--99.740 & 97.130--97.300\\
+ & Epoch 100 & 100 & 3 & 99.825--99.877 & 97.330--97.480\\
+ & Epoch 150 & 150 & 3 & 99.803--99.900 & 97.120--97.490\\
+ & Epoch 200 & 200 & 3 & 99.867--99.915 & 97.180--97.380\\
+ & Epoch 250 & 250 & 3 & 99.880--99.932 & 97.170--97.410\\
+ & Endpoint & 500 & 3 & 99.917--99.968 & 97.120--97.300\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{MLP scaling: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-1-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Width 32 & Init. & 0 & 3 & 6.262--13.848 & 5.820--14.450\\
+ & Early fit & 5 & 3 & 92.838--94.217 & 92.470--93.690\\
+ & Epoch 50 & 50 & 3 & 99.027--99.187 & 95.780--96.060\\
+ & Epoch 100 & 100 & 3 & 99.212--99.472 & 95.540--95.720\\
+ & Epoch 150 & 150 & 3 & 99.348--99.513 & 95.310--95.770\\
+ & Epoch 200 & 200 & 3 & 99.385--99.502 & 95.110--95.630\\
+ & Epoch 250 & 250 & 3 & 99.382--99.612 & 95.000--95.730\\
+ & Endpoint & 500 & 3 & 99.485--99.635 & 95.030--95.760\\
+\midrule
+Width 64 & Init. & 0 & 3 & 8.943--11.245 & 9.150--11.510\\
+ & Early fit & 2 & 3 & 90.062--91.297 & 89.980--91.300\\
+ & High accuracy & 188--313 & 3 & 99.900--99.910 & 96.710--96.910\\
+ & Interpolation & 364 & 1 & 99.940 & 96.870\\
+ & Epoch 50 & 50 & 3 & 99.687--99.725 & 96.610--97.050\\
+ & Epoch 100 & 100 & 3 & 99.753--99.850 & 96.890--96.970\\
+ & Epoch 150 & 150 & 3 & 99.688--99.873 & 96.760--96.880\\
+ & Epoch 200 & 200 & 3 & 99.857--99.907 & 96.900--97.190\\
+ & Epoch 250 & 250 & 3 & 99.822--99.890 & 96.770--97.000\\
+ & Endpoint & 500 & 3 & 99.897--99.960 & 96.740--96.870\\
+\midrule
+Width 256 & Init. & 0 & 3 & 9.365--11.188 & 9.840--11.590\\
+ & Early fit & 1 & 3 & 93.267--93.405 & 92.750--92.890\\
+ & High accuracy & 16--25 & 3 & 99.902--99.933 & 97.870--97.940\\
+ & Interpolation & 31--47 & 3 & 99.978--99.982 & 97.900--98.100\\
+ & Epoch 50 & 50 & 3 & 99.982--99.987 & 97.920--98.060\\
+ & Epoch 100 & 100 & 3 & 99.973--99.992 & 97.750--98.020\\
+ & Epoch 150 & 150 & 3 & 99.975--99.992 & 97.760--97.950\\
+ & Epoch 200 & 200 & 3 & 99.987--100.000 & 97.870--98.060\\
+ & Epoch 250 & 250 & 3 & 99.995--99.997 & 97.700--98.170\\
+ & Endpoint & 500 & 3 & 99.978--99.992 & 97.560--97.790\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{MLP scaling: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-1-3}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Width 512 & Init. & 0 & 3 & 7.437--9.718 & 7.080--9.690\\
+ & Early fit & 1 & 3 & 95.055--95.240 & 94.190--94.590\\
+ & High accuracy & 10--11 & 3 & 99.902--99.928 & 97.900--98.080\\
+ & Interpolation & 34--36 & 3 & 99.988--99.998 & 98.120--98.360\\
+ & Epoch 50 & 50 & 3 & 99.995 & 98.140--98.280\\
+ & Epoch 100 & 100 & 3 & 99.977--99.998 & 98.000--98.240\\
+ & Epoch 150 & 150 & 3 & 99.993--99.997 & 97.890--98.050\\
+ & Epoch 200 & 200 & 3 & 99.985--99.998 & 97.860--98.030\\
+ & Epoch 250 & 250 & 3 & 99.957--100.000 & 97.820--97.930\\
+ & Endpoint & 500 & 3 & 99.993--99.997 & 97.640--97.710\\
+\midrule
+Depth 2 & Init. & 0 & 3 & 9.343--15.093 & 9.770--14.800\\
+ & Early fit & 1--2 & 3 & 90.627--93.575 & 90.070--93.070\\
+ & High accuracy & 85--286 & 3 & 99.900--99.910 & 96.620--97.230\\
+ & Epoch 50 & 50 & 3 & 99.790--99.858 & 97.410--97.530\\
+ & Epoch 100 & 100 & 3 & 99.855--99.917 & 97.100--97.180\\
+ & Epoch 150 & 150 & 3 & 99.863--99.923 & 96.910--96.990\\
+ & Epoch 200 & 200 & 3 & 99.877--99.920 & 96.690--96.820\\
+ & Epoch 250 & 250 & 3 & 99.878--99.925 & 96.530--96.800\\
+ & Endpoint & 500 & 3 & 99.900--99.928 & 96.260--96.810\\
+\midrule
+Depth 4 & Init. & 0 & 3 & 9.162--11.103 & 9.240--11.960\\
+ & Early fit & 1 & 3 & 90.617--91.978 & 90.630--91.610\\
+ & High accuracy & 26--28 & 3 & 99.900--99.913 & 97.390--97.720\\
+ & Interpolation & 36--55 & 3 & 99.947--99.977 & 97.510--97.650\\
+ & Epoch 50 & 50 & 3 & 99.923--99.972 & 97.420--97.800\\
+ & Epoch 100 & 100 & 3 & 99.382--99.975 & 96.560--97.770\\
+ & Epoch 150 & 150 & 3 & 99.992--99.997 & 97.510--97.860\\
+ & Epoch 200 & 200 & 3 & 99.982--99.992 & 97.380--97.940\\
+ & Epoch 250 & 250 & 3 & 99.995--99.997 & 97.720--97.790\\
+ & Endpoint & 500 & 3 & 99.973--99.997 & 97.450--97.630\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{MLP scaling: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-1-6}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Depth 5 & Init. & 0 & 3 & 8.527--11.118 & 8.810--11.410\\
+ & Early fit & 1 & 3 & 91.198--91.833 & 90.710--91.630\\
+ & High accuracy & 33--40 & 3 & 99.902--99.908 & 97.220--97.470\\
+ & Interpolation & 48--82 & 3 & 99.962--99.977 & 97.370--97.550\\
+ & Epoch 50 & 50 & 3 & 99.837--99.932 & 97.350--97.520\\
+ & Epoch 100 & 100 & 3 & 99.950--99.982 & 97.610--97.710\\
+ & Epoch 150 & 150 & 3 & 99.942--99.993 & 97.560--97.770\\
+ & Epoch 200 & 200 & 3 & 99.865--99.993 & 97.570--97.680\\
+ & Epoch 250 & 250 & 3 & 99.818--99.978 & 97.400--97.600\\
+ & Endpoint & 500 & 3 & 99.992--99.993 & 97.740--97.810\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Convolution and normalization: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-2-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+MNIST CNN, base & Init. & 0 & 3 & 9.068--9.890 & 8.970--9.640\\
+ & Early fit & 1 & 3 & 96.607--96.872 & 96.940--97.030\\
+ & High accuracy & 65--68 & 3 & 99.902--99.905 & 99.450--99.560\\
+ & Interpolation & 281--385 & 3 & 99.998--100.000 & 99.360--99.480\\
+ & Epoch 50 & 50 & 3 & 99.792--99.815 & 99.430--99.530\\
+ & Epoch 100 & 100 & 3 & 99.962--99.977 & 99.450--99.540\\
+ & Epoch 150 & 150 & 3 & 99.990--99.995 & 99.420--99.460\\
+ & Epoch 200 & 200 & 3 & 99.997--99.998 & 99.420--99.520\\
+ & Epoch 250 & 250 & 3 & 99.988--100.000 & 99.450--99.530\\
+ & Endpoint & 500 & 3 & 99.998--100.000 & 99.370--99.490\\
+\midrule
+MNIST CNN, $0.5\times$ & Init. & 0 & 3 & 8.618--11.785 & 8.480--10.640\\
+ & Early fit & 1 & 3 & 94.940--96.513 & 95.300--96.730\\
+ & High accuracy & 384--446 & 3 & 99.900 & 99.000--99.360\\
+ & Epoch 50 & 50 & 3 & 99.292--99.435 & 99.210--99.250\\
+ & Epoch 100 & 100 & 3 & 99.565--99.603 & 99.300--99.420\\
+ & Epoch 150 & 150 & 3 & 99.663--99.717 & 99.280--99.410\\
+ & Epoch 200 & 200 & 3 & 99.715--99.788 & 99.300--99.410\\
+ & Epoch 250 & 250 & 3 & 99.758--99.808 & 99.260--99.440\\
+ & Endpoint & 500 & 3 & 99.903--99.923 & 99.030--99.200\\
+\midrule
+MNIST CNN, $2\times$ & Init. & 0 & 3 & 8.827--9.973 & 7.900--9.910\\
+ & Early fit & 1 & 3 & 97.388--97.697 & 97.620--97.970\\
+ & High accuracy & 31--35 & 3 & 99.903--99.917 & 99.480--99.580\\
+ & Interpolation & 106--130 & 3 & 100.000 & 99.470--99.570\\
+ & Epoch 50 & 50 & 3 & 99.980--99.985 & 99.510--99.590\\
+ & Epoch 100 & 100 & 3 & 99.998--100.000 & 99.500--99.590\\
+ & Epoch 150 & 150 & 3 & 100.000 & 99.440--99.610\\
+ & Epoch 200 & 200 & 3 & 100.000 & 99.450--99.570\\
+ & Epoch 250 & 250 & 3 & 100.000 & 99.490--99.570\\
+ & Endpoint & 500 & 3 & 100.000 & 99.450--99.490\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Convolution and normalization: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-2-3}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+BatchNorm, width 64 & Init. & 0 & 3 & 10.462--10.750 & 11.000--11.220\\
+ & Early fit & 2 & 3 & 91.823--92.240 & 92.000--92.260\\
+ & High accuracy & 51--56 & 3 & 99.905--99.910 & 97.300--97.620\\
+ & Interpolation & 177--199 & 3 & 99.970--99.988 & 97.290--97.430\\
+ & Epoch 50 & 50 & 3 & 99.873--99.897 & 97.290--97.660\\
+ & Epoch 100 & 100 & 3 & 99.948--99.973 & 97.280--97.500\\
+ & Epoch 150 & 150 & 3 & 99.967--99.983 & 97.440--97.490\\
+ & Epoch 200 & 200 & 3 & 99.973--99.987 & 97.370--97.530\\
+ & Epoch 250 & 250 & 3 & 99.982--99.985 & 97.290--97.440\\
+ & Endpoint & 500 & 3 & 99.993--99.997 & 97.480--97.510\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Input and dataset comparisons: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-3-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Raw MNIST, width 64 & Init. & 0 & 3 & 10.075--13.660 & 10.130--13.130\\
+ & Early fit & 1--2 & 3 & 91.455--93.277 & 91.730--92.930\\
+ & High accuracy & 90--125 & 3 & 99.900--99.912 & 97.180--97.390\\
+ & Interpolation & 224--379 & 3 & 99.952--99.955 & 97.270--97.360\\
+ & Epoch 50 & 50 & 3 & 99.752--99.775 & 97.120--97.360\\
+ & Epoch 100 & 100 & 3 & 99.833--99.877 & 97.130--97.190\\
+ & Epoch 150 & 150 & 3 & 99.838--99.912 & 97.160--97.350\\
+ & Epoch 200 & 200 & 3 & 99.882--99.948 & 97.190--97.370\\
+ & Epoch 250 & 250 & 3 & 99.922--99.945 & 97.130--97.380\\
+ & Endpoint & 500 & 3 & 99.957--99.975 & 97.020--97.460\\
+\midrule
+SVHN MLP, baseline & Init. & 0 & 3 & 9.044--10.077 & 8.812--9.496\\
+ & Early fit & 40 & 3 & 90.026--90.555 & 80.059--80.374\\
+ & Epoch 50 & 50 & 3 & 90.830--91.524 & 79.955--80.186\\
+ & Epoch 100 & 100 & 3 & 92.585--93.177 & 79.168--79.940\\
+ & Epoch 150 & 150 & 3 & 93.169--93.819 & 78.688--79.402\\
+ & Epoch 200 & 200 & 3 & 93.295--94.103 & 78.350--79.007\\
+ & Epoch 250 & 250 & 3 & 93.700--94.181 & 78.196--78.669\\
+ & Endpoint & 500 & 3 & 94.080--94.788 & 77.704--77.812\\
+\midrule
+SVHN MLP, revised & Init. & 0 & 3 & 9.325--10.249 & 9.342--9.715\\
+ & Early fit & 40--50 & 3 & 90.429--90.468 & 83.559--83.924\\
+ & Epoch 50 & 50 & 3 & 90.429--90.630 & 83.559--84.139\\
+ & Epoch 100 & 100 & 3 & 91.352--91.465 & 83.805--84.684\\
+ & Epoch 150 & 150 & 3 & 91.670--91.793 & 83.897--84.542\\
+ & Epoch 200 & 200 & 3 & 91.586--92.054 & 84.519--84.842\\
+ & Epoch 250 & 250 & 3 & 91.819--91.917 & 84.404--84.753\\
+ & Endpoint & 500 & 3 & 91.963--92.351 & 84.588--84.669\\
+ & Validation selected & 371--494 & 3 & 91.960--92.235 & 84.315--84.577\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Input and dataset comparisons: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-3-3}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+SVHN CNN & Init. & 0 & 3 & 7.707--13.379 & 8.032--12.957\\
+ & Early fit & 5 & 3 & 91.178--92.904 & 90.124--91.841\\
+ & High accuracy & 113--116 & 3 & 99.903--99.906 & 92.594--92.720\\
+ & Epoch 50 & 50 & 3 & 99.244--99.428 & 94.000--94.111\\
+ & Epoch 100 & 100 & 3 & 99.835--99.868 & 92.744--93.009\\
+ & Epoch 150 & 150 & 3 & 99.947--99.951 & 92.286--92.482\\
+ & Epoch 200 & 200 & 3 & 99.969--99.974 & 92.029--92.133\\
+ & Epoch 250 & 250 & 3 & 99.977--99.978 & 91.683--91.829\\
+ & Endpoint & 500 & 3 & 99.984--99.988 & 91.268--91.299\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Reduced training samples: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-4-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+MNIST, $N=1{,}000$ & Init. & 0 & 3 & 6.600--11.200 & 6.150--9.860\\
+ & Early fit & 20 & 3 & 94.000--97.600 & 64.610--70.220\\
+ & High accuracy & 31--39 & 3 & 99.900 & 71.400--75.310\\
+ & Interpolation & 184--209 & 3 & 100.000 & 74.060--77.210\\
+ & Epoch 50 & 50 & 3 & 100.000 & 72.580--76.610\\
+ & Epoch 100 & 100 & 3 & 100.000 & 74.130--77.340\\
+ & Epoch 150 & 150 & 3 & 100.000 & 74.170--77.230\\
+ & Epoch 200 & 200 & 3 & 100.000 & 74.070--77.150\\
+ & Epoch 250 & 250 & 3 & 100.000 & 73.920--77.170\\
+ & Endpoint & 500 & 3 & 100.000 & 73.790--77.040\\
+\midrule
+MNIST, $N=2{,}000$ & Init. & 0 & 3 & 6.350--10.750 & 6.150--9.860\\
+ & Early fit & 20 & 3 & 97.550--98.650 & 77.090--81.450\\
+ & High accuracy & 29--39 & 3 & 99.900 & 81.210--84.570\\
+ & Interpolation & 212--238 & 3 & 100.000 & 82.230--83.920\\
+ & Epoch 50 & 50 & 3 & 99.950--100.000 & 82.560--85.100\\
+ & Epoch 100 & 100 & 3 & 100.000 & 83.250--84.710\\
+ & Epoch 150 & 150 & 3 & 100.000 & 82.810--84.370\\
+ & Epoch 200 & 200 & 3 & 100.000 & 82.460--83.930\\
+ & Epoch 250 & 250 & 3 & 100.000 & 82.190--83.820\\
+ & Endpoint & 500 & 3 & 100.000 & 82.220--84.390\\
+\midrule
+MNIST, $N=5{,}000$ & Init. & 0 & 3 & 6.260--10.300 & 6.150--9.860\\
+ & Early fit & 10 & 3 & 93.740--95.380 & 84.790--87.190\\
+ & High accuracy & 32--46 & 3 & 99.900 & 91.130--91.480\\
+ & Interpolation & 335--476 & 3 & 100.000 & 91.450--92.480\\
+ & Epoch 50 & 50 & 3 & 99.940--100.000 & 91.130--91.740\\
+ & Epoch 100 & 100 & 3 & 100.000 & 90.480--91.340\\
+ & Epoch 150 & 150 & 3 & 100.000 & 90.010--91.020\\
+ & Epoch 200 & 200 & 3 & 100.000 & 89.720--91.300\\
+ & Epoch 250 & 250 & 3 & 100.000 & 90.190--91.730\\
+ & Endpoint & 500 & 3 & 100.000 & 91.770--93.050\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Controlled training: train and test accuracy at declared analysis stages and descriptive checkpoints. Entries are ranges across the available seeds; epochs may differ by seed. Unreached milestones have no row.}\label{tab:perf-5-0}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}\toprule
+Model & Stage & Epoch & Seeds & Train (\%) & Test (\%)\\\midrule
+Margin $\lambda=0.01$ & Init. & 0 & 3 & 8.943--11.245 & 9.150--11.510\\
+ & Early fit & 2--5 & 3 & 90.418--95.242 & 90.270--94.730\\
+ & Epoch 50 & 50 & 3 & 99.385--99.462 & 96.580--96.860\\
+ & Epoch 100 & 100 & 3 & 99.512--99.538 & 96.380--96.540\\
+ & Epoch 150 & 150 & 3 & 99.437--99.582 & 96.190--96.580\\
+ & Epoch 200 & 200 & 3 & 99.540--99.633 & 96.370--96.480\\
+ & Epoch 250 & 250 & 3 & 99.575--99.650 & 96.100--96.590\\
+ & Endpoint & 500 & 3 & 99.672--99.713 & 96.140--96.380\\
+\midrule
+Margin $\lambda=0.1$ & Init. & 0 & 3 & 8.943--11.245 & 9.150--11.510\\
+ & Early fit & 2--5 & 3 & 90.583--93.767 & 90.680--93.420\\
+ & Epoch 50 & 50 & 3 & 98.510--98.707 & 95.950--96.300\\
+ & Epoch 100 & 100 & 3 & 98.735--98.935 & 95.660--96.030\\
+ & Epoch 150 & 150 & 3 & 98.825--98.982 & 95.720--95.990\\
+ & Epoch 200 & 200 & 3 & 98.892--99.045 & 95.520--95.940\\
+ & Epoch 250 & 250 & 3 & 98.917--99.058 & 95.570--95.840\\
+ & Endpoint & 500 & 3 & 99.062--99.105 & 95.150--95.710\\
+\bottomrule\end{tabular}\end{table}
+
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Fitting and parameter scale at epoch 500 for the width-64 control and interventions. Ranges over three seeds. Training MSE excludes the regularization term.}\label{tab:perf-controlled-scale}
+\small\begin{tabular}{lrrrr}\toprule
+Arm & Train (\%) & Test (\%) & Training MSE & $\|\theta\|_2$\\\midrule
+Control & 99.897--99.960 & 96.740--96.870 & 7.5e-05--0.00028 & 54.2--54.3\\
+Margin $\lambda=0.01$ & 99.672--99.713 & 96.140--96.380 & 0.00048--0.00053 & 91.6--92.1\\
+Margin $\lambda=0.1$ & 99.062--99.105 & 95.150--95.710 & 0.0017--0.0021 & 136.2--140.3\\
+\bottomrule\end{tabular}\end{table}
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{ViT fine-tuning, all recorded epochs, three seeds. Train accuracy is online over augmented minibatches; validation and test accuracy use the end-of-epoch network. Entries are seed ranges in percent.}\label{tab:perf-native-history}
+\small\begin{tabular}{rrrr}\toprule
+Epoch & Train (\%) & Validation (\%) & Test (\%)\\\midrule
+1 & 54.048--55.856 & 86.400--87.067 & 85.952--86.238\\
+2 & 91.321--91.826 & 91.644--92.311 & 91.635--92.587\\
+3 & 95.730--95.886 & 93.111--94.178 & 92.778--93.048\\
+4 & 97.562--97.616 & 92.800--93.956 & 92.619--93.667\\
+5 & 98.697--98.835 & 93.244--94.711 & 93.429--94.492\\
+6 & 99.207--99.321 & 93.689--94.222 & 93.762--93.952\\
+7 & 99.670--99.700 & 94.178--94.844 & 94.365--94.952\\
+8 & 99.850--99.892 & 94.978--95.333 & 94.952--95.397\\
+9 & 99.946--99.994 & 95.067--95.289 & 94.857--95.270\\
+10 & 99.982--99.988 & 94.800--95.644 & 95.000--95.397\\
+11 & 99.988--99.994 & 94.889--95.511 & 95.032--95.317\\
+12 & 100.000 & 94.889--95.467 & 95.048--95.333\\
+\bottomrule\end{tabular}\end{table}
+\FloatBarrier
+\begin{table}[!htbp]\centering
+\caption{Train/test accuracy of all inherited-Adam sibling endpoints shown in the connectivity comparison. Ranges pool both children across the available seeds; endpoints are at epoch 500.}\label{tab:perf-lmc-endpoints}
+\small\begin{tabular}{llrrr}\toprule
+Model & Spawn epoch & Children & Train (\%) & Test (\%)\\\midrule
+MLP & 100 & 6 & 99.963--99.992 & 97.330--97.580\\
+MLP & 150 & 6 & 99.987--99.998 & 97.360--97.680\\
+MLP & 200 & 6 & 99.973--99.995 & 97.480--97.660\\
+MLP & 250 & 6 & 99.987--99.997 & 97.220--97.660\\
+MLP & 350 & 6 & 99.968--100.000 & 97.290--97.490\\
+MLP & 450 & 2 & 99.987--99.995 & 97.450--97.550\\
+CNN & 50 & 6 & 99.998--100.000 & 99.370--99.430\\
+CNN & 100 & 6 & 99.995--100.000 & 99.280--99.450\\
+CNN & 150 & 6 & 99.998--100.000 & 99.340--99.520\\
+CNN & 200 & 6 & 99.998--100.000 & 99.330--99.440\\
+CNN & 250 & 6 & 99.997--100.000 & 99.330--99.470\\
+\bottomrule\end{tabular}\end{table}

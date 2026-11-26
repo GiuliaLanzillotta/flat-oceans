@@ -1,0 +1,79 @@
+{
+ "cache": "common ResNet family study input cache, N=10000 (two-day plan 2026-11-22)",
+ "n": 10000,
+ "indices": "arange(0, n) of the train array (first n, stored order)",
+ "index_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+ "checkpoint": {
+  "path": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/runs/ftresnet_resisc45/ckpt_ft_resnet_lr1e-4_confirm_s0.pt",
+  "sha256": "0c1c6274b69b70bca558431371f60c247b65069c447387deaeaa2fd5fda89fb0",
+  "val_acc": 0.9573333333333334,
+  "test_acc": 0.9555555555555556
+ },
+ "images": {
+  "path": "/local/home/glanzillo/migration_scratchpad_archive_2026-10-05/session_7efb2a74/resisc45_train_imgs.npy",
+  "sha256": "8fccf7cb30d1563bcb0c78d54ce9b5cc98790935c0ea6ce3028fa4d26a5735f1",
+  "shape": [
+   18900,
+   256,
+   256,
+   3
+  ],
+  "dtype": "uint8"
+ },
+ "preprocessing": {
+  "transform": "torchvision ResNet50_Weights.IMAGENET1K_V2.transforms()",
+  "repr": "ImageClassification(     crop_size=[224]     resize_size=[232]     mean=[0.485, 0.456, 0.406]     std=[0.229, 0.224, 0.225]     interpolation=InterpolationMode.BILINEAR )",
+  "pipeline": "uint8 -> float/255 -> NCHW -> transforms (resize 232, center-crop 224, ImageNet mean/std) -> float64 full-net eval forward"
+ },
+ "storage": {
+  "xin_dtype": "float32",
+  "rationale": "10000 x 1024 x 14 x 14 fp32 = 8.0 GB on disk (fp64 would be 16 GB); consumers use the fp64-read path (resnet_common_lib.open_xin/xin_chunk) and form all operators in float64. The fp32 file is the defined study input; see rounding_effect for the (recorded) difference to the unrounded fp64 forward.",
+  "forward_dtype": "float64 (full net and local layer4+fc path)"
+ },
+ "rounding_effect": {
+  "max_abs": 1.6716610318212588e-07,
+  "max_rel": 6.068111195894029e-09,
+  "rms_rel_X": 3.3605759510206486e-09,
+  "note": "fp64 local forward from fp32-stored X_in vs fp64 full-network forward (unrounded): pure fp32-storage rounding effect; the cache DEFINES the study input, so ref_logits_local_fp64 is the base reference for all common-study measurements"
+ },
+ "files": {
+  "xin": {
+   "name": "xin_fp32.npy",
+   "sha256": "3132fa8d121d2a101770cd82a5960a607247e9934e86476bdbd5953046731ddd",
+   "bytes": 8028160128
+  },
+  "ref_local": {
+   "name": "ref_logits_local_fp64.pt",
+   "sha256": "a471ee0691c421f26478d8a159a8aa5591f8e2d822366d4f0b50711c7d6c1311",
+   "bytes": 3601250
+  },
+  "ref_fullnet": {
+   "name": "ref_logits_fullnet_fp64.pt",
+   "sha256": "eb3aca39a4317be70c3274b80ec5127c175a77a59112f7f69c45e88de67bd5fb",
+   "bytes": 3601324
+  },
+  "census": {
+   "name": "gate_census.pt",
+   "sha256": "40f69dbcfa0a8cf1625835acd56bdb9baa0b29327db2d9336a5db191d3da924d",
+   "bytes": 77424
+  }
+ },
+ "base_output": {
+  "ref_local_rms_X": 23.79884289923196,
+  "ref_fullnet_rms_X": 23.798842898671367
+ },
+ "meta": {
+  "script": "scripts/analysis/resnet_cache10k.py",
+  "date": "2026-11-22",
+  "torch": "2.5.1+cu124",
+  "git_rev": "f226d1aca78398935e94cee1f628be7f605588b0",
+  "spec": [
+   "memos/2026-11-17_reviewer_protocol_corrections.md#2",
+   "memos/2026-11-22_two_day_completion_plan.md#common-vit-and-resnet-measurements",
+   "memos/2026-11-17_vit_resnet_standardization_spec.md#2"
+  ],
+  "device": "cuda",
+  "elapsed_s": 685.5,
+  "batch": 25
+ }
+}

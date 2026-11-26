@@ -1,0 +1,41 @@
+{
+ "seed": 0,
+ "fork_epoch": 450,
+ "parent": "mnist_mlp_seed0",
+ "gate_autodiff_exposure": 1e-12,
+ "convention": "identical to the children's admission records (w1_admission_s1.py / w1_zero_admission.py): robust candidate = autodiff JVP exposure <= 1e-12 against the original network",
+ "factor": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/persistence/mnist_mlp_seed0/epoch0450_1.npz",
+ "factor_sha256": "bbf49dadd6dfb4f4efae576c9048f9546233d6d79163a6a83df77f147d7224ba",
+ "p": 32896,
+ "declared_rank": 32896,
+ "declared_kernel_dims": 0,
+ "n_admitted": 0,
+ "admitted_robust_indices": [],
+ "min_stored_exposure": 1.243046923972057e-07,
+ "smallest8_stored_exposure": [
+  1.2765269765095313e-07,
+  1.2737766075516942e-07,
+  1.2696955188055924e-07,
+  1.262828101893803e-07,
+  1.2595251764122875e-07,
+  1.25480423661871e-07,
+  1.2504357714795378e-07,
+  1.243046923972057e-07
+ ],
+ "smallest8_jvp_exposure": [
+  1.276526983071748e-07,
+  1.273776615559829e-07,
+  1.2696955262820092e-07,
+  1.2628281055909492e-07,
+  1.2595251885463725e-07,
+  1.2548042429420624e-07,
+  1.2504357827805513e-07,
+  1.2430469292488628e-07
+ ],
+ "jvp_agreement_over_sigma0rate": 5.469630253917563e-15,
+ "min_exposure_over_gate": 124304.6923972057,
+ "label": "MEASURED ZERO: the W1 numerical kernel is empty at this parent checkpoint (zero admitted candidates; a real measured zero, not missing/uncomputed); W1 is included in the canonical construction with its zero-dimensional atomic input, never silently frozen",
+ "passed": true,
+ "failures": [],
+ "runtime_s": 7.2
+}

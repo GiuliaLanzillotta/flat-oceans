@@ -1,0 +1,311 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1",
+ "results": {
+  "initialization": {
+   "epoch": 0,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0000.pt",
+    "checkpoint_sha256": "f2d4d9c2609af1f6ca5fa965fb30cba6df01ab264b8740737a8827c2393cb9bf",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "f1b961da8a297b1ddff17dd19b0b213b8ab7053ed2dcd1898b9c36c77ea38f88"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.9117000000000001,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.9192
+    },
+    "1": {
+     "NC1": 1.5758495613641081,
+     "NC2_norm_cv": 0.24015688129018864,
+     "NC2_gram_etf": 0.5706179943644325,
+     "NC4_vs_prediction": 0.9158000000000001,
+     "NC4_vs_label": 0.2462,
+     "train_error_on_set": 0.9192
+    },
+    "2": {
+     "NC1": 2.584077221851437,
+     "NC2_norm_cv": 0.27932482253711033,
+     "NC2_gram_etf": 0.6252303321111161,
+     "NC4_vs_prediction": 0.926,
+     "NC4_vs_label": 0.31320000000000003,
+     "train_error_on_set": 0.9192
+    },
+    "3": {
+     "NC1": 3.401349621440734,
+     "NC2_norm_cv": 0.32632232875616257,
+     "NC2_gram_etf": 0.6824508661254945,
+     "NC3": 1.3904274234410654,
+     "NC4_vs_prediction": 0.9236000000000001,
+     "NC4_vs_label": 0.3735,
+     "train_error_on_set": 0.9192
+    }
+   }
+  },
+  "high_accuracy": {
+   "epoch": 40,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0040.pt",
+    "checkpoint_sha256": "c4b58c4606c8d65eca64b68aef5bbfba92c82fbcc2b3675aff69e2d787889f8f",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "25b57306c7d25bc97581fbacb2e7238fa56fd63660abdf7a39d131c7b757214a"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.1943,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.0017000000000000001
+    },
+    "1": {
+     "NC1": 0.7373124630137129,
+     "NC2_norm_cv": 0.20398180898146787,
+     "NC2_gram_etf": 0.5796138295006706,
+     "NC4_vs_prediction": 0.1096,
+     "NC4_vs_label": 0.11,
+     "train_error_on_set": 0.0017000000000000001
+    },
+    "2": {
+     "NC1": 0.20517318916181748,
+     "NC2_norm_cv": 0.1645410182793323,
+     "NC2_gram_etf": 0.48314736770047106,
+     "NC4_vs_prediction": 0.0235,
+     "NC4_vs_label": 0.0244,
+     "train_error_on_set": 0.0017000000000000001
+    },
+    "3": {
+     "NC1": 0.10944097838460448,
+     "NC2_norm_cv": 0.26769611321934716,
+     "NC2_gram_etf": 0.22428225645430402,
+     "NC3": 1.2792215707192436,
+     "NC4_vs_prediction": 0.038900000000000004,
+     "NC4_vs_label": 0.039900000000000005,
+     "train_error_on_set": 0.0017000000000000001
+    }
+   }
+  },
+  "mse_interpolation": {
+   "epoch": 61,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0061.pt",
+    "checkpoint_sha256": "e70cafafc6fee2aff7ec7722e7f2e9f409a27ba2d02ee3b8cc87e41bc0a87984",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "afe93bfd18780d776c7db6d130203027e38605dfbcb9bbc53ae34822b88ffb12"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.19440000000000002,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.0006000000000000001
+    },
+    "1": {
+     "NC1": 0.7229159079006391,
+     "NC2_norm_cv": 0.20574887042596904,
+     "NC2_gram_etf": 0.5668840082105374,
+     "NC4_vs_prediction": 0.1051,
+     "NC4_vs_label": 0.1052,
+     "train_error_on_set": 0.0006000000000000001
+    },
+    "2": {
+     "NC1": 0.19621961657535356,
+     "NC2_norm_cv": 0.1911172124611623,
+     "NC2_gram_etf": 0.4598731715760345,
+     "NC4_vs_prediction": 0.0274,
+     "NC4_vs_label": 0.027600000000000003,
+     "train_error_on_set": 0.0006000000000000001
+    },
+    "3": {
+     "NC1": 0.14034874721800966,
+     "NC2_norm_cv": 0.3103481091097208,
+     "NC2_gram_etf": 0.24093472886417283,
+     "NC3": 1.3225752811497047,
+     "NC4_vs_prediction": 0.0585,
+     "NC4_vs_label": 0.0585,
+     "train_error_on_set": 0.0006000000000000001
+    }
+   }
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0100.pt",
+    "checkpoint_sha256": "c51ac38d5ef2ddebf6e820fd14fcebbc959d55513b6217d2581784af77ef17f2",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "cfd1bb035ff6fb9f48b816df95d0adc7c2be97749a3d61687524b10c9cec5809"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.19440000000000002,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.0005
+    },
+    "1": {
+     "NC1": 0.7224266426877944,
+     "NC2_norm_cv": 0.20304172085722058,
+     "NC2_gram_etf": 0.5559686355576217,
+     "NC4_vs_prediction": 0.101,
+     "NC4_vs_label": 0.101,
+     "train_error_on_set": 0.0005
+    },
+    "2": {
+     "NC1": 0.19206658655091524,
+     "NC2_norm_cv": 0.2007125141106326,
+     "NC2_gram_etf": 0.44617708881603685,
+     "NC4_vs_prediction": 0.024800000000000003,
+     "NC4_vs_label": 0.024800000000000003,
+     "train_error_on_set": 0.0005
+    },
+    "3": {
+     "NC1": 0.1327827819332304,
+     "NC2_norm_cv": 0.24874751879010729,
+     "NC2_gram_etf": 0.16197156803498566,
+     "NC3": 1.3433373103753439,
+     "NC4_vs_prediction": 0.0538,
+     "NC4_vs_label": 0.0538,
+     "train_error_on_set": 0.0005
+    }
+   }
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0250.pt",
+    "checkpoint_sha256": "e9710bf0d32579f2b0afc20bd8025fea369f3fbe7f6cec426832d8131cbdec97",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "f6707ea544be0b3686effcab5f89e421b97fd2b7333dfba4c1f411a10298c0ca"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.19460000000000002,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.00030000000000000003
+    },
+    "1": {
+     "NC1": 0.730669928435558,
+     "NC2_norm_cv": 0.199669635348247,
+     "NC2_gram_etf": 0.5577864487809011,
+     "NC4_vs_prediction": 0.10210000000000001,
+     "NC4_vs_label": 0.10200000000000001,
+     "train_error_on_set": 0.00030000000000000003
+    },
+    "2": {
+     "NC1": 0.17764480412135777,
+     "NC2_norm_cv": 0.19322210596275335,
+     "NC2_gram_etf": 0.3751280662012807,
+     "NC4_vs_prediction": 0.0264,
+     "NC4_vs_label": 0.0264,
+     "train_error_on_set": 0.00030000000000000003
+    },
+    "3": {
+     "NC1": 0.12083221345214129,
+     "NC2_norm_cv": 0.2050051801706297,
+     "NC2_gram_etf": 0.1280455536147929,
+     "NC3": 1.358328683625696,
+     "NC4_vs_prediction": 0.0325,
+     "NC4_vs_label": 0.0325,
+     "train_error_on_set": 0.00030000000000000003
+    }
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 item 4 (2026-09-24); identifier nc-v1"
+    },
+    "digest": "6a009ef4120c05ef798569cda8e9663ffa1f8e8272d7af183fe1625cdba1e294"
+   },
+   "layers": {
+    "0": {
+     "NC1": 1.5328458557716136,
+     "NC2_norm_cv": 0.22578224722572848,
+     "NC2_gram_etf": 0.6246741382299269,
+     "NC4_vs_prediction": 0.1945,
+     "NC4_vs_label": 0.1945,
+     "train_error_on_set": 0.0001
+    },
+    "1": {
+     "NC1": 0.7233993517558472,
+     "NC2_norm_cv": 0.2063178647264737,
+     "NC2_gram_etf": 0.5516952785784215,
+     "NC4_vs_prediction": 0.1015,
+     "NC4_vs_label": 0.1015,
+     "train_error_on_set": 0.0001
+    },
+    "2": {
+     "NC1": 0.15098642233196827,
+     "NC2_norm_cv": 0.20969844234745524,
+     "NC2_gram_etf": 0.2648047820722035,
+     "NC4_vs_prediction": 0.028,
+     "NC4_vs_label": 0.028,
+     "train_error_on_set": 0.0001
+    },
+    "3": {
+     "NC1": 0.12178902757966435,
+     "NC2_norm_cv": 0.20602736358666118,
+     "NC2_gram_etf": 0.12311574160023168,
+     "NC3": 1.3592348599711157,
+     "NC4_vs_prediction": 0.0115,
+     "NC4_vs_label": 0.0115,
+     "train_error_on_set": 0.0001
+    }
+   }
+  }
+ }
+}

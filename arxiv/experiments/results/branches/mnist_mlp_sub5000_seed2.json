@@ -1,0 +1,291 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+ "run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_2",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 0.9233475316974301,
+   "train_errors": 56351,
+   "test_acc": 0.0615,
+   "test_mse": 0.9235553913548004,
+   "param_norm": 27.820887483862457,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": 1,
+   "checkpoint_epoch": 1,
+   "train_mse": 0.028848025759703137,
+   "train_errors": 5740,
+   "test_acc": 0.902,
+   "test_mse": 0.02922175676965474,
+   "param_norm": 26.95997359534772,
+   "same_as": []
+  },
+  "high_accuracy": {
+   "milestone_epoch": 39,
+   "checkpoint_epoch": 40,
+   "train_mse": 0.0002045565025076493,
+   "train_errors": 50,
+   "test_acc": 0.9754,
+   "test_mse": 0.004147255533981434,
+   "param_norm": 32.22437766918245,
+   "same_as": []
+  },
+  "mse_interpolation": {
+   "milestone_epoch": 50,
+   "checkpoint_epoch": 50,
+   "train_mse": 9.732026240955994e-05,
+   "train_errors": 33,
+   "test_acc": 0.9754,
+   "test_mse": 0.004013283743285409,
+   "param_norm": 33.77840256107495,
+   "same_as": [
+    "epoch_50"
+   ]
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 2.170381133027664e-05,
+   "train_errors": 1,
+   "test_acc": 0.973,
+   "test_mse": 0.00465910818240091,
+   "param_norm": 76.02797216666805,
+   "same_as": []
+  },
+  "epoch_50": {
+   "milestone_epoch": 50,
+   "checkpoint_epoch": 50,
+   "train_mse": 9.732026240955994e-05,
+   "train_errors": 33,
+   "test_acc": 0.9754,
+   "test_mse": 0.004013283743285409,
+   "param_norm": 33.77840256107495,
+   "same_as": [
+    "mse_interpolation"
+   ]
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.00011039912379695242,
+   "train_errors": 17,
+   "test_acc": 0.9748,
+   "test_mse": 0.004127551752238857,
+   "param_norm": 41.79557662812562,
+   "same_as": []
+  },
+  "epoch_150": {
+   "milestone_epoch": 150,
+   "checkpoint_epoch": 150,
+   "train_mse": 2.36157485188864e-05,
+   "train_errors": 1,
+   "test_acc": 0.976,
+   "test_mse": 0.004130175440522059,
+   "param_norm": 47.18056792788225,
+   "same_as": []
+  },
+  "epoch_200": {
+   "milestone_epoch": 200,
+   "checkpoint_epoch": 200,
+   "train_mse": 8.044134408259691e-05,
+   "train_errors": 7,
+   "test_acc": 0.9752,
+   "test_mse": 0.004250999941135652,
+   "param_norm": 52.338752332893776,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 6.403944920840928e-06,
+   "train_errors": 0,
+   "test_acc": 0.9747,
+   "test_mse": 0.004216074142521706,
+   "param_norm": 56.52700579624222,
+   "same_as": []
+  }
+ },
+ "rank_tolerance": 1e-09,
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.2 item 5 (amendment 2026-09-17); identifier multilayer-branch-v1",
+     "build_version": 2,
+     "rtol": 1e-09,
+     "valid_tol": 1e-09,
+     "samples": 5000,
+     "random_orders": 6,
+     "generator_seed": 1234,
+     "custom_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+     "block_scope": {
+      "excluded_blocks": {
+       "W1": "excluded_frozen"
+      },
+      "atomic_sha256": "623b2623a3d6107c40e397c5957964bbb0112e45dcdd746cdef2f89b462b4d1a"
+     }
+    },
+    "digest": "7cddc32c840248c37e6811b93e33334627cea962ac9e18a9eb14d6b74ea8f9d7"
+   },
+   "constructions": {
+    "bottom_up": {
+     "order": [
+      "W1",
+      "W2",
+      "W3",
+      "V"
+     ],
+     "dims": {
+      "W1": 0,
+      "W2": 11439,
+      "W3": 15164,
+      "V": 830
+     },
+     "total": 27433,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "prepass": null,
+       "mean_dim_Zhat": 3.9608,
+       "block": "W1",
+       "mean_dim_U": 1.0,
+       "seconds": 0.4864521026611328
+      },
+      {
+       "dim": 11439,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 4.86050121641381e-13,
+       "sigma_ref": 32.162318907942726,
+       "largest_rejected_over_ref": 1.511240912176103e-14,
+       "prepass": {
+        "dim": 11439,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 4.333781447643699e-14,
+        "sigma_ref": 32.162318907942726,
+        "largest_rejected_over_ref": 1.3474716981844984e-15
+       },
+       "mean_dim_Zhat": 3.9608,
+       "block": "W2",
+       "mean_dim_U": 1.0,
+       "seconds": 181.1736776828766
+      },
+      {
+       "dim": 15164,
+       "rank_within": 0,
+       "gap": null,
+       "sigma1": 3.9285358080714513e-13,
+       "sigma_ref": 25.26409950960954,
+       "largest_rejected_over_ref": 1.554987466138336e-14,
+       "prepass": {
+        "dim": 15164,
+        "rank_within": 0,
+        "gap": null,
+        "sigma1": 2.1988273142313064e-13,
+        "sigma_ref": 25.26409950960954,
+        "largest_rejected_over_ref": 8.703367058045955e-15
+       },
+       "mean_dim_Zhat": 5.1548,
+       "block": "W3",
+       "mean_dim_U": 1.0,
+       "seconds": 415.3345000743866
+      },
+      {
+       "dim": 830,
+       "rank_within": 46,
+       "gap": 854646828725.6555,
+       "sigma1": 23.93144777830961,
+       "block": "V",
+       "mean_dim_U": 1.0,
+       "seconds": 23.305925846099854
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "polynomial_residual_rel": {
+       "0.1": 1.6884816648658675e-15,
+       "1.0": 1.071740929531828e-14,
+       "10.0": 1.0850672808992159e-13
+      },
+      "forward_criterion_sampled_max": {
+       "W1": 0.0,
+       "W2": 9.430218504639864e-16,
+       "W3": 3.0699856987918794e-16,
+       "V": 1.0168045353106034e-15
+      },
+      "forward_criterion_full_max": {
+       "W1": 0.0,
+       "W2": 4.148470436910692e-14,
+       "W3": 1.4279405119091172e-14,
+       "V": 3.917507385927537e-15
+      },
+      "scope": "full forward operator on received spaces from a randomized forward recursion; polynomial residual on 32 random combinations at relative norms 0.1, 1, 10 (six points per line)",
+      "passed": true
+     },
+     "certified_branch": true,
+     "basis_sha256": "b74fe19a145756e49d1e6f1b92de17c505fe4a0f78653997216d12014ba8b73d",
+     "seconds": 835.3983187675476
+    }
+   },
+   "block_scope": {
+    "restricted": true,
+    "allowed_blocks": [
+     "W2",
+     "W3",
+     "V"
+    ],
+    "excluded_blocks": {
+     "W1": "excluded_frozen"
+    },
+    "atomic_record": {
+     "path": "atomic/mnist_mlp_sub5000_seed2.json",
+     "sha256": "623b2623a3d6107c40e397c5957964bbb0112e45dcdd746cdef2f89b462b4d1a",
+     "epoch": 500,
+     "protocol": "p1_first_layer_frozen_cert"
+    }
+   },
+   "blocks": {
+    "W1": {
+     "p": 32896,
+     "dim_atomic_kernel": 0,
+     "gap": null,
+     "kernel_source": "excluded_frozen"
+    },
+    "W2": {
+     "p": 16512,
+     "dim_atomic_kernel": 11439,
+     "gap": 1156631953.108634,
+     "kernel_source": "measured"
+    },
+    "W3": {
+     "p": 16512,
+     "dim_atomic_kernel": 15164,
+     "gap": 225743735.13799897,
+     "kernel_source": "measured"
+    },
+    "V": {
+     "p": 1290,
+     "dim_atomic_kernel": 830,
+     "gap": 854646828725.6555,
+     "kernel_source": "measured"
+    }
+   },
+   "sum_atomic": 27433,
+   "n_params": 67210
+  }
+ }
+}

@@ -1,0 +1,1027 @@
+\providecommand{\g}[1]{\textcolor{purple}{[#1]}}
+\providecommand{\toedit}[1]{\textcolor{teal}{\textbf{[to edit:} #1\textbf{]}}}
+\newcommand{\exptable}[1]{{\vspace*{0.5em}\footnotesize\setlength{\tabcolsep}{4pt}\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{\input{tables/#1}}}}
+
+\FloatBarrier
+\section{Experimental methods}
+\label{app:experiments}
+The experiments start from the MNIST baseline in Appendix~\ref{app:protocol}. Each comparison below states what changes, which parameters are measured, and how the resulting spaces are checked. Results follow in Appendices~\ref{app:theoretical-support}--\ref{app:additional-material}.
+
+\paragraph{Computing infrastructure.}\label{app:compute}
+Experiments used a shared Linux server with two AMD EPYC 9554 processors (128 physical cores, 256 hardware threads), approximately 377\,GiB of host memory and four NVIDIA RTX A6000 GPUs with 48\,GB each. Training and network evaluation used GPUs; dense Jacobian factorizations also used CPU linear algebra. Geometry calculations used float64, with thread limits and memory checks for large factorizations.
+
+\paragraph{Software.}\label{app:software}
+The implementation uses PyTorch \citep{paszke2019pytorch} and TorchVision \citep{torchvision}, with NumPy \citep{harris2020numpy} and SciPy \citep{virtanen2020scipy} for numerical calculations, scikit-learn \citep{pedregosa2011sklearn} for clustering comparison scores, and Matplotlib \citep{hunter2007matplotlib} for figures.
+
+\subsection{Jacobians, SVDs and numerical validation}
+\label{app:sanity}
+\paragraph{Jacobians and ranks.}
+We differentiate the outputs on the fixed analysis set with respect to one affine layer or the whole parameter vector. For an MLP layer, the explicit Jacobian combines each augmented input feature with its downstream derivative. For a convolutional layer, contributions from all spatial positions are summed in the shared kernel coordinates. Explicit rows are checked against automatic differentiation.
+
+Dense Jacobians are reduced by QR, followed by an SVD of the triangular factor. This avoids squaring the condition number by forming a Gram matrix. The same rank rule is applied to feature and downstream matrices to obtain the atomic decomposition.
+
+For the largest layers, storing and factorizing the full Jacobian is too expensive. We instead estimate its range by randomized subspace iteration, using products with the Jacobian. Write $J\in\R^{sd\times p_\ell}$, where $s$ is the number of analysis samples, $d$ the output dimension and $p_\ell$ the number of parameters in the edited layer. We draw $k$ Gaussian parameter directions as columns of $\Omega\in\R^{p_\ell\times k}$ and compute
+\[
+ Y=J\Omega,\qquad Q=\operatorname{orth}(Y),\qquad B=Q^\top J.
+\]
+Here $\operatorname{orth}$ returns an orthonormal basis, and $k$ is the number of sampled directions. Products with $J$ and $J^\top$ are evaluated in chunks, without storing the full Jacobian. Repeated products refine $Q$; the singular values of the smaller matrix $B$ estimate the resolved spectrum. The residual $\|(I-QQ^\top)J\|_{\rm op}$ measures what lies outside the recovered image. Its numerical upper estimate is checked against the rank threshold before reporting a resolved rank. If the allowed value of $k$ is exhausted first, only a rank lower bound is reported. We use two subspace iterations with QR after each multiplication and double the sketch size from $k=32$ up to the memory cap (8,192 for the width-512 hidden layers); a full-dimension sketch uses no power iteration. Six fresh Gaussian probes $g_a$ give the omitted-range bound $\eta=10\sqrt{2/\pi}\max_{a\le6}\|(I-QQ^\top)Jg_a\|_2$ with failure probability at most $10^{-6}$ per check \citep[Lemma 4.1]{halko2011randomized}; rank $r$ is resolved only if $\hat\sigma_r>10^{-9}(\hat\sigma_1+\eta)$ and $\hat\sigma_{r+1}+\eta\le10^{-9}\hat\sigma_1$, including a $10^{-14}\hat\sigma_1$ rounding allowance in $\eta$ and a union bound over checks.
+
+\begin{table}[!htbp]\centering
+\caption{Numerical conventions. Additional construction cutoffs and unresolved ranks are stated with the affected results.}\label{tab:early-method-numerical}
+\small
+\begin{tabular}{p{.28\linewidth}p{.65\linewidth}}\toprule
+Quantity & Convention\\\midrule
+Analysis precision & Float64; stored bases checked for orthonormality and Jacobian residuals.\\
+Rank & Singular values above $10^{-9}\sigma_1$, with checks at $10^{-6}\sigma_1$ and $10^{-12}\sigma_1$; $\sigma_1$ is the largest singular value.\\
+Output norm & $\|V\|_X^2=s^{-1}\sum_i\|v_i\|_2^2$ for stacked outputs $V=(v_i)_{i=1}^s$; Jacobians normalized by $1/\sqrt{s}$.\\
+Invariant subspace validation & Received-space constraints and frozen-polynomial residual, tolerance $10^{-9}$.\\
+Output visibility & First sampled radius with $\|\Delta F_X\|_X>10^{-3}$ in activation-family scans; relative metrics for reduced-data and ViT studies are specified below.\\
+Data consistency & Checkpoint, preprocessing, ordered samples and parameter coordinates matched before reusing a factor.\\\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Gauss--Newton spectra and leading directions.}
+The full-network spectrum in the motivation experiment uses the width-64 MNIST model. Its Gauss--Newton eigenvalues are proportional to the squared Jacobian singular values; a relative singular-value threshold must therefore be squared when expressed as an eigenvalue threshold. The leading three directions are recovered with a matrix-free eigensolver applying $v\mapsto J_X^\top(J_Xv)$ through automatic differentiation. We check their orthonormality, eigenpair residuals and agreement with the stored spectrum, then probe both signs of each direction. These are checkpoint-specific directions.
+
+The reported spectral measurements concern the Jacobian and Gauss--Newton operator. For MSE, the full loss Hessian additionally contains a residual-weighted second-derivative term. That term vanishes at exact interpolation, where the Gauss--Newton operator equals the loss Hessian.
+
+\paragraph{Validation and numerical limits.}
+We check equality of the true and frozen networks at the base point, the response decomposition, and independent propagation of activation residuals. Float64 recomputation of affected stored bases removes the float32 ray floor without changing their ranks. Most ReLU and leaky-ReLU ranks are stable across the two tighter thresholds. The ReLU L3 and CNN conv5 exceptions are retained in the results, and late GELU deficiencies without a spectral gap are described as numerical kernels.
+
+\subsection{Baseline model and training}
+\label{app:protocol}
+To keep the parameter dimension tractable for Jacobian factorization, the reference MNIST experiment \citep{lecunmnist} trains a biased ReLU MLP on PCA inputs. We center images using the training set, retain 256 principal components and divide by one global scale, without whitening. The same fitted transform is used for evaluation. The raw-pixel ablation checks the effect of this dimensionality reduction. Table~\ref{tab:early-method-baseline} collects the baseline settings. MSE averages over samples and output coordinates: $\mathcal L=(sd)^{-1}\sum_i\|F_i-y_i\|_2^2$.
+
+Training and test accuracies at the analysis stages are reported for every retained ablation in Appendix~\ref{app:performance}. Each table identifies the checkpoint epochs and available seeds; an unreached milestone is left empty.
+
+\begin{table}[!htbp]\centering
+\caption{MNIST baseline. The width-64 companion uses the same training recipe and supports the full-network, invariant subspace and application analyses.}\label{tab:early-method-baseline}
+\small\begin{tabular}{p{.28\linewidth}p{.65\linewidth}}\toprule
+Setting & Value\\\midrule
+Reference architecture & $256\to128\to128\to128\to10$, biases in every affine map.\\
+Companion architecture & $256\to64\to64\to64\to10$.\\
+Training data & All 60,000 training images; one-hot targets.\\
+Optimization & MSE, Adam, learning rate $10^{-3}$, batch size 256, 500 epochs, no schedule.\\
+Replication & Three seeds; separate initialization and minibatch-order generators.\\
+Geometry data & Fixed stratified training subset $X$ of 10,000 images; disjoint comparison set $X'$ of the same size.\\\bottomrule
+\end{tabular}
+\end{table}
+
+Checkpoints are selected by training quantities: initialization, early fitting, high accuracy, MSE interpolation and the late endpoint. Their thresholds and attained epochs are given in Table~\ref{tab:stages}. Test performance is reported after selection. Unreached stages remain missing rather than being replaced by the endpoint. In the reference model, the analysis set supplies more output constraints than there are parameters, so counting alone forces no kernel.
+
+\begin{table}[!htbp]
+\caption{Training-defined stages of the three reference MNIST runs. Early fitting uses training error at most $10\%$, high accuracy uses the first saved checkpoint after error reaches $0.1\%$, and interpolation uses the first training MSE below $10^{-4}$. A unit is dead when inactive on all of $X$.}
+\label{tab:stages}
+\centering\exptable{stages}
+\end{table}
+
+\subsection{Activation and architecture variants}
+\label{app:methods-activations}
+
+\paragraph{Activation functions.}
+The matched activation comparison changes the hidden activation while keeping the reference architecture and training recipe. The frozen model uses the activation's value and derivative at each base preactivation. This retains the affine offset required for smooth activations. Table~\ref{tab:early-method-activations} lists the variants; the additional leaky-ReLU invariant subspace comparison uses the width-64 companion.
+
+\begin{table}[!htbp]\centering
+\caption{Activation variants on the three-hidden-layer MNIST MLP.}\label{tab:early-method-activations}
+\small\begin{tabular}{lll}\toprule
+Activation & Definition & Hidden width\\\midrule
+ReLU & $\max(0,z)$ & 128 (reference), 64 (companion)\\
+Leaky ReLU & $\max(z,0.1z)$ & 128 and 64\\
+GELU & $z\Phi(z)$, $\Phi$ the standard normal CDF & 128\\
+Identity & $z$ & 128\\\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Convolutions.}
+The MNIST CNN uses five convolutional layers, three average-pooling stages and a linear readout. Images are zero-padded and standardized per channel. The base channel widths are $(16,16,32,32,64)$: all convolutions have $3\times3$ kernels, stride one and padding one, with $2\times2$ stride-two average pooling after L2, L4 and L5, followed by flattening to $64\cdot4\cdot4$ features. Training uses the baseline MSE/Adam settings (learning rate $10^{-3}$, batch 256, 500 epochs); width multipliers appear in Table~\ref{tab:early-method-scaling}. Tied-weight Jacobians sum spatial contributions before factorization. Selective-patch spaces are computed from patches at active positions of each channel; the full atomic calculation also permits cancellations across positions.
+
+\paragraph{BatchNorm.}
+The width-64 normalization ablation inserts BatchNorm between each hidden affine map and ReLU, with the plain width-64 model as its paired control. Normalization parameters are trained, then held fixed with the running statistics during geometry analysis. The evaluation-mode scale is carried through every derivative and frozen forward map. Perturbations and radii stay in the original weight-and-bias coordinates.
+
+\paragraph{Fine-tuned ViT.}\label{app:methods-vit}
+We fine-tune the full ViT-B/16 \citep{dosovitskiy2021vit} on NWPU-RESISC45 \citep{cheng2017resisc} with a 45-class readout. Initialization uses TorchVision's \texttt{IMAGENET1K\_V1} weights \citep{torchvision}, pretrained on ImageNet-1K \citep{deng2009imagenet}. The subsequent geometry analysis fixes the preceding transformer and normalization parameters, restricting edits to the final encoder MLP and readout. More specifically, with the preceding transformer fixed, let $h\in\R^{768}$ be the class-token state entering the final encoder MLP. The analyzed map is
+\[
+ u=L_2(h),\quad a=\operatorname{GELU}(W_0u+b_0),\quad
+ z=h+W_3a+b_3,\quad F=V L_f(z)+b_V,
+\]
+where $W_0\in\R^{3072\times768}$, $W_3\in\R^{768\times3072}$ and $V\in\R^{45\times768}$, with matching biases. The fixed LayerNorm maps $L_2,L_f$ have nonzero scales. The setup therefore tests whether ocean calculations can be applied to selected layers of a trained transformer. The fine-tuning settings and predictive performance appear in Table~\ref{tab:native-vit-training}. 
+
+\begin{table}[!htbp]\centering
+\caption{ViT-B/16 fine-tuning on RESISC45. Training accuracy is the recorded online accuracy over augmented training minibatches during the selected epoch; validation and test accuracy are evaluated after that epoch.}\label{tab:native-vit-training}
+\small\begin{tabular}{p{.28\linewidth}p{.64\linewidth}}\toprule
+Setting & Value\\\midrule
+Initialization & ImageNet-1K ViT-B/16; new 45-class linear readout.\\
+Training & All parameters; cross-entropy; AdamW, learning rate $3\times10^{-5}$, weight decay $0.05$; 12 epochs, batch 64.\\
+Schedule and images & One warmup epoch, cosine decay, gradient clipping at 1; ImageNet resize/crop/normalization and horizontal/vertical flips.\\
+Selection & Best accuracy on a held-out validation split of 50 images per class; three seeds.\\
+Geometry & 10,000 cached class-token states; float64; final encoder MLP and readout; normalization fixed, dropout disabled.\\\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{tabular}{rrrrr}\toprule
+Seed & Selected epoch & Train (\%) & Validation (\%) & Test (\%)\\\midrule
+0 & 10 & 99.982 & 95.644 & 95.206\\
+1 & 8 & 99.850 & 95.333 & 95.397\\
+2 & 11 & 99.994 & 95.333 & 95.048\\
+\bottomrule\end{tabular}
+\end{table}
+\paragraph{Fine-tuned ResNet.}\label{app:methods-resnet}
+We fine-tune all parameters of an ImageNet-pretrained ResNet-50 on RESISC45, replacing the readout with 45 outputs. The seed-0 run uses cross-entropy and AdamW for 15 epochs, with learning rate $10^{-4}$, weight decay $0.05$ and batch size 64. A warmup epoch is followed by cosine decay; images use the same resize, crop, normalization and flips as the ViT study. Validation selects epoch 12, with test accuracy $95.56\%$. Geometry analysis uses 10,000 images and restricts edits to the nine convolutions in the last three bottlenecks and the readout. BatchNorm parameters and statistics are fixed in evaluation mode, and downstream maps include the residual shortcuts.
+
+\paragraph{Common layerwise protocol for ViT and ResNet.}\label{app:methods-common-families}
+We apply the feature-null, downstream-null and selective constructions of Section~\ref{sec:atomic} separately to each selected layer. With $H$ containing observed input features (convolutional patches for ResNet), let $U_H$ span the feature space and let $U_{H^\perp}$ span its complement. Let $U_{C^\perp}$ span the kernel of the stacked downstream maps. The two marginal families are
+\[
+ A=Z U_{H^\perp}^{\top},\qquad A=U_{C^\perp}Z U_H^{\top},
+\]
+where $Z$ is arbitrary of the appropriate size; the second family excludes feature-null overlap. Selective edits use the active-feature or active-patch constraints. All operators include the intervening activations, normalization and residual paths. We use the numerical rank rule of Appendix~\ref{app:sanity}; the LayerNorm shift is also verified algebraically. For approximate comparisons, we retain factor rates $\sigma/\sqrt{s}\le10^{-3}$, with $s=10,000$, and remove exact components. This operator cutoff is distinct from the finite-output tolerance. For ResNet, spatial positions enter the operators while the normalization remains by the number of images. Near-zero Gram eigenvalues are resolved by direct row-matrix SVD. The large full atomic Jacobians are not factorized.
+
+\paragraph{ViT joint-edit comparisons.}
+The supplementary joint study combines first-layer and readout feature-null edits, with or without the second-layer LayerNorm shifts. For approximate comparisons, feature tails use relative cutoffs $10^{-2}$ and $10^{-3}$ in the first and second MLP maps; downstream tails use $10^{-2}$, or retain 722 or 567 second-map directions. Joint approximate edits combine the two downstream tails at $10^{-2}$ after removing exact components. Radius metrics and normalization are specified in Appendix~\ref{app:methods-radius}.
+
+\subsection{Width and depth scaling}
+\label{app:methods-scaling}
+The width and depth sweeps ask how the number of invariant parameter directions changes as a network becomes larger. Each sweep varies one architectural size while retaining the training protocol and pairing initialization and minibatch-order seeds across models. Table~\ref{tab:early-method-scaling} lists the architectures.
+
+We apply the same definitions of atomic kernels, selective subspaces and multilayer compatibility throughout the size sweeps. Their measurements have different computational coverage. On the fixed 10,000-image analysis set, dense Jacobian factorizations measure full atomic kernels for widths 32, 64, 128 and 256 and hidden depths 2, 4 and 5; Table~\ref{tab:scaling-coverage} lists the stages. We also compute selective dimensions for every MLP size on both these 10,000 images and all 60,000 training images. The latter tests whether the explicit selective directions survive the additional data constraints.
+
+Selective dimensions count a specific part of an atomic kernel: each unit's incoming edit annihilates its active input features. They give lower bounds on full atomic dimensions and can omit directions that require cancellation across units. Likewise, single-layer dimensions do not establish a compatible multilayer invariant subspace. Full multilayer constructions in the width/depth comparison have been validated for width 64; extending them to the other MLP sizes remains unfinished.
+
+At width 512, the hidden-layer Jacobians are large enough that we use the randomized procedure in Appendix~\ref{app:sanity} to estimate their ranks without storing the full matrices. At epoch 500, the third hidden layer has a resolved numerical rank in seeds 0 and 1. For the second hidden layer, all 8,192 recovered singular directions exceed the rank threshold, and the computation reaches its sampling limit before resolving the rest of the spectrum. This establishes $\operatorname{rank}J_2\ge8{,}192$; the exact numerical rank remains open.
+
+For CNNs, dense atomic measurements cover the base architecture. The width sweep uses the analogous selective-patch construction, in which a channel's kernel edit annihilates every input patch at its active spatial positions. The double-width conv5 layer has selective-dimension measurements, with full atomic factorization still pending. Counting these directions and assembling a basis that passes the multilayer invariant subspace checks are separate computational steps; Table~\ref{tab:cnn-width} identifies which results include both.
+
+\begin{table}[!htbp]\centering
+\caption{Scaling grids. Depth counts hidden layers; CNN scaling changes all channel widths together and keeps the pooling pattern.}\label{tab:early-method-scaling}
+\small\begin{tabular}{lll}\toprule
+Sweep & Varied values & Fixed setting\\\midrule
+MLP width & $32,64,128,256,512$ & Three hidden layers\\
+MLP depth & $2,3,4,5$ & Width 128\\
+CNN width & $0.5,1,2$ times base channels & Base: $(16,16,32,32,64)$\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]\centering
+\caption{Dense atomic measurements in the MLP size sweeps. Each listed checkpoint covers every affine layer, including the readout, on 10,000 analysis images. All rows use three seeds, subject to the stated milestone availability.}\label{tab:scaling-coverage}
+\small\begin{tabular}{p{.23\linewidth}p{.68\linewidth}}\toprule
+Architecture & Measured stages\\\midrule
+Width 32 & Initialization, early fitting, epochs 100, 250 and 500.\\
+Width 64 & Initialization, high accuracy and epoch 500; interpolation in seed 1.\\
+Width 128, depth 3 & Initialization, early fitting, high accuracy, interpolation, epochs 100, 250 and 500.\\
+Width 256 & High accuracy and epoch 500.\\
+Depth 2, width 128 & Initialization, early fitting, high accuracy, epochs 100, 250 and 500. For seed 2, high accuracy is the epoch-250 checkpoint.\\
+Depth 4, width 128 & Initialization, early fitting, high accuracy, interpolation, epochs 100, 250 and 500.\\
+Depth 5, width 128 & Initialization, early fitting, high accuracy, interpolation and epoch 500.\\\bottomrule
+\end{tabular}\end{table}
+
+Comparisons at matched training stages ask whether networks with similar fitting accuracy have similar geometry. Comparisons at epoch 500 instead give every network the same training budget. Both are useful because narrow and shallow networks can take longer to reach the accuracy milestones. Appendix~\ref{app:performance} gives the attained epochs and train/test accuracies.
+
+\subsection{Training data and representation ablations}
+\label{app:methods-data}
+\paragraph{Sample count.}
+We compare retraining on a smaller sample with restricting the analysis set of a model trained on all MNIST images. Both conditions use the same evaluation subsets, but only the first changes the learned network. Hidden-layer invariant subspaces fix the input layer. Adding the disjoint set $X'$ to a fixed checkpoint separately tests how many directions survive additional constraints.
+
+\paragraph{Input representation and dataset.}
+The raw-pixel ablation tests whether the PCA reduction used for the baseline affects the measured oceans. We train paired MLPs with three width-64 hidden layers, using either all 784 centered pixels or 256 principal components. Each representation uses one global scale. During geometry analysis, we hold the input layer fixed and edit L2, L3 and the readout, so the compared parameter spaces have the same dimensions.
+
+SVHN \citep{netzer2011svhn} provides a second digit-classification dataset that can be studied with these small networks. The baseline comparison retains the MNIST hidden architecture, optimizer and 500-epoch budget. A second SVHN recipe tests a model selected for validation performance: we reserve 500 training images per class, fit PCA on the remaining training images, add Adam's coupled L2 penalty of $10^{-4}$ to all weights and biases, and select the checkpoint with the best validation accuracy. The baseline uses PCA fitted on the full training set, zero weight decay and the epoch-500 checkpoint. The revised recipe changes these choices together, so its comparison measures their combined effect.
+
+For RESISC45, we fine-tune ViT-B/16 and ResNet-50 and study their final layers with the preceding network fixed (Appendix~\ref{app:methods-activations}). Table~\ref{tab:early-method-data} summarizes the comparisons.
+
+\begin{table}[!htbp]\centering
+\caption{Data comparisons and their scope. All recipe changes belong to the indicated comparison rather than to the MNIST baseline.}\label{tab:early-method-data}
+\small\begin{tabular}{p{.24\linewidth}p{.32\linewidth}p{.34\linewidth}}\toprule
+Comparison & Settings & Analysis or selection\\\midrule
+Reduced MNIST & $N=1{,}000,2{,}000,5{,}000$; three seeds & Retraining and fixed-model restriction; input layer fixed.\\
+Raw versus PCA & 784 pixels versus 256 components & Paired width-64 models; L2, L3 and readout.\\
+SVHN baseline & PCA-256 MLP; matched-width CNN & Equal-budget endpoints; fitting quality reported.\\
+SVHN revised recipe & Fit-set PCA; 500 validation images per class; Adam L2 penalty $10^{-4}$ & Validation-selected checkpoint; comparison changes several factors.\\
+ViT / ResNet & RESISC45; full-network fine-tuning & Final MLP / final three bottlenecks and readout; preceding layers fixed.\\\bottomrule
+\end{tabular}
+\end{table}
+
+
+\paragraph{Constraints added by new inputs.}
+At a fixed network, let $J_\ell(x)$ be the layer output Jacobian on input $x$. For a sample set $S$ and distribution $\mu$, define
+\begin{align*}
+ K_\ell(S)&=\{v:J_\ell(x)v=0\text{ for all }x\in S\},\\
+ K_\ell(\mu)&=\{v:J_\ell(x)v=0\text{ for }\mu\text{-almost every }x\}.
+\end{align*}
+Adding inputs imposes the old and new constraints together:
+\[
+ K_\ell(X\cup X')=K_\ell(X)\cap K_\ell(X').
+\]
+For ReLU selective spaces, each incoming row must annihilate its unit's active-feature span. Hence the number of dimensions removed is
+\[
+ \sum_j[\dim\cH_{\ell j}^{\rm act}(X\cup X')-\dim\cH_{\ell j}^{\rm act}(X)].
+\]
+These identities follow from intersecting kernels and from rank--nullity on each row, respectively. They hold with the network fixed; retraining changes the Jacobians and need not preserve either inclusion.
+
+\paragraph{Additional inputs at a fixed network.}\label{app:methods-newinput}
+For three width-128 ReLU MNIST networks at epoch 500, let $X$ be the original 10,000-image analysis set. Each condition adds a separate batch $Y$ of 10,000 images and measures $\dim K_\ell(X\cup Y)/\dim K_\ell(X)$, the fraction of the original atomic space that survives. For clean-to-noise interpolation, $y_i(\alpha)=(1-\alpha)y_i+\alpha z_i$, with clean MNIST test images $y_i$ and $z_i\sim\operatorname{Unif}([0,1]^{784})$, at $\alpha=0,0.1,\ldots,1$. A single noise draw is reused across levels and seeds. SVHN test images are converted to grayscale with BT.601 weights and resized by adaptive average pooling to $28\times28$. All conditions use the saved MNIST centering, PCA projection and scaling, without refitting. Conditions add inputs independently rather than cumulatively.
+
+Numerically unresolved ranks retain the sensitivity checks of Appendix~\ref{app:sanity}. For interpolation, 13 of 99 cells, all in L3, are cutoff-sensitive. Recomputing original and union ranks at the same alternative cutoff preserves the L3 minimum at $\alpha=0.3$, while shifting its mean survival from $95.5\%$ to $94.9\%$. This cutoff variation is separate from variation across seeds.
+
+\subsection{Persistence tests}
+\label{app:methods-persistence}
+Persistence asks whether a parameter direction that leaves outputs unchanged at one checkpoint retains that property later in training. We compare the same parameter layer at checkpoints $t$ and $t'$ on the same ordered analysis samples. Let $B_t\in\R^{p_\ell\times k_t}$ and $B_{t'}\in\R^{p_\ell\times k_{t'}}$ be orthonormal bases of their kernels, and let $P_{t'}=B_{t'}B_{t'}^\top$. For $k_t>0$, retained mass and effective lost dimension are
+\[
+ Q(K_t,K_{t'})=\frac{\|B_{t'}^\top B_t\|_F^2}{k_t},\qquad
+ d_{\rm lost}=\|(I-P_{t'})B_t\|_F^2.
+\]
+Here $Q=1$ means that every direction in the earlier kernel lies in the later kernel, and $Q=0$ means that the two spaces are orthogonal. The effective lost dimension weights each earlier direction by how far it moves out of the later kernel. The singular values of $B_{t'}^\top B_t$ are principal-angle cosines. Missing dimensions, if $k_t>k_{t'}$, count as right angles. Thus $d_{\rm lost}$ is the sum of squared sines, including those missing dimensions.
+
+Let $V_{t'}$ contain the right singular vectors of the later Jacobian above the rank threshold. Since $I-P_{t'}=V_{t'}V_{t'}^\top$, we compute
+\[
+ d_{\rm lost}=\|V_{t'}^\top B_t\|_F^2
+\]
+directly. Computing $k_t-\|B_{t'}^\top B_t\|_F^2$ instead would subtract two nearly equal values when almost everything persists, amplifying rounding error in the small difference.
+
+The calculation is repeated after removing dead-unit coordinates. Applying the later Jacobian to $(I-P_{t'})B_t$ measures the sensitivity of the lost component, with generic directions as a reference. Parent--sibling comparisons use the same geometry at independently continued checkpoints. New-batch comparisons instead keep the checkpoint fixed and change its sample constraints.
+
+To determine whether directions lost from the kernel become strongly visible, let $U$ be an earlier kernel or one of its component subspaces, with orthonormal basis $B_U$. We measure the output sensitivity per unit norm of its lost component and compare it with a generic direction:
+\[
+ \frac{\|\widehat J_{t'}(I-P_{t'})B_U\|_F}
+      {\|(I-P_{t'})B_U\|_F},\qquad
+ g_{\rm generic}=\frac{\|\widehat J_{t'}\|_F}{\sqrt{p_\ell}},
+\]
+when the first denominator is nonzero. Here $\widehat J_{t'}=J_{t'}/\sqrt{s}$ and $P_{t'}$ projects onto its kernel.
+
+For the component comparison, $C_t$ is the coordinate space supported on weights entering or leaving units inactive on every analysis image. We compare the full kernel with $S_t=K_t\cap C_t^\perp$ and with the canonical co-occurrence component of the atomic decomposition. For a projector $P$ and kernel basis $Q$, the split is accepted only when every eigenvalue of $Q^\top P Q$ is within $10^{-6}$ of zero or one and the expected dimension identities hold. Quotients by a contained subspace $N$ are represented by the orthogonal complement $K\cap N^\perp$; the co-occurrence quotient is obtained through $\Pi_\ell$ below. For GELU, the numerical dead-coordinate comparison additionally varies the maximum derivative threshold; unresolved splits are omitted.
+
+The positive spectral tail $E_t^+(\varepsilon)$ contains right singular vectors with singular values of $J_t/\sqrt{s}$ between the numerical rank threshold and $\varepsilon$. Its overlap with a later kernel uses the same projected-mass statistic. The backward mass $Q(K_{t'},K_t)$ measures how much of the later kernel was already present earlier; the projector distance $\|P_t-P_{t'}\|_F/\sqrt{2}$ also reflects dimension growth. These measurements compare checkpoints and do not determine the kernel's continuous path between them.
+
+\subsection{Invariant subspace construction and validation}
+\label{app:methods-branches}
+An atomic candidate is a parameter subspace that leaves the frozen outputs unchanged when one layer is edited on its own. We obtain the full atomic space from that layer's Jacobian nullspace. Feature-null and selective constructions give explicit subspaces by requiring edits to annihilate, respectively, all input features or the features seen by each active unit. To assemble a multilayer invariant subspace, we propagate received spaces and solve the compatible linear constraints in the chosen layer order, as in Appendix~\ref{app:composition-proof}. When the full atomic sum passes, it is used directly; otherwise bottom-up and top-down constructions can give different spaces.
+
+Validation checks orthonormality, the received-space constraints and the frozen output on mixed layer edits. If a received-space singular value is close to the construction cutoff, changing the sampled basis can change whether that direction is retained. We rebuild such spans with fresh random samples and validate against those independent reconstructions. 
+
+\paragraph{Marginal overlap and unit-level measurements.}
+Let $\Pi_\ell(A)=P_{\mathcal C_\ell}AP_{\mathcal H_\ell}$, whose kernel is the marginal-null space $\mathcal N_\ell$. The selective percentage in Section~\ref{sec:cooccurrence} is $100\,\dim\Pi_\ell(G_\ell^{\rm sel})/\delta_{\rm joint,\ell}$: we project an orthonormal selective basis and count singular values above $10^{-9}$, removing overlap with both marginal components.
+
+For any activation, the within-unit operator is $J_{\ell j}=\operatorname{stack}_i[D_{\ell,i}e_j(\bar h_{\ell-1,i}^0)^\top]$, where $D_{\ell,i}$ already includes that unit's derivative. Soft selectivity records $k_j(\varepsilon)=\#\{\sigma_a(J_{\ell j})/\sqrt{s}\le\varepsilon\}$ and $n_j(\tau)=\#\{i:|\sigma'(z_{\ell,i,j}^0)|>\tau\}$, with counting proxy $\sum_j(n_{\ell-1}+1-n_j(\tau))_+$ and unit-level share $\sum_j k_j(\varepsilon)/\#\{\sigma_a(J_\ell)/\sqrt{s}\le\varepsilon\}$; normalized margins are $m_{\ell,i,j}=z_{\ell,i,j}^0/(\|W_\ell^0[j,:]\|_2\|\bar h_{\ell-1,i}^0\|_2)$.
+
+\paragraph{Mechanism comparisons.}
+The co-occurrence deficit counts atomic directions that remain after accounting for the feature-null and downstream-null components. To understand where it comes from, we group samples by their labels, input features, downstream maps, joint feature--downstream embeddings or gate patterns, and compare against random groups of the same sizes. These groupings test whether the missing constraints are associated with class structure or with finer similarities between samples. A pairing shuffle replaces the samplewise pairs $(\bar h_{\ell-1,i}^0,D_{\ell,i})$ by $(\bar h_{\ell-1,i}^0,D_{\ell,\pi(i)})$, where $\pi$ is a permutation of all samples or a permutation within each class. It preserves the marginal spans and sample count. A change in deficit therefore measures sensitivity to the specific pairings. The counting floor caused by too few output constraints remains unchanged by the shuffle, although surviving deficit can also have other causes.
+
+A downstream map $D_{\ell,i}$ sends a preactivation change at layer $\ell$ on sample $i$ to an output change in the frozen network. Clustering these maps asks which samples transmit changes through the rest of the network in similar ways. At a fixed checkpoint and layer, define the common scale and pairwise distance
+\[
+ c=\frac1s\sum_i\|D_{\ell,i}\|_F,\qquad
+ d(i,j)=\frac{\|D_{\ell,i}-D_{\ell,j}\|_F}{c},\quad c>0.
+\]
+Complete linkage merges groups only when the largest distance between their members is at most $\varepsilon$. Every resulting group $G$ therefore satisfies $\max_{i,j\in G}d(i,j)\le\varepsilon$. The scalar $c$ is shared by all downstream maps $D_{\ell,1},\ldots,D_{\ell,s}$ at this checkpoint and layer. Dividing by it expresses distances relative to a typical downstream-map norm while preserving differences in magnitude between samples.
+
+We measure how closely a partition follows the class labels by its purity. Let $\mathcal G$ be the partition of the $s$ samples and let $c_i\in\{1,\ldots,d\}$ be the class index of sample $i$. Define
+\[
+ \operatorname{purity}(\mathcal G)
+ =\frac1s\sum_{G\in\mathcal G}\max_{a\in\{1,\ldots,d\}}
+       \bigl|\{i\in G:c_i=a\}\bigr|.
+\]
+Each group is assigned its majority label, and purity is the fraction of samples agreeing with those assignments. A value of one means that every group contains only one class. Small groups can have high purity by chance, so we compare with randomly permuted labels while retaining the same groups and sizes. Purity measures label agreement; the rank-based explained deficit measures how many constraints are missing across groups. The latter is defined in Appendix~\ref{app:mechanism}. For $c$ classes, centered class means $M$, within-/between-class covariances $\Sigma_W,\Sigma_B$, and row-normalized means $\bar M$, we measure $\mathrm{NC1}=\operatorname{tr}(\Sigma_W\Sigma_B^+)/c$, $\mathrm{NC2}=\|\bar M\bar M^\top/\|\bar M\bar M^\top\|_F-(I-\mathbf1\mathbf1^\top/c)/\sqrt{c-1}\|_F$ and the coefficient of variation of class-mean norms. NC3 is $\|V/\|V\|_F-M/\|M\|_F\|_F$ at the penultimate layer; NC4 is nearest-class-center disagreement with labels (or predictions where specified), with results in Appendix~\ref{app:nc}.
+
+\paragraph{Symmetry controls.}
+For ReLU MLPs and CNNs, unit or channel rescaling multiplies incoming parameters and divides outgoing weights by the same factor. We check finite transformations on training and random inputs, then compare their tangent span with the measured kernel and invariant subspace. GELU supplies an activation control for this rescaling identity.
+
+\subsection{Radius analyses}
+
+\label{app:methods-radius}
+\subsubsection{Ray tests}
+Ray tests measure output changes along $\theta_0+rv$ for unit directions $v$ and a fixed grid of radii. We record actual and frozen responses using the same edits. Unless stated otherwise, radius is Euclidean parameter length and drift is $\|F_X(\theta_0+rv)-F_X(\theta_0)\|_X$. Generic controls edit the same layers. A layer-relative scan instead scales each layer by its base parameter norm; captions identify this convention.
+
+Independent uniform directions are obtained as $v=Qg/\|g\|_2$, with $g\sim\mathcal N(0,I)$ and $Q$ an orthonormal basis of the space. Each direction is reused at every radius. The multilayer MLP/CNN batteries use 128 directions per checkpoint and space; atomic activation comparisons use 32 per seed, and transition/GELU-tail comparisons use 256. Fixed-angle scans in selected two-dimensional planes are descriptive slices and are excluded from the certificates below.
+
+The first tested output change above $10^{-3}$ defines visibility; a scan with no crossing is censored at its last radius. ReLU and leaky-ReLU scans also record the first gate crossing. Reduced-data scans use relative dataset-RMS drift. These choices are stated with the corresponding results.
+
+\paragraph{Curvature-band rays.}\label{app:methods-curvature-rays}
+For the three width-64 ReLU MNIST models at epoch 500, we apply the ray protocol to cumulative Hessian and GGN eigenspaces $|\lambda_T|\le\tau$, $T\in\{H,G\}$, at $\tau=10^{-14},10^{-12},10^{-10},10^{-8},10^{-6},10^{-4}$. We sample 256 normalized Gaussian mixtures of the retained eigenvectors per space and seed, and evaluate the original network in float64 on the same 10,000 analysis images. The radius grid is $0.001,0.003,0.01,0.03,0.1,0.2,0.3,0.5,0.7,1,1.5,2,3,5,7,10,15,20,30,50,100$. Both operators use identical constructed-ocean and generic controls. Curves report the mean and sample SD of the three within-seed medians; these summaries do not give uniform subspace guarantees.
+
+\paragraph{GELU approximate-kernel rays.}
+The extended width-128 GELU comparison edits L3 only, using the right singular subspace of $J_3/\sqrt{s}$ with singular values at most $10^{-3}$, including its numerical kernel. For each of three seeds and the ReLU-matched high-accuracy, interpolation and epoch-500 checkpoints, we reuse 256 directions on the grid $0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30,100,300,1000$, with matched generic L3 edits and float64 forwards.
+
+\paragraph{ViT and ResNet family rays.}
+The common family studies use 256 unit-Frobenius directions per nonempty family, dimension-matched random-subspace controls and generic edits. Approximate families and their controls undergo the same removal of exact components. We measure relative dataset-RMS logit drift with tolerance $10^{-3}$ at radii $0.001,0.003,0.01,0.03,0.1,0.3,1,3,10,30$. ViT extends the same directions to $100,300,1000$ and uses float64 throughout. ResNet uses float64 operators and float32 actual forwards, checked against float64; responses at the measured precision floor are marked accordingly. Its selective battery spans 10,170 of the family's 10,171 directions.
+
+\paragraph{Residuals, bounds and slices.}
+For an edit $w$, let $\rho_{\ell,i}(w)$ be the activation residual and $T_{\ell,i}(w)$ its edited frozen tail, as in Appendix~\ref{app:radius-proof}. Define $v_\ell(w)=(T_{\ell,i}(w)\rho_{\ell,i}(w))_{i=1}^s$ and $g_\ell(w)=\max_i\|T_{\ell,i}(w)\|_{\rm op}$. We evaluate the chain
+\[
+ \|A_X^{\rm tr}(w)\|_X
+ =\Big\|\sum_\ell v_\ell(w)\Big\|_X
+ \le\sum_\ell\|v_\ell(w)\|_X
+ \le\sum_\ell g_\ell(w)\|\rho_\ell(w)\|_X.
+\]
+The first inequality measures cancellation across layers; the second replaces samplewise propagation by its largest operator norm. Replacing $g_\ell(w)$ by the product of edited downstream weight norms and base-slope norms gives the further weight-norm bound. These quantities are evaluated at the actual edit $w$.
+
+The GELU plot additionally compares the transition with the diagnostic expression
+\[
+ \widehat B(w)=\frac12\sum_\ell \chi_\ell^0\beta_\ell
+          \widehat d_\ell(w)^2,\qquad
+ \widehat d_\ell(w)^2=\frac1s\sum_i\|\Delta z_{\ell,i}(w)\|_2^2,
+ \quad \chi_\ell^0=\max_i\|T_{\ell,i}(0)\|_{\rm op}.
+\]
+Here $\beta_\ell$ bounds activation curvature; for GELU the calculation uses $\beta_\ell=\sqrt{2/\pi}$. This expression approximates the smooth-radius bound using measured RMS preactivation displacements and gains at the unperturbed network. Those substitutions remove the theorem's uniform guarantee: $\widehat B$ is a diagnostic to compare with the observed transition, rather than a certified upper bound on an invariant subspace ball.
+
+Angle--radius scans use selected two-dimensional slices. Independent rays support the directional certificates in Section~\ref{sec:radius-measured}. The fixed-angle slices are descriptive; neither sampling scheme establishes the worst direction in a full subspace ball.
+
+\paragraph{Margin-regularized training.}\label{app:methods-margin}
+We test whether pushing ReLU preactivations away from zero delays gate crossings and extends the distance over which outputs remain nearly unchanged. These experiments use the width-64 MNIST model and the baseline training budget, with an additional margin penalty in the objective.
+
+For a minibatch $\mathcal B$, let $y_i\in\R^d$ be the one-hot target and write the unregularized loss as $\mathcal L_{\rm MSE}(\theta;\mathcal B)=(|\mathcal B|d)^{-1}\sum_{i\in\mathcal B}\|F_i(\theta)-y_i\|_2^2$. Let $L$ be the number of hidden layers, $n_\ell$ the width of layer $\ell$, and $z_{\ell,i,j}(\theta)$ the preactivation of unit $j$ on sample $i$. The margin-regularized objective is
+
+\[
+ \mathcal L_{\rm MSE}(\theta;\mathcal B)
+ +\frac{\lambda}{L}\sum_{\ell=1}^L\frac{1}{|\mathcal B|n_\ell}
+    \sum_{i\in\mathcal B}\sum_{j=1}^{n_\ell}
+       \log\!\left(1+e^{\tau-|z_{\ell,i,j}(\theta)|}\right).
+\]
+The coefficient $\lambda$ sets the penalty strength, and $\tau$ sets its preactivation scale. Each layer contributes its mean penalty over samples and units, and the layer means are averaged. We set $\tau=1$ in raw preactivation units. The penalty is largest near zero and encourages a wider gap from the activation boundary; it does not constrain the eventual output drift.
+
+\begin{table}[!htbp]\centering
+\caption{Margin-regularized training settings. Each arm shares initialization, minibatch-order seeds and baseline budget with its control.}\label{tab:early-method-interventions}
+\small\begin{tabular}{lll}\toprule
+Arm & Parameters & Replication\\\midrule
+Margin & $\tau=1$, $\lambda\in\{0.01,0.1\}$ & Three seeds per strength\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each trained network, we construct and validate its invariant subspace before interpreting radius probes as motion within that invariant subspace. Appendix~\ref{app:controlled} reports the margin-radius comparison. Train/test accuracy, unregularized MSE and parameter norms are given in Appendix~\ref{app:performance}, because the margin penalty can also change fitting quality and parameter scale.
+
+\subsubsection{Radius certification}
+\label{app:methods-certificates}
+Write $D_{v_i}(r_h)=\|F_X(\theta_0+r_hv_i)-F_X(\theta_0)\|_X$ for the output drift on ray $v_i$ at radius $r_h$.
+We apply Proposition~\ref{prop:probabilistic-radius} to the saved independent rays. For each checkpoint and space:
+\begin{enumerate}
+\item At each radius $r_j$, compute the running maximum $Y_{ij}=\max_{h\le j}D_{v_i}(r_h)$ along each ray.
+\item Count $k_j=\sum_i\mathbf1\{Y_{ij}>\varepsilon\}$ at the fixed absolute dataset-RMS tolerance $\varepsilon=10^{-3}$.
+\item For $K$ reported comparisons, evaluate the one-sided Clopper--Pearson upper bound with error probability $0.05/K$. The largest grid radius with upper bound at most $\delta=0.1$ certifies at least $90\%$ safe directions on that grid.
+\end{enumerate}
+The radius grids and comparisons are fixed before evaluating failures. Figure~\ref{fig:radius-grid} uses $K=328$ comparisons, and Figure~\ref{fig:radius-certificates-all} uses its own stated family. Reusing rays across radii is permitted by the simultaneous guarantee. Curves summarize per-checkpoint bounds by mean and sample SD across available seeds; rays are never pooled. The mean bounds the mean failure probability of those checkpoints, while SD describes seed variation. We make no continuity assumption between tested radii.
+
+The ResNet panel uses the final convolutional layer \texttt{layer4.2.conv2}; its absolute drift is taken from the same battery whose relative drift is reported in Appendix~\ref{app:resnet-common}. The ViT panels likewise use absolute drift for certificates, keeping their relative-drift family comparisons separate. GELU uses 256 independent atomic L3 rays at epoch 500; its earlier L3 kernels are empty. The two SVHN recipes retain their respective endpoint and validation-selected checkpoints.
+
+\subsection{Linear mode connectivity analyses}
+\label{app:methods-lmc}
+Linear mode connectivity asks whether the straight parameter segment between two trained networks maintains low loss. We obtain related endpoint networks by copying a trained MLP or CNN checkpoint, called the parent, and continuing two copies with different minibatch orders. The resulting networks are siblings. Both copies inherit the parent's Adam moment estimates as well as its parameters. We evaluate a fixed grid, including the midpoint, on the segment between endpoints, recording MSE, classification error, distance to the endpoint functions, and the frozen/transition decomposition. Table~\ref{tab:early-method-lmc} collects the comparison rules.
+
+Low loss along a segment can coexist with changes in the output vectors. We therefore measure functional change separately. Let $\theta_A,\theta_B$ be the endpoint parameters, let $F_A=F_X(\theta_A)$ and $F_B=F_X(\theta_B)$, and write $\theta_\alpha=(1-\alpha)\theta_A+\alpha\theta_B$ for $\alpha\in[0,1]$. The mean distance to the endpoint functions is
+\[
+ E(\alpha)=\frac12\left(
+ \|F_X(\theta_\alpha)-F_A\|_X+
+ \|F_X(\theta_\alpha)-F_B\|_X\right).
+\]
+This measures how far the interpolated network's outputs lie from the two endpoint outputs. Even at an endpoint it equals half the distance between the endpoint functions, so its value includes their difference.
+
+We also measure departure from a linear interpolation \emph{in output space}. The chord-deviation vector and its magnitude are
+\[
+ D_\alpha=F_X(\theta_\alpha)-\bigl((1-\alpha)F_A+\alpha F_B\bigr),
+ \qquad \|D_\alpha\|_X.
+\]
+This quantity is zero at both endpoints and throughout the segment if the outputs interpolate linearly. A segment can consequently have zero chord deviation while its outputs vary substantially. The plots identify which of these two measurements they show.
+
+To relate connectivity to ocean geometry, we compare the complete constructed endpoint spaces using their continuous sharing fraction and the four displacement projections defined in Appendix~\ref{app:lmc-shared}. Parent--child and sibling intersection dimensions are separate measurements, using the principal-angle tolerance and residual checks in Table~\ref{tab:early-method-lmc}. For orthonormal bases $Q_0,\ldots,Q_m$, we form $E=\operatorname{stack}_{j=1}^m[(I-Q_jQ_j^\top)Q_0]$ and retain $Q_0v$ for right singular vectors of $E$ below the declared residual cutoff. Triple intersections are also formed successively from the sibling intersection and the parent; whole-span membership residuals and cutoff gaps are checked, with unresolved dimensions reported as ranges.
+
+\begin{table}[!htbp]\centering
+\caption{Connectivity measurements. Displayed siblings inherit Adam moments; each cohort retains its recorded spawn epochs.}\label{tab:early-method-lmc}
+\small\begin{tabular}{p{.30\linewidth}p{.62\linewidth}}\toprule
+Measurement & Procedure\\\midrule
+Segment & 30 equally spaced points plus the midpoint on 10,000 samples; children continued to epoch 500.\\
+Loss connectivity & MSE barrier below ten times the mean endpoint MSE.\\
+Intersection dimensions & Principal-angle tolerance $0.1^\circ$, followed by kernel and invariant subspace residual checks.\\
+Displacement alignment & Full-space and sequential projections; 256 globally normalized Gaussian controls and a separate layer-energy-matched reference.\\
+Finite-distance geometry & Endpoint rays and planes through the parent and both children.\\\bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+\section{Theoretical support, extended version}
+\label{app:theoretical-support}\label{app:atomic-full}
+We report empirical tests of the theoretical constructions across architectures, training stages and data conditions. After the symmetry comparison, we examine atomic dimensions and test the corresponding directions at finite distances. We then compare multilayer constructions and their radius, relate output drift to activation transitions, and study margin-regularized training. Connectivity applications are discussed in Appendix~\ref{app:applications}.
+
+\subsection{Structural symmetries}
+\label{app:symmetries}
+A rescaling symmetry gives a familiar way to change network parameters while preserving its function. For a ReLU or leaky-ReLU hidden unit, choose any positive constant $c$. Multiplying the incoming weights and bias by $c$ multiplies the activation by $c$; dividing the outgoing weights by $c$ cancels this change. The same argument applies to a convolutional channel, because average pooling commutes with positive scaling.
+
+To compare this curved family of equivalent parameters with a linear ocean, differentiate the rescaling at $c=1$. For hidden unit $j$ of layer $\ell$, the nonzero layer components of the resulting tangent direction are
+\[
+ \bigl(W_\ell[j,:],\ b_\ell[j],\ -W_{\ell+1}[:,j]\bigr).
+\]
+Here $j$ indexes the unit whose incoming and outgoing parameters are rescaled. The finite tests use positive factors $e$ and $e^{-1}$; the symmetry holds for every $c>0$.
+
+We test the ReLU MLPs of widths 64 and 128, the width-128 leaky-ReLU and GELU models, and the base MNIST CNN, each with three seeds. The positively homogeneous models preserve outputs under finite rescaling, and their generator ranks equal the number of hidden units or channels. GELU supplies a control: the same parameter transformation changes its outputs. Table~\ref{tab:c-symmetry-summary} summarizes the numerical ranks, Jacobian responses and finite-rescaling errors across seeds and measured training stages.
+
+
+\input{sections/section_c_symmetry}
+
+The layerwise invariant-subspace comparison with the full tangent kernel is available for all three width-64 ReLU seeds (Table~\ref{tab:tangent-ocean-seeds}). The saved constructions and kernel factorizations use matching checkpoints, preprocessing and analysis images. Each construction passes its recorded compatibility validation. The seed-0 kernel rank is cutoff-sensitive: its gap is 1.74, and tightening the relative cutoff from $10^{-9}$ to $10^{-12}$ reduces the kernel dimension from 3,221 to 3,220. The seed-1 and seed-2 gaps at the registered cutoff are 10.8 and $3.9\times10^6$, respectively.
+\input{sections/section_c_tangent_seeds}
+
+Comparing the full tangent kernel, the certified invariant subspace and the symmetry tangent span, we find that the invariant subspace and symmetries together explain most of the tangent kernel in the tested width-64 ReLU and leaky-ReLU networks (Table~\ref{tab:c-symmetry-intersection}). At high accuracy, the combined span accounts for $98.8$--$99.8\%$ of the numerical tangent kernel across the three ReLU seeds, leaving 18, 6 and 47 dimensions, respectively. The leaky-ReLU comparison uses seed 0. Their overlap with the invariant subspace differs between the two activations, so the dimension of their combined span is computed using the measured intersection.
+
+\subsection{Atomic decomposition}
+\label{app:atomic}\label{app:mnist-cnn}
+An atomic kernel consists of parameter edits to one affine layer that leave the frozen outputs unchanged. The three-component decomposition asks why these edits are invisible: some act on unused input-feature directions, some are annihilated by the downstream network, and the remainder comes from constraints missing in the observed feature--downstream pairings. All dimensions below use the numerical rank convention in Appendix~\ref{app:sanity}.
+
+Table~\ref{tab:atomic} gives the reference width-128 MNIST ReLU MLP in absolute dimensions. The panels that follow extend the same accounting to every layer and recorded stage of the width and depth sweeps, activation variants, raw-pixel and BatchNorm models, and SVHN models. For CNNs, the plots distinguish total atomic dimensions from a full component decomposition. Reduced-data dimensions are compared in Appendix~\ref{app:training-data}. Margin-regularized models are discussed separately in Appendix~\ref{app:controlled}.
+\begin{table}[!htbp]
+\caption{Reference atomic decomposition: width-128, three-hidden-layer MNIST ReLU MLP on 10,000 analysis images, three seeds. At relative threshold $10^{-9}$, $\dim K_\ell$ is the sum of feature-null, downstream-null and co-occurrence dimensions. ``Dead'' counts units inactive on the analysis set; ``gap'' is the singular-value ratio at the reported rank.}\label{tab:atomic}
+\centering\exptable{atomic}
+\end{table}
+\FloatBarrier
+
+\paragraph{What changes across networks.}
+The late hidden layers and readouts often contain the largest invariant fractions, but the balance among components depends on the architecture and training condition. ReLU models can leave many feature and downstream directions unused. Leaky-ReLU models retain a co-occurrence kernel even with nonzero slopes on both sides of zero. The width and depth comparisons also reveal substantial input-layer kernels in some larger networks, where the input-layer selective construction remains empty. Thus the full atomic measurement is essential for identifying directions beyond selectivity.
+
+Each panel below keeps its model, layer and stage explicit. Averaging is only across seeds of that setting. A model whose stage is reached in one seed contributes that one measurement, and the stage label reports the count. The data-ablation figures in Appendix~\ref{app:training-data} separately compare training on a subset with applying fewer constraints to a fixed network.
+
+
+
+\input{sections/section_c_atomic_figures}
+
+
+
+\paragraph{Activation, normalization and dataset comparisons.}\label{app:activations}\label{app:bn}\label{app:raw}\label{app:svhn}
+The same measurements distinguish several ways of obtaining an invariant subspace. Leaky ReLU retains a late hidden-layer kernel through cancellations across units, despite having no exactly inactive negative piece. GELU develops broad approximate tails; its late numerical kernels have no clear spectral gap. BatchNorm leaves substantially smaller kernels, even at matched fitting stages, while the raw-pixel and SVHN comparisons show that representation and fitting conditions also affect their size. The preceding panels include these models, and the invariant subspace and transition comparisons below use the same protocols. Predictive-performance tables are retained in Appendix~\ref{app:performance}; training recipes are in Appendix~\ref{app:methods-activations} and Appendix~\ref{app:methods-data}.
+
+\paragraph{Large layers and numerical resolution.}
+
+
+For the width-512 MLP, randomized rank calculations resolve the third hidden-layer and readout ranks in two seeds. The second hidden layer has a rank lower bound. Table~\ref{tab:c-wide-ranks} reports each result in that form, so an unresolved rank remains distinct from a measured kernel dimension.
+\input{sections/section_c_wide_ranks}
+
+The fine-tuned ViT has a different source of exact directions. LayerNorm identities give a compatible invariant subspace in the final MLP and readout, checked in all fine-tuned seeds. Table~\ref{tab:c-native-exact} separates these constructed spaces from counting lower bounds on tangent nullity. The full atomic ranks of the large ViT layers remain unresolved. The architecture is described in Appendix~\ref{app:methods-activations}, and the finite-radius results are in Appendix~\ref{app:native-vit}.
+\input{sections/section_c_vit_table}
+
+\paragraph{Approximate atomic directions.}
+A numerical kernel counts directions below the tight rank threshold. Larger singular-value thresholds also include directions with a small, nonzero first-order output response. The next panels compare these two counts across the measured training trajectories, using the same relative thresholds across models and keeping every measured layer. The approximate spaces can occupy a substantial fraction of a layer even when its tight-threshold kernel is small. For GELU, a late-stage count without a spectral gap is a threshold-dependent numerical quantity.
+
+\input{sections/section_c_tail_figures}
+
+\paragraph{Selective units and channels within the atomic kernel.}
+For a ReLU unit, an incoming edit that annihilates the features of all samples on which it is active preserves its frozen activation on every sample. This gives an explicit part of the atomic kernel. With $\mathcal A_j$ the active sample set of unit $j$ and $\mathcal H_{\ell j}^{\rm act}(X)$ its augmented active-feature span, its dimension is
+\[
+ \dim G_\ell^{\rm sel}(X)
+ =\sum_j\left(n_{\ell-1}+1-\dim\mathcal H_{\ell j}^{\rm act}(X)\right).
+\]
+An active set with too few samples leaves free directions by sample count alone. Further directions arise when its features span less than their count permits. The CNN construction imposes the analogous condition on all active patches of a channel.
+
+The selective-space panels include the full MLP width and depth sweeps on both the 10,000-image analysis set and all 60,000 training images, together with the base MNIST and SVHN CNN trajectories. The CNN width endpoints are reported in Appendix~\ref{app:cnn-width}. Selective spaces often account for most of the hidden atomic kernel in fitted ReLU models. The unit-decomposition panels separate directions confined to one unit from the remaining directions that require cancellation across different units. These distinctions matter for leaky ReLU: class selectivity alone does not explain its atomic kernel, because negative-side slopes remain nonzero.
+
+
+\input{sections/section_c_selective_figures}
+
+The channel-level CNN measurements provide a concrete view of selectivity. Figure~\ref{fig:cnn-units} shows which real inputs activate each late convolutional channel. The images reveal class-specific stroke patterns in this example; the preceding panels provide the corresponding dimensions across seeds and settings.
+
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=.60\linewidth,height=.18\textheight,keepaspectratio]{cnn_units_wide.pdf}
+\caption{Base MNIST CNN, conv5, seed 0 at epoch 500: class selectivity and the four most activating real images per channel, with input-gradient attribution. This qualitative example complements the multi-seed selective-space measurements.}\label{fig:cnn-units}
+\end{figure}\FloatBarrier
+
+\subsubsection{Finite-radius tests of atomic spaces}
+\label{app:rays}\label{app:radius-full}
+A Jacobian kernel describes the first-order response. We test the actual network along its directions to establish how far the frozen invariance persists. Following Appendix~\ref{app:methods-radius}, we compare single-layer kernels, approximate singular tails, generic directions, and edits to dead-unit incoming or outgoing coordinates. We record both the first gate crossing and the first output change exceeding $10^{-3}$.
+
+For the width-128 ReLU MLP, the readout kernel and outgoing weights of zero features stay flat throughout the scan. Incoming edits to dead units remain flat until the units reactivate. Hidden-layer directions often cross gates before their output response becomes visible. Figure~\ref{fig:rays-overview} separates these mechanisms, including the dead-unit controls, with only one layer edited at a time. The multilayer invariant subspace scans in Appendix~\ref{app:composition-results} test simultaneous edits to several layers.
+
+
+\input{sections/section_c_atomic_rays}
+
+\paragraph{Activation controls.}
+Leaky ReLU removes ReLU's exactly zero negative-side slope, while GELU replaces the kink by a smooth transition. Figure~\ref{fig:c-activation-rays} tests how these changes affect single-layer invariance in the width-128 MNIST models. It contrasts numerical kernel directions in L2 and L3 with a L3 approximate tail. Solid curves show the actual response and dashed curves the frozen response; lighter curves denote high accuracy and darker curves epoch 500. The generic curves perturb all layers and serve as a full-network sensitivity reference, so their amplitudes are not a matched single-layer comparison. 
+
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=3.105in]{activation_rays_square.pdf}
+\caption{Leaky-ReLU and GELU width-128 MNIST MLPs, seed 0, at high accuracy and epoch 500. Single-layer kernel and approximate-tail directions separate frozen invariance from finite-distance output drift. The gray generic reference edits the full network. Gray vertical dotted lines mark $0.1\|\theta\|_2$ at each checkpoint.}\label{fig:c-activation-rays}
+\end{figure}
+
+\paragraph{Smooth activations and approximate atomic spaces.}
+\label{app:gelu-eps}
+
+For a smooth activation such as GELU, an exact atomic kernel can be empty. Approximate Jacobian kernels instead collect directions with a small first-order response; finite steps can still accumulate drift through activation curvature. Figure~\ref{fig:gelu-extended-rays} tests the L3 approximate kernel at the common sensitivity cutoff $10^{-3}$. All 256 sampled directions per seed and stage stay below output drift $10^{-3}$ through radius 1, while all exceed it by radius 10. The smaller response than generic L3 edits therefore has a finite measured extent.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=1.924in]{gelu_rays_standard.pdf}
+\caption{Extended GELU L3 rays in width-128 MNIST MLPs. The approximate kernel uses $\sigma(J_3)/\sqrt{s}\le10^{-3}$; generic controls edit the same layer. Lines show the mean and shading one sample SD of the within-seed medians over 256 rays, across three seeds. Colors identify the ReLU-matched training stages. The dotted line marks output drift $10^{-3}$.}\label{fig:gelu-extended-rays}
+\end{figure}
+
+The diagnostic $\widehat B(w)$ in Figure~\ref{fig:gelu-eps} is defined in Appendix~\ref{app:methods-radius}; it uses measured RMS preactivation displacements and base-point gains in place of uniform quantities. It exceeds measured transition by two to three orders of magnitude; local curvature is much smaller than its global bound along these probes.
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=4.786in]{gelu_rays_norm.pdf}
+\caption{GELU approximate flatness and the diagnostic $\widehat B(w)$ from Appendix~\ref{app:methods-radius}. Seed-0 width-128 MNIST models at epoch 500. The left panel compares true (solid) and frozen (dashed) responses; the middle compares the transition norm with the diagnostic proxy (gray dashed); the right gives the fraction of probes below output change $10^{-3}$. Vertical dotted lines mark $0.1\|\theta\|_2$ in each model color. The proxy uses RMS displacements and base-point gains. Numerical late-stage kernels do not certify an exact analytic ocean.}
+\label{fig:gelu-eps}
+\end{figure}\begin{figure}[!htbp]
+\centering
+\includegraphics[width=6.194in]{soft_selectivity.pdf}
+\caption{Soft selectivity under GELU: weak derivatives and concentrated active-input geometry accompany large approximate tails.}
+\label{fig:gelu-soft}
+\end{figure}
+
+
+\FloatBarrier
+
+\subsection{Multilayer invariant subspace construction and validation}
+\label{app:composition-results}\label{app:cnn-branch}\label{app:selective}
+Single-layer invariance leaves a further question: can several layers be edited at once while preserving the frozen outputs? An early-layer edit changes the inputs received by later layers, so individually invariant edits can interact. The received-space construction checks this compatibility. The construction plots follow the resulting dimensions over training for each attempted layer order and explicit subspace construction. Each curve is one seed. We show models measured at more than one epoch. Crosses mark zero retained dimension, including failed validations; unattempted constructions have no point.
+
+For the tested width-64 full-data MNIST models, the layer orders recover the full atomic sum. CNN invariant subspaces retain almost that sum after removing directions at the numerical rank boundary. The reduced-data experiments in Appendix~\ref{app:training-data} show why compatibility must still be checked: different orders can give different invariant subspace dimensions from the same atomic spaces. We also report the raw-pixel, BatchNorm and SVHN comparisons. Full multilayer constructions have not been computed for every model in the MLP size sweeps, so their atomic dimensions alone do not establish equally large multilayer invariant subspaces.
+
+
+\input{sections/section_c_branch_figures}
+
+\subsection{Radius tests}
+\label{app:radius-results}
+\subsubsection{Directional certificates}
+\label{app:radius-certificates}
+The invariant spaces permit substantially larger certified grid radii than generic directions across the tested architectures (Figure~\ref{fig:radius-certificates-all}). The early CNN spaces remain safe throughout the scan but contain few directions; later spaces are much larger and have shorter measured radii. Exact ViT feature-null and LayerNorm-shift families remain at numerical precision throughout their extended scans.
+
+\input{sections/radius_confidence}
+\FloatBarrier
+
+\subsubsection{Ray responses}\label{app:radius-responses}
+The actual and frozen responses show where activation changes become visible along the same edits. The following comparisons include wider networks, different activations and input representations. Their descriptive bands summarize seed variation; the certificates above use independent-ray failure counts.
+\input{sections/section_c_ray_figures}
+
+\subsection{Activation-transition potential}
+\label{app:transition}
+We next ask how departures from the base activation pattern contribute to the output response. The local residual $\rho_\ell(w)$ measures departure from the base affine activation at layer $\ell$, and the edited frozen tail $T_\ell(w)$ propagates it through the remaining layers. Their vector contributions add to the activation-transition term,
+\[
+ A_X^{\rm tr}(w)=\sum_\ell T_\ell(w)\rho_\ell(w).
+\]
+We measure its magnitude relative to the actual output change, $\|A_X^{\rm tr}(w)\|_X/\|\Delta F_X(w)\|_X$, using 256 paired directions per checkpoint and radius. This ratio can exceed one when the transition and frozen responses partly cancel.
+
+The panels compare width-128 ReLU, leaky-ReLU and GELU MLPs, the base CNN, and width-64 plain and BatchNorm MLPs. Single-layer perturbations identify where the response originates; full-network perturbations also include interactions between edited layers. The figures use absolute radii. The vertical dotted markers identify edits with Euclidean norm equal to 10\% of the network's parameter norm. An absolute radius is the norm of the full edit, including when only one layer moves. Each stage has its own marker color, and positions summarize the three seeds.
+\input{sections/section_c_transition_figures}
+
+\paragraph{Response magnitudes and cancellation across layers.}
+A large ratio of transition norm to output-change norm can reflect a large activation residual or a small net output change caused by cancellation. Figure~\ref{fig:c-transition-details} distinguishes these cases. Its upper row compares the true, frozen and transition norms at one fixed absolute radius. Its lower row separates the propagated layer residuals and compares their summed norms with the norm of their vector sum. The gap between those two quantities measures cancellation across layers.
+\input{sections/section_c_transition_details}
+
+\paragraph{Margins and activation curvature.}
+The margin distributions show how far preactivations lie from the activation's transition region. ReLU and leaky ReLU are affine on each side of zero; GELU approaches affine behavior in both tails. Sigmoid, tanh and softplus provide further smooth-tail examples in Appendix~\ref{app:radius-proof}. For a fixed preactivation displacement, remaining far enough into an affine or low-curvature region makes the activation residual zero or small. This requires the entire displacement to remain in that region: a large initial margin alone does not protect an edit that returns to the transition region. Downstream propagation then determines how much of the local residual reaches the output.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=4.606in]{paper_margins_mnist.pdf}
+\caption{Sign-conditional distributions of normalized preactivation margins in the MNIST activation comparison. Solid and dashed lines condition on active and inactive gates; panels also report active fractions.}\label{fig:margins}
+\end{figure}
+
+\paragraph{CNN background and gate crossings.}
+Digit images contain large background regions. A nearly zero preactivation at a background position can change sign while producing only a small activation residual. Counting these crossings therefore need not predict a large output response. Figure~\ref{fig:c-cnn-background} relates the number of conv1 crossings to their propagated contribution, separately for interior background, padding boundaries and digit patches. Each path follows training stages. The large background crossing counts at high accuracy have a small propagated contribution; later checkpoints suppress these crossings. This comparison measures the output importance of crossings rather than treating every changed gate as equally influential.
+
+\input{sections/section_c_background}
+
+\subsection{Controlled training: margin regularization}
+\label{app:controlled}
+
+
+\paragraph{Margin regularization.}
+The training objective in Appendix~\ref{app:methods-margin} penalizes preactivations near zero, encouraging larger margins from ReLU's switching boundary. We compare two penalty strengths with the unregularized width-64 MNIST control, using three paired seeds and each model's certified invariant subspace at epoch 500.
+
+The penalty empties the near-zero preactivation region and delays the first gate crossing. Output visibility changes much less: its median remains at the control's grid radius in five of the six penalized runs, and moves to the next grid point in the remaining run (Table~\ref{tab:margin-summary}). The radius curves below show the separation between these two events. The penalty also increases parameter norms and worsens fitting, as reported in Appendix~\ref{app:performance}; it therefore changes more than margins alone.
+\begin{table}[!htbp]\centering
+\caption{Margin arms, seed order 0/1/2. First-crossing radii are medians over probes on a half-decade grid.}\label{tab:margin-summary}
+\begin{tabular}{lrrr}\toprule
+Arm & first crossing & visible radius & certified dimension\\\midrule
+Control & .316/.0316/.0316 &3.16/3.16/3.16&3619/4573/4072\\
+$\lambda=.01$ &1/1/1&10/3.16/3.16&4483/4715/4272\\
+$\lambda=.1$ &3.16/.316/3.16&3.16/3.16/3.16&4997/5532/5305\\\bottomrule
+\end{tabular}\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=2.979in]{margin_dists.pdf}
+\caption{Margin penalties shift absolute preactivations away from zero. At first visible output change, penalized models have fewer gate crossings: early output-invisible flips have been removed.}
+\label{fig:margin-dists}
+\end{figure}
+
+
+\paragraph{Invariant subspace response under the intervention.}
+The next panels compare the control and both margin penalties under absolute edits. Each arm is tested in its own invariant subspace, with a dotted marker at one tenth of its network norm.
+
+\input{sections/section_c_margin_rays}
+\FloatBarrier
+
+\section{Empirical results, extended version}
+\label{app:empirical-results}\label{app:ablations}\label{app:persistence-results}
+The empirical comparisons ask how ocean geometry changes with network scale, learned representations, data and continued training. Activation, normalization and dataset ablations are included alongside the corresponding measurements in Appendix~\ref{app:theoretical-support}. Their implementation is described in Appendix~\ref{app:experiments}.
+
+\subsection{Fine-tuned ViT on RESISC45}
+
+
+\label{app:vit}\label{app:native-vit}
+
+
+The final ViT layers contain exact invariant families with the same feature- and downstream-based interpretation as in smaller networks. We follow the protocol in Appendix~\ref{app:methods-common-families}. Compatible combinations give 3,117 feature-null directions, or 6,190 directions when LayerNorm shifts are included; these constructions do not exhaust the unresolved full atomic kernels.
+
+\input{sections/section_d_common_vit}
+
+\subsubsection{Multilayer combinations and relative-cutoff comparisons}
+The compatible exact combinations preserve logits to numerical precision (Figure~\ref{fig:native-vit-sampled}b). The supplementary relative-cutoff study also finds larger sampled radii than controls for single-layer and joint approximate edits (panels a,c). Near their visibility threshold, activation changes dominate the departure from the first-order response, while mixed-weight interactions remain small (panel d).
+\begin{figure}[!htbp]\centering
+\includegraphics[width=6.122in]{vit_oceans.pdf}
+\caption{ViT joint and relative-cutoff comparisons, following Appendix~\ref{app:methods-common-families}. (a) Last-safe radii for feature ($F$) and downstream ($D$) tails; subscripts identify the two MLP maps. (b) Exact compatible combinations. (c) Joint approximate edits and controls. (d) Their response decomposition. Points and bands show means and ranges of within-seed medians over 256 directions. Horizontal lines mark relative drift $10^{-3}$. Panel (a) uses dataset-RMS drift; (b--d) use median per-image relative drift. Normalizations follow Appendix~\ref{app:methods-radius}.}\label{fig:native-vit-sampled}\label{fig:c-native-approx}
+\end{figure}
+
+\input{sections/section_d_resnet_common}
+
+\subsection{Scaling width and depth}
+\label{app:scaling}\label{app:cnn-width}
+The full atomic-kernel measurements on the common 10,000-image set are summarized in Figure~\ref{fig:scaling-dimensions} and Table~\ref{tab:atomic-scaling-full}. Wider networks have larger kernel fractions after 500 epochs; at matched high accuracy, the width trend is not monotonic. Increasing depth concentrates the largest fractions toward the final hidden layers. All plotted dimensions use the relative singular-value cutoff $10^{-9}$. Daggers in Table~\ref{tab:atomic-scaling-full} flag full-kernel cases with a gap below ten at this cutoff in at least one seed. Tightening the cutoff to $10^{-12}$ changes any listed per-seed fraction by at most $0.92$ percentage points. At width 512, the full ranks are only partly resolved (Appendix~\ref{app:methods-scaling}). The figure therefore shows selective-space lower bounds on the same 10,000 images as separate square markers, without connecting them to the full-kernel curves. Their epoch-500 means are $96.0\%$ in L2 and $99.8\%$ in L3.
+
+\input{sections/section_d_atomic_scaling}
+
+The selective-space sweep additionally covers all 60,000 training images, including width 512 (Figure~\ref{fig:scaling-detail}). It provides constructive lower bounds on the full atomic kernels on that larger set. At epoch 500, its mean L2 dimension rises from $55\%$ of layer parameters at width 128 to $94\%$ at width 512.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=4.588in]{paper_sweep_split.pdf}
+\caption{Selective-space scaling on all 60,000 training images, complementing the full atomic-kernel measurements on 10,000 images in Figure~\ref{fig:scaling-dimensions}. Rows vary width and depth; columns show selective fractions at high accuracy and epoch 500, then normalized input-feature ranks. Bars group hidden layers in increasing order from L2. Segments separate dead rows, insufficient active-sample counts, and rank-deficient active-feature spans beyond counting. Points and whiskers show seed means and ranges; $r_h$ denotes the input-feature rank $r_\ell$.}
+\label{fig:scaling-detail}
+\end{figure}
+
+The CNN sweep shows the same broad pattern: increasing width enlarges the selective ocean faster than the parameter count, even when test accuracy changes little. At half width, the selective construction leaves only readout directions. Wider models develop late convolutional channels that are active on very few images, leaving many kernel edits unconstrained. The channel-activity plot connects that observation to the measured selective dimensions. Matrix-free counts and fully assembled invariant subspace certificates are distinguished in the table.
+
+\begin{table}[!htbp]
+\caption{CNN width sweep at epoch 500. The final column is the mean selective dimension divided by parameter count. Starred cells are matrix-free selective-space dimensions without a full assembled invariant subspace certificate; the remaining cells passed numerical validation.}
+\label{tab:cnn-width}
+\centering
+\vspace{0.45em}
+\begin{tabular}{lrrrrrr}
+\toprule
+network & params & test acc. & seed 0 & seed 1 & seed 2 & ocean/params \\
+\midrule
+$0.5\times$ & $13{,}922$ & $.990$--$.992$ & $1{,}080$ & $430$ & $620$ & $0.051$ \\
+base & $45{,}114$ & $.994$--$.995$ & $3{,}803$ & $8{,}782$ & $5{,}565$ & $0.134$ \\
+$2\times$ & $159{,}338$ & $.994$--$.995$ & $45{,}493$ & $64{,}416^{*}$ & $45{,}004^{*}$ & $0.324$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[!htbp]\centering
+\includegraphics[width=4.553in]{width_scaling.pdf}\par\smallskip
+\includegraphics[width=3.268in]{width_channels.pdf}
+\caption{CNN width scaling (top) and conv5 channel activity (bottom, seed 0). Selective dimensions grow faster than parameter count while accuracy changes little. Hollow markers denote matrix-free dimensions without assembled certificates; orange points compare the width-matched SVHN CNN. The least-active channels carry most of the conv5 selective space. At half width that space is empty.}\label{fig:early-draft-cnn-width}
+\end{figure}
+
+Dimension and radius need not scale together. Figure~\ref{fig:radius-sweeps} compares first gate crossings and first visible output changes on the width/depth slices. Neither radius follows a simple monotone law in these seed-0 measurements. The gap between crossing a boundary and changing outputs remains important when interpreting a larger ocean dimension.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=1.954in]{square_sweeps.pdf}
+\caption{Radius versus MLP width (blue, bottom axis) and hidden depth (orange, top axis). Solid lines mark first gate crossings and dashed lines the first output change above $10^{-3}$. Points are medians over sampled slice angles; whiskers span the 10th--90th percentiles. Each architecture uses seed 0 at its tested checkpoint.}\label{fig:radius-sweeps}
+\end{figure}
+
+\subsection{Inside the co-occurrence deficit}
+\label{app:mechanism}
+
+The deficit measures constraints missing from the observed feature--downstream pairings. We first examine the contribution of selective units, whose exact inactive-side construction uses ReLU's zero slope, then ask how the deficit relates to sample clustering and neural collapse. The grouping and shuffle protocols are defined in Appendix~\ref{app:methods-branches}. Pairing-shuffle results use ReLU seed 0; the clustering comparisons also include leaky ReLU and GELU.
+
+\subsubsection{Selective units and cross-unit cancellations}
+Selective units create invariant directions when their active input features leave incoming parameter directions unconstrained. Their contribution can therefore be large even without class-aligned clusters. The full width and depth trajectories and the within-unit decomposition appear in Appendix~\ref{app:atomic}; Figure~\ref{fig:early-draft-mechanism-family} compares their relation to the atomic kernels across model families. In fitted ReLU networks, selective directions account for much of the hidden kernel. Leaky ReLU gives a useful contrast: its nonzero negative-side slopes require cancellations across units.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=4.558in]{deficit_mechanisms.pdf}
+\caption{Selective and cross-neuron mechanisms across architectures and activations. (a) Selective dimensions against numerical atomic dimensions across measured ReLU widths, depths and CNN layers. (b) Cross-neuron fractions, median and range across seeds. (c) Agreement between clusters of similar downstream maps and the digit labels, measured by the adjusted Rand index: 1 means identical partitions, and 0 is the chance baseline. This panel measures class agreement, not kernel size or the fraction of deficit explained.}\label{fig:early-draft-mechanism-family}
+\end{figure}
+
+\begin{table}[!htbp]\centering
+\caption{Leaky-ReLU mechanism check, width 128, seed 0 at high accuracy. Selective candidates use the hard activity mask; the additional condition $V_{\mathrm{lin}}^0 A_L\bar h_{L-1,i}^0=0$ for every sample accounts for the nonzero negative-side response. The retained candidate count is compared with the measured numerical kernel.}
+\small\begin{tabular}{lrrr}\toprule
+Layer & Selective candidates & After readout condition & Atomic kernel\\\midrule
+L3 & 6,311 & 5,021 & 5,036\\\bottomrule
+\end{tabular}\end{table}
+
+\subsubsection{Sample clustering and missing pairings}
+For a partition $\mathcal G$, let $H_G$ be the span of the augmented features in group $G$ and $C_G$ the span of the downstream-map rows in that group. Let $r_h$ and $r_d$ be their respective ranks over all samples, and define $\mathcal P(\mathcal G)=\sum_{G\in\mathcal G}H_G\otimes C_G$. The deficit separates as
+\[
+ \delta=r_hr_d-\operatorname{rank}J_\ell
+ =\underbrace{r_hr_d-\dim\mathcal P(\mathcal G)}_{\text{missing across groups}}
+ +\underbrace{\dim\mathcal P(\mathcal G)-\operatorname{rank}J_\ell}_{\text{missing within groups}}.
+\]
+For a positive deficit $\delta>0$, the explained share is the first term divided by $\delta$. It quantifies how much of the deficit follows from separating samples into these groups. Purity instead measures whether the groups agree with class labels. A class-pure partition can therefore explain little of the rank deficit. Appendix~\ref{app:methods-branches} defines purity and its matched random-label control.
+
+
+In the three-hidden-layer, width-128 MNIST ReLU MLP, class groups explain an increasing share of the L3 deficit during training, while their L2 share remains zero. Figure~\ref{fig:cluster-stages}  shows the complete five-stage trajectories for all three seeds. This is a comparison between layers of one architecture; the corresponding clustering measurements across network depths have not yet been completed.
+\input{sections/section_d_cluster_stages}
+
+
+
+Figure~\ref{fig:mechanism} shows grouping and shuffle tests of the ReLU co-occurrence deficit. Finer downstream groups can explain all of the ReLU L3 endpoint deficit, while matched random groups explain little. A global shuffle retains about two thirds of that deficit, whereas a shuffle restricted to classes retains almost all of it. In L2, both shuffles retain essentially the full deficit. 
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=3.146in]{dmap_pca.pdf}
+\caption{Pairwise distances between unit-normalized L3 downstream maps (ReLU width 128, seed 0; 500 samples ordered by class). Sand denotes small distances and navy large distances. The ten class groups become more uniform by epoch 500.}
+\label{fig:dmap-pca}
+\end{figure}
+\input{sections/section_d_clusters}
+
+The distance-threshold analysis groups downstream maps that are close in both direction and magnitude. It uses the common normalization and complete-linkage rule from Appendix~\ref{app:methods-branches}: each group has normalized diameter at most $\varepsilon$. We apply the same threshold grid at each training stage and compare group purity with shuffled-label controls of the same sizes.
+
+Table~\ref{tab:dmap-threshold} shows the L3 results at one common threshold. The late-training groups are nearly class-pure and contain multiple samples; the matched random-label purity is about $0.11$. GELU needs many more groups at high accuracy to satisfy the same distance threshold. Thus the downstream maps become concentrated into a smaller number of class-aligned groups as training proceeds. L2 behaves differently: ReLU and GELU retain overlapping within-class and between-class distance distributions, while leaky ReLU becomes class-separated. These distance measurements describe concentration; the rank decomposition above separately measures its relation to the deficit.
+
+\begin{table}[!htbp]\centering
+\caption{L3 downstream groups at normalized diameter threshold $\varepsilon=1.0$, width-128 MNIST MLP, seed 0. Each cell gives number of groups / purity.}
+\label{tab:dmap-threshold}
+\begin{tabular}{lccc}\toprule
+Activation & High accuracy & Epoch 250 & Epoch 500\\\midrule
+ReLU & $24/0.997$ & $11/0.998$ & $11/0.999$\\
+Leaky ReLU & $24/0.996$ & $10/0.998$ & $10/0.998$\\
+GELU & $114/0.998$ & $10/1.000$ & $15/1.000$\\\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+\input{sections/section_d_cluster_diameters}
+
+Figure~\ref{fig:cluster-diameters} compares both layers at every measured stage. Unlike a fixed ten-group partition, this rule allows more groups when the maps require them. It also reports the fraction of samples in singleton groups, since high purity from isolated samples would provide little evidence of class organization. The adjusted Rand index compares the group and class assignments through sample pairs, correcting for chance agreement: one indicates matching partitions and values near zero indicate chance-level agreement.
+
+Figure~\ref{fig:cluster-seeds} extends the L3 endpoint comparison to all three training seeds using the same diameter grid and normalization. The additional seeds cover epoch 500, while the stage and layer comparisons above retain their original coverage.
+\input{sections/section_d_cluster_seed_support}
+
+
+\subsubsection{Neural collapse and class organization}
+\label{app:nc}
+
+
+Neural collapse describes a collection of geometric patterns that can emerge in a classifier's final features during training: within-class features concentrate, class means approach a regular simplex, classifier weights align with those means, and classification approaches the nearest-class-mean rule \citep{papyan2020collapse}. We use measurements of these patterns to ask whether class organization of the features accompanies class organization of the downstream maps.
+
+
+Figure~\ref{fig:nc-full} follows the measured width-128 MNIST ReLU, leaky-ReLU and GELU models, with an identity-activation control. NC1 compares within-class feature variance with between-class variance. The two NC2 measurements quantify variation in class-mean norms and departure of their normalized Gram matrix from an equiangular tight frame. The plotted NC4 diagnostic is the disagreement between nearest-class-mean predictions and labels. All three nonlinear families develop concentrated features during training, although the strength and subsequent evolution depend on activation and layer. The identity control does not show comparable concentration, and these measurements do not establish every neural-collapse property in every architecture.
+
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=6.022in]{nc_full_sd.pdf}
+\caption{Neural-collapse measurements across training, seed means with one sample standard deviation shaded. Solid lines show L3; dashed lines show L2. Bands summarize up to three seeds at each measured stage and use a positive plotting floor of $10^{-5}$ on logarithmic axes.}
+\label{fig:nc-full}
+\end{figure}
+
+
+Feature concentration and downstream-map organization can develop together during training. Figure~\ref{fig:nc-pairings} compares inverse NC1 with downstream class separation and label purity at matching checkpoints, separately for L2 and L3. Larger inverse NC1 means stronger feature concentration. The comparisons describe co-occurrence, with variation across activations and layers. They do not establish that either phenomenon causes the other or causes the co-occurrence deficit: downstream maps also depend on later weights and activation slopes. These observations motivate studying the two forms of organization together.
+
+\input{sections/section_d_nc_support}
+
+\subsection{Dependence on training and evaluation data}
+\label{app:data-dependence}
+Data affect ocean geometry in two distinct ways. Changing the training set changes the learned weights and representations. Changing the evaluation set holds the network fixed and changes the constraints defining its invariant directions. We study these effects separately below.
+
+\subsubsection{Training data}
+\label{app:training-data}
+Training on more images changes the learned representation as well as the number of fitting constraints. We compare models trained from initialization on progressively larger subsets with a model trained on the complete training set, evaluating both on the same smaller subsets. ``Train on $n$'' in the figures denotes the former; ``Full-data, $n$ constraints'' denotes the latter. The architecture and optimization recipe are held fixed, and geometry probes leave the input layer unchanged.
+
+At the smallest matched evaluation set, the model trained on all images has substantially larger hidden atomic kernels than the model trained only on that subset. Training on more data can therefore create a representation with more invariant directions, even though adding evaluation constraints to a fixed representation removes directions. The reduced-data training sweep is not monotone in sample size, so this comparison does not imply a universal growth law.
+
+
+\input{sections/section_d_data_atomic}
+
+The small-subset models show why single-layer invariant directions must be checked before combining them. With few samples, the number of output constraints alone can force large hidden atomic kernels, even when the feature and downstream spans have full rank. Each atomic edit preserves the frozen outputs when applied alone. Simultaneous edits can change those outputs through interactions between layers. The rightmost panel of Figure~\ref{fig:data-atomic} compares compatible dimensions across sample counts and construction orders. 
+
+
+
+
+Table~\ref{tab:subset-order} gives a concrete example at $N=1{,}000$. The two hidden atomic kernels each have 6,512 directions, yet their full sum fails the invariant subspace check. Bottom-up construction keeps the L2 space and restricts L3; top-down construction does the reverse. Their different totals show that layer order affects how many simultaneously invariant directions the construction retains.
+\begin{table}[!htbp]\centering
+\caption{Compatibility in the 1,000-sample retraining, seed 0. The input layer is fixed. The atomic sum is a tangent space but fails the invariant subspace check.}\label{tab:subset-order}
+\begin{tabular}{lrrrr}\toprule
+Construction & L2 & L3 & readout & total\\\midrule
+Atomic sum &6512&6512&10&13034\\
+Bottom-up &6512&197&10&6719\\
+Top-down &1477&6512&10&7999\\\bottomrule
+\end{tabular}\end{table}
+
+The radius measurements separate changes in the first gate crossing from changes in output visibility. In the subset-trained models, the first crossing moves outward as training-set size grows, while the visible radius changes much less. Excluded-image responses are already nonzero in the frozen model and decrease as more images constrain the directions. The summary and absolute-radius curves below compare both training conditions.
+
+The upper-middle panel of Figure~\ref{fig:early-draft-subset-rays} shows the first sampled radius at which the output change exceeds $10^{-3}$ times the base output norm. Several seed curves coincide because the scan uses a discrete radius grid; equal plotted values mean the threshold was reached at the same tested radius. The lower-left panel follows invariant subspace directions constructed on 1,000 images. Outputs on those fitted images remain near numerical zero over the initial part of the scan, while excluded-image outputs change immediately. This separation shows which invariance depends on the fitted sample set. Colors distinguish subset training from a full-data network throughout the figure. In the upper row, solid and dashed lines denote invariant subspace and generic rays; in the lower-left panel they denote fitted and excluded images.
+
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=5.057in]{p1_radii_consistent.pdf}\par\smallskip
+\includegraphics[width=4.780in]{p1_exposure_consistent.pdf}
+\caption{Reduced-sample geometry across three seeds, with the input layer fixed. Top: fitted-set first crossing, $10^{-3}$ relative output visibility, and single-layer probes at $N=1{,}000$; markers summarize 128 directions and triangles mark censoring. Bottom: fitted versus excluded response, excluded response at matched radius, and hidden atomic dimensions. Retraining and analysis-set restriction are kept separate. Cap-limited input-layer measurements give $\rank J_1\ge16{,}512$ and $\dim K_1\le16{,}384$; they are excluded from the probes.}\label{fig:early-draft-subset-rays}
+\end{figure}
+
+
+\input{sections/section_d_data_rays}
+
+
+\subsubsection{Evaluation data at a fixed network}
+\label{app:newbatch}
+
+How much of an ocean survives when the same trained network is evaluated on more images? We hold its parameters fixed and add either a disjoint training batch or test images to the original analysis set. Every new image adds constraints, so the original kernel can only shrink. The question is how much of its invariance was specific to the original images.
+
+The hidden-layer kernels largely survive the additional constraints, including when the analysis set is doubled. The full-training-set selective measurements in Appendix~\ref{app:atomic} also remain substantial. The input layer behaves differently: the measured reference-model kernel disappears on the larger evaluation set. Thus the persistence of hidden directions is not a consequence of every layer being insensitive to new images. Figure~\ref{fig:newbatch} shows the dimension trajectories at epoch 500.
+
+
+Table~\ref{tab:newdata-main} separates additional training images from unseen test images at three checkpoints. Each model was trained on all 60,000 MNIST training images; the initial analysis set contains 10,000 of them. Both additions remove a smaller fraction of the hidden kernels at epoch 500 than at the earlier fitted stages.
+\begin{table}[!htbp]
+\centering
+\caption{Atomic-kernel dimensions removed by adding 10,000 images to the 10,000-image analysis set. Width-128 ReLU MLP; percentages of the original kernel, with ranges over three seeds. The network is fixed within each comparison. \emph{Training} means additional images seen during training but absent from the initial analysis set; \emph{test} means unseen images.}
+\label{tab:newdata-main}
+\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrr}
+\toprule
+Stage & Added images & L2 & L3\\
+\midrule
+High accuracy & Training & $16$--$32\%$ & $4.7$--$7.7\%$\\
+ & Test & $16$--$30\%$ & $6.2$--$11.4\%$\\
+Interpolation & Training & $18$--$27\%$ & $3.9$--$6.3\%$\\
+ & Test & $16$--$26\%$ & $5.3$--$10.0\%$\\
+Epoch 500 & Training & $4.0$--$6.2\%$ & $1.0$--$1.4\%$\\
+ & Test & $3.7$--$5.6\%$ & $2.1$--$2.9\%$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{sections/section_d_newinput}
+
+\input{sections/section_d_evaluation}
+
+On smaller analysis subsets, directions invariant on the fitted images can already change excluded-image outputs before any gate switches. The fitted/excluded response comparisons in Figure~\ref{fig:early-draft-subset-rays} make this dependence on the evaluation set explicit. A frozen certificate on one set of images need not extend to another.
+
+
+\subsection{Kernel persistence}
+\label{app:persistence}\label{app:persistence-newdata}
+The ReLU ocean grows through training while retaining most of its earlier invariant directions. This is stronger than observing a large kernel at each checkpoint: the spaces remain substantially aligned as learning changes the weights. Removing directions supported on dead-unit coordinates leaves much of the same persistence, so the effect extends to directions involving active units.
+
+Figures~\ref{fig:persistence}--\ref{fig:persistence-angles} compare all measured fitted-stage pairs in the reference ReLU, leaky-ReLU and GELU models. They separate retained mass, effective lost dimension and output sensitivity of the part that becomes visible. The principal-angle distributions show that ReLU's geometric loss is concentrated in a small part of the space. Many lost directions also have weak downstream output sensitivity, although a few late L2 comparisons have larger gain than generic directions. Geometric retention and functional exposure are therefore distinct measurements.
+
+The activation comparisons qualify the persistence claim. Leaky-ReLU kernels rotate more substantially late in training, whereas GELU's late numerical kernels retain substantial projected mass but lack a stable exact-rank interpretation. These results show that strong ReLU persistence is a property of the learned geometry, not a consequence of the definition of a kernel.
+
+\input{sections/section_d_persistence}
+
+Figure~\ref{fig:persistence-tails} places this alignment alongside dimension growth. The later kernel can contain many new directions even when it retains most of the earlier one. Approximate directions with smaller singular values also tend to align more strongly with the next checkpoint's kernel. These are projected-mass comparisons, not counts of directions proved to become exactly invariant. All comparisons use checkpoint endpoints; they do not specify how the kernel moves continuously between them. Parent--sibling intersections are reported with the connectivity application in Appendix~\ref{app:lmc}.
+
+\input{sections/section_d_persistence_tails}
+
+The component diagnostics in Figure~\ref{fig:persistence-diagnostics} distinguish two ways a direction can survive: it can remain invisible on active coordinates, or become supported on coordinates that are dead later. They also locate the lost mass within the later Jacobian spectrum and report the later sensitivity of sampled kernel and tail directions. For GELU, Table~\ref{tab:persistence-gelu-tau} records how the numerical dead-coordinate split changes with the derivative threshold; the unresolved co-occurrence split limits what can be concluded about its component persistence.
+
+\input{sections/section_d_persistence_diagnostics}
+
+\FloatBarrier
+\section{From function to loss, extended version}
+\label{app:applications}
+This section contains an extended discussion and additional preliminary observations regarding the topic of  Section~\ref{sec:discussion}: how functional invariance relates to loss invariance.
+
+\subsection{Functional invariance and loss geometry}
+\label{app:hessian}
+The loss compresses a network's outputs to one scalar. A region with constant outputs therefore has constant data loss, but a constant loss can also arise while outputs move along a loss level set. We first make this distinction explicit for MSE, then measure how much of the numerical Hessian and GGN kernels is captured by the constructed compatible layerwise invariant subspaces.
+
+\subsubsection{What functional invariance implies}
+Let $Y=(y_i)_{i=1}^s$ be the target outputs, let $e=F_X(\theta_0)-Y$ be the residual at the base network, and use the data loss $\mathcal L(\theta)=\|F_X(\theta)-Y\|_X^2$. The associated inner product is $\langle U,V\rangle_X=s^{-1}\sum_i U_i^\top V_i$. For an edit $w$, expanding the square gives
+\begin{equation}
+ \mathcal L(\theta_0+w)-\mathcal L(\theta_0)
+ =2\langle e,\Delta F_X(w)\rangle_X+\|\Delta F_X(w)\|_X^2.
+ \label{eq:application-loss-change}
+\end{equation}
+Thus an exact ocean preserves the loss. If the outputs vary by at most $\varepsilon$, the absolute loss change is at most $2\|e\|_X\varepsilon+\varepsilon^2$. At exact interpolation, $e=0$, and the loss change is precisely the square of the functional change. This explains why visually flat loss landscapes can contain visible functional variation.
+
+For differentiable loss and network maps, exact constancy of $\mathcal L(\theta_0+tv)$ near $t=0$ implies
+\[
+ 0=\left.\frac{d}{dt}\mathcal L(\theta_0+tv)\right|_{t=0}
+   =\nabla_\theta\mathcal L(\theta_0)^\top v
+   =\nabla_F\mathcal L(F_X(\theta_0))^\top J_Xv.
+\]
+Functionally invisible directions satisfy this condition automatically. Other directions can move the outputs tangentially to a loss level set. For squared loss, the level set at value $c>0$ is $\{F:\|F-Y\|_X=\sqrt c\}$; a finite output trajectory on this sphere preserves loss while changing the function. At $c=0$ the level set reduces to $F=Y$. For softmax cross-entropy, let $\pi_i=\operatorname{softmax}(f_i)$ and write $u_i$ for a first-order logit change. Its first-order loss-preservation condition is $s^{-1}\sum_i(\pi_i-y_i)^\top u_i=0$, compared with $\langle e,u\rangle_X=0$ for MSE. When the respective output gradient is nonzero, each defines a hyperplane of dimension $sd-1$.  Adding $a_i\mathbf1$ to each sample's logit vector leaves its probabilities and cross-entropy unchanged at every amplitude. Such output transformations need not all be realizable by parameter edits. 
+
+At a twice differentiable base point, write $H=\nabla^2\mathcal L(\theta_0)$ for the loss Hessian and $G=(2/s)J_X^\top J_X$ for its Gauss--Newton part. With $a$ indexing output coordinates,
+\begin{equation}
+ H=G+R,\qquad
+ R=\frac{2}{s}\sum_{i=1}^s\sum_{a=1}^d e_{ia}\nabla^2 F_{ia}(\theta_0).
+ \label{eq:application-hessian}
+\end{equation}
+Every exact ocean direction annihilates $J_X$ and hence $G$. It also belongs to $\ker H$ when $e=0$. With nonzero residual, constancy along a straight direction $v$ implies $v^\top Hv=0$, but can leave $Hv\ne0$: the Hessian may couple that direction to directions outside the ocean. For ReLU networks these statements apply in the interior of an activation chamber. The numerical comparisons below retain the signed Hessian spectrum and define near-nullity using absolute eigenvalues.
+
+\subsubsection{Constructed-ocean coverage of numerical kernels}
+We evaluate depth-3, width-64 ReLU MLPs trained on MNIST, at epoch 500, using three seeds and the fixed 10,000-example analysis set. Each network has $p=25{,}418$ parameters. The Hessian uses sample-averaged, output-summed MSE with one-hot targets and no regularization. The comparison space $M$ is the bottom-up layerwise invariant subspace after imposing compatibility, constructed independently of the curvature eigendecompositions and validated against the original-network Jacobian.
+
+For $T\in\{H,G\}$, let $Q_{T,\tau}$ contain orthonormal eigenvectors with $|\lambda_T|\le\tau$, and let $d_{T,\tau}$ be their number. With an orthonormal basis $Q_M$ of the constructed space, define
+\[
+ C_T(\tau)=\frac{\|Q_M^\top Q_{T,\tau}\|_F^2}{d_{T,\tau}}.
+\]
+This is the mean squared projection of a target-band direction onto $M$. It measures average alignment, rather than intersection dimension or subspace inclusion. An isotropic random space of the same dimension has expected coverage $\dim M/p$.
+
+At $\tau=10^{-14}$, Hessian coverage exceeds $1-10^{-8}$ in every seed, and GGN coverage is $94.34$--$96.21\%$ (Table~\ref{tab:kernel-coverage-dimensions}). These are numerical-kernel measurements: the saved float64 eigensolver has a noise floor of order $10^{-14}$, so classification at this scale cannot resolve exact algebraic zeros. At the looser cutoff $10^{-12}$, Hessian coverage remains $99.90$--$99.94\%$. We retain both signs of the Hessian spectrum when forming each band. The GGN is positive semidefinite up to roundoff.
+
+\begin{table}[!htbp]\centering
+\caption{Dimensions and coverage at numerical cutoff $10^{-14}$; $d_H,d_G$ count the numerical-kernel dimensions. The small Hessian projection deficits are retained for reproducibility and do not measure eigensolver accuracy. The isotropic random-space expectation is $\dim M/p$, with $p=25{,}418$.}
+\label{tab:kernel-coverage-dimensions}
+\small\begin{tabular}{crrrrrr}\toprule
+Seed & $\dim M$ & $d_H$ & $d_G$ & Hessian (\%) & GGN (\%) & Random (\%)\\\midrule
+0 & 3,619 & 3,200 & 3,836 & $100-9.5423\!\times\!10^{-10}$ & 94.34 & 14.2\\
+1 & 4,573 & 4,116 & 4,753 & $100-2.2455\!\times\!10^{-10}$ & 96.21 & 18.0\\
+2 & 4,072 & 3,434 & 4,281 & $100-2.7936\!\times\!10^{-9}$ & 95.06 & 16.0\\
+\bottomrule\end{tabular}
+\end{table}
+
+\paragraph{Sensitivity to the target threshold.}
+Figure~\ref{fig:fixed-ocean-coverage} increases the spectral threshold while retaining exactly the same constructed space at every threshold. The target bands grow to include small but nonzero curvature, and their coverage decreases. The right panel shows that growing denominator explicitly. These curves do not use approximate or enlarged oceans. The plotted mean and sample SD summarize the three seeds; they do not quantify uncertainty in numerical rank near the eigensolver floor.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=3.074in]{fixed_ocean_coverage.pdf}
+\caption{Coverage of Hessian and GGN bands $|\lambda|\le\tau$ by the fixed constructed layerwise invariant subspace (left), and target-band dimension as a percentage of all parameters (right). Lines and shading show mean $\pm$ sample SD across three seeds. The dotted reference is dimension-matched random coverage. Cutoffs near $10^{-14}$ approach numerical resolution.}
+\label{fig:fixed-ocean-coverage}
+\end{figure}
+
+
+\subsubsection{Finite-distance behavior of curvature bands}
+Figure~\ref{fig:curvature-cumulative-rays} tests the original network along random directions in the cumulative Hessian and GGN bands, using the protocol in Appendix~\ref{app:methods-curvature-rays}. The numerical kernels have visibility radii comparable to the constructed ocean. Enlarging a band changes both its dimension and its mixture of directions, so the finite-radius response need not vary monotonically with the eigenvalue cutoff. At output tolerance $10^{-3}$, the last safe tested radius of the median is 1 in every seed for the ocean, 1.5 for the Hessian band at $10^{-8}$, and 1 for the corresponding GGN band. At $10^{-4}$, these radii fall to 0.5 for the Hessian and 0.3--0.5 for the GGN, while generic directions reach only 0.003. These are sampled median responses, rather than uniform guarantees over either band.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=3.165in]{curvature_cumulative_rays.pdf}
+\caption{Cumulative Hessian and GGN bands $|\lambda_T|\le\tau$ in width-64 ReLU MNIST MLPs at epoch 500. Curves show mean $\pm$ sample SD of the three seed medians, each over 256 sampled directions. Legend percentages give mean dimensions relative to all parameters (Hessian / GGN). Black: constructed ocean; dashed gray: generic directions. The dotted line marks output drift $10^{-3}$.}\label{fig:curvature-cumulative-rays}
+\end{figure}
+
+\subsection{Linear mode connectivity}
+\label{app:lmc}
+Linear mode connectivity (LMC) asks whether the straight parameter segment between two trained networks maintains low loss. In this preliminary study, we examine whether shared ocean structure helps explain why networks descended from a common training checkpoint can remain functionally close.
+
+\subsubsection{Loss and functional connectivity}
+We study MNIST ReLU MLPs with three hidden layers of width 128 and the MNIST CNN. Each parent checkpoint is copied into two children, which inherit its parameters and Adam state and continue to epoch 500 with different minibatch orders. We compare these siblings with independently trained networks, using the protocol in Appendix~\ref{app:methods-lmc}.
+
+For endpoint parameters $\theta_A,\theta_B$, let $\theta_\alpha=(1-\alpha)\theta_A+\alpha\theta_B$, with $\alpha\in[0,1]$, and let $F_A,F_B$ be their outputs on the evaluation set $X$. Loss connectivity concerns the largest loss excess along the segment above the chord joining its endpoint losses. To measure functional connectivity, we use the mean distance to the endpoint functions,
+\[
+ E(\alpha)=\tfrac12\bigl(\|F_X(\theta_\alpha)-F_A\|_X+
+ \|F_X(\theta_\alpha)-F_B\|_X\bigr).
+\]
+Smaller values mean closer functions; even at an endpoint, this quantity includes half the difference between the endpoint functions. The additional chord-deviation measurement in Figure~\ref{fig:lmc-segments} measures departure from linear interpolation in output space, as defined in Appendix~\ref{app:methods-lmc}.
+
+Most sibling pairs maintain low loss, while the independent-network segments have much larger barriers. Sibling functions also remain closer along their connection, especially after later forks. On the test set, stable loss and classification error coexist with more visible output variation. The parent--sibling planes in Figure~\ref{fig:lmc-landscape-full} illustrate the same distinction between a low-loss region and functional invariance.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=6.291in]{lmc_segments_analysis.pdf}
+\caption{Sibling connectivity on 10,000 training examples: MLPs above CNNs. Colors identify fork epochs for 16 MLP and 15 CNN sibling pairs; gray dashed curves show independently trained pairs. Columns show loss excess relative to the endpoint chord, normalized by mean endpoint loss; classification error; endpoint functional distance $E(\alpha)$; and output chord deviation. The dotted loss-connectivity threshold is 10.}\label{fig:lmc-segments}\label{fig:lmc-loss}
+\end{figure}
+\begin{figure}[!htbp]\centering
+\includegraphics[width=6.291in]{lmc_segments_test.pdf}
+\caption{The same connections on the separate 10,000-example test set, in the format of Figure~\ref{fig:lmc-segments}. Low loss and error can coexist with appreciable functional variation.}\label{fig:lmc-segments-test}
+\end{figure}
+\begin{figure}[!htbp]\centering
+\begin{minipage}[t]{.49\linewidth}\centering
+\textbf{MLP}\par\smallskip
+\includegraphics[width=\linewidth]{lmc_planes_mlp.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\linewidth}\centering
+\textbf{CNN}\par\smallskip
+\includegraphics[width=\linewidth]{lmc_planes_cnn.pdf}
+\end{minipage}
+\caption{Planes through parent $P$ and sibling endpoints $A,B$, seed 0, with forks at epochs 100, 150 and 250 and endpoints at epoch 500. Columns show MSE per output, functional change from $A$, frozen response and activation transition. White curves are projected training trajectories. The MLP planes use 10,000 analysis examples; the CNN planes use 2,000. Functional norms and color scales match across architectures.}\label{fig:lmc-landscape-full}\label{fig:lmc-landscape-cnn}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Parent--sibling ocean persistence}
+\label{app:sibling-persistence}
+The persistence results above suggest that siblings inherit substantial ocean structure. We ask whether they inherit \emph{the same} directions. We measure the intersections of parent and child atomic kernels in CNNs, using a principal-angle tolerance of $0.1^\circ$ and residual checks.
+
+Table~\ref{tab:lmc-cnn-persistence} sums dimensions over all parameter layers and divides the sibling intersection by the mean of the two child dimensions. This shared fraction generally increases with later forks. The children also retain a substantial fraction of their parent's invariant directions, establishing common structure inherited through their separate training trajectories.
+\input{sections/section_e_cnn_persistence}
+
+\subsubsection{Sharing of constructed endpoint subspaces}
+\label{app:lmc-shared}
+We compare the complete compatible layerwise invariant subspaces at sibling endpoints in three seeds per architecture: width-128 MLPs forked at epoch 350 and CNNs forked at epoch 200, with all children evaluated at epoch 500. The different fork times mean that this is not an architecture-only comparison. Let $Q_A,Q_B$ be orthonormal bases of the endpoint spaces, with dimensions $k_A,k_B$, and let $P_A=Q_AQ_A^\top$, $P_B=Q_BQ_B^\top$. Their continuous sharing fraction is
+\[
+ s_{AB}=\frac{\|Q_A^\top Q_B\|_F^2}{\min(k_A,k_B)}.
+\]
+This measures how much of the smaller space projects into the other, including partial alignments. No principal-angle filtering is applied. It is not the dimension of an intersection or a fraction of all parameters.
+
+The endpoint spaces overlap strongly in both architectures (Table~\ref{tab:lmc-constructed-sharing}). This aggregate masks a layer-specific exception: MLP seed 1's L1 components have mean squared cosine $0.273$ and median principal angle $61.2^\circ$; L1 components are zero in the other two seeds. The remaining MLP components and the nonempty CNN late-layer components are more closely aligned.
+
+
+
+\input{sections/section_e_sharing_summary}
+
+
+
+
+We also observe an intriguing pattern: siblings preserve a high fraction of activation gates along their connection, substantially more than independent networks (Figure~\ref{fig:lmc-gates}). Explaining how training produces this shared gate structure, and how it contributes to functional connectivity, is left to future work.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=4.585in]{lmc_gates_all.pdf}
+\caption{Gate stability, MLP (first three panels) and CNN (last three). Sibling and independent-parent curves give median agreement with endpoint $A$ over all inherited-state pairs or independent pairs; bands span pairs. Selective-unit panels show activity at $A$ against midpoint gate agreement for seed 0, fork 250. Colors identify layers.}\label{fig:lmc-gates}\label{fig:lmc-selective}
+\end{figure}
+\FloatBarrier
+
+\section{Additional material and plots}
+\label{app:additional-material}
+This section discusses the potential applications of Flat Oceans, sets out the open questions raised by the paper, then collects the ocean x-ray catalog and predictive-performance tables.
+
+\input{sections/finite_invariance_applications}
+
+\input{sections/appendix_future_work}
+
+\subsection{Ocean x-rays}
+\label{app:xray}
+
+
+The catalog collects the available two-dimensional parameter slices across ReLU and leaky-ReLU MLPs, GELU MLPs, CNNs, width and depth sweeps, and several direction constructions. Each Cartesian map shows the output response to two simultaneous parameter edits. Its angle--radius companion shows the same plane over a wider range of distances. The color scale is shared across the catalog, and each panel retains its own parameter scale.
+
+White contours separate sampled points with unchanged gates from points with changed gates; black dashed contours mark output change $10^{-3}$. Their separation shows that gate changes can precede visible functional change. Smooth-activation panels have no ReLU chamber boundary. All views are measurements in selected planes; they do not certify the radius of an entire parameter subspace. The parent--sibling planes are reported separately in Appendix~\ref{app:lmc}.
+
+\input{sections/section_f_xray_catalogue}
+\FloatBarrier
+
+\subsection{Training and test performance}
+\label{app:performance}
+The tables report accuracy at declared analysis stages and the intermediate checkpoints used for descriptive comparisons. Values come from the saved training histories at the actual checkpoint epoch, rather than from the earlier epoch at which a milestone was first crossed. Ranges use only available seeds, whose count is shown. Unreached milestones are omitted; no endpoint substitutes for them. Width-128, depth-three ReLU is the reference for both scaling grids. The identity model's recorded matched comparisons retain their own checkpoint epochs.
+
+The raw/PCA, normalization, activation and dataset comparisons use the same reporting convention. Reduced-data tables report accuracy on the fitted subset and the full test set. Margin-regularized models additionally report unregularized training MSE and parameter norms, since an apparent radius change can accompany a change in fitting or scale. ViT uses cross-entropy and records online augmented training accuracy, as stated in Table~\ref{tab:native-vit-training}.
+
+\input{sections/experimental_performance_tables}

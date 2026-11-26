@@ -1,0 +1,1511 @@
+{
+ "protocol": "memos/2026-09-10_protocol_stages_atomic_transition.md",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 6.042414724924067,
+   "train_errors": 53538,
+   "test_acc": 0.1063,
+   "test_mse": 6.15941819448352,
+   "param_norm": 27.820887483862457,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "high_accuracy": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "mse_interpolation": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 0.03923636086193788,
+   "train_errors": 8764,
+   "test_acc": 0.8621,
+   "test_mse": 0.03888341900563064,
+   "param_norm": 15.01441961687475,
+   "same_as": []
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.03936955421230749,
+   "train_errors": 8932,
+   "test_acc": 0.8575,
+   "test_mse": 0.03896743459093367,
+   "param_norm": 17.240971579604665,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 0.03918956059240846,
+   "train_errors": 8813,
+   "test_acc": 0.8595,
+   "test_mse": 0.03878213658621241,
+   "param_norm": 13.348966486466077,
+   "same_as": []
+  }
+ },
+ "results": {
+  "initialization": {
+   "epoch": 0,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 2570,
+      "1e-09": 2570,
+      "1e-12": 2570
+     },
+     "gap_J": {
+      "1e-06": 1831984938678.7378,
+      "1e-09": 1831984938678.7378,
+      "1e-12": 1831984938678.7378
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 72297537723899.98,
+      "1e-09": 72297537723899.98,
+      "1e-12": 72297537723899.98
+     },
+     "k_rel": {
+      "0.01": 30326,
+      "0.001": 30326,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326,
+      "1e-11": 30326,
+      "1e-12": 30326
+     },
+     "k_abs": {
+      "0.1": 30326,
+      "0.01": 30326,
+      "0.001": 30326,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "seconds": 3082.465605735779,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 3927526013403.7734,
+      "1e-09": 3927526013403.7734,
+      "1e-12": 3927526013403.7734
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 76492313731121.02,
+      "1e-09": 76492313731121.02,
+      "1e-12": 76492313731121.02
+     },
+     "k_rel": {
+      "0.01": 15222,
+      "0.001": 15222,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 15222,
+      "0.01": 15222,
+      "0.001": 15222,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 558.1986508369446,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 40300847565.67689,
+      "1e-09": 40300847565.67689,
+      "1e-12": 40300847565.67689
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 87655097410702.36,
+      "1e-09": 87655097410702.36,
+      "1e-12": 87655097410702.36
+     },
+     "k_rel": {
+      "0.01": 15352,
+      "0.001": 15235,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 15356,
+      "0.01": 15236,
+      "0.001": 15222,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 541.2444233894348,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 260,
+      "0.001": 60,
+      "0.0001": 20,
+      "1e-05": 10,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 230,
+      "0.01": 50,
+      "0.001": 10,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 2570,
+      "1e-09": 2570,
+      "1e-12": 2570
+     },
+     "gap_J": {
+      "1e-06": 41026769150.01658,
+      "1e-09": 41026769150.01658,
+      "1e-12": 41026769150.01658
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 927172261735.4117,
+      "1e-09": 927172261735.4117,
+      "1e-12": 927172261735.4117
+     },
+     "k_rel": {
+      "0.01": 30583,
+      "0.001": 30488,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326,
+      "1e-11": 30326,
+      "1e-12": 30326
+     },
+     "k_abs": {
+      "0.1": 32775,
+      "0.01": 30733,
+      "0.001": 30566,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "seconds": 3504.5341353416443,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 8655109741.44114,
+      "1e-09": 8655109741.44114,
+      "1e-12": 8655109741.44114
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 3088923135992.377,
+      "1e-09": 3088923135992.377,
+      "1e-12": 3088923135992.377
+     },
+     "k_rel": {
+      "0.01": 15731,
+      "0.001": 15322,
+      "0.0001": 15248,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16429,
+      "0.01": 15878,
+      "0.001": 15342,
+      "0.0001": 15265,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 865.066780090332,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1287,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 1.5808972039330251,
+      "1e-09": 56397550.470673285,
+      "1e-12": 56397550.470673285
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 9161295578553.305,
+      "1e-09": 9161295578553.305,
+      "1e-12": 9161295578553.305
+     },
+     "k_rel": {
+      "0.01": 16195,
+      "0.001": 15784,
+      "0.0001": 15399,
+      "1e-05": 15250,
+      "1e-06": 15225,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16422,
+      "0.01": 16212,
+      "0.001": 15808,
+      "0.0001": 15411,
+      "1e-05": 15253,
+      "1e-06": 15225,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15225,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 3
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 885.3566753864288,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 125,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1250,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 1.1878968225752493,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": 1.1878968225741398,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 1110,
+      "0.001": 880,
+      "0.0001": 510,
+      "1e-05": 200,
+      "1e-06": 40,
+      "1e-07": 10,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 1190,
+      "0.01": 1100,
+      "0.001": 860,
+      "0.0001": 490,
+      "1e-05": 170,
+      "1e-06": 40,
+      "1e-07": 10,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 40,
+      "feature_null": 40,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 2570,
+      "1e-09": 2570,
+      "1e-12": 2570
+     },
+     "gap_J": {
+      "1e-06": 290601458448.75287,
+      "1e-09": 290601458448.75287,
+      "1e-12": 290601458448.75287
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 9331688663907.84,
+      "1e-09": 9331688663907.84,
+      "1e-12": 9331688663907.84
+     },
+     "k_rel": {
+      "0.01": 30483,
+      "0.001": 30326,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326,
+      "1e-11": 30326,
+      "1e-12": 30326
+     },
+     "k_abs": {
+      "0.1": 32622,
+      "0.01": 30545,
+      "0.001": 30326,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "seconds": 4322.9632160663605,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 546042303689.9577,
+      "1e-09": 546042303689.9577,
+      "1e-12": 546042303689.9577
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 21277701608087.13,
+      "1e-09": 21277701608087.13,
+      "1e-12": 21277701608087.13
+     },
+     "k_rel": {
+      "0.01": 15272,
+      "0.001": 15222,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16420,
+      "0.01": 15526,
+      "0.001": 15222,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 752.0181767940521,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 6284096587.403715,
+      "1e-09": 6284096587.403715,
+      "1e-12": 6284096587.403715
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 50183709706511.414,
+      "1e-09": 50183709706511.414,
+      "1e-12": 50183709706511.414
+     },
+     "k_rel": {
+      "0.01": 15729,
+      "0.001": 15315,
+      "0.0001": 15237,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16387,
+      "0.01": 15754,
+      "0.001": 15322,
+      "0.0001": 15239,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 910.8440580368042,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 530,
+      "0.001": 140,
+      "0.0001": 30,
+      "1e-05": 10,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 1020,
+      "0.01": 400,
+      "0.001": 100,
+      "0.0001": 30,
+      "1e-05": 10,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "layers": [
+    {
+     "layer": 1,
+     "n_in_aug": 257,
+     "n_out": 128,
+     "p": 32896,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 257,
+      "1e-09": 257,
+      "1e-12": 257
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 2570,
+      "1e-09": 2570,
+      "1e-12": 2570
+     },
+     "gap_J": {
+      "1e-06": 228891641089.44266,
+      "1e-09": 228891641089.44266,
+      "1e-12": 228891641089.44266
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 3924032316204.244,
+      "1e-09": 3924032316204.244,
+      "1e-12": 3924032316204.244
+     },
+     "k_rel": {
+      "0.01": 30520,
+      "0.001": 30326,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326,
+      "1e-11": 30326,
+      "1e-12": 30326
+     },
+     "k_abs": {
+      "0.1": 32725,
+      "0.01": 30587,
+      "0.001": 30343,
+      "0.0001": 30326,
+      "1e-05": 30326,
+      "1e-06": 30326,
+      "1e-07": 30326,
+      "1e-08": 30326,
+      "1e-09": 30326,
+      "1e-10": 30326
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 30326,
+      "feature_null": 0,
+      "downstream_null": 30326,
+      "deficit": 0
+     },
+     "seconds": 2655.2872638702393,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1290,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 120452359902.99759,
+      "1e-09": 120452359902.99759,
+      "1e-12": 120452359902.99759
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 13951810331390.29,
+      "1e-09": 13951810331390.29,
+      "1e-12": 13951810331390.29
+     },
+     "k_rel": {
+      "0.01": 15601,
+      "0.001": 15233,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16428,
+      "0.01": 15795,
+      "0.001": 15250,
+      "0.0001": 15222,
+      "1e-05": 15222,
+      "1e-06": 15222,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 393.65717792510986,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 129,
+     "n_out": 128,
+     "p": 16512,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 129,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1289,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 1.568700021784717,
+      "1e-09": 127851736.19561876,
+      "1e-12": 127851736.19561876
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": 45847408419950.79,
+      "1e-09": 45847408419950.79,
+      "1e-12": 45847408419950.79
+     },
+     "k_rel": {
+      "0.01": 16099,
+      "0.001": 15623,
+      "0.0001": 15296,
+      "1e-05": 15232,
+      "1e-06": 15223,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222,
+      "1e-11": 15222,
+      "1e-12": 15222
+     },
+     "k_abs": {
+      "0.1": 16411,
+      "0.01": 16148,
+      "0.001": 15688,
+      "0.0001": 15320,
+      "1e-05": 15233,
+      "1e-06": 15227,
+      "1e-07": 15222,
+      "1e-08": 15222,
+      "1e-09": 15222,
+      "1e-10": 15222
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 15223,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 1
+     },
+     "components@1e-09": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 15222,
+      "feature_null": 0,
+      "downstream_null": 15222,
+      "deficit": 0
+     },
+     "seconds": 391.68235445022583,
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 129,
+     "n_out": 10,
+     "p": 1290,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 126,
+      "1e-09": 129,
+      "1e-12": 129
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 1260,
+      "1e-09": 1290,
+      "1e-12": 1290
+     },
+     "gap_J": {
+      "1e-06": 1.3777353056834631,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": 1.3777353056856803,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 1040,
+      "0.001": 810,
+      "0.0001": 420,
+      "1e-05": 140,
+      "1e-06": 30,
+      "1e-07": 20,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 1170,
+      "0.01": 1020,
+      "0.001": 770,
+      "0.0001": 390,
+      "1e-05": 130,
+      "1e-06": 20,
+      "1e-07": 10,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "identity",
+     "dead_units": 0,
+     "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 0,
+     "components@1e-06": {
+      "dim_K": 30,
+      "feature_null": 30,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     }
+    }
+   ]
+  }
+ }
+}

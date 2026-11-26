@@ -1,0 +1,599 @@
+{
+ "study": "COMMON ResNet family study, group l41 (seed-0 checkpoint, 10k cache)",
+ "group": "l41",
+ "N": 10000,
+ "M": 256,
+ "RGRID": [
+  0.001,
+  0.003,
+  0.01,
+  0.03,
+  0.1,
+  0.3,
+  1.0,
+  3.0,
+  10.0,
+  30.0
+ ],
+ "tol_rel": 0.001,
+ "cache_identity": {
+  "n": 10000,
+  "index_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+  "checkpoint_sha256": "0c1c6274b69b70bca558431371f60c247b65069c447387deaeaa2fd5fda89fb0",
+  "xin_sha256": "3132fa8d121d2a101770cd82a5960a607247e9934e86476bdbd5953046731ddd",
+  "storage": {
+   "xin_dtype": "float32",
+   "rationale": "10000 x 1024 x 14 x 14 fp32 = 8.0 GB on disk (fp64 would be 16 GB); consumers use the fp64-read path (resnet_common_lib.open_xin/xin_chunk) and form all operators in float64. The fp32 file is the defined study input; see rounding_effect for the (recorded) difference to the unrounded fp64 forward.",
+   "forward_dtype": "float64 (full net and local layer4+fc path)"
+  }
+ },
+ "logits_rms_X": 23.79884289923196,
+ "quadruple_common": {
+  "operators": "H = stacked im2col patches (feature units); C/D = stacked downstream preactivation derivatives through the real remaining network (activation-to-output units); rates sigma/sqrt(N), N=10000 examples",
+  "normalization": "unit Frobenius norm of the layer's W (conv) resp. [W|b] (fc) edit; ||.||_X = dataset RMS in absolute logit units; relX = ||.||_X / ||F(theta0)||_X (separate metric, recorded separately)",
+  "radius_grid": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0,
+   3.0,
+   10.0,
+   30.0
+  ],
+  "threshold": "T(i) exact: sigma <= 1e-9*sigma0, gap-10 recorded, direct re-measurement of null candidates; T(ii) approx: ABSOLUTE rate sigma/sqrt(N) <= 1e-3 PRIMARY (relX reading recorded); T(iii) visibility: relX drift <= 1e-3 tested brackets only"
+ },
+ "precision": {
+  "operators": "float64 (Grams accumulated on GPU fp64, eigendecomposition on CPU/LAPACK)",
+  "jv": "float64 contraction, validated against torch.func.jvp (batched fp64) per layer",
+  "battery_actual": "float32 batched forwards from the edited layer through the real downstream, validated in fp64 on the validation subset (recorded per layer); frozen = F0 + r*Jv exactly (fp64)"
+ },
+ "layers": {
+  "layer4.1.conv1": {
+   "layer": "layer4.1.conv1",
+   "n_out": 512,
+   "m_in": 2048,
+   "kernel": 1,
+   "has_bias": false,
+   "param_dim": 1048576,
+   "counting_floor_bound": {
+    "value": 598576,
+    "note": "max(0, p - s*d), uniform counting LOWER bound for the full atomic kernel; not a computed marginal dimension"
+   },
+   "operator_H": {
+    "n_patches": 490000,
+    "sigma0": 19219.42696975122,
+    "rank_record": {
+     "sigma0": 19219.42696975122,
+     "cutoff_rel": 1e-09,
+     "cutoff": 1.9219426969751222e-05,
+     "rank": 2048,
+     "null_dim": 0,
+     "gap": 3741641.5536372187,
+     "gap_resolved": true,
+     "sigma_min": 71.91220658711703,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 0.7191220658711702,
+     "sigma_rate_max": 192.1942696975122,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 0,
+     "tail_dim_relX_recorded": 0,
+     "sigma_rate_at_tail_edge": 0.7191220658711702,
+     "eigh_sigma_floor": 0.00028639177932964595,
+     "floor_over_cutoff": 14.901161193847656,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 0.00028639177932964595
+   },
+   "operator_D": {
+    "n_rows": 22050000,
+    "sigma0": 11.232034575965788,
+    "rank_record": {
+     "sigma0": 11.232034575965788,
+     "cutoff_rel": 1e-09,
+     "cutoff": 1.1232034575965788e-08,
+     "rank": 512,
+     "null_dim": 0,
+     "gap": 107842033.00247376,
+     "gap_resolved": true,
+     "sigma_min": 1.2112854434262288,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 0.012112854434262289,
+     "sigma_rate_max": 0.11232034575965788,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 219,
+     "tail_dim_relX_recorded": 219,
+     "sigma_rate_at_tail_edge": 0.012112854434262289,
+     "eigh_sigma_floor": 1.673703577513365e-07,
+     "floor_over_cutoff": 14.901161193847656,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 1.673703577513365e-07,
+    "note": "activation-space downstream marginal Gram sum D^T D (n x n), real remaining network, 45 VJPs per chunk"
+   },
+   "families": {
+    "FN_X": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "FN = {Z U_Hperp^T}",
+     "rank_record": {
+      "sigma0": 19219.42696975122,
+      "cutoff_rel": 1e-09,
+      "cutoff": 1.9219426969751222e-05,
+      "rank": 2048,
+      "null_dim": 0,
+      "gap": 3741641.5536372187,
+      "gap_resolved": true,
+      "sigma_min": 71.91220658711703,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "DN_X_additional": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "DN_additional = {U_Cperp Z U_H^T}",
+     "rank_record": {
+      "sigma0": 11.232034575965788,
+      "cutoff_rel": 1e-09,
+      "cutoff": 1.1232034575965788e-08,
+      "rank": 512,
+      "null_dim": 0,
+      "gap": 107842033.00247376,
+      "gap_resolved": true,
+      "sigma_min": 1.2112854434262288,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "FN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 0.7191220658711702,
+      "sigma_rate_max": 192.1942696975122,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 0,
+      "tail_dim_relX_recorded": 0,
+      "sigma_rate_at_tail_edge": 0.7191220658711702,
+      "eigh_sigma_floor": 0.00028639177932964595,
+      "floor_over_cutoff": 14.901161193847656,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "DN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 0.012112854434262289,
+      "sigma_rate_max": 0.11232034575965788,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 219,
+      "tail_dim_relX_recorded": 219,
+      "sigma_rate_at_tail_edge": 0.012112854434262289,
+      "eigh_sigma_floor": 1.673703577513365e-07,
+      "floor_over_cutoff": 14.901161193847656,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "SEL_additional": {
+     "status": "structurally_coincides",
+     "coincides_with": "FN (every per-channel gated span numerically full within span(H))",
+     "dim": 0,
+     "record": {
+      "constraint": "S_(i,xi) A p_(i,xi) = 0 with base gates (frozen-forward convention); per channel c: row_c _|_ gated patch span H_c; additional-beyond-FN dim per channel = r_h - rank(H_c); bn-scale-0 channels unconstrained",
+      "rank_convention": "sigma <= 1e-9 * sigma0(H) = 1.922e-05 (layer-level declared cutoff); subset certificate threshold 10x cutoff",
+      "K_cap": 12288,
+      "cap_mult": 6,
+      "n_channels": 512,
+      "r_h": 2048,
+      "n_dead_gate": 0,
+      "n_bn_scale_zero": 0,
+      "n_subset_certified_full": 510,
+      "n_exact_full_gram": 2,
+      "n_contributing": 0,
+      "additional_dim_total": 0,
+      "census_min_active": 8735,
+      "census_median_active": 120529.5,
+      "census_max_active": 460871,
+      "elapsed_s": 278.9,
+      "per_channel": {}
+     }
+    },
+    "N_marginal": {
+     "dim": 0,
+     "note": "deduplicated N = FN (+) DN_additional (exact marginal null)"
+    }
+   },
+   "probe_sets": [],
+   "battery": {},
+   "validation": {
+    "statement": "no nonempty family at this layer: no probes drawn (empty families are valid results)"
+   },
+   "timing": {
+    "operator_pass_s": 893.4
+   }
+  },
+  "layer4.1.conv2": {
+   "layer": "layer4.1.conv2",
+   "n_out": 512,
+   "m_in": 4608,
+   "kernel": 3,
+   "has_bias": false,
+   "param_dim": 2359296,
+   "counting_floor_bound": {
+    "value": 1909296,
+    "note": "max(0, p - s*d), uniform counting LOWER bound for the full atomic kernel; not a computed marginal dimension"
+   },
+   "operator_H": {
+    "n_patches": 490000,
+    "sigma0": 10190.58470448583,
+    "rank_record": {
+     "sigma0": 10190.58470448583,
+     "cutoff_rel": 1e-09,
+     "cutoff": 1.019058470448583e-05,
+     "rank": 4608,
+     "null_dim": 0,
+     "gap": 4835806.104787653,
+     "gap_resolved": true,
+     "sigma_min": 49.27969172530826,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 0.4927969172530826,
+     "sigma_rate_max": 101.90584704485829,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 0,
+     "tail_dim_relX_recorded": 0,
+     "sigma_rate_at_tail_edge": 0.4927969172530826,
+     "eigh_sigma_floor": 0.00015185154534110172,
+     "floor_over_cutoff": 14.901161193847654,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 0.00015185154534110172
+   },
+   "operator_D": {
+    "n_rows": 22050000,
+    "sigma0": 33.34032543182101,
+    "rank_record": {
+     "sigma0": 33.34032543182101,
+     "cutoff_rel": 1e-09,
+     "cutoff": 3.334032543182101e-08,
+     "rank": 512,
+     "null_dim": 0,
+     "gap": 27941614.078341883,
+     "gap_resolved": true,
+     "sigma_min": 0.9315825064622698,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 0.009315825064622698,
+     "sigma_rate_max": 0.33340325431821005,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 2,
+     "tail_dim_relX_recorded": 2,
+     "sigma_rate_at_tail_edge": 0.009315825064622698,
+     "eigh_sigma_floor": 4.968095635149033e-07,
+     "floor_over_cutoff": 14.901161193847654,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 4.968095635149033e-07,
+    "note": "activation-space downstream marginal Gram sum D^T D (n x n), real remaining network, 45 VJPs per chunk"
+   },
+   "families": {
+    "FN_X": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "FN = {Z U_Hperp^T}",
+     "rank_record": {
+      "sigma0": 10190.58470448583,
+      "cutoff_rel": 1e-09,
+      "cutoff": 1.019058470448583e-05,
+      "rank": 4608,
+      "null_dim": 0,
+      "gap": 4835806.104787653,
+      "gap_resolved": true,
+      "sigma_min": 49.27969172530826,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "DN_X_additional": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "DN_additional = {U_Cperp Z U_H^T}",
+     "rank_record": {
+      "sigma0": 33.34032543182101,
+      "cutoff_rel": 1e-09,
+      "cutoff": 3.334032543182101e-08,
+      "rank": 512,
+      "null_dim": 0,
+      "gap": 27941614.078341883,
+      "gap_resolved": true,
+      "sigma_min": 0.9315825064622698,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "FN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 0.4927969172530826,
+      "sigma_rate_max": 101.90584704485829,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 0,
+      "tail_dim_relX_recorded": 0,
+      "sigma_rate_at_tail_edge": 0.4927969172530826,
+      "eigh_sigma_floor": 0.00015185154534110172,
+      "floor_over_cutoff": 14.901161193847654,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "DN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 0.009315825064622698,
+      "sigma_rate_max": 0.33340325431821005,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 2,
+      "tail_dim_relX_recorded": 2,
+      "sigma_rate_at_tail_edge": 0.009315825064622698,
+      "eigh_sigma_floor": 4.968095635149033e-07,
+      "floor_over_cutoff": 14.901161193847654,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "SEL_additional": {
+     "status": "structurally_coincides",
+     "coincides_with": "FN (every per-channel gated span numerically full within span(H))",
+     "dim": 0,
+     "record": {
+      "constraint": "S_(i,xi) A p_(i,xi) = 0 with base gates (frozen-forward convention); per channel c: row_c _|_ gated patch span H_c; additional-beyond-FN dim per channel = r_h - rank(H_c); bn-scale-0 channels unconstrained",
+      "rank_convention": "sigma <= 1e-9 * sigma0(H) = 1.019e-05 (layer-level declared cutoff); subset certificate threshold 10x cutoff",
+      "K_cap": 27648,
+      "cap_mult": 6,
+      "n_channels": 512,
+      "r_h": 4608,
+      "n_dead_gate": 0,
+      "n_bn_scale_zero": 0,
+      "n_subset_certified_full": 508,
+      "n_exact_full_gram": 4,
+      "n_contributing": 0,
+      "additional_dim_total": 0,
+      "census_min_active": 15846,
+      "census_median_active": 96860.0,
+      "census_max_active": 489287,
+      "elapsed_s": 1820.3,
+      "per_channel": {}
+     }
+    },
+    "N_marginal": {
+     "dim": 0,
+     "note": "deduplicated N = FN (+) DN_additional (exact marginal null)"
+    }
+   },
+   "probe_sets": [],
+   "battery": {},
+   "validation": {
+    "statement": "no nonempty family at this layer: no probes drawn (empty families are valid results)"
+   },
+   "timing": {
+    "operator_pass_s": 685.0
+   }
+  },
+  "layer4.1.conv3": {
+   "layer": "layer4.1.conv3",
+   "n_out": 2048,
+   "m_in": 512,
+   "kernel": 1,
+   "has_bias": false,
+   "param_dim": 1048576,
+   "counting_floor_bound": {
+    "value": 598576,
+    "note": "max(0, p - s*d), uniform counting LOWER bound for the full atomic kernel; not a computed marginal dimension"
+   },
+   "operator_H": {
+    "n_patches": 490000,
+    "sigma0": 5881.322710570878,
+    "rank_record": {
+     "sigma0": 5881.322710570878,
+     "cutoff_rel": 1e-09,
+     "cutoff": 5.8813227105708785e-06,
+     "rank": 512,
+     "null_dim": 0,
+     "gap": 23068896.54920187,
+     "gap_resolved": true,
+     "sigma_min": 135.6756251826311,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 1.356756251826311,
+     "sigma_rate_max": 58.81322710570878,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 0,
+     "tail_dim_relX_recorded": 0,
+     "sigma_rate_at_tail_edge": 1.356756251826311,
+     "eigh_sigma_floor": 8.763853774325368e-05,
+     "floor_over_cutoff": 14.901161193847656,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 8.763853774325368e-05
+   },
+   "operator_D": {
+    "n_rows": 22050000,
+    "sigma0": 46.32035003949278,
+    "rank_record": {
+     "sigma0": 46.32035003949278,
+     "cutoff_rel": 1e-09,
+     "cutoff": 4.6320350039492785e-08,
+     "rank": 2048,
+     "null_dim": 0,
+     "gap": 30902460.76251569,
+     "gap_resolved": true,
+     "sigma_min": 1.4314127996014179,
+     "note": "full numerical rank; gap = sigma_min/cutoff"
+    },
+    "tail_info": {
+     "sigma_rate_min": 0.014314127996014179,
+     "sigma_rate_max": 0.4632035003949278,
+     "tail_dim_abs_incl_exact": 0,
+     "tail_dim_abs_PRIMARY": 0,
+     "tail_dim_relX_incl_exact": 115,
+     "tail_dim_relX_recorded": 115,
+     "sigma_rate_at_tail_edge": 0.014314127996014179,
+     "eigh_sigma_floor": 6.902270024939296e-07,
+     "floor_over_cutoff": 14.901161193847654,
+     "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+    },
+    "eigh_sigma_floor": 6.902270024939296e-07,
+    "note": "activation-space downstream marginal Gram sum D^T D (n x n), real remaining network, 45 VJPs per chunk"
+   },
+   "families": {
+    "FN_X": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "FN = {Z U_Hperp^T}",
+     "rank_record": {
+      "sigma0": 5881.322710570878,
+      "cutoff_rel": 1e-09,
+      "cutoff": 5.8813227105708785e-06,
+      "rank": 512,
+      "null_dim": 0,
+      "gap": 23068896.54920187,
+      "gap_resolved": true,
+      "sigma_min": 135.6756251826311,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "DN_X_additional": {
+     "status": "genuine_zero",
+     "factor_null_dim": 0,
+     "param_dim": 0,
+     "definition": "DN_additional = {U_Cperp Z U_H^T}",
+     "rank_record": {
+      "sigma0": 46.32035003949278,
+      "cutoff_rel": 1e-09,
+      "cutoff": 4.6320350039492785e-08,
+      "rank": 2048,
+      "null_dim": 0,
+      "gap": 30902460.76251569,
+      "gap_resolved": true,
+      "sigma_min": 1.4314127996014179,
+      "note": "full numerical rank; gap = sigma_min/cutoff"
+     }
+    },
+    "FN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 1.356756251826311,
+      "sigma_rate_max": 58.81322710570878,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 0,
+      "tail_dim_relX_recorded": 0,
+      "sigma_rate_at_tail_edge": 1.356756251826311,
+      "eigh_sigma_floor": 8.763853774325368e-05,
+      "floor_over_cutoff": 14.901161193847656,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "DN_A": {
+     "status": "genuine_zero",
+     "factor_dim_abs_PRIMARY": 0,
+     "param_dim": 0,
+     "tail_info": {
+      "sigma_rate_min": 0.014314127996014179,
+      "sigma_rate_max": 0.4632035003949278,
+      "tail_dim_abs_incl_exact": 0,
+      "tail_dim_abs_PRIMARY": 0,
+      "tail_dim_relX_incl_exact": 115,
+      "tail_dim_relX_recorded": 115,
+      "sigma_rate_at_tail_edge": 0.014314127996014179,
+      "eigh_sigma_floor": 6.902270024939296e-07,
+      "floor_over_cutoff": 14.901161193847654,
+      "units_note": "sigma/sqrt(N), N=10000 EXAMPLES; feature- resp. activation-to-output rate units of THIS operator (not a parameter-to-logit rate)"
+     }
+    },
+    "SEL_additional": {
+     "status": "structurally_coincides",
+     "coincides_with": "FN (every per-channel gated span numerically full within span(H))",
+     "dim": 0,
+     "record": {
+      "constraint": "S_(i,xi) A p_(i,xi) = 0 with base gates (frozen-forward convention); per channel c: row_c _|_ gated patch span H_c; additional-beyond-FN dim per channel = r_h - rank(H_c); bn-scale-0 channels unconstrained",
+      "rank_convention": "sigma <= 1e-9 * sigma0(H) = 5.881e-06 (layer-level declared cutoff); subset certificate threshold 10x cutoff",
+      "K_cap": 3072,
+      "cap_mult": 6,
+      "n_channels": 2048,
+      "r_h": 512,
+      "n_dead_gate": 0,
+      "n_bn_scale_zero": 0,
+      "n_subset_certified_full": 2048,
+      "n_exact_full_gram": 0,
+      "n_contributing": 0,
+      "additional_dim_total": 0,
+      "census_min_active": 15455,
+      "census_median_active": 49045.0,
+      "census_max_active": 449280,
+      "elapsed_s": 101.1,
+      "per_channel": {}
+     }
+    },
+    "N_marginal": {
+     "dim": 0,
+     "note": "deduplicated N = FN (+) DN_additional (exact marginal null)"
+    }
+   },
+   "probe_sets": [],
+   "battery": {},
+   "validation": {
+    "statement": "no nonempty family at this layer: no probes drawn (empty families are valid results)"
+   },
+   "timing": {
+    "operator_pass_s": 843.8
+   }
+  }
+ },
+ "timing": {},
+ "statistical_wording": "exceedance counts among 256 probes; zero exceedances among 256 controls reported as such or as the plus-one estimate 1/257; no p-values",
+ "meta": {
+  "script": "scripts/analysis/resnet_common_family_study.py",
+  "date": "2026-11-23",
+  "torch": "2.5.1+cu124",
+  "git_rev": "f226d1aca78398935e94cee1f628be7f605588b0",
+  "spec": [
+   "memos/2026-11-17_reviewer_protocol_corrections.md#2",
+   "memos/2026-11-22_two_day_completion_plan.md#common-vit-and-resnet-measurements",
+   "memos/2026-11-17_vit_resnet_standardization_spec.md#2"
+  ],
+  "device": "cuda",
+  "chunk": 50,
+  "kblock": 32,
+  "nval": 2000,
+  "elapsed_s": 4633.8,
+  "status": "computed; automated acceptance via scripts/pipeline/check_resnet.py"
+ }
+}

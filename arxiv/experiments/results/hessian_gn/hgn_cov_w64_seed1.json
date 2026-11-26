@@ -1,0 +1,608 @@
+{
+ "seed": 1,
+ "model": "mnist_mlp_w64 (standard, digits 0-9)",
+ "epoch": 500,
+ "p": 25418,
+ "m": 10000,
+ "loss_mse": 0.0007027631855433526,
+ "grad_norm": 0.05952086010797614,
+ "provenance": {
+  "config_widths": [
+   64,
+   64,
+   64
+  ],
+  "config_nparams": 25418,
+  "dataset": "mnist",
+  "analysis_n": 10000,
+  "exact_ocean_auth_Jv": {
+   "exact_feature_null": 4.510712002876567e-16,
+   "exact_downstream_null": 1.506499110038475e-16,
+   "exact_joint_deficit": 7.1017657328684026e-15,
+   "exact_branch_union": 1.3068754304973339e-14
+  }
+ },
+ "validation": {
+  "H_symmetry_rel": 4.923616134916353e-16,
+  "R_over_H": 0.0010578797892684575,
+  "G_over_H": 0.9999999413732298
+ },
+ "eig_summary": {
+  "H_min": -0.042497380175470195,
+  "H_max": 166.1807786105792,
+  "H_neg_frac": 0.14096309701786136,
+  "G_min": -1.0191460060593042e-15,
+  "G_max": 166.18156189876586,
+  "kerG_dim": 20470
+ },
+ "ocean_dims": {
+  "exact_feature_null": 1086,
+  "exact_downstream_null": 1879,
+  "exact_joint_deficit": 1608,
+  "exact_branch_union": 4573,
+  "kerG_combined_exact": 20470,
+  "GN_tail|1e-06": 22535,
+  "GN_tail|0.0001": 24247,
+  "GN_tail|0.01": 24823
+ },
+ "coverage_sweep": {
+  "1e-08": {
+   "Hnull_dim": 11024,
+   "Hnull_negative_dim": 2735,
+   "oceans": {
+    "exact_feature_null": {
+     "ocean_dim": 1086,
+     "coverage": 0.0985123367198839,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.04272562750806515,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1086,
+     "shared_dims_cos>0.9": 1086
+    },
+    "exact_downstream_null": {
+     "ocean_dim": 1879,
+     "coverage": 0.17044629898403452,
+     "inclusion": 0.9999999999999981,
+     "random_coverage_k_over_p": 0.07392399087260997,
+     "mean_cos2": 0.9999999999999981,
+     "shared_dims_cos>0.99": 1879,
+     "shared_dims_cos>0.9": 1879
+    },
+    "exact_joint_deficit": {
+     "ocean_dim": 1608,
+     "coverage": 0.10975200085733292,
+     "inclusion": 0.7524291402059937,
+     "random_coverage_k_over_p": 0.0632622550948147,
+     "mean_cos2": 0.7524291402059937,
+     "shared_dims_cos>0.99": 1180,
+     "shared_dims_cos>0.9": 1195
+    },
+    "exact_branch_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.37871063656125126,
+     "inclusion": 0.9129468745793208,
+     "random_coverage_k_over_p": 0.17991187347548981,
+     "mean_cos2": 0.9129468745793208,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "kerG_combined_exact": {
+     "ocean_dim": 20470,
+     "coverage": 0.999570831624059,
+     "inclusion": 0.5383130848961225,
+     "random_coverage_k_over_p": 0.8053348021087419,
+     "mean_cos2": 0.999570831624059,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|1e-06": {
+     "ocean_dim": 22535,
+     "coverage": 0.9999659473918869,
+     "inclusion": 0.48917792784771075,
+     "random_coverage_k_over_p": 0.8865764418915729,
+     "mean_cos2": 0.9999659473918869,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.0001": {
+     "ocean_dim": 24247,
+     "coverage": 0.9999998827713924,
+     "inclusion": 0.4546541307242888,
+     "random_coverage_k_over_p": 0.9539302856243607,
+     "mean_cos2": 0.9999998827713924,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.01": {
+     "ocean_dim": 24823,
+     "coverage": 0.9999999983752688,
+     "inclusion": 0.4441042574261355,
+     "random_coverage_k_over_p": 0.9765913919269809,
+     "mean_cos2": 0.9999999983752688,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    }
+   }
+  },
+  "1e-06": {
+   "Hnull_dim": 19549,
+   "Hnull_negative_dim": 4323,
+   "oceans": {
+    "exact_feature_null": {
+     "ocean_dim": 1086,
+     "coverage": 0.05555271369379509,
+     "inclusion": 1.0000000000000002,
+     "random_coverage_k_over_p": 0.04272562750806515,
+     "mean_cos2": 1.0000000000000002,
+     "shared_dims_cos>0.99": 1086,
+     "shared_dims_cos>0.9": 1086
+    },
+    "exact_downstream_null": {
+     "ocean_dim": 1879,
+     "coverage": 0.09611744846283697,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.07392399087260997,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1879,
+     "shared_dims_cos>0.9": 1879
+    },
+    "exact_joint_deficit": {
+     "ocean_dim": 1608,
+     "coverage": 0.07269042517432496,
+     "inclusion": 0.8837220906298997,
+     "random_coverage_k_over_p": 0.0632622550948147,
+     "mean_cos2": 0.8837220906298997,
+     "shared_dims_cos>0.99": 1369,
+     "shared_dims_cos>0.9": 1402
+    },
+    "exact_branch_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.224360587330957,
+     "inclusion": 0.9591133001821296,
+     "random_coverage_k_over_p": 0.17991187347548981,
+     "mean_cos2": 0.9591133001821296,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "kerG_combined_exact": {
+     "ocean_dim": 20470,
+     "coverage": 0.9412716213844942,
+     "inclusion": 0.8989212958693442,
+     "random_coverage_k_over_p": 0.8053348021087419,
+     "mean_cos2": 0.9412716213844942,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|1e-06": {
+     "ocean_dim": 22535,
+     "coverage": 0.9923144359008664,
+     "inclusion": 0.8608278192778362,
+     "random_coverage_k_over_p": 0.8865764418915729,
+     "mean_cos2": 0.9923144359008664,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.0001": {
+     "ocean_dim": 24247,
+     "coverage": 0.9999923673627573,
+     "inclusion": 0.806237917662991,
+     "random_coverage_k_over_p": 0.9539302856243607,
+     "mean_cos2": 0.9999923673627573,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.01": {
+     "ocean_dim": 24823,
+     "coverage": 0.9999999278019116,
+     "inclusion": 0.7875356962735999,
+     "random_coverage_k_over_p": 0.9765913919269809,
+     "mean_cos2": 0.9999999278019116,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    }
+   }
+  },
+  "0.0001": {
+   "Hnull_dim": 23892,
+   "Hnull_negative_dim": 6065,
+   "oceans": {
+    "exact_feature_null": {
+     "ocean_dim": 1086,
+     "coverage": 0.045454545454545456,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.04272562750806515,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1086,
+     "shared_dims_cos>0.9": 1086
+    },
+    "exact_downstream_null": {
+     "ocean_dim": 1879,
+     "coverage": 0.0786455717394944,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.07392399087260997,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1879,
+     "shared_dims_cos>0.9": 1879
+    },
+    "exact_joint_deficit": {
+     "ocean_dim": 1608,
+     "coverage": 0.06541708489195901,
+     "inclusion": 0.9719807165663461,
+     "random_coverage_k_over_p": 0.0632622550948147,
+     "mean_cos2": 0.9719807165663461,
+     "shared_dims_cos>0.99": 1531,
+     "shared_dims_cos>0.9": 1552
+    },
+    "exact_branch_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.18951720208599887,
+     "inclusion": 0.9901476038134014,
+     "random_coverage_k_over_p": 0.17991187347548981,
+     "mean_cos2": 0.9901476038134014,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "kerG_combined_exact": {
+     "ocean_dim": 20470,
+     "coverage": 0.85078959992968,
+     "inclusion": 0.9930173483888576,
+     "random_coverage_k_over_p": 0.8053348021087419,
+     "mean_cos2": 0.9930173483888576,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|1e-06": {
+     "ocean_dim": 22535,
+     "coverage": 0.9349859051864254,
+     "inclusion": 0.9912883624013347,
+     "random_coverage_k_over_p": 0.8865764418915729,
+     "mean_cos2": 0.9912883624013347,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.0001": {
+     "ocean_dim": 24247,
+     "coverage": 0.9991052764990969,
+     "inclusion": 0.9844773896200116,
+     "random_coverage_k_over_p": 0.9539302856243607,
+     "mean_cos2": 0.9991052764990969,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.01": {
+     "ocean_dim": 24823,
+     "coverage": 0.9999962123471998,
+     "inclusion": 0.9624908151874993,
+     "random_coverage_k_over_p": 0.9765913919269809,
+     "mean_cos2": 0.9999962123471998,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    }
+   }
+  },
+  "0.001": {
+   "Hnull_dim": 24433,
+   "Hnull_negative_dim": 6240,
+   "oceans": {
+    "exact_feature_null": {
+     "ocean_dim": 1086,
+     "coverage": 0.0444480825113576,
+     "inclusion": 1.0000000000000002,
+     "random_coverage_k_over_p": 0.04272562750806515,
+     "mean_cos2": 1.0000000000000002,
+     "shared_dims_cos>0.99": 1086,
+     "shared_dims_cos>0.9": 1086
+    },
+    "exact_downstream_null": {
+     "ocean_dim": 1879,
+     "coverage": 0.07690418696025866,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.07392399087260997,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1879,
+     "shared_dims_cos>0.9": 1879
+    },
+    "exact_joint_deficit": {
+     "ocean_dim": 1608,
+     "coverage": 0.06580558254103795,
+     "inclusion": 0.9998929093440175,
+     "random_coverage_k_over_p": 0.0632622550948147,
+     "mean_cos2": 0.9998929093440175,
+     "shared_dims_cos>0.99": 1606,
+     "shared_dims_cos>0.9": 1608
+    },
+    "exact_branch_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.1871578520126542,
+     "inclusion": 0.9999623438060748,
+     "random_coverage_k_over_p": 0.17991187347548981,
+     "mean_cos2": 0.9999623438060748,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "kerG_combined_exact": {
+     "ocean_dim": 20470,
+     "coverage": 0.8367984096755414,
+     "inclusion": 0.9988029088227897,
+     "random_coverage_k_over_p": 0.8053348021087419,
+     "mean_cos2": 0.9988029088227897,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|1e-06": {
+     "ocean_dim": 22535,
+     "coverage": 0.920969921267374,
+     "inclusion": 0.9985381888762258,
+     "random_coverage_k_over_p": 0.8865764418915729,
+     "mean_cos2": 0.9985381888762258,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.0001": {
+     "ocean_dim": 24247,
+     "coverage": 0.9893964485551885,
+     "inclusion": 0.9969861602486461,
+     "random_coverage_k_over_p": 0.9539302856243607,
+     "mean_cos2": 0.9969861602486461,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.01": {
+     "ocean_dim": 24823,
+     "coverage": 0.9999694629909095,
+     "inclusion": 0.9842587072173747,
+     "random_coverage_k_over_p": 0.9765913919269809,
+     "mean_cos2": 0.9999694629909095,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    }
+   }
+  },
+  "0.01": {
+   "Hnull_dim": 24782,
+   "Hnull_negative_dim": 6294,
+   "oceans": {
+    "exact_feature_null": {
+     "ocean_dim": 1086,
+     "coverage": 0.04382212896457106,
+     "inclusion": 1.0,
+     "random_coverage_k_over_p": 0.04272562750806515,
+     "mean_cos2": 1.0,
+     "shared_dims_cos>0.99": 1086,
+     "shared_dims_cos>0.9": 1086
+    },
+    "exact_downstream_null": {
+     "ocean_dim": 1879,
+     "coverage": 0.07582116051973208,
+     "inclusion": 1.0000000000000002,
+     "random_coverage_k_over_p": 0.07392399087260997,
+     "mean_cos2": 1.0000000000000002,
+     "shared_dims_cos>0.99": 1879,
+     "shared_dims_cos>0.9": 1879
+    },
+    "exact_joint_deficit": {
+     "ocean_dim": 1608,
+     "coverage": 0.06488575894227618,
+     "inclusion": 0.9999993023056518,
+     "random_coverage_k_over_p": 0.0632622550948147,
+     "mean_cos2": 0.9999993023056518,
+     "shared_dims_cos>0.99": 1608,
+     "shared_dims_cos>0.9": 1608
+    },
+    "exact_branch_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.1845290484265793,
+     "inclusion": 0.9999997546703451,
+     "random_coverage_k_over_p": 0.17991187347548981,
+     "mean_cos2": 0.9999997546703451,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "kerG_combined_exact": {
+     "ocean_dim": 20470,
+     "coverage": 0.8257565160574867,
+     "inclusion": 0.9997019042958787,
+     "random_coverage_k_over_p": 0.8053348021087419,
+     "mean_cos2": 0.9997019042958787,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|1e-06": {
+     "ocean_dim": 22535,
+     "coverage": 0.908979843595728,
+     "inclusion": 0.9996156416236669,
+     "random_coverage_k_over_p": 0.8865764418915729,
+     "mean_cos2": 0.9996156416236669,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.0001": {
+     "ocean_dim": 24247,
+     "coverage": 0.9776714480623784,
+     "inclusion": 0.9992433631328355,
+     "random_coverage_k_over_p": 0.9539302856243607,
+     "mean_cos2": 0.9992433631328355,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    },
+    "GN_tail|0.01": {
+     "ocean_dim": 24823,
+     "coverage": 0.9995765614839534,
+     "inclusion": 0.9979255668813332,
+     "random_coverage_k_over_p": 0.9765913919269809,
+     "mean_cos2": 0.9995765614839534,
+     "shared_dims_cos>0.99": null,
+     "shared_dims_cos>0.9": null
+    }
+   }
+  }
+ },
+ "curvature_probes_supporting": {
+  "exact_feature_null": {
+   "Jv": {
+    "p50": 4.205506802286594e-16,
+    "p5": 3.4931488784143163e-16,
+    "p95": 5.051767004748387e-16,
+    "mean": 4.232590155187668e-16
+   },
+   "vGv": {
+    "p50": 3.537258910695218e-31,
+    "p5": 2.4404179166901543e-31,
+    "p95": 5.104070142096968e-31,
+    "mean": 3.627851224496213e-31
+   },
+   "vHv": {
+    "p50": 3.5330951276028436e-31,
+    "p5": 2.4348133080364035e-31,
+    "p95": 5.103590497386852e-31,
+    "mean": 3.627223827138208e-31
+   },
+   "Hv": {
+    "p50": 2.733290397071988e-15,
+    "p5": 2.073280893761449e-15,
+    "p95": 3.817981857244758e-15,
+    "mean": 2.7832628487005837e-15
+   },
+   "HmG_v": {
+    "p50": 3.947770357682668e-17,
+    "p5": 2.0799640862024174e-17,
+    "p95": 6.941223497703111e-17,
+    "mean": 4.144985013345559e-17
+   }
+  },
+  "exact_downstream_null": {
+   "Jv": {
+    "p50": 1.5129488351434215e-16,
+    "p5": 1.166842030539585e-16,
+    "p95": 2.0665662675795311e-16,
+    "mean": 1.5511521244325153e-16
+   },
+   "vGv": {
+    "p50": 4.5780302966133354e-32,
+    "p5": 2.723047009917057e-32,
+    "p95": 8.541416405151435e-32,
+    "mean": 4.972574032249361e-32
+   },
+   "vHv": {
+    "p50": 4.572615439395311e-32,
+    "p5": 2.721661286467745e-32,
+    "p95": 8.541116987266057e-32,
+    "mean": 4.97258423938635e-32
+   },
+   "Hv": {
+    "p50": 1.1414280370821402e-15,
+    "p5": 7.874244964913146e-16,
+    "p95": 1.616144478456212e-15,
+    "mean": 1.178400142096302e-15
+   },
+   "HmG_v": {
+    "p50": 2.9471995558162434e-17,
+    "p5": 1.8698261345082933e-17,
+    "p95": 5.030347727936195e-17,
+    "mean": 3.115678081623535e-17
+   }
+  },
+  "exact_joint_deficit": {
+   "Jv": {
+    "p50": 1.3002030911112941e-14,
+    "p5": 5.2850900646715176e-15,
+    "p95": 2.50359204152131e-14,
+    "mean": 1.3895928062147936e-14
+   },
+   "vGv": {
+    "p50": 3.3810675903511454e-28,
+    "p5": 5.586438340309145e-29,
+    "p95": 1.253662139115252e-27,
+    "mean": 4.643964852462898e-28
+   },
+   "vHv": {
+    "p50": 1.9644672453594558e-21,
+    "p5": -9.696987695975769e-20,
+    "p95": 1.0537586234135257e-19,
+    "mean": 3.5175055242407154e-21
+   },
+   "Hv": {
+    "p50": 5.5732546629616125e-05,
+    "p5": 4.6934038360079864e-05,
+    "p95": 6.657633625391468e-05,
+    "mean": 5.605186131059218e-05
+   },
+   "HmG_v": {
+    "p50": 5.5732546629609864e-05,
+    "p5": 4.693403836003406e-05,
+    "p95": 6.657633625390774e-05,
+    "mean": 5.605186131059482e-05
+   }
+  },
+  "exact_branch_union": {
+   "Jv": {
+    "p50": 7.0052486044356626e-15,
+    "p5": 3.352724833116644e-15,
+    "p95": 1.4812695269259488e-14,
+    "mean": 7.861817586170268e-15
+   },
+   "vGv": {
+    "p50": 9.814732306455382e-29,
+    "p5": 2.248748068786412e-29,
+    "p95": 4.388330850158746e-28,
+    "mean": 1.5116654416990041e-28
+   },
+   "vHv": {
+    "p50": 1.0341899283176457e-21,
+    "p5": -4.187490734100922e-20,
+    "p95": 3.825261954826658e-20,
+    "mean": 3.587852420101182e-22
+   },
+   "Hv": {
+    "p50": 3.283790516779357e-05,
+    "p5": 2.7572220684078867e-05,
+    "p95": 3.973028016394825e-05,
+    "mean": 3.326793415399799e-05
+   },
+   "HmG_v": {
+    "p50": 3.283790516776779e-05,
+    "p5": 2.7572220684103878e-05,
+    "p95": 3.973028016392319e-05,
+    "mean": 3.3267934153994154e-05
+   }
+  },
+  "random": {
+   "Jv": {
+    "p50": 0.23273759259324023,
+    "p5": 0.2007934735233419,
+    "p95": 0.27390190348069,
+    "mean": 0.23504281464258403
+   },
+   "vGv": {
+    "p50": 0.10833358471685356,
+    "p5": 0.08063606319101857,
+    "p95": 0.15004767439209102,
+    "mean": 0.11149808955099662
+   },
+   "vHv": {
+    "p50": 0.10833916353375359,
+    "p5": 0.0806323375355856,
+    "p95": 0.15004105231725112,
+    "mean": 0.11149728883973806
+   },
+   "Hv": {
+    "p50": 2.3677164814261458,
+    "p5": 1.8805781989447776,
+    "p95": 3.0791640023158493,
+    "mean": 2.444003785815344
+   },
+   "HmG_v": {
+    "p50": 0.002597175012048254,
+    "p5": 0.00231320369877677,
+    "p95": 0.0028642232455436227,
+    "mean": 0.0025964852871221637
+   }
+  }
+ },
+ "runtime_s": {
+  "total": 1771.8336868286133,
+  "matrices": 348.2289900779724,
+  "eig": 1328.3576664924622
+ },
+ "notes": "coverage=||Q_O^T Q_H||_F^2/dim(H_null) is the headline; inclusion+curvature are supporting; v'Hv~0 is NOT Hv~0; kerJX FILE on disk was stale (not flat for this checkpoint) and is NOT used."
+}

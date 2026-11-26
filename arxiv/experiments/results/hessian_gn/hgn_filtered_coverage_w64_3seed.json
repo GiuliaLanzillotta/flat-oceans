@@ -1,0 +1,525 @@
+{
+ "0": {
+  "p": 25418,
+  "m": 10000,
+  "epoch": 500,
+  "atomic_union_dim": 3619,
+  "kerJX_dim": 3836,
+  "Hnull_dim": {
+   "1e-08": 7505,
+   "1e-06": 16242,
+   "0.0001": 22993
+  },
+  "filtered_branches": {
+   "bottom_up": {
+    "dims": {
+     "W1": 0,
+     "W2": 433,
+     "W3": 2896,
+     "V": 290
+    },
+    "total": 3619,
+    "identity_digest": "410e10b3a5e093ac14a3e0b176bcc4769400c4e77dd596991a759441a7547edf",
+    "digest_matches_late_endpoint_record": true,
+    "record_certified_branch": true,
+    "Jv_rms_sqrtm": [
+     5.672900411588028e-16,
+     5.694001523703878e-16,
+     4.53517566134024e-16
+    ],
+    "in_atomic_union_resid_fro": 1.7049520381861615e-13
+   },
+   "top_down": {
+    "dims": {
+     "W1": 0,
+     "W2": 433,
+     "W3": 2896,
+     "V": 290
+    },
+    "total": 3619,
+    "identity_digest": "a566fff6a04321d0f836c2ea8788c2c171678c0162425eadd1bef105bb6991bf",
+    "digest_matches_late_endpoint_record": false,
+    "record_certified_branch": null,
+    "Jv_rms_sqrtm": [
+     6.392567728235543e-16,
+     5.727580975895294e-16,
+     6.489872807100773e-16
+    ],
+    "in_atomic_union_resid_fro": 2.8250512578371795e-15
+   }
+  },
+  "dedup_filtered_span": {
+   "dim": 3619,
+   "orders_unioned": [
+    "bottom_up",
+    "top_down"
+   ],
+   "dim_removed_vs_atomic_union": 0,
+   "Jv_rms_sqrtm": [
+    7.737564200713089e-16,
+    5.479473924636511e-16,
+    6.215944873437686e-16
+   ]
+  },
+  "atomic_union_Jv_rms_sqrtm": [
+   5.121907663733726e-16,
+   6.568757445199639e-16,
+   6.311513320728049e-16
+  ],
+  "coverage": {
+   "1e-08": {
+    "filtered_bottom_up": {
+     "ocean_dim": 3619,
+     "coverage": 0.4283572924665475,
+     "mass": 3214.8214799614393,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "filtered_top_down": {
+     "ocean_dim": 3619,
+     "coverage": 0.4283572924665476,
+     "mass": 3214.8214799614398,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 3619,
+     "coverage": 0.4283572924667269,
+     "mass": 3214.8214799627854,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "atomic_union": {
+     "ocean_dim": 3619,
+     "coverage": 0.4283572924665475,
+     "mass": 3214.8214799614393,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "kerJX": {
+     "ocean_dim": 3836,
+     "coverage": 0.4347362887550333,
+     "mass": 3262.695847106525,
+     "random_k_over_p": 0.15091667322369973
+    }
+   },
+   "1e-06": {
+    "filtered_bottom_up": {
+     "ocean_dim": 3619,
+     "coverage": 0.20779063376182913,
+     "mass": 3374.935473559629,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "filtered_top_down": {
+     "ocean_dim": 3619,
+     "coverage": 0.20779063376182913,
+     "mass": 3374.935473559629,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 3619,
+     "coverage": 0.2077906337619124,
+     "mass": 3374.9354735609813,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "atomic_union": {
+     "ocean_dim": 3619,
+     "coverage": 0.2077906337618291,
+     "mass": 3374.9354735596285,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "kerJX": {
+     "ocean_dim": 3836,
+     "coverage": 0.21457429259552915,
+     "mass": 3485.1156603365844,
+     "random_k_over_p": 0.15091667322369973
+    }
+   },
+   "0.0001": {
+    "filtered_bottom_up": {
+     "ocean_dim": 3619,
+     "coverage": 0.1535169102866358,
+     "mass": 3529.814318220617,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "filtered_top_down": {
+     "ocean_dim": 3619,
+     "coverage": 0.15351691028663583,
+     "mass": 3529.8143182206177,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 3619,
+     "coverage": 0.15351691028669576,
+     "mass": 3529.8143182219956,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "atomic_union": {
+     "ocean_dim": 3619,
+     "coverage": 0.1535169102866358,
+     "mass": 3529.814318220617,
+     "random_k_over_p": 0.14237941616177513
+    },
+    "kerJX": {
+     "ocean_dim": 3836,
+     "coverage": 0.1616632588622344,
+     "mass": 3717.1233110193552,
+     "random_k_over_p": 0.15091667322369973
+    }
+   }
+  },
+  "self_validation": {
+   "atomic_union_svd_mass_vs_direct_absdiff_tau1e-8": 1.77351466845721e-11,
+   "atomic_union_shared_cos>0.99_tau1e-8": 3200,
+   "filtered_bottom_up_svd_mass_vs_direct_absdiff_tau1e-8": 1.77351466845721e-11,
+   "filtered_bottom_up_shared_cos>0.99_tau1e-8": 3200,
+   "filtered_bottom_up_coord_vs_direct_max_abs": 2.2093438190040615e-14,
+   "atomic_union_in_kerJX_sqmass_frac": 0.9999965064254293,
+   "dedup_in_kerJX_sqmass_frac": 0.9999965064258206
+  },
+  "filtering_effect": {
+   "1e-08": {
+    "atomic_union_cov": 0.4283572924665475,
+    "dedup_filtered_cov": 0.4283572924667269,
+    "kerJX_cov": 0.4347362887550333,
+    "cov_removed_by_filtering_pp": -1.7935652962819404e-11,
+    "cov_atomicunion_minus_kerJX_pp": -0.6378996288485761
+   },
+   "1e-06": {
+    "atomic_union_cov": 0.2077906337618291,
+    "dedup_filtered_cov": 0.2077906337619124,
+    "kerJX_cov": 0.21457429259552915,
+    "cov_removed_by_filtering_pp": -8.329448242250237e-12,
+    "cov_atomicunion_minus_kerJX_pp": -0.6783658833700051
+   },
+   "0.0001": {
+    "atomic_union_cov": 0.1535169102866358,
+    "dedup_filtered_cov": 0.15351691028669576,
+    "kerJX_cov": 0.1616632588622344,
+    "cov_removed_by_filtering_pp": -5.995204332975845e-12,
+    "cov_atomicunion_minus_kerJX_pp": -0.8146348575598594
+   }
+  },
+  "runtime_s": 219.92548537254333
+ },
+ "1": {
+  "p": 25418,
+  "m": 10000,
+  "epoch": 500,
+  "atomic_union_dim": 4573,
+  "kerJX_dim": 4753,
+  "Hnull_dim": {
+   "1e-08": 11024,
+   "1e-06": 19549,
+   "0.0001": 23892
+  },
+  "filtered_branches": {
+   "bottom_up": {
+    "dims": {
+     "W1": 0,
+     "W2": 1600,
+     "W3": 2783,
+     "V": 190
+    },
+    "total": 4573,
+    "identity_digest": "9fe8afa5b01833342205abd3e3800e11c67cf02e66110b3cca2d91127efb4f56",
+    "digest_matches_late_endpoint_record": true,
+    "record_certified_branch": true,
+    "Jv_rms_sqrtm": [
+     1.1330755372643741e-14,
+     1.0404372522224732e-14,
+     5.023470253011232e-15
+    ],
+    "in_atomic_union_resid_fro": 2.3542054290817806e-13
+   }
+  },
+  "dedup_filtered_span": {
+   "dim": 4573,
+   "orders_unioned": [
+    "bottom_up"
+   ],
+   "dim_removed_vs_atomic_union": 0,
+   "Jv_rms_sqrtm": [
+    8.06372288489672e-15,
+    1.0567485743165029e-14,
+    9.49000924138081e-15
+   ]
+  },
+  "atomic_union_Jv_rms_sqrtm": [
+   8.470512198326635e-15,
+   6.309671303128333e-15,
+   3.9050455610784855e-15
+  ],
+  "coverage": {
+   "1e-08": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4573,
+     "coverage": 0.3787106365612514,
+     "mass": 4174.906057451236,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4573,
+     "coverage": 0.3787106365610147,
+     "mass": 4174.906057448627,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "atomic_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.37871063656125126,
+     "mass": 4174.906057451234,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "kerJX": {
+     "ocean_dim": 4753,
+     "coverage": 0.3834796603815421,
+     "mass": 4227.47977604612,
+     "random_k_over_p": 0.18699346919505863
+    }
+   },
+   "1e-06": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4573,
+     "coverage": 0.2243605873309571,
+     "mass": 4386.0251217328805,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4573,
+     "coverage": 0.2243605873308196,
+     "mass": 4386.025121730192,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "atomic_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.224360587330957,
+     "mass": 4386.025121732879,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "kerJX": {
+     "ocean_dim": 4753,
+     "coverage": 0.22974876016490925,
+     "mass": 4491.358512463811,
+     "random_k_over_p": 0.18699346919505863
+    }
+   },
+   "0.0001": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4573,
+     "coverage": 0.18951720208599893,
+     "mass": 4527.944992238687,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4573,
+     "coverage": 0.18951720208588374,
+     "mass": 4527.9449922359345,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "atomic_union": {
+     "ocean_dim": 4573,
+     "coverage": 0.18951720208599887,
+     "mass": 4527.944992238685,
+     "random_k_over_p": 0.17991187347548981
+    },
+    "kerJX": {
+     "ocean_dim": 4753,
+     "coverage": 0.1959397496975665,
+     "mass": 4681.392499774259,
+     "random_k_over_p": 0.18699346919505863
+    }
+   }
+  },
+  "self_validation": {
+   "atomic_union_svd_mass_vs_direct_absdiff_tau1e-8": 1.1368683772161603e-10,
+   "atomic_union_shared_cos>0.99_tau1e-8": 4145,
+   "filtered_bottom_up_svd_mass_vs_direct_absdiff_tau1e-8": 1.2096279533579946e-10,
+   "filtered_bottom_up_shared_cos>0.99_tau1e-8": 4145,
+   "filtered_bottom_up_coord_vs_direct_max_abs": 4.7579995499091865e-14,
+   "atomic_union_in_kerJX_sqmass_frac": 0.9999999534197694,
+   "dedup_in_kerJX_sqmass_frac": 0.9999999534191626
+  },
+  "filtering_effect": {
+   "1e-08": {
+    "atomic_union_cov": 0.37871063656125126,
+    "dedup_filtered_cov": 0.3787106365610147,
+    "kerJX_cov": 0.3834796603815421,
+    "cov_removed_by_filtering_pp": 2.365330153963896e-11,
+    "cov_atomicunion_minus_kerJX_pp": -0.47690238202908186
+   },
+   "1e-06": {
+    "atomic_union_cov": 0.224360587330957,
+    "dedup_filtered_cov": 0.2243605873308196,
+    "kerJX_cov": 0.22974876016490925,
+    "cov_removed_by_filtering_pp": 1.3741785487297875e-11,
+    "cov_atomicunion_minus_kerJX_pp": -0.5388172833952237
+   },
+   "0.0001": {
+    "atomic_union_cov": 0.18951720208599887,
+    "dedup_filtered_cov": 0.18951720208588374,
+    "kerJX_cov": 0.1959397496975665,
+    "cov_removed_by_filtering_pp": 1.1513012765362873e-11,
+    "cov_atomicunion_minus_kerJX_pp": -0.642254761156763
+   }
+  },
+  "runtime_s": 341.0076768398285
+ },
+ "2": {
+  "p": 25418,
+  "m": 10000,
+  "epoch": 500,
+  "atomic_union_dim": 4074,
+  "kerJX_dim": 4281,
+  "Hnull_dim": {
+   "1e-08": 7607,
+   "1e-06": 16478,
+   "0.0001": 22306
+  },
+  "filtered_branches": {
+   "bottom_up": {
+    "dims": {
+     "W1": 0,
+     "W2": 724,
+     "W3": 2988,
+     "V": 360
+    },
+    "total": 4072,
+    "identity_digest": "c6cf8a9c1c40b4ba59f303cc3c4f915c0673610e5e747b189ac87b11f8083c05",
+    "digest_matches_late_endpoint_record": true,
+    "record_certified_branch": true,
+    "Jv_rms_sqrtm": [
+     3.796590116039031e-16,
+     3.686951492667634e-16,
+     3.6869411362836996e-16
+    ],
+    "in_atomic_union_resid_fro": 1.2577222790615672e-12
+   }
+  },
+  "dedup_filtered_span": {
+   "dim": 4072,
+   "orders_unioned": [
+    "bottom_up"
+   ],
+   "dim_removed_vs_atomic_union": 2,
+   "Jv_rms_sqrtm": [
+    4.402787663122349e-16,
+    4.537795575524959e-16,
+    5.091555699821168e-16
+   ]
+  },
+  "atomic_union_Jv_rms_sqrtm": [
+   5.543963734671014e-16,
+   4.2923077010991967e-16,
+   4.06569158187778e-16
+  ],
+  "coverage": {
+   "1e-08": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4072,
+     "coverage": 0.4559578237174137,
+     "mass": 3468.4711650183663,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4072,
+     "coverage": 0.4559578237173103,
+     "mass": 3468.4711650175796,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "atomic_union": {
+     "ocean_dim": 4074,
+     "coverage": 0.45595782534293783,
+     "mass": 3468.471177383728,
+     "random_k_over_p": 0.16028011645290738
+    },
+    "kerJX": {
+     "ocean_dim": 4281,
+     "coverage": 0.4619618568081565,
+     "mass": 3514.1438447396463,
+     "random_k_over_p": 0.1684239515304115
+    }
+   },
+   "1e-06": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4072,
+     "coverage": 0.22553482998797936,
+     "mass": 3716.362928541924,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4072,
+     "coverage": 0.2255348299879313,
+     "mass": 3716.362928541132,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "atomic_union": {
+     "ocean_dim": 4074,
+     "coverage": 0.2255350943528093,
+     "mass": 3716.367284745592,
+     "random_k_over_p": 0.16028011645290738
+    },
+    "kerJX": {
+     "ocean_dim": 4281,
+     "coverage": 0.23135347235247689,
+     "mass": 3812.2425174241143,
+     "random_k_over_p": 0.1684239515304115
+    }
+   },
+   "0.0001": {
+    "filtered_bottom_up": {
+     "ocean_dim": 4072,
+     "coverage": 0.17923289319126273,
+     "mass": 3997.968915524307,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "dedup_filtered_span": {
+     "ocean_dim": 4072,
+     "coverage": 0.1792328931912265,
+     "mass": 3997.9689155234983,
+     "random_k_over_p": 0.1602014320560233
+    },
+    "atomic_union": {
+     "ocean_dim": 4074,
+     "coverage": 0.17926467526564682,
+     "mass": 3998.677846475518,
+     "random_k_over_p": 0.16028011645290738
+    },
+    "kerJX": {
+     "ocean_dim": 4281,
+     "coverage": 0.1869406077892275,
+     "mass": 4169.897197346509,
+     "random_k_over_p": 0.1684239515304115
+    }
+   }
+  },
+  "self_validation": {
+   "atomic_union_svd_mass_vs_direct_absdiff_tau1e-8": 5.502442945726216e-11,
+   "atomic_union_shared_cos>0.99_tau1e-8": 3439,
+   "filtered_bottom_up_svd_mass_vs_direct_absdiff_tau1e-8": 7.09405867382884e-11,
+   "filtered_bottom_up_shared_cos>0.99_tau1e-8": 3439,
+   "filtered_bottom_up_coord_vs_direct_max_abs": 2.1321833187926131e-13,
+   "atomic_union_in_kerJX_sqmass_frac": 0.9993966430422804,
+   "dedup_in_kerJX_sqmass_frac": 0.9993963471628411
+  },
+  "filtering_effect": {
+   "1e-08": {
+    "atomic_union_cov": 0.45595782534293783,
+    "dedup_filtered_cov": 0.4559578237173103,
+    "kerJX_cov": 0.4619618568081565,
+    "cov_removed_by_filtering_pp": 1.6256275214843185e-07,
+    "cov_atomicunion_minus_kerJX_pp": -0.6004031465218662
+   },
+   "1e-06": {
+    "atomic_union_cov": 0.2255350943528093,
+    "dedup_filtered_cov": 0.2255348299879313,
+    "kerJX_cov": 0.23135347235247689,
+    "cov_removed_by_filtering_pp": 2.643648779887542e-05,
+    "cov_atomicunion_minus_kerJX_pp": -0.5818377999667584
+   },
+   "0.0001": {
+    "atomic_union_cov": 0.17926467526564682,
+    "dedup_filtered_cov": 0.1792328931912265,
+    "kerJX_cov": 0.1869406077892275,
+    "cov_removed_by_filtering_pp": 0.0031782074420311224,
+    "cov_atomicunion_minus_kerJX_pp": -0.7675932523580675
+   }
+  },
+  "runtime_s": 277.0859088897705
+ }
+}

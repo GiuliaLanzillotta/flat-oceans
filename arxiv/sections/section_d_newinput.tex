@@ -1,0 +1,13 @@
+\paragraph{From clean inputs to pure noise.}
+\label{app:newinput-interpolation}
+We measure how much of each atomic space survives when clean MNIST inputs are gradually replaced by uniform noise, following Appendix~\ref{app:methods-newinput}. Most hidden-layer directions survive throughout. Intermediate mixtures constrain the spaces more than pure noise, while the readout loses a larger and more seed-dependent fraction (Figure~\ref{fig:newinput-shift}). Thus moving farther from the training distribution need not remove more invariant directions.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=1.499in]{newinput_interpolation.pdf}
+\caption{Atomic-space survival under clean-to-noise interpolation, mean $\pm$ sample SD across three seeds. L3 has additional rank-cutoff sensitivity (Appendix~\ref{app:methods-newinput}), which preserves the qualitative trend.}
+\label{fig:newinput-shift}
+\end{figure}
+
+\paragraph{SVHN inputs.}
+Most of the hidden-layer spaces also survive SVHN images passed through the fixed MNIST preprocessing (Table~\ref{tab:newinput-svhn}). L2 survival is higher than for the clean MNIST reference in every seed; L3 and readout effects vary across seeds. Survival therefore depends on the additional feature and downstream constraints, rather than distribution shift alone.
+\input{sections/section_d_svhn_summary}

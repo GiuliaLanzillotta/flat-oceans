@@ -1,0 +1,73 @@
+{
+ "seed": 2,
+ "spawn": 350,
+ "gate_autodiff_exposure": 1e-12,
+ "convention": "identical to w1_admission_s1.py (robust candidate = autodiff JVP exposure <= 1e-12); run on the 8 smallest-exposure stored columns per child, which bound all others",
+ "label": "zero admitted candidates => the W1 branch component is GENUINELY ZERO-DIMENSIONAL at these endpoints (a real zero under the admission convention, not missing/uncomputed); the certified reuse_bottom_up branch (W1 excluded, dim 0) is therefore the complete-layer construction here",
+ "children": {
+  "c0": {
+   "p": 32896,
+   "declared_rank": 32896,
+   "declared_kernel_dims": 0,
+   "min_stored_exposure": 2.2035647822471332e-07,
+   "smallest8_stored_exposure": [
+    2.2640467148723206e-07,
+    2.2572716796505973e-07,
+    2.2535128961478983e-07,
+    2.248802682976882e-07,
+    2.237243190354713e-07,
+    2.2306326822535495e-07,
+    2.2262733190833366e-07,
+    2.2035647822471332e-07
+   ],
+   "smallest8_jvp_exposure": [
+    2.264046732228305e-07,
+    2.2572716990192137e-07,
+    2.2535129082250045e-07,
+    2.2488027004139533e-07,
+    2.2372432064234693e-07,
+    2.230632691733239e-07,
+    2.2262733295637237e-07,
+    2.2035647984777194e-07
+   ],
+   "jvp_agreement_over_sigma0rate": 6.31729107912927e-15,
+   "n_admitted": 0,
+   "min_exposure_over_gate": 220356.47822471333,
+   "factor_sha256": "c38be8481bfdeb6ef96eada4e147ec0fab444a2a90718bca6c10c7e11515674f",
+   "runtime_s": 35.6
+  },
+  "c1": {
+   "p": 32896,
+   "declared_rank": 32896,
+   "declared_kernel_dims": 0,
+   "min_stored_exposure": 8.98353658574068e-08,
+   "smallest8_stored_exposure": [
+    1.0457211918902951e-07,
+    1.0431984942109224e-07,
+    1.0414036330840824e-07,
+    1.0366375464387611e-07,
+    1.0318594407462878e-07,
+    1.0312381708434413e-07,
+    1.0279906684838814e-07,
+    8.98353658574068e-08
+   ],
+   "smallest8_jvp_exposure": [
+    1.0457211933529294e-07,
+    1.0431984953579592e-07,
+    1.0414036338629976e-07,
+    1.0366375476420743e-07,
+    1.0318594418308889e-07,
+    1.0312381723328876e-07,
+    1.0279906709388412e-07,
+    8.983536555188054e-08
+   ],
+   "jvp_agreement_over_sigma0rate": 6.769102864723968e-15,
+   "n_admitted": 0,
+   "min_exposure_over_gate": 89835.3658574068,
+   "factor_sha256": "abe257e7f2124bc2f07259b7fdccb0a1e02b8634ec3b13060c1fcc46898a18aa",
+   "runtime_s": 35.4
+  }
+ },
+ "passed": true,
+ "failures": []
+}

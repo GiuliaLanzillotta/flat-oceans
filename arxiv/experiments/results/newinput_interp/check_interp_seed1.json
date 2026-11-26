@@ -1,0 +1,1606 @@
+{
+ "target": "seed1",
+ "passed": true,
+ "label": "computed + automatically checked",
+ "sources": [
+  "results/newinput_interp/mnist_mlp_seed1_interp.json"
+ ],
+ "checks": {
+  "record_exists": {
+   "ok": true,
+   "detail": "no interp record for seed 1 under results/newinput_interp/"
+  },
+  "a0.0_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.0_spectra.npz"
+  },
+  "a0.0_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6357 != recorded 6357"
+  },
+  "a0.0_2_dim_K_union": {
+   "ok": true,
+   "detail": "10155 != 10155"
+  },
+  "a0.0_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10183, '1e-09': 10155, '1e-12': 10155} != {'1e-06': 10183, '1e-09': 10155, '1e-12': 10155}"
+  },
+  "a0.0_2_exposed_dims": {
+   "ok": true,
+   "detail": "388 != 10543 - 10155"
+  },
+  "a0.0_2_exposed_ranks": {
+   "ok": true,
+   "detail": "388 != 6357 - 5969"
+  },
+  "a0.0_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_2_fraction": {
+   "ok": true,
+   "detail": "0.03680166935407379 != 0.03680166935407379"
+  },
+  "a0.0_2_gap": {
+   "ok": true,
+   "detail": "recomputed 3539014.9339914606 != recorded 3539014.9339914606"
+  },
+  "a0.0_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.0_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.0_spectra.npz"
+  },
+  "a0.0_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1509 != recorded 1509"
+  },
+  "a0.0_3_dim_K_union": {
+   "ok": true,
+   "detail": "15003 != 15003"
+  },
+  "a0.0_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15178, '1e-09': 15003, '1e-12': 15003} != {'1e-06': 15178, '1e-09': 15003, '1e-12': 15003}"
+  },
+  "a0.0_3_exposed_dims": {
+   "ok": true,
+   "detail": "328 != 15331 - 15003"
+  },
+  "a0.0_3_exposed_ranks": {
+   "ok": true,
+   "detail": "328 != 1509 - 1181"
+  },
+  "a0.0_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_3_fraction": {
+   "ok": true,
+   "detail": "0.021394560041745482 != 0.021394560041745482"
+  },
+  "a0.0_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1050138.6336092653 != recorded 1050138.6336092653"
+  },
+  "a0.0_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.0_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.0_spectra.npz"
+  },
+  "a0.0_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 490 != recorded 490"
+  },
+  "a0.0_readout_dim_K_union": {
+   "ok": true,
+   "detail": "800 != 800"
+  },
+  "a0.0_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 800, '1e-09': 800, '1e-12': 800} != {'1e-06': 800, '1e-09': 800, '1e-12': 800}"
+  },
+  "a0.0_readout_exposed_dims": {
+   "ok": true,
+   "detail": "80 != 880 - 800"
+  },
+  "a0.0_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "80 != 490 - 410"
+  },
+  "a0.0_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.0_readout_fraction": {
+   "ok": true,
+   "detail": "0.09090909090909091 != 0.09090909090909091"
+  },
+  "a0.0_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 5714410999.002052 != recorded 5714410999.002052"
+  },
+  "a0.0_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.1_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.1_spectra.npz"
+  },
+  "a0.1_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6392 != recorded 6392"
+  },
+  "a0.1_2_dim_K_union": {
+   "ok": true,
+   "detail": "10120 != 10120"
+  },
+  "a0.1_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10147, '1e-09': 10120, '1e-12': 10120} != {'1e-06': 10147, '1e-09': 10120, '1e-12': 10120}"
+  },
+  "a0.1_2_exposed_dims": {
+   "ok": true,
+   "detail": "423 != 10543 - 10120"
+  },
+  "a0.1_2_exposed_ranks": {
+   "ok": true,
+   "detail": "423 != 6392 - 5969"
+  },
+  "a0.1_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_2_fraction": {
+   "ok": true,
+   "detail": "0.04012140756900313 != 0.04012140756900313"
+  },
+  "a0.1_2_gap": {
+   "ok": true,
+   "detail": "recomputed 2666825.291786969 != recorded 2666825.291786969"
+  },
+  "a0.1_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.1_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.1_spectra.npz"
+  },
+  "a0.1_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1597 != recorded 1597"
+  },
+  "a0.1_3_dim_K_union": {
+   "ok": true,
+   "detail": "14915 != 14915"
+  },
+  "a0.1_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15088, '1e-09': 14915, '1e-12': 14913} != {'1e-06': 15088, '1e-09': 14915, '1e-12': 14913}"
+  },
+  "a0.1_3_exposed_dims": {
+   "ok": true,
+   "detail": "416 != 15331 - 14915"
+  },
+  "a0.1_3_exposed_ranks": {
+   "ok": true,
+   "detail": "416 != 1597 - 1181"
+  },
+  "a0.1_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_3_fraction": {
+   "ok": true,
+   "detail": "0.027134563955384515 != 0.027134563955384515"
+  },
+  "a0.1_3_gap": {
+   "ok": true,
+   "detail": "recomputed 52.0423178779048 != recorded 52.0423178779048"
+  },
+  "a0.1_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.1_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.1_spectra.npz"
+  },
+  "a0.1_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 490 != recorded 490"
+  },
+  "a0.1_readout_dim_K_union": {
+   "ok": true,
+   "detail": "800 != 800"
+  },
+  "a0.1_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 800, '1e-09': 800, '1e-12': 800} != {'1e-06': 800, '1e-09': 800, '1e-12': 800}"
+  },
+  "a0.1_readout_exposed_dims": {
+   "ok": true,
+   "detail": "80 != 880 - 800"
+  },
+  "a0.1_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "80 != 490 - 410"
+  },
+  "a0.1_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.1_readout_fraction": {
+   "ok": true,
+   "detail": "0.09090909090909091 != 0.09090909090909091"
+  },
+  "a0.1_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 16214568944.128412 != recorded 16214568944.128412"
+  },
+  "a0.1_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.2_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.2_spectra.npz"
+  },
+  "a0.2_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6363 != recorded 6363"
+  },
+  "a0.2_2_dim_K_union": {
+   "ok": true,
+   "detail": "10149 != 10149"
+  },
+  "a0.2_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10186, '1e-09': 10149, '1e-12': 10149} != {'1e-06': 10186, '1e-09': 10149, '1e-12': 10149}"
+  },
+  "a0.2_2_exposed_dims": {
+   "ok": true,
+   "detail": "394 != 10543 - 10149"
+  },
+  "a0.2_2_exposed_ranks": {
+   "ok": true,
+   "detail": "394 != 6363 - 5969"
+  },
+  "a0.2_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_2_fraction": {
+   "ok": true,
+   "detail": "0.037370767333775964 != 0.037370767333775964"
+  },
+  "a0.2_2_gap": {
+   "ok": true,
+   "detail": "recomputed 4688167.73728794 != recorded 4688167.73728794"
+  },
+  "a0.2_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.2_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.2_spectra.npz"
+  },
+  "a0.2_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1723 != recorded 1723"
+  },
+  "a0.2_3_dim_K_union": {
+   "ok": true,
+   "detail": "14789 != 14789"
+  },
+  "a0.2_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 14908, '1e-09': 14789, '1e-12': 14789} != {'1e-06': 14908, '1e-09': 14789, '1e-12': 14789}"
+  },
+  "a0.2_3_exposed_dims": {
+   "ok": true,
+   "detail": "542 != 15331 - 14789"
+  },
+  "a0.2_3_exposed_ranks": {
+   "ok": true,
+   "detail": "542 != 1723 - 1181"
+  },
+  "a0.2_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_3_fraction": {
+   "ok": true,
+   "detail": "0.0353532059226404 != 0.0353532059226404"
+  },
+  "a0.2_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1465001.5582022811 != recorded 1465001.5582022811"
+  },
+  "a0.2_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.2_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.2_spectra.npz"
+  },
+  "a0.2_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 510 != recorded 510"
+  },
+  "a0.2_readout_dim_K_union": {
+   "ok": true,
+   "detail": "780 != 780"
+  },
+  "a0.2_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 780, '1e-09': 780, '1e-12': 780} != {'1e-06': 780, '1e-09': 780, '1e-12': 780}"
+  },
+  "a0.2_readout_exposed_dims": {
+   "ok": true,
+   "detail": "100 != 880 - 780"
+  },
+  "a0.2_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "100 != 510 - 410"
+  },
+  "a0.2_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.2_readout_fraction": {
+   "ok": true,
+   "detail": "0.11363636363636363 != 0.11363636363636363"
+  },
+  "a0.2_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 15439974080.79809 != recorded 15439974080.79809"
+  },
+  "a0.2_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.3_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.3_spectra.npz"
+  },
+  "a0.3_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6248 != recorded 6248"
+  },
+  "a0.3_2_dim_K_union": {
+   "ok": true,
+   "detail": "10264 != 10264"
+  },
+  "a0.3_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10327, '1e-09': 10264, '1e-12': 10264} != {'1e-06': 10327, '1e-09': 10264, '1e-12': 10264}"
+  },
+  "a0.3_2_exposed_dims": {
+   "ok": true,
+   "detail": "279 != 10543 - 10264"
+  },
+  "a0.3_2_exposed_ranks": {
+   "ok": true,
+   "detail": "279 != 6248 - 5969"
+  },
+  "a0.3_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_2_fraction": {
+   "ok": true,
+   "detail": "0.026463056056151 != 0.026463056056151"
+  },
+  "a0.3_2_gap": {
+   "ok": true,
+   "detail": "recomputed 2180392.606280166 != recorded 2180392.606280166"
+  },
+  "a0.3_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.3_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.3_spectra.npz"
+  },
+  "a0.3_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1827 != recorded 1827"
+  },
+  "a0.3_3_dim_K_union": {
+   "ok": true,
+   "detail": "14685 != 14685"
+  },
+  "a0.3_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 14779, '1e-09': 14685, '1e-12': 14682} != {'1e-06': 14779, '1e-09': 14685, '1e-12': 14682}"
+  },
+  "a0.3_3_exposed_dims": {
+   "ok": true,
+   "detail": "646 != 15331 - 14685"
+  },
+  "a0.3_3_exposed_ranks": {
+   "ok": true,
+   "detail": "646 != 1827 - 1181"
+  },
+  "a0.3_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_3_fraction": {
+   "ok": true,
+   "detail": "0.04213684691148653 != 0.04213684691148653"
+  },
+  "a0.3_3_gap": {
+   "ok": true,
+   "detail": "recomputed 8.13307037185616 != recorded 8.13307037185616"
+  },
+  "a0.3_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.3_3_qualification_present": {
+   "ok": true,
+   "detail": "gap < 10 without cutoff_sensitivity"
+  },
+  "a0.3_3_qualification_values": {
+   "ok": true,
+   "detail": "recorded {'dim_K_union_range': [14682, 14779], 'band_sv_within_decade_of_cut': 5, 'exposed_fraction_uncertainty': 0.0003261365860022177, 'note': 'union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)'} vs recomputed band 5, range [14682, 14779]"
+  },
+  "a0.3_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.3_spectra.npz"
+  },
+  "a0.3_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 540 != recorded 540"
+  },
+  "a0.3_readout_dim_K_union": {
+   "ok": true,
+   "detail": "750 != 750"
+  },
+  "a0.3_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 760, '1e-09': 750, '1e-12': 750} != {'1e-06': 760, '1e-09': 750, '1e-12': 750}"
+  },
+  "a0.3_readout_exposed_dims": {
+   "ok": true,
+   "detail": "130 != 880 - 750"
+  },
+  "a0.3_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "130 != 540 - 410"
+  },
+  "a0.3_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.3_readout_fraction": {
+   "ok": true,
+   "detail": "0.14772727272727273 != 0.14772727272727273"
+  },
+  "a0.3_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 995913182.9979763 != recorded 995913182.9979763"
+  },
+  "a0.3_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.4_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.4_spectra.npz"
+  },
+  "a0.4_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6142 != recorded 6142"
+  },
+  "a0.4_2_dim_K_union": {
+   "ok": true,
+   "detail": "10370 != 10370"
+  },
+  "a0.4_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10521, '1e-09': 10370, '1e-12': 10370} != {'1e-06': 10521, '1e-09': 10370, '1e-12': 10370}"
+  },
+  "a0.4_2_exposed_dims": {
+   "ok": true,
+   "detail": "173 != 10543 - 10370"
+  },
+  "a0.4_2_exposed_ranks": {
+   "ok": true,
+   "detail": "173 != 6142 - 5969"
+  },
+  "a0.4_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_2_fraction": {
+   "ok": true,
+   "detail": "0.016408991748079294 != 0.016408991748079294"
+  },
+  "a0.4_2_gap": {
+   "ok": true,
+   "detail": "recomputed 884830.4609797776 != recorded 884830.4609797776"
+  },
+  "a0.4_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.4_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.4_spectra.npz"
+  },
+  "a0.4_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1729 != recorded 1729"
+  },
+  "a0.4_3_dim_K_union": {
+   "ok": true,
+   "detail": "14783 != 14783"
+  },
+  "a0.4_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 14896, '1e-09': 14783, '1e-12': 14781} != {'1e-06': 14896, '1e-09': 14783, '1e-12': 14781}"
+  },
+  "a0.4_3_exposed_dims": {
+   "ok": true,
+   "detail": "548 != 15331 - 14783"
+  },
+  "a0.4_3_exposed_ranks": {
+   "ok": true,
+   "detail": "548 != 1729 - 1181"
+  },
+  "a0.4_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_3_fraction": {
+   "ok": true,
+   "detail": "0.035744569825843064 != 0.035744569825843064"
+  },
+  "a0.4_3_gap": {
+   "ok": true,
+   "detail": "recomputed 12.675256888405071 != recorded 12.675256888405071"
+  },
+  "a0.4_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.4_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.4_spectra.npz"
+  },
+  "a0.4_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 580 != recorded 580"
+  },
+  "a0.4_readout_dim_K_union": {
+   "ok": true,
+   "detail": "710 != 710"
+  },
+  "a0.4_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 710, '1e-09': 710, '1e-12': 710} != {'1e-06': 710, '1e-09': 710, '1e-12': 710}"
+  },
+  "a0.4_readout_exposed_dims": {
+   "ok": true,
+   "detail": "170 != 880 - 710"
+  },
+  "a0.4_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "170 != 580 - 410"
+  },
+  "a0.4_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.4_readout_fraction": {
+   "ok": true,
+   "detail": "0.19318181818181818 != 0.19318181818181818"
+  },
+  "a0.4_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 2631382339.8044252 != recorded 2631382339.8044252"
+  },
+  "a0.4_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.5_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.5_spectra.npz"
+  },
+  "a0.5_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6078 != recorded 6078"
+  },
+  "a0.5_2_dim_K_union": {
+   "ok": true,
+   "detail": "10434 != 10434"
+  },
+  "a0.5_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10631, '1e-09': 10434, '1e-12': 10434} != {'1e-06': 10631, '1e-09': 10434, '1e-12': 10434}"
+  },
+  "a0.5_2_exposed_dims": {
+   "ok": true,
+   "detail": "109 != 10543 - 10434"
+  },
+  "a0.5_2_exposed_ranks": {
+   "ok": true,
+   "detail": "109 != 6078 - 5969"
+  },
+  "a0.5_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_2_fraction": {
+   "ok": true,
+   "detail": "0.010338613297922792 != 0.010338613297922792"
+  },
+  "a0.5_2_gap": {
+   "ok": true,
+   "detail": "recomputed 1074092.2243591258 != recorded 1074092.2243591258"
+  },
+  "a0.5_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.5_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.5_spectra.npz"
+  },
+  "a0.5_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1589 != recorded 1589"
+  },
+  "a0.5_3_dim_K_union": {
+   "ok": true,
+   "detail": "14923 != 14923"
+  },
+  "a0.5_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15039, '1e-09': 14923, '1e-12': 14919} != {'1e-06': 15039, '1e-09': 14923, '1e-12': 14919}"
+  },
+  "a0.5_3_exposed_dims": {
+   "ok": true,
+   "detail": "408 != 15331 - 14923"
+  },
+  "a0.5_3_exposed_ranks": {
+   "ok": true,
+   "detail": "408 != 1589 - 1181"
+  },
+  "a0.5_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_3_fraction": {
+   "ok": true,
+   "detail": "0.026612745417780966 != 0.026612745417780966"
+  },
+  "a0.5_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1.845899002924781 != recorded 1.845899002924781"
+  },
+  "a0.5_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.5_3_qualification_present": {
+   "ok": true,
+   "detail": "gap < 10 without cutoff_sensitivity"
+  },
+  "a0.5_3_qualification_values": {
+   "ok": true,
+   "detail": "recorded {'dim_K_union_range': [14919, 15039], 'band_sv_within_decade_of_cut': 9, 'exposed_fraction_uncertainty': 0.0005870458548039919, 'note': 'union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)'} vs recomputed band 9, range [14919, 15039]"
+  },
+  "a0.5_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.5_spectra.npz"
+  },
+  "a0.5_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 580 != recorded 580"
+  },
+  "a0.5_readout_dim_K_union": {
+   "ok": true,
+   "detail": "710 != 710"
+  },
+  "a0.5_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 710, '1e-09': 710, '1e-12': 710} != {'1e-06': 710, '1e-09': 710, '1e-12': 710}"
+  },
+  "a0.5_readout_exposed_dims": {
+   "ok": true,
+   "detail": "170 != 880 - 710"
+  },
+  "a0.5_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "170 != 580 - 410"
+  },
+  "a0.5_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.5_readout_fraction": {
+   "ok": true,
+   "detail": "0.19318181818181818 != 0.19318181818181818"
+  },
+  "a0.5_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 2033277523.4820387 != recorded 2033277523.4820387"
+  },
+  "a0.5_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.6_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.6_spectra.npz"
+  },
+  "a0.6_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 6015 != recorded 6015"
+  },
+  "a0.6_2_dim_K_union": {
+   "ok": true,
+   "detail": "10497 != 10497"
+  },
+  "a0.6_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10734, '1e-09': 10497, '1e-12': 10497} != {'1e-06': 10734, '1e-09': 10497, '1e-12': 10497}"
+  },
+  "a0.6_2_exposed_dims": {
+   "ok": true,
+   "detail": "46 != 10543 - 10497"
+  },
+  "a0.6_2_exposed_ranks": {
+   "ok": true,
+   "detail": "46 != 6015 - 5969"
+  },
+  "a0.6_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_2_fraction": {
+   "ok": true,
+   "detail": "0.004363084511049986 != 0.004363084511049986"
+  },
+  "a0.6_2_gap": {
+   "ok": true,
+   "detail": "recomputed 801083.4073115251 != recorded 801083.4073115251"
+  },
+  "a0.6_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.6_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.6_spectra.npz"
+  },
+  "a0.6_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1500 != recorded 1500"
+  },
+  "a0.6_3_dim_K_union": {
+   "ok": true,
+   "detail": "15012 != 15012"
+  },
+  "a0.6_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15156, '1e-09': 15012, '1e-12': 15012} != {'1e-06': 15156, '1e-09': 15012, '1e-12': 15012}"
+  },
+  "a0.6_3_exposed_dims": {
+   "ok": true,
+   "detail": "319 != 15331 - 15012"
+  },
+  "a0.6_3_exposed_ranks": {
+   "ok": true,
+   "detail": "319 != 1500 - 1181"
+  },
+  "a0.6_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_3_fraction": {
+   "ok": true,
+   "detail": "0.020807514186941493 != 0.020807514186941493"
+  },
+  "a0.6_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1084071.4302349105 != recorded 1084071.4302349105"
+  },
+  "a0.6_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.6_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.6_spectra.npz"
+  },
+  "a0.6_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 590 != recorded 590"
+  },
+  "a0.6_readout_dim_K_union": {
+   "ok": true,
+   "detail": "700 != 700"
+  },
+  "a0.6_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 710, '1e-09': 700, '1e-12': 700} != {'1e-06': 710, '1e-09': 700, '1e-12': 700}"
+  },
+  "a0.6_readout_exposed_dims": {
+   "ok": true,
+   "detail": "180 != 880 - 700"
+  },
+  "a0.6_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "180 != 590 - 410"
+  },
+  "a0.6_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.6_readout_fraction": {
+   "ok": true,
+   "detail": "0.20454545454545456 != 0.20454545454545456"
+  },
+  "a0.6_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 244567345.71576625 != recorded 244567345.71576625"
+  },
+  "a0.6_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.7_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.7_spectra.npz"
+  },
+  "a0.7_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 5997 != recorded 5997"
+  },
+  "a0.7_2_dim_K_union": {
+   "ok": true,
+   "detail": "10515 != 10515"
+  },
+  "a0.7_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10804, '1e-09': 10515, '1e-12': 10515} != {'1e-06': 10804, '1e-09': 10515, '1e-12': 10515}"
+  },
+  "a0.7_2_exposed_dims": {
+   "ok": true,
+   "detail": "28 != 10543 - 10515"
+  },
+  "a0.7_2_exposed_ranks": {
+   "ok": true,
+   "detail": "28 != 5997 - 5969"
+  },
+  "a0.7_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_2_fraction": {
+   "ok": true,
+   "detail": "0.0026557905719434695 != 0.0026557905719434695"
+  },
+  "a0.7_2_gap": {
+   "ok": true,
+   "detail": "recomputed 626458.7869533458 != recorded 626458.7869533458"
+  },
+  "a0.7_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.7_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.7_spectra.npz"
+  },
+  "a0.7_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1450 != recorded 1450"
+  },
+  "a0.7_3_dim_K_union": {
+   "ok": true,
+   "detail": "15062 != 15062"
+  },
+  "a0.7_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15215, '1e-09': 15062, '1e-12': 15062} != {'1e-06': 15215, '1e-09': 15062, '1e-12': 15062}"
+  },
+  "a0.7_3_exposed_dims": {
+   "ok": true,
+   "detail": "269 != 15331 - 15062"
+  },
+  "a0.7_3_exposed_ranks": {
+   "ok": true,
+   "detail": "269 != 1450 - 1181"
+  },
+  "a0.7_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_3_fraction": {
+   "ok": true,
+   "detail": "0.017546148326919316 != 0.017546148326919316"
+  },
+  "a0.7_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1757734.0876575992 != recorded 1757734.0876575992"
+  },
+  "a0.7_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.7_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.7_spectra.npz"
+  },
+  "a0.7_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 590 != recorded 590"
+  },
+  "a0.7_readout_dim_K_union": {
+   "ok": true,
+   "detail": "700 != 700"
+  },
+  "a0.7_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 700, '1e-09': 700, '1e-12': 700} != {'1e-06': 700, '1e-09': 700, '1e-12': 700}"
+  },
+  "a0.7_readout_exposed_dims": {
+   "ok": true,
+   "detail": "180 != 880 - 700"
+  },
+  "a0.7_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "180 != 590 - 410"
+  },
+  "a0.7_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.7_readout_fraction": {
+   "ok": true,
+   "detail": "0.20454545454545456 != 0.20454545454545456"
+  },
+  "a0.7_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 5947564934.748287 != recorded 5947564934.748287"
+  },
+  "a0.7_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.8_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.8_spectra.npz"
+  },
+  "a0.8_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 5991 != recorded 5991"
+  },
+  "a0.8_2_dim_K_union": {
+   "ok": true,
+   "detail": "10521 != 10521"
+  },
+  "a0.8_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10855, '1e-09': 10521, '1e-12': 10521} != {'1e-06': 10855, '1e-09': 10521, '1e-12': 10521}"
+  },
+  "a0.8_2_exposed_dims": {
+   "ok": true,
+   "detail": "22 != 10543 - 10521"
+  },
+  "a0.8_2_exposed_ranks": {
+   "ok": true,
+   "detail": "22 != 5991 - 5969"
+  },
+  "a0.8_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_2_fraction": {
+   "ok": true,
+   "detail": "0.0020866925922412975 != 0.0020866925922412975"
+  },
+  "a0.8_2_gap": {
+   "ok": true,
+   "detail": "recomputed 593229.9677923282 != recorded 593229.9677923282"
+  },
+  "a0.8_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.8_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.8_spectra.npz"
+  },
+  "a0.8_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1471 != recorded 1471"
+  },
+  "a0.8_3_dim_K_union": {
+   "ok": true,
+   "detail": "15041 != 15041"
+  },
+  "a0.8_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15208, '1e-09': 15041, '1e-12': 15041} != {'1e-06': 15208, '1e-09': 15041, '1e-12': 15041}"
+  },
+  "a0.8_3_exposed_dims": {
+   "ok": true,
+   "detail": "290 != 15331 - 15041"
+  },
+  "a0.8_3_exposed_ranks": {
+   "ok": true,
+   "detail": "290 != 1471 - 1181"
+  },
+  "a0.8_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_3_fraction": {
+   "ok": true,
+   "detail": "0.01891592198812863 != 0.01891592198812863"
+  },
+  "a0.8_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1601574.4802381538 != recorded 1601574.4802381538"
+  },
+  "a0.8_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.8_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.8_spectra.npz"
+  },
+  "a0.8_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 620 != recorded 620"
+  },
+  "a0.8_readout_dim_K_union": {
+   "ok": true,
+   "detail": "670 != 670"
+  },
+  "a0.8_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 670, '1e-09': 670, '1e-12': 670} != {'1e-06': 670, '1e-09': 670, '1e-12': 670}"
+  },
+  "a0.8_readout_exposed_dims": {
+   "ok": true,
+   "detail": "210 != 880 - 670"
+  },
+  "a0.8_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "210 != 620 - 410"
+  },
+  "a0.8_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.8_readout_fraction": {
+   "ok": true,
+   "detail": "0.23863636363636365 != 0.23863636363636365"
+  },
+  "a0.8_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 4286009310.166701 != recorded 4286009310.166701"
+  },
+  "a0.8_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a0.9_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.9_spectra.npz"
+  },
+  "a0.9_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 5979 != recorded 5979"
+  },
+  "a0.9_2_dim_K_union": {
+   "ok": true,
+   "detail": "10533 != 10533"
+  },
+  "a0.9_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10894, '1e-09': 10533, '1e-12': 10533} != {'1e-06': 10894, '1e-09': 10533, '1e-12': 10533}"
+  },
+  "a0.9_2_exposed_dims": {
+   "ok": true,
+   "detail": "10 != 10543 - 10533"
+  },
+  "a0.9_2_exposed_ranks": {
+   "ok": true,
+   "detail": "10 != 5979 - 5969"
+  },
+  "a0.9_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_2_fraction": {
+   "ok": true,
+   "detail": "0.0009484966328369535 != 0.0009484966328369535"
+  },
+  "a0.9_2_gap": {
+   "ok": true,
+   "detail": "recomputed 346998.9408364418 != recorded 346998.9408364418"
+  },
+  "a0.9_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a0.9_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.9_spectra.npz"
+  },
+  "a0.9_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1453 != recorded 1453"
+  },
+  "a0.9_3_dim_K_union": {
+   "ok": true,
+   "detail": "15059 != 15059"
+  },
+  "a0.9_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15219, '1e-09': 15059, '1e-12': 15055} != {'1e-06': 15219, '1e-09': 15059, '1e-12': 15055}"
+  },
+  "a0.9_3_exposed_dims": {
+   "ok": true,
+   "detail": "272 != 15331 - 15059"
+  },
+  "a0.9_3_exposed_ranks": {
+   "ok": true,
+   "detail": "272 != 1453 - 1181"
+  },
+  "a0.9_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_3_fraction": {
+   "ok": true,
+   "detail": "0.017741830278520644 != 0.017741830278520644"
+  },
+  "a0.9_3_gap": {
+   "ok": true,
+   "detail": "recomputed 3.299141641877113 != recorded 3.299141641877113"
+  },
+  "a0.9_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a0.9_3_qualification_present": {
+   "ok": true,
+   "detail": "gap < 10 without cutoff_sensitivity"
+  },
+  "a0.9_3_qualification_values": {
+   "ok": true,
+   "detail": "recorded {'dim_K_union_range': [15055, 15219], 'band_sv_within_decade_of_cut': 10, 'exposed_fraction_uncertainty': 0.0006522731720044354, 'note': 'union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)'} vs recomputed band 10, range [15055, 15219]"
+  },
+  "a0.9_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a0.9_spectra.npz"
+  },
+  "a0.9_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 630 != recorded 630"
+  },
+  "a0.9_readout_dim_K_union": {
+   "ok": true,
+   "detail": "660 != 660"
+  },
+  "a0.9_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 660, '1e-09': 660, '1e-12': 660} != {'1e-06': 660, '1e-09': 660, '1e-12': 660}"
+  },
+  "a0.9_readout_exposed_dims": {
+   "ok": true,
+   "detail": "220 != 880 - 660"
+  },
+  "a0.9_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "220 != 630 - 410"
+  },
+  "a0.9_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a0.9_readout_fraction": {
+   "ok": true,
+   "detail": "0.25 != 0.25"
+  },
+  "a0.9_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 3642755314.7329683 != recorded 3642755314.7329683"
+  },
+  "a0.9_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "a1.0_identity": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_input_shas": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_2_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_2_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a1.0_spectra.npz"
+  },
+  "a1.0_2_rank_union": {
+   "ok": true,
+   "detail": "recomputed 5972 != recorded 5972"
+  },
+  "a1.0_2_dim_K_union": {
+   "ok": true,
+   "detail": "10540 != 10540"
+  },
+  "a1.0_2_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 10908, '1e-09': 10540, '1e-12': 10540} != {'1e-06': 10908, '1e-09': 10540, '1e-12': 10540}"
+  },
+  "a1.0_2_exposed_dims": {
+   "ok": true,
+   "detail": "3 != 10543 - 10540"
+  },
+  "a1.0_2_exposed_ranks": {
+   "ok": true,
+   "detail": "3 != 5972 - 5969"
+  },
+  "a1.0_2_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_2_fraction": {
+   "ok": true,
+   "detail": "0.00028454898985108605 != 0.00028454898985108605"
+  },
+  "a1.0_2_gap": {
+   "ok": true,
+   "detail": "recomputed 814092.9050837135 != recorded 814092.9050837135"
+  },
+  "a1.0_2_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "10543 != new_batch dim_K_old 10543"
+  },
+  "a1.0_3_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_3_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a1.0_spectra.npz"
+  },
+  "a1.0_3_rank_union": {
+   "ok": true,
+   "detail": "recomputed 1446 != recorded 1446"
+  },
+  "a1.0_3_dim_K_union": {
+   "ok": true,
+   "detail": "15066 != 15066"
+  },
+  "a1.0_3_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 15225, '1e-09': 15066, '1e-12': 15066} != {'1e-06': 15225, '1e-09': 15066, '1e-12': 15066}"
+  },
+  "a1.0_3_exposed_dims": {
+   "ok": true,
+   "detail": "265 != 15331 - 15066"
+  },
+  "a1.0_3_exposed_ranks": {
+   "ok": true,
+   "detail": "265 != 1446 - 1181"
+  },
+  "a1.0_3_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_3_fraction": {
+   "ok": true,
+   "detail": "0.01728523905811754 != 0.01728523905811754"
+  },
+  "a1.0_3_gap": {
+   "ok": true,
+   "detail": "recomputed 1663425.8170467366 != recorded 1663425.8170467366"
+  },
+  "a1.0_3_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "15331 != new_batch dim_K_old 15331"
+  },
+  "a1.0_readout_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_readout_spectra_exists": {
+   "ok": true,
+   "detail": "results/newinput_interp/mnist_mlp_seed1_a1.0_spectra.npz"
+  },
+  "a1.0_readout_rank_union": {
+   "ok": true,
+   "detail": "recomputed 650 != recorded 650"
+  },
+  "a1.0_readout_dim_K_union": {
+   "ok": true,
+   "detail": "640 != 640"
+  },
+  "a1.0_readout_ladder": {
+   "ok": true,
+   "detail": "{'1e-06': 640, '1e-09': 640, '1e-12': 640} != {'1e-06': 640, '1e-09': 640, '1e-12': 640}"
+  },
+  "a1.0_readout_exposed_dims": {
+   "ok": true,
+   "detail": "240 != 880 - 640"
+  },
+  "a1.0_readout_exposed_ranks": {
+   "ok": true,
+   "detail": "240 != 650 - 410"
+  },
+  "a1.0_readout_dims_consistent": {
+   "ok": true,
+   "detail": ""
+  },
+  "a1.0_readout_fraction": {
+   "ok": true,
+   "detail": "0.2727272727272727 != 0.2727272727272727"
+  },
+  "a1.0_readout_gap": {
+   "ok": true,
+   "detail": "recomputed 9983198601.798807 != recorded 9983198601.798807"
+  },
+  "a1.0_readout_dim_K_X_vs_reference": {
+   "ok": true,
+   "detail": "880 != new_batch dim_K_old 880"
+  },
+  "alpha0_present": {
+   "ok": true,
+   "detail": ""
+  },
+  "alpha0_2_reproduces_reference": {
+   "ok": true,
+   "detail": "(10543,10155,388) != (10543,10155,388)"
+  },
+  "alpha0_3_reproduces_reference": {
+   "ok": true,
+   "detail": "(15331,15003,328) != (15331,15003,328)"
+  },
+  "alpha0_readout_reproduces_reference": {
+   "ok": true,
+   "detail": "(880,800,80) != (880,800,80)"
+  }
+ },
+ "info": [
+  "sources: ['results/newinput_interp/mnist_mlp_seed1_interp.json']; conditions present: ['0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0']",
+  "QUALIFIED a0.3/3: gap 8.1 < 10, ladder range [14682, 14779]",
+  "QUALIFIED a0.5/3: gap 1.8 < 10, ladder range [14919, 15039]",
+  "QUALIFIED a0.9/3: gap 3.3 < 10, ladder range [15055, 15219]",
+  "alpha0/2: dim_K_X 10543 dim_K_union 10155 exposed 388 (reference 10543/10155/388); gap float-equal: True",
+  "alpha0/3: dim_K_X 15331 dim_K_union 15003 exposed 328 (reference 15331/15003/328); gap float-equal: True",
+  "alpha0/readout: dim_K_X 880 dim_K_union 800 exposed 80 (reference 880/800/80); gap float-equal: True",
+  "monotonicity 2 (INFO only): exposed over alpha [388, 423, 394, 279, 173, 109, 46, 28, 22, 10, 3]; NOT monotone: ['0.1->0.2: 423->394', '0.2->0.3: 394->279', '0.3->0.4: 279->173', '0.4->0.5: 173->109', '0.5->0.6: 109->46', '0.6->0.7: 46->28', '0.7->0.8: 28->22', '0.8->0.9: 22->10', '0.9->1.0: 10->3']",
+  "monotonicity 3 (INFO only): exposed over alpha [328, 416, 542, 646, 548, 408, 319, 269, 290, 272, 265]; NOT monotone: ['0.3->0.4: 646->548', '0.4->0.5: 548->408', '0.5->0.6: 408->319', '0.6->0.7: 319->269', '0.8->0.9: 290->272', '0.9->1.0: 272->265']",
+  "monotonicity readout (INFO only): exposed over alpha [80, 80, 100, 130, 170, 170, 180, 180, 210, 220, 240]; nondecreasing"
+ ]
+}

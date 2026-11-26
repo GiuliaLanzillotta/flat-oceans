@@ -1,0 +1,24 @@
+\subsection{Open questions and future directions}
+\label{app:future-work}
+The present theory describes the invariant structure at a given network and dataset. Explaining how training produces this structure is the next central question. The observations also suggest applications and several extensions of the geometric theory.
+
+\paragraph{Emergence, persistence and accretion.}
+Training often enlarges the invariant subspaces while retaining many earlier directions (Appendix~\ref{app:persistence}). A dynamical account should explain how feature spans, downstream maps and their samplewise pairings evolve to create new atomic directions. It should also explain why existing directions survive later updates, so that growth can occur by accretion. Following the dimensions alone is insufficient: a theory must track the orientations of these spaces and the constraints that permit their composition.
+
+\paragraph{Why the frozen approximation improves.}
+The frozen network is defined at every checkpoint, but its accuracy over finite edits changes with training. The observed reduction of the activation remainder raises a question. Possible contributions include more stable ReLU gates, smaller local activation curvature for smooth networks, and weaker downstream propagation of activation residuals. Relating these mechanisms to learning extends existing analyses of gates and active paths \citep{lakshminarayanan2020paths}.
+
+\paragraph{Training data and representation compression.}
+In the matched comparisons of Appendix~\ref{app:training-data}, the full-data model has larger hidden atomic kernels than a model trained on a small subset, even when both are evaluated on that subset. Why can learning from more data produce more functional freedom? One question is whether additional data encourage compression of the feature and downstream spans, or change their pairings so that fewer independent output constraints remain. This concerns representations learned by different networks. For a fixed network, adding evaluation samples can only remove exact invariant directions. A dynamical explanation must account for both effects and the nonmonotone trends within the reduced-data training sweep.
+
+\paragraph{Invariant subspace extent and unseen inputs.} The uniform norm bounds on the activation remainder can be much looser than measured radii. A sharper account should retain residual directions, downstream suppression and cancellations to characterize the extent of each invariant subspace at a prescribed tolerance. It must also connect sampled ray lengths to a guarantee over the whole invariant subspace ball. Extending finite-dataset certificates to unseen inputs requires controlling new feature and downstream constraints; the empirical transfers in Appendix~\ref{app:data-dependence} provide a starting point.
+
+\paragraph{Maximum dimensions and efficient invariant subspace tests.}
+Determining the maximum ocean dimension for nonlinear networks of arbitrary depth remains open, both for layerwise constructions and for general coupled invariant subspaces. Even the deep-linear subspace optimization requires a finite, efficient method for selecting target orientations. The general polynomial coefficient test is exact but becomes expensive with dimension and depth. Exploiting network structure to certify or construct large invariant subspaces without enumerating all coefficient constraints is an important algorithmic problem.
+
+\paragraph{Flat symmetries across architectures.}
+A systematic study should characterize flat symmetries in the full range of frozen network architectural structures. The convolutional and LayerNorm constructions here provide starting points for attention, residual connections, parameter sharing, normalization and other structured blocks. The aim is to identify which architectural identities create exact flat directions, which spaces arise from learned representations on a dataset, and when these directions compose across different block types.
+
+\paragraph{Exceptional smooth cancellations.}
+Appendix~\ref{app:smooth-exact} conjectures that, for tanh, sigmoid and softplus MLPs, the direction space of every exact local ocean is a frozen invariant subspace outside a Lebesgue-null set of data and base parameters. The one-unit calculation establishes only a special case. A general proof must exclude cancellations among units, paths and samples that persist at every order. The measure-zero claim concerns exceptional data and base parameters; the intrinsic volume of an ocean in its own affine hull is a different quantity. The reciprocal-affine counterexample shows why the activation assumptions matter.
+

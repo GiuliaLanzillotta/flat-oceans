@@ -1,0 +1,1611 @@
+\documentclass[twoside]{article}
+
+\usepackage[preprint]{aistats2027}
+\setlength{\footskip}{24pt}
+\fancyfoot[C]{\thepage}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\AddToHook{env/table/begin}{\setlength{\belowcaptionskip}{6pt}}
+\AddToHook{env/table*/begin}{\setlength{\belowcaptionskip}{6pt}}
+\usepackage[round]{natbib}
+\renewcommand{\bibname}{References}
+\renewcommand{\bibsection}{\subsubsection*{\bibname}}
+\usepackage{algorithm,algpseudocode}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\urlstyle{same}
+\usepackage{capt-of}
+\usepackage{placeins}
+\newcommand{\wip}[1]{\par\noindent{\small\color{purple}\textbf{[WIP:} #1\textbf{]}}\par}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{.95}
+\renewcommand{\bottomfraction}{.9}
+\renewcommand{\textfraction}{.05}
+\renewcommand{\floatpagefraction}{.75}
+
+
+\graphicspath{{figures/}}
+\setlist{itemsep=0.1em,topsep=0.2em,leftmargin=1.2em}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spanop}{span}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ri}{ri}
+\DeclareMathOperator{\row}{row}
+\DeclareMathOperator{\Gr}{Gr}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\frz}{\mathrm{frz}}
+\newcommand{\old}{\mathrm{old}}
+\newcommand{\new}{\mathrm{new}}
+\newcommand{\g}[1]{{\color{purple}[#1]}}
+\definecolor{setupbg}{RGB}{238,243,249}
+\definecolor{definitionhighlight}{RGB}{255,242,179}
+\newtheoremstyle{highlightdefinition}
+  {\topsep}{\topsep}{\itshape}{}{\bfseries}{}{.5em}
+  {{\setlength{\fboxsep}{2pt}\colorbox{definitionhighlight}{\strut
+    \thmname{#1}\thmnumber{ #2}\thmnote{ \normalfont(#3)}.}}}
+\theoremstyle{highlightdefinition}
+\newtheorem{maindefinition}[theorem]{Definition}
+\theoremstyle{remark}
+
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+\newcommand{\gc}[1]{\textcolor{orange}{\textbf{[G:} #1\textbf{]}}}
+\newcommand{\toedit}[1]{{\color{teal}\textbf{[to edit:} #1\textbf{]}}}
+
+
+
+
+
+\newcommand{\spn}{\spanop}
+\newif\ifpaperreview
+\paperreviewfalse
+\DeclareRobustCommand{\reviewnote}[2]{\ifpaperreview{\small\color{blue!60!black}\textbf{[Review #1:} #2\textbf{]}}\fi}
+\AtBeginDocument{\ifpaperreview\else
+  \renewcommand{\g}[1]{}\renewcommand{\gc}[1]{}\renewcommand{\toedit}[1]{}\renewcommand{\wip}[1]{}\renewcommand{\todo}[1]{}
+\fi}
+\input{authors}
+\hypersetup{pdftitle={Flat oceans: vast convex invariance at the end of training},pdfauthor={\PaperAuthorsPlain}}
+\begin{document}
+
+\runningtitle{Flat oceans: vast convex invariance at the end of training}
+\runningauthor{\PaperRunningAuthors}
+
+\twocolumn[
+\aistatstitle{Flat oceans: vast convex invariance at the end of training}
+\aistatsauthor{\PaperAuthors}
+\aistatsaddress{\PaperAffiliations}
+]
+
+\begin{abstract}\emergencystretch=1em
+Flatness plays a central role in neural network optimization, Bayesian inference and generalization, yet commonly used characterizations are numerically delicate and limited to local approximations.
+We discover and characterize \emph{flat oceans}: large, high-dimensional convex regions in parameter space within which a network’s outputs on a given dataset remain exactly or approximately constant. Our analysis starts from an exact decomposition of the non-linear terms in the network response into a polynomial capturing cross-layer interactions and an activation-dependent residual. Differently from prior work, we approach the question of functional invariance constructively. We design procedures to describe flat oceans around any parameter which run in polynomial-time and use simple linear algebra. Our construction is precise and works across several architectures and activation functions. Experiments show that large invariant spaces emerge and persist during training, with sampled directions remaining approximately invariant far beyond generic parameter directions. 
+\end{abstract}
+
+\section{INTRODUCTION}
+\label{sec:intro}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{hero.pdf}
+\caption{Two-dimensional slices of a trained ReLU network in parameter space. Left: two generic directions. Middle: two flat ocean directions. Right: an exact rescaling symmetry orbit (solid) and its straight tangent (dashed). Each axis measures displacement along a unit parameter direction; axis limits and the output-change color scale are shared. White dots mark the reference parameters. \looseness-1}
+\label{fig:teaser}\label{fig:sym-vs-ocean}
+\end{figure}
+
+
+Neural network parameter spaces have many redundancies, as the same function can often be encoded by infinitely many parameters. 
+The study of \emph{neural network symmetries} and \emph{parameter identifiability} is concerned
+with describing these redundancies inherent in the network parametrizations. Substantial progress has been made on this front in recent years. Complete characterizations of functional equivalence have been obtained for classes of networks with tanh and related activations, shallow ReLU networks, and generic three-layer ReLU bottleneck architectures \citep{vlacic2020affine,ramakrishnan2026complete,gegenfurtner2026symmetries}.
+
+These studies primarily concern parameters that represent the same function for all inputs in the domain. When considering instead a specific dataset, the class of redundancies of the \emph{empirical network function} (i.e., measured on the dataset) can be much larger. Prior work studies conditions for identifiability from sample outputs and the dimensionality of the parameter changes that preserve those outputs locally \citep{stock2021embedding,bonapellissier2022local,grigsby2025functional,bonapellissier2024geometry}.  Their descriptions of these changes are generally implicit, and their results depend on assumptions about the network architecture and activation functions.\looseness-1
+
+Closely related questions arise in the study of neural network loss landscapes. In fact, the flat regions of the loss landscape are intimately tied to the invariances of the empirical network function (Appendix~\ref{app:hessian}). Locally, geometry is commonly characterized through the network-output Jacobian and curvature matrices such as the loss Hessian and generalized Gauss--Newton matrix \citep{sagun2017hessian,immer2021linearization}. These objects are at the basis of several methods in optimization, Bayesian inference and continual learning, which rely on approximations of the loss landscape around a given parameter  \citep{martens2015kfac,khan2018vogn,daxberger2021laplace,kirkpatrick2017ewc,farajtabar2020ogd}. 
+Despite their widespread use, these local approximations offer limited guidance about flatness at finite distances, and estimating their flat directions is costly and numerically unreliable for most realistic architectures.
+
+Characterizations of empirical functional invariance that remain valid at finite distances have thus countless applications, ranging from optimization to uncertainty quantification and privacy.
+Despite this, the question of sample-dependent geometry beyond the infinitesimal reach of gradients and Hessians remains largely open. 
+In this work, we develop a constructive approach to empirical functional invariance at large finite distances. Given reference parameters $\theta_0\in\mathbb R^p$, we seek an orthonormal basis $Q\in\mathbb R^{p\times k}$ and a radius $r>0$ defining a region
+\begin{align*}
+\mathcal O_{Q,r}=\{\theta_0+Qu:u\in\mathbb R^k,\ \|u\|_2\le r\}
+\end{align*}
+of approximate empirical functional invariance, which we call \emph{flat ocean}, with large dimension $k$ and radius $r$. Our construction is at the same time precise, easy to operationalize, and applies to various network architectures, and activation functions. 
+
+\paragraph{Our contributions.}
+We introduce an exact decomposition of the network response into a frozen polynomial and an activation remainder. This yields a constructive characterization of flat oceans: we describe their structure and dimensionality, develop efficient procedures to build them, and bound their finite extent in the true network. Experiments reveal large invariant spaces that emerge and persist during training; in the width-64 ReLU example, the median measured radius along invariant-subspace directions is about \(300\times\) that of generic directions.
+We discuss applications to constrained adaptation, posterior exploration and compression in Appendix~\ref{app:finite-invariance-uses}.
+
+\section{SETUP AND DEFINITIONS}
+\label{sec:setup}
+
+
+\subsection{Flat oceans}
+\label{sec:oceans-def}
+\paragraph{Notation}
+Let $X=(x_i)_{i=1}^s$, with $x_i\in\R^{n_0}$, and consider an MLP with $L$ hidden layers of widths $n_1,\ldots,n_L$ and $d$ outputs. We include each bias as the last column of its weight matrix. For a vector $v$, write $\bar v=(v,1)$, so multiplication by the extended matrix adds the bias. 
+The layer parameter matrices are $W_\ell\in\R^{n_\ell\times(n_{\ell-1}+1)}$ and $V\in\R^{d\times(n_L+1)}$.
+For pointwise activation $\sigma$, the forward recursion is
+\begin{align*}
+ h_{0,i}&=x_i,&z_{\ell,i}&=W_\ell\bar h_{\ell-1,i},\\
+ h_{\ell,i}&=\sigma(z_{\ell,i}),&f_i&=V\bar h_{L,i}.
+\end{align*}
+
+
+The concatenated parameter vector $\theta\in\R^p$ has dimension
+$p=\sum_{\ell=1}^L n_\ell(n_{\ell-1}+1)+d(n_L+1)$.
+Throughout $F_X(\theta)=(f_i)_{i=1}^s$ and
+$\|(v_i)_i\|_X^2=s^{-1}\sum_i\|v_i\|_2^2$.
+Parameter norms are Euclidean: the squared norm of a parameter vector is the sum of the squared Frobenius norms of its layer components.
+In the text and figures, we abbreviate numbered layer references as L1, L2, and so on, counting from the input; the readout is named explicitly.
+
+We study $F_X$ around a base parameter $\theta_0=(W_1^0,\ldots,W_L^0,V^0)$.
+The \emph{empirical fiber} through $\theta_0$ is $F_X^{-1}(F_X(\theta_0))=\{\theta\in\R^p:F_X(\theta)=F_X(\theta_0)\}$, the set of all parameters producing exactly the same outputs on every sample in $X$.
+We study convex subsets of this fiber. Convexity ensures that any convex combination of points in the set is still in the set.
+
+\begin{maindefinition}[flat ocean]
+A convex set $\mathcal O\subseteq\R^p$ is an $\varepsilon$-flat ocean through $\theta_0$ if $\theta_0\in\ri(\mathcal O)$, its direction space $M=\spn(\mathcal O-\theta_0)$ has positive dimension, and
+\[
+ \sup_{\theta\in\mathcal O}\|F_X(\theta)-F_X(\theta_0)\|_X\le\varepsilon.
+\]
+It is exact when $\varepsilon=0$. The condition $\theta_0\in\ri(\mathcal O)$ means that, for some $r>0$, every $u\in M$ with $\|u\|<r$ satisfies $\theta_0+u\in\mathcal O$.\footnote{Equivalently, $\theta_0+(M\cap B_r(0))\subseteq\mathcal O$, where $B_r(0)=\{u\in\R^p:\|u\|<r\}$. See Appendix~\ref{app:setting} for the general relative-interior definition.}
+\end{maindefinition}
+
+Our probing experiments use a working tolerance $\varepsilon=10^{-3}$. Numerical ranks use a relative singular-value threshold of $10^{-9}$ (Appendix~\ref{app:experiments}).
+
+
+
+\begin{figure}[!t]
+\noindent{\setlength{\fboxsep}{6pt}\colorbox{setupbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\hypertarget{experimental-setup}{}\textbf{Experimental setup.} The baseline network is a biased ReLU MLP with PCA input dimension 256, three hidden layers of width 128 and 10 outputs, trained on 60,000 MNIST images using MSE and Adam.  A fixed 10,000-image training subset $X$ is used for analysis, unless stated otherwise. Five training stages are considered: initialization, early fitting (error $\le10\%$), high accuracy (error $\le0.1\%$), interpolation (MSE $<10^{-4}$), and epoch 500, using the first saved checkpoint meeting each criterion. Description of all ablations, seeds and numerical checks: Appendix~\ref{app:experiments}.}}}
+\end{figure}
+
+
+
+\paragraph{Relation to structural symmetries.}
+The convexity requirement distinguishes flat oceans from general sets of functionally equivalent parameters. 
+For example, common network symmetries are hidden-unit permutations and, for homogeneous activations, positive rescalings \citep{simsek2021geometry,shewchuk2024geometry}. Their orbits lie in the empirical fiber for any given $X$, but continuous rescaling orbits are generally curved (right panel in Figure~\ref{fig:sym-vs-ocean}), and permutations are discrete transformations and therefore not convex. Affine symmetry families, such as common-coordinate shifts before LayerNorm \citep{ba2016layernorm}, give rise to flat oceans (Appendix~\ref{app:layernorm}), although a flat ocean need not arise from a structural symmetry.
+
+
+\subsection{The frozen decomposition}
+\label{sec:frozen}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{activation_tails.pdf}
+\caption{The four activations tested in this paper. Orange and purple dashed lines show affine tangents at the marked inputs $z_-=-3$ and $z_+=3$, respectively. They coincide with the corresponding linear pieces for ReLU, leaky ReLU and identity; for GELU they approximate the two tails. Deviation from the base tangent contributes to the transition residual.}
+\label{fig:tails}
+\end{figure}
+The frozen model keeps the usual linear preactivations and replaces each activation by its affine tangent at the base network. Run the network at $\theta_0$ to obtain $z_{\ell,i}^0,h_{\ell,i}^0$ and set $S_{\ell,i}=\diag\sigma'(z_{\ell,i}^0)$. Define the sample- and layer-specific affine map
+\[
+ \sigma^{\mathrm{lin}}_{\ell,i}(z)
+ =\sigma(z_{\ell,i}^0)+S_{\ell,i}(z-z_{\ell,i}^0).
+\]
+For an edit $w=(A_1,\ldots,A_L,B)$, including bias columns, start with $h_{0,i}^{\frz}=x_i$ and use
+\begin{align}
+ &z_{\ell,i}^{\frz}=(W_\ell^0+A_\ell)\bar h_{\ell-1,i}^{\frz},\nonumber\\
+ &h_{\ell,i}^{\frz}=\sigma^{\mathrm{lin}}_{\ell,i}(z_{\ell,i}^{\frz}).\label{eq:frozen}
+\end{align}
+
+Here $\bar h^{\frz}=(h^{\frz},1)$ incorporates each bias exactly as in the original network. At zero edit this recursion recovers the base outputs; stacking them defines $F_X^{\frz}(w)$.
+
+The frozen map is affine in the parameters of each layer separately and has degree at most $L+1$. Let $J_X=DF_X(\theta_0)$ and define
+\begin{align*}
+ P_X^{\frz}(w)&=F_X^{\frz}(w)-F_X(\theta_0)-J_Xw,\\
+ A_X^{\rm tr}(w)&=F_X(\theta_0+w)-F_X^{\frz}(w)
+\end{align*}
+The following decomposition is exact:
+\begin{equation}
+ \boxed{\Delta F_X(w)=
+ \underbrace{\colorbox{blue!8}{$J_Xw+P_X^{\frz}(w)$}}_{\text{frozen response}}
+ +\underbrace{\colorbox{orange!15}{$A_X^{\rm tr}(w)$}}_{\text{activation transition}}}
+ \label{eq:decomp}
+\end{equation}
+
+
+
+
+Here $\Delta F_X(w)=F_X(\theta_0+w)-F_X(\theta_0)$ is the \emph{network response} to the edit $w$, $J_Xw$ is the first-order response, $P_X^{\frz}$ collects the higher-order interactions with slopes fixed, and $A_X^{\rm tr}$ is the \emph{activation transition potential}. Hereafter, we call $\Delta F_X^{\frz}(w):=F_X^{\frz}(w)-F_X(\theta_0)=J_Xw+P_X^{\frz}(w)$ the \emph{frozen response}.
+
+A typical approximation of the network function is the first-order response $J_Xw$, which is linear in $w$ and ignores all nonlinear terms in the true response.
+\emph{Our decomposition separates the nonlinear effects due to cross-layer interactions and those due to the activation functions being nonlinear.} This simple distinction is surprisingly powerful, since we find that the cross-layer interactions dominate the nonlinear part in the response throughout training (Figure~\ref{fig:transition}). Appendix~\ref{app:transition} extends the comparison across radii, layers and architectures, including CNNs and BatchNorm. For ReLU and leaky-ReLU MLPs, the separation also grows substantially from initialization to the end of training.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{transition.pdf}
+\caption{True, frozen, and activation-transition response norms during training of width-128 MNIST MLPs. Full-network edits have layer-relative radius $10^{-2}$. Curves show means of within-seed medians over 256 matched directions; bands show one standard deviation across three seeds. Init, Fit, HA and Int denote initialization, early fitting, high accuracy and interpolation. Further radii and layer attribution: Appendix~\ref{app:transition}.}
+\label{fig:transition}
+\end{figure}
+
+This is good news since the cross-layer interactions form a polynomial in $w$ which is still easy to manipulate algebraically, compared to the full response. This decomposition offers a useful new tool for studying neural network functions, which sits between the true function and its first-order approximation, gaining substantially in precision, while keeping the complexity low. The decomposition may therefore be useful beyond the questions studied here.
+
+
+\subsection{Construction strategy}
+\label{sec:branches}
+
+Using the decomposition in Equation~\ref{eq:decomp}, our goal is to find a nonzero subspace $M$ of parameter edits and a radius $r>0$ such that
+\[
+ \sup_{\substack{w\in M\\\|w\|\le r}}
+ \|\Delta F_X^{\frz}(w)+A_X^{\rm tr}(w)\|_X\le\varepsilon.
+\]
+The resulting region $\theta_0+\{w\in M:\|w\|\le r\}$ is a flat ocean. We want both its dimension and its radius to be large.
+
+Our approach has two steps: find where the frozen response is zero, then determine how far we can move while keeping the activation remainder small. We therefore seek
+\begin{align}
+ &\Delta F_X^{\frz}(w)=0\quad\text{for every }w\in M,
+ \label{eq:strategy-frozen}\\
+ &\sup_{\substack{w\in M\\\|w\|\le r}}\|A_X^{\rm tr}(w)\|_X\le\varepsilon.
+ \label{eq:strategy-radius}
+\end{align}
+We call a linear space satisfying Equation~\ref{eq:strategy-frozen} a \emph{frozen invariant subspace} (shortened to invariant subspace in Sections~\ref{sec:atomic}--\ref{sec:layerwise}). 
+
+For smooth activations, exact oceans could also arise through cancellation between the frozen response and the activation remainder. Our construction controls the two terms separately. Appendix~\ref{app:smooth-exact} presents the conjecture that every exact ocean for tanh, sigmoid or softplus MLPs spans a frozen invariant subspace, proving it in a nondegenerate one-unit setting. Our results do not depend on that conjecture.
+
+The polynomial form of the frozen response explains why it is enough to look for subspaces. We call a convex set $\mathcal O_{\frz}$ of edits a \emph{frozen ocean} if $0\in\ri(\mathcal O_{\frz})$ and $\Delta F_X^{\frz}(w)=0$ throughout the set. Any such region extends to a whole invariant subspace, as the following result shows.
+\begin{theorem}[Frozen oceans and invariant subspaces]\label{thm:correspondence}
+If the frozen response vanishes on a relative neighborhood of zero in a linear space $M$, it vanishes everywhere on $M$. Thus every frozen ocean spans a frozen invariant subspace, and every frozen invariant subspace is itself a frozen ocean. Every such subspace satisfies $M\subseteq\ker J_X$.
+\end{theorem}
+The proof is in Appendix~\ref{app:coefficient-test}. This lets us study the subspace first and its true-network radius afterwards. Several maximal invariant subspaces can coexist, and their union need not be a subspace.
+
+\begin{maindefinition}[Layerwise ocean]\label{def:layerwise-ocean}
+A frozen invariant subspace $M$ is \emph{layerwise} if
+\(
+ M=\bigoplus_{\ell=1}^{L+1}M_\ell,
+\)
+where $M_\ell$ occupies only layer $\ell$, with the readout counted as layer $L+1$. The layer edits can be chosen independently from their component spaces: every combined edit preserves the frozen outputs. A flat ocean whose direction space is such an $M$ is a \emph{layerwise ocean}.
+\end{maindefinition}
+
+
+Our study focuses on layerwise oceans. We also discuss \emph{coupled oceans}, whose layer edits cannot all be chosen independently, in Section~\ref{sec:coupled}. Our measurements suggest that little additional dimensionality remains beyond the constructed layerwise oceans. 
+
+\textbf{Paper structure}\;\;\;
+Section~\ref{sec:atomic} first characterizes the invariant subspaces within each layer, which give the \emph{atomic oceans}. Section~\ref{sec:layerwise} then determines which of these subspaces can be combined: its compatibility tests and constructions ensure that simultaneous edits also preserve the frozen outputs. Finally, Section~\ref{sec:radius} returns to the true network and the radius condition in Equation~\ref{eq:strategy-radius}.
+
+\section{ATOMIC OCEANS}
+\label{sec:atomic}
+
+\subsection{The feature-null ocean}
+\label{sec:featnull}
+
+
+We start with the simplest ocean structure. Add to layer $\ell$ a matrix $A_\ell$ annihilating each input feature:
+\[
+ A_\ell\bar h_{\ell-1,i}^0=0\qquad\text{for every }i.
+\]
+The layer's preactivations stay unchanged on $X$, hence so does every layer above it. Such edits compose across layers and preserve the function at any size.
+
+For each layer, define its input-feature span $\cH_\ell=\spn\{\bar h_{\ell-1,i}^0:i\le s\}$ and rank $r_\ell=\dim\cH_\ell$.
+Include the readout by setting $A_{L+1}=B$ and $n_{L+1}=d$.
+\begin{samepage}
+\begin{theorem}[Feature-null ocean]\label{thm:feature-ocean}
+The feature-null edit space is the linear subspace
+\[
+ M_{\rm feat}=\bigoplus_{\ell=1}^{L+1}\{A_\ell:A_\ell\cH_\ell=0\}.
+\]
+The affine set $\theta_0+M_{\rm feat}$ is a flat ocean. Every point in this space satisfies $F_X(\theta_0+w)=F_X(\theta_0)$ for every $w\in M_{\rm feat}$ and any pointwise activation. Its dimension is $\dim M_{\rm feat}=\sum_{\ell=1}^{L+1}n_\ell(n_{\ell-1}+1-r_\ell)$. 
+\end{theorem}
+\par\end{samepage}
+
+Although exact and easy to construct this subspace is typically small. 
+In the baseline network described in the setup box in Section~\ref{sec:oceans-def}, this space contains none of the L2 invariant subspace and at most $15\%$ of the L3 invariant subspace. The analysis below describes the remaining dimensions.
+
+\subsection{The full atomic ocean}
+\label{sec:fullatomic} 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{atomic.pdf}
+\caption{Atomic invariant subspace decomposition in MNIST MLPs at epoch 500, seed 0. Each pie represents all parameters of one hidden layer; the three blue components sum to its atomic kernel, and gray is the complement. Downstream-null and co-occurrence components account for invariance beyond feature-null directions. Rows vary width, depth and activation; layer sizes appear below the pies. Details in Appendix~\ref{app:atomic-full}.}
+\label{fig:dimensions}
+\end{figure}
+
+We call \emph{atomic} an edit which changes only the parameters of one layer. In this case the frozen response reduces to one first-order term. For hidden layer $\ell$, define the downstream map $D_{\ell,i}:\R^{n_\ell}\to\R^d$ that carries a preactivation change to the output with all later weights and slopes fixed:\footnote{The subscript $\mathrm{lin}$ removes the bias column when propagating a hidden-state change. The edit $A_\ell$ still includes its bias column.}
+\[
+ D_{L,i}=V_{\mathrm{lin}}^0S_{L,i},\qquad
+ D_{\ell,i}=D_{\ell+1,i}W_{\ell+1,\mathrm{lin}}^0S_{\ell,i}.
+\]
+Here the recursion runs backward over $\ell=L-1,\ldots,1$. An atomic edit $A_\ell$ changes the layer's preactivation by $A_\ell\bar h_{\ell-1,i}^0$; applying $D_{\ell,i}$ gives its frozen output response, $D_{\ell,i}A_\ell\bar h_{\ell-1,i}^0$. For the readout, the same formula holds with $D_{L+1,i}=I_d$. Stacking these vectors across samples gives the layer Jacobian $J_\ell$, which measures which edits affect the empirical output:  
+$J_\ell\operatorname{vec}(A_\ell)=(D_{\ell,i}A_\ell\bar h_{\ell-1,i}^0)_{i=1}^s$\footnote{Here $\operatorname{vec}$ stacks matrix columns.}.
+The kernel of this operator, which we hereafter refer to as the \emph{atomic kernel} $K_\ell$, is the space of atomic edits with zero frozen response, i.e. the atomic invariant subspace. 
+Below we identify its components and dimensionality.
+
+
+Alongside the feature span $\cH_\ell$, define the downstream covector span $\cC_\ell=\sum_i\operatorname{row-span}(D_{\ell,i})$ and its dimension $r_{d,\ell}=\dim\cC_\ell$.
+
+\begin{theorem}[Atomic dimension decomposition]
+\label{thm:atomic}
+Define the \emph{co-occurrence deficit} by
+\[
+ \delta_{\rm joint,\ell}=r_\ell r_{d,\ell}-\rank J_\ell\ge0.
+\]
+The complete atomic frozen invariant subspace is $K_\ell$, with
+\begin{equation}
+ \dim K_\ell=\underbrace{n_\ell(n_{\ell-1}+1-r_\ell)}_{\text{feature-null}}+\underbrace{r_\ell(n_\ell-r_{d,\ell})}_{\text{downstream-null}}+\delta_{\rm joint,\ell}.
+ \label{eq:atomic}
+\end{equation}
+\end{theorem}
+ Proof: Appendix~\ref{app:atomic-proof}.
+
+Pairings between the input-feature and downstream-covector spans define constraints in the system of equations $(D_{\ell,i}A_\ell\bar h_{\ell-1,i}^0)_{i=1}^s=0$. However, the actual equations use only the pairings realized on the same samples, and thus $\rank J_\ell\le r_\ell r_{d,\ell}$. We refer to any rank shortfall as co-occurrence deficit.
+
+Measured atomic kernels (Figure~\ref{fig:dimensions} and Appendix~\ref{app:atomic-full}) substantially exceed the feature-null subspace in dimensionality (L2--L3: $16$--$64\%$ versus $0$--$7\%$ of layer parameters at high accuracy and interpolation, three seeds). The co-occurrence deficit accounts for large portions of the ReLU and leaky-ReLU atomic invariant subspaces: $76$--$91\%$ of L2's kernel and $32$--$64\%$ of L3's for ReLU, and $100\%$ of L3's for leaky ReLU. GELU has no resolved exact kernel in these measurements, but a similarly large approximate kernel can be extracted given a threshold (Figure~\ref{fig:atomic-tails}). Training on SVHN or raw-pixel MNIST gives similar decompositions (Appendix~\ref{app:activations}).
+
+\subsection{Inside the co-occurrence deficit}
+\label{sec:cooccurrence}
+While the feature-null and downstream-null spaces can readily be constructed based on the input features and downstream map, it is less clear what leads to a co-occurrence deficit. In this section we propose two mechanisms that create such a deficit (Figure~\ref{fig:cooccurrence-mechanisms}).
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=\linewidth]{cooccurrence_mechanisms.pdf}
+\caption{Co-occurrence mechanisms. (a) ReLU units activate on overlapping input sets. (b) Populations A and B activate different routes from a common input layer; gray edges are inactive.}
+\label{fig:cooccurrence-mechanisms}
+\end{figure}
+
+
+\textbf{A linear network has no deficit.} Its downstream map is the same on every sample, so the Jacobian row space $\operatorname{row}(J_\ell)=\spn_{i,a}\{\bar h_{\ell-1,i}^0\otimes D_{\ell,i}^\top e_a\} = \cH_\ell\otimes\cC_\ell$, where $e_a$ is the $a$th output-coordinate vector (to see it, simply take out the shared downstream map from the samplewise span calculation). Hence $\rank J_\ell=r_\ell r_{d,\ell}$ and $\delta_{\rm joint,\ell}=0$.\footnote{Note that this does not mean linear networks have smaller atomic subspaces because the marginal ranks also differ between networks.}
+
+
+\textbf{Mechanism 1: Selective units.}
+For ReLU, an edit to a unit's incoming weights need only annihilate features of samples on which the unit is active. Its active-feature span is $\cH_{\ell j}^{\rm act}(X)=\spn\{\bar h_{\ell-1,i}^0:z_{\ell,i,j}^0>0\}$. This defines a space containing the feature-null space, which we call \emph{selective}:
+\begin{align*}
+ G_\ell^{\rm sel}&=\{A:S_{\ell,i}A\bar h_{\ell-1,i}^0=0\ \forall i\},\\
+ \dim G_\ell^{\rm sel}
+ &=\sum_{j=1}^{n_\ell}\bigl(n_{\ell-1}+1-\dim\cH_{\ell j}^{\rm act}(X)\bigr).
+\end{align*}
+Notice the difference from the feature-null constraint: $G_\ell = \{A_\ell:A_\ell\cH_\ell=0\}$. If a unit is inactive on a subspace of $\cH_\ell$, the incoming weights can be changed within it without inducing a frozen response.   Like the feature-null subspace, the selective subspaces compose across layers because each edit preserves the corresponding frozen postactivation.
+\begin{proposition}[Selective-unit composition]\label{prop:selective-composition}
+The direct sum of the hidden selective-unit spaces and the feature-null readout is a frozen invariant subspace. 
+\end{proposition}
+At high accuracy and interpolation, after removing overlap with the marginal-null spaces, selective spaces explain nearly all of the width-128 ReLU deficit (L2: $99.8$--$100\%$; L3: $92.7$--$100\%$, across three seeds), leaving a small cross-unit remainder (Appendix~\ref{app:methods-branches}). 
+The CNN L5 (\texttt{conv5}) kernel is also predominantly selective patch space ($93$--$99\%$; Appendix~\ref{app:mnist-cnn}).
+
+
+\textbf{Mechanism 2: Clustering.} Different input populations can use different active pathways \citep{lakshminarayanan2020paths}, leaving cross-population feature--downstream pairings unobserved. For a partition $\mathcal G$ of samples by downstream-map similarity, let $\mathcal H_{\ell,G}$ and $\mathcal C_{\ell,G}$ be the feature and downstream covector spans within group $G$ and define $\mathcal P_\ell(\mathcal G)=\sum_{G\in\mathcal G}\mathcal H_{\ell,G}\otimes\mathcal C_{\ell,G}$. For $\delta_{\rm joint,\ell}>0$, the fraction explained by missing cross-group pairings is
+\begin{align*}
+ \text{explained fraction}&=\frac{r_\ell r_{d,\ell}-\dim\mathcal P_\ell(\mathcal G)}{\delta_{\rm joint,\ell}}.
+\end{align*}
+At epoch 500, ten downstream-map groups explain $62.2\%$ of the width-128 ReLU L3 deficit, versus $7.2\%$ for size-matched random groups; 80 groups explain $99.96\%$ (Appendix~\ref{app:mechanism}).
+
+
+
+\subsection{Ablations}\label{sec:ablations}
+
+\paragraph{Architecture}
+The atomic dimension decomposition in Theorem~\ref{thm:atomic} also applies to convolutional layers after summing each sample's output change over spatial positions (proof in Appendix~\ref{app:cnn-theory}). CNNs trained on MNIST develop large late-layer kernels, again much larger than the feature-null subspace. 
+We test the same constructions in larger architectures. In particular, we analyze the final layers and readouts of a ViT-B/16 and a ResNet-50 (Appendices~\ref{app:vit} and \ref{app:resnet-common}). Due to the large dimensionality of these layers, we cannot directly compute the atomic kernel. However, we find large feature-null and LayerNorm-induced downstream-null constructions in the ViT-B/16 (Figure~\ref{fig:native-vit-sampled}b), and a large selective subspace in the ResNet-50 (Table~\ref{tab:resnet-common}).  Extensions to attention and compatibility across other architectural components are discussed in Appendix~\ref{app:future-work}.
+
+\paragraph{Effects of scaling on atomic-ocean dimension.}
+At epoch 500, increasing width enlarges the full atomic kernels, while increasing depth reduces their dimensionality in early layers (Figure~\ref{fig:scaling-dimensions}). The L2 invariant subspace grows from $6.7\%$ of layer parameters at width 32 to $87.9\%$ at width 256. At width 128, increasing depth from two to five hidden layers reduces the L2 fraction from $79.9\%$ to zero. Appendix~\ref{app:scaling} reports the full counts.
+\begin{figure}[!htbp]\centering
+\includegraphics[width=\linewidth]{atomic_scaling.pdf}
+\caption{Invariant atomic subspace fractions; at width 512 the kernel computation did not converge, squares show the selective space dimensionality. Colors identify layers; linestyle the training stage. Means and one standard deviation over three seeds. Width 32 never reaches high accuracy. Details: Appendix~\ref{app:scaling}.}
+\label{fig:scaling-dimensions}
+\end{figure}
+
+\paragraph{Training data and new inputs}
+\label{sec:otherdata}
+So far we have studied atomic invariant subspaces measured on a fixed subset of the training data (\hyperlink{experimental-setup}{experimental setup box}). We ask what portion survives on a new, unseen dataset. With the trained network fixed, we evaluate the atomic invariant subspace on additional inputs. At epoch 500, $93.8$--$99.0\%$ of the hidden-layer kernel survives when we double the 10,000-image analysis set with new inputs from the same distribution, using either additional training images or test images (Table~\ref{tab:newdata-main}). 
+
+Most of the hidden-layer invariant space also survives when clean MNIST test images are interpolated toward pure uniform noise. At pure noise, $99.9\%$ of the original L2 space and $98.9\%$ of L3 survive on average across three seeds; intermediate mixtures preserve slightly less. The surviving readout fraction is smaller and varies more across seeds (Figure~\ref{fig:newinput-shift}). Similarly, adding SVHN images preserves $96.7$--$99.4\%$ of the hidden-layer invariant spaces across three seeds (Table~\ref{tab:newinput-svhn}). Thus, most of the atomic invariant space survives the tested distribution shifts. 
+
+Increasing training data has a different effect because it changes the learned network. Interestingly, evaluated on the same 1,000 images, models trained on all 60,000 MNIST images have larger invariant subspaces than models trained on those 1,000 alone. Thus more training data can produce greater functional redundancy on a fixed evaluation set. 
+Full details are in Appendix~\ref{app:training-data}.
+
+\paragraph{Persistence of the ocean}
+\label{sec:persistence}
+We close the atomic analysis with a striking observation: much of the ocean persists during training, while its dimension grows. We measure the mean squared projection of an earlier atomic subspace onto a later one. A subspace extracted at a high-accuracy point retains $99.3$--$99.9\%$ of its mass at epoch 500 across hidden layers and seeds  (Table~\ref{tab:persistence-main}, Appendix~\ref{app:persistence}). These measurements suggest that invariant subspaces grow during training by accretion: many earlier invariant directions persist as new ones emerge. How optimization produces this behavior is an open question (Appendix~\ref{app:future-work}).
+\input{sections/persistence_main}
+
+\section{COMPOSITION ACROSS DEPTH}
+\label{sec:layerwise}
+
+Every layerwise frozen ocean $M=\bigoplus_{\ell=1}^{L+1}M_\ell$ lies within the direct sum of the atomic invariant subspaces: $M_\ell\subseteq K_\ell$ for each layer, since each layer edit must independently satisfy Equation~\ref{eq:strategy-frozen}. If $\bigoplus_\ell K_\ell$ also satisfies Equation~\ref{eq:strategy-frozen}, it is the unique largest layerwise frozen ocean (Proposition~\ref{prop:app-atomic-ceiling}).
+
+The combination of atomic invariant subspaces across layers is not necessarily an invariant subspace. To see why, expand $F_X^{\frz}$ over subsets of edited layers $I\subseteq\{1,\ldots,L+1\}$. Each term $\Psi_I$ collects the factors edited in layers $I$, keeping the other weights at their base values. The empty subset gives the base output, singleton subsets sum to $J_Xw$, and the remaining terms sum to $P_X^{\frz}(w)$.\footnote{\citet{laurent2018multilinear} establish the related piecewise multilinear structure for ReLU and leaky-ReLU networks. Our frozen expansion applies to any pointwise activation for which the base affine tangents are defined, including smooth activations.} Figure~\ref{fig:frozen-terms} shows the expansion for two hidden layers and a readout. For invariance, the mixed-layer terms must vanish along with the single-layer responses.
+
+We first give an exact test for whether chosen atomic subspaces can be combined, then use it to construct layerwise frozen oceans greedily.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=\linewidth]{frozen_terms.pdf}
+\caption{Frozen expansion for two hidden layers and a readout, in bias-free homogeneous notation. The left panel contains the base output and first-order response; the right contains the mixed-layer terms retained in $P_X^{\frz}(w)$. Colored matrices are edits, gray matrices are base weights, and the slopes $S_{\ell,i}$ stay fixed.}
+\label{fig:frozen-terms}
+\end{figure}
+
+\subsection{A layerwise ocean test}
+\label{sec:lwtest}
+
+
+The test (Algorithm~\ref{alg:branch-test}) proceeds layer by layer, from input to output.
+For sample $i$, $R_{\ell-1,i}$ spans the frozen hidden-state changes reaching layer $\ell$ from the earlier edits.
+The received-input space at layer $\ell$ is then
+\[
+ U_{\ell,i}=\spn\{\bar h_{\ell-1,i}^0\}+(R_{\ell-1,i}\times\{0\}).
+\]
+Hidden-state changes are augmented with zero because the appended constant remains one. Bias edits are still included through the last column of $A_\ell$ acting on the base augmented input. For spaces $M,U$, we write their product $MU=\spn\{Au:A\in M,u\in U\}$. 
+For the readout, $D_{L+1,i}=I_d$.
+
+\begin{algorithm}[!htbp]
+\caption[Layerwise ocean test]{\protect\colorbox{definitionhighlight}{\strut Layerwise ocean test}}\label{alg:branch-test}
+\small
+\begin{algorithmic}[1]
+\Require Candidate spaces $M_1,\ldots,M_{L+1}$ and base network on $X$.
+\State $R_{0,i}\gets\{0\}$ for every sample $i$.
+\For{$\ell=1,\ldots,L+1$}
+ \State For each $i$: $U_{\ell,i}\gets\spn\{\bar h_{\ell-1,i}^0\}+(R_{\ell-1,i}\times\{0\})$.
+ \State \textbf{if} any $D_{\ell,i}(M_\ell U_{\ell,i})\ne\{0\}$ \textbf{return false}.
+ \State For $\ell\le L$, update each received-change space:
+ \Statex \hspace{\algorithmicindent}$R_{\ell,i}\gets S_{\ell,i}(W_{\ell,\mathrm{lin}}^0R_{\ell-1,i}+M_\ell U_{\ell,i})$.
+\EndFor
+\State \Return true
+\end{algorithmic}
+\end{algorithm}
+At layer $\ell$, the test checks interactions between the earlier layers' edits (contained in $U_{\ell,i}$) and the layer candidate subspace $M_\ell$, keeping the upper layers fixed ($D_{\ell,i}$). If the edits are compatible, the propagated output will be zero. Conveniently, this layerwise procedure is exact and complete (proof in Theorem~\ref{thm:composition} in Appendix~\ref{app:composition-proof}), and its cost is only polynomial in the supplied basis sizes, widths, depth and sample count (Appendix~\ref{app:composition-proof}).
+
+\subsection{Constructing layerwise oceans}
+\label{sec:construction}
+We use the compatibility test to construct a layerwise invariant subspace that cannot be enlarged without losing invariance. The construction proceeds greedily, selecting the full compatible space at each layer. The resulting subspace is maximal by inclusion, although another choice of layer spaces may yield a larger total dimension.
+
+
+The bottom-up construction starts at the input and adds one layer at a time. Initially $M_j=\{0\}$ for every layer. At layer $\ell$, the spaces selected before it ($M_1, \dots, M_{\ell-1}$) determine $R_{\ell-1,i}$ and $U_{\ell,i}$.
+Choose all layer edits whose action on these inputs is invisible to the fixed downstream network:
+\begin{equation}
+ M_\ell=\{A:D_{\ell,i}Au=0\ \text{for every }i\text{ and }u\in U_{\ell,i}\}.
+ \label{eq:bottom-up-constraints}
+\end{equation}
+These are homogeneous linear constraints on $A$, which preserve the frozen output and remove interactions with the layer edits already selected. Update $R_{\ell,i}$ as in Algorithm~\ref{alg:branch-test} and continue to the next layer. The construction also applies in other layer orders, with additional constraints involving already selected higher layers; Appendix~\ref{app:composition-proof} gives the general equations, algorithm and validity proof.
+
+The algorithm is greedy in dimensionality, because at each layer it selects the largest subspace compatible with the constraints. Choosing a smaller intermediate $M_\ell$ reduces the constraints on later layers, potentially yielding a larger invariant subspace overall.
+On the measured width-64 MNIST MLPs, the atomic invariant subspaces compose into a layerwise invariant subspace, so every tested order recovers their full direct sum (Appendix~\ref{app:selective}). Order matters when training only on 1,000 samples: bottom-up and top-down return $6{,}719$ and $7{,}999$ dimensions, respectively, against an invalid atomic sum of $13{,}034$ (Table~\ref{tab:subset-order}).
+
+
+\textbf{Maximum dimension.} 
+The procedure to construct invariant subspaces gives us insight into the variety and dimensionality of invariant subspaces. A natural question is what is the dimensionality of the largest layerwise invariant subspace. This is a difficult question to answer, but we can already say something in this regard.
+A layerwise invariant subspace satisfies
+\[
+ \dim M\le\min\{\dim\ker J_X,\sum_{\ell=1}^{L+1}\dim K_\ell\}.
+\]
+The greedy construction supplies a lower bound on the maximum. 
+For a bias-free depth-two linear network,  the maximum layerwise invariant subspace dimension has a closed-form solution (Appendix~\ref{app:deep-linear}). For linear networks of any depth, we derive a Bellman recursion maximizing the remaining dimension over the propagated hidden subspace (Appendix~\ref{app:deep-linear}). Its state includes the subspace's orientation, so the exact recursion is a continuous optimization with no established finite polynomial-time solution. The maximum dimension for arbitrary-depth nonlinear networks remains open.
+
+\subsection{Beyond layerwise invariant subspaces}
+\label{sec:coupled}
+
+
+The construction procedure above applies to layerwise oceans. What about coupled ones?
+Coupled invariant subspaces tie edits across layers, so their layer components cannot all vary independently. 
+Based on the condition in Equation~\ref{eq:strategy-frozen}, we can write a general test for both coupled and layerwise invariant subspaces (Appendix~\ref{app:coefficient-test}). The number of coefficient conditions to verify is combinatorial in the layers' dimension and network depth. Although this test characterizes coupled invariant subspaces exactly, the number of conditions makes it impractical for constructing them. An efficient general test remains open. 
+
+We can nevertheless bound how many independent directions coupled subspaces could add.  Every invariant subspace through a differentiable base point is a subspace of $\ker J_X$ (Remark~\ref{rem:exact-ocean-tangent}). Given a constructed layerwise subspace $M$, at most $\dim\ker J_X-\dim M$ additional independent directions remain. Some may be tangents to curved invariant families rather than directions of finite straight invariance (Remark~\ref{rem:exact-ocean-tangent}).
+
+\noindent{\setlength{\fboxsep}{6pt}\colorbox{setupbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{How much remains beyond layerwise invariance?} Across three width-64 ReLU MLPs at high accuracy, the constructed layerwise invariant subspaces account for $94.3$--$94.7\%$ of the numerical tangent-kernel dimension. Adding the rescaling-symmetry tangent span leaves only $0.18$--$1.23\%$ unaccounted for (Tables~\ref{tab:tangent-ocean-seeds} and~\ref{tab:c-symmetry-intersection}). 
+}}}
+
+
+\section{OCEAN RADII}
+\label{sec:radius}
+
+The previous sections identify a subspace $M$ where the frozen response vanishes identically (Equation~\ref{eq:strategy-frozen}). In this section, we seek a radius $r$ which controls the true network response as follows: 
+\[\sup_{\substack{w\in M\\\|w\|\le r}}\|A_X^{\rm tr}(w)\|_X\le\varepsilon.\]
+By construction, on a frozen invariant subspace $\Delta F_X=A_X^{\rm tr}$. For piecewise-linear activations, the remainder is zero inside the base activation chamber.\footnote{The base activation chamber is the connected component containing $\theta_0$ in which every sampled preactivation stays in its base affine piece.} 
+Beyond the chamber, or for smooth activations, the radius depends on the activation residuals and their propagation to the output.
+
+\subsection{The activation-transition identity}
+\label{sec:radius-bounds}
+Let $\Delta z_{\ell,i}(w)$ be the true preactivation change at $\theta_0+w$. Its local activation residual is the linearization error
+\[
+ \rho_{\ell,i}(w)=\sigma(z_{\ell,i}^0+\Delta z_{\ell,i}(w))
+                  -h_{\ell,i}^0-S_{\ell,i}\Delta z_{\ell,i}(w).
+\]
+For ReLU, local residuals begin at gate crossings and equal the overshoot past zero. For smooth activations, the residual measures how accurately the base tangent predicts the new activation value: a more accurate linearization gives a smaller residual. 
+\begin{theorem}[Exact activation transition decomposition]
+\label{thm:transition}
+Let $T_{\ell,i}(w)$ propagate a residual inserted after layer $\ell$ through the edited downstream weights with the base activation slopes held fixed. For every edit,
+\begin{equation}
+ A_i^{\rm tr}(w)=\sum_{\ell=1}^L T_{\ell,i}(w)\rho_{\ell,i}(w).
+ \label{eq:transition}
+\end{equation}
+\end{theorem}
+This simple decomposition shows that local activation residuals only tell half of the story. Downstream maps ($T_{\ell,i}(w)$) can suppress these residuals, and their contributions can cancel. In both cases, the activation transition term would stay low, despite linearization errors. In Appendix~\ref{app:radius-proof} we give the proof of the decomposition and build a conservative uniform bound on the activation transition term. 
+
+\subsection{Estimating a safe radius}
+\label{sec:radius-measured}
+Even without a uniform bound, we can ask what fraction of directions remain safe up to a given radius. Let $S(M)$ be the unit sphere of a fixed invariant subspace $M$. At radius $r$ and output tolerance $\varepsilon$, define the failure probability
+\[
+ p(r,\varepsilon)=\Pr_{v\sim\operatorname{Unif}(S(M))}\!\left[
+ \sup_{0\le t\le r}\|A_X^{\rm tr}(tv)\|_X>\varepsilon\right].
+\]
+We seek a radius with $p(r,\varepsilon)\le\delta$: at least $1-\delta$ of directions then preserve the outputs within tolerance along their entire segment from the center to radius $r$.
+
+In practice, we approximate the supremum using a radius grid $0<r_1<\cdots<r_m$. Write $p_j(\varepsilon)$ for the probability of exceeding tolerance at any tested radius through $r_j$. 
+For $n$ independent directions sampled uniformly from $S(M)$, the failure count is binomial:
+\[
+ \begin{aligned}
+ \sum_{i=1}^n\mathbf1\!\left\{
+ \max_{h\le j}\|A_X^{\rm tr}(r_hv_i)\|_X>\varepsilon\right\} \sim\operatorname{Binomial}\bigl(n,p_j(\varepsilon)\bigr).
+ \end{aligned}
+\]
+Inverting the binomial tail gives an upper confidence bound $\overline p_j(\varepsilon)$ \citep{clopper1934confidence}. We use a total error probability $\alpha=0.05$, giving $95\%$ simultaneous confidence.\footnote{The bounds are calibrated so that, with probability at least $1-\alpha$, they all hold simultaneously. This permits selecting the largest safe radius after inspecting the scan.} We certify a radius $r_j$ as safe on the tested grid whenever $\overline p_j(\varepsilon)\le\delta$. Appendix~\ref{app:radius-confidence} details the construction.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{radius_probability.pdf}
+\caption{Upper bounds on grid-based failure probability at $\varepsilon=10^{-3}$: mean $\pm$ sample SD across seeds. Below the dotted line, the mean failure probability is at most $10\%$. ResNet uses selective edits of \texttt{layer4.2.conv2}.}
+\label{fig:radius-grid}
+\end{figure}
+Figure~\ref{fig:radius-grid} shows mean upper confidence bounds on the failure probability, with standard deviations across seeds. At $\varepsilon=10^{-3}$, and $\delta=0.1$, each measured MLP checkpoint has a certified safe radius of $0.316$ and each late-stage CNN checkpoint has radius $1$. These are at least $100\times$ the corresponding certified generic radii (Appendix~\ref{app:radius-certificates}).
+
+Leaky-ReLU and BatchNorm MLPs show the same separation from generic directions (Figure~\ref{fig:radius-variants}). Direct output-response curves, including GELU approximate tails and wider MLPs, are given in Appendices~\ref{app:radius-full} and \ref{app:radius-responses}.
+
+Feature-null edits alone preserve the true outputs at every radius. In a single-layer test, their component can be removed before certifying the remaining space. For multilayer edits, this removal also requires that the feature-null component annihilate the features changed by earlier layers.
+
+\section{From function to loss}
+\label{sec:discussion}
+Flat oceans describe regions of approximate functional invariance in the parameter space. In the previous sections we have observed that flat oceans often occupy a large part of the parameter space. In this final section we ask whether they also explain a large part of the loss flatness observed in parameter space.
+
+Functional invariance is directly connected to loss invariance (also called \emph{flatness} in the literature, \citep{sagun2017hessian}). For squared loss $\mathcal L(\theta)=\|F_X(\theta)-Y\|_X^2$, let $Y$ denote the targets and $e_0=F_X(\theta_0)-Y$ the residual at $\theta_0$. Writing $\Delta\mathcal L$ for the loss change under an edit, $\Delta\mathcal L=2\langle e_0,\Delta F_X\rangle_X+\|\Delta F_X\|_X^2$.
+An ocean with output tolerance $\varepsilon$ therefore guarantees
+\[
+ |\Delta\mathcal L|\le2\|e_0\|_X\varepsilon+\varepsilon^2.
+\]
+For a fixed residual this is $O(\varepsilon)$; at exact interpolation it becomes $\varepsilon^2$.
+
+Not all loss invariance is explained by functional invariance, however. Every direction of exact finite loss invariance must satisfy the first-order condition $
+ \nabla_\theta\mathcal L^\top v
+ =\nabla_F\mathcal L^\top J_Xv=0.
+$
+This includes both functionally invisible directions ($J_Xv=0$) and output changes tangent to a loss level set. Writing $u=J_Xv$ for the first-order output change, the loss-invisible changes are loss dependent, e.g.:
+\[
+ \begin{aligned}
+ \text{MSE:}&\quad \langle e_0,u\rangle_X=0,\\
+ \text{Cross-entropy:}&\quad \langle\Pi_0-Y,u\rangle_X=0,
+ \end{aligned}
+\]
+where $\Pi_0$ contains the softmax probabilities at $\theta_0$ and $Y$ the one-hot targets. In the function space, MSE level sets are spheres around the targets, while cross-entropy also admits arbitrary straight logit shifts $\Delta f_i=a_i\mathbf1$ for each sample $i$. 
+
+\textbf{Flatness coverage.} \;\;
+Intrinsically loss-invisible directions can also yield flat loss regions without functional invariance. We therefore ask: how much of the observed local loss flatness is captured by the constructed functional invariances? We compare the constructed layerwise invariant subspace with the numerical kernels of the loss Hessian and the generalized Gauss--Newton (GGN) matrix. These matrices describe local curvature and coincide at exact interpolation for MSE. We measure \emph{coverage}, the average squared projection of the numerical-kernel directions onto the constructed invariant space.
+
+In three width-64 MNIST MLPs at epoch 500, the constructed flat oceans capture almost all of the numerical Hessian kernel and $95.21\pm0.94\%$ of the numerical GGN kernel (Table~\ref{tab:exact-kernel-coverage}). We use $|\lambda|\le10^{-14}$ to identify numerical zeros in the Hessian and GGN eigenvalues, near the eigensolver's resolution. Hessian coverage remains above $99.9\%$ at $10^{-12}$. Keeping the ocean fixed while increasing the eigenvalue threshold reduces coverage (Figure~\ref{fig:fixed-ocean-coverage}).
+
+The numerical Hessian kernel aligns almost entirely with the flat ocean, whose activation-remainder bounds control finite output and loss changes (Section~\ref{sec:radius}). This close alignment suggests that most numerical Hessian-null directions in these networks reflect functional invariance. \emph{Consequently, our results provide evidence that the loss flatness identified by the Hessian kernel extends over finite distances, with guarantees supplied by the  flat-ocean construction.} Direct ray tests show comparable median visibility radii for the ocean and cumulative bands at $\tau=10^{-8}$, spanning about $34\%$ (Hessian) and $54\%$ (GGN) of all parameters (Figure~\ref{fig:curvature-cumulative-rays}). At $\tau=10^{-4}$, these fractions reach $91\%$ and $95\%$, but the output tolerance is crossed earlier.
+
+\begin{table}\centering
+\caption{Constructed-ocean dimension and numerical-kernel coverage: mean and sample SD across three width-64 MNIST seeds. Coverage is in percent at $|\lambda|\le10^{-14}$. The tiny Hessian shortfall is reported numerically, not as an error bound.}
+\label{tab:exact-kernel-coverage}
+\small\begin{tabular}{lrr}\toprule
+Quantity & Mean & SD\\\midrule
+$\dim M$ & 4,088 & 477.20\\
+Hessian coverage & $100-1.324\!\times\!10^{-9}$ & $1.324\!\times\!10^{-9}$\\
+GGN coverage & $95.21$ & $0.94$\\
+\bottomrule\end{tabular}
+\end{table}
+
+
+\textbf{Convexity and linear mode connectivity.}\;\;
+Convexity ensures that the segment between any two points in an exact ocean preserves the loss; an approximate ocean controls loss variation throughout that segment. Sibling networks (i.e., networks that share an initial training trajectory) are often connected by low-loss segments \citep{frankle2020linear}. In our preliminary MLP and CNN experiments, siblings also share a large portion of their constructed invariant subspaces (Appendix~\ref{app:lmc-shared}). These observations suggest that \emph{flat oceans may offer a useful framework for studying phenomena such as linear mode connectivity and model merging.} We leave these connection to future work.
+
+
+\section{RELATED WORK}
+\label{sec:related}
+
+\paragraph{Global functional equivalence.}
+These studies ask which weight changes preserve a network's function on all inputs. Complete answers exist for tanh-type networks, shallow ReLU networks and generic three-layer ReLU bottlenecks \citep{vlacic2020affine,ramakrishnan2026complete,gegenfurtner2026symmetries}. Deep ReLU networks can have redundancies beyond neuron rescaling and permutation, although these exhaust the ambiguity at some parameter settings \citep{grigsby2023hidden,grillo2026identifiable}. Other results characterize equivalence through architecture-changing rewrites \citep{zhang2026identification}, or restrict transformations defined across parameter space to scaling and permutation under regularity assumptions \citep{deng2026covering}. We seek the additional freedom obtained by preserving only a dataset's outputs, and construct finite convex invariant regions.
+
+\paragraph{Empirical equivalence and local dimension.}
+\citet{stock2021embedding} give conditions under which finitely many sample outputs locally determine a deep ReLU network's parameters up to rescaling. Their path-product representation removes this rescaling freedom and makes output constraints locally linear in the new coordinates.
+\citet{bonapellissier2022local} describe parameters preserving sample outputs locally by intersecting observation constraints with the set of realizable path products, and derive rank conditions for identifiability. Functional-dimension studies also use evaluation Jacobians to describe locally available output changes and parameter redundancy \citep{grigsby2025functional,bonapellissier2024geometry}. Compared to this line of work, our approach is constructive: our goal is to explicitly and cheaply describe the parameter set where the empirical network function is constant.
+
+\paragraph{Finite invariance from network embeddings.}
+Embedding a narrower network into a wider one also creates finite affine invariant sets. \citet{fukumizu2019semiflat} study the resulting flat minima and saddles; \citet{simsek2021geometry} describe connected collections of affine subspaces arising from neuron replication. These constructions preserve outputs for all inputs. We characterize additional sample-dependent invariance at a given checkpoint. Our construction works for several architectures and does not require specific constructions, such as a narrower-network.
+
+\paragraph{Algebraic representations and response approximations.}
+ReLU networks have piecewise multilinear parameter dependence \citep{laurent2018multilinear}, expressible through activation gates and path-weight products \citep{lakshminarayanan2020paths}. Algebraic methods also characterize realizable-function dimensions for polynomial networks \citep{kileel2019expressive}. For ReLU, our frozen network agrees with the fixed-gate polynomial. Our affine activation tangents extend this construction to smooth activations, with an exact remainder accounting for activation changes. Retaining mixed-layer products, beyond whole-network parameter linearization, allows us to approximate the network function to a higher fidelity, without increasing complexity.
+
+\section{CONCLUSION}
+\label{sec:conclusion}
+In this work we have taken a constructive approach to the characterization of sample dependent invariance. Given reference parameters $\theta_0\in\mathbb R^p$, we provide methods to identify an orthonormal basis $Q\in\mathbb R^{p\times k}$ and a radius $r>0$ defining a region
+\begin{align*}
+\mathcal O_{Q,r}=\{\theta_0+Qu:u\in\mathbb R^k,\ \|u\|_2\le r\}
+\end{align*}
+of approximate empirical functional invariance, which we call \emph{flat ocean}, with large dimension $k$ and radius $r$. We studied layerwise invariant subspaces, which give exact invariance in the frozen network, and measured approximate invariance of the true outputs at large sampled radii.
+
+We also introduced a new, simple decomposition of the network response function, which separates a dominant polynomial term from an activation-dependent residual. This allows us to study significantly more complex behaviors than a common first-order approximation while keeping the complexity of the terms very low. 
+
+Our analysis leaves empirical phenomena such as persistence through training unexplained. A dynamical account of how training creates, preserves and enlarges these regions is therefore a central next step. Appendix~\ref{app:future-work} collects broader theoretical questions and applications.
+
+\subsubsection*{AI Use Statement}
+The discovery of flat oceans, the idea of the network-response decomposition, and the structure of the mathematical analysis originated with the authors. The authors determined the research questions, the experimental objectives, and the organization of the paper. Generative AI tools assisted in developing and checking proofs, writing and validating experimental code, and analyzing results. Each mathematical proof was reviewed by the authors. For the writing, the authors provided initial drafts and used AI assistance to polish wording and structure through repeated rounds of revision. The authors reviewed the resulting text and remain responsible for all claims, proofs, experiments and conclusions.
+
+\subsubsection*{Acknowledgments}
+We thank Jacopo Graldi, Rodrigo Casado Noguerales, Alexander Bakarsky and Weronika Ormaniec for their support and early discussions, which helped shape the intuition behind flat oceans, and Razvan Pascanu for useful discussions on loss landscapes, continual learning and linear mode connectivity. We acknowledge funding from the ETH AI Center and support from the Department of Computer Science at ETH Zurich.
+
+\bibliographystyle{plainnat}
+\bibliography{shared_references,references}
+
+\clearpage
+\appendix
+\onecolumn
+
+\input{sections/aistats_appendix_index}
+
+\section{Theoretical analysis}
+\label{app:proofs}
+
+This appendix gives the full theoretical treatment of the main paper's results, together with additional results and proofs. It introduces the notation and assumptions from the beginning so it can be read as a standalone document.
+
+\theoremstyle{plain}
+\newtheorem*{appstatement}{\appstatementheading}
+\newenvironment{restated}[1]{\def\appstatementheading{#1}\begin{appstatement}}{\end{appstatement}}
+\newtheorem*{appconjecture}{Conjecture}
+\theoremstyle{remark}
+\newtheorem*{appremark}{\appstatementheading}
+\newenvironment{restatedremark}[1]{\def\appstatementheading{#1}\begin{appremark}}{\end{appremark}}
+
+\subsection{Setting and notation}
+\label{app:setting}
+\paragraph{Network and data.}
+Let $X=(x_i)_{i=1}^s$, with $x_i\in\R^{n_0}$, and consider an MLP with $L$ hidden layers of widths $n_1,\ldots,n_L$ and $d$ outputs. We include each bias as the last column of its weight matrix. For a vector $v$, write $\bar v=(v,1)$, so multiplication by the extended matrix adds the bias. The layer parameter matrices are
+\[
+ W_\ell\in\R^{n_\ell\times(n_{\ell-1}+1)},\qquad
+ V\in\R^{d\times(n_L+1)}.
+\]
+Write $W_\ell=[W_{\ell,\mathrm{lin}}\;b_\ell]$ and $V=[V_{\mathrm{lin}}\;b_{L+1}]$ to separate the linear weights from the bias vectors. For pointwise activation $\sigma$, the forward recursion is
+\begin{align*}
+ h_{0,i}&=x_i,& z_{\ell,i}&=W_\ell\bar h_{\ell-1,i},\\
+ h_{\ell,i}&=\sigma(z_{\ell,i}),& f_i&=V\bar h_{L,i}.
+\end{align*}
+Here $i=1,\ldots,s$ indexes samples and $\ell=1,\ldots,L$ indexes hidden layers. The concatenated parameter vector $\theta\in\R^p$ has dimension
+$p=\sum_{\ell=1}^L n_\ell(n_{\ell-1}+1)+d(n_L+1)$.
+Throughout $F_X(\theta)=(f_i)_{i=1}^s$ and
+$\|(v_i)_i\|_X^2=s^{-1}\sum_i\|v_i\|_2^2$.
+We identify stacked outputs with $\R^{sd}$. Parameter norms are Euclidean: the squared norm of a parameter vector is the sum of the squared Frobenius norms of its layer components.
+In the text and figures, we abbreviate numbered layer references as L1, L2, and so on, counting from the input; the readout is named explicitly. For a matrix, $\|\cdot\|_F$ is the square root of the sum of squared entries and $\|\cdot\|_{\rm op}$ is its Euclidean operator norm.
+
+\paragraph{Base point and edits.}
+Fix $\theta_0=(W_1^0,\ldots,W_L^0,V^0)$ and use superscript $0$ for its states. Write an edit as $w=(A_1,\ldots,A_L,B)$, with
+\[
+ A_\ell=[A_{\ell,\mathrm{lin}}\;a_\ell],\qquad
+ B=[B_{\mathrm{lin}}\;a_{L+1}].
+\]
+The vector $a_\ell$ changes bias $b_\ell$. To include the readout in layer-indexed formulas, set $A_{L+1}=B$ and $n_{L+1}=d$. A hidden-state change augments as $(v,0)$, because the constant bias coordinate does not change.
+
+Assume $\sigma$ is differentiable at every base preactivation and define
+\[
+ S_{\ell,i}=\diag\sigma'(z_{\ell,i}^0),\qquad J_X=DF_X(\theta_0).
+\]
+The operator $\diag$ puts the listed entries on a diagonal, and $D$ in $DF_X$ denotes differentiation. For ReLU, differentiability at every base preactivation means $z_{\ell,i,j}^0\ne0$ for every sample, layer and unit. We call the region of parameters with those same signs the \textbf{empirical activation chamber} $\cC_X(\theta_0)$.
+
+\paragraph{The empirical fiber and flat oceans.}
+The \textbf{fiber} of a map over an output is the set of all inputs mapped to that output, also called its level set \citep[Ch.~4]{lee2013smooth}. For the empirical output map, the fiber through $\theta_0$ is
+\[
+ F_X^{-1}(F_X(\theta_0))=\{\theta\in\R^p:F_X(\theta)=F_X(\theta_0)\}.
+\]
+We call a convex set $\mathcal O\subseteq\R^p$ an \textbf{$\varepsilon$-flat ocean} through $\theta_0$, for $\varepsilon\ge0$, if $\theta_0\in\ri(\mathcal O)$, its \textbf{direction space} $M=\spn(\mathcal O-\theta_0)$ has positive dimension, and
+\[
+ \sup_{\theta\in\mathcal O}\|F_X(\theta)-F_X(\theta_0)\|_X\le\varepsilon.
+\]
+Here $\spn$ means linear span. For a nonempty convex set $C$, let $L_C=\spn(C-C)$ be its direction space. Its \textbf{relative interior} is
+\[
+ \ri(C)=\{x\in C:\exists r>0,\ x+(L_C\cap B_r(0))\subseteq C\},
+ \qquad B_r(0)=\{u:\|u\|<r\}.
+\]
+This is the usual interior relative to the affine hull $x+L_C$ \citep{boyd2004convex}. We call oceans \textbf{exact} when they have $\varepsilon=0$. Convexity keeps every segment between their points inside the ocean; relative interior supplies a neighborhood of the base point in their direction space.
+
+\begin{remark}[Exact oceans lie in the tangent kernel]\label{rem:exact-ocean-tangent}
+Assume $F_X$ is differentiable at $\theta_0$. If $\mathcal O$ is an exact flat ocean through $\theta_0$, then its direction space $M=\spn(\mathcal O-\theta_0)$ satisfies
+\[
+ M\subseteq\ker J_X,\qquad \dim M\le\dim\ker J_X.
+\]
+\end{remark}
+\begin{proof}
+By relative interior, some $r>0$ satisfies $\theta_0+(M\cap B_r(0))\subseteq\mathcal O$. Fix $v\in M$. For every sufficiently small $t$, exact invariance gives $F_X(\theta_0+tv)=F_X(\theta_0)$. Differentiability therefore yields
+\[
+ J_Xv=\lim_{t\to0}\frac{F_X(\theta_0+tv)-F_X(\theta_0)}{t}=0.
+\]
+Since $v$ was arbitrary, $M\subseteq\ker J_X$.
+\end{proof}
+For an invariant differentiable curve through $\theta_0$, the same argument places its tangent in $\ker J_X$; its finite chords need not lie there. For an $\varepsilon$-flat ocean with fixed $\varepsilon>0$, exact tangent nullity does not follow: the bound $\|F_X(\theta_0+tv)-F_X(\theta_0)\|_X\le\varepsilon$ does not give a vanishing difference quotient. For instance, $F(t)=t$ on $[-\varepsilon,\varepsilon]$ satisfies that bound at zero and has derivative one.
+
+\paragraph{Downstream maps and atomic kernels.}
+We call an edit \textbf{atomic} if it changes only the parameters of one layer. Define its \textbf{base downstream map} by
+\[
+ D_{L,i}=V_{\mathrm{lin}}^0S_{L,i},\qquad
+ D_{\ell,i}=D_{\ell+1,i}W_{\ell+1,\mathrm{lin}}^0S_{\ell,i}
+ \quad(\ell=L-1,\ldots,1).
+\]
+Thus $D_{\ell,i}:\R^{n_\ell}\to\R^d$; set $D_{L+1,i}=I_d$, the identity on the output space. The \textbf{layer Jacobian} $J_\ell:\R^{n_\ell(n_{\ell-1}+1)}\to\R^{sd}$ and its \textbf{atomic kernel}, written in matrix form, are
+\[
+ J_\ell\operatorname{vec}(A_\ell)
+   =(D_{\ell,i}A_\ell\bar h_{\ell-1,i}^0)_{i=1}^s,
+ \qquad K_\ell=\{A_\ell:J_\ell\operatorname{vec}(A_\ell)=0\},
+\]
+where $\operatorname{vec}$ stacks matrix columns. We identify matrices and their vectorizations when writing $\ker J_\ell$. Consequently $J_Xw=\sum_{\ell=1}^{L+1}J_\ell\operatorname{vec}(A_\ell)$.
+
+For later residual calculations, define the \textbf{edited downstream map} $T_{\ell,i}(w):\R^{n_\ell}\to\R^d$ by
+\begin{align*}
+ T_{L,i}(w)&=V_{\mathrm{lin}}^0+B_{\mathrm{lin}},\\
+ T_{\ell,i}(w)&=T_{\ell+1,i}(w)S_{\ell+1,i}
+             (W_{\ell+1,\mathrm{lin}}^0+A_{\ell+1,\mathrm{lin}}).
+\end{align*}
+The second recursion runs backward for $\ell=L-1,\ldots,1$. In particular, $D_{\ell,i}=T_{\ell,i}(0)S_{\ell,i}$. Zero activation slopes prevent recovering $T_{\ell,i}(0)$ by inverting this relation.
+
+
+\begin{table}[!htbp]\centering
+\caption{Notation used throughout the theoretical analysis. All states and maps are evaluated on the fixed sample $X$ unless another sample is specified.}\label{tab:appendix-notation}
+\small\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{p{.25\linewidth}>{\columncolor{black!8}}p{.68\linewidth}}\toprule
+Symbol & Meaning\\\midrule
+$X=(x_i)_{i=1}^s$ & Sample of $s$ inputs in $\R^{n_0}$.\\
+$L,n_\ell,d,p$ & Hidden-layer count, widths, output dimension and parameter count.\\
+$W_\ell,V;\ \theta_0$ & Bias-augmented hidden/readout matrices; base parameter.\\
+$z_{\ell,i},h_{\ell,i},f_i$ & Preactivation, hidden state and output on sample $i$; superscript $0$ denotes base values.\\
+$w=(A_1,\ldots,A_L,B)$ & Parameter edit, with $A_{L+1}=B$ and $n_{L+1}=d$.\\
+$\bar v=(v,1)$ & Bias-augmented vector; its change is augmented with zero.\\
+$F_X(\theta),\ \|\cdot\|_X$ & Stacked outputs and sample root-mean-square Euclidean norm.\\
+$\mathcal O,M$ & Convex ocean and its linear direction space.\\
+$S_{\ell,i},\ \cC_X(\theta_0)$ & Base activation slope matrix and empirical activation chamber.\\
+$J_X,J_\ell,K_\ell$ & Full Jacobian, layer Jacobian and atomic matrix kernel.\\
+$D_{\ell,i}$ & Base derivative from a preactivation displacement to the output.\\
+$T_{\ell,i}(w)$ & Edited-weight, base-slope map from a postactivation residual to the output.\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The frozen polynomial and its invariant subspaces}
+\label{app:coefficient-test}
+\paragraph{The frozen model.}
+We separate the response to a parameter edit into changes that retain the base activation slopes and a remainder due to activation changes. Run the original network at $\theta_0$ and hold its states $z_{\ell,i}^0$, $h_{\ell,i}^0$ and $f_i^0$ fixed. We define the \textbf{frozen model} by replacing each activation with its affine linearization:
+\[
+ \sigma(z_{\ell,i}^0+u)\quad\longmapsto\quad h_{\ell,i}^0+S_{\ell,i}u,
+ \qquad u\in\R^{n_\ell}.
+\]
+The activation value at the base point is retained; its slope is frozen at $S_{\ell,i}$. The edited weights remain variable, so their interactions across layers are retained. Let $\delta z_{\ell,i}$ and $\delta h_{\ell,i}$ denote the resulting preactivation and hidden-state changes. Starting from $\delta h_{0,i}=0$, we obtain
+\begin{align}
+ \delta z_{\ell,i}&=(W_{\ell,\mathrm{lin}}^0+A_{\ell,\mathrm{lin}})\delta h_{\ell-1,i}+A_{\ell,\mathrm{lin}}h_{\ell-1,i}^0+a_\ell,\nonumber\\
+ \delta h_{\ell,i}&=S_{\ell,i}\delta z_{\ell,i},\label{eq:app-frozen}\\
+ F_i^{\frz}(w)&=f_i^0+(V_{\mathrm{lin}}^0+B_{\mathrm{lin}})\delta h_{L,i}+B_{\mathrm{lin}}h_{L,i}^0+a_{L+1}.\nonumber
+\end{align}
+Write $h_{\ell,i}^{\frz}=h_{\ell,i}^0+\delta h_{\ell,i}$ for the frozen hidden state and stack the outputs into $F_X^{\frz}(w)$. Its argument is an edit, so $F_X^{\frz}(0)=F_X(\theta_0)$.
+
+\paragraph{Polynomial structure and response decomposition.}
+\begin{proposition}[Frozen polynomial]
+The map $F_X^{\frz}$ is affine in the parameters of each layer separately and has total degree at most $L+1$. Its derivative at zero is $J_X$.
+\end{proposition}
+\begin{proof}
+In \eqref{eq:app-frozen}, each layer multiplies a polynomial from earlier layers by its own edited weights. Its edit appears once and has not appeared in the preceding state. Induction over the $L$ hidden layers and readout proves separate affinity and the degree bound. Differentiating the recursion at zero gives the chain rule for the original network, because $S_{\ell,i}=\diag\sigma'(z_{\ell,i}^0)$. Thus the linear term is $J_Xw$.
+\end{proof}
+For a subset $I\subseteq\{1,\ldots,L+1\}$, let $\Psi_I$ collect the polynomial terms using precisely those edited layers. These terms are multilinear in the selected edits. The constant term is $\Psi_\varnothing=F_X(\theta_0)$, singleton terms sum to $J_Xw$, and the higher-degree terms contain interactions between edits.
+
+We call the higher-degree part the \textbf{frozen interaction polynomial} $P_X^{\frz}$, and the true-minus-frozen response the \textbf{activation transition potential} $A_X^{\rm tr}$:
+\begin{align*}
+ P_X^{\frz}(w)&=F_X^{\frz}(w)-F_X(\theta_0)-J_Xw,\\
+ A_X^{\rm tr}(w)&=F_X(\theta_0+w)-F_X^{\frz}(w).
+\end{align*}
+For the output drift $\Delta F_X(w)=F_X(\theta_0+w)-F_X(\theta_0)$, adding the definitions gives
+\begin{equation}
+ \Delta F_X(w)=J_Xw+P_X^{\frz}(w)+A_X^{\rm tr}(w).
+ \label{eq:app-decomp}
+\end{equation}
+The first term is linear in the edit, and the second retains cross-layer interactions at fixed activation slopes. The third measures the output change caused by departures of the activations from their base affine tangents: gate switches for ReLU and curvature for smooth activations. For piecewise-linear activations, true and frozen states agree whenever each preactivation stays in its base affine piece; induction through the network then gives $A_X^{\rm tr}(w)=0$. Smooth activations can have a nonzero transition term arbitrarily near the base point.
+
+\paragraph{Frozen oceans and invariant subspaces.}
+We call a convex set $\mathcal O_{\frz}$ of edits a \textbf{frozen ocean} if $0\in\ri(\mathcal O_{\frz})$ and $F_X^{\frz}(w)=F_X^{\frz}(0)$ for every $w\in\mathcal O_{\frz}$. A linear parameter subspace $M$ is a \textbf{frozen invariant subspace} if this identity holds for every $w\in M$. We call it \textbf{layerwise} if $M=\bigoplus_{\ell=1}^{L+1}M_\ell$, where each matrix space $M_\ell$ occupies only layer $\ell$; $\bigoplus$ denotes the direct sum on these disjoint coordinates. We call other invariant subspaces \textbf{coupled}. The zero invariant subspace is allowed, while a positive-dimensional ocean requires a nonzero direction space.
+
+\begin{restated}{Theorem~\ref{thm:correspondence} (Frozen oceans and invariant subspaces)}
+If the frozen response vanishes on a relative neighborhood of zero in a linear space $M$, it vanishes everywhere on $M$. Thus every frozen ocean spans a frozen invariant subspace, and every frozen invariant subspace is itself a frozen ocean. Every such subspace satisfies $M\subseteq\ker J_X$.
+\end{restated}
+\begin{proof}
+Suppose the frozen response vanishes on a relative neighborhood of zero in $M$. There is then $r>0$ such that it vanishes for every $v\in M$ with $\|v\|<r$. This includes the frozen-ocean case: take $M=\spn(\mathcal O_{\frz})$ and use $0\in\ri(\mathcal O_{\frz})$. We show that constancy near zero extends along every line in $M$.
+Fix any nonzero $w\in M$ and consider the one-variable vector polynomial
+\[
+ q_w(t)=F_X^{\frz}(tw)-F_X^{\frz}(0),\qquad t\in\R.
+\]
+For $|t|<r/\|w\|$, the edit $tw$ lies in this neighborhood, so $q_w(t)=0$. Each scalar coordinate of $q_w$ therefore vanishes on an interval. A nonzero one-variable polynomial has only finitely many roots, so every coordinate is identically zero \citep{cox2015ideals}. Evaluating at $t=1$ gives
+\[
+ F_X^{\frz}(w)=F_X^{\frz}(0).
+\]
+This holds for every $w\in M$, including $w=0$, and proves that $M$ is an invariant subspace.
+
+Conversely, a linear invariant subspace is convex, contains zero in its relative interior, and has constant frozen output, so it is a frozen ocean. Finally, for every $u\in M$, differentiating its constant output along the line $tu$ yields
+\[
+ J_Xu=\left.\frac{d}{dt}F_X^{\frz}(tu)\right|_{t=0}=0.
+\]
+Hence $M\subseteq\ker J_X$.
+\end{proof}
+
+\begin{remark}[Piecewise-linear activations]\label{rem:chamber-branch}
+Suppose each base preactivation lies inside an affine piece of the activation. Every exact true ocean through $\theta_0$ spans a frozen invariant subspace, and every nonzero invariant subspace gives an exact true ocean on a sufficiently small subspace ball.
+\end{remark}
+\begin{proof}
+Continuity gives a neighborhood of $\theta_0$ where all preactivations stay in their base pieces and the frozen and true networks agree. Intersect a true ocean with a sufficiently small ball in that neighborhood. Its direction space is unchanged, because $\theta_0$ is in its relative interior. In edit coordinates the intersection is a frozen ocean, and the preceding theorem applies. Conversely, a sufficiently small ball in an invariant subspace is convex, contains zero in its relative interior, and preserves the true outputs. Constancy also holds on the entire invariant subspace--chamber intersection, which need not be convex.
+\end{proof}
+
+\paragraph{A general coefficient test.}
+Theorem~\ref{thm:correspondence} reduces the frozen-ocean question to constancy on a linear subspace. To test a candidate subspace, express every edit in a basis and collect the coefficients of its frozen output change. This gives finitely many equations that enforce constancy for every linear combination of the basis directions.
+
+Choose a basis $u_1,\ldots,u_k$ of the candidate subspace $M$, where $k=\dim M$. Every edit in $M$ has a unique expression $w=\sum_{j=1}^k\alpha_j u_j$. Thus $\alpha\in\R^k$ gives the coordinates of the edit $w$ in this basis. Substitute this expression into the frozen map and subtract the base output:
+\[
+ Q_M(\alpha)=F_X^{\frz}\left(\sum_{j=1}^k\alpha_j u_j\right)-F_X(\theta_0)
+ =\sum_{1\le |\nu|\le L+1}c_\nu\alpha^\nu.
+\]
+Here $\nu\in\mathbb N_0^k$ is a tuple of nonnegative integers, $|\nu|=\sum_j\nu_j$, $\alpha^\nu=\prod_j\alpha_j^{\nu_j}$, and $c_\nu\in\R^{sd}$ is the coefficient of that monomial. For example, with two basis directions the monomials include $\alpha_1$, $\alpha_2$, $\alpha_1^2$, $\alpha_1\alpha_2$ and $\alpha_2^2$. The invariant subspace condition requires $Q_M(\alpha)=0$ for \emph{every} choice of $\alpha\in\R^k$: every linear combination of the basis edits must leave every sampled output unchanged. Checking the basis directions alone is insufficient. For example, the scalar polynomial $q(\alpha_1,\alpha_2)=\alpha_1\alpha_2$ vanishes on both coordinate axes but equals one at $(1,1)$. Thus the test must check every monomial coefficient, including the mixed coefficients that describe simultaneous motion along several basis directions.
+\begin{proposition}[General coefficient test]\label{prop:coefficients}
+The candidate $M$ is a frozen invariant subspace exactly when every nonconstant coefficient $c_\nu$ vanishes. There are at most
+\[
+ sd\left[\binom{k+L+1}{L+1}-1\right]
+\]
+scalar coefficient conditions.
+\end{proposition}
+\begin{proof}
+The basis map $\alpha\mapsto\sum_j\alpha_j u_j$ covers $M$, so invariant subspace constancy is equivalent to $Q_M(\alpha)=0$ for all $\alpha$. Distinct monomials are linearly independent as polynomial functions. Applying this fact to each output coordinate makes constancy equivalent to $c_\nu=0$ for every monomial.
+
+The standard stars-and-bars count gives $\binom{k+L+1}{L+1}$ monomials of degree at most $L+1$ in $k$ variables. Removing the constant monomial, whose coefficient is already zero, and multiplying by $sd$ output coordinates gives the stated bound.
+\end{proof}
+
+The test is general because it applies to atomic, layerwise and coupled candidate spaces. For coupled edits, terms from different layer subsets can contribute to the same monomial and must be summed before testing. Independent layer coordinates in a layerwise space permit the more efficient test in Appendix~\ref{app:composition-proof}, also used in the main paper.
+
+\subsection{Smooth exact oceans}\label{app:smooth-exact}
+Our construction first makes the frozen response vanish on an invariant subspace and then controls the activation-transition term. Requiring these contributions to vanish separately is a sufficient route to an exact ocean. The definition of an exact ocean only requires their sum to vanish. For smooth activations, frozen interactions and activation curvature could therefore cancel each other.
+
+Assume $F_X$ is analytic near $\theta_0$, meaning that it equals a convergent Taylor series there. Decompose the frozen interaction polynomial and the transition term by total degree:
+\[
+ P_X^{\frz}(w)=\sum_{q=2}^{L+1}P_q(w),\qquad
+ A_X^{\rm tr}(w)=\sum_{q=2}^{\infty}A_q(w).
+\]
+Here $P_q,A_q:\R^p\to\R^{sd}$ are homogeneous polynomial maps of degree $q$: scaling their argument by $t$ scales their value by $t^q$. Both series start at degree two because the true and frozen models have the same value and Jacobian at zero edit. Set $P_q=0$ for $q>L+1$.
+
+\begin{proposition}[Necessary Taylor conditions]
+If $F_X$ is constant on a relative ball about $\theta_0$ in $\theta_0+M$, then
+\[
+ J_X|_M=0,\qquad (P_q+A_q)|_M=0\quad(q\ge2),
+\]
+where restriction to $M$ means evaluation at every $w\in M$.
+\end{proposition}
+\begin{proof}
+Fix $w\in M$ and substitute $tw$ into the drift decomposition. Constancy for all sufficiently small $t$ forces every coefficient of the convergent one-variable power series to vanish. This holds for every $w$.
+\end{proof}
+Thus an exact smooth ocean could, in principle, have nonzero frozen coefficients canceled by activation curvature.
+
+The following conjecture asks whether the frozen construction captures every exact local ocean for the stated smooth MLPs. The invariant subspace tests and radius bounds proved in this paper hold independently of this conjecture.
+\begin{appconjecture}
+For MLPs with tanh, sigmoid or softplus activations, outside an exceptional set of data and base parameters of Lebesgue measure zero, the direction space of every exact local ocean is a frozen invariant subspace.
+\end{appconjecture}
+The scope matches the architecture analyzed here and the activation families covered by the one-unit calculation below. That calculation supplies evidence for these families; it establishes no general classification for other activations or architectures. The reciprocal-affine counterexample below shows why an unrestricted claim over smooth activations would be false. Cancellations among several units remain open even within the stated MLP setting.
+
+\begin{example}[The conjecture in a one-unit model]
+Consider scalar output $f(t)=(v+tc)\sigma(z+t)$ on an interval containing zero. Here $z,v$ are the base preactivation and readout, $c$ is the readout change per unit of $t$, and a nonzero preactivation velocity has been absorbed into $t$. For tanh, sigmoid or softplus, this function cannot be a nonzero constant. Thus this nondegenerate one-unit setting admits no exact line sustained by cancellation between frozen interactions and activation curvature.
+\end{example}
+\begin{proof}
+Suppose $f$ is a nonzero constant. Then $v\ne0$, and its first two derivatives at zero give
+\[
+ c\sigma(z)+v\sigma'(z)=0,\qquad
+ 2c\sigma'(z)+v\sigma''(z)=0.
+\]
+Multiply the second identity by $\sigma(z)$ and use the first to eliminate $c$. Since $v\ne0$, a necessary condition is $\sigma(z)\sigma''(z)-2(\sigma'(z))^2=0$. For $\sigma(z)=\tanh z$, sigmoid $\sigma(z)=(1+e^{-z})^{-1}$, and softplus $\sigma(z)=\log(1+e^z)$, this expression is, respectively,
+\[
+ -2\operatorname{sech}^2z,\qquad
+ -\frac{e^{2z}}{(1+e^z)^3},\qquad
+ \frac{e^z}{(1+e^z)^2}[\log(1+e^z)-2e^z].
+\]
+Here $\operatorname{sech}z=1/\cosh z$. Each expression is strictly negative; for the last, use $\log(1+a)<a$ for $a>0$. None of these activations therefore admits such a one-unit line.
+\end{proof}
+The activation restriction matters: for fixed scalars $C\ne0,a\ne0,b$, the activation $\sigma(z)=C/(az+b)$ and affine readout $a(z+t)+b$ give constant output $C$ wherever the denominator is nonzero. These calculations do not exclude cancellations between several units.
+
+\subsection{Structural symmetries and affine invariance}
+Following the standard parameter-space notion \citep{godfrey2022symmetries}, a \textbf{parameter symmetry} is an invertible transformation $T$ with $f_{T(\theta)}(x)=f_\theta(x)$ for every parameter $\theta$ and input $x$, where $f_\theta$ denotes the network function. Its \textbf{orbit} through $\theta_0$ is the set of parameters reachable by transformations in the chosen symmetry group. Every point of this orbit has the same sampled outputs.
+
+\paragraph{Known structural symmetries.}
+The following transformations preserve the function \citep{godfrey2022symmetries}:
+\begin{itemize}
+\item \textbf{Hidden-unit permutations.} For a permutation matrix $P$, replace $(W_\ell,W_{\ell+1,\mathrm{lin}})$ by $(PW_\ell,W_{\ell+1,\mathrm{lin}}P^{-1})$. Coordinatewise activation satisfies $\sigma(Pz)=P\sigma(z)$, so the permutation cancels at the next linear map. The augmented matrix $PW_\ell$ also permutes the bias of layer $\ell$; the bias of the following layer stays unchanged. At the final hidden layer use $V_{\mathrm{lin}}$ as the next matrix.
+\item \textbf{Positive rescaling.} If $\sigma(cz)=c\sigma(z)$ for $c>0$, the same formula works for a positive diagonal matrix $P$. For one hidden unit with incoming row $a$ (including bias), outgoing column $b$, and preceding augmented feature $\bar h$,
+\[
+ b\sigma(a\bar h)=(b/c)\sigma(ca\bar h).
+\]
+\end{itemize}
+
+\begin{remark}[A symmetry tangent need not define an ocean]
+The invariant scaling path $(a,b)\mapsto(e^t a,e^{-t}b)$ has tangent $(a,-b)$ at zero. Its straight tangent edit instead gives, for $|t|<1$,
+\[
+ (1-t)b\,\sigma((1+t)a\bar h)=(1-t^2)b\,\sigma(a\bar h).
+\]
+Whenever this second-order change reaches the sampled output, the straight direction belongs to no exact ocean through the base point. An exact ocean would contain a small segment in that direction and require constant outputs there. Thus tangency to an invariant orbit alone does not establish ocean membership. If the unit is in the final hidden layer, a nonzero contribution $b\sigma(a\bar h)$ on any sample already ensures the output changes.
+\end{remark}
+
+Define the \textbf{symmetry tangent space} $T_{\rm sym}$ as the span of derivatives at $\theta_0$ of differentiable symmetry paths through $\theta_0$. Differentiating their invariant outputs gives $T_{\rm sym}\subseteq\ker J_X$. For an invariant subspace $M$, the quotient dimension $\dim M-\dim(M\cap T_{\rm sym})$ counts its directions beyond these tangents. Tangent dimensions are evaluated at the actual base parameters, where degeneracies can reduce them.
+
+Some architectural components also admit exact affine symmetry families. Appendix~\ref{app:layernorm} treats the shifts removed by LayerNorm and the resulting affine invariance.
+
+\subsection{Atomic oceans}
+\label{app:atomic-proof}
+\subsubsection{Elements of the atomic ocean}
+An \textbf{atomic edit} changes a single parameter layer and leaves every other layer fixed. Write $w_\ell(A)$ for the full parameter edit with matrix $A$ in layer $\ell$ and zero in all other layers. Separate affinity of the frozen model gives the exact identity
+\[
+ F_X^{\frz}(w_\ell(A))-F_X^{\frz}(0)
+ =J_\ell\operatorname{vec}(A)
+ =(D_{\ell,i}A\bar h_{\ell-1,i}^0)_{i=1}^s.
+\]
+\textbf{The atomic kernel $K_\ell$ is therefore the complete frozen constancy space for one moving layer.} Every edit in $K_\ell$ preserves the frozen output at every magnitude; every edit outside it changes at least one sampled output. No higher-order terms survive when only one layer moves. We now decompose this space, starting with edits that preserve the features themselves.
+
+\paragraph{Feature-preserving edits.}
+For each layer, define its \textbf{input-feature span} and rank by
+\[
+ \cH_\ell=\spn\{\bar h_{\ell-1,i}^0:i\le s\},\qquad
+ r_\ell=\dim\cH_\ell.
+\]
+We define the \textbf{feature-null space} as $G_\ell=\{A:A\cH_\ell=0\}$. 
+\begin{restated}{Theorem~\ref{thm:feature-ocean} (Feature-null ocean)}
+The direct sum of the feature-null spaces is
+\[
+ M_{\rm feat}=\bigoplus_{\ell=1}^{L+1}\{A_\ell:A_\ell\cH_\ell=0\},
+ \qquad
+ \dim M_{\rm feat}=\sum_{\ell=1}^{L+1}n_\ell(n_{\ell-1}+1-r_\ell).
+\]
+The affine set $\theta_0+M_{\rm feat}$ is an exact flat ocean. For every $w\in M_{\rm feat}$ and any pointwise activation,
+$F_X(\theta_0+w)=F_X(\theta_0)$, without a radius restriction.
+\end{restated}
+\begin{proof}
+We prove by induction that every true hidden state stays at its base value. The input is unchanged: $h_{0,i}(\theta_0+w)=x_i=h_{0,i}^0$. Suppose the claim holds through layer $\ell-1$. The input to layer $\ell$ is then still $\bar h_{\ell-1,i}^0\in\cH_\ell$, so
+\[
+ z_{\ell,i}(\theta_0+w)
+ =(W_\ell^0+A_\ell)\bar h_{\ell-1,i}^0
+ =W_\ell^0\bar h_{\ell-1,i}^0
+ =z_{\ell,i}^0.
+\]
+Applying the same pointwise activation to equal preactivations gives $h_{\ell,i}(\theta_0+w)=h_{\ell,i}^0$. Induction reaches layer $L$. The readout then satisfies
+\[
+ (V^0+B)\bar h_{L,i}^0=V^0\bar h_{L,i}^0=f_i^0,
+\]
+because $B\cH_{L+1}=0$. These equalities hold for edits of every magnitude.
+
+Each row of $A_\ell$ may be any vector orthogonal to $\cH_\ell$, a space of dimension $n_{\ell-1}+1-r_\ell$. The $n_\ell$ rows are independent, giving $n_\ell(n_{\ell-1}+1-r_\ell)$ dimensions in layer $\ell$. Summing over the disjoint layers proves the dimension formula.
+\end{proof}
+
+\paragraph{The complete atomic dimension.}
+Define the \textbf{downstream covector span} and its dimension by
+\[
+ \cC_\ell=\sum_i\operatorname{row}(D_{\ell,i}),\qquad
+ r_{d,\ell}=\dim\cC_\ell.
+\]
+Here $\operatorname{row}$ denotes row space and a sum of spaces means their linear span. Write $\cC_\ell^\perp$ for its Euclidean orthogonal complement. The intermediate space
+\[
+ \mathcal N_\ell=\{A:A\cH_\ell\subseteq\cC_\ell^\perp\}
+\]
+sends every realized feature to a downstream-invisible vector. Consequently $G_\ell\subseteq\mathcal N_\ell\subseteq K_\ell$.
+
+\begin{restated}{Theorem~\ref{thm:atomic} (Exact atomic dimension)}
+Define the \emph{co-occurrence deficit} by
+\[
+ \delta_{\rm joint,\ell}=r_\ell r_{d,\ell}-\rank J_\ell\ge0.
+\]
+The complete atomic frozen invariant subspace is $K_\ell$, with
+\begin{equation}
+ \dim K_\ell=\underbrace{n_\ell(n_{\ell-1}+1-r_\ell)}_{\text{feature-null}}
+ +\underbrace{r_\ell(n_\ell-r_{d,\ell})}_{\text{downstream-null}}
+ +\underbrace{\delta_{\rm joint,\ell}}_{\text{co-occurrence}}.
+\label{eq:app-atomic}
+\end{equation}
+The last two terms are the successive quotient dimensions
+$\dim(\mathcal N_\ell/G_\ell)$ and $\dim(K_\ell/\mathcal N_\ell)$, so the count avoids double-counting overlapping mechanisms.
+\end{restated}
+\begin{proof}
+For column-wise vectorization, an output coordinate of $D_{\ell,i}A\bar h_{\ell-1,i}^0$ has coefficient vector $\bar h_{\ell-1,i}^0\otimes D_{\ell,i}^\top e_a$, where $e_a$ is the $a$th standard basis vector of $\R^d$. The tensor product $\cH_\ell\otimes\cC_\ell$ is the span of such products with the two factors chosen independently from the two spaces. Thus
+\[
+ \operatorname{row}(J_\ell)
+ =\spn_{i,a}\{\bar h_{\ell-1,i}^0\otimes D_{\ell,i}^\top e_a\}
+ \subseteq\cH_\ell\otimes\cC_\ell.
+\]
+Products of basis vectors form a basis of the tensor product, giving dimension $r_\ell r_{d,\ell}$ and proving nonnegativity of the deficit. Rank--nullity, $\dim\ker J_\ell=n_\ell(n_{\ell-1}+1)-\rank J_\ell$, gives \eqref{eq:app-atomic}.
+
+A map in $G_\ell$ is arbitrary on a complement of $\cH_\ell$ and zero on $\cH_\ell$. A map in $\mathcal N_\ell$ additionally sends its $r_\ell$-dimensional feature span into the $(n_\ell-r_{d,\ell})$-dimensional downstream complement. These choices add $r_\ell(n_\ell-r_{d,\ell})$ dimensions. Subtracting from $\dim K_\ell$ leaves the deficit as the final quotient dimension. The frozen response to one layer is linear, so no further coefficient constraints exist.
+\end{proof}
+For the readout, $D_{L+1,i}=I_d$ and $r_{d,L+1}=d$; its kernel is entirely feature-null. For any piecewise-linear hidden layer, the atomic frozen space preserves true outputs as long as the edit remains in the base chamber.
+
+\subsubsection{The co-occurrence deficit}
+\label{app:cooccurrence-deficit}
+\paragraph{Why sample pairings matter.}
+The marginal spans describe which feature directions and downstream covectors occur anywhere in the data. The Jacobian pairs them only when they occur on the same sample. Its row space can therefore be smaller than the full tensor product of the two marginal spans.
+
+\textbf{A linear network has no deficit.} Its activation derivatives are constant, so the downstream map is the same on every sample. Every sample feature is then paired with every row of this common map, giving the full tensor-product span. The same conclusion holds whenever a layer has a sample-independent downstream map:
+\begin{corollary}[Constant downstream map]
+\label{cor:app-constant-downstream}
+If $D_{\ell,i}$ is the same for every sample, then $\rank J_\ell=r_\ell r_{d,\ell}$ and $\delta_{\rm joint,\ell}=0$.
+\end{corollary}
+\begin{proof}
+Write $D_\ell$ for the common map. The Jacobian rows pair every sample feature with every row of $D_\ell$, so
+\[
+ \operatorname{row}(J_\ell)
+ =\spn_i\{\bar h_{\ell-1,i}^0\}\otimes\operatorname{row}(D_\ell)
+ =\cH_\ell\otimes\cC_\ell.
+\]
+Its dimension is $r_\ell r_{d,\ell}$, proving the claim.
+\end{proof}
+A linear network can still have a large atomic ocean through deficient feature or downstream ranks. With nonlinear activations, sample-dependent slopes can both enlarge the downstream span and leave some feature--downstream pairings absent. The following example isolates the latter effect.
+
+\begin{example}[Full marginal spans with missing pairings]
+Consider an edited matrix $A\in\R^{2\times2}$ and a scalar output. Let $e_1,e_2$ be the standard basis of $\R^2$. Take two augmented input features and downstream maps
+\[
+ \bar h_{\ell-1,1}^0=e_2,\quad D_{\ell,1}=e_1^\top,
+ \qquad
+ \bar h_{\ell-1,2}^0=e_1+e_2,\quad D_{\ell,2}=e_2^\top.
+\]
+Both feature vectors have last coordinate one, as required for the bias convention. Their span and the downstream span are both $\R^2$, so $r_\ell=r_{d,\ell}=2$. Yet the two output changes are only
+\[
+ J_\ell\operatorname{vec}(A)=(A_{12},\ A_{21}+A_{22}).
+\]
+These are two independent constraints on four parameters. Thus
+\[
+ K_\ell=\left\{\begin{pmatrix}a&0\\b&-b\end{pmatrix}:a,b\in\R\right\},
+ \qquad \delta_{\rm joint,\ell}=4-2=2.
+\]
+The entire atomic ocean in this example comes from missing pairings.
+\end{example}
+
+Selective ReLU units and sample clustering describe two ways that these pairings can be missing. The selective-unit construction uses ReLU's zero slopes. The cluster decomposition applies to any activation differentiable at the base preactivations.
+
+\paragraph{Selective ReLU units and composition.}
+For hidden unit $j=1,\ldots,n_\ell$, define its \textbf{active-feature span}
+\[
+ \cH_{\ell j}^{\rm act}(X)
+ =\spn\{\bar h_{\ell-1,i}^0:z_{\ell,i,j}^0>0\}.
+\]
+We call $G_\ell^{\rm sel}=\{A:S_{\ell,i}A\bar h_{\ell-1,i}^0=0\ \forall i\}$ the \textbf{selective-unit space}. On an active sample, the ReLU slope is one, so row $j$ must annihilate $\bar h_{\ell-1,i}^0$. On an inactive sample the slope is zero and imposes no constraint on that row. Each row can therefore be any vector orthogonal to $\cH_{\ell j}^{\rm act}(X)$, independently of the other rows, giving
+\[
+ \dim G_\ell^{\rm sel}
+ =\sum_{j=1}^{n_\ell}\bigl(n_{\ell-1}+1-\dim\cH_{\ell j}^{\rm act}(X)\bigr).
+\]
+A unit contributes whenever its active features span a proper subspace, even if it is active on many samples. Feature-null edits are selective, and every selective edit is atomically invisible, so $G_\ell\subseteq G_\ell^{\rm sel}\subseteq K_\ell$. The next result explains why selective spaces also compose across layers.
+
+\begin{restated}{Proposition~\ref{prop:selective-composition} (Selective-unit composition)}
+The direct sum of the hidden selective-unit spaces and the feature-null readout is a frozen invariant subspace. Its dimension is the sum of the hidden counts above plus $d(n_L+1-r_{L+1})$ for the readout. It preserves the true ReLU network locally within the base chamber.
+\end{restated}
+\begin{proof}
+We prove by induction that every frozen hidden-state change is zero. The base case is $\delta h_{0,i}=0$, since the inputs are fixed. Suppose $\delta h_{\ell-1,i}=0$ for every sample. Substituting into the frozen recursion \eqref{eq:app-frozen} gives
+\begin{align*}
+ \delta z_{\ell,i}
+ &=(W_{\ell,\mathrm{lin}}^0+A_{\ell,\mathrm{lin}})\underbrace{\delta h_{\ell-1,i}}_{=0}
+   +A_\ell\bar h_{\ell-1,i}^0
+   =A_\ell\bar h_{\ell-1,i}^0,\\
+ \delta h_{\ell,i}
+ &=S_{\ell,i}A_\ell\bar h_{\ell-1,i}^0=0,
+\end{align*}
+where the last equality is the defining selective-unit constraint. Thus the frozen postactivation remains fixed even though the preactivation may move on inactive units. In particular, no hidden-state change reaches the next layer to interact with its edit.
+
+Induction gives $\delta h_{L,i}=0$. The feature-null readout then gives
+\[
+ F_i^{\frz}(w)-f_i^0
+ =(V_{\mathrm{lin}}^0+B_{\mathrm{lin}})\delta h_{L,i}
+   +B\bar h_{L,i}^0=0.
+\]
+The direct sum is therefore an invariant subspace. Its layer coordinates are disjoint, so its dimension is the sum of their dimensions. Inside the base chamber, the frozen and true ReLU networks agree, proving local true invariance.
+\end{proof}
+
+\begin{remark}[Selective invariance and gate crossings]
+Selective edits can change the preactivations of inactive units while leaving their frozen postactivations zero. If an inactive unit crosses zero, its true ReLU output can change. The selective invariant subspace therefore has a local true-network guarantee inside the base chamber. Feature-null edits preserve the preactivations themselves and have the global guarantee of Theorem~\ref{thm:feature-ocean}.
+\end{remark}
+
+\paragraph{Cluster decomposition.}
+Sample clustering describes missing pairings for general activations through their base features and downstream derivatives. Choose any partition of the sample indices into nonempty, disjoint groups, and write $X_g$ for the samples in group $g$. Let $\cH_\ell(X_g)$, $\cC_\ell(X_g)$ and $J_\ell(X_g)$ be the feature span, downstream span and layer Jacobian restricted to that group. Define
+\[
+ \cP=\sum_g\cH_\ell(X_g)\otimes\cC_\ell(X_g).
+\]
+\begin{proposition}[Cluster decomposition of the deficit]
+The co-occurrence deficit splits into two nonnegative terms:
+\[
+ \delta_{\rm joint,\ell}
+ =\underbrace{r_\ell r_{d,\ell}-\dim\cP}_{\text{across clusters}}
+ +\underbrace{\dim\cP-\rank J_\ell}_{\text{within clusters}}.
+\]
+If the downstream map is constant within each group, the within-cluster term is zero.
+\end{proposition}
+\begin{proof}
+Stacking the sample constraints gives
+\[
+ \operatorname{row}(J_\ell)=\sum_g\operatorname{row}(J_\ell(X_g))
+ \subseteq\cP\subseteq\cH_\ell\otimes\cC_\ell.
+\]
+These inclusions prove nonnegativity. Add and subtract $\dim\cP$ in the definition of $\delta_{\rm joint,\ell}$ to obtain the identity. When $D_{\ell,i}$ is constant within each group, Corollary~\ref{cor:app-constant-downstream} applied to $X_g$ gives $\operatorname{row}(J_\ell(X_g))=\cH_\ell(X_g)\otimes\cC_\ell(X_g)$. Summing makes $\operatorname{row}(J_\ell)=\cP$.
+\end{proof}
+
+
+Call a partition \textbf{meaningful} when its within-cluster deficit is zero, so missing pairings across groups explain the entire co-occurrence deficit. A \textbf{minimal meaningful partition} uses the fewest groups among all meaningful partitions. The singleton partition always has zero within-cluster deficit; minimizing the group count asks for the most compact explanation. Constant downstream maps within groups are sufficient for meaningfulness, although the same dimension equality can hold for varying maps.
+
+In trained networks, we adopt an approximate version of the constant-downstream criterion: we group downstream maps whose normalized Frobenius distances are at most a tolerance $\varepsilon$. The late-training groups in Appendix~\ref{app:mechanism}, Table~\ref{tab:dmap-threshold}, are nearly class-pure across ReLU, leaky ReLU and GELU. This establishes approximate downstream concentration. Whether such a partition explains the deficit is measured separately by its within-cluster term; a distance tolerance alone does not certify zero deficit or minimality.
+
+\subsection{Layerwise invariant subspaces at arbitrary depth}
+\label{app:composition-proof}
+Atomic invariant subspaces can fail to compose: two edits that are individually invisible may change the output through their cross-layer product. This section gives an exact test, a construction certified by that test, and the dimension results available for specific network classes.
+
+\subsubsection{An efficient test for layerwise invariant subspaces}
+Fix a candidate $M=\bigoplus_{\ell=1}^{L+1}M_\ell$, with each $M_\ell$ a matrix space in layer $\ell$. For a matrix space $N$ and vector space $U$, write $NU=\spn\{Au:A\in N,u\in U\}$. Starting from $R_{0,i}=\{0\}$, the recursion
+\begin{align}
+ U_{\ell,i}&=\spn\{\bar h_{\ell-1,i}^0\}+(R_{\ell-1,i}\times\{0\}),\label{eq:received}\\
+ R_{\ell,i}&=S_{\ell,i}\bigl(W_{\ell,\mathrm{lin}}^0R_{\ell-1,i}+M_\ell U_{\ell,i}\bigr),\nonumber
+\end{align}
+collects the coefficients of the frozen hidden-state change in $R_{\ell,i}$ and the directions received by edit $\ell$ in $U_{\ell,i}$. The appended zero keeps the bias coordinate fixed. At the readout only the received span is needed, and $D_{L+1,i}=I_d$. All spaces in the algorithm are stored as bases; each sum or image is reduced to a basis.
+
+\begin{algorithm}[H]
+\caption{Exact layerwise invariant subspace test}\label{alg:app-branch-test}
+\small
+\begin{algorithmic}[1]
+\Require Bases of $M_1,\ldots,M_{L+1}$; base states, weights, slopes and downstream maps on $X$.
+\State $R_{0,i}\gets\{0\}$ for every sample $i$.
+\For{$\ell=1,\ldots,L+1$}
+ \For{each sample $i$}
+  \State $U_{\ell,i}\gets\spn\{\bar h_{\ell-1,i}^0\}+(R_{\ell-1,i}\times\{0\})$.
+  \If{$D_{\ell,i}Au\ne0$ for any basis pair $A\in M_\ell$, $u\in U_{\ell,i}$}
+   \State \Return false.
+  \EndIf
+  \If{$\ell\le L$}
+   \State $R_{\ell,i}\gets S_{\ell,i}(W_{\ell,\mathrm{lin}}^0R_{\ell-1,i}+M_\ell U_{\ell,i})$.
+  \EndIf
+ \EndFor
+\EndFor
+\State \Return true.
+\end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}[Exactness and completeness of the layerwise test]
+\label{thm:composition}
+In exact arithmetic, Algorithm~\ref{alg:app-branch-test} returns true if and only if $M$ is a frozen invariant subspace. Equivalently, every received span satisfies
+\[
+ D_{\ell,i}M_\ell U_{\ell,i}=\{0\}
+ \qquad(1\le\ell\le L+1,\ 1\le i\le s).
+\]
+\end{theorem}
+\begin{proof}[Proof of Theorem~\ref{thm:composition}]
+Choose independent basis coordinates in every $M_\ell$. The frozen hidden-state change obeys
+\[
+ \delta h_{\ell,i}=S_{\ell,i}\left(
+ W_{\ell,\mathrm{lin}}^0\delta h_{\ell-1,i}
+ +A_\ell \bar h_{\ell-1,i}^0
+ +A_{\ell,\mathrm{lin}}\delta h_{\ell-1,i}\right).
+\]
+The three groups of monomials respectively omit slot $\ell$, use only slot $\ell$, and use slot $\ell$ together with lower slots. Their independent coefficient vectors span exactly the spaces in \eqref{eq:received}. Induction from $R_{0,i}=0$ thus identifies $R_{\ell,i}$ as the span of every nonconstant coefficient in $\delta h_{\ell,i}$.
+
+Any nonconstant output monomial has a unique highest perturbed slot. If it is hidden slot $\ell$, its coefficient is $D_{\ell,i}A u$, where $A$ is a basis matrix of $M_\ell$ and $u$ is the base input or a lower coefficient augmented with zero. These vectors span $U_{\ell,i}$. If the highest slot is the readout, the coefficient is $Bu$ with $u\in U_{L+1,i}$. The conditions in the theorem therefore kill every coefficient. Conversely, if the output polynomial is constant, independence of the layer coordinates forces each such coefficient to vanish, hence also every vector in their span. These are exactly the zero tests in Algorithm~\ref{alg:app-branch-test}, proving both implications.
+
+\end{proof}
+
+\begin{remark}[Cost of the test]
+After bases have been formed, the number of scalar zero tests is at most
+\[
+ N_{\rm test}=d\sum_{i=1}^s\sum_{\ell=1}^{L+1}k_\ell u_{\ell,i},
+ \qquad k_\ell=\dim M_\ell,\quad u_{\ell,i}=\dim U_{\ell,i}.
+\]
+Since $u_{\ell,i}\le n_{\ell-1}+1$, this is at most $sd\sum_\ell k_\ell(n_{\ell-1}+1)$. For bounded widths and basis sizes, the number of tests grows linearly with the sample count and depth. Each test involves matrix--vector products, and forming the bases requires additional linear algebra; their total arithmetic cost is polynomial in the supplied dimensions. 
+
+To compare this cost with the general coefficient test (Proposition~\ref{prop:coefficients}), choose independent coordinates in each layer space. Direct enumeration then has up to $sd[\prod_\ell(1+k_\ell)-1]$ scalar conditions, since a monomial can use either no coordinate or one of $k_\ell$ coordinates from each layer. This count can grow exponentially with depth; the received-span recursion avoids enumerating those monomials. Numerical implementations must additionally state their rank and residual tolerances.
+\end{remark}
+
+\subsubsection{Constructing layerwise invariant subspaces}
+The test also constructs an invariant subspace by choosing compatible matrix spaces one layer at a time. The following greedy procedure takes the full compatible space at each step. Any ordering is allowed, with each layer visited once.
+
+Let $\mathcal S$ be the set of layers already selected and let $\mathcal B_j$ be a basis of $M_j$ for each $j\in\mathcal S$. For the new layer $\ell$, the admissible space is
+\begin{equation}
+\begin{split}
+ M_\ell=\{A:\;&\Psi_{I\cup\{\ell\}}(A,(A_j)_{j\in I})=0\\
+ &\forall I\subseteq\mathcal S,\quad
+   \forall A_j\in\mathcal B_j\ (j\in I)\}.
+\end{split}\label{eq:greedy-constraints}
+\end{equation}
+Each argument of $\Psi$ occupies its indicated layer slot, with $A$ in slot $\ell$. The empty set $I$ gives the atomic constraint. Every equation is homogeneous and linear in $A$, because a layer appears at most once in each multilinear term. In bottom-up order these equations reduce to Eq.~\eqref{eq:bottom-up-constraints}.
+
+
+\paragraph{Computing the constraints by backward propagation.}
+Equation~\eqref{eq:greedy-constraints} can be evaluated without enumerating subsets. Compute $U_{\ell,i}$ by the received-space recursion using the already selected lower layers. For the higher layers, put $W_{L+1}^0=V^0$ and start with the output covector space $\mathcal Z_{L+1,i}=\R^d$; recursively set, for $j=L+1,\ldots,\ell+1$,
+\begin{equation}
+ \mathcal Z_{j-1,i}
+ =\spn\{cW_{j,\mathrm{lin}}^0S_{j-1,i},\ cB_{\mathrm{lin}}S_{j-1,i}:
+ c\in\mathcal Z_{j,i},\ B\in\mathcal B_j\cup\{0\}\}.
+ \label{eq:app-backward-constraints}
+\end{equation}
+Here covectors are written as rows, and an unselected layer has $\mathcal B_j=\{0\}$. The compatible space is precisely
+\[
+ M_\ell=\{A:cAu=0\quad\forall i,\ c\in\mathcal Z_{\ell,i},\ u\in U_{\ell,i}\}.
+\]
+The forward recursion spans all lower coefficient vectors, and the backward recursion spans all higher coefficient covectors. Their products are the coefficients containing the new edit $A$, so these equations are equivalent to~\eqref{eq:greedy-constraints}. Orthonormalizing at each step bounds both propagated spaces by their layer widths; testing their basis pairs gives a linear system in $A$ of polynomial size.
+
+\begin{algorithm}[H]
+\caption{Greedy construction in any layer order}\label{alg:app-branch-build}
+\small
+\begin{algorithmic}[1]
+\Require Base network on $X$ and a permutation $\pi$ of $\{1,\ldots,L+1\}$.
+\State $M_j\gets\{0\}$ for all layers $j$.
+\For{$t=1,\ldots,L+1$}
+ \State $\ell\gets\pi(t)$; keep $M_j$, $j\ne\ell$, fixed.
+ \State Set $\mathcal S\gets\{\pi(1),\ldots,\pi(t-1)\}$ and choose bases $\mathcal B_j$ of the selected $M_j$.
+ \State Compute $U_{\ell,i}$ forward and $\mathcal Z_{\ell,i}$ backward by Eq.~\eqref{eq:app-backward-constraints}.
+ \State Impose $cAu=0$ for every sample and basis pair $c\in\mathcal Z_{\ell,i}$, $u\in U_{\ell,i}$.
+ \State $M_\ell\gets$ the full nullspace of these constraints.
+\EndFor
+\State \Return $\bigoplus_\ell M_\ell$.
+\end{algorithmic}
+\end{algorithm}
+
+\begin{proposition}[Validity of greedy layer addition]
+At each step of Algorithm~\ref{alg:app-branch-build}, the admissible matrices form a linear space. Adding that entire space preserves a frozen invariant subspace. The returned space is therefore a frozen invariant subspace for every ordering $\pi$.
+\end{proposition}
+\begin{proof}
+Assume the previously selected direct sum is an invariant subspace. Every new monomial contains the unknown layer matrix $A$ exactly once, because the frozen map is affine in that layer. Its coefficient is linear in $A$. Vanishing of all new coefficients imposes homogeneous linear equations, whose solution space is the stated nullspace. Every linear combination of admissible matrices satisfies those equations, so admitting the entire space preserves the invariant subspace. The initial zero space is an invariant subspace, and induction completes the proof.
+\end{proof}
+In bottom-up order, the constraints are $D_{\ell,i}Au=0$ for every sample and received basis vector. For other orders, already selected higher layers impose further mixed-coefficient constraints. These must be included when forming the linear system.
+
+\paragraph{Order and multiplicity.}
+Keeping earlier choices fixed can change the final invariant subspace and its dimension. The reduced-data experiment in Table~\ref{tab:subset-order} gives different dimensions for bottom-up and top-down orders. In contrast, the measured full-data MLP atomic kernels compose, so all tested orders recover the same sum (Appendix~\ref{app:selective}). The order is a discrete choice; allowing smaller compatible spaces also introduces continuous choices of orientation.
+
+\subsubsection{Dimensions and maximal layerwise invariant subspaces}
+\label{app:deep-linear}\label{app:sample-gates}
+An earlier edit can enlarge the feature span received by later layers and reduce their available dimensions. Choosing the largest current space therefore need not maximize the sum of all layer dimensions. Write $k_{\max}^{\rm lw}$ for the largest dimension of a layerwise frozen invariant subspace. An invariant subspace is \textbf{inclusion-maximal} if no larger layerwise invariant subspace contains it; different inclusion-maximal invariant subspaces may have different dimensions.
+
+\begin{proposition}[Atomic ceiling and its attainment]\label{prop:app-atomic-ceiling}
+Every layerwise invariant subspace has $M_\ell\subseteq K_\ell$ and
+\[
+ \dim M\le\min\left\{\dim\ker J_X,\sum_{\ell=1}^{L+1}\dim K_\ell\right\}.
+\]
+If the full atomic sum $\bigoplus_\ell K_\ell$ passes Algorithm~\ref{alg:app-branch-test}, it contains every layerwise invariant subspace. It is then the unique inclusion-maximal and unique maximum-dimensional layerwise invariant subspace.
+\end{proposition}
+\begin{proof}
+For $A\in M_\ell$, setting every other layer to zero yields an edit in $M$. It must preserve the frozen outputs, so $A\in K_\ell$. Thus every layerwise invariant subspace lies in the full atomic sum. If this sum is an invariant subspace, it contains every other one, proving both uniqueness claims. The dimension bounds follow from the layer inclusions and $M\subseteq\ker J_X$.
+\end{proof}
+When the atomic sum fails the test, Algorithm~\ref{alg:app-branch-build} gives a constructive lower bound on $k_{\max}^{\rm lw}$. The general ceiling does not by itself determine the maximum when atomic spaces are incompatible. For two matrices, linear activations give a closed-form maximum, while sample-dependent gates lead to an exact optimization over subspaces. We then give a subspace recursion for linear networks of arbitrary depth.
+
+\paragraph{Two matrices with linear activations.}
+We first consider one hidden linear layer without biases. In this paragraph, identify the sample $X$ with the matrix $[x_1\ \cdots\ x_s]\in\R^{n_0\times s}$ and arrange the outputs as columns. The model is $F_X(W_1,W_2)=W_2W_1X$, where $W_1\in\R^{n_1\times n_0}$ and $W_2\in\R^{d\times n_1}$ are fixed base matrices; $W_2$ is the linear readout $V^0$. Their edits are $A\in\R^{n_1\times n_0}$ and $B\in\R^{d\times n_1}$. Put $H_0=\operatorname{im}X$, $H_1=W_1H_0$, $r_j=\dim H_j$ for $j=0,1$, $\mathcal W=\ker W_2$, $\kappa=\dim\mathcal W$, and $c=\dim(\mathcal W\cap H_1)$.
+\begin{theorem}[Depth-two maximum]\label{thm:depth-two}
+Writing $k_{\max}^{\rm lw}$ for the maximum dimension over layerwise invariant subspaces, its value is
+\[
+ k_{\max}^{\rm lw}=n_1(n_0-r_0)+d(n_1-r_1)+r_0c
+                  +\max\{0,(r_0-d)(\kappa-c)\}.
+\]
+\end{theorem}
+\begin{proof}
+The response to $(A,B)$ is $W_2AX+BW_1X+BAX$. For a candidate $M_1\oplus M_2$, independent layer coordinates force all three terms to vanish separately: set either layer to zero for the linear terms, then subtract them to isolate the mixed term. Let $R=\spn\{Ah:A\in M_1,h\in H_0\}$. Then $R\subseteq\mathcal W$, and every invariant subspace is contained in
+\[
+ \{A:AH_0\subseteq R\}\oplus\{B:B(H_1+R)=0\}.
+\]
+Conversely, each such sum is an invariant subspace. With $q=\dim R$ and $j=\dim(R\cap H_1)$, its dimension is
+\[
+ n_1(n_0-r_0)+d(n_1-r_1)+r_0j+(r_0-d)(q-j).
+\]
+The intersection $R\cap H_1$ lies in $\mathcal W\cap H_1$, so $j\le c$. The image of $R$ in the quotient $\mathcal W/(\mathcal W\cap H_1)$ has dimension $q-j$, giving $q-j\le\kappa-c$. If $r_0>d$, both coefficients $r_0$ and $r_0-d$ are positive and the two upper bounds give the maximum. If $r_0\le d$, the last term is nonpositive and the expression is at most its constant part plus $r_0c$. It is attained by $R=\mathcal W$ if $r_0>d$, and by $R=\mathcal W\cap H_1$ otherwise.
+\end{proof}
+
+\paragraph{Two matrices with sample-dependent gates.}
+Consider one hidden layer without biases, with fixed base matrices $W_1\in\R^{n_1\times n_0}$ and $W_2=V^0\in\R^{d\times n_1}$. Assume the frozen activations have zero affine offset, as for ReLU or leaky ReLU, and let $S_i\in\R^{n_1\times n_1}$ be the diagonal base slope matrix on $x_i$. The frozen model is then $f_i=W_2S_iW_1x_i$, for $i=1,\ldots,s$. Its two edited layers have matrix spaces $M_1\subseteq\R^{n_1\times n_0}$ and $M_2\subseteq\R^{d\times n_1}$. Set $H=\spn_i(S_iW_1x_i)$ and $\mathcal W=\ker W_2$. For a target $T\subseteq\mathcal W$, define
+\[
+ \mathcal A(T)=\{A\in\R^{n_1\times n_0}:S_iAx_i\in T\ \forall i\},\qquad
+ \mathcal B(T)=\{B\in\R^{d\times n_1}:B(H+T)=0\}.
+\]
+Let $P_{T^\perp}$ be the orthogonal projector onto $T^\perp$ and stack the matrices $x_i^\top\otimes(P_{T^\perp}S_i)$ vertically into $\Gamma(T)\in\R^{sn_1\times n_1n_0}$. Thus $\mathcal A(T)=\ker\Gamma(T)$ under column-wise vectorization. 
+\begin{proposition}[Depth-two maximum with sample-dependent gates]
+The maximum layerwise invariant subspace dimension is
+\[
+ \max_{T\subseteq\mathcal W}
+ \left[n_1n_0-\rank\Gamma(T)+d\{n_1-\dim(H+T)\}\right].
+\]
+\end{proposition}
+\begin{proof}
+Expanding the frozen output in the independent edits $A\in M_1$ and $B\in M_2$ gives three terms. Their vanishing requires $W_2S_iAx_i=0$, $BS_iW_1x_i=0$, and $BS_iAx_i=0$. For any invariant subspace $M_1\oplus M_2$, collect its gated images into $T=\spn\{S_iAx_i:A\in M_1,\ i=1,\ldots,s\}\subseteq\mathcal W$; the invariant subspace lies in $\mathcal A(T)\oplus\mathcal B(T)$. Conversely, every such sum satisfies the three equations. Vectorization and rank--nullity give $\dim\mathcal A(T)=n_1n_0-\rank\Gamma(T)$. Each of the $d$ rows of $B$ can range independently over $(H+T)^\perp$, giving $\dim\mathcal B(T)=d[n_1-\dim(H+T)]$. Maximizing their sum proves the formula.
+\end{proof}
+The samplewise gates remain in $\Gamma(T)$, so a formula using only marginal spaces generally loses information.
+
+\paragraph{Arbitrary depth: exact dimension and dynamic programming.}
+Write $X=[x_1\ \cdots\ x_s]$ for the data matrix. For a bias-free deep linear model with $L+1$ matrices $W_\ell^0\in\R^{n_\ell\times n_{\ell-1}}$, set $n_{L+1}=d$ and $W_{L+1}^0=V^0$, $H_0=\operatorname{im}X$, $H_\ell=W_\ell^0H_{\ell-1}$, and $\mathcal W_\ell=\ker(W_{L+1}^0\cdots W_{\ell+1}^0)$, with $\mathcal W_{L+1}=\{0\}$ because the downstream map at the readout is the identity. Here $\operatorname{im}X$ is the column span of the data matrix, $H_\ell$ is the base feature span, and $\mathcal W_\ell$ is the kernel of the downstream product after layer $\ell$. Choose targets $T_\ell\subseteq\mathcal W_\ell$, with $T_{L+1}=0$. The target $T_\ell$ is a subspace of $\R^{n_\ell}$. Starting at $R_0=\{0\}$, set
+\[
+ U_\ell=H_{\ell-1}+R_{\ell-1},\quad
+ R_\ell=W_\ell^0R_{\ell-1}+T_\ell,\quad
+ u_\ell=\dim U_\ell,\quad t_\ell=\dim T_\ell.
+\]
+$R_\ell$ records the nonconstant feature-coefficient span and $U_\ell$ the span received by layer $\ell$. Require $T_\ell=0$ whenever $U_\ell=0$. 
+\begin{theorem}[Deep-linear maximum over target subspaces]
+The maximum layerwise invariant subspace dimension is
+\[
+ k_{\max}^{\rm lw}=\max_{(T_\ell)}\sum_{\ell=1}^{L+1}
+       [n_\ell(n_{\ell-1}-u_\ell)+t_\ell u_\ell].
+\]
+\end{theorem}
+\begin{proof}
+For any tuple, the spaces $\{A:AU_\ell\subseteq T_\ell\}$ form an invariant subspace and attain the displayed count. Conversely, for any invariant subspace $\bigoplus_\ell M_\ell$, extract $T_\ell=M_\ell U_\ell$, where the product denotes the span of all images as defined in Appendix~\ref{app:composition-proof}. The recursive test places it in $\mathcal W_\ell$, and filling out the allowed maps preserves the same coefficient spans while containing the original invariant subspace. This proves equality.
+\end{proof}
+
+For $\ell=1,\ldots,L+1$ and an incoming coefficient span $R\subseteq\R^{n_{\ell-1}}$, let $V_\ell(R)$ be the maximum sum of the remaining layer dimensions, optimizing over subsequent admissible targets. Here $V_\ell(R)$ is a scalar value function; the subscript and argument distinguish it from the readout matrix $V$. There are no remaining layers after the readout, so set $V_{L+2}(R)=0$ for $R\subseteq\R^d$. 
+\begin{corollary}[Backward recursion for the dimension maximum]
+The value functions satisfy
+\[
+ V_\ell(R)=\max_{T\subseteq\mathcal W_\ell}
+ \{n_\ell(n_{\ell-1}-u)+u\dim T+V_{\ell+1}(W_\ell^0R+T)\},
+ \quad u=\dim(H_{\ell-1}+R),
+\]
+with the same zero-input convention and maximum $V_1(0)$.
+\end{corollary}
+\begin{proof}
+For each admissible current target $T$, the current layer contributes $n_\ell(n_{\ell-1}-u)+u\dim T$ dimensions. The next coefficient span is $W_\ell^0R+T$, so the largest remaining contribution is $V_{\ell+1}(W_\ell^0R+T)$. Maximizing their sum over $T$ gives the recursion. The terminal value is zero because no layers remain.
+\end{proof}
+
+This recursion characterizes the maximum for linear networks of any depth, but does not yet provide an efficient finite computation. Each maximization ranges over subspaces of $\mathcal W_\ell$, including both their dimensions and their continuously varying orientations. Equal-dimensional targets can have different intersections with the base features and different effects on later layers. A finite reduction of this search has not been established here. Determining the maximum layerwise invariant subspace dimension for general nonlinear networks of arbitrary depth remains open.
+
+\subsection{Radius}
+\label{app:radius-proof}
+On a frozen invariant subspace the polynomial response vanishes, so the true output change is entirely due to activation residuals. We first derive their exact propagation identity. Uniform norm bounds then give sufficient conditions for a whole invariant subspace ball to remain approximately flat.
+
+\subsubsection{Exact propagation and a uniform bound}
+For an edit $w$, let $\widetilde z_{\ell,i}$ and $\widetilde h_{\ell,i}$ be the true states at $\theta_0+w$. Define the true preactivation displacement $\Delta z_{\ell,i}(w)=\widetilde z_{\ell,i}-z_{\ell,i}^0$ and the \textbf{activation residual}
+\[
+ \rho_{\ell,i}(w)=\sigma(z_{\ell,i}^0+\Delta z_{\ell,i}(w))
+              -h_{\ell,i}^0-S_{\ell,i}\Delta z_{\ell,i}(w).
+\]
+Here $\Delta z_{\ell,i}$ is a true-network displacement; the frozen displacement $\delta z_{\ell,i}$ was defined in \eqref{eq:app-frozen}. The maps $T_{\ell,i}(w)$ from Appendix~\ref{app:setting} propagate a postactivation residual through later edited weights and base slopes.
+
+\begin{proposition}[Exact activation-residual propagation]\label{prop:app-exact-transition}
+For every edit $w$, the sample-$i$ component of the activation transition potential satisfies
+\begin{equation}
+ A_i^{\rm tr}(w)=\sum_{\ell=1}^L T_{\ell,i}(w)\rho_{\ell,i}(w).
+ \label{eq:app-transition}
+\end{equation}
+If $w$ belongs to a frozen invariant subspace, this expression also equals the true output drift $F_i(\theta_0+w)-F_i(\theta_0)$.
+\end{proposition}
+\begin{proof}
+Subtract the frozen hidden state $h_{\ell,i}^{\frz}=h_{\ell,i}^0+\delta h_{\ell,i}$ from the true state and write $e_{\ell,i}=\widetilde h_{\ell,i}-h_{\ell,i}^{\frz}$. The inputs agree, so $e_{0,i}=0$. The preactivations differ by $(W_{\ell,\mathrm{lin}}^0+A_{\ell,\mathrm{lin}})e_{\ell-1,i}$ because the biases cancel. Using the definition of $\rho_{\ell,i}$ gives
+\[
+ e_{\ell,i}=S_{\ell,i}(W_{\ell,\mathrm{lin}}^0+A_{\ell,\mathrm{lin}})e_{\ell-1,i}+\rho_{\ell,i}(w).
+\]
+Repeated substitution propagates each residual through the later edited weights and base slopes. Multiplying by the edited linear readout gives \eqref{eq:app-transition}. On an invariant subspace the frozen output equals its base value, proving the final assertion.
+\end{proof}
+This identity retains the direction of every propagated residual and all cancellation between layers. The following bound replaces those vectors by uniform scalar bounds.
+
+\begin{corollary}[Uniform drift bound]\label{cor:app-uniform-drift}
+Let $M$ be a frozen invariant subspace and $B_M(r)=\{w\in M:\|w\|_2\le r\}$ its ball of radius $r\ge0$. Suppose $\chi_\ell(r)$ and $\Omega_\ell(r)$ satisfy, for every $w\in B_M(r)$,
+\[
+ \max_i\|T_{\ell,i}(w)\|_{\rm op}\le \chi_\ell(r),\qquad
+ \| (\rho_{\ell,i}(w))_{i=1}^s\|_X\le\Omega_\ell(r).
+\]
+Then
+\begin{equation}
+ \sup_{w\in B_M(r)}\|\Delta F_X(w)\|_X
+       \le\sum_{\ell=1}^L \chi_\ell(r)\Omega_\ell(r).
+ \label{eq:app-bound}
+\end{equation}
+Any radius for which the right-hand side is at most $\varepsilon$ certifies an $\varepsilon$-flat invariant subspace ball.
+\end{corollary}
+\begin{proof}
+Proposition~\ref{prop:app-exact-transition}, the triangle inequality and the operator-norm bound give
+\begin{align*}
+ \|\Delta F_X(w)\|_X
+ &\le\sum_{\ell=1}^L\left(s^{-1}\sum_{i=1}^s\|T_{\ell,i}(w)\rho_{\ell,i}(w)\|_2^2\right)^{1/2}\\
+ &\le\sum_{\ell=1}^L \chi_\ell(r)\Omega_\ell(r).
+\end{align*}
+The bound is uniform over $B_M(r)$, proving \eqref{eq:app-bound}.
+\end{proof}
+Proposition~\ref{prop:app-exact-transition} proves the identity in Theorem~\ref{thm:transition}; Corollary~\ref{cor:app-uniform-drift} supplies the conservative bound. Only the propagation identity is an equality; the bound can be loose because it discards cancellations and residual alignment. For an approximately constant frozen map, add $\sup_{w\in B_M(r)}\|F_X^{\frz}(w)-F_X(\theta_0)\|_X$ to the bound.
+
+\subsubsection{Smooth activations and explicit depth dependence}
+For smooth activations, Taylor's remainder bounds each residual using activation curvature and preactivation displacement.
+\begin{corollary}[Smooth activation bound]\label{cor:app-smooth-bound}
+Let $M$ be a frozen invariant subspace and let $\chi_\ell(r)$ bound the downstream gains as in Corollary~\ref{cor:app-uniform-drift}. Suppose $\sigma$ is twice continuously differentiable on every scalar interval between $z_{\ell,i,j}^0$ and $z_{\ell,i,j}^0+\Delta z_{\ell,i,j}(w)$, for all samples, units and $w\in B_M(r)$. Choose $d_\ell(r)$ and $\beta_\ell(r)$ such that
+\[
+ \|\Delta z_{\ell,i}(w)\|_2\le d_\ell(r),\qquad
+ |\sigma''(u)|\le\beta_\ell(r)
+\]
+for all these edits, samples and traversed scalar values $u$. Then
+\begin{equation}
+ \sup_{w\in B_M(r)}\|\Delta F_X(w)\|_X
+ \le\tfrac12\sum_{\ell=1}^L \chi_\ell(r)\beta_\ell(r)d_\ell(r)^2.
+ \label{eq:smooth}
+\end{equation}
+\end{corollary}
+\begin{proof}
+For a scalar base value $z$ and change $v$, Taylor's integral remainder is
+\[
+ \sigma(z+v)-\sigma(z)-\sigma'(z)v
+       =v^2\int_0^1(1-t)\sigma''(z+tv)\,dt.
+\]
+Apply this identity to coordinates $j=1,\ldots,n_\ell$. Taking the Euclidean norm gives
+\[
+ \|\rho_{\ell,i}(w)\|_2
+ \le\tfrac12\beta_\ell(r)\left(\sum_{j=1}^{n_\ell}|\Delta z_{\ell,i,j}(w)|^4\right)^{1/2}
+ \le\tfrac12\beta_\ell(r)d_\ell(r)^2,
+\]
+since $(\sum_j v_j^4)^{1/2}\le\sum_jv_j^2$. Substitution into \eqref{eq:app-bound} proves \eqref{eq:smooth}.
+\end{proof}
+The quantities in this bound control the entire ball. Sampled RMS displacements or base-point gains give a proxy without a uniform guarantee.
+
+\paragraph{What controls the bound.}
+The following estimates express the gains and displacements in terms of the base weights, base features and the layers that the invariant subspace allows to move. For a nonzero invariant subspace define
+\[
+ \gamma_\ell=\sup_{\substack{w\in M\\\|w\|_2=1}}\|A_\ell(w)\|_{\rm op},\qquad
+ \gamma_V=\sup_{\substack{w\in M\\\|w\|_2=1}}\|B_{\mathrm{lin}}(w)\|_{\rm op}.
+\]
+Here $A_\ell(w)$ is the bias-augmented layer component of edit $w$. These constants measure the largest layer operator norm in a unit edit in the invariant subspace; a fixed layer has zero exposure. Put
+\[
+ \omega_\ell=\|W_{\ell,\mathrm{lin}}^0\|_{\rm op},\qquad
+ \omega_V=\|V_{\mathrm{lin}}^0\|_{\rm op},\qquad
+ h_\ell^{\max}=\max_i\|\bar h_{\ell,i}^0\|_2\quad(0\le\ell\le L).
+\]
+For this calculation take $d_\ell(r)=\max_i\sup_{w\in B_M(r)}\|\Delta z_{\ell,i}(w)\|_2$, and let $e_\ell(r)$ be the corresponding largest true hidden-state displacement. Suppose $\lambda_\ell$ bounds $|\sigma'|$ on all traversed intervals. Starting from $e_0(r)=0$, the forward recursion gives
+\begin{align}
+ d_\ell(r)&\le(\omega_\ell+\gamma_\ell r)e_{\ell-1}(r)
+                  +\gamma_\ell rh_{\ell-1}^{\max},\label{eq:app-radius-forward}\\
+ e_\ell(r)&\le\lambda_\ell d_\ell(r).\nonumber
+\end{align}
+Indeed, the exact true preactivation change is
+\[
+ \Delta z_{\ell,i}(w)
+ =(W_{\ell,\mathrm{lin}}^0+A_{\ell,\mathrm{lin}})\bigl(\widetilde h_{\ell-1,i}-h_{\ell-1,i}^0\bigr)
+   +A_\ell\bar h_{\ell-1,i}^0.
+\]
+Taking norms proves the first inequality, and the scalar mean value theorem proves the second. Similarly, multiplying downstream operator norms gives the admissible gain bound
+\begin{equation}
+ \chi_\ell(r)=(\omega_V+\gamma_Vr)
+          \prod_{j=\ell+1}^L\lambda_j(\omega_j+\gamma_jr).
+ \label{eq:app-gain-product}
+\end{equation}
+The empty product at $\ell=L$ is one. These expressions exhibit the dependence on feature magnitudes, trained weight norms, activation slopes and layer exposures of the invariant subspace.
+
+\begin{proposition}[Large-radius envelope]\label{prop:app-large-radius}
+Let $M$ be a nonzero frozen invariant subspace. Suppose the slopes and curvatures admit finite bounds $\lambda_\ell$ and $\beta_\ell$ on every interval reached by $M$, independent of the radius. Define
+\begin{align*}
+ c_1&=\gamma_1h_0^{\max},\\
+ c_\ell&=(\omega_\ell+\gamma_\ell)\lambda_{\ell-1}c_{\ell-1}
+                    +\gamma_\ell h_{\ell-1}^{\max}\quad(2\le\ell\le L),\\
+ \bar\chi_\ell&=(\omega_V+\gamma_V)\prod_{j=\ell+1}^L\lambda_j(\omega_j+\gamma_j),\qquad
+ C_M=\tfrac12\sum_{\ell=1}^L\bar\chi_\ell\beta_\ell c_\ell^2.
+\end{align*}
+For $r\ge1$,
+\[
+ \sup_{w\in B_M(r)}\|\Delta F_X(w)\|_X\le C_Mr^{2L+1}.
+\]
+If $\gamma_V=0$ (the linear readout is fixed), the exponent can be replaced by $2L$.
+\end{proposition}
+\begin{proof}
+Induction in \eqref{eq:app-radius-forward} gives $d_\ell(r)\le c_\ell r^\ell$ for $r\ge1$. Equation~\eqref{eq:app-gain-product} gives $\chi_\ell(r)\le\bar\chi_\ell r^{L-\ell+1}$. Substituting both into \eqref{eq:smooth} yields
+\[
+ \sup_{w\in B_M(r)}\|\Delta F_X(w)\|_X
+ \le\tfrac12\sum_{\ell=1}^L\bar\chi_\ell\beta_\ell c_\ell^2r^{L+\ell+1}
+ \le C_Mr^{2L+1}.
+\]
+When $\gamma_V=0$, one moving downstream factor is removed, giving $r^{L+\ell}$ in each summand and the bound $C_Mr^{2L}$.
+\end{proof}
+The bound is controlled by base feature magnitudes, trained weight norms, layer exposures of the invariant subspace, activation slopes and curvatures. A residual contains a squared preactivation displacement and is amplified by the later weight matrices. For fixed depth, the resulting envelope is polynomial in the radius $r$, with degree at most $2L+1$ (or $2L$ when $\gamma_V=0$). The degree grows linearly with depth, but this is not a polynomial bound in depth: $C_M$ itself contains products of layer norms. Any radius satisfying this upper bound at the desired drift tolerance is a lower bound on the true flat radius; cancellations and smaller realized gains may allow a larger radius.
+
+\paragraph{Concrete smooth-tail examples.}
+Sigmoid, softplus and tanh illustrate how decaying curvature can produce a small activation transition potential in smooth networks. They are examples of the mechanism, rather than an exhaustive list.
+Let $q(u)=(1+e^{-u})^{-1}$ denote the sigmoid. The second derivatives of sigmoid, softplus and tanh are
+\[
+ q''(u)=q(u)(1-q(u))(1-2q(u)),\qquad
+ \frac{d^2}{du^2}\log(1+e^u)=q(u)(1-q(u)),\qquad
+ \frac{d^2}{du^2}\tanh u=-2\tanh u\,\operatorname{sech}^2u.
+\]
+Since $q(u)(1-q(u))\le e^{-|u|}$ and $\operatorname{sech}^2u\le4e^{-2|u|}$, their curvatures decay exponentially in the tails. If the entire interval between $z$ and $z+v$ lies outside $[-a,a]$, with $a\ge0$, Taylor's formula gives
+\[
+ |\sigma(z+v)-\sigma(z)-\sigma'(z)v|
+ \le
+ \begin{cases}
+  \tfrac12e^{-a}v^2,&\sigma=\text{sigmoid or softplus},\\
+  4e^{-2a}v^2,&\sigma=\tanh.
+ \end{cases}
+\]
+Thus one may use $\beta_\ell(r)\le e^{-a}$ or $8e^{-2a}$, respectively, when every scalar interval reached by the invariant subspace ball remains in those tails. 
+
+These estimates require the entire traversed interval to stay in a tail. A large base preactivation alone is insufficient if the edit returns it to the transition region. The exponential factor multiplies the squared displacement; the residual also depends on how far the preactivation moves.
+
+\subsubsection{Piecewise-linear activations and gate distance}
+For a piecewise-linear activation the transition residual stays zero while every preactivation remains in its base affine piece. The distance to the first activation boundary therefore gives a conservative exact radius. For ReLU and leaky ReLU, the boundary is at zero. The following formula treats the simplified case in which every frozen preactivation is affine in the invariant subspace coordinates, so each boundary is a hyperplane.
+\begin{proposition}[Gate distance for affine preactivations]
+Let $M$ be a ReLU or leaky-ReLU frozen invariant subspace and let the columns of $Q$ form an orthonormal basis of $M$, so $w=Qy$ with $y\in\R^{\dim M}$. Assume that every frozen preactivation is affine in $y$. Index all sample--layer--unit triples by $j$ and write
+\[
+ z_j^{\frz}(y)=z_j^0+a_j^\top y,\qquad a_j\in\R^{\dim M},\quad z_j^0\ne0.
+\]
+The distance to the first gate boundary is
+\[
+ r_{\rm gate}=\min_{j:a_j\ne0}\frac{|z_j^0|}{\|a_j\|_2},
+\]
+with empty minimum $+\infty$. For every $\|y\|_2<r_{\rm gate}$, $F_X(\theta_0+Qy)=F_X(\theta_0)$.
+\end{proposition}
+\begin{proof}
+By Cauchy--Schwarz, $|a_j^\top y|\le\|a_j\|_2\|y\|_2$ preserves every sign for $\|y\|_2<r_{\rm gate}$. When the minimum is finite, a minimizing index reaches zero at $y=-z_j^0a_j/\|a_j\|_2^2$. Within the sign-preserving region, induction over layers makes the frozen and true states identical, so the invariant subspace is exact there.
+\end{proof}
+The affine assumption holds, for example, when only the parameters of one layer are edited: later frozen layers apply fixed affine maps to its response. With several edited layers, products of edits generally make the preactivations polynomial, and their zero sets can be curved. The hyperplane formula then no longer applies. Measuring the first crossing along one sampled direction also gives no guarantee for a whole ball, since another direction may reach a boundary sooner.
+
+
+
+\input{sections/radius_probability_theory}
+
+\subsection{Extension to other architectures}\label{app:architectures}
+The preceding theory was developed for MLPs. Its polynomial construction also applies to CNNs because convolution is linear in its trainable kernel. LayerNorm has exact affine invariances of its own, while restricting edits to selected parameters gives a way to study one part of a larger fixed network.
+
+\subsubsection{Convolutional networks}\label{app:cnn-theory}
+A convolution is a linear operator whose matrix reuses the same kernel entries at several spatial positions; biases can be included through an augmented input coordinate. Because one kernel edit acts at every position, its output response sums the downstream contributions from all those positions.
+
+Fix one convolutional layer, with $n$ output channels and augmented patch dimension $m$ including its bias coordinate. Let $A\in\R^{n\times m}$ be its kernel edit, let $q_{i,\xi}\in\R^m$ be the base input patch at position $\xi$ on sample $i$, and let $D_{i,\xi}\in\R^{d\times n}$ map a preactivation change at that position through the frozen downstream network. Here $\Lambda$ is the set of spatial output positions of this layer, and $\xi\in\Lambda$. All other layers are fixed. The single-layer frozen response and its sample Jacobian are
+\[
+ \mathcal E(A)_i=\sum_{\xi\in\Lambda} D_{i,\xi}Aq_{i,\xi},\qquad
+ J_i=\sum_{\xi\in\Lambda} q_{i,\xi}^\top\otimes D_{i,\xi},
+ \qquad \mathcal E(A)_i=J_i\operatorname{vec}(A).
+\]
+Each sum includes every spatial output position, since the same kernel edit acts at all of them. Let $J$ be the vertical stack of $J_1,\ldots,J_s$, so the atomic kernel is $\{A:J\operatorname{vec}(A)=0\}$. Define
+\[
+ H=\spn_{i,\xi}\{q_{i,\xi}\},\quad
+ C=\sum_{i,\xi}\operatorname{row}(D_{i,\xi}),\quad
+ r_h=\dim H,\quad r_d=\dim C.
+\]
+These are the convolutional counterparts of $\mathcal H_\ell,\mathcal C_\ell,r_\ell,r_{d,\ell}$, with $m$ replacing $n_{\ell-1}+1$ and $n$ replacing $n_\ell$. 
+\begin{proposition}[Atomic dimension with shared convolutional weights]
+The single-layer frozen kernel has dimension
+\[
+ \dim\ker J=n(m-r_h)+r_h(n-r_d)+\delta,
+ \qquad \delta=r_hr_d-\rank J\ge0.
+\]
+\end{proposition}
+\begin{proof}
+Each row of $J$ is a sum of patch--downstream tensor products and therefore lies in $H\otimes C$. Its dimension $r_hr_d$ bounds $\rank J$ and proves $\delta\ge0$. Rank--nullity gives $\dim\ker J=nm-\rank J$; adding and subtracting $r_hr_d$ yields the three terms.
+\end{proof}
+The first two terms count feature-null and downstream-null directions as for a dense layer; the last counts additional directions left unconstrained within the marginal tensor support. Contributions from different spatial positions can cancel even when none is individually zero, so the kernel constraint must be imposed after summing them. The deficit $\delta$ can therefore include cancellations induced by parameter sharing.
+
+\subsubsection{LayerNorm and exact affine parameter invariance}
+\label{app:layernorm}
+Structural symmetries can have affine parameter orbits. Layer normalization provides examples, complementing the curved rescaling orbits discussed above. For $x\in\R^q$, let $\mathbf1_q$ denote the all-ones vector, $\bar x=q^{-1}\mathbf1_q^\top x$, and fix scale and bias vectors $\gamma,\beta\in\R^q$. With numerical stabilization $\epsilon_{\rm LN}>0$, \textbf{LayerNorm}~\citep{ba2016layernorm} is
+\[
+ \operatorname{LN}(x)=\gamma\odot\frac{x-\bar x\mathbf1_q}{s_{\rm LN}(x)}+\beta,
+ \qquad s_{\rm LN}(x)=\sqrt{q^{-1}\|x-\bar x\mathbf1_q\|^2+\epsilon_{\rm LN}},
+\]
+where $\odot$ denotes coordinatewise multiplication.
+
+\paragraph{Affine invariances around normalization.}
+\begin{proposition}[LayerNorm shift and feature constraints]
+For an affine map $Wh+b_{\rm in}$, with $h\in\R^m$, $W\in\R^{q\times m}$ and $b_{\rm in}\in\R^q$, the edits
+\[
+ \Delta W=\mathbf1_qv^\top,\qquad \Delta b_{\rm in}=c\mathbf1_q,
+ \qquad (v,c)\in\R^m\times\R
+\]
+leave $\operatorname{LN}(Wh+b_{\rm in})$ unchanged for every input, giving $m+1$ independent directions.
+
+If all $\gamma_j\ne0$, define $\eta\in\R^q$ by $\eta_j=1/\gamma_j$. For any normalized feature $u=\operatorname{LN}(x)$ and following affine map $Au+b_{\rm out}\in\R^n$, with $A\in\R^{n\times q}$ and $b_{\rm out}\in\R^n$, the edits
+\[
+ \Delta A=t\eta^\top,\qquad \Delta b_{\rm out}=-t(\eta^\top\beta),\qquad t\in\R^n
+\]
+preserve its output and give $n$ independent directions. Both invariances hold at arbitrary amplitudes with the normalization parameters fixed.
+\end{proposition}
+\begin{proof}
+Adding $c\mathbf1_q$ to $x$ changes neither its centered vector nor its variance, so $\operatorname{LN}(x+c\mathbf1_q)=\operatorname{LN}(x)$. The first edits add $(v^\top h+c)\mathbf1_q$ before normalization, and the parameterization by $(v,c)$ is injective. This proves the first identity and dimension.
+
+For the second, the definition of normalization gives
+\[
+ \eta^\top(u-\beta)=\frac{\mathbf1_q^\top(x-\bar x\mathbf1_q)}{s_{\rm LN}(x)}=0.
+\]
+The output change is consequently $t[\eta^\top u-\eta^\top\beta]=0$. Since $\eta\ne0$, the map from $t$ to its parameter edit is injective, proving the dimension.
+\end{proof}
+\subsubsection{Restricting edits to selected parameters}\label{app:restricted-parameters}
+An invariant subspace can be studied in any chosen linear space of parameter edits while the remaining parameters stay fixed. Let $E\in\R^{p\times q}$ have orthonormal columns spanning the allowed edit space, so an allowed edit is $w=E\eta$ with $\eta\in\R^q$. Define the restricted true and frozen maps by
+\[
+ F_{X,E}(\eta)=F_X(\theta_0+E\eta),\qquad
+ F_{X,E}^{\frz}(\eta)=F_X^{\frz}(E\eta).
+\]
+Their Jacobian at zero is $J_XE$, and the same decomposition holds after substituting $w=E\eta$. If $N\subseteq\R^q$ is an invariant subspace of the restricted frozen map, then $EN$ is an invariant subspace of the full frozen map. Conversely, every invariant subspace contained in $\im E$ is obtained this way. The general coefficient test therefore applies without change.
+
+For a selection of whole layers, set $M_\ell=\{0\}$ on fixed layers and apply Algorithm~\ref{alg:app-branch-test}. It still propagates through fixed layers, whose weights and activation slopes affect the constraints. If only some entries within a layer may move, intersect the admissible matrix space with that coordinate restriction when forming the constraints. Relations tying edits in different layers generally produce a coupled space and require the general coefficient test.
+
+\input{sections/aistats_appendix_experiments}
+
+\FloatBarrier
+
+\end{document}

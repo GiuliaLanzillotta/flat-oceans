@@ -1,0 +1,243 @@
+{
+  "seed_tag": "s0",
+  "N": 10000,
+  "logits_rms_absolute": 11.354487677569475,
+  "spectra_dual_convention": {
+    "NOTE": "REL = sigma_j/sigma_1; ABS = sigma_j/sqrt(s) (s=10000). These are feature/downstream COORDINATE spectra; the tail COUNTS are coordinate counts, NOT tested directions and NOT parameter-space directions.",
+    "feature_mlp0_u": {
+      "sigma1": 703.4597294509443,
+      "sigma1_over_sqrt_s": 7.034597294509443,
+      "sigma_min_over_sigma1": 6.638771732812489e-17,
+      "sigma_min_over_sqrt_s": 4.670108567050851e-16,
+      "REL_count_below(sigma_j/sigma1)": {
+        "0.01": 35,
+        "0.001": 1,
+        "0.0001": 1,
+        "1e-06": 1
+      },
+      "ABS_count_below(sigma_j/sqrt_s)": {
+        "0.1": 171,
+        "0.01": 1,
+        "0.001": 1,
+        "0.0001": 1
+      }
+    },
+    "feature_mlp3_a": {
+      "sigma1": 450.5512687883941,
+      "sigma1_over_sqrt_s": 4.505512687883941,
+      "sigma_min_over_sigma1": 0.00010708726086037203,
+      "sigma_min_over_sqrt_s": 0.0004824830125171435,
+      "REL_count_below(sigma_j/sigma1)": {
+        "0.01": 2816,
+        "0.001": 732,
+        "0.0001": 0,
+        "1e-06": 0
+      },
+      "ABS_count_below(sigma_j/sqrt_s)": {
+        "0.1": 3005,
+        "0.01": 1680,
+        "0.001": 4,
+        "0.0001": 0
+      }
+    },
+    "feature_readout_f": {
+      "sigma1": 374.90733123062006,
+      "sigma1_over_sqrt_s": 3.7490733123062006,
+      "sigma_min_over_sigma1": 7.038795002305529e-17,
+      "sigma_min_over_sqrt_s": 2.638895849393792e-16,
+      "REL_count_below(sigma_j/sigma1)": {
+        "0.01": 12,
+        "0.001": 1,
+        "0.0001": 1,
+        "1e-06": 1
+      },
+      "ABS_count_below(sigma_j/sqrt_s)": {
+        "0.1": 70,
+        "0.01": 8,
+        "0.001": 1,
+        "0.0001": 1
+      }
+    },
+    "downstream_mlp3_nonshift": {
+      "sigma1": 233.4799046158332,
+      "sigma1_over_sqrt_s": 2.334799046158332,
+      "sigma_min_over_sigma1": 0.003185516327318493,
+      "sigma_min_over_sqrt_s": 0.0074375404825450095,
+      "REL_count_below(sigma_j/sigma1)": {
+        "0.01": 489,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-06": 0
+      },
+      "ABS_count_below(sigma_j/sqrt_s)": {
+        "0.1": 709,
+        "0.01": 90,
+        "0.001": 0,
+        "0.0001": 0
+      }
+    }
+  },
+  "candidates_dual_convention": {
+    "mlp0_feature_tail(1 direction)": {
+      "feature_sigma_over_sigma1": 0.002112123934820573,
+      "jv_frobenius_over_v": 0.05485138765106637,
+      "jv_operator_RMS_over_v": 0.0005485138765106637,
+      "ray_actual": {
+        "median_rel": [
+          2.8049568816115435e-07,
+          8.41487246198515e-07,
+          2.8049596076488357e-06,
+          8.414897004553019e-06,
+          2.804986925162434e-05
+        ],
+        "aggregate_rms_rel": [
+          4.830809814219856e-07,
+          1.4492420387967707e-06,
+          4.830796246113226e-06,
+          1.4492298669002881e-05,
+          4.8306625350494825e-05
+        ]
+      },
+      "ray_frozenboth": {
+        "median_rel": [
+          2.804956579289067e-07,
+          8.41486973719634e-07,
+          2.804956579353931e-06,
+          8.414869738148015e-06,
+          2.8049565793625888e-05
+        ],
+        "aggregate_rms_rel": [
+          4.830811324006456e-07,
+          1.4492433972014302e-06,
+          4.830811324001072e-06,
+          1.4492433972010916e-05,
+          4.830811324003883e-05
+        ]
+      },
+      "comment": "ONE direction: stays nearly LINEAR with small drift through r=1 (frozen ~ actual, no curvature amplification)."
+    },
+    "mlp3_downstream_tail(1 direction)": {
+      "downstream_sigma_over_sigma1": 0.003185516327318493,
+      "jv_frobenius_over_v": 0.7437540482545918,
+      "jv_operator_RMS_over_v": 0.007437540482545918,
+      "ray_actual": {
+        "median_rel": [
+          4.241887165941364e-06,
+          1.4462420198885052e-05,
+          0.00010869322027538745,
+          0.0009470593576939657,
+          0.010288754690332896
+        ],
+        "aggregate_rms_rel": [
+          6.659127735386207e-06,
+          2.237458240670138e-05,
+          0.00013539469536801683,
+          0.0010817822862039255,
+          0.011619175050110496
+        ]
+      },
+      "ray_frozenLN": {
+        "median_rel": [
+          4.163400687714e-06,
+          1.2490202063431099e-05,
+          4.163400687713176e-05,
+          0.00012490202063109555,
+          0.0004163400687699959
+        ],
+        "aggregate_rms_rel": [
+          6.5503091761960475e-06,
+          1.9650927528601162e-05,
+          6.550309176201074e-05,
+          0.0001965092752860677,
+          0.0006550309176202323
+        ]
+      },
+      "comment": "ONE direction: approx flat through r~0.3 (aggregate/median small), then LN curvature grows drift; LN REDUCES the usable radius, does not remove the ocean."
+    },
+    "readout_feature_null_exact(1 direction)": {
+      "jv_frobenius_over_v": 2.359512025700253e-13,
+      "jv_operator_RMS_over_v": 2.359512025700253e-15
+    },
+    "random_mlp3(1 direction)": {
+      "jv_frobenius_over_v": 4.8551605446337565,
+      "jv_operator_RMS_over_v": 0.04855160544633756,
+      "ray_actual": {
+        "median_rel": [
+          4.1272937269004224e-05,
+          0.00012381206919417703,
+          0.00041270216821513885,
+          0.0012381475130679026,
+          0.004127666306049794
+        ],
+        "aggregate_rms_rel": [
+          4.2759910242287775e-05,
+          0.00012828018817048463,
+          0.00042760681844878045,
+          0.0012828954892874812,
+          0.004278046967105571
+        ]
+      }
+    }
+  },
+  "diameter_clustering_common_norm": {
+    "NOTE": "common-normalization (all maps / c=mean||D_i||_F; gains PRESERVED), Euclidean diameter threshold on a 128-d JL embedding; thresholds chosen from the measured dist-to-mean distribution. Supported statement is 'one group at every TESTED threshold' if nL=1 throughout.",
+    "distance_distribution": {
+      "c_mean_frob": 12.358175781832616,
+      "frob_min": 8.188347842844113,
+      "frob_max": 21.943701319665035,
+      "dist_to_mean_pct": {
+        "5": 0.12936176903879767,
+        "50": 0.16993354669269184,
+        "90": 0.2832940918598083,
+        "99": 0.4823456169979495,
+        "100": 0.8358659138615752
+      }
+    },
+    "groups_by_threshold": {
+      "diam_thr=0.0836": {
+        "n_groups": 400,
+        "cap_hit": true
+      },
+      "diam_thr=0.17": {
+        "n_groups": 278,
+        "cap_hit": false
+      },
+      "diam_thr=0.209": {
+        "n_groups": 127,
+        "cap_hit": false
+      },
+      "diam_thr=0.283": {
+        "n_groups": 14,
+        "cap_hit": false
+      },
+      "diam_thr=0.418": {
+        "n_groups": 3,
+        "cap_hit": false
+      }
+    }
+  },
+  "representative_truncated_approx": {
+    "NOTE": "across-deficit=0 for one group is BY CONSTRUCTION; this tests approximate constructions. Representative = mean map (gains preserved); truncated = top-k downstream subspace. Validated on the ORIGINAL maps.",
+    "representative_map_approx_error_on_original": {
+      "mean": 0.19116718142971323,
+      "median": 0.1731438073001076,
+      "p90": 0.2739533942889396,
+      "max": 0.521616883027416
+    },
+    "truncated_map_energy_beyond_topk": {
+      "k=45": {
+        "tail_energy_fraction_beyond_topk": 0.004373923548711038,
+        "truncation_RMS_rel": 0.0661356450691383
+      },
+      "k=90": {
+        "tail_energy_fraction_beyond_topk": 0.0020016061633928305,
+        "truncation_RMS_rel": 0.04473931339876407
+      },
+      "k=200": {
+        "tail_energy_fraction_beyond_topk": 0.00104256118556975,
+        "truncation_RMS_rel": 0.032288716071868666
+      }
+    },
+    "truncated_null_full_operator_sensitivity": 0.007437540482545918
+  }
+}

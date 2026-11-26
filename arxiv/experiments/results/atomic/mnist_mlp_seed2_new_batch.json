@@ -1,0 +1,2343 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md amendment 2026-09-17, result 5; identifier new-batch-exposure-v1",
+ "rank_tolerance": "1e-09",
+ "stages": {
+  "mse_interpolation": {
+   "epoch": 50,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0050.pt",
+      "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "87d133d23c4f244090ada95e2d1d3dc177a9b0d47965f84dd5a63947d7bc0d6a",
+        "3": "4f36865c0f7e3da7380514a119d26c9dc385a59ed69e84e18ff1e2047cdc0b05",
+        "readout": "e77ab9d9eb5d67120a1c62d595d99f3281d446737e770fd9ec731c57222216e9"
+       }
+      },
+      "digest": "0f76c30af3d1e1eb5d09f6988597938d241779c84e034228d1336d42621ec8fc"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+     "summary": {
+      "2": {
+       "dim_K_old": 4864,
+       "dim_K_old_ladder": {
+        "1e-06": 4865,
+        "1e-09": 4864,
+        "1e-12": 4864
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.1e-09))",
+       "dim_K_union": 4007,
+       "exposed_by_new_batch": 857,
+       "exposed_fraction": 0.17619243421052633,
+       "components_old": {
+        "dim_K": 4864,
+        "feature_null": 0,
+        "downstream_null": 1161,
+        "deficit": 3703
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 4007,
+        "feature_null": 0,
+        "downstream_null": 645,
+        "deficit": 3362
+       },
+       "dead_units_old": 9,
+       "dead_units_union": 5,
+       "gap_union": 5076676372.107261,
+       "dim_K_union_ladder": {
+        "1e-06": 4007,
+        "1e-09": 4007,
+        "1e-12": 4007
+       }
+      },
+      "3": {
+       "dim_K_old": 7789,
+       "dim_K_old_ladder": {
+        "1e-06": 7930,
+        "1e-09": 7789,
+        "1e-12": 7789
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.5e-09))",
+       "dim_K_union": 7297,
+       "exposed_by_new_batch": 492,
+       "exposed_fraction": 0.06316600333804083,
+       "components_old": {
+        "dim_K": 7789,
+        "feature_null": 1152,
+        "downstream_null": 2760,
+        "deficit": 3877
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 7297,
+        "feature_null": 640,
+        "downstream_null": 2728,
+        "deficit": 3929
+       },
+       "dead_units_old": 23,
+       "dead_units_union": 22,
+       "gap_union": 2.5476835273988465,
+       "dim_K_union_ladder": {
+        "1e-06": 7426,
+        "1e-09": 7297,
+        "1e-12": 7296
+       }
+      },
+      "readout": {
+       "dim_K_old": 240,
+       "dim_K_old_ladder": {
+        "1e-06": 240,
+        "1e-09": 240,
+        "1e-12": 240
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.9e-08))",
+       "dim_K_union": 230,
+       "exposed_by_new_batch": 10,
+       "exposed_fraction": 0.041666666666666664,
+       "components_old": {
+        "dim_K": 240,
+        "feature_null": 240,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 230,
+        "feature_null": 230,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 23,
+       "dead_units_union": 22,
+       "gap_union": 167119920593.60904,
+       "dim_K_union_ladder": {
+        "1e-06": 230,
+        "1e-09": 230,
+        "1e-12": 230
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 123,
+        "1e-09": 123,
+        "1e-12": 123
+       },
+       "rank_J": {
+        "1e-06": 12505,
+        "1e-09": 12505,
+        "1e-12": 12505
+       },
+       "gap_J": {
+        "1e-06": 5076676372.107261,
+        "1e-09": 5076676372.107261,
+        "1e-12": 5076676372.107261
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 122097052354776.2,
+        "1e-09": 122097052354776.2,
+        "1e-12": 122097052354776.2
+       },
+       "k_rel": {
+        "0.01": 15662,
+        "0.001": 9324,
+        "0.0001": 4271,
+        "1e-05": 4016,
+        "1e-06": 4007,
+        "1e-07": 4007,
+        "1e-08": 4007,
+        "1e-09": 4007,
+        "1e-10": 4007,
+        "1e-11": 4007,
+        "1e-12": 4007
+       },
+       "k_abs": {
+        "0.1": 16497,
+        "0.01": 15987,
+        "0.001": 11296,
+        "0.0001": 4526,
+        "1e-05": 4021,
+        "1e-06": 4007,
+        "1e-07": 4007,
+        "1e-08": 4007,
+        "1e-09": 4007,
+        "1e-10": 4007
+       },
+       "activation": "relu",
+       "dead_units": 5,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 5,
+       "exact_zero_derivatives": 2238109,
+       "components@1e-06": {
+        "dim_K": 4007,
+        "feature_null": 0,
+        "downstream_null": 645,
+        "deficit": 3362
+       },
+       "components@1e-09": {
+        "dim_K": 4007,
+        "feature_null": 0,
+        "downstream_null": 645,
+        "deficit": 3362
+       },
+       "components@1e-12": {
+        "dim_K": 4007,
+        "feature_null": 0,
+        "downstream_null": 645,
+        "deficit": 3362
+       },
+       "seconds": 499.90029191970825
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 124,
+        "1e-09": 124,
+        "1e-12": 124
+       },
+       "r_d": {
+        "1e-06": 106,
+        "1e-09": 106,
+        "1e-12": 106
+       },
+       "rank_J": {
+        "1e-06": 9086,
+        "1e-09": 9215,
+        "1e-12": 9216
+       },
+       "gap_J": {
+        "1e-06": 1.019756033031859,
+        "1e-09": 2.5476835273988465,
+        "1e-12": 273440.7096182278
+       },
+       "gap_h": {
+        "1e-06": 3134020296104.2603,
+        "1e-09": 3134020296104.2603,
+        "1e-12": 3134020296104.2603
+       },
+       "gap_d": {
+        "1e-06": 3313471780395.9253,
+        "1e-09": 3313471780395.9253,
+        "1e-12": 3313471780395.9253
+       },
+       "k_rel": {
+        "0.01": 15671,
+        "0.001": 13301,
+        "0.0001": 9878,
+        "1e-05": 7957,
+        "1e-06": 7426,
+        "1e-07": 7325,
+        "1e-08": 7303,
+        "1e-09": 7297,
+        "1e-10": 7296,
+        "1e-11": 7296,
+        "1e-12": 7296
+       },
+       "k_abs": {
+        "0.1": 16156,
+        "0.01": 14719,
+        "0.001": 11429,
+        "0.0001": 8653,
+        "1e-05": 7587,
+        "1e-06": 7355,
+        "1e-07": 7309,
+        "1e-08": 7298,
+        "1e-09": 7296,
+        "1e-10": 7296
+       },
+       "activation": "relu",
+       "dead_units": 22,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 22,
+       "units_derivative_below_1e-9": 22,
+       "exact_zero_derivatives": 1920689,
+       "components@1e-06": {
+        "dim_K": 7426,
+        "feature_null": 640,
+        "downstream_null": 2728,
+        "deficit": 4058
+       },
+       "components@1e-09": {
+        "dim_K": 7297,
+        "feature_null": 640,
+        "downstream_null": 2728,
+        "deficit": 3929
+       },
+       "components@1e-12": {
+        "dim_K": 7296,
+        "feature_null": 640,
+        "downstream_null": 2728,
+        "deficit": 3928
+       },
+       "seconds": 484.0203869342804
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 106,
+        "1e-09": 106,
+        "1e-12": 106
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1060,
+        "1e-09": 1060,
+        "1e-12": 1060
+       },
+       "gap_J": {
+        "1e-06": 167119920593.60904,
+        "1e-09": 167119920593.60904,
+        "1e-12": 167119920593.60904
+       },
+       "gap_h": {
+        "1e-06": 618134181716.4105,
+        "1e-09": 618134181716.4105,
+        "1e-12": 618134181716.4105
+       },
+       "k_rel": {
+        "0.01": 600,
+        "0.001": 350,
+        "0.0001": 270,
+        "1e-05": 230,
+        "1e-06": 230,
+        "1e-07": 230,
+        "1e-08": 230,
+        "1e-09": 230,
+        "1e-10": 230,
+        "1e-11": 230,
+        "1e-12": 230
+       },
+       "k_abs": {
+        "0.1": 840,
+        "0.01": 390,
+        "0.001": 280,
+        "0.0001": 230,
+        "1e-05": 230,
+        "1e-06": 230,
+        "1e-07": 230,
+        "1e-08": 230,
+        "1e-09": 230,
+        "1e-10": 230
+       },
+       "activation": "relu",
+       "dead_units": 22,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 22,
+       "units_derivative_below_1e-9": 22,
+       "exact_zero_derivatives": 1920689,
+       "components@1e-06": {
+        "dim_K": 230,
+        "feature_null": 230,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 230,
+        "feature_null": 230,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 230,
+        "feature_null": 230,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0050.pt",
+      "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "87d133d23c4f244090ada95e2d1d3dc177a9b0d47965f84dd5a63947d7bc0d6a",
+        "3": "4f36865c0f7e3da7380514a119d26c9dc385a59ed69e84e18ff1e2047cdc0b05",
+        "readout": "e77ab9d9eb5d67120a1c62d595d99f3281d446737e770fd9ec731c57222216e9"
+       }
+      },
+      "digest": "02e7c487f867ae931be9e6235961e6c2132f0d09d0d06a4060f38e29d929872c"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+     "summary": {
+      "2": {
+       "dim_K_old": 4864,
+       "dim_K_old_ladder": {
+        "1e-06": 4865,
+        "1e-09": 4864,
+        "1e-12": 4864
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.1e-09))",
+       "dim_K_union": 4067,
+       "exposed_by_new_batch": 797,
+       "exposed_fraction": 0.16385690789473684,
+       "components_old": {
+        "dim_K": 4864,
+        "feature_null": 0,
+        "downstream_null": 1161,
+        "deficit": 3703
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 4067,
+        "feature_null": 0,
+        "downstream_null": 774,
+        "deficit": 3293
+       },
+       "dead_units_old": 9,
+       "dead_units_union": 6,
+       "gap_union": 237272716.8660037,
+       "dim_K_union_ladder": {
+        "1e-06": 4068,
+        "1e-09": 4067,
+        "1e-12": 4067
+       }
+      },
+      "3": {
+       "dim_K_old": 7789,
+       "dim_K_old_ladder": {
+        "1e-06": 7930,
+        "1e-09": 7789,
+        "1e-12": 7789
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.5e-09))",
+       "dim_K_union": 7013,
+       "exposed_by_new_batch": 776,
+       "exposed_fraction": 0.09962768006162537,
+       "components_old": {
+        "dim_K": 7789,
+        "feature_null": 1152,
+        "downstream_null": 2760,
+        "deficit": 3877
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 7013,
+        "feature_null": 768,
+        "downstream_null": 2091,
+        "deficit": 4154
+       },
+       "dead_units_old": 23,
+       "dead_units_union": 17,
+       "gap_union": 2832075.4891043687,
+       "dim_K_union_ladder": {
+        "1e-06": 7137,
+        "1e-09": 7013,
+        "1e-12": 7013
+       }
+      },
+      "readout": {
+       "dim_K_old": 240,
+       "dim_K_old_ladder": {
+        "1e-06": 240,
+        "1e-09": 240,
+        "1e-12": 240
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.9e-08))",
+       "dim_K_union": 180,
+       "exposed_by_new_batch": 60,
+       "exposed_fraction": 0.25,
+       "components_old": {
+        "dim_K": 240,
+        "feature_null": 240,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 23,
+       "dead_units_union": 17,
+       "gap_union": 89938810975.26929,
+       "dim_K_union_ladder": {
+        "1e-06": 180,
+        "1e-09": 180,
+        "1e-12": 180
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 122,
+        "1e-09": 122,
+        "1e-12": 122
+       },
+       "rank_J": {
+        "1e-06": 12444,
+        "1e-09": 12445,
+        "1e-12": 12445
+       },
+       "gap_J": {
+        "1e-06": 23.093856500629506,
+        "1e-09": 237272716.8660037,
+        "1e-12": 237272716.8660037
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 36709423660087.48,
+        "1e-09": 36709423660087.48,
+        "1e-12": 36709423660087.48
+       },
+       "k_rel": {
+        "0.01": 14941,
+        "0.001": 9096,
+        "0.0001": 4318,
+        "1e-05": 4077,
+        "1e-06": 4068,
+        "1e-07": 4067,
+        "1e-08": 4067,
+        "1e-09": 4067,
+        "1e-10": 4067,
+        "1e-11": 4067,
+        "1e-12": 4067
+       },
+       "k_abs": {
+        "0.1": 16394,
+        "0.01": 15219,
+        "0.001": 10752,
+        "0.0001": 4534,
+        "1e-05": 4083,
+        "1e-06": 4068,
+        "1e-07": 4067,
+        "1e-08": 4067,
+        "1e-09": 4067,
+        "1e-10": 4067
+       },
+       "activation": "relu",
+       "dead_units": 6,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 6,
+       "units_derivative_below_1e-9": 6,
+       "exact_zero_derivatives": 2236769,
+       "components@1e-06": {
+        "dim_K": 4068,
+        "feature_null": 0,
+        "downstream_null": 774,
+        "deficit": 3294
+       },
+       "components@1e-09": {
+        "dim_K": 4067,
+        "feature_null": 0,
+        "downstream_null": 774,
+        "deficit": 3293
+       },
+       "components@1e-12": {
+        "dim_K": 4067,
+        "feature_null": 0,
+        "downstream_null": 774,
+        "deficit": 3293
+       },
+       "seconds": 499.91493916511536
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 123,
+        "1e-09": 123,
+        "1e-12": 123
+       },
+       "r_d": {
+        "1e-06": 111,
+        "1e-09": 111,
+        "1e-12": 111
+       },
+       "rank_J": {
+        "1e-06": 9375,
+        "1e-09": 9499,
+        "1e-12": 9499
+       },
+       "gap_J": {
+        "1e-06": 1.0288282298295692,
+        "1e-09": 2832075.4891043687,
+        "1e-12": 2832075.4891043687
+       },
+       "gap_h": {
+        "1e-06": 489298490961.4232,
+        "1e-09": 489298490961.4232,
+        "1e-12": 489298490961.4232
+       },
+       "gap_d": {
+        "1e-06": 67831030629078.17,
+        "1e-09": 67831030629078.17,
+        "1e-12": 67831030629078.17
+       },
+       "k_rel": {
+        "0.01": 15618,
+        "0.001": 12849,
+        "0.0001": 9344,
+        "1e-05": 7660,
+        "1e-06": 7137,
+        "1e-07": 7037,
+        "1e-08": 7015,
+        "1e-09": 7013,
+        "1e-10": 7013,
+        "1e-11": 7013,
+        "1e-12": 7013
+       },
+       "k_abs": {
+        "0.1": 16149,
+        "0.01": 14489,
+        "0.001": 10849,
+        "0.0001": 8270,
+        "1e-05": 7294,
+        "1e-06": 7066,
+        "1e-07": 7021,
+        "1e-08": 7013,
+        "1e-09": 7013,
+        "1e-10": 7013
+       },
+       "activation": "relu",
+       "dead_units": 17,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 17,
+       "units_derivative_below_1e-9": 17,
+       "exact_zero_derivatives": 1921010,
+       "components@1e-06": {
+        "dim_K": 7137,
+        "feature_null": 768,
+        "downstream_null": 2091,
+        "deficit": 4278
+       },
+       "components@1e-09": {
+        "dim_K": 7013,
+        "feature_null": 768,
+        "downstream_null": 2091,
+        "deficit": 4154
+       },
+       "components@1e-12": {
+        "dim_K": 7013,
+        "feature_null": 768,
+        "downstream_null": 2091,
+        "deficit": 4154
+       },
+       "seconds": 502.29854583740234
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 111,
+        "1e-09": 111,
+        "1e-12": 111
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1110,
+        "1e-09": 1110,
+        "1e-12": 1110
+       },
+       "gap_J": {
+        "1e-06": 89938810975.26929,
+        "1e-09": 89938810975.26929,
+        "1e-12": 89938810975.26929
+       },
+       "gap_h": {
+        "1e-06": 524759705618.58466,
+        "1e-09": 524759705618.58466,
+        "1e-12": 524759705618.58466
+       },
+       "k_rel": {
+        "0.01": 610,
+        "0.001": 360,
+        "0.0001": 260,
+        "1e-05": 190,
+        "1e-06": 180,
+        "1e-07": 180,
+        "1e-08": 180,
+        "1e-09": 180,
+        "1e-10": 180,
+        "1e-11": 180,
+        "1e-12": 180
+       },
+       "k_abs": {
+        "0.1": 850,
+        "0.01": 390,
+        "0.001": 290,
+        "0.0001": 210,
+        "1e-05": 180,
+        "1e-06": 180,
+        "1e-07": 180,
+        "1e-08": 180,
+        "1e-09": 180,
+        "1e-10": 180
+       },
+       "activation": "relu",
+       "dead_units": 17,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 17,
+       "units_derivative_below_1e-9": 17,
+       "exact_zero_derivatives": 1921010,
+       "components@1e-06": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  },
+  "high_accuracy": {
+   "epoch": 40,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "6a7f44a96d732bce14508219a9f52ef183584d6e84bdcf763ac558172269f746",
+        "3": "a1cee971aa34b457677ad8f82911f62ae77ae4d92477606789eaaf928cb3ee7b",
+        "readout": "f5aa15ebb056289d2ab9e3d5e0f3efd4083404fa070d84e7211d7f0f40c6da5b"
+       }
+      },
+      "digest": "c7823bc2f1912b44532f457eb21469673f28ea54340f01ad2f0273ddf9337f2d"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+     "summary": {
+      "2": {
+       "dim_K_old": 4256,
+       "dim_K_old_ladder": {
+        "1e-06": 4256,
+        "1e-09": 4256,
+        "1e-12": 4256
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.3e-09))",
+       "dim_K_union": 3285,
+       "exposed_by_new_batch": 971,
+       "exposed_fraction": 0.22814849624060152,
+       "components_old": {
+        "dim_K": 4256,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 3869
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 3285,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2898
+       },
+       "dead_units_old": 3,
+       "dead_units_union": 3,
+       "gap_union": 7886163558.769676,
+       "dim_K_union_ladder": {
+        "1e-06": 3285,
+        "1e-09": 3285,
+        "1e-12": 3285
+       }
+      },
+      "3": {
+       "dim_K_old": 7007,
+       "dim_K_old_ladder": {
+        "1e-06": 7099,
+        "1e-09": 7007,
+        "1e-12": 7007
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.0e-09))",
+       "dim_K_union": 6469,
+       "exposed_by_new_batch": 538,
+       "exposed_fraction": 0.0767803624946482,
+       "components_old": {
+        "dim_K": 7007,
+        "feature_null": 384,
+        "downstream_null": 2520,
+        "deficit": 4103
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 6469,
+        "feature_null": 384,
+        "downstream_null": 2016,
+        "deficit": 4069
+       },
+       "dead_units_old": 20,
+       "dead_units_union": 16,
+       "gap_union": 19152732.669503555,
+       "dim_K_union_ladder": {
+        "1e-06": 6578,
+        "1e-09": 6469,
+        "1e-12": 6469
+       }
+      },
+      "readout": {
+       "dim_K_old": 210,
+       "dim_K_old_ladder": {
+        "1e-06": 210,
+        "1e-09": 210,
+        "1e-12": 210
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08))",
+       "dim_K_union": 170,
+       "exposed_by_new_batch": 40,
+       "exposed_fraction": 0.19047619047619047,
+       "components_old": {
+        "dim_K": 210,
+        "feature_null": 210,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 170,
+        "feature_null": 170,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 20,
+       "dead_units_union": 16,
+       "gap_union": 128300036658.1397,
+       "dim_K_union_ladder": {
+        "1e-06": 170,
+        "1e-09": 170,
+        "1e-12": 170
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 125,
+        "1e-09": 125,
+        "1e-12": 125
+       },
+       "rank_J": {
+        "1e-06": 13227,
+        "1e-09": 13227,
+        "1e-12": 13227
+       },
+       "gap_J": {
+        "1e-06": 7886163558.769676,
+        "1e-09": 7886163558.769676,
+        "1e-12": 7886163558.769676
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 93901702613180.31,
+        "1e-09": 93901702613180.31,
+        "1e-12": 93901702613180.31
+       },
+       "k_rel": {
+        "0.01": 14570,
+        "0.001": 6033,
+        "0.0001": 3407,
+        "1e-05": 3293,
+        "1e-06": 3285,
+        "1e-07": 3285,
+        "1e-08": 3285,
+        "1e-09": 3285,
+        "1e-10": 3285,
+        "1e-11": 3285,
+        "1e-12": 3285
+       },
+       "k_abs": {
+        "0.1": 16470,
+        "0.01": 15292,
+        "0.001": 8076,
+        "0.0001": 3538,
+        "1e-05": 3298,
+        "1e-06": 3285,
+        "1e-07": 3285,
+        "1e-08": 3285,
+        "1e-09": 3285,
+        "1e-10": 3285
+       },
+       "activation": "relu",
+       "dead_units": 3,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 3,
+       "exact_zero_derivatives": 2209434,
+       "components@1e-06": {
+        "dim_K": 3285,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2898
+       },
+       "components@1e-09": {
+        "dim_K": 3285,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2898
+       },
+       "components@1e-12": {
+        "dim_K": 3285,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2898
+       },
+       "seconds": 479.8441240787506
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 126,
+        "1e-09": 126,
+        "1e-12": 126
+       },
+       "r_d": {
+        "1e-06": 112,
+        "1e-09": 112,
+        "1e-12": 112
+       },
+       "rank_J": {
+        "1e-06": 9934,
+        "1e-09": 10043,
+        "1e-12": 10043
+       },
+       "gap_J": {
+        "1e-06": 1.015170994132782,
+        "1e-09": 19152732.669503555,
+        "1e-12": 19152732.669503555
+       },
+       "gap_h": {
+        "1e-06": 24326703354624.72,
+        "1e-09": 24326703354624.72,
+        "1e-12": 24326703354624.72
+       },
+       "gap_d": {
+        "1e-06": 138274608798795.81,
+        "1e-09": 138274608798795.81,
+        "1e-12": 138274608798795.81
+       },
+       "k_rel": {
+        "0.01": 15579,
+        "0.001": 12563,
+        "0.0001": 8701,
+        "1e-05": 6999,
+        "1e-06": 6578,
+        "1e-07": 6485,
+        "1e-08": 6470,
+        "1e-09": 6469,
+        "1e-10": 6469,
+        "1e-11": 6469,
+        "1e-12": 6469
+       },
+       "k_abs": {
+        "0.1": 16152,
+        "0.01": 14447,
+        "0.001": 10394,
+        "0.0001": 7601,
+        "1e-05": 6725,
+        "1e-06": 6511,
+        "1e-07": 6471,
+        "1e-08": 6469,
+        "1e-09": 6469,
+        "1e-10": 6469
+       },
+       "activation": "relu",
+       "dead_units": 16,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 16,
+       "units_derivative_below_1e-9": 16,
+       "exact_zero_derivatives": 1905897,
+       "components@1e-06": {
+        "dim_K": 6578,
+        "feature_null": 384,
+        "downstream_null": 2016,
+        "deficit": 4178
+       },
+       "components@1e-09": {
+        "dim_K": 6469,
+        "feature_null": 384,
+        "downstream_null": 2016,
+        "deficit": 4069
+       },
+       "components@1e-12": {
+        "dim_K": 6469,
+        "feature_null": 384,
+        "downstream_null": 2016,
+        "deficit": 4069
+       },
+       "seconds": 502.65011167526245
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 112,
+        "1e-09": 112,
+        "1e-12": 112
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1120,
+        "1e-09": 1120,
+        "1e-12": 1120
+       },
+       "gap_J": {
+        "1e-06": 128300036658.1397,
+        "1e-09": 128300036658.1397,
+        "1e-12": 128300036658.1397
+       },
+       "gap_h": {
+        "1e-06": 956926528417.9229,
+        "1e-09": 956926528417.9229,
+        "1e-12": 956926528417.9229
+       },
+       "k_rel": {
+        "0.01": 580,
+        "0.001": 320,
+        "0.0001": 210,
+        "1e-05": 170,
+        "1e-06": 170,
+        "1e-07": 170,
+        "1e-08": 170,
+        "1e-09": 170,
+        "1e-10": 170,
+        "1e-11": 170,
+        "1e-12": 170
+       },
+       "k_abs": {
+        "0.1": 800,
+        "0.01": 350,
+        "0.001": 240,
+        "0.0001": 180,
+        "1e-05": 170,
+        "1e-06": 170,
+        "1e-07": 170,
+        "1e-08": 170,
+        "1e-09": 170,
+        "1e-10": 170
+       },
+       "activation": "relu",
+       "dead_units": 16,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 16,
+       "units_derivative_below_1e-9": 16,
+       "exact_zero_derivatives": 1905897,
+       "components@1e-06": {
+        "dim_K": 170,
+        "feature_null": 170,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 170,
+        "feature_null": 170,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 170,
+        "feature_null": 170,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "6a7f44a96d732bce14508219a9f52ef183584d6e84bdcf763ac558172269f746",
+        "3": "a1cee971aa34b457677ad8f82911f62ae77ae4d92477606789eaaf928cb3ee7b",
+        "readout": "f5aa15ebb056289d2ab9e3d5e0f3efd4083404fa070d84e7211d7f0f40c6da5b"
+       }
+      },
+      "digest": "83929b8d9fd03c5c66a24635eb85ff48368172f15c14adee4aa1452ea51c1cfd"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+     "summary": {
+      "2": {
+       "dim_K_old": 4256,
+       "dim_K_old_ladder": {
+        "1e-06": 4256,
+        "1e-09": 4256,
+        "1e-12": 4256
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.3e-09))",
+       "dim_K_union": 3275,
+       "exposed_by_new_batch": 981,
+       "exposed_fraction": 0.23049812030075187,
+       "components_old": {
+        "dim_K": 4256,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 3869
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 3275,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2888
+       },
+       "dead_units_old": 3,
+       "dead_units_union": 3,
+       "gap_union": 1054856706.0195653,
+       "dim_K_union_ladder": {
+        "1e-06": 3276,
+        "1e-09": 3275,
+        "1e-12": 3275
+       }
+      },
+      "3": {
+       "dim_K_old": 7007,
+       "dim_K_old_ladder": {
+        "1e-06": 7099,
+        "1e-09": 7007,
+        "1e-12": 7007
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.0e-09))",
+       "dim_K_union": 6208,
+       "exposed_by_new_batch": 799,
+       "exposed_fraction": 0.1140288283145426,
+       "components_old": {
+        "dim_K": 7007,
+        "feature_null": 384,
+        "downstream_null": 2520,
+        "deficit": 4103
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 6208,
+        "feature_null": 384,
+        "downstream_null": 2142,
+        "deficit": 3682
+       },
+       "dead_units_old": 20,
+       "dead_units_union": 17,
+       "gap_union": 8767530.997324415,
+       "dim_K_union_ladder": {
+        "1e-06": 6326,
+        "1e-09": 6208,
+        "1e-12": 6208
+       }
+      },
+      "readout": {
+       "dim_K_old": 210,
+       "dim_K_old_ladder": {
+        "1e-06": 210,
+        "1e-09": 210,
+        "1e-12": 210
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08))",
+       "dim_K_union": 180,
+       "exposed_by_new_batch": 30,
+       "exposed_fraction": 0.14285714285714285,
+       "components_old": {
+        "dim_K": 210,
+        "feature_null": 210,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 20,
+       "dead_units_union": 17,
+       "gap_union": 309323885705.94165,
+       "dim_K_union_ladder": {
+        "1e-06": 180,
+        "1e-09": 180,
+        "1e-12": 180
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 125,
+        "1e-09": 125,
+        "1e-12": 125
+       },
+       "rank_J": {
+        "1e-06": 13236,
+        "1e-09": 13237,
+        "1e-12": 13237
+       },
+       "gap_J": {
+        "1e-06": 4.915189825449342,
+        "1e-09": 1054856706.0195653,
+        "1e-12": 1054856706.0195653
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 85912938734574.64,
+        "1e-09": 85912938734574.64,
+        "1e-12": 85912938734574.64
+       },
+       "k_rel": {
+        "0.01": 13926,
+        "0.001": 5930,
+        "0.0001": 3399,
+        "1e-05": 3279,
+        "1e-06": 3276,
+        "1e-07": 3275,
+        "1e-08": 3275,
+        "1e-09": 3275,
+        "1e-10": 3275,
+        "1e-11": 3275,
+        "1e-12": 3275
+       },
+       "k_abs": {
+        "0.1": 16388,
+        "0.01": 14607,
+        "0.001": 7761,
+        "0.0001": 3508,
+        "1e-05": 3283,
+        "1e-06": 3276,
+        "1e-07": 3275,
+        "1e-08": 3275,
+        "1e-09": 3275,
+        "1e-10": 3275
+       },
+       "activation": "relu",
+       "dead_units": 3,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 3,
+       "exact_zero_derivatives": 2208088,
+       "components@1e-06": {
+        "dim_K": 3276,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2889
+       },
+       "components@1e-09": {
+        "dim_K": 3275,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2888
+       },
+       "components@1e-12": {
+        "dim_K": 3275,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 2888
+       },
+       "seconds": 499.34744453430176
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 126,
+        "1e-09": 126,
+        "1e-12": 126
+       },
+       "r_d": {
+        "1e-06": 111,
+        "1e-09": 111,
+        "1e-12": 111
+       },
+       "rank_J": {
+        "1e-06": 10186,
+        "1e-09": 10304,
+        "1e-12": 10304
+       },
+       "gap_J": {
+        "1e-06": 1.0135983584049093,
+        "1e-09": 8767530.997324415,
+        "1e-12": 8767530.997324415
+       },
+       "gap_h": {
+        "1e-06": 2335417094131.579,
+        "1e-09": 2335417094131.579,
+        "1e-12": 2335417094131.579
+       },
+       "gap_d": {
+        "1e-06": 81758363255606.11,
+        "1e-09": 81758363255606.11,
+        "1e-12": 81758363255606.11
+       },
+       "k_rel": {
+        "0.01": 15546,
+        "0.001": 12217,
+        "0.0001": 8307,
+        "1e-05": 6747,
+        "1e-06": 6326,
+        "1e-07": 6230,
+        "1e-08": 6209,
+        "1e-09": 6208,
+        "1e-10": 6208,
+        "1e-11": 6208,
+        "1e-12": 6208
+       },
+       "k_abs": {
+        "0.1": 16146,
+        "0.01": 14273,
+        "0.001": 9963,
+        "0.0001": 7289,
+        "1e-05": 6465,
+        "1e-06": 6265,
+        "1e-07": 6214,
+        "1e-08": 6208,
+        "1e-09": 6208,
+        "1e-10": 6208
+       },
+       "activation": "relu",
+       "dead_units": 17,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 17,
+       "units_derivative_below_1e-9": 17,
+       "exact_zero_derivatives": 1906274,
+       "components@1e-06": {
+        "dim_K": 6326,
+        "feature_null": 384,
+        "downstream_null": 2142,
+        "deficit": 3800
+       },
+       "components@1e-09": {
+        "dim_K": 6208,
+        "feature_null": 384,
+        "downstream_null": 2142,
+        "deficit": 3682
+       },
+       "components@1e-12": {
+        "dim_K": 6208,
+        "feature_null": 384,
+        "downstream_null": 2142,
+        "deficit": 3682
+       },
+       "seconds": 503.1023736000061
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 111,
+        "1e-09": 111,
+        "1e-12": 111
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1110,
+        "1e-09": 1110,
+        "1e-12": 1110
+       },
+       "gap_J": {
+        "1e-06": 309323885705.94165,
+        "1e-09": 309323885705.94165,
+        "1e-12": 309323885705.94165
+       },
+       "gap_h": {
+        "1e-06": 1036922293131.9556,
+        "1e-09": 1036922293131.9556,
+        "1e-12": 1036922293131.9556
+       },
+       "k_rel": {
+        "0.01": 590,
+        "0.001": 350,
+        "0.0001": 220,
+        "1e-05": 180,
+        "1e-06": 180,
+        "1e-07": 180,
+        "1e-08": 180,
+        "1e-09": 180,
+        "1e-10": 180,
+        "1e-11": 180,
+        "1e-12": 180
+       },
+       "k_abs": {
+        "0.1": 800,
+        "0.01": 350,
+        "0.001": 250,
+        "0.0001": 190,
+        "1e-05": 180,
+        "1e-06": 180,
+        "1e-07": 180,
+        "1e-08": 180,
+        "1e-09": 180,
+        "1e-10": 180
+       },
+       "activation": "relu",
+       "dead_units": 17,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 17,
+       "units_derivative_below_1e-9": 17,
+       "exact_zero_derivatives": 1906274,
+       "components@1e-06": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 180,
+        "feature_null": 180,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+        "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+        "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+       }
+      },
+      "digest": "fbffc5b17e156e6a751d434859c33f955a3092670d0ccc5673152b727163b76a"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+     "summary": {
+      "2": {
+       "dim_K_old": 10936,
+       "dim_K_old_ladder": {
+        "1e-06": 10938,
+        "1e-09": 10936,
+        "1e-12": 10936
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 10493,
+       "exposed_by_new_batch": 443,
+       "exposed_fraction": 0.040508412582297,
+       "components_old": {
+        "dim_K": 10936,
+        "feature_null": 0,
+        "downstream_null": 6708,
+        "deficit": 4228
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 10493,
+        "feature_null": 0,
+        "downstream_null": 6063,
+        "deficit": 4430
+       },
+       "dead_units_old": 52,
+       "dead_units_union": 47,
+       "gap_union": 513383180.59970236,
+       "dim_K_union_ladder": {
+        "1e-06": 10494,
+        "1e-09": 10493,
+        "1e-12": 10493
+       }
+      },
+      "3": {
+       "dim_K_old": 15005,
+       "dim_K_old_ladder": {
+        "1e-06": 15165,
+        "1e-09": 15005,
+        "1e-12": 15005
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08))",
+       "dim_K_union": 14810,
+       "exposed_by_new_batch": 195,
+       "exposed_fraction": 0.01299566811062979,
+       "components_old": {
+        "dim_K": 15005,
+        "feature_null": 6784,
+        "downstream_null": 5700,
+        "deficit": 2521
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 14810,
+        "feature_null": 6016,
+        "downstream_null": 5822,
+        "deficit": 2972
+       },
+       "dead_units_old": 75,
+       "dead_units_union": 71,
+       "gap_union": 1888537.8046023217,
+       "dim_K_union_ladder": {
+        "1e-06": 15023,
+        "1e-09": 14810,
+        "1e-12": 14810
+       }
+      },
+      "readout": {
+       "dim_K_old": 760,
+       "dim_K_old_ladder": {
+        "1e-06": 760,
+        "1e-09": 760,
+        "1e-12": 760
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08))",
+       "dim_K_union": 710,
+       "exposed_by_new_batch": 50,
+       "exposed_fraction": 0.06578947368421052,
+       "components_old": {
+        "dim_K": 760,
+        "feature_null": 760,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 710,
+        "feature_null": 710,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 75,
+       "dead_units_union": 71,
+       "gap_union": 7998519149.657304,
+       "dim_K_union_ladder": {
+        "1e-06": 710,
+        "1e-09": 710,
+        "1e-12": 710
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 81,
+        "1e-09": 81,
+        "1e-12": 81
+       },
+       "rank_J": {
+        "1e-06": 6018,
+        "1e-09": 6019,
+        "1e-12": 6019
+       },
+       "gap_J": {
+        "1e-06": 4.013041915068012,
+        "1e-09": 513383180.59970236,
+        "1e-12": 513383180.59970236
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 2974158671380.9194,
+        "1e-09": 2974158671380.9194,
+        "1e-12": 2974158671380.9194
+       },
+       "k_rel": {
+        "0.01": 16110,
+        "0.001": 13550,
+        "0.0001": 10849,
+        "1e-05": 10508,
+        "1e-06": 10494,
+        "1e-07": 10493,
+        "1e-08": 10493,
+        "1e-09": 10493,
+        "1e-10": 10493,
+        "1e-11": 10493,
+        "1e-12": 10493
+       },
+       "k_abs": {
+        "0.1": 16511,
+        "0.01": 16452,
+        "0.001": 15961,
+        "0.0001": 12974,
+        "1e-05": 10738,
+        "1e-06": 10501,
+        "1e-07": 10493,
+        "1e-08": 10493,
+        "1e-09": 10493,
+        "1e-10": 10493
+       },
+       "activation": "relu",
+       "dead_units": 47,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 47,
+       "units_derivative_below_1e-9": 47,
+       "exact_zero_derivatives": 2471448,
+       "components@1e-06": {
+        "dim_K": 10494,
+        "feature_null": 0,
+        "downstream_null": 6063,
+        "deficit": 4431
+       },
+       "components@1e-09": {
+        "dim_K": 10493,
+        "feature_null": 0,
+        "downstream_null": 6063,
+        "deficit": 4430
+       },
+       "components@1e-12": {
+        "dim_K": 10493,
+        "feature_null": 0,
+        "downstream_null": 6063,
+        "deficit": 4430
+       },
+       "seconds": 497.91292452812195
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 82,
+        "1e-09": 82,
+        "1e-12": 82
+       },
+       "r_d": {
+        "1e-06": 57,
+        "1e-09": 57,
+        "1e-12": 57
+       },
+       "rank_J": {
+        "1e-06": 1489,
+        "1e-09": 1702,
+        "1e-12": 1702
+       },
+       "gap_J": {
+        "1e-06": 1.0454742242732415,
+        "1e-09": 1888537.8046023217,
+        "1e-12": 1888537.8046023217
+       },
+       "gap_h": {
+        "1e-06": 64243082741.43051,
+        "1e-09": 64243082741.43051,
+        "1e-12": 64243082741.43051
+       },
+       "gap_d": {
+        "1e-06": 272875946042.51196,
+        "1e-09": 272875946042.51196,
+        "1e-12": 272875946042.51196
+       },
+       "k_rel": {
+        "0.01": 16304,
+        "0.001": 15933,
+        "0.0001": 15646,
+        "1e-05": 15353,
+        "1e-06": 15023,
+        "1e-07": 14842,
+        "1e-08": 14812,
+        "1e-09": 14810,
+        "1e-10": 14810,
+        "1e-11": 14810,
+        "1e-12": 14810
+       },
+       "k_abs": {
+        "0.1": 16331,
+        "0.01": 15959,
+        "0.001": 15666,
+        "0.0001": 15378,
+        "1e-05": 15044,
+        "1e-06": 14850,
+        "1e-07": 14814,
+        "1e-08": 14810,
+        "1e-09": 14810,
+        "1e-10": 14810
+       },
+       "activation": "relu",
+       "dead_units": 71,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 71,
+       "units_derivative_below_1e-9": 71,
+       "exact_zero_derivatives": 2455568,
+       "components@1e-06": {
+        "dim_K": 15023,
+        "feature_null": 6016,
+        "downstream_null": 5822,
+        "deficit": 3185
+       },
+       "components@1e-09": {
+        "dim_K": 14810,
+        "feature_null": 6016,
+        "downstream_null": 5822,
+        "deficit": 2972
+       },
+       "components@1e-12": {
+        "dim_K": 14810,
+        "feature_null": 6016,
+        "downstream_null": 5822,
+        "deficit": 2972
+       },
+       "seconds": 493.7978298664093
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 58,
+        "1e-09": 58,
+        "1e-12": 58
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 580,
+        "1e-09": 580,
+        "1e-12": 580
+       },
+       "gap_J": {
+        "1e-06": 7998519149.657304,
+        "1e-09": 7998519149.657304,
+        "1e-12": 7998519149.657304
+       },
+       "gap_h": {
+        "1e-06": 33219951731.7333,
+        "1e-09": 33219951731.7333,
+        "1e-12": 33219951731.7333
+       },
+       "k_rel": {
+        "0.01": 1000,
+        "0.001": 830,
+        "0.0001": 750,
+        "1e-05": 720,
+        "1e-06": 710,
+        "1e-07": 710,
+        "1e-08": 710,
+        "1e-09": 710,
+        "1e-10": 710,
+        "1e-11": 710,
+        "1e-12": 710
+       },
+       "k_abs": {
+        "0.1": 1050,
+        "0.01": 830,
+        "0.001": 750,
+        "0.0001": 720,
+        "1e-05": 710,
+        "1e-06": 710,
+        "1e-07": 710,
+        "1e-08": 710,
+        "1e-09": 710,
+        "1e-10": 710
+       },
+       "activation": "relu",
+       "dead_units": 71,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 71,
+       "units_derivative_below_1e-9": 71,
+       "exact_zero_derivatives": 2455568,
+       "components@1e-06": {
+        "dim_K": 710,
+        "feature_null": 710,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 710,
+        "feature_null": 710,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 710,
+        "feature_null": 710,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+        "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+        "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+       }
+      },
+      "digest": "d39ba006bb74e089ca78da4d9483235467f1b0ea95565f9822f0747eeb4f710d"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+     "summary": {
+      "2": {
+       "dim_K_old": 10936,
+       "dim_K_old_ladder": {
+        "1e-06": 10938,
+        "1e-09": 10936,
+        "1e-12": 10936
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 10516,
+       "exposed_by_new_batch": 420,
+       "exposed_fraction": 0.03840526700804682,
+       "components_old": {
+        "dim_K": 10936,
+        "feature_null": 0,
+        "downstream_null": 6708,
+        "deficit": 4228
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 10516,
+        "feature_null": 0,
+        "downstream_null": 5805,
+        "deficit": 4711
+       },
+       "dead_units_old": 52,
+       "dead_units_union": 45,
+       "gap_union": 133298890.04647157,
+       "dim_K_union_ladder": {
+        "1e-06": 10519,
+        "1e-09": 10516,
+        "1e-12": 10516
+       }
+      },
+      "3": {
+       "dim_K_old": 15005,
+       "dim_K_old_ladder": {
+        "1e-06": 15165,
+        "1e-09": 15005,
+        "1e-12": 15005
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08))",
+       "dim_K_union": 14565,
+       "exposed_by_new_batch": 440,
+       "exposed_fraction": 0.029323558813728758,
+       "components_old": {
+        "dim_K": 15005,
+        "feature_null": 6784,
+        "downstream_null": 5700,
+        "deficit": 2521
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 14565,
+        "feature_null": 5760,
+        "downstream_null": 5628,
+        "deficit": 3177
+       },
+       "dead_units_old": 75,
+       "dead_units_union": 67,
+       "gap_union": 476224.8070940223,
+       "dim_K_union_ladder": {
+        "1e-06": 14710,
+        "1e-09": 14565,
+        "1e-12": 14565
+       }
+      },
+      "readout": {
+       "dim_K_old": 760,
+       "dim_K_old_ladder": {
+        "1e-06": 760,
+        "1e-09": 760,
+        "1e-12": 760
+       },
+       "baseline_source": "stored factor (legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08))",
+       "dim_K_union": 680,
+       "exposed_by_new_batch": 80,
+       "exposed_fraction": 0.10526315789473684,
+       "components_old": {
+        "dim_K": 760,
+        "feature_null": 760,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 680,
+        "feature_null": 680,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 75,
+       "dead_units_union": 67,
+       "gap_union": 7447736717.885967,
+       "dim_K_union_ladder": {
+        "1e-06": 680,
+        "1e-09": 680,
+        "1e-12": 680
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 83,
+        "1e-09": 83,
+        "1e-12": 83
+       },
+       "rank_J": {
+        "1e-06": 5993,
+        "1e-09": 5996,
+        "1e-12": 5996
+       },
+       "gap_J": {
+        "1e-06": 1.0631399031246094,
+        "1e-09": 133298890.04647157,
+        "1e-12": 133298890.04647157
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": 534612743546.3811,
+        "1e-09": 534612743546.3811,
+        "1e-12": 534612743546.3811
+       },
+       "k_rel": {
+        "0.01": 15908,
+        "0.001": 14664,
+        "0.0001": 11379,
+        "1e-05": 10572,
+        "1e-06": 10519,
+        "1e-07": 10516,
+        "1e-08": 10516,
+        "1e-09": 10516,
+        "1e-10": 10516,
+        "1e-11": 10516,
+        "1e-12": 10516
+       },
+       "k_abs": {
+        "0.1": 16442,
+        "0.01": 16078,
+        "0.001": 15488,
+        "0.0001": 12779,
+        "1e-05": 10749,
+        "1e-06": 10530,
+        "1e-07": 10516,
+        "1e-08": 10516,
+        "1e-09": 10516,
+        "1e-10": 10516
+       },
+       "activation": "relu",
+       "dead_units": 45,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 45,
+       "units_derivative_below_1e-9": 45,
+       "exact_zero_derivatives": 2470912,
+       "components@1e-06": {
+        "dim_K": 10519,
+        "feature_null": 0,
+        "downstream_null": 5805,
+        "deficit": 4714
+       },
+       "components@1e-09": {
+        "dim_K": 10516,
+        "feature_null": 0,
+        "downstream_null": 5805,
+        "deficit": 4711
+       },
+       "components@1e-12": {
+        "dim_K": 10516,
+        "feature_null": 0,
+        "downstream_null": 5805,
+        "deficit": 4711
+       },
+       "seconds": 481.0842385292053
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 84,
+        "1e-09": 84,
+        "1e-12": 84
+       },
+       "r_d": {
+        "1e-06": 61,
+        "1e-09": 61,
+        "1e-12": 61
+       },
+       "rank_J": {
+        "1e-06": 1802,
+        "1e-09": 1947,
+        "1e-12": 1947
+       },
+       "gap_J": {
+        "1e-06": 1.0607277683354313,
+        "1e-09": 476224.8070940223,
+        "1e-12": 476224.8070940223
+       },
+       "gap_h": {
+        "1e-06": 1975966932600.6675,
+        "1e-09": 1975966932600.6675,
+        "1e-12": 1975966932600.6675
+       },
+       "gap_d": {
+        "1e-06": 2815431292193.1606,
+        "1e-09": 2815431292193.1606,
+        "1e-12": 2815431292193.1606
+       },
+       "k_rel": {
+        "0.01": 16286,
+        "0.001": 15696,
+        "0.0001": 15184,
+        "1e-05": 14903,
+        "1e-06": 14710,
+        "1e-07": 14588,
+        "1e-08": 14567,
+        "1e-09": 14565,
+        "1e-10": 14565,
+        "1e-11": 14565,
+        "1e-12": 14565
+       },
+       "k_abs": {
+        "0.1": 16316,
+        "0.01": 15751,
+        "0.001": 15212,
+        "0.0001": 14925,
+        "1e-05": 14722,
+        "1e-06": 14592,
+        "1e-07": 14568,
+        "1e-08": 14565,
+        "1e-09": 14565,
+        "1e-10": 14565
+       },
+       "activation": "relu",
+       "dead_units": 67,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 67,
+       "units_derivative_below_1e-9": 67,
+       "exact_zero_derivatives": 2454886,
+       "components@1e-06": {
+        "dim_K": 14710,
+        "feature_null": 5760,
+        "downstream_null": 5628,
+        "deficit": 3322
+       },
+       "components@1e-09": {
+        "dim_K": 14565,
+        "feature_null": 5760,
+        "downstream_null": 5628,
+        "deficit": 3177
+       },
+       "components@1e-12": {
+        "dim_K": 14565,
+        "feature_null": 5760,
+        "downstream_null": 5628,
+        "deficit": 3177
+       },
+       "seconds": 495.1123628616333
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 61,
+        "1e-09": 61,
+        "1e-12": 61
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 610,
+        "1e-09": 610,
+        "1e-12": 610
+       },
+       "gap_J": {
+        "1e-06": 7447736717.885967,
+        "1e-09": 7447736717.885967,
+        "1e-12": 7447736717.885967
+       },
+       "gap_h": {
+        "1e-06": 30995426659.755764,
+        "1e-09": 30995426659.755764,
+        "1e-12": 30995426659.755764
+       },
+       "k_rel": {
+        "0.01": 1010,
+        "0.001": 790,
+        "0.0001": 730,
+        "1e-05": 700,
+        "1e-06": 680,
+        "1e-07": 680,
+        "1e-08": 680,
+        "1e-09": 680,
+        "1e-10": 680,
+        "1e-11": 680,
+        "1e-12": 680
+       },
+       "k_abs": {
+        "0.1": 1040,
+        "0.01": 810,
+        "0.001": 740,
+        "0.0001": 710,
+        "1e-05": 680,
+        "1e-06": 680,
+        "1e-07": 680,
+        "1e-08": 680,
+        "1e-09": 680,
+        "1e-10": 680
+       },
+       "activation": "relu",
+       "dead_units": 67,
+       "dead_units_meaning": "zero feature (ReLU)",
+       "units_never_positive": 67,
+       "units_derivative_below_1e-9": 67,
+       "exact_zero_derivatives": 2454886,
+       "components@1e-06": {
+        "dim_K": 680,
+        "feature_null": 680,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 680,
+        "feature_null": 680,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 680,
+        "feature_null": 680,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

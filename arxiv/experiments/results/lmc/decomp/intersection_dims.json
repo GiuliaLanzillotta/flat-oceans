@@ -1,0 +1,5622 @@
+{
+ "date": "2026-11-17",
+ "convention": "rank cut sin<=1e-9 primary; resolved iff >=10x gap at the cut; ladder {1e-12,1e-9,1e-7,1e-6,1e-4} gives the defensible range; NOT the 0.1-deg definition; projection analyses unchanged (no filtering)",
+ "A_exact": {
+  "cnn": {
+   "s0": {
+    "source": "results/lmc/decomp/cnn_fullspace_overlap_s0_e200.json",
+    "p": 45114,
+    "per_block": {
+     "conv1": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv2": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv3": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv4": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv5": {
+      "dims": [
+       767,
+       699
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 248,
+        "1e-09": 249,
+        "1e-07": 249,
+        "1e-06": 249,
+        "0.0001": 249
+       },
+       "primary_dim": 249,
+       "gap_at_primary_cut": 45682987.84208314,
+       "resolved": true,
+       "smallest_nonzero_sin": 6.259595174668801e-18,
+       "range_1e-9_to_1e-4": [
+        249,
+        249
+       ]
+      },
+      "intersection": 249,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 458.99026839626816,
+      "frobenius_sq_over_min_dim": 0.6566384383351476
+     },
+     "readout": {
+      "dims": [
+       2810,
+       2600
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 2100,
+        "1e-09": 2100,
+        "1e-07": 2100,
+        "1e-06": 2100,
+        "0.0001": 2100
+       },
+       "primary_dim": 2100,
+       "gap_at_primary_cut": 210795794755286.72,
+       "resolved": true,
+       "smallest_nonzero_sin": 8.784102001996452e-19,
+       "range_1e-9_to_1e-4": [
+        2100,
+        2100
+       ]
+      },
+      "intersection": 2100,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 2115.142115806321,
+      "frobenius_sq_over_min_dim": 0.8135161983870465
+     }
+    },
+    "full_network": {
+     "dims": [
+      3577,
+      3299
+     ],
+     "intersection_primary": 2349,
+     "intersection_range_1e-9_to_1e-4": [
+      2349,
+      2349
+     ],
+     "intersection_frac_of_p": 0.05206809416145764,
+     "frobenius_sq": 2574.132384202589,
+     "frobenius_sq_over_min_dim": 0.7802765638686235,
+     "frobenius_sq_over_p": 0.057058393939854346
+    }
+   },
+   "s1": {
+    "source": "results/lmc/decomp/cnn_fullspace_overlap_s1_e200.json",
+    "p": 45114,
+    "per_block": {
+     "conv1": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv2": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv3": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv4": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv5": {
+      "dims": [
+       3482,
+       3932
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 2317,
+        "1e-09": 2465,
+        "1e-07": 2469,
+        "1e-06": 2469,
+        "0.0001": 2469
+       },
+       "primary_dim": 2465,
+       "gap_at_primary_cut": 1.945837884976008,
+       "resolved": false,
+       "smallest_nonzero_sin": 8.981339859804561e-17,
+       "range_1e-9_to_1e-4": [
+        2465,
+        2469
+       ]
+      },
+      "intersection": 2465,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 3092.0113055453503,
+      "frobenius_sq_over_min_dim": 0.88799865179361
+     },
+     "readout": {
+      "dims": [
+       4420,
+       4570
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 3800,
+        "1e-09": 3800,
+        "1e-07": 3800,
+        "1e-06": 3800,
+        "0.0001": 3800
+       },
+       "primary_dim": 3800,
+       "gap_at_primary_cut": 16754889056.24224,
+       "resolved": true,
+       "smallest_nonzero_sin": 4.444739604652821e-19,
+       "range_1e-9_to_1e-4": [
+        3800,
+        3800
+       ]
+      },
+      "intersection": 3800,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 3871.311287440514,
+      "frobenius_sq_over_min_dim": 0.8758622822263606
+     }
+    },
+    "full_network": {
+     "dims": [
+      7902,
+      8502
+     ],
+     "intersection_primary": 6265,
+     "intersection_range_1e-9_to_1e-4": [
+      6265,
+      6269
+     ],
+     "intersection_frac_of_p": 0.1388704171654032,
+     "frobenius_sq": 6963.3225929858645,
+     "frobenius_sq_over_min_dim": 0.8812101484416431,
+     "frobenius_sq_over_p": 0.15434948337513554
+    }
+   },
+   "s2": {
+    "source": "results/lmc/decomp/cnn_fullspace_overlap_s2_e200.json",
+    "p": 45114,
+    "per_block": {
+     "conv1": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv2": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv3": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv4": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "conv5": {
+      "dims": [
+       2473,
+       2352
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 1755,
+        "1e-09": 1777,
+        "1e-07": 1777,
+        "1e-06": 1777,
+        "0.0001": 1777
+       },
+       "primary_dim": 1777,
+       "gap_at_primary_cut": 1112461219.6831563,
+       "resolved": true,
+       "smallest_nonzero_sin": 5.290253743839456e-31,
+       "range_1e-9_to_1e-4": [
+        1777,
+        1777
+       ]
+      },
+      "intersection": 1777,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 2080.2945571534065,
+      "frobenius_sq_over_min_dim": 0.8844789783815503
+     },
+     "readout": {
+      "dims": [
+       3480,
+       3200
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 2800,
+        "1e-09": 2800,
+        "1e-07": 2800,
+        "1e-06": 2800,
+        "0.0001": 2800
+       },
+       "primary_dim": 2800,
+       "gap_at_primary_cut": 131593293617.19597,
+       "resolved": true,
+       "smallest_nonzero_sin": 3.4101127516646675e-18,
+       "range_1e-9_to_1e-4": [
+        2800,
+        2800
+       ]
+      },
+      "intersection": 2800,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 2848.677329291805,
+      "frobenius_sq_over_min_dim": 0.8902116654036891
+     }
+    },
+    "full_network": {
+     "dims": [
+      5953,
+      5552
+     ],
+     "intersection_primary": 4577,
+     "intersection_range_1e-9_to_1e-4": [
+      4577,
+      4577
+     ],
+     "intersection_frac_of_p": 0.10145409407279336,
+     "frobenius_sq": 4928.971886445212,
+     "frobenius_sq_over_min_dim": 0.8877831207574228,
+     "frobenius_sq_over_p": 0.10925592690617572
+    }
+   }
+  },
+  "mlp": {
+   "s0": {
+    "source": "results/lmc/decomp/w1branch_overlap_s0_e350.json",
+    "p": 67210,
+    "per_block": {
+     "W1": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "W2": {
+      "dims": [
+       9353,
+       9318
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 8673,
+        "1e-09": 8705,
+        "1e-07": 8705,
+        "1e-06": 8705,
+        "0.0001": 8705
+       },
+       "primary_dim": 8705,
+       "gap_at_primary_cut": 261628999.70341074,
+       "resolved": true,
+       "smallest_nonzero_sin": 1.57619388291738e-15,
+       "range_1e-9_to_1e-4": [
+        8705,
+        8705
+       ]
+      },
+      "intersection": 8705,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 8945.507319598928,
+      "frobenius_sq_over_min_dim": 0.960024395750046
+     },
+     "W3": {
+      "dims": [
+       14707,
+       14653
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 14279,
+        "1e-09": 14395,
+        "1e-07": 14395,
+        "1e-06": 14395,
+        "0.0001": 14395
+       },
+       "primary_dim": 14395,
+       "gap_at_primary_cut": 36570537.94343498,
+       "resolved": true,
+       "smallest_nonzero_sin": 3.730292250576135e-16,
+       "range_1e-9_to_1e-4": [
+        14395,
+        14395
+       ]
+      },
+      "intersection": 14395,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 14416.438508514642,
+      "frobenius_sq_over_min_dim": 0.9838557639060017
+     },
+     "V": {
+      "dims": [
+       760,
+       770
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 710,
+        "1e-09": 710,
+        "1e-07": 710,
+        "1e-06": 710,
+        "0.0001": 710
+       },
+       "primary_dim": 710,
+       "gap_at_primary_cut": 109081515274.83344,
+       "resolved": true,
+       "smallest_nonzero_sin": 9.052702425274776e-17,
+       "range_1e-9_to_1e-4": [
+        710,
+        710
+       ]
+      },
+      "intersection": 710,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 729.9542969400873,
+      "frobenius_sq_over_min_dim": 0.9604661801843254
+     }
+    },
+    "full_network": {
+     "dims": [
+      24820,
+      24741
+     ],
+     "intersection_primary": 23810,
+     "intersection_range_1e-9_to_1e-4": [
+      23810,
+      23810
+     ],
+     "intersection_frac_of_p": 0.35426275851807765,
+     "frobenius_sq": 24091.900125053657,
+     "frobenius_sq_over_min_dim": 0.9737642021362781,
+     "frobenius_sq_over_p": 0.3584570767006942
+    }
+   },
+   "s1": {
+    "source": "results/lmc/decomp/w1branch_overlap_s1_e350.json",
+    "p": 67210,
+    "per_block": {
+     "W1": {
+      "dims": [
+       3899,
+       4166
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 0,
+        "1e-09": 0,
+        "1e-07": 0,
+        "1e-06": 0,
+        "0.0001": 0
+       },
+       "primary_dim": 0,
+       "gap_at_primary_cut": null,
+       "resolved": true,
+       "smallest_nonzero_sin": 0.4873571085754878,
+       "range_1e-9_to_1e-4": [
+        0,
+        0
+       ]
+      },
+      "intersection": 0,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 1065.16889876825,
+      "frobenius_sq_over_min_dim": 0.2731902792429469
+     },
+     "W2": {
+      "dims": [
+       8348,
+       8215
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 7575,
+        "1e-09": 7607,
+        "1e-07": 7607,
+        "1e-06": 7607,
+        "0.0001": 7607
+       },
+       "primary_dim": 7607,
+       "gap_at_primary_cut": 85825198.59280436,
+       "resolved": true,
+       "smallest_nonzero_sin": 1.0449252200070505e-15,
+       "range_1e-9_to_1e-4": [
+        7607,
+        7607
+       ]
+      },
+      "intersection": 7607,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 7621.422050719295,
+      "frobenius_sq_over_min_dim": 0.9277446196858545
+     },
+     "W3": {
+      "dims": [
+       15304,
+       15225
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 14975,
+        "1e-09": 15050,
+        "1e-07": 15051,
+        "1e-06": 15051,
+        "0.0001": 15051
+       },
+       "primary_dim": 15050,
+       "gap_at_primary_cut": 1.1963801703141457,
+       "resolved": false,
+       "smallest_nonzero_sin": 2.423372554163799e-16,
+       "range_1e-9_to_1e-4": [
+        15050,
+        15051
+       ]
+      },
+      "intersection": 15050,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 15057.731063710131,
+      "frobenius_sq_over_min_dim": 0.9890135345622417
+     },
+     "V": {
+      "dims": [
+       870,
+       880
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 810,
+        "1e-09": 810,
+        "1e-07": 810,
+        "1e-06": 810,
+        "0.0001": 810
+       },
+       "primary_dim": 810,
+       "gap_at_primary_cut": 290383790066.96826,
+       "resolved": true,
+       "smallest_nonzero_sin": 8.049938477029332e-17,
+       "range_1e-9_to_1e-4": [
+        810,
+        810
+       ]
+      },
+      "intersection": 810,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 838.5424983969998,
+      "frobenius_sq_over_min_dim": 0.9638419521804595
+     }
+    },
+    "full_network": {
+     "dims": [
+      28421,
+      28486
+     ],
+     "intersection_primary": 23467,
+     "intersection_range_1e-9_to_1e-4": [
+      23467,
+      23468
+     ],
+     "intersection_frac_of_p": 0.34915935128701087,
+     "frobenius_sq": 24582.86451159468,
+     "frobenius_sq_over_min_dim": 0.8649542419898905,
+     "frobenius_sq_over_p": 0.3657620073143086
+    }
+   },
+   "s2": {
+    "source": "results/lmc/decomp/w1branch_overlap_s2_e350.json",
+    "p": 67210,
+    "per_block": {
+     "W1": {
+      "dims": [
+       0,
+       0
+      ],
+      "intersection": 0,
+      "genuine_zero": true,
+      "frobenius_sq": 0.0
+     },
+     "W2": {
+      "dims": [
+       10905,
+       10758
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 10172,
+        "1e-09": 10189,
+        "1e-07": 10189,
+        "1e-06": 10189,
+        "0.0001": 10189
+       },
+       "primary_dim": 10189,
+       "gap_at_primary_cut": 312000528.0815123,
+       "resolved": true,
+       "smallest_nonzero_sin": 4.623125396988304e-16,
+       "range_1e-9_to_1e-4": [
+        10189,
+        10189
+       ]
+      },
+      "intersection": 10189,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 10465.052636133156,
+      "frobenius_sq_over_min_dim": 0.9727693471029146
+     },
+     "W3": {
+      "dims": [
+       15051,
+       15056
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 14706,
+        "1e-09": 14796,
+        "1e-07": 14796,
+        "1e-06": 14796,
+        "0.0001": 14796
+       },
+       "primary_dim": 14796,
+       "gap_at_primary_cut": 53021668.516102254,
+       "resolved": true,
+       "smallest_nonzero_sin": 3.2702471947166556e-16,
+       "range_1e-9_to_1e-4": [
+        14796,
+        14796
+       ]
+      },
+      "intersection": 14796,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 14823.970433606293,
+      "frobenius_sq_over_min_dim": 0.9849159812375452
+     },
+     "V": {
+      "dims": [
+       760,
+       800
+      ],
+      "intersection_ladder": {
+       "zeros_exact": 0,
+       "counts_at_tol": {
+        "1e-12": 750,
+        "1e-09": 750,
+        "1e-07": 750,
+        "1e-06": 750,
+        "0.0001": 750
+       },
+       "primary_dim": 750,
+       "gap_at_primary_cut": 15886264549038.1,
+       "resolved": true,
+       "smallest_nonzero_sin": 7.264281221515608e-17,
+       "range_1e-9_to_1e-4": [
+        750,
+        750
+       ]
+      },
+      "intersection": 750,
+      "intersection_frac_of_p_block": null,
+      "frobenius_sq": 750.0,
+      "frobenius_sq_over_min_dim": 0.9868421052631579
+     }
+    },
+    "full_network": {
+     "dims": [
+      26716,
+      26614
+     ],
+     "intersection_primary": 25735,
+     "intersection_range_1e-9_to_1e-4": [
+      25735,
+      25735
+     ],
+     "intersection_frac_of_p": 0.38290432971284033,
+     "frobenius_sq": 26039.02306973945,
+     "frobenius_sq_over_min_dim": 0.9783956966160461,
+     "frobenius_sq_over_p": 0.38742780939948596
+    }
+   }
+  }
+ },
+ "B_jtail": {
+  "cnn": {
+   "s0": {
+    "source": "results/lmc/decomp/jtail_sweep_cnn_s0_e200.json",
+    "p": 45114,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         123,
+         125
+        ],
+        "zeros_exact": 88,
+        "intersection_range": [
+         88,
+         88
+        ],
+        "frobenius_sq": 121.12293074927923,
+        "frobenius_sq_over_min_dim": 0.984739274384384
+       },
+       "conv2": {
+        "dims": [
+         2288,
+         2290
+        ],
+        "zeros_exact": 2258,
+        "intersection_range": [
+         2258,
+         2258
+        ],
+        "frobenius_sq": 2285.605398006032,
+        "frobenius_sq_over_min_dim": 0.9989534082194196
+       },
+       "conv3": {
+        "dims": [
+         4611,
+         4614
+        ],
+        "zeros_exact": 4585,
+        "intersection_range": [
+         4585,
+         4585
+        ],
+        "frobenius_sq": 4607.4465005820175,
+        "frobenius_sq_over_min_dim": 0.9992293430019556
+       },
+       "conv4": {
+        "dims": [
+         9226,
+         9228
+        ],
+        "zeros_exact": 9206,
+        "intersection_range": [
+         9206,
+         9206
+        ],
+        "frobenius_sq": 9223.447711748848,
+        "frobenius_sq_over_min_dim": 0.9997233591750323
+       },
+       "conv5": {
+        "dims": [
+         18364,
+         18362
+        ],
+        "zeros_exact": 18230,
+        "intersection_range": [
+         18230,
+         18230
+        ],
+        "frobenius_sq": 18355.345900853197,
+        "frobenius_sq_over_min_dim": 0.9996376157745995
+       },
+       "readout": {
+        "dims": [
+         9870,
+         9850
+        ],
+        "zeros_exact": 9470,
+        "intersection_range": [
+         9470,
+         9470
+        ],
+        "frobenius_sq": 9836.878154921924,
+        "frobenius_sq_over_min_dim": 0.9986678329869974
+       }
+      },
+      "full_network": {
+       "dims": [
+        44482,
+        44469
+       ],
+       "zeros_exact": 43837,
+       "intersection_range_1e-9_to_1e-4": [
+        43837,
+        43837
+       ],
+       "intersection_frac_of_p_range": [
+        0.9716939309305316,
+        0.9716939309305316
+       ],
+       "frobenius_sq": 44429.8465968613,
+       "frobenius_sq_over_min_dim": 0.9993217858043477,
+       "frobenius_sq_over_p": 0.9848350090185154
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         5,
+         5
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 4.520866519551256,
+        "frobenius_sq_over_min_dim": 0.9041733039102512
+       },
+       "conv2": {
+        "dims": [
+         1907,
+         1916
+        ],
+        "zeros_exact": 1503,
+        "intersection_range": [
+         1503,
+         1503
+        ],
+        "frobenius_sq": 1838.0663243511412,
+        "frobenius_sq_over_min_dim": 0.9638522938390882
+       },
+       "conv3": {
+        "dims": [
+         3794,
+         3815
+        ],
+        "zeros_exact": 2969,
+        "intersection_range": [
+         2969,
+         2969
+        ],
+        "frobenius_sq": 3549.6724022687786,
+        "frobenius_sq_over_min_dim": 0.9356015820423771
+       },
+       "conv4": {
+        "dims": [
+         8347,
+         8371
+        ],
+        "zeros_exact": 7470,
+        "intersection_range": [
+         7470,
+         7470
+        ],
+        "frobenius_sq": 8030.828913913398,
+        "frobenius_sq_over_min_dim": 0.9621215902615787
+       },
+       "conv5": {
+        "dims": [
+         16256,
+         16279
+        ],
+        "zeros_exact": 14039,
+        "intersection_range": [
+         14039,
+         14039
+        ],
+        "frobenius_sq": 15921.987161192827,
+        "frobenius_sq_over_min_dim": 0.9794529503686532
+       },
+       "readout": {
+        "dims": [
+         7600,
+         7520
+        ],
+        "zeros_exact": 4870,
+        "intersection_range": [
+         4870,
+         4870
+        ],
+        "frobenius_sq": 7292.697786421192,
+        "frobenius_sq_over_min_dim": 0.9697736418113287
+       }
+      },
+      "full_network": {
+       "dims": [
+        37909,
+        37906
+       ],
+       "zeros_exact": 30851,
+       "intersection_range_1e-9_to_1e-4": [
+        30851,
+        30851
+       ],
+       "intersection_frac_of_p_range": [
+        0.6838453695083566,
+        0.6838453695083566
+       ],
+       "frobenius_sq": 36637.77345466689,
+       "frobenius_sq_over_min_dim": 0.9685102290482669,
+       "frobenius_sq_over_p": 0.8121153844630689
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         649,
+         660
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 477.9686327490554,
+        "frobenius_sq_over_min_dim": 0.736469387903013
+       },
+       "conv3": {
+        "dims": [
+         999,
+         1011
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 572.336249249777,
+        "frobenius_sq_over_min_dim": 0.5729091584081851
+       },
+       "conv4": {
+        "dims": [
+         4296,
+         4315
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 3031.095811902184,
+        "frobenius_sq_over_min_dim": 0.7055623398282551
+       },
+       "conv5": {
+        "dims": [
+         11770,
+         11773
+        ],
+        "zeros_exact": 5047,
+        "intersection_range": [
+         5048,
+         5049
+        ],
+        "frobenius_sq": 10522.820884225921,
+        "frobenius_sq_over_min_dim": 0.894037458302967
+       },
+       "readout": {
+        "dims": [
+         4150,
+         4070
+        ],
+        "zeros_exact": 1214,
+        "intersection_range": [
+         1214,
+         2104
+        ],
+        "frobenius_sq": 3484.7376885576377,
+        "frobenius_sq_over_min_dim": 0.8562009062795178
+       }
+      },
+      "full_network": {
+       "dims": [
+        21864,
+        21829
+       ],
+       "zeros_exact": 6261,
+       "intersection_range_1e-9_to_1e-4": [
+        6262,
+        7153
+       ],
+       "intersection_frac_of_p_range": [
+        0.13880391896085473,
+        0.15855388571175244
+       ],
+       "frobenius_sq": 18088.959266684575,
+       "frobenius_sq_over_min_dim": 0.8303782256098318,
+       "frobenius_sq_over_p": 0.4009611044616876
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         26,
+         29
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 18.986430756056464,
+        "frobenius_sq_over_min_dim": 0.7302473367714024
+       },
+       "conv5": {
+        "dims": [
+         5429,
+         5701
+        ],
+        "zeros_exact": 157,
+        "intersection_range": [
+         157,
+         252
+        ],
+        "frobenius_sq": 4119.956264157094,
+        "frobenius_sq_over_min_dim": 0.7588794002868104
+       },
+       "readout": {
+        "dims": [
+         3060,
+         2780
+        ],
+        "zeros_exact": 1140,
+        "intersection_range": [
+         1140,
+         2100
+        ],
+        "frobenius_sq": 2316.040483722303,
+        "frobenius_sq_over_min_dim": 0.8331080876698932
+       }
+      },
+      "full_network": {
+       "dims": [
+        8515,
+        8510
+       ],
+       "zeros_exact": 1297,
+       "intersection_range_1e-9_to_1e-4": [
+        1297,
+        2352
+       ],
+       "intersection_frac_of_p_range": [
+        0.028749390433124973,
+        0.052134592366006115
+       ],
+       "frobenius_sq": 6454.983178635453,
+       "frobenius_sq_over_min_dim": 0.7838473805264667,
+       "frobenius_sq_over_p": 0.1430815972566266
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         1359,
+         1251
+        ],
+        "zeros_exact": 127,
+        "intersection_range": [
+         127,
+         249
+        ],
+        "frobenius_sq": 812.5578352470216,
+        "frobenius_sq_over_min_dim": 0.6495266468801132
+       },
+       "readout": {
+        "dims": [
+         2820,
+         2610
+        ],
+        "zeros_exact": 1173,
+        "intersection_range": [
+         1173,
+         2100
+        ],
+        "frobenius_sq": 2115.1421486187965,
+        "frobenius_sq_over_min_dim": 0.8103992906585427
+       }
+      },
+      "full_network": {
+       "dims": [
+        4179,
+        3861
+       ],
+       "zeros_exact": 1300,
+       "intersection_range_1e-9_to_1e-4": [
+        1300,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.02881588863767345,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2927.699983865818,
+       "frobenius_sq_over_min_dim": 0.7582750540963009,
+       "frobenius_sq_over_p": 0.06489559746122751
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         846,
+         719
+        ],
+        "zeros_exact": 136,
+        "intersection_range": [
+         136,
+         249
+        ],
+        "frobenius_sq": 480.75354537105676,
+        "frobenius_sq_over_min_dim": 0.6686419268025824
+       },
+       "readout": {
+        "dims": [
+         2810,
+         2600
+        ],
+        "zeros_exact": 1160,
+        "intersection_range": [
+         1160,
+         2100
+        ],
+        "frobenius_sq": 2115.1421158063217,
+        "frobenius_sq_over_min_dim": 0.8135161983870468
+       }
+      },
+      "full_network": {
+       "dims": [
+        3656,
+        3319
+       ],
+       "zeros_exact": 1296,
+       "intersection_range_1e-9_to_1e-4": [
+        1296,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.028727224364942145,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2595.8956611773783,
+       "frobenius_sq_over_min_dim": 0.7821318653743231,
+       "frobenius_sq_over_p": 0.05754080022115925
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         776,
+         700
+        ],
+        "zeros_exact": 126,
+        "intersection_range": [
+         126,
+         249
+        ],
+        "frobenius_sq": 462.7890363264653,
+        "frobenius_sq_over_min_dim": 0.6611271947520933
+       },
+       "readout": {
+        "dims": [
+         2810,
+         2600
+        ],
+        "zeros_exact": 1160,
+        "intersection_range": [
+         1160,
+         2100
+        ],
+        "frobenius_sq": 2115.1421158063217,
+        "frobenius_sq_over_min_dim": 0.8135161983870468
+       }
+      },
+      "full_network": {
+       "dims": [
+        3586,
+        3300
+       ],
+       "zeros_exact": 1286,
+       "intersection_range_1e-9_to_1e-4": [
+        1286,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.02850556368311389,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2577.9311521327872,
+       "frobenius_sq_over_min_dim": 0.7811912582220567,
+       "frobenius_sq_over_p": 0.057142597688805856
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         767,
+         700
+        ],
+        "zeros_exact": 132,
+        "intersection_range": [
+         132,
+         249
+        ],
+        "frobenius_sq": 458.99026839791725,
+        "frobenius_sq_over_min_dim": 0.6557003834255961
+       },
+       "readout": {
+        "dims": [
+         2810,
+         2600
+        ],
+        "zeros_exact": 1160,
+        "intersection_range": [
+         1160,
+         2100
+        ],
+        "frobenius_sq": 2115.1421158063217,
+        "frobenius_sq_over_min_dim": 0.8135161983870468
+       }
+      },
+      "full_network": {
+       "dims": [
+        3577,
+        3300
+       ],
+       "zeros_exact": 1292,
+       "intersection_range_1e-9_to_1e-4": [
+        1292,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.028638560092210844,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2574.132384204239,
+       "frobenius_sq_over_min_dim": 0.780040116425527,
+       "frobenius_sq_over_p": 0.05705839393989092
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         767,
+         699
+        ],
+        "zeros_exact": 132,
+        "intersection_range": [
+         132,
+         249
+        ],
+        "frobenius_sq": 458.9902683963539,
+        "frobenius_sq_over_min_dim": 0.6566384383352702
+       },
+       "readout": {
+        "dims": [
+         2810,
+         2600
+        ],
+        "zeros_exact": 1160,
+        "intersection_range": [
+         1160,
+         2100
+        ],
+        "frobenius_sq": 2115.1421158063217,
+        "frobenius_sq_over_min_dim": 0.8135161983870468
+       }
+      },
+      "full_network": {
+       "dims": [
+        3577,
+        3299
+       ],
+       "zeros_exact": 1292,
+       "intersection_range_1e-9_to_1e-4": [
+        1292,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.028638560092210844,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2574.1323842026754,
+       "frobenius_sq_over_min_dim": 0.7802765638686497,
+       "frobenius_sq_over_p": 0.05705839393985626
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         767,
+         699
+        ],
+        "zeros_exact": 132,
+        "intersection_range": [
+         132,
+         249
+        ],
+        "frobenius_sq": 458.9902683963539,
+        "frobenius_sq_over_min_dim": 0.6566384383352702
+       },
+       "readout": {
+        "dims": [
+         2810,
+         2600
+        ],
+        "zeros_exact": 1160,
+        "intersection_range": [
+         1160,
+         2100
+        ],
+        "frobenius_sq": 2115.1421158063217,
+        "frobenius_sq_over_min_dim": 0.8135161983870468
+       }
+      },
+      "full_network": {
+       "dims": [
+        3577,
+        3299
+       ],
+       "zeros_exact": 1292,
+       "intersection_range_1e-9_to_1e-4": [
+        1292,
+        2349
+       ],
+       "intersection_frac_of_p_range": [
+        0.028638560092210844,
+        0.05206809416145764
+       ],
+       "frobenius_sq": 2574.1323842026754,
+       "frobenius_sq_over_min_dim": 0.7802765638686497,
+       "frobenius_sq_over_p": 0.05705839393985626
+      }
+     }
+    }
+   },
+   "s1": {
+    "source": "results/lmc/decomp/jtail_sweep_cnn_s1_e200.json",
+    "p": 45114,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         133,
+         138
+        ],
+        "zeros_exact": 111,
+        "intersection_range": [
+         111,
+         111
+        ],
+        "frobenius_sq": 131.56926809677893,
+        "frobenius_sq_over_min_dim": 0.9892426172690145
+       },
+       "conv2": {
+        "dims": [
+         2294,
+         2300
+        ],
+        "zeros_exact": 2274,
+        "intersection_range": [
+         2274,
+         2274
+        ],
+        "frobenius_sq": 2292.4629704696863,
+        "frobenius_sq_over_min_dim": 0.999329978408756
+       },
+       "conv3": {
+        "dims": [
+         4622,
+         4629
+        ],
+        "zeros_exact": 4611,
+        "intersection_range": [
+         4611,
+         4611
+        ],
+        "frobenius_sq": 4620.13858996248,
+        "frobenius_sq_over_min_dim": 0.9995972717357162
+       },
+       "conv4": {
+        "dims": [
+         9235,
+         9240
+        ],
+        "zeros_exact": 9227,
+        "intersection_range": [
+         9227,
+         9227
+        ],
+        "frobenius_sq": 9234.08996808177,
+        "frobenius_sq_over_min_dim": 0.9999014583737703
+       },
+       "conv5": {
+        "dims": [
+         18341,
+         18354
+        ],
+        "zeros_exact": 18199,
+        "intersection_range": [
+         18199,
+         18199
+        ],
+        "frobenius_sq": 18332.909785561485,
+        "frobenius_sq_over_min_dim": 0.999558900036066
+       },
+       "readout": {
+        "dims": [
+         9890,
+         9900
+        ],
+        "zeros_exact": 9540,
+        "intersection_range": [
+         9540,
+         9540
+        ],
+        "frobenius_sq": 9880.965499780972,
+        "frobenius_sq_over_min_dim": 0.9990865014945371
+       }
+      },
+      "full_network": {
+       "dims": [
+        44515,
+        44561
+       ],
+       "zeros_exact": 43962,
+       "intersection_range_1e-9_to_1e-4": [
+        43962,
+        43962
+       ],
+       "intersection_frac_of_p_range": [
+        0.9744646894533847,
+        0.9744646894533847
+       ],
+       "frobenius_sq": 44492.13608195317,
+       "frobenius_sq_over_min_dim": 0.9994863772201094,
+       "frobenius_sq_over_p": 0.9862157219921348
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         21,
+         28
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 19.432114652019475,
+        "frobenius_sq_over_min_dim": 0.9253387929533083
+       },
+       "conv2": {
+        "dims": [
+         1965,
+         2005
+        ],
+        "zeros_exact": 1650,
+        "intersection_range": [
+         1650,
+         1650
+        ],
+        "frobenius_sq": 1899.3009908801102,
+        "frobenius_sq_over_min_dim": 0.9665653897608704
+       },
+       "conv3": {
+        "dims": [
+         3981,
+         4087
+        ],
+        "zeros_exact": 3428,
+        "intersection_range": [
+         3428,
+         3428
+        ],
+        "frobenius_sq": 3781.0195743932522,
+        "frobenius_sq_over_min_dim": 0.9497662834446753
+       },
+       "conv4": {
+        "dims": [
+         8562,
+         8689
+        ],
+        "zeros_exact": 8003,
+        "intersection_range": [
+         8003,
+         8003
+        ],
+        "frobenius_sq": 8334.30210129844,
+        "frobenius_sq_over_min_dim": 0.9734059917424014
+       },
+       "conv5": {
+        "dims": [
+         16213,
+         16343
+        ],
+        "zeros_exact": 14060,
+        "intersection_range": [
+         14060,
+         14060
+        ],
+        "frobenius_sq": 15938.360680498816,
+        "frobenius_sq_over_min_dim": 0.9830605489729732
+       },
+       "readout": {
+        "dims": [
+         8130,
+         8140
+        ],
+        "zeros_exact": 6020,
+        "intersection_range": [
+         6022,
+         6023
+        ],
+        "frobenius_sq": 7973.415922080909,
+        "frobenius_sq_over_min_dim": 0.98073996581561
+       }
+      },
+      "full_network": {
+       "dims": [
+        38872,
+        39292
+       ],
+       "zeros_exact": 33161,
+       "intersection_range_1e-9_to_1e-4": [
+        33163,
+        33164
+       ],
+       "intersection_frac_of_p_range": [
+        0.7350933191470497,
+        0.7351154852152325
+       ],
+       "frobenius_sq": 37945.83138380355,
+       "frobenius_sq_over_min_dim": 0.976173888243557,
+       "frobenius_sq_over_p": 0.8411098857073979
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         849,
+         957
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 662.4061947966042,
+        "frobenius_sq_over_min_dim": 0.7802193107144926
+       },
+       "conv3": {
+        "dims": [
+         1656,
+         1981
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1212.9427666273004,
+        "frobenius_sq_over_min_dim": 0.7324533614899157
+       },
+       "conv4": {
+        "dims": [
+         5505,
+         6011
+        ],
+        "zeros_exact": 2268,
+        "intersection_range": [
+         2268,
+         2268
+        ],
+        "frobenius_sq": 4540.104120464981,
+        "frobenius_sq_over_min_dim": 0.8247237276049012
+       },
+       "conv5": {
+        "dims": [
+         12473,
+         12868
+        ],
+        "zeros_exact": 6845,
+        "intersection_range": [
+         6845,
+         6845
+        ],
+        "frobenius_sq": 11657.353526603523,
+        "frobenius_sq_over_min_dim": 0.9346070333202536
+       },
+       "readout": {
+        "dims": [
+         5670,
+         5760
+        ],
+        "zeros_exact": 1180,
+        "intersection_range": [
+         2506,
+         2692
+        ],
+        "frobenius_sq": 5150.288916386277,
+        "frobenius_sq_over_min_dim": 0.9083401968935233
+       }
+      },
+      "full_network": {
+       "dims": [
+        26153,
+        27577
+       ],
+       "zeros_exact": 10293,
+       "intersection_range_1e-9_to_1e-4": [
+        11619,
+        11805
+       ],
+       "intersection_frac_of_p_range": [
+        0.25754754621625214,
+        0.26167043489825775
+       ],
+       "frobenius_sq": 23223.095524878685,
+       "frobenius_sq_over_min_dim": 0.8879706161770613,
+       "frobenius_sq_over_p": 0.514764718820736
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         1,
+         4
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 0.8982944356392768,
+        "frobenius_sq_over_min_dim": 0.8982944356392768
+       },
+       "conv3": {
+        "dims": [
+         0,
+         1
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         70,
+         397
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 45.96536088227815,
+        "frobenius_sq_over_min_dim": 0.6566480126039735
+       },
+       "conv5": {
+        "dims": [
+         6907,
+         8165
+        ],
+        "zeros_exact": 2278,
+        "intersection_range": [
+         2278,
+         2477
+        ],
+        "frobenius_sq": 6162.346314648063,
+        "frobenius_sq_over_min_dim": 0.8921885499707634
+       },
+       "readout": {
+        "dims": [
+         4540,
+         4770
+        ],
+        "zeros_exact": 2065,
+        "intersection_range": [
+         2065,
+         3801
+        ],
+        "frobenius_sq": 4056.4086859016006,
+        "frobenius_sq_over_min_dim": 0.8934820894056389
+       }
+      },
+      "full_network": {
+       "dims": [
+        11518,
+        13336
+       ],
+       "zeros_exact": 4343,
+       "intersection_range_1e-9_to_1e-4": [
+        4343,
+        6278
+       ],
+       "intersection_frac_of_p_range": [
+        0.09626723411801215,
+        0.13915857605177995
+       ],
+       "frobenius_sq": 10265.61865586758,
+       "frobenius_sq_over_min_dim": 0.8912674644788661,
+       "frobenius_sq_over_p": 0.2275484030648486
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3981,
+         4441
+        ],
+        "zeros_exact": 1385,
+        "intersection_range": [
+         1385,
+         2470
+        ],
+        "frobenius_sq": 3505.3432731720727,
+        "frobenius_sq_over_min_dim": 0.8805182801236053
+       },
+       "readout": {
+        "dims": [
+         4440,
+         4600
+        ],
+        "zeros_exact": 2069,
+        "intersection_range": [
+         2069,
+         3800
+        ],
+        "frobenius_sq": 3894.6137516837002,
+        "frobenius_sq_over_min_dim": 0.8771652593882208
+       }
+      },
+      "full_network": {
+       "dims": [
+        8421,
+        9041
+       ],
+       "zeros_exact": 3454,
+       "intersection_range_1e-9_to_1e-4": [
+        3454,
+        6270
+       ],
+       "intersection_frac_of_p_range": [
+        0.07656159950348007,
+        0.13898124750631732
+       ],
+       "frobenius_sq": 7399.957024855773,
+       "frobenius_sq_over_min_dim": 0.8787503888915537,
+       "frobenius_sq_over_p": 0.1640279519629333
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3594,
+         4008
+        ],
+        "zeros_exact": 1203,
+        "intersection_range": [
+         1203,
+         2469
+        ],
+        "frobenius_sq": 3172.167132865066,
+        "frobenius_sq_over_min_dim": 0.8826285845478758
+       },
+       "readout": {
+        "dims": [
+         4420,
+         4570
+        ],
+        "zeros_exact": 2020,
+        "intersection_range": [
+         2020,
+         3800
+        ],
+        "frobenius_sq": 3871.311287440523,
+        "frobenius_sq_over_min_dim": 0.8758622822263626
+       }
+      },
+      "full_network": {
+       "dims": [
+        8014,
+        8578
+       ],
+       "zeros_exact": 3223,
+       "intersection_range_1e-9_to_1e-4": [
+        3223,
+        6269
+       ],
+       "intersection_frac_of_p_range": [
+        0.07144123775324733,
+        0.1389590814381345
+       ],
+       "frobenius_sq": 7043.478420305589,
+       "frobenius_sq_over_min_dim": 0.8788967332550024,
+       "frobenius_sq_over_p": 0.15612622290875536
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3517,
+         3943
+        ],
+        "zeros_exact": 1185,
+        "intersection_range": [
+         1185,
+         2469
+        ],
+        "frobenius_sq": 3119.0345637254004,
+        "frobenius_sq_over_min_dim": 0.886845198670856
+       },
+       "readout": {
+        "dims": [
+         4420,
+         4570
+        ],
+        "zeros_exact": 2020,
+        "intersection_range": [
+         2020,
+         3800
+        ],
+        "frobenius_sq": 3871.311287440523,
+        "frobenius_sq_over_min_dim": 0.8758622822263626
+       }
+      },
+      "full_network": {
+       "dims": [
+        7937,
+        8513
+       ],
+       "zeros_exact": 3205,
+       "intersection_range_1e-9_to_1e-4": [
+        3205,
+        6269
+       ],
+       "intersection_frac_of_p_range": [
+        0.07104224852595646,
+        0.1389590814381345
+       ],
+       "frobenius_sq": 6990.345851165923,
+       "frobenius_sq_over_min_dim": 0.8807289720506392,
+       "frobenius_sq_over_p": 0.1549484827584768
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3494,
+         3936
+        ],
+        "zeros_exact": 1241,
+        "intersection_range": [
+         1241,
+         2469
+        ],
+        "frobenius_sq": 3102.350724948485,
+        "frobenius_sq_over_min_dim": 0.8879080494987078
+       },
+       "readout": {
+        "dims": [
+         4420,
+         4570
+        ],
+        "zeros_exact": 2020,
+        "intersection_range": [
+         2020,
+         3800
+        ],
+        "frobenius_sq": 3871.311287440523,
+        "frobenius_sq_over_min_dim": 0.8758622822263626
+       }
+      },
+      "full_network": {
+       "dims": [
+        7914,
+        8506
+       ],
+       "zeros_exact": 3261,
+       "intersection_range_1e-9_to_1e-4": [
+        3261,
+        6269
+       ],
+       "intersection_frac_of_p_range": [
+        0.0722835483441947,
+        0.1389590814381345
+       ],
+       "frobenius_sq": 6973.662012389008,
+       "frobenius_sq_over_min_dim": 0.8811804412925206,
+       "frobenius_sq_over_p": 0.15457866765059644
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3486,
+         3932
+        ],
+        "zeros_exact": 1180,
+        "intersection_range": [
+         1180,
+         2469
+        ],
+        "frobenius_sq": 3094.638084491985,
+        "frobenius_sq_over_min_dim": 0.8877332428261575
+       },
+       "readout": {
+        "dims": [
+         4420,
+         4570
+        ],
+        "zeros_exact": 2020,
+        "intersection_range": [
+         2020,
+         3800
+        ],
+        "frobenius_sq": 3871.311287440523,
+        "frobenius_sq_over_min_dim": 0.8758622822263626
+       }
+      },
+      "full_network": {
+       "dims": [
+        7906,
+        8502
+       ],
+       "zeros_exact": 3200,
+       "intersection_range_1e-9_to_1e-4": [
+        3200,
+        6269
+       ],
+       "intersection_frac_of_p_range": [
+        0.07093141818504234,
+        0.1389590814381345
+       ],
+       "frobenius_sq": 6965.949371932507,
+       "frobenius_sq_over_min_dim": 0.8810965560248555,
+       "frobenius_sq_over_p": 0.15440770873636803
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         3483,
+         3932
+        ],
+        "zeros_exact": 1233,
+        "intersection_range": [
+         1233,
+         2469
+        ],
+        "frobenius_sq": 3092.699915391547,
+        "frobenius_sq_over_min_dim": 0.8879414055100624
+       },
+       "readout": {
+        "dims": [
+         4420,
+         4570
+        ],
+        "zeros_exact": 2020,
+        "intersection_range": [
+         2020,
+         3800
+        ],
+        "frobenius_sq": 3871.311287440523,
+        "frobenius_sq_over_min_dim": 0.8758622822263626
+       }
+      },
+      "full_network": {
+       "dims": [
+        7903,
+        8502
+       ],
+       "zeros_exact": 3253,
+       "intersection_range_1e-9_to_1e-4": [
+        3253,
+        6269
+       ],
+       "intersection_frac_of_p_range": [
+        0.07210621979873211,
+        0.1389590814381345
+       ],
+       "frobenius_sq": 6964.01120283207,
+       "frobenius_sq_over_min_dim": 0.8811857779111818,
+       "frobenius_sq_over_p": 0.15436474714793788
+      }
+     }
+    }
+   },
+   "s2": {
+    "source": "results/lmc/decomp/jtail_sweep_cnn_s2_e200.json",
+    "p": 45114,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         129,
+         131
+        ],
+        "zeros_exact": 100,
+        "intersection_range": [
+         100,
+         100
+        ],
+        "frobenius_sq": 127.56630779476069,
+        "frobenius_sq_over_min_dim": 0.9888861069361293
+       },
+       "conv2": {
+        "dims": [
+         2295,
+         2298
+        ],
+        "zeros_exact": 2273,
+        "intersection_range": [
+         2273,
+         2273
+        ],
+        "frobenius_sq": 2293.6717345284724,
+        "frobenius_sq_over_min_dim": 0.999421235088659
+       },
+       "conv3": {
+        "dims": [
+         4621,
+         4626
+        ],
+        "zeros_exact": 4607,
+        "intersection_range": [
+         4607,
+         4607
+        ],
+        "frobenius_sq": 4618.999283182239,
+        "frobenius_sq_over_min_dim": 0.9995670381264313
+       },
+       "conv4": {
+        "dims": [
+         9230,
+         9234
+        ],
+        "zeros_exact": 9216,
+        "intersection_range": [
+         9216,
+         9216
+        ],
+        "frobenius_sq": 9227.83042706473,
+        "frobenius_sq_over_min_dim": 0.9997649433439577
+       },
+       "conv5": {
+        "dims": [
+         18353,
+         18361
+        ],
+        "zeros_exact": 18218,
+        "intersection_range": [
+         18218,
+         18218
+        ],
+        "frobenius_sq": 18346.677637067733,
+        "frobenius_sq_over_min_dim": 0.9996555133802503
+       },
+       "readout": {
+        "dims": [
+         9880,
+         9880
+        ],
+        "zeros_exact": 9510,
+        "intersection_range": [
+         9510,
+         9510
+        ],
+        "frobenius_sq": 9867.137199484261,
+        "frobenius_sq_over_min_dim": 0.9986980971137916
+       }
+      },
+      "full_network": {
+       "dims": [
+        44508,
+        44530
+       ],
+       "zeros_exact": 43924,
+       "intersection_range_1e-9_to_1e-4": [
+        43924,
+        43924
+       ],
+       "intersection_frac_of_p_range": [
+        0.9736223788624374,
+        0.9736223788624374
+       ],
+       "frobenius_sq": 44481.88258912219,
+       "frobenius_sq_over_min_dim": 0.9994131973829916,
+       "frobenius_sq_over_p": 0.9859884423709313
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         9,
+         14
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 8.19678316537671,
+        "frobenius_sq_over_min_dim": 0.9107536850418566
+       },
+       "conv2": {
+        "dims": [
+         1931,
+         1963
+        ],
+        "zeros_exact": 1574,
+        "intersection_range": [
+         1574,
+         1574
+        ],
+        "frobenius_sq": 1864.2650662148203,
+        "frobenius_sq_over_min_dim": 0.9654402207223306
+       },
+       "conv3": {
+        "dims": [
+         3861,
+         3935
+        ],
+        "zeros_exact": 3156,
+        "intersection_range": [
+         3156,
+         3156
+        ],
+        "frobenius_sq": 3627.8746041887534,
+        "frobenius_sq_over_min_dim": 0.9396204621053492
+       },
+       "conv4": {
+        "dims": [
+         8452,
+         8531
+        ],
+        "zeros_exact": 7735,
+        "intersection_range": [
+         7735,
+         7735
+        ],
+        "frobenius_sq": 8176.248584582452,
+        "frobenius_sq_over_min_dim": 0.9673744184314307
+       },
+       "conv5": {
+        "dims": [
+         16203,
+         16270
+        ],
+        "zeros_exact": 13977,
+        "intersection_range": [
+         13977,
+         13977
+        ],
+        "frobenius_sq": 15897.19441077671,
+        "frobenius_sq_over_min_dim": 0.9811266068491459
+       },
+       "readout": {
+        "dims": [
+         7870,
+         7820
+        ],
+        "zeros_exact": 5440,
+        "intersection_range": [
+         5440,
+         5440
+        ],
+        "frobenius_sq": 7691.960138589358,
+        "frobenius_sq_over_min_dim": 0.9836266161878975
+       }
+      },
+      "full_network": {
+       "dims": [
+        38326,
+        38533
+       ],
+       "zeros_exact": 31882,
+       "intersection_range_1e-9_to_1e-4": [
+        31882,
+        31882
+       ],
+       "intersection_frac_of_p_range": [
+        0.7066985858048499,
+        0.7066985858048499
+       ],
+       "frobenius_sq": 37265.73958751747,
+       "frobenius_sq_over_min_dim": 0.9736059041571081,
+       "frobenius_sq_over_p": 0.8260349245803402
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         722,
+         782
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 533.8448689487311,
+        "frobenius_sq_over_min_dim": 0.739397325413755
+       },
+       "conv3": {
+        "dims": [
+         1307,
+         1463
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 830.8800865282193,
+        "frobenius_sq_over_min_dim": 0.6357154449336031
+       },
+       "conv4": {
+        "dims": [
+         5032,
+         5258
+        ],
+        "zeros_exact": 1042,
+        "intersection_range": [
+         1042,
+         1042
+        ],
+        "frobenius_sq": 3879.4403123361467,
+        "frobenius_sq_over_min_dim": 0.7709539571415236
+       },
+       "conv5": {
+        "dims": [
+         12172,
+         12264
+        ],
+        "zeros_exact": 5940,
+        "intersection_range": [
+         5940,
+         5942
+        ],
+        "frobenius_sq": 11106.444717662584,
+        "frobenius_sq_over_min_dim": 0.9124584881418488
+       },
+       "readout": {
+        "dims": [
+         4910,
+         4550
+        ],
+        "zeros_exact": 1624,
+        "intersection_range": [
+         1624,
+         2818
+        ],
+        "frobenius_sq": 4221.783281323058,
+        "frobenius_sq_over_min_dim": 0.9278644574336391
+       }
+      },
+      "full_network": {
+       "dims": [
+        24143,
+        24317
+       ],
+       "zeros_exact": 8606,
+       "intersection_range_1e-9_to_1e-4": [
+        8606,
+        9802
+       ],
+       "intersection_frac_of_p_range": [
+        0.19076118278139823,
+        0.21727180032805782
+       ],
+       "frobenius_sq": 20572.39326679874,
+       "frobenius_sq_over_min_dim": 0.8650041318083815,
+       "frobenius_sq_over_p": 0.45600907183576583
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         1,
+         1
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 0.9524724616227414,
+        "frobenius_sq_over_min_dim": 0.9524724616227414
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         11,
+         45
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 7.142840561191764,
+        "frobenius_sq_over_min_dim": 0.6493491419265239
+       },
+       "conv5": {
+        "dims": [
+         6603,
+         6951
+        ],
+        "zeros_exact": 1601,
+        "intersection_range": [
+         1601,
+         1777
+        ],
+        "frobenius_sq": 5337.5694401440705,
+        "frobenius_sq_over_min_dim": 0.8083552082604983
+       },
+       "readout": {
+        "dims": [
+         3670,
+         3390
+        ],
+        "zeros_exact": 1562,
+        "intersection_range": [
+         1562,
+         2807
+        ],
+        "frobenius_sq": 2986.0879055625396,
+        "frobenius_sq_over_min_dim": 0.8808518895464719
+       }
+      },
+      "full_network": {
+       "dims": [
+        10285,
+        10387
+       ],
+       "zeros_exact": 3163,
+       "intersection_range_1e-9_to_1e-4": [
+        3163,
+        4584
+       ],
+       "intersection_frac_of_p_range": [
+        0.07011127366227779,
+        0.10160925655007315
+       ],
+       "frobenius_sq": 8331.752658729425,
+       "frobenius_sq_over_min_dim": 0.8327588864297276,
+       "frobenius_sq_over_p": 0.184682197515836
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2966,
+         2788
+        ],
+        "zeros_exact": 941,
+        "intersection_range": [
+         941,
+         1777
+        ],
+        "frobenius_sq": 2336.820319886749,
+        "frobenius_sq_over_min_dim": 0.8381708464443146
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3220
+        ],
+        "zeros_exact": 1542,
+        "intersection_range": [
+         1542,
+         2807
+        ],
+        "frobenius_sq": 2868.581954180137,
+        "frobenius_sq_over_min_dim": 0.8908639609255083
+       }
+      },
+      "full_network": {
+       "dims": [
+        6446,
+        6008
+       ],
+       "zeros_exact": 2483,
+       "intersection_range_1e-9_to_1e-4": [
+        2483,
+        4584
+       ],
+       "intersection_frac_of_p_range": [
+        0.055038347297956286,
+        0.10160925655007315
+       ],
+       "frobenius_sq": 5205.402274066886,
+       "frobenius_sq_over_min_dim": 0.8664118299046082,
+       "frobenius_sq_over_p": 0.11538330172600271
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2523,
+         2392
+        ],
+        "zeros_exact": 962,
+        "intersection_range": [
+         962,
+         1777
+        ],
+        "frobenius_sq": 2108.3472766618015,
+        "frobenius_sq_over_min_dim": 0.8814160855609539
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3210
+        ],
+        "zeros_exact": 1564,
+        "intersection_range": [
+         1564,
+         2806
+        ],
+        "frobenius_sq": 2858.6773291383706,
+        "frobenius_sq_over_min_dim": 0.8905536850898351
+       }
+      },
+      "full_network": {
+       "dims": [
+        6003,
+        5602
+       ],
+       "zeros_exact": 2526,
+       "intersection_range_1e-9_to_1e-4": [
+        2526,
+        4583
+       ],
+       "intersection_frac_of_p_range": [
+        0.055991488229817796,
+        0.10158709048189032
+       ],
+       "frobenius_sq": 4967.024605800172,
+       "frobenius_sq_over_min_dim": 0.8866520181721121,
+       "frobenius_sq_over_p": 0.11009940607793971
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2478,
+         2355
+        ],
+        "zeros_exact": 921,
+        "intersection_range": [
+         921,
+         1777
+        ],
+        "frobenius_sq": 2083.21726615792,
+        "frobenius_sq_over_min_dim": 0.8845933189630234
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3200
+        ],
+        "zeros_exact": 1606,
+        "intersection_range": [
+         1606,
+         2800
+        ],
+        "frobenius_sq": 2848.6773292918356,
+        "frobenius_sq_over_min_dim": 0.8902116654036987
+       }
+      },
+      "full_network": {
+       "dims": [
+        5958,
+        5555
+       ],
+       "zeros_exact": 2527,
+       "intersection_range_1e-9_to_1e-4": [
+        2527,
+        4577
+       ],
+       "intersection_frac_of_p_range": [
+        0.05601365429800062,
+        0.10145409407279336
+       ],
+       "frobenius_sq": 4931.894595449756,
+       "frobenius_sq_over_min_dim": 0.8878298101619723,
+       "frobenius_sq_over_p": 0.10932071187324902
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2473,
+         2353
+        ],
+        "zeros_exact": 938,
+        "intersection_range": [
+         938,
+         1777
+        ],
+        "frobenius_sq": 2081.2836882204692,
+        "frobenius_sq_over_min_dim": 0.8845234544073393
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3200
+        ],
+        "zeros_exact": 1606,
+        "intersection_range": [
+         1606,
+         2800
+        ],
+        "frobenius_sq": 2848.6773292918356,
+        "frobenius_sq_over_min_dim": 0.8902116654036987
+       }
+      },
+      "full_network": {
+       "dims": [
+        5953,
+        5553
+       ],
+       "zeros_exact": 2544,
+       "intersection_range_1e-9_to_1e-4": [
+        2544,
+        4577
+       ],
+       "intersection_frac_of_p_range": [
+        0.05639047745710866,
+        0.10145409407279336
+       ],
+       "frobenius_sq": 4929.961017512305,
+       "frobenius_sq_over_min_dim": 0.8878013717832353,
+       "frobenius_sq_over_p": 0.10927785205285068
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2473,
+         2352
+        ],
+        "zeros_exact": 987,
+        "intersection_range": [
+         987,
+         1777
+        ],
+        "frobenius_sq": 2080.294557153384,
+        "frobenius_sq_over_min_dim": 0.8844789783815409
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3200
+        ],
+        "zeros_exact": 1606,
+        "intersection_range": [
+         1606,
+         2800
+        ],
+        "frobenius_sq": 2848.6773292918356,
+        "frobenius_sq_over_min_dim": 0.8902116654036987
+       }
+      },
+      "full_network": {
+       "dims": [
+        5953,
+        5552
+       ],
+       "zeros_exact": 2593,
+       "intersection_range_1e-9_to_1e-4": [
+        2593,
+        4577
+       ],
+       "intersection_frac_of_p_range": [
+        0.05747661479806712,
+        0.10145409407279336
+       ],
+       "frobenius_sq": 4928.97188644522,
+       "frobenius_sq_over_min_dim": 0.8877831207574243,
+       "frobenius_sq_over_p": 0.1092559269061759
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "conv1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv2": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv3": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv4": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "conv5": {
+        "dims": [
+         2473,
+         2352
+        ],
+        "zeros_exact": 987,
+        "intersection_range": [
+         987,
+         1777
+        ],
+        "frobenius_sq": 2080.294557153384,
+        "frobenius_sq_over_min_dim": 0.8844789783815409
+       },
+       "readout": {
+        "dims": [
+         3480,
+         3200
+        ],
+        "zeros_exact": 1606,
+        "intersection_range": [
+         1606,
+         2800
+        ],
+        "frobenius_sq": 2848.6773292918356,
+        "frobenius_sq_over_min_dim": 0.8902116654036987
+       }
+      },
+      "full_network": {
+       "dims": [
+        5953,
+        5552
+       ],
+       "zeros_exact": 2593,
+       "intersection_range_1e-9_to_1e-4": [
+        2593,
+        4577
+       ],
+       "intersection_frac_of_p_range": [
+        0.05747661479806712,
+        0.10145409407279336
+       ],
+       "frobenius_sq": 4928.97188644522,
+       "frobenius_sq_over_min_dim": 0.8877831207574243,
+       "frobenius_sq_over_p": 0.1092559269061759
+      }
+     }
+    }
+   }
+  },
+  "mlp": {
+   "s0": {
+    "source": "results/lmc/decomp/jtail_sweep_mlp_s0_e350.json",
+    "p": 67210,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32889,
+         32893
+        ],
+        "zeros_exact": 32886,
+        "intersection_range": [
+         32886,
+         32886
+        ],
+        "frobenius_sq": 32886.006505585174,
+        "frobenius_sq_over_min_dim": 0.999908981896232
+       },
+       "2": {
+        "dims": [
+         16508,
+         16509
+        ],
+        "zeros_exact": 16505,
+        "intersection_range": [
+         16505,
+         16505
+        ],
+        "frobenius_sq": 16505.04245787978,
+        "frobenius_sq_over_min_dim": 0.9998208418875563
+       },
+       "3": {
+        "dims": [
+         16308,
+         16313
+        ],
+        "zeros_exact": 16109,
+        "intersection_range": [
+         16109,
+         16109
+        ],
+        "frobenius_sq": 16281.334151460713,
+        "frobenius_sq_over_min_dim": 0.9983648608940835
+       },
+       "readout": {
+        "dims": [
+         1010,
+         1000
+        ],
+        "zeros_exact": 720,
+        "intersection_range": [
+         752,
+         762
+        ],
+        "frobenius_sq": 997.640543591198,
+        "frobenius_sq_over_min_dim": 0.997640543591198
+       }
+      },
+      "full_network": {
+       "dims": [
+        66715,
+        66715
+       ],
+       "zeros_exact": 66220,
+       "intersection_range_1e-9_to_1e-4": [
+        66252,
+        66262
+       ],
+       "intersection_frac_of_p_range": [
+        0.9857461687248922,
+        0.985894956107722
+       ],
+       "frobenius_sq": 66670.02365851688,
+       "frobenius_sq_over_min_dim": 0.9994756563753373,
+       "frobenius_sq_over_p": 0.9919658333360643
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32843,
+         32857
+        ],
+        "zeros_exact": 32804,
+        "intersection_range": [
+         32804,
+         32804
+        ],
+        "frobenius_sq": 32812.785335515735,
+        "frobenius_sq_over_min_dim": 0.9990800272665632
+       },
+       "2": {
+        "dims": [
+         16454,
+         16469
+        ],
+        "zeros_exact": 16411,
+        "intersection_range": [
+         16411,
+         16411
+        ],
+        "frobenius_sq": 16426.487958243524,
+        "frobenius_sq_over_min_dim": 0.9983279420349778
+       },
+       "3": {
+        "dims": [
+         15910,
+         15923
+        ],
+        "zeros_exact": 15321,
+        "intersection_range": [
+         15323,
+         15324
+        ],
+        "frobenius_sq": 15808.622242231702,
+        "frobenius_sq_over_min_dim": 0.9936280479089693
+       },
+       "readout": {
+        "dims": [
+         820,
+         820
+        ],
+        "zeros_exact": 350,
+        "intersection_range": [
+         538,
+         562
+        ],
+        "frobenius_sq": 819.5053410626437,
+        "frobenius_sq_over_min_dim": 0.9993967573934679
+       }
+      },
+      "full_network": {
+       "dims": [
+        66027,
+        66069
+       ],
+       "zeros_exact": 64886,
+       "intersection_range_1e-9_to_1e-4": [
+        65076,
+        65101
+       ],
+       "intersection_frac_of_p_range": [
+        0.9682487725040917,
+        0.9686207409611665
+       ],
+       "frobenius_sq": 65867.4008770536,
+       "frobenius_sq_over_min_dim": 0.9975828203167432,
+       "frobenius_sq_over_p": 0.9800238190307038
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32143,
+         32426
+        ],
+        "zeros_exact": 31673,
+        "intersection_range": [
+         31673,
+         31673
+        ],
+        "frobenius_sq": 31811.9539381302,
+        "frobenius_sq_over_min_dim": 0.9897008349603397
+       },
+       "2": {
+        "dims": [
+         15917,
+         16101
+        ],
+        "zeros_exact": 15506,
+        "intersection_range": [
+         15506,
+         15506
+        ],
+        "frobenius_sq": 15657.246699672183,
+        "frobenius_sq_over_min_dim": 0.9836807626859448
+       },
+       "3": {
+        "dims": [
+         15612,
+         15612
+        ],
+        "zeros_exact": 14712,
+        "intersection_range": [
+         14782,
+         14792
+        ],
+        "frobenius_sq": 15440.232319678193,
+        "frobenius_sq_over_min_dim": 0.9889977145579165
+       },
+       "readout": {
+        "dims": [
+         790,
+         790
+        ],
+        "zeros_exact": 290,
+        "intersection_range": [
+         508,
+         533
+        ],
+        "frobenius_sq": 779.7225625343092,
+        "frobenius_sq_over_min_dim": 0.9869905854864673
+       }
+      },
+      "full_network": {
+       "dims": [
+        64462,
+        64929
+       ],
+       "zeros_exact": 62181,
+       "intersection_range_1e-9_to_1e-4": [
+        62469,
+        62504
+       ],
+       "intersection_frac_of_p_range": [
+        0.9294599018003273,
+        0.9299806576402321
+       ],
+       "frobenius_sq": 63689.15552001489,
+       "frobenius_sq_over_min_dim": 0.9880108516647775,
+       "frobenius_sq_over_p": 0.9476142764471788
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         27287,
+         28392
+        ],
+        "zeros_exact": 22783,
+        "intersection_range": [
+         22783,
+         22783
+        ],
+        "frobenius_sq": 25349.843814190124,
+        "frobenius_sq_over_min_dim": 0.9290080922853419
+       },
+       "2": {
+        "dims": [
+         13086,
+         13566
+        ],
+        "zeros_exact": 10140,
+        "intersection_range": [
+         10140,
+         10140
+        ],
+        "frobenius_sq": 12123.644925427294,
+        "frobenius_sq_over_min_dim": 0.9264591873320567
+       },
+       "3": {
+        "dims": [
+         15342,
+         15342
+        ],
+        "zeros_exact": 14172,
+        "intersection_range": [
+         14393,
+         14430
+        ],
+        "frobenius_sq": 15135.15996148276,
+        "frobenius_sq_over_min_dim": 0.9865180525018094
+       },
+       "readout": {
+        "dims": [
+         770,
+         770
+        ],
+        "zeros_exact": 250,
+        "intersection_range": [
+         486,
+         514
+        ],
+        "frobenius_sq": 739.9542861370184,
+        "frobenius_sq_over_min_dim": 0.9609795923857382
+       }
+      },
+      "full_network": {
+       "dims": [
+        56485,
+        58070
+       ],
+       "zeros_exact": 47345,
+       "intersection_range_1e-9_to_1e-4": [
+        47802,
+        47867
+       ],
+       "intersection_frac_of_p_range": [
+        0.7112334474036601,
+        0.7122005653920548
+       ],
+       "frobenius_sq": 53348.602987237195,
+       "frobenius_sq_over_min_dim": 0.9444738069795025,
+       "frobenius_sq_over_p": 0.7937599016104329
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "1": {
+        "dims": [
+         14922,
+         15755
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 10312.379360060782,
+        "frobenius_sq_over_min_dim": 0.6910856024702307
+       },
+       "2": {
+        "dims": [
+         10063,
+         9945
+        ],
+        "zeros_exact": 3496,
+        "intersection_range": [
+         6099,
+         6471
+        ],
+        "frobenius_sq": 9290.735894268233,
+        "frobenius_sq_over_min_dim": 0.9342117540742316
+       },
+       "3": {
+        "dims": [
+         14961,
+         14950
+        ],
+        "zeros_exact": 13399,
+        "intersection_range": [
+         13916,
+         13982
+        ],
+        "frobenius_sq": 14700.85942335581,
+        "frobenius_sq_over_min_dim": 0.9833350784853385
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        40706,
+        41420
+       ],
+       "zeros_exact": 17135,
+       "intersection_range_1e-9_to_1e-4": [
+        20491,
+        20957
+       ],
+       "intersection_frac_of_p_range": [
+        0.3048802261568219,
+        0.3118137181966969
+       ],
+       "frobenius_sq": 35033.92896384786,
+       "frobenius_sq_over_min_dim": 0.863393768978679,
+       "frobenius_sq_over_p": 0.5212606600780815
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "1": {
+        "dims": [
+         4516,
+         4724
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1357.427440489946,
+        "frobenius_sq_over_min_dim": 0.30058180701726
+       },
+       "2": {
+        "dims": [
+         9393,
+         9351
+        ],
+        "zeros_exact": 2232,
+        "intersection_range": [
+         5467,
+         5896
+        ],
+        "frobenius_sq": 8952.327590631874,
+        "frobenius_sq_over_min_dim": 0.9573657994473184
+       },
+       "3": {
+        "dims": [
+         14755,
+         14706
+        ],
+        "zeros_exact": 12949,
+        "intersection_range": [
+         13684,
+         13775
+        ],
+        "frobenius_sq": 14471.73497331814,
+        "frobenius_sq_over_min_dim": 0.9840701056247885
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        29424,
+        29551
+       ],
+       "zeros_exact": 15421,
+       "intersection_range_1e-9_to_1e-4": [
+        19627,
+        20175
+       ],
+       "intersection_frac_of_p_range": [
+        0.2920249962803154,
+        0.30017854485939593
+       ],
+       "frobenius_sq": 25511.44429060299,
+       "frobenius_sq_over_min_dim": 0.8697182112502299,
+       "frobenius_sq_over_p": 0.37957810282105325
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "1": {
+        "dims": [
+         91,
+         183
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1.5343699286421355,
+        "frobenius_sq_over_min_dim": 0.016861208007056434
+       },
+       "2": {
+        "dims": [
+         9354,
+         9320
+        ],
+        "zeros_exact": 2162,
+        "intersection_range": [
+         5431,
+         5861
+        ],
+        "frobenius_sq": 8945.507325944307,
+        "frobenius_sq_over_min_dim": 0.9598183826120501
+       },
+       "3": {
+        "dims": [
+         14717,
+         14661
+        ],
+        "zeros_exact": 12866,
+        "intersection_range": [
+         13642,
+         13737
+        ],
+        "frobenius_sq": 14429.169591376096,
+        "frobenius_sq_over_min_dim": 0.9841872717670074
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        24922,
+        24934
+       ],
+       "zeros_exact": 15268,
+       "intersection_range_1e-9_to_1e-4": [
+        19549,
+        20102
+       ],
+       "intersection_frac_of_p_range": [
+        0.29086445469424194,
+        0.2990923969647374
+       ],
+       "frobenius_sq": 24106.165573412076,
+       "frobenius_sq_over_min_dim": 0.9707701986715559,
+       "frobenius_sq_over_p": 0.3586693285733087
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         9353,
+         9318
+        ],
+        "zeros_exact": 2159,
+        "intersection_range": [
+         5430,
+         5860
+        ],
+        "frobenius_sq": 8945.507185336368,
+        "frobenius_sq_over_min_dim": 0.9600243813410998
+       },
+       "3": {
+        "dims": [
+         14710,
+         14658
+        ],
+        "zeros_exact": 12856,
+        "intersection_range": [
+         13637,
+         13731
+        ],
+        "frobenius_sq": 14421.190052242418,
+        "frobenius_sq_over_min_dim": 0.9838443206605553
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        24823,
+        24746
+       ],
+       "zeros_exact": 15255,
+       "intersection_range_1e-9_to_1e-4": [
+        19543,
+        20095
+       ],
+       "intersection_frac_of_p_range": [
+        0.29077518226454396,
+        0.2989882457967564
+       ],
+       "frobenius_sq": 24096.651523741817,
+       "frobenius_sq_over_min_dim": 0.9741531178744266,
+       "frobenius_sq_over_p": 0.3585277715182535
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         9353,
+         9318
+        ],
+        "zeros_exact": 2159,
+        "intersection_range": [
+         5430,
+         5860
+        ],
+        "frobenius_sq": 8945.507185336368,
+        "frobenius_sq_over_min_dim": 0.9600243813410998
+       },
+       "3": {
+        "dims": [
+         14710,
+         14658
+        ],
+        "zeros_exact": 12856,
+        "intersection_range": [
+         13637,
+         13731
+        ],
+        "frobenius_sq": 14421.190052242418,
+        "frobenius_sq_over_min_dim": 0.9838443206605553
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        24823,
+        24746
+       ],
+       "zeros_exact": 15255,
+       "intersection_range_1e-9_to_1e-4": [
+        19543,
+        20095
+       ],
+       "intersection_frac_of_p_range": [
+        0.29077518226454396,
+        0.2989882457967564
+       ],
+       "frobenius_sq": 24096.651523741817,
+       "frobenius_sq_over_min_dim": 0.9741531178744266,
+       "frobenius_sq_over_p": 0.3585277715182535
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         9353,
+         9318
+        ],
+        "zeros_exact": 2159,
+        "intersection_range": [
+         5430,
+         5860
+        ],
+        "frobenius_sq": 8945.507185336368,
+        "frobenius_sq_over_min_dim": 0.9600243813410998
+       },
+       "3": {
+        "dims": [
+         14710,
+         14658
+        ],
+        "zeros_exact": 12856,
+        "intersection_range": [
+         13637,
+         13731
+        ],
+        "frobenius_sq": 14421.190052242418,
+        "frobenius_sq_over_min_dim": 0.9838443206605553
+       },
+       "readout": {
+        "dims": [
+         760,
+         770
+        ],
+        "zeros_exact": 240,
+        "intersection_range": [
+         476,
+         504
+        ],
+        "frobenius_sq": 729.9542861630295,
+        "frobenius_sq_over_min_dim": 0.9604661660039862
+       }
+      },
+      "full_network": {
+       "dims": [
+        24823,
+        24746
+       ],
+       "zeros_exact": 15255,
+       "intersection_range_1e-9_to_1e-4": [
+        19543,
+        20095
+       ],
+       "intersection_frac_of_p_range": [
+        0.29077518226454396,
+        0.2989882457967564
+       ],
+       "frobenius_sq": 24096.651523741817,
+       "frobenius_sq_over_min_dim": 0.9741531178744266,
+       "frobenius_sq_over_p": 0.3585277715182535
+      }
+     }
+    }
+   },
+   "s1": {
+    "source": "results/lmc/decomp/jtail_sweep_mlp_s1_e350.json",
+    "p": 67210,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32892,
+         32881
+        ],
+        "zeros_exact": 32877,
+        "intersection_range": [
+         32877,
+         32877
+        ],
+        "frobenius_sq": 32877.02727119519,
+        "frobenius_sq_over_min_dim": 0.9998791785893127
+       },
+       "2": {
+        "dims": [
+         16509,
+         16500
+        ],
+        "zeros_exact": 16497,
+        "intersection_range": [
+         16497,
+         16497
+        ],
+        "frobenius_sq": 16497.03011389199,
+        "frobenius_sq_over_min_dim": 0.9998200069025448
+       },
+       "3": {
+        "dims": [
+         16378,
+         16360
+        ],
+        "zeros_exact": 16226,
+        "intersection_range": [
+         16226,
+         16226
+        ],
+        "frobenius_sq": 16340.11490657294,
+        "frobenius_sq_over_min_dim": 0.9987845297416222
+       },
+       "readout": {
+        "dims": [
+         1040,
+         1040
+        ],
+        "zeros_exact": 790,
+        "intersection_range": [
+         838,
+         846
+        ],
+        "frobenius_sq": 1029.0124091767575,
+        "frobenius_sq_over_min_dim": 0.9894350088238053
+       }
+      },
+      "full_network": {
+       "dims": [
+        66819,
+        66781
+       ],
+       "zeros_exact": 66390,
+       "intersection_range_1e-9_to_1e-4": [
+        66438,
+        66446
+       ],
+       "intersection_frac_of_p_range": [
+        0.988513614045529,
+        0.9886326439517928
+       ],
+       "frobenius_sq": 66743.1847008369,
+       "frobenius_sq_over_min_dim": 0.9994337416456311,
+       "frobenius_sq_over_p": 0.9930543773372548
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32874,
+         32836
+        ],
+        "zeros_exact": 32814,
+        "intersection_range": [
+         32814,
+         32814
+        ],
+        "frobenius_sq": 32817.63445868595,
+        "frobenius_sq_over_min_dim": 0.999440688838042
+       },
+       "2": {
+        "dims": [
+         16487,
+         16452
+        ],
+        "zeros_exact": 16427,
+        "intersection_range": [
+         16427,
+         16427
+        ],
+        "frobenius_sq": 16435.358059763716,
+        "frobenius_sq_over_min_dim": 0.9989884548847384
+       },
+       "3": {
+        "dims": [
+         16160,
+         16115
+        ],
+        "zeros_exact": 15763,
+        "intersection_range": [
+         15770,
+         15772
+        ],
+        "frobenius_sq": 16060.089025940879,
+        "frobenius_sq_over_min_dim": 0.9965925551312987
+       },
+       "readout": {
+        "dims": [
+         930,
+         930
+        ],
+        "zeros_exact": 570,
+        "intersection_range": [
+         702,
+         721
+        ],
+        "frobenius_sq": 918.526915509497,
+        "frobenius_sq_over_min_dim": 0.9876633500102119
+       }
+      },
+      "full_network": {
+       "dims": [
+        66451,
+        66333
+       ],
+       "zeros_exact": 65574,
+       "intersection_range_1e-9_to_1e-4": [
+        65713,
+        65734
+       ],
+       "intersection_frac_of_p_range": [
+        0.9777265287903586,
+        0.9780389822943014
+       ],
+       "frobenius_sq": 66231.60845990005,
+       "frobenius_sq_over_min_dim": 0.9984714766390793,
+       "frobenius_sq_over_p": 0.9854427683365578
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32469,
+         31893
+        ],
+        "zeros_exact": 31466,
+        "intersection_range": [
+         31466,
+         31466
+        ],
+        "frobenius_sq": 31637.033846849245,
+        "frobenius_sq_over_min_dim": 0.9919742215172371
+       },
+       "2": {
+        "dims": [
+         16190,
+         15760
+        ],
+        "zeros_exact": 15438,
+        "intersection_range": [
+         15438,
+         15438
+        ],
+        "frobenius_sq": 15576.168117104284,
+        "frobenius_sq_over_min_dim": 0.9883355404253987
+       },
+       "3": {
+        "dims": [
+         16053,
+         15998
+        ],
+        "zeros_exact": 15539,
+        "intersection_range": [
+         15565,
+         15572
+        ],
+        "frobenius_sq": 15923.142500219486,
+        "frobenius_sq_over_min_dim": 0.9953208213663887
+       },
+       "readout": {
+        "dims": [
+         880,
+         890
+        ],
+        "zeros_exact": 480,
+        "intersection_range": [
+         654,
+         674
+        ],
+        "frobenius_sq": 858.5424533674526,
+        "frobenius_sq_over_min_dim": 0.9756164242811961
+       }
+      },
+      "full_network": {
+       "dims": [
+        65592,
+        64541
+       ],
+       "zeros_exact": 62923,
+       "intersection_range_1e-9_to_1e-4": [
+        63123,
+        63150
+       ],
+       "intersection_frac_of_p_range": [
+        0.9391905966374051,
+        0.939592322571046
+       ],
+       "frobenius_sq": 63994.88691754047,
+       "frobenius_sq_over_min_dim": 0.9916921621784951,
+       "frobenius_sq_over_p": 0.9521631738958558
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         27968,
+         25967
+        ],
+        "zeros_exact": 21039,
+        "intersection_range": [
+         21039,
+         21039
+        ],
+        "frobenius_sq": 24091.90975951172,
+        "frobenius_sq_over_min_dim": 0.9277894927990034
+       },
+       "2": {
+        "dims": [
+         13829,
+         12893
+        ],
+        "zeros_exact": 10210,
+        "intersection_range": [
+         10210,
+         10210
+        ],
+        "frobenius_sq": 12214.303825830932,
+        "frobenius_sq_over_min_dim": 0.9473593287699473
+       },
+       "3": {
+        "dims": [
+         15888,
+         15812
+        ],
+        "zeros_exact": 15188,
+        "intersection_range": [
+         15275,
+         15288
+        ],
+        "frobenius_sq": 15698.32519196878,
+        "frobenius_sq_over_min_dim": 0.9928108520091563
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        58555,
+        55552
+       ],
+       "zeros_exact": 46897,
+       "intersection_range_1e-9_to_1e-4": [
+        47163,
+        47198
+       ],
+       "intersection_frac_of_p_range": [
+        0.7017259336408272,
+        0.702246689480732
+       ],
+       "frobenius_sq": 52843.081268040485,
+       "frobenius_sq_over_min_dim": 0.9514076062806612,
+       "frobenius_sq_over_p": 0.7862383762541361
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "1": {
+        "dims": [
+         19354,
+         16561
+        ],
+        "zeros_exact": 3019,
+        "intersection_range": [
+         3019,
+         3019
+        ],
+        "frobenius_sq": 12892.760607836095,
+        "frobenius_sq_over_min_dim": 0.778501334933645
+       },
+       "2": {
+        "dims": [
+         11201,
+         10636
+        ],
+        "zeros_exact": 5325,
+        "intersection_range": [
+         7656,
+         7979
+        ],
+        "frobenius_sq": 10308.534423227342,
+        "frobenius_sq_over_min_dim": 0.9692115854858351
+       },
+       "3": {
+        "dims": [
+         15592,
+         15479
+        ],
+        "zeros_exact": 14559,
+        "intersection_range": [
+         14855,
+         14897
+        ],
+        "frobenius_sq": 15346.161208004174,
+        "frobenius_sq_over_min_dim": 0.9914181283031316
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        47017,
+        43556
+       ],
+       "zeros_exact": 23363,
+       "intersection_range_1e-9_to_1e-4": [
+        26169,
+        26556
+       ],
+       "intersection_frac_of_p_range": [
+        0.3893617021276596,
+        0.3951197738431781
+       ],
+       "frobenius_sq": 39385.998729796665,
+       "frobenius_sq_over_min_dim": 0.9044688083818644,
+       "frobenius_sq_over_p": 0.586013967114963
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "1": {
+        "dims": [
+         11561,
+         9521
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 5477.722047588915,
+        "frobenius_sq_over_min_dim": 0.5753305375054002
+       },
+       "2": {
+        "dims": [
+         10721,
+         10390
+        ],
+        "zeros_exact": 4599,
+        "intersection_range": [
+         7289,
+         7645
+        ],
+        "frobenius_sq": 10179.005406061962,
+        "frobenius_sq_over_min_dim": 0.979692531863519
+       },
+       "3": {
+        "dims": [
+         15408,
+         15332
+        ],
+        "zeros_exact": 14228,
+        "intersection_range": [
+         14693,
+         14747
+        ],
+        "frobenius_sq": 15199.268258910542,
+        "frobenius_sq_over_min_dim": 0.9913428293054097
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        38560,
+        36123
+       ],
+       "zeros_exact": 19287,
+       "intersection_range_1e-9_to_1e-4": [
+        22621,
+        23053
+       ],
+       "intersection_frac_of_p_range": [
+        0.3365719386995983,
+        0.3429995536378515
+       ],
+       "frobenius_sq": 31694.53820329047,
+       "frobenius_sq_over_min_dim": 0.8776489962974683,
+       "frobenius_sq_over_p": 0.47157473892710117
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "1": {
+        "dims": [
+         5737,
+         5113
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1791.9914728141307,
+        "frobenius_sq_over_min_dim": 0.3504775029951361
+       },
+       "2": {
+        "dims": [
+         10673,
+         10384
+        ],
+        "zeros_exact": 4545,
+        "intersection_range": [
+         7262,
+         7620
+        ],
+        "frobenius_sq": 10175.237887885567,
+        "frobenius_sq_over_min_dim": 0.9798957904358212
+       },
+       "3": {
+        "dims": [
+         15380,
+         15304
+        ],
+        "zeros_exact": 14172,
+        "intersection_range": [
+         14665,
+         14722
+        ],
+        "frobenius_sq": 15170.152680332349,
+        "frobenius_sq_over_min_dim": 0.9912540956829815
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        32660,
+        31681
+       ],
+       "zeros_exact": 19177,
+       "intersection_range_1e-9_to_1e-4": [
+        22566,
+        23003
+       ],
+       "intersection_frac_of_p_range": [
+        0.33575360809403365,
+        0.3422556167237018
+       ],
+       "frobenius_sq": 27975.9245317611,
+       "frobenius_sq_over_min_dim": 0.883329371720536,
+       "frobenius_sq_over_p": 0.4162464593328537
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "1": {
+        "dims": [
+         4254,
+         4207
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1159.7913174005207,
+        "frobenius_sq_over_min_dim": 0.27568132098895193
+       },
+       "2": {
+        "dims": [
+         10672,
+         10384
+        ],
+        "zeros_exact": 4544,
+        "intersection_range": [
+         7262,
+         7620
+        ],
+        "frobenius_sq": 10175.237885519478,
+        "frobenius_sq_over_min_dim": 0.9798957902079621
+       },
+       "3": {
+        "dims": [
+         15376,
+         15303
+        ],
+        "zeros_exact": 14167,
+        "intersection_range": [
+         14662,
+         14720
+        ],
+        "frobenius_sq": 15167.153713394593,
+        "frobenius_sq_over_min_dim": 0.9911228983463761
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        31172,
+        30774
+       ],
+       "zeros_exact": 19171,
+       "intersection_range_1e-9_to_1e-4": [
+        22563,
+        23001
+       ],
+       "intersection_frac_of_p_range": [
+        0.33570897187918464,
+        0.34222585924713583
+       ],
+       "frobenius_sq": 27340.725407043643,
+       "frobenius_sq_over_min_dim": 0.888724658920935,
+       "frobenius_sq_over_p": 0.4067954977985961
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "1": {
+        "dims": [
+         3923,
+         4167
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1071.1364954625365,
+        "frobenius_sq_over_min_dim": 0.2730401466894052
+       },
+       "2": {
+        "dims": [
+         10672,
+         10384
+        ],
+        "zeros_exact": 4544,
+        "intersection_range": [
+         7262,
+         7620
+        ],
+        "frobenius_sq": 10175.237885519478,
+        "frobenius_sq_over_min_dim": 0.9798957902079621
+       },
+       "3": {
+        "dims": [
+         15373,
+         15303
+        ],
+        "zeros_exact": 14164,
+        "intersection_range": [
+         14660,
+         14719
+        ],
+        "frobenius_sq": 15164.172016262653,
+        "frobenius_sq_over_min_dim": 0.9909280543855881
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        30838,
+        30734
+       ],
+       "zeros_exact": 19168,
+       "intersection_range_1e-9_to_1e-4": [
+        22561,
+        23000
+       ],
+       "intersection_frac_of_p_range": [
+        0.33567921440261866,
+        0.34221098050885285
+       ],
+       "frobenius_sq": 27249.088887973718,
+       "frobenius_sq_over_min_dim": 0.8939989792642296,
+       "frobenius_sq_over_p": 0.40543206201419013
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "1": {
+        "dims": [
+         3899,
+         4166
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1065.1688987682528,
+        "frobenius_sq_over_min_dim": 0.27319027924294764
+       },
+       "2": {
+        "dims": [
+         10672,
+         10384
+        ],
+        "zeros_exact": 4544,
+        "intersection_range": [
+         7262,
+         7620
+        ],
+        "frobenius_sq": 10175.237885519478,
+        "frobenius_sq_over_min_dim": 0.9798957902079621
+       },
+       "3": {
+        "dims": [
+         15373,
+         15303
+        ],
+        "zeros_exact": 14164,
+        "intersection_range": [
+         14660,
+         14719
+        ],
+        "frobenius_sq": 15164.172016262653,
+        "frobenius_sq_over_min_dim": 0.9909280543855881
+       },
+       "readout": {
+        "dims": [
+         870,
+         880
+        ],
+        "zeros_exact": 460,
+        "intersection_range": [
+         639,
+         661
+        ],
+        "frobenius_sq": 838.5424907290522,
+        "frobenius_sq_over_min_dim": 0.9638419433667267
+       }
+      },
+      "full_network": {
+       "dims": [
+        30814,
+        30733
+       ],
+       "zeros_exact": 19168,
+       "intersection_range_1e-9_to_1e-4": [
+        22561,
+        23000
+       ],
+       "intersection_frac_of_p_range": [
+        0.33567921440261866,
+        0.34221098050885285
+       ],
+       "frobenius_sq": 27243.121291279436,
+       "frobenius_sq_over_min_dim": 0.8945075286078091,
+       "frobenius_sq_over_p": 0.40534327170479745
+      }
+     }
+    }
+   },
+   "s2": {
+    "source": "results/lmc/decomp/jtail_sweep_mlp_s2_e350.json",
+    "p": 67210,
+    "fp32_floor_note": "nontrivial sines carry the fp32 storage floor ~1e-4 rad; zeros_exact counts are exact (complement identity); the defensible intersection range is [zeros + #(sin<=1e-9), zeros + #(sin<=1e-4)]",
+    "by_eps": {
+     "0.1": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32890,
+         32896
+        ],
+        "zeros_exact": 16442,
+        "intersection_range": [
+         16442,
+         18509
+        ],
+        "frobenius_sq": 32889.999293687746,
+        "frobenius_sq_over_min_dim": 0.9999999785250151
+       },
+       "2": {
+        "dims": [
+         16506,
+         16512
+        ],
+        "zeros_exact": 8498,
+        "intersection_range": [
+         8498,
+         13743
+        ],
+        "frobenius_sq": 16505.999870855452,
+        "frobenius_sq_over_min_dim": 0.9999999921759029
+       },
+       "3": {
+        "dims": [
+         16320,
+         16320
+        ],
+        "zeros_exact": 16128,
+        "intersection_range": [
+         16128,
+         16128
+        ],
+        "frobenius_sq": 16287.542932473689,
+        "frobenius_sq_over_min_dim": 0.9980112090976525
+       },
+       "readout": {
+        "dims": [
+         1030,
+         1030
+        ],
+        "zeros_exact": 770,
+        "intersection_range": [
+         785,
+         789
+        ],
+        "frobenius_sq": 1018.2562453062055,
+        "frobenius_sq_over_min_dim": 0.9885982964137918
+       }
+      },
+      "full_network": {
+       "dims": [
+        66746,
+        66758
+       ],
+       "zeros_exact": 41838,
+       "intersection_range_1e-9_to_1e-4": [
+        41853,
+        49169
+       ],
+       "intersection_frac_of_p_range": [
+        0.6227198333581312,
+        0.7315726826365124
+       ],
+       "frobenius_sq": 66701.7983423231,
+       "frobenius_sq_over_min_dim": 0.9993377631966426,
+       "frobenius_sq_over_p": 0.992438600540442
+      }
+     },
+     "0.01": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32829,
+         32874
+        ],
+        "zeros_exact": 32807,
+        "intersection_range": [
+         32807,
+         32807
+        ],
+        "frobenius_sq": 32810.343702119004,
+        "frobenius_sq_over_min_dim": 0.999431712879436
+       },
+       "2": {
+        "dims": [
+         16451,
+         16495
+        ],
+        "zeros_exact": 16434,
+        "intersection_range": [
+         16434,
+         16434
+        ],
+        "frobenius_sq": 16440.978120873628,
+        "frobenius_sq_over_min_dim": 0.9993908042595361
+       },
+       "3": {
+        "dims": [
+         16004,
+         16018
+        ],
+        "zeros_exact": 15510,
+        "intersection_range": [
+         15512,
+         15512
+        ],
+        "frobenius_sq": 15915.85573292372,
+        "frobenius_sq_over_min_dim": 0.9944923602176781
+       },
+       "readout": {
+        "dims": [
+         860,
+         880
+        ],
+        "zeros_exact": 450,
+        "intersection_range": [
+         605,
+         626
+        ],
+        "frobenius_sq": 848.5983444085615,
+        "frobenius_sq_over_min_dim": 0.9867422609401878
+       }
+      },
+      "full_network": {
+       "dims": [
+        66144,
+        66267
+       ],
+       "zeros_exact": 65201,
+       "intersection_range_1e-9_to_1e-4": [
+        65358,
+        65379
+       ],
+       "intersection_frac_of_p_range": [
+        0.9724445766998958,
+        0.9727570302038387
+       ],
+       "frobenius_sq": 66015.77590032491,
+       "frobenius_sq_over_min_dim": 0.9980614401960104,
+       "frobenius_sq_over_p": 0.9822314521696907
+      }
+     },
+     "0.001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         32020,
+         32473
+        ],
+        "zeros_exact": 31597,
+        "intersection_range": [
+         31597,
+         31597
+        ],
+        "frobenius_sq": 31703.738650420644,
+        "frobenius_sq_over_min_dim": 0.9901230059469283
+       },
+       "2": {
+        "dims": [
+         15788,
+         16229
+        ],
+        "zeros_exact": 15505,
+        "intersection_range": [
+         15505,
+         15505
+        ],
+        "frobenius_sq": 15615.279935753168,
+        "frobenius_sq_over_min_dim": 0.9890600415349106
+       },
+       "3": {
+        "dims": [
+         15768,
+         15822
+        ],
+        "zeros_exact": 15078,
+        "intersection_range": [
+         15127,
+         15138
+        ],
+        "frobenius_sq": 15633.575231160728,
+        "frobenius_sq_over_min_dim": 0.9914748370852822
+       },
+       "readout": {
+        "dims": [
+         780,
+         820
+        ],
+        "zeros_exact": 310,
+        "intersection_range": [
+         530,
+         558
+        ],
+        "frobenius_sq": 779.9313445572518,
+        "frobenius_sq_over_min_dim": 0.9999119802016049
+       }
+      },
+      "full_network": {
+       "dims": [
+        64356,
+        65344
+       ],
+       "zeros_exact": 62490,
+       "intersection_range_1e-9_to_1e-4": [
+        62759,
+        62798
+       ],
+       "intersection_frac_of_p_range": [
+        0.9337747359023955,
+        0.9343550066954323
+       ],
+       "frobenius_sq": 63732.5251618918,
+       "frobenius_sq_over_min_dim": 0.99031209462819,
+       "frobenius_sq_over_p": 0.9482595619980925
+      }
+     },
+     "0.0001": {
+      "per_block": {
+       "1": {
+        "dims": [
+         26055,
+         29172
+        ],
+        "zeros_exact": 22331,
+        "intersection_range": [
+         22331,
+         22331
+        ],
+        "frobenius_sq": 24703.394663841897,
+        "frobenius_sq_over_min_dim": 0.9481249151349798
+       },
+       "2": {
+        "dims": [
+         13144,
+         14174
+        ],
+        "zeros_exact": 10806,
+        "intersection_range": [
+         10806,
+         10806
+        ],
+        "frobenius_sq": 12555.804263698226,
+        "frobenius_sq_over_min_dim": 0.9552498679015693
+       },
+       "3": {
+        "dims": [
+         15468,
+         15583
+        ],
+        "zeros_exact": 14539,
+        "intersection_range": [
+         14724,
+         14752
+        ],
+        "frobenius_sq": 15311.29866716793,
+        "frobenius_sq_over_min_dim": 0.9898693216426125
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        55427,
+        59729
+       ],
+       "zeros_exact": 47946,
+       "intersection_range_1e-9_to_1e-4": [
+        48369,
+        48427
+       ],
+       "intersection_frac_of_p_range": [
+        0.7196696920101175,
+        0.7205326588305312
+       ],
+       "frobenius_sq": 53320.497583581695,
+       "frobenius_sq_over_min_dim": 0.9619950129644703,
+       "frobenius_sq_over_p": 0.7933417286651048
+      }
+     },
+     "1e-05": {
+      "per_block": {
+       "1": {
+        "dims": [
+         13972,
+         17742
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 10655.251797056795,
+        "frobenius_sq_over_min_dim": 0.7626146433622097
+       },
+       "2": {
+        "dims": [
+         11103,
+         11438
+        ],
+        "zeros_exact": 6029,
+        "intersection_range": [
+         8111,
+         8401
+        ],
+        "frobenius_sq": 10786.364698238069,
+        "frobenius_sq_over_min_dim": 0.9714820047048607
+       },
+       "3": {
+        "dims": [
+         15174,
+         15285
+        ],
+        "zeros_exact": 13947,
+        "intersection_range": [
+         14373,
+         14434
+        ],
+        "frobenius_sq": 15006.651612210588,
+        "frobenius_sq_over_min_dim": 0.9889713728885322
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        41009,
+        45265
+       ],
+       "zeros_exact": 20246,
+       "intersection_range_1e-9_to_1e-4": [
+        22992,
+        23373
+       ],
+       "intersection_frac_of_p_range": [
+        0.3420919506025889,
+        0.34776074988840944
+       ],
+       "frobenius_sq": 37198.26809637909,
+       "frobenius_sq_over_min_dim": 0.9070757174371258,
+       "frobenius_sq_over_p": 0.5534632955866552
+      }
+     },
+     "1e-06": {
+      "per_block": {
+       "1": {
+        "dims": [
+         3465,
+         6648
+        ],
+        "zeros_exact": 0,
+        "intersection_range": [
+         0,
+         0
+        ],
+        "frobenius_sq": 1473.23652615192,
+        "frobenius_sq_over_min_dim": 0.42517648662393076
+       },
+       "2": {
+        "dims": [
+         10923,
+         10809
+        ],
+        "zeros_exact": 5220,
+        "intersection_range": [
+         7707,
+         8039
+        ],
+        "frobenius_sq": 10495.944240871844,
+        "frobenius_sq_over_min_dim": 0.9710374910603982
+       },
+       "3": {
+        "dims": [
+         15076,
+         15100
+        ],
+        "zeros_exact": 13664,
+        "intersection_range": [
+         14234,
+         14303
+        ],
+        "frobenius_sq": 14865.62107764377,
+        "frobenius_sq_over_min_dim": 0.9860454416054504
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        30224,
+        33357
+       ],
+       "zeros_exact": 19154,
+       "intersection_range_1e-9_to_1e-4": [
+        22449,
+        22880
+       ],
+       "intersection_frac_of_p_range": [
+        0.33401279571492337,
+        0.3404255319148936
+       ],
+       "frobenius_sq": 27584.801833541176,
+       "frobenius_sq_over_min_dim": 0.9161342355875515,
+       "frobenius_sq_over_p": 0.4104270470695012
+      }
+     },
+     "1e-07": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         1
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         10908,
+         10763
+        ],
+        "zeros_exact": 5159,
+        "intersection_range": [
+         7677,
+         8013
+        ],
+        "frobenius_sq": 10466.989813646329,
+        "frobenius_sq_over_min_dim": 0.9724974276360057
+       },
+       "3": {
+        "dims": [
+         15057,
+         15060
+        ],
+        "zeros_exact": 13605,
+        "intersection_range": [
+         14199,
+         14271
+        ],
+        "frobenius_sq": 14828.09700825934,
+        "frobenius_sq_over_min_dim": 0.984797569785438
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        26725,
+        26623
+       ],
+       "zeros_exact": 19034,
+       "intersection_range_1e-9_to_1e-4": [
+        22384,
+        22822
+       ],
+       "intersection_frac_of_p_range": [
+        0.33304567772652877,
+        0.33956256509447996
+       ],
+       "frobenius_sq": 26045.08681077931,
+       "frobenius_sq_over_min_dim": 0.9798753502926754,
+       "frobenius_sq_over_p": 0.38751803021543385
+      }
+     },
+     "1e-08": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         10905,
+         10759
+        ],
+        "zeros_exact": 5152,
+        "intersection_range": [
+         7674,
+         8009
+        ],
+        "frobenius_sq": 10465.052534606531,
+        "frobenius_sq_over_min_dim": 0.9726789231904946
+       },
+       "3": {
+        "dims": [
+         15053,
+         15056
+        ],
+        "zeros_exact": 13597,
+        "intersection_range": [
+         14196,
+         14267
+        ],
+        "frobenius_sq": 14825.900941508966,
+        "frobenius_sq_over_min_dim": 0.9849133688639451
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        26718,
+        26615
+       ],
+       "zeros_exact": 19019,
+       "intersection_range_1e-9_to_1e-4": [
+        22378,
+        22814
+       ],
+       "intersection_frac_of_p_range": [
+        0.33295640529683085,
+        0.339443535188216
+       ],
+       "frobenius_sq": 26040.95346498914,
+       "frobenius_sq_over_min_dim": 0.9800148075037309,
+       "frobenius_sq_over_p": 0.3874565312451888
+      }
+     },
+     "1e-09": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         10905,
+         10758
+        ],
+        "zeros_exact": 5151,
+        "intersection_range": [
+         7673,
+         8008
+        ],
+        "frobenius_sq": 10465.052534023755,
+        "frobenius_sq_over_min_dim": 0.9727693376114291
+       },
+       "3": {
+        "dims": [
+         15053,
+         15056
+        ],
+        "zeros_exact": 13597,
+        "intersection_range": [
+         14196,
+         14267
+        ],
+        "frobenius_sq": 14825.900941508966,
+        "frobenius_sq_over_min_dim": 0.9849133688639451
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        26718,
+        26614
+       ],
+       "zeros_exact": 19018,
+       "intersection_range_1e-9_to_1e-4": [
+        22377,
+        22813
+       ],
+       "intersection_frac_of_p_range": [
+        0.33294152655854786,
+        0.33942865644993303
+       ],
+       "frobenius_sq": 26040.95346440636,
+       "frobenius_sq_over_min_dim": 0.9800516903543849,
+       "frobenius_sq_over_p": 0.3874565312365178
+      }
+     },
+     "1e-10": {
+      "per_block": {
+       "1": {
+        "dims": [
+         0,
+         0
+        ],
+        "intersection": 0,
+        "genuine_zero": true,
+        "frobenius_sq": 0.0
+       },
+       "2": {
+        "dims": [
+         10905,
+         10758
+        ],
+        "zeros_exact": 5151,
+        "intersection_range": [
+         7673,
+         8008
+        ],
+        "frobenius_sq": 10465.052534023755,
+        "frobenius_sq_over_min_dim": 0.9727693376114291
+       },
+       "3": {
+        "dims": [
+         15053,
+         15056
+        ],
+        "zeros_exact": 13597,
+        "intersection_range": [
+         14196,
+         14267
+        ],
+        "frobenius_sq": 14825.900941508966,
+        "frobenius_sq_over_min_dim": 0.9849133688639451
+       },
+       "readout": {
+        "dims": [
+         760,
+         800
+        ],
+        "zeros_exact": 270,
+        "intersection_range": [
+         508,
+         538
+        ],
+        "frobenius_sq": 749.9999888736436,
+        "frobenius_sq_over_min_dim": 0.9868420906232153
+       }
+      },
+      "full_network": {
+       "dims": [
+        26718,
+        26614
+       ],
+       "zeros_exact": 19018,
+       "intersection_range_1e-9_to_1e-4": [
+        22377,
+        22813
+       ],
+       "intersection_frac_of_p_range": [
+        0.33294152655854786,
+        0.33942865644993303
+       ],
+       "frobenius_sq": 26040.95346440636,
+       "frobenius_sq_over_min_dim": 0.9800516903543849,
+       "frobenius_sq_over_p": 0.3874565312365178
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,3522 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "f4aeaa395ce3a589b0aa1da538347e9506dc0fd9d785cd6a1bf3534637e10f95",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 4,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "fc002d01a64a512a314c3b47345e9de6e767efb7d86bf5644a16ef9249526f31",
+       "conv2": "3ed247a6e68ba27059b452578585bc9982f1316bad3e5f4ce47ceab56ef3eb5a",
+       "conv3": "ce239035937cca08ff4299d439a5c8bab7499525a03d87e52f3fa48099c74fa1",
+       "conv4": "e1b3996586b8f6cd2381183aba0ae50828eebffd07e07c5689479bd2d5de2d93",
+       "conv5": "7ef95ac501bd80001b728da21a6e50beea2307f1397dc53aa5a435aa9ddc22f0",
+       "readout": "5560f47620f7d8230af68183a20c5601ee01dee246cb8288ebf352fb357435e2"
+      },
+      "atomic": {
+       "conv1": "0812ad5a2d32855209bc8c6dbe4ebd494d908b362116b5e6c2fd8ea8719032e0",
+       "conv2": "232503b99c25c4ea60386e2403fe03bf0251ebbfd37bd54981513c324d1d4fc0",
+       "conv3": "d88e4c738cd0e0636de702b62be4c3827270d18c56418f5864e3fd940afd87de",
+       "conv4": "cd2c60f9f901559358d2a9cac689bd57cb4feccec547277fbaa8a1ab73bf8e68",
+       "conv5": "b2f6415047a64d1da21d408577f48d4a9d93195731dbdd886e51c21d215b7937",
+       "readout": "758f28fab4d20735b7a8a80e6168d3893002068f8420f9037f5a7396f844f53a"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "9ed9a50131b9a6c79f73ec21aa99212baecfc27ead7de592d744c76cbea8db37",
+      "conv2": "d86f51d0207bf6e555bcf182e576fc1e51a290c365befb5d130e938ea0659581",
+      "conv3": "c4abd7a620541a187465377fcd140536ffaac95e68228286861e994575eeea4e",
+      "conv4": "26ea342a9277d4fec622ae8dc3284ae519b359368edd8f1984b7400a86b50c63",
+      "conv5": "8d2fe0c43d22b2ecfb35b588df730b78479f61e6448ea6146ae9eb17ee8f9b3b",
+      "readout": "5c77a93fc39b80fedabbf387bb04814b408f0eb494ed8422ab3d14d8fab5d32f"
+     }
+    },
+    "digest": "a62159ea7d62d48bceb8b24d87ddddfa37130685990c00f65f6022d71541b983"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 2395,
+      "readout": 3170
+     },
+     "total": 5565,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.2320041922706566e-16,
+       "readout": 3.796885898616015e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 3.601934563469974e-17,
+       "1.0": 1.1979458197169195e-16,
+       "10.0": 1.2364685496177788e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "8929a108b81d17bb2b4dd4395740d7e826de665c2f89f39818977ce899581a1a",
+     "seconds": 917.7710163593292
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 2420,
+      "readout": 3170
+     },
+     "total": 5590,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.1122737125306866e-14,
+       "readout": 6.599784681829162e-14
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.0161597846998562e-15,
+       "1.0": 1.8539475613890868e-14,
+       "10.0": 1.988907634296239e-13
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "58a6767fbfdc5743cfb737ad3d6fa47ca326fc02b0d19c24b9276b5e302d3941",
+     "seconds": 919.9673817157745
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 2420,
+      "readout": 3170
+     },
+     "total": 5590,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 0.0001246929168701172
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 1.621246337890625e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.239776611328125e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 1.1444091796875e-05
+      },
+      {
+       "rows": 100000,
+       "nonzero_rows": 98555,
+       "sigma_ref": 0.9931157047993506,
+       "mean_dim_Zhat": 9.8555,
+       "mean_dim_U": 1.0,
+       "seconds": 360.6136312484741,
+       "dim": 2420,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 2
+       },
+       "gap": null,
+       "sigma1": 5.302267064373043e-12,
+       "largest_rejected_over_ref": 5.339022471147322e-12,
+       "block": "conv5"
+      },
+      {
+       "dim": 3170,
+       "rank_within": 708,
+       "rank_ladder": {
+        "1e-06": 708,
+        "1e-09": 708,
+        "1e-12": 708
+       },
+       "gap": 3971145330341.3535,
+       "sigma1": 46.483901519331845,
+       "sigma_ref": 46.483901519331845,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 189.41714477539062,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.1122737125306866e-14,
+       "readout": 1.2836496993724786e-15
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 9.934567774205534e-16,
+       "1.0": 6.404899679471515e-15,
+       "10.0": 1.1657750054470516e-13
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "f4758d6c00bd354fea6658e2d533285e9f40a1e4191af782274749920784e3d3",
+     "seconds": 1477.466470003128
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 2420,
+      "readout": 3170
+     },
+     "total": 5590,
+     "steps": [
+      {
+       "dim": 3170,
+       "rank_within": 708,
+       "rank_ladder": {
+        "1e-06": 708,
+        "1e-09": 708,
+        "1e-12": 708
+       },
+       "gap": 3971145330341.3535,
+       "sigma1": 46.483901519331845,
+       "sigma_ref": 46.483901519331845,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 6.91340446472168,
+       "block": "readout"
+      },
+      {
+       "rows": 100112,
+       "nonzero_rows": 98562,
+       "sigma_ref": 0.9931157047993493,
+       "mean_dim_Zhat": 9.8562,
+       "mean_dim_U": 1.0,
+       "seconds": 2925.554385662079,
+       "dim": 2420,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 2
+       },
+       "gap": null,
+       "sigma1": 5.302449129042926e-12,
+       "largest_rejected_over_ref": 5.339205797892645e-12,
+       "block": "conv5"
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 7.748603820800781e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.0967254638671875e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 9.059906005859375e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 9.298324584960938e-06
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.1122737125306866e-14,
+       "readout": 1.2836496993724786e-15
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 9.934567774205534e-16,
+       "1.0": 6.404899679471515e-15,
+       "10.0": 1.1657750054470516e-13
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "c199e0a837506fd2e20ad24aee5137865e17654460e07c6f4a2e229302d23a1c",
+     "seconds": 4243.847511053085
+    },
+    "random_0": {
+     "order": [
+      "conv2",
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_1": {
+     "order": [
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_2": {
+     "order": [
+      "conv1",
+      "conv5",
+      "conv3",
+      "conv2",
+      "readout",
+      "conv4"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_3": {
+     "order": [
+      "conv2",
+      "conv4",
+      "readout",
+      "conv3",
+      "conv1",
+      "conv5"
+     ],
+     "equivalent_to": "top_down",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 2395,
+     "dim": 2420,
+     "dim_ladder": {
+      "1e-06": 2468,
+      "1e-09": 2420,
+      "1e-12": 2420
+     },
+     "gap": 996242.1366907998,
+     "alignment": {
+      "aligned": false,
+      "dim_mismatch": [
+       2421,
+       2420
+      ],
+      "orthonormality": 1.7652793416149593e-05,
+      "span_error": 9.212614438751178e-07
+     }
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 3170,
+     "dim": 3170,
+     "dim_ladder": {
+      "1e-06": 3170,
+      "1e-09": 3170,
+      "1e-12": 3170
+     },
+     "gap": 866280994.9132854,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 5590,
+   "sum_selective": 5565,
+   "nonempty_blocks": [
+    "conv5",
+    "readout"
+   ],
+   "subspace_comparison": {
+    "conv5_dim": 2420,
+    "bottom_up_vs_top_down": {
+     "dims": [
+      2420,
+      2420
+     ],
+     "min_principal_cosine": 0.9999999999999402,
+     "max_principal_angle_deg": 1.9821527883571205e-05,
+     "projection_residual_rel": 9.337680649631934e-15
+    },
+    "against_1e-12_kernel": {
+     "dims": [
+      2420,
+      2420
+     ],
+     "min_principal_cosine": 0.9999999999999402,
+     "projection_residual_rel": 9.337680649631934e-15,
+     "note": "stored basis columns are float32 for the non-kernel part; the tolerance of this comparison is about 1e-7"
+    }
+   }
+  },
+  "mse_interpolation": {
+   "epoch": 316,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0316.pt",
+    "checkpoint_sha256": "66ddc8a3d741c29ccf28f463086e7175b8f053ad875ce653ab359979a306c1da",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 4,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "9898c028cbb7b20b30e879fbdf8acacc2fb06834683bf68965f535ff5383d613",
+       "conv2": "1b28522de02436c491f5b5c83e46bd2eb97df61fedfe2c5c7e1fd91766f1934e",
+       "conv3": "75c6e2d5d800c71dd782ac67408c8e2cdbb2647c421605c0ab5f444c2eac805f",
+       "conv4": "f50be6c2071f0d207f1702c647b15a807532c8bcdba073770ffa8558c4609418",
+       "conv5": "b2a6e8407b93fedbecfe30261a8884e357a557cd4e3bf0545f548556f39cfb89",
+       "readout": "e744b8bf82668c9d58117a6cad2e000122731170b11bb0298837d5147d5f3a2d"
+      },
+      "atomic": {
+       "conv1": "cc84f2e8dbe70d4f197d1b460146f07b78081d2d7a92f96ef156c34fddc6fe10",
+       "conv2": "255ee7b81eca63b2e8b4fb0f3ac5d7e57a78e5a9660f89666de50d62a45c62ff",
+       "conv3": "0d853356657c899df4b86b7d3640c7550516ceb41f339d6678b1fae9c1836ea2",
+       "conv4": "60a816b2ce2d8bd2464e73121894578a548aa0c55f938afafc1db5cb4c532f81",
+       "conv5": "545e2156d61ba268f3053f8a0826352cad74600227bd440f65e3c87cd816ed20",
+       "readout": "2dede1b5b9347327ff20da3a6fad38cb50b2df14a028cac1cdeb8a0bfb8e4683"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "3082b0f6c93035239225484a02b24adf912ebc0002f82c2e0105da3aebd8425e",
+      "conv2": "34de8dac9559fbde4e57a7d458605a9eb6ff9693d3af87cb1446f3230441267a",
+      "conv3": "116b8f9e2730d5d0d804349136332cbc4b7594cccc4f057a38b975d89ee614df",
+      "conv4": "1c86f64de39f54d510b5d64c570f86a332b66b4e9415b0e4c8dd0871a0459aa8",
+      "conv5": "25ec5e79c6f2b0501def31829e53e6fc61557598684b08cf230721c328c5dec7",
+      "readout": "60ff49c532a2505d7e27458e386a31f7fc0bbb456ea4c117471c240e5fe870ba"
+     }
+    },
+    "digest": "1533d69449e80e271ad89bbd64d0e6802ad44b62a6920d02eafac944b30fe467"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 665,
+      "readout": 2140
+     },
+     "total": 2805,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.2777380376414078e-16,
+       "readout": 7.433030196922434e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 3.927924385748233e-17,
+       "1.0": 1.8905804547852282e-16,
+       "10.0": 2.3060202170468743e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "8ba84fde7419d99c79d81bb36efe9f885a8a2a4d59c9b18debc4fb908ff0f22a",
+     "seconds": 696.8024666309357
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 700,
+      "readout": 2140
+     },
+     "total": 2840,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 5.330792496727452e-16,
+       "readout": 1.5261994477830235e-14
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.3026348393660706e-15,
+       "1.0": 2.248773543841545e-14,
+       "10.0": 2.249544266441003e-13
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "df2f37ac3f91e4aa9e2e4c275c64b8948abd348d097349d245e1d25398a706ba",
+     "seconds": 645.3228049278259
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 700,
+      "readout": 2140
+     },
+     "total": 2840,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 6.103515625e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 8.821487426757812e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 6.198883056640625e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 5.7220458984375e-06
+      },
+      {
+       "rows": 100000,
+       "nonzero_rows": 99824,
+       "sigma_ref": 0.9307072731314499,
+       "mean_dim_Zhat": 9.9824,
+       "mean_dim_U": 1.0,
+       "seconds": 196.5843575000763,
+       "dim": 700,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "gap": null,
+       "sigma1": 5.840079609847304e-14,
+       "largest_rejected_over_ref": 6.274883390776374e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 2140,
+       "rank_within": 811,
+       "rank_ladder": {
+        "1e-06": 810,
+        "1e-09": 811,
+        "1e-12": 811
+       },
+       "gap": 34202626582.633522,
+       "sigma1": 48.0724017098073,
+       "sigma_ref": 48.0724017098073,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 59.73207640647888,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 5.330792496727452e-16,
+       "readout": 3.7751125053309476e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 5.78796177791029e-16,
+       "1.0": 1.665381929452678e-15,
+       "10.0": 1.8333533039983065e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "c9c7b3ced55d23ae84c4df517ccc651e5cdf7a3356dffd433492ac5166ef7ee9",
+     "seconds": 902.2663474082947
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 700,
+      "readout": 2140
+     },
+     "total": 2840,
+     "steps": [
+      {
+       "dim": 2140,
+       "rank_within": 811,
+       "rank_ladder": {
+        "1e-06": 810,
+        "1e-09": 811,
+        "1e-12": 811
+       },
+       "gap": 34202626582.633522,
+       "sigma1": 48.0724017098073,
+       "sigma_ref": 48.0724017098073,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 4.461822748184204,
+       "block": "readout"
+      },
+      {
+       "rows": 100176,
+       "nonzero_rows": 99835,
+       "sigma_ref": 0.9307072731314506,
+       "mean_dim_Zhat": 9.9835,
+       "mean_dim_U": 1.0,
+       "seconds": 2289.5496661663055,
+       "dim": 700,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "gap": null,
+       "sigma1": 5.841263532367459e-14,
+       "largest_rejected_over_ref": 6.276155458325783e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 4.601478576660156e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.2159347534179688e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 8.58306884765625e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 1.0728836059570312e-05
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 5.330792496727452e-16,
+       "readout": 3.7751125053309476e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 5.78796177791029e-16,
+       "1.0": 1.665381929452678e-15,
+       "10.0": 1.8333533039983065e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "73e1216b35b5063d1666638dc26cb4b3ff4d226929af5fe812b15021b9dbf58b",
+     "seconds": 2937.582927942276
+    },
+    "random_0": {
+     "order": [
+      "conv2",
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_1": {
+     "order": [
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_2": {
+     "order": [
+      "conv1",
+      "conv5",
+      "conv3",
+      "conv2",
+      "readout",
+      "conv4"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_3": {
+     "order": [
+      "conv2",
+      "conv4",
+      "readout",
+      "conv3",
+      "conv1",
+      "conv5"
+     ],
+     "equivalent_to": "top_down",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 665,
+     "dim": 700,
+     "dim_ladder": {
+      "1e-06": 728,
+      "1e-09": 700,
+      "1e-12": 700
+     },
+     "gap": 213331741.88570172,
+     "alignment": {
+      "aligned": true,
+      "selective_dim": 665,
+      "complement_dim": 35,
+      "orthonormality": 1.4626078126411812e-12,
+      "span_error": 5.338930302679695e-13,
+      "selective_leak": 4.671461163194273e-13
+     }
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 2140,
+     "dim": 2140,
+     "dim_ladder": {
+      "1e-06": 2150,
+      "1e-09": 2140,
+      "1e-12": 2140
+     },
+     "gap": 2623077.5257372316,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 2840,
+   "sum_selective": 2805,
+   "nonempty_blocks": [
+    "conv5",
+    "readout"
+   ],
+   "subspace_comparison": {
+    "conv5_dim": 700,
+    "bottom_up_vs_top_down": {
+     "dims": [
+      700,
+      700
+     ],
+     "min_principal_cosine": 0.9999999999984762,
+     "max_principal_angle_deg": 0.00010002278015902501,
+     "projection_residual_rel": 2.7891630083301593e-13
+    },
+    "against_1e-12_kernel": {
+     "dims": [
+      700,
+      700
+     ],
+     "min_principal_cosine": 0.9999999999995567,
+     "projection_residual_rel": 4.553202170610983e-13,
+     "note": "stored basis columns are float32 for the non-kernel part; the tolerance of this comparison is about 1e-7"
+    }
+   }
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0250.pt",
+    "checkpoint_sha256": "9567a971f23009b1aac2ab4fed0261e85a6b668bcd4b94e1472e977b42c97d7e",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 4,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "bd7846e07db2b5a627ef3a8bf4272a81107d683e9ae4695b10a2774c56b40977",
+       "conv2": "347af7be9874534272e9e0d1b16067f508b1546bde252fba189894aedd6ac2e4",
+       "conv3": "9cd4971812ce028e7b8806fb0584181bb2c282511b0453965fbeb87639ee5688",
+       "conv4": "7274beae7d285f05cebd4a6d941c8d3fc18ac25700daee898516ccf1a49c7b6e",
+       "conv5": "b2ab6104323bc6f64da4875a3684bd4e1d626b0ac35c43d87463f53e5051ec0a",
+       "readout": "65a523953593634e42e38cf7684fb25833e6e7245745a439981938f1470ade7d"
+      },
+      "atomic": {
+       "conv1": "b30f37ed04142e486be643d1867ac72f0d8e8522a9b2f696fd03733ab310d94a",
+       "conv2": "594cafc30fd8478b78112eab1a43331aafec61ca9e64e7eed174c45d9e0099e1",
+       "conv3": "baba503d6e8247468d7e6a6917b2594ce3913dee720cb95274de595333c09e9e",
+       "conv4": "b6461097b9ba1833ae39c54528766496c381224c1c1a0af95d52878403912e22",
+       "conv5": "6e1312aa57773e75c52e6db272b640f23670e6ab28f8e349463bb58366fc2476",
+       "readout": "31c1adf863dfa43d8bef5030e60590b60cf1291909911ef21ce1516a9628254c"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "9121e8eb2215263ece52e426f68a60853d29ee3db073d39126eb00cf10dbfc80",
+      "conv2": "1edc59827bce6913defe99a0d9157c54b88aae93a76ee4cd5277a062cd802c3e",
+      "conv3": "fb36066722d0cccb6d84b7d63a5265a8ba23c3a28a43121140b515176a4c1b6d",
+      "conv4": "f2f2b5df105a0198c419f2b1dfe74b467e1bea6f0e8ba3a82a03bb29717b4ea9",
+      "conv5": "db5e20619f8b30802dc32f90d003e427202796117249d7019e91f5ef3609c5ee",
+      "readout": "1e11165390d3e402566aeeb05a2629bba59f63fa2c0d7acbc165dda241410a86"
+     }
+    },
+    "digest": "31e3564cd43a0b505fc394126794eaedd8389c7a2f10f292acd13e66c8fc9cef"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 272,
+      "readout": 1470
+     },
+     "total": 1742,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0894538921377397e-16,
+       "readout": 5.603978475621238e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.0977658351752398e-17,
+       "1.0": 9.427645589214416e-17,
+       "10.0": 7.948951881547291e-16
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "a82693e8ec82aff52770eb7ed6fda79c1e36e8d2381576d8c0c8c660600233f9",
+     "seconds": 577.4531710147858
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 292,
+      "readout": 1470
+     },
+     "total": 1762,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 3.5673729996935167e-16,
+       "readout": 3.423112820384149e-14
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.1172563985455948e-15,
+       "1.0": 2.0629200243112667e-14,
+       "10.0": 2.0620194336190647e-13
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "a7445837495fd503bcf23bce8629562f5daccf4f7ca8eadad9d3d94e722546c7",
+     "seconds": 580.0860149860382
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 292,
+      "readout": 1470
+     },
+     "total": 1762,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 6.699562072753906e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 8.821487426757812e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 5.9604644775390625e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 5.4836273193359375e-06
+      },
+      {
+       "rows": 100000,
+       "nonzero_rows": 99994,
+       "sigma_ref": 0.9839241074523911,
+       "mean_dim_Zhat": 9.9994,
+       "mean_dim_U": 1.0,
+       "seconds": 164.60144925117493,
+       "dim": 292,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "gap": null,
+       "sigma1": 3.263727318461012e-14,
+       "largest_rejected_over_ref": 3.317051888190404e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 1470,
+       "rank_within": 878,
+       "rank_ladder": {
+        "1e-06": 877,
+        "1e-09": 878,
+        "1e-12": 878
+       },
+       "gap": 100625842662878.03,
+       "sigma1": 49.00712008718759,
+       "sigma_ref": 49.00712008718759,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 28.488588571548462,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 3.5673729996935167e-16,
+       "readout": 2.5547829459195654e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 5.001631224369143e-16,
+       "1.0": 1.9995432198884164e-15,
+       "10.0": 1.9139646510204722e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "85aef1d60779cf38129dcf070ac4070f96a62b60fb13e82426c5e401f3fbc852",
+     "seconds": 775.1393415927887
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 292,
+      "readout": 1470
+     },
+     "total": 1762,
+     "steps": [
+      {
+       "dim": 1470,
+       "rank_within": 878,
+       "rank_ladder": {
+        "1e-06": 877,
+        "1e-09": 878,
+        "1e-12": 878
+       },
+       "gap": 100625842662878.03,
+       "sigma1": 49.00712008718759,
+       "sigma_ref": 49.00712008718759,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 4.386531352996826,
+       "block": "readout"
+      },
+      {
+       "rows": 100112,
+       "nonzero_rows": 100001,
+       "sigma_ref": 0.9839241074523908,
+       "mean_dim_Zhat": 10.0001,
+       "mean_dim_U": 1.0,
+       "seconds": 1904.3310742378235,
+       "dim": 292,
+       "rank_within": 0,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "gap": null,
+       "sigma1": 3.263793139612097e-14,
+       "largest_rejected_over_ref": 3.317118784763613e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 4.291534423828125e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.1205673217773438e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 1.0013580322265625e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 8.58306884765625e-06
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 3.5673729996935167e-16,
+       "readout": 2.5547829459195654e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 5.001631224369143e-16,
+       "1.0": 1.9995432198884164e-15,
+       "10.0": 1.9139646510204722e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "dc858ac439a0dd1385927e9d369b949963f90c803eb749a9f2ad487444d4bbc7",
+     "seconds": 2488.1145882606506
+    },
+    "random_0": {
+     "order": [
+      "conv2",
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_1": {
+     "order": [
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_2": {
+     "order": [
+      "conv1",
+      "conv5",
+      "conv3",
+      "conv2",
+      "readout",
+      "conv4"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_3": {
+     "order": [
+      "conv2",
+      "conv4",
+      "readout",
+      "conv3",
+      "conv1",
+      "conv5"
+     ],
+     "equivalent_to": "top_down",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 272,
+     "dim": 292,
+     "dim_ladder": {
+      "1e-06": 356,
+      "1e-09": 292,
+      "1e-12": 292
+     },
+     "gap": 213357037.75911564,
+     "alignment": {
+      "aligned": true,
+      "selective_dim": 272,
+      "complement_dim": 20,
+      "orthonormality": 8.745226764972358e-13,
+      "span_error": 9.229888000004572e-13,
+      "selective_leak": 9.383602645734496e-13
+     }
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 1470,
+     "dim": 1470,
+     "dim_ladder": {
+      "1e-06": 1470,
+      "1e-09": 1470,
+      "1e-12": 1470
+     },
+     "gap": 707904147.59299,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 1762,
+   "sum_selective": 1742,
+   "nonempty_blocks": [
+    "conv5",
+    "readout"
+   ],
+   "subspace_comparison": {
+    "conv5_dim": 292,
+    "bottom_up_vs_top_down": {
+     "dims": [
+      292,
+      292
+     ],
+     "min_principal_cosine": 0.9999999999991326,
+     "max_principal_angle_deg": 7.546605665576709e-05,
+     "projection_residual_rel": 1.7818043201309063e-13
+    },
+    "against_1e-12_kernel": {
+     "dims": [
+      292,
+      292
+     ],
+     "min_principal_cosine": 0.9999999999996935,
+     "projection_residual_rel": 9.0565617238972e-13,
+     "note": "stored basis columns are float32 for the non-kernel part; the tolerance of this comparison is about 1e-7"
+    }
+   }
+  },
+  "high_accuracy": {
+   "epoch": 65,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0065.pt",
+    "checkpoint_sha256": "4bc650734b9aa31bd9614172d827edcdefb4d519cbabf9646081dda39b8db314",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 4,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "ea5903b30d254e57aaed10f5d6fe41d91c2135953f73a70591ba76ba0375731b",
+       "conv2": "84d4a1a38e3b2350902d243e3f12820dc88b5882e874be94928d891b2bdcdae8",
+       "conv3": "69cd1e7016046f7c227dd7a26a539cd273216c9554f427108b5a8bc04a3f651a",
+       "conv4": "750fc5984359c462707ef1bda84f62f8488b10b34851cf79795ccd5617bd8cc8",
+       "conv5": "62da2726aed6f501bde1a88e5d42cc38823811bac9d9b4f115d53865e4778bf7",
+       "readout": "bb4a48f89ff91a244b74c4e7d85e120c8a10ce90e5f75828e614da61c0ae77bd"
+      },
+      "atomic": {
+       "conv1": "d19903f318ccec3567629e8eddfd7cd76fae82edfe9529289aa6e7c68d252961",
+       "conv2": "a081f4fc59349b997c4a4fc6164d04cb70f3d4e18eadffdf37224ae4c3223a15",
+       "conv3": "fb0a322cce218ad49a16bd10a5b4c3fedc90cae9ef38467bad4337e0652d8bd0",
+       "conv4": "03d8242f1efb2a61d485a8781de377b443491661062d4e5a778f6356cc59eea4",
+       "conv5": "583eb806f0579f8da59e721beaf04cfef5d0775aca94fabbe81eb27ce7796ef4",
+       "readout": "9ea5dbec2a55ecb55cee421c241269d838cd9417b7e2ee85f882a568a2cd29c4"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "27a20b761f9f8e942e39983a307eb80b7d6b7678516de8ef536bf325ae3dffab",
+      "conv2": "6a6ea6767dbfadaf8e2dc89d794e420dbb919411f549d2dc336045a469b23e8f",
+      "conv3": "3ef689012442de24d15d93faa5c9c9b610c8c157aedf50ea825a543c4680ce15",
+      "conv4": "13952427d3eb26db7df9d79aa93cde5aeccf52ee952f04a9b7ceeb174c5098c7",
+      "conv5": "f9fb955daddad71ea602878e31168148f1dc519515670d910180040eaf18fd43",
+      "readout": "93c74eec030c01c8af467d5059430dda7be02ff90ce327394997b086da09caff"
+     }
+    },
+    "digest": "be6a9022a852c2756ad8630da36fd3d332ba18a9616390262e6ca39fe96ec6bd"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 110
+     },
+     "total": 110,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "bb1156da5b9bc16d1c2e10933525979971bfbb6e4adaf97c4a2b378e0d6bf101",
+     "seconds": 528.3987913131714
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 110
+     },
+     "total": 110,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.7662271113951897e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 1.4655823236323204e-16,
+       "1.0": 5.023342339495934e-16,
+       "10.0": 4.425720928086435e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "d4f6d04936b99d70d139963076aa4e7447deb5b333f29c04bd997fabd71886a4",
+     "seconds": 528.546382188797
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 110
+     },
+     "total": 110,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 0.00010085105895996094
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 2.2411346435546875e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.6450881958007812e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 1.3113021850585938e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv5",
+       "seconds": 1.2874603271484375e-05
+      },
+      {
+       "dim": 110,
+       "rank_within": 1014,
+       "rank_ladder": {
+        "1e-06": 1014,
+        "1e-09": 1014,
+        "1e-12": 1014
+       },
+       "gap": 1.2550797401006652e+297,
+       "sigma1": 57.99256178804291,
+       "sigma_ref": 57.99256178804291,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 4.459052801132202,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "7d3da243fc048c2954c6bee59babc9ac00cf5b13014b547501614c254e456df4",
+     "seconds": 532.7565128803253
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_0": {
+     "order": [
+      "conv2",
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_1": {
+     "order": [
+      "conv5",
+      "readout",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_2": {
+     "order": [
+      "conv1",
+      "conv5",
+      "conv3",
+      "conv2",
+      "readout",
+      "conv4"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_3": {
+     "order": [
+      "conv2",
+      "conv4",
+      "readout",
+      "conv3",
+      "conv1",
+      "conv5"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 110,
+     "dim": 110,
+     "dim_ladder": {
+      "1e-06": 110,
+      "1e-09": 110,
+      "1e-12": 110
+     },
+     "gap": 205763926195.2192,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 110,
+   "sum_selective": 110,
+   "nonempty_blocks": [
+    "readout"
+   ],
+   "subspace_comparison": {
+    "conv5_dim": 0,
+    "against_1e-12_kernel": {
+     "dims": [
+      0,
+      0
+     ],
+     "min_principal_cosine": null,
+     "projection_residual_rel": 0.0,
+     "note": "stored basis columns are float32 for the non-kernel part; the tolerance of this comparison is about 1e-7"
+    }
+   }
+  },
+  "epoch_50": {
+   "epoch": 50,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0050.pt",
+    "checkpoint_sha256": "096dff245c79c2999440c73eeccd7dc4cee5f3fc68a8ce9dfe4dbcd26670f143",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 1,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "66e4ac6101c724c8fcd6df2083ac3fe97e812878c7b5c0d9e22961a4532f6608",
+       "conv2": "ead579ba4dfcaea1c4ff990523843044552a1c81156a5ddf1e714889b337a537",
+       "conv3": "0ca2b5d4b903359e867229444e0d64ce8cf241356fffea9b1197b192a7bae3c7",
+       "conv4": "6380957319c215a011a8765ea07035dfc83c96b0531667b186072b6c000653fd",
+       "conv5": "7d6021d3f0f82945f812ab99a311997493bf146fc9a63e0e90bb119790bdc9c3",
+       "readout": "69a870acff929a08d729444f2783958bdf478acc9713880d65ebebe697cbc7b5"
+      },
+      "atomic": {
+       "conv1": "41a847b29010540ef659d9b980c4ee9668a8a373190a046e8504b0f63a28ff4a",
+       "conv2": "1b877180c70cc6784def635fd422e312eaf4cd60495cca414c8992076d0678ad",
+       "conv3": "b3281f140b09e5aa2f15bccbbe42c7f4d7b5c8c19fd3823f6fc332c13d05eee5",
+       "conv4": "03c974285ab7d98508847a7bfdd7996b7db1de9eb9d3d443e630b07cb4b3d21a",
+       "conv5": "0fb018823252df95ba99ab9c9636896d61d26d06ccc05f9cdc5d15c3e8c981fb",
+       "readout": "6bd5f5b32fa5dd054c36b90933a3a1fd1bab635915e60e5af8c3024ca99c0ecb"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "41b2afdaad8cb2d6dc8a9a3a2ee830bca976de9881512d956039790f03da748b",
+      "conv2": "ff77888f5c4ec346ade455590d7ee74ca6f1685e725217f63b3e520009179cb5",
+      "conv3": "b54b4dcd26aca61312befb620574846119d8bea1b30e24a82eec120d051b9ba3",
+      "conv4": "fc2da14aef4c4bc4f04fedf2b7233c4073e3beb8000b24efe3d1d5ccb2696cb2",
+      "conv5": "92ea5f9c2b53b2d8928942da1ead8849ef781a342ade89064071fb097c97b3bc",
+      "readout": "cd2c52c687872dadc475a6d1177e4bdc59d93710ca45ca3a2d51b28a20c9d159"
+     }
+    },
+    "digest": "8947e86d5aba99465375565e400e853ab571bdcaeecf80ff2ff8421721f459af"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 30
+     },
+     "total": 30,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "0a5c03fb90d4b4bcc68deb51667881f56db14b4fa43cafc2f81b0def95e57281",
+     "seconds": 418.4202473163605
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 30
+     },
+     "total": 30,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.4590160202675894e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.5321598002038676e-16,
+       "1.0": 8.020496537861257e-16,
+       "10.0": 6.4278275743005516e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "2ae9646a184a341be0df82c304415e6e0cb75ff30cee64e1fe75cd2facb5d11a",
+     "seconds": 418.148695230484
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 30
+     },
+     "total": 30,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 0.00010848045349121094
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 2.3126602172851562e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.5497207641601562e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 1.1444091796875e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv5",
+       "seconds": 1.0728836059570312e-05
+      },
+      {
+       "dim": 30,
+       "rank_within": 1022,
+       "rank_ladder": {
+        "1e-06": 1022,
+        "1e-09": 1022,
+        "1e-12": 1022
+       },
+       "gap": 1.8951352519684273e+297,
+       "sigma1": 59.33875985290826,
+       "sigma_ref": 59.33875985290826,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 2.5615413188934326,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "da9fc9ccd5f6ed34cc1eb6be672b0229b875d3b4b084595b16db250b182f65ac",
+     "seconds": 420.7089874744415
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_0": {
+     "order": [
+      "readout",
+      "conv1",
+      "conv2",
+      "conv4",
+      "conv3",
+      "conv5"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 30,
+     "dim": 30,
+     "dim_ladder": {
+      "1e-06": 30,
+      "1e-09": 30,
+      "1e-12": 30
+     },
+     "gap": 278959588761.24384,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 30,
+   "sum_selective": 30,
+   "nonempty_blocks": [
+    "readout"
+   ]
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0100.pt",
+    "checkpoint_sha256": "749595387dabd2de8aa099c11f88d651ade744dc5a3d03b34daf1e8853d1556e",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 1,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "a4bc5e8bf111ad37a18ede619921fdec0bcdbea56a7fb2a93024497cdcc2281e",
+       "conv2": "d24b26469cc3b519b83ad4e13361fc176aca38adb2606123e12195971d9017c1",
+       "conv3": "3bcb38b54040e326bc4afc7d09316445193840c748e927d2cdba1a9917bbe2d5",
+       "conv4": "4a250e59fbb408170aa24fd94b46869366f4c83ff724ff92b79dadf0d3d6f2be",
+       "conv5": "f51ba2ada9ba6f0349aa0c1c39ea4019a595f1817d64cbdca1693dd51db66005",
+       "readout": "08e8622ed311e8796152b3b68671bddc5282558e64f4e583d5178420e02c72ce"
+      },
+      "atomic": {
+       "conv1": "d9bbebe84dce821642f73da992b35673a1fb72f0f25d6843b3e657e5236c67af",
+       "conv2": "8595fc16ab92e14f2f948423375f011ad99a54ec90076b16bb6858b2f43b2d8e",
+       "conv3": "4005ed37abec1d24373191a324f10b299909db0b65ca0af920678143c383de19",
+       "conv4": "7e23174d04475c23bd441ce3d82e4b176aaac1c81a1db153092159f1b94aa430",
+       "conv5": "eb965828054d5e17c43da362a6801157677a46eb1667a2bf6cd8e4927f1837b8",
+       "readout": "da438b6d1c9ac0a06164bdf1198a31c88a5f341dc2c0374d0e4e1c1f46d7fb7e"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "7c7cfb2990453f40659cb93e1d9dc77a889ecfa2d7ca131e9a0680ac83d19ee2",
+      "conv2": "ecdc7e58aa7cee797d49094fb72be7708979dadc006886057db95453afea45ae",
+      "conv3": "37902e6fcf9a96142a6c91a85b30ece8195dfe212ef6294e165998adb55a9deb",
+      "conv4": "4e1e3b1a7d9c6a8bcf7e66b229976efd9d8fc2291675994c43a2701c4a5b8b78",
+      "conv5": "19af030882e25ed73d548c57230ea0a8e6d20529ac30cf31326137b8d41e632c",
+      "readout": "294a723495d5bee6e9cc9aec7d14d66d3f94ba87ff770ea03e02845daf2fb864"
+     }
+    },
+    "digest": "e940f9a4a0ae59d8c8b0bdfbe92d94e9abe00fd55c9b18f316aa85e15a23ce4d"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 230
+     },
+     "total": 230,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "088fcd52ea859f70ac4d46ffd2844448b49776880ca6a575292e5b6dd878d65d",
+     "seconds": 418.27958250045776
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 230
+     },
+     "total": 230,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 3.5029240834669425e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 1.7331120233152727e-16,
+       "1.0": 6.653081343334083e-16,
+       "10.0": 5.980806870871385e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "a5f8039e4ce4b0a46320d144c66afe6abae6150a716ff5a389887a429ba8e74b",
+     "seconds": 468.98404479026794
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 230
+     },
+     "total": 230,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 0.00011324882507324219
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 5.698204040527344e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 8.416175842285156e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 5.8650970458984375e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv5",
+       "seconds": 6.628036499023438e-05
+      },
+      {
+       "dim": 230,
+       "rank_within": 1002,
+       "rank_ladder": {
+        "1e-06": 1002,
+        "1e-09": 1002,
+        "1e-12": 1002
+       },
+       "gap": 7.139718929462431e+296,
+       "sigma1": 55.018228276743685,
+       "sigma_ref": 55.018228276743685,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 2.3797805309295654,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 0.0
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 0.0,
+       "1.0": 0.0,
+       "10.0": 0.0
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "800fd027b7cbb13a2c46d66978f1ff4a1a61bac8bb1d35b47a8938bff1898de2",
+     "seconds": 420.7498459815979
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_0": {
+     "order": [
+      "readout",
+      "conv1",
+      "conv2",
+      "conv4",
+      "conv3",
+      "conv5"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 230,
+     "dim": 230,
+     "dim_ladder": {
+      "1e-06": 230,
+      "1e-09": 230,
+      "1e-12": 230
+     },
+     "gap": 22228791764.29092,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 230,
+   "sum_selective": 230,
+   "nonempty_blocks": [
+    "readout"
+   ]
+  },
+  "epoch_150": {
+   "epoch": 150,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0150.pt",
+    "checkpoint_sha256": "73f83aa3b9ca0c7d57f81c77832bf3c0563d99edbd493e6429d1881b00f5d503",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 1,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "c3d0866d4acb1e65d2eb03b5e915570e123a3fd0558cb2788ef2072f5a7cee21",
+       "conv2": "8547490ec6fc9ef8eba4ef24a7a2bf148431d2670d50d3dd869d5fb4c7140cee",
+       "conv3": "acbee5367ef2e16bc9bfb7ec7b68bae6e8b199c578c452976856738ef2b36306",
+       "conv4": "c2e86bae58c3afca87628d087e85f98953abf2dd58fe1023b9164c25a48b7dbb",
+       "conv5": "31b300860afaa7a992279e08040d38c67b8000ae5c6ed221579de9ee2178604b",
+       "readout": "879543616ff617e1083ce215ae0d52f57ec2e2110635739a0d0c810ae7461c59"
+      },
+      "atomic": {
+       "conv1": "f49f188e9ded366edf43cb29a6ff483772693b1099390af2a3e4fd397a12b91a",
+       "conv2": "ccf52acfdebc99a8c664b84d64b240d2eccdfd6616cdc83baaa7dd0f654e5fd4",
+       "conv3": "44fda551110fdb4e57db4c77608fe7aa3f70833a9407add6f568a805b7ff765f",
+       "conv4": "7fa324318b8a47ccf927980bc731282e2299e507fe16946ddc813bf3d8865a17",
+       "conv5": "5ae6f2753978ed46d4ad341df59695bb8220c6d2d74c533ccf4c2a20d86c0e25",
+       "readout": "e166875f9e96ecb27c4c8da3f603ad39a619bdf0704b5e85f4794079f53b38fd"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "2a9da5a49c4df8a5583b48848a1f096c8432422ee494c7e5c9d75502632ba69c",
+      "conv2": "751cab76ee34a359d78c087c3fadb26b5299f2d9d6f7f1c3acc45aab37374bf2",
+      "conv3": "7e3eaa7535c10e88f5aeec10b1087dcea68946e1472bb24f9a6f4a387a5840fe",
+      "conv4": "5e95dcfb08aee7cd665b52502205edde5a4bb7a31dad6f3bd3f4a9588ea07be4",
+      "conv5": "1e3831e8912d5e5cfb1f34f84c420850b3f3255af0530ef3db17b807f9b962ed",
+      "readout": "b8c0055f0a417796e0f05adca4ea4eebe3e952c3ebe0dc2a3a8da422d8a644e5"
+     }
+    },
+    "digest": "98e90bcd6b48cccf6163340fa63e47d5d27793f558f530b1f1e0bf9d48acfd72"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 550
+     },
+     "total": 550,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.1994957136488471e-17
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.8232684682356388e-18,
+       "1.0": 9.727194136323803e-18,
+       "10.0": 3.633206638925889e-17
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "fa7f50b05ac15bde5f18778a5b1439405b67f313ad77f37bf9c6c4f6e03472ef",
+     "seconds": 418.50892639160156
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 550
+     },
+     "total": 550,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 2.244280148488148e-14
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 7.241144241512519e-16,
+       "1.0": 6.907319272852885e-15,
+       "10.0": 6.904039899259273e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "5920c62a564393683436bb412e3c8978b6151eba38a5b51fdb7ee3b1e12894a4",
+     "seconds": 418.5395300388336
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 0,
+      "readout": 550
+     },
+     "total": 550,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 7.963180541992188e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 1.7642974853515625e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 8.58306884765625e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 1.0728836059570312e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv5",
+       "seconds": 7.3909759521484375e-06
+      },
+      {
+       "dim": 550,
+       "rank_within": 970,
+       "rank_ladder": {
+        "1e-06": 969,
+        "1e-09": 970,
+        "1e-12": 970
+       },
+       "gap": 129000062695459.88,
+       "sigma1": 52.892223329097014,
+       "sigma_ref": 52.892223329097014,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 2.328144073486328,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0574335111321472e-17
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 0.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 4.742220363896574e-18,
+       "1.0": 2.222075266189159e-17,
+       "10.0": 7.665601464006248e-17
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "d3a01fd7e21c99928a614b9c562e70f838bd97e09bd8c2b4107f9beda21ced6e",
+     "seconds": 420.94725918769836
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    },
+    "random_0": {
+     "order": [
+      "readout",
+      "conv1",
+      "conv2",
+      "conv4",
+      "conv3",
+      "conv5"
+     ],
+     "equivalent_to": "bottom_up",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 2,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 550,
+     "dim": 550,
+     "dim_ladder": {
+      "1e-06": 560,
+      "1e-09": 550,
+      "1e-12": 550
+     },
+     "gap": 72582366.72714002,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 550,
+   "sum_selective": 550,
+   "nonempty_blocks": [
+    "readout"
+   ]
+  },
+  "epoch_200": {
+   "epoch": 200,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0200.pt",
+    "checkpoint_sha256": "307cac0538f0094d5068b6185624fda4af9513c4f8f327033d02c8c71c306ddf",
+    "preprocessing_sha256": "d7e5ec3ea063cbe8597a48694cb7f3c21a6464a082a5658b87f3aef701521190",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.4 item 9 (follow-up 2026-09-23); identifier cnn-branch-v1",
+     "build_version": 1,
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "valid_tol": 1e-09,
+     "atol": 1e-10,
+     "samples": 10000,
+     "random_orders": 1,
+     "patch_space_basis_sha256": {
+      "selective": {
+       "conv1": "a66f1e595c45c8d63061e832f765fb2bbd73fd229a4364ec9f5f257d36c64f7a",
+       "conv2": "ba8d53954b37f61f9257dc422b8eade7864063c469eebd0f55be29fe5adadd46",
+       "conv3": "8232cf2494fd3de224b438908e7197283032f9b0b81c1b5836d5e94e79835d62",
+       "conv4": "502be2b5af4432a10f643acb5d6b4c4153d78eb16e7dc89393d1a4dff44905ac",
+       "conv5": "fc6086142ba2abcdb1d5fb58dd69f5cd6f5be14979813607ee59f021a484138f",
+       "readout": "e04ecde3cf59ab43f316c8117da21c7655a67d84fd4bbd6c66b4d33bae361a80"
+      },
+      "atomic": {
+       "conv1": "57a4607b1313d676f21588cf2a2d8bbf1a0fdbc3d64ffbfc2be010279719cdb7",
+       "conv2": "fe54b89aac9fe8f36604bd24ea1f3f09e4c8ea9b9dc64f4a969cb8726c18a61e",
+       "conv3": "e79f4c689600d89b421c0effaa2f5019c5de08d680fabacd63e0f3cd443d081f",
+       "conv4": "f401c128a2d5f34fb5da4725a6d5c4f846e284a49430dc8df00dd0b7fc536445",
+       "conv5": "20a3c3cf23f546d0334905991b02bb137f082fd53777ae51ee10892fd5645e62",
+       "readout": "cc263718e20b9aae30e5b00ab1add9c47a8e96efeae5e0b1343e8d690c5e343e"
+      }
+     },
+     "factor_sha256": {
+      "conv1": "49381f507f48f2b3eee4134fa67cb1fb85cef8ebbb33a71952285f6d90fc9d62",
+      "conv2": "287b4d7b9a95605486619684dbc4b5e495ecc29b11b819b4b9a12deef2db5972",
+      "conv3": "b12985fff8e49ead99866efb4a11938858799b125254c3842928efe80993ea39",
+      "conv4": "583e98034801a4699b40340d366b99a945733383cf91b7f2cd66614a21e378b8",
+      "conv5": "4d8fbc94b2bcb0010ea702c2e0c8b338bcc16011e3b0ab4247f880b1a26f2e84",
+      "readout": "02a1397e69a1887d26138e86ca119f0779a725365067cb816aa14caae39847e4"
+     }
+    },
+    "digest": "00c7d01af42393b0b65a76efc6d8b513ce6d2bcd5f093c3c581269d35593c30c"
+   },
+   "constructions": {
+    "selective_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 92,
+      "readout": 1170
+     },
+     "total": 1262,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.2684767888659174e-16,
+       "readout": 9.347762596984065e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 2.4337003905449936e-17,
+       "1.0": 1.4513832842165613e-16,
+       "10.0": 1.3652438769076932e-15
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "fbb62680afebb0d3e7c36b163772b2909e6fcc910e1475458843e5630b052466",
+     "seconds": 423.0684509277344
+    },
+    "naive_atomic_sum": {
+     "order": null,
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 101,
+      "readout": 1170
+     },
+     "total": 1271,
+     "steps": null,
+     "constructed_by_theorem": false,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 2.2381998962199636e-09,
+       "readout": 0.021304596341364744
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 2.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 1.0839653989733868e-10,
+       "1.0": 1.0844027436964488e-09,
+       "10.0": 1.1278226639573682e-08
+      },
+      "passed": false,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": false,
+     "basis_sha256": "4cee52d84ca300cc0cf504a9fa319bb48ae217ae89afb84d67351c63f8247d74",
+     "seconds": 423.9938597679138
+    },
+    "bottom_up": {
+     "order": [
+      "conv1",
+      "conv2",
+      "conv3",
+      "conv4",
+      "conv5",
+      "readout"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 100,
+      "readout": 1170
+     },
+     "total": 1270,
+     "steps": [
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 5.8650970458984375e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 8.344650268554688e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 5.245208740234375e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 4.76837158203125e-06
+      },
+      {
+       "rows": 100000,
+       "nonzero_rows": 99996,
+       "sigma_ref": 0.9674188886293951,
+       "mean_dim_Zhat": 9.9996,
+       "mean_dim_U": 1.0,
+       "seconds": 30.17649245262146,
+       "dim": 100,
+       "rank_within": 1,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 1,
+        "1e-12": 1
+       },
+       "gap": 12693639.948642258,
+       "sigma1": 6.569901981861331e-07,
+       "largest_rejected_over_ref": 5.350053834527335e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 1170,
+       "rank_within": 908,
+       "rank_ladder": {
+        "1e-06": 908,
+        "1e-09": 908,
+        "1e-12": 908
+       },
+       "gap": 6123709024938.636,
+       "sigma1": 50.622349140837656,
+       "sigma_ref": 50.622349140837656,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 4.081646919250488,
+       "block": "readout"
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.4341399401651657e-15,
+       "readout": 2.806090579194656e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 4.989559183087466e-16,
+       "1.0": 2.218484758289118e-15,
+       "10.0": 2.106349737205726e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "e6aa89d43de700d155761a9094fc3ef16c6224d6bf9d2509ea288c5235848e77",
+     "seconds": 458.0486478805542
+    },
+    "top_down": {
+     "order": [
+      "readout",
+      "conv5",
+      "conv4",
+      "conv3",
+      "conv2",
+      "conv1"
+     ],
+     "dims": {
+      "conv1": 0,
+      "conv2": 0,
+      "conv3": 0,
+      "conv4": 0,
+      "conv5": 100,
+      "readout": 1170
+     },
+     "total": 1270,
+     "steps": [
+      {
+       "dim": 1170,
+       "rank_within": 908,
+       "rank_ladder": {
+        "1e-06": 908,
+        "1e-09": 908,
+        "1e-12": 908
+       },
+       "gap": 6123709024938.636,
+       "sigma1": 50.622349140837656,
+       "sigma_ref": 50.622349140837656,
+       "rows": 10000,
+       "mean_dim_U": 1.0,
+       "seconds": 2.327043056488037,
+       "block": "readout"
+      },
+      {
+       "rows": 100048,
+       "nonzero_rows": 99999,
+       "sigma_ref": 0.967418888629394,
+       "mean_dim_Zhat": 9.9999,
+       "mean_dim_U": 1.0,
+       "seconds": 625.0360267162323,
+       "dim": 100,
+       "rank_within": 1,
+       "rank_ladder": {
+        "1e-06": 0,
+        "1e-09": 1,
+        "1e-12": 1
+       },
+       "gap": 12693593.332506575,
+       "sigma1": 6.569908500119904e-07,
+       "largest_rejected_over_ref": 5.3500787901610595e-14,
+       "block": "conv5"
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv4",
+       "seconds": 3.5762786865234375e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv3",
+       "seconds": 1.049041748046875e-05
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv2",
+       "seconds": 6.67572021484375e-06
+      },
+      {
+       "dim": 0,
+       "rank_within": 0,
+       "gap": null,
+       "note": "empty candidate space",
+       "block": "conv1",
+       "seconds": 7.152557373046875e-06
+      }
+     ],
+     "constructed_by_theorem": true,
+     "validation": {
+      "tolerance": 1e-09,
+      "forward_criterion_full_max": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.423056490152863e-15,
+       "readout": 2.806090579194656e-16
+      },
+      "mean_received_vectors_per_chunk": {
+       "conv1": 0.0,
+       "conv2": 0.0,
+       "conv3": 0.0,
+       "conv4": 0.0,
+       "conv5": 1.0,
+       "readout": 1.0
+      },
+      "polynomial_residual_rel": {
+       "0.1": 5.056113753343039e-16,
+       "1.0": 2.081299021388777e-15,
+       "10.0": 1.9873918319368965e-14
+      },
+      "passed": true,
+      "scope": "full forward operator on exact received spanning sets (every basis element against every received vector); polynomial residual on 32 random combinations at weighted relative norms 0.1, 1, 10"
+     },
+     "certified_branch": true,
+     "basis_sha256": "fcf9a8e22121a9ceeef58c211744c073e636bb0ae593cfd6680536f5a14a08d6",
+     "seconds": 1051.450443983078
+    },
+    "random_0": {
+     "order": [
+      "readout",
+      "conv1",
+      "conv2",
+      "conv4",
+      "conv3",
+      "conv5"
+     ],
+     "equivalent_to": "top_down",
+     "note": "same order on the nonempty blocks"
+    }
+   },
+   "blocks": {
+    "conv1": {
+     "p": 160,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv2": {
+     "p": 2320,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv3": {
+     "p": 4640,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv4": {
+     "p": 9248,
+     "selective_dim": 0,
+     "dim": 0,
+     "dim_ladder": {
+      "1e-06": 0,
+      "1e-09": 0,
+      "1e-12": 0
+     },
+     "note": "full rank at 1e-9 in the stored factor"
+    },
+    "conv5": {
+     "p": 18496,
+     "selective_dim": 92,
+     "dim": 101,
+     "dim_ladder": {
+      "1e-06": 151,
+      "1e-09": 101,
+      "1e-12": 100
+     },
+     "gap": 3.363849709648307,
+     "alignment": {
+      "aligned": false,
+      "dim_mismatch": [
+       102,
+       101
+      ],
+      "orthonormality": 1.2170669434245645e-06,
+      "span_error": 1.6715865488549257e-07
+     }
+    },
+    "readout": {
+     "p": 10250,
+     "selective_dim": 1170,
+     "dim": 1170,
+     "dim_ladder": {
+      "1e-06": 1170,
+      "1e-09": 1170,
+      "1e-12": 1170
+     },
+     "gap": 2487820581.845725,
+     "alignment": {
+      "aligned": false,
+      "note": "readout basis taken as stored"
+     }
+    }
+   },
+   "sum_atomic": 1271,
+   "sum_selective": 1262,
+   "nonempty_blocks": [
+    "conv5",
+    "readout"
+   ]
+  }
+ }
+}

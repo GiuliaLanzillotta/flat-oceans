@@ -1,0 +1,20 @@
+\begin{table}[!htbp]\centering
+\caption{Rescaling checks pooled over the measured seed--stage pairs for each architecture. Cells give the arithmetic mean and sample standard deviation; this describes variation across both training stages and seeds. The Jacobian response is divided by generator norm. Finite-change columns summarize each record\textquotesingle s maximum absolute output change under the tested positive rescalings. GELU is a nonhomogeneous control.}\label{tab:c-symmetry-summary}
+\footnotesize\setlength{\tabcolsep}{4pt}\begin{tabular}{lrrrr}\toprule
+Model & Generator rank & Jacobian response & Analysis-set change & Random-input change\\\midrule
+ReLU, w128 & $384.0 \pm 0.0$ & $(1.26 \pm 0.39)\,10^{-16}$ & $(6.52 \pm 2.07)\,10^{-15}$ & $(6.02 \pm 3.30)\,10^{-15}$\\
+ReLU, w64 & $192.0 \pm 0.0$ & $(1.91 \pm 0.91)\,10^{-16}$ & $(9.38 \pm 3.81)\,10^{-15}$ & $(9.90 \pm 5.34)\,10^{-15}$\\
+leaky ReLU, w128 & $384.0 \pm 0.0$ & $(2.67 \pm 0.98)\,10^{-16}$ & $(1.05 \pm 0.48)\,10^{-14}$ & $(6.12 \pm 3.16)\,10^{-15}$\\
+GELU, w128 & $384.0 \pm 0.0$ & $(6.36 \pm 3.09)\,10^{-2}$ & $(9.24 \pm 3.08)\,10^{-1}$ & $(9.20 \pm 2.41)\,10^{-1}$\\
+CNN, base & $160.0 \pm 0.0$ & $(7.57 \pm 5.29)\,10^{-17}$ & $(3.45 \pm 1.65)\,10^{-15}$ & $(4.34 \pm 3.30)\,10^{-15}$\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[!htbp]\centering
+\caption{Joint symmetry--invariant subspace comparisons for width-64 MLPs at high accuracy on 10,000 images, using the relative rank cutoff $10^{-9}$. $T$ is the rescaling-symmetry tangent span and $M$ the constructed layerwise invariant subspace. Remainder is $\dim\ker J_X-\dim(M+T)$.}\label{tab:c-symmetry-intersection}
+\small\setlength{\tabcolsep}{4pt}\begin{tabular}{lrrrrrrr}\toprule
+Model & Seed & $\dim\ker J_X$ & $\dim M$ & $\dim T$ & $\dim(M\cap T)$ & $\dim(M+T)$ & Remainder\\\midrule
+Leaky ReLU & 0 & 1211 & 866 & 192 & 0 & 1058 & 153\\
+ReLU & 0 & 3221 & 3036 & 192 & 25 & 3203 & 18\\
+ReLU & 1 & 3283 & 3102 & 192 & 17 & 3277 & 6\\
+ReLU & 2 & 3824 & 3621 & 192 & 36 & 3777 & 47\\
+\bottomrule\end{tabular}\end{table}
+\FloatBarrier

@@ -1,0 +1,24 @@
+\begin{table}[!htbp]\centering
+\caption{Invariant-space dimensions as percentages of layer parameters on 10,000 analysis images: full atomic kernels, except for the selective lower bounds at width 512. Entries give means $\pm$ one sample standard deviation over three seeds at the relative singular-value cutoff $10^{-9}$. Daggers mark a full-kernel gap below ten at this cutoff in at least one seed. A dash means that the layer or milestone does not exist.}
+\label{tab:atomic-scaling-full}
+\small\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrrr}\toprule
+Architecture & Stage & L2 & L3 & L4 & L5\\\midrule
+Width 32 & High accuracy & --- & --- & --- & ---\\
+ & Epoch 500 & $6.7\pm3.5$ & $27.0\pm10.0$ & --- & ---\\
+Width 64 & High accuracy & $13.0\pm10.7$ & $59.5\pm11.2$ & --- & ---\\
+ & Epoch 500 & $22.1\pm14.6$ & $69.5\pm2.5$ & --- & ---\\
+Width 128 & High accuracy & $21.5\pm4.8$ & $47.5\pm4.4$ & --- & ---\\
+ & Epoch 500 & $62.7\pm4.2$ & $90.9\pm1.9^{\dagger}$ & --- & ---\\
+Width 256 & High accuracy & $17.6\pm6.1$ & $58.6\pm8.5^{\dagger}$ & --- & ---\\
+ & Epoch 500 & $87.9\pm3.1$ & $98.7\pm0.0$ & --- & ---\\
+Width 512 (selective) & High accuracy & $31.8\pm1.1$ & $62.4\pm0.9$ & --- & ---\\
+ & Epoch 500 & $96.0\pm0.3$ & $99.8\pm0.0$ & --- & ---\\
+Depth 2 & High accuracy & $75.8\pm2.9$ & --- & --- & ---\\
+ & Epoch 500 & $79.9\pm1.5$ & --- & --- & ---\\
+Depth 4 & High accuracy & $5.8\pm1.1$ & $28.6\pm3.1$ & $45.8\pm7.8$ & ---\\
+ & Epoch 500 & $14.3\pm3.1$ & $73.4\pm2.2^{\dagger}$ & $95.2\pm0.4$ & ---\\
+Depth 5 & High accuracy & $0.9\pm0.9$ & $11.4\pm2.1$ & $43.9\pm11.5$ & $57.6\pm10.0^{\dagger}$\\
+ & Epoch 500 & $0.0\pm0.0$ & $37.6\pm33.0^{\dagger}$ & $91.1\pm1.5^{\dagger}$ & $96.9\pm0.7$\\
+\bottomrule\end{tabular}
+\end{table}

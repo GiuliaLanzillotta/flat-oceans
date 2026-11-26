@@ -1,0 +1,21 @@
+{
+ "spec": "PI 2026-11-16: clip(y + sigma z, 0, 1) in [0,1] pixel space BEFORE preprocessing; one z paired across sigmas and model seeds; SVHN first 10,000 test images (natural order), BT.601 grayscale, adaptive-avg-pool 32->28; saved MNIST centering + PCA-256 + scaling for every condition",
+ "mnist_raw_sha": {
+  "train_x": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db",
+  "train_y": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5",
+  "test_x": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7",
+  "test_y": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2"
+ },
+ "noise_seed": 20261116,
+ "z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+ "noisy_sha256": {
+  "0.05": "e6126eaf3d8c30728088ed33697b516f7d551ebb7b36b080b0b0a91ff167151d",
+  "0.1": "70be5c7afa945aa46c7be1afe2dedc819d50a3ce11c47f216ab1186257907580",
+  "0.2": "6c5d18f9c6bc54a78b4d9f292fb2e51d4ea8f69cce4c78603da70815f66e4957"
+ },
+ "svhn_file": "/local/home/glanzillo/datasets/SVHN/test_32x32.mat",
+ "svhn_file_sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+ "svhn_selection": "first 10000, natural order",
+ "svhn_gray28_sha256": "d833cd4c84bb19b6fa584b0e36671f0883e9462c0684a27d7c308b45918ad733",
+ "clean_arm": "REUSED authenticated reference: results/atomic/*_new_batch.json (batch 'test')"
+}

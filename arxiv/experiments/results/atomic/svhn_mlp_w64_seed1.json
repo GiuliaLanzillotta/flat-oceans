@@ -1,0 +1,387 @@
+{
+ "protocol": "memos/2026-09-10_protocol_stages_atomic_transition.md",
+ "stages": {
+  "initialization": {
+   "milestone_epoch": 0,
+   "checkpoint_epoch": 0,
+   "train_mse": 0.8758860537851533,
+   "train_errors": 65875,
+   "test_acc": 0.094960049170252,
+   "test_mse": 1.043533601874529,
+   "param_norm": 19.804161397356218,
+   "same_as": []
+  },
+  "early_fitting": {
+   "milestone_epoch": 34,
+   "checkpoint_epoch": 40,
+   "train_mse": 0.015766015137730065,
+   "train_errors": 6919,
+   "test_acc": 0.8035494775660725,
+   "test_mse": 0.029657126180285546,
+   "param_norm": 27.694134772653825,
+   "same_as": []
+  },
+  "high_accuracy": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "mse_interpolation": {
+   "milestone_epoch": null,
+   "checkpoint_epoch": null
+  },
+  "late_endpoint": {
+   "milestone_epoch": 500,
+   "checkpoint_epoch": 500,
+   "train_mse": 0.007664700985825347,
+   "train_errors": 3818,
+   "test_acc": 0.7777350952673633,
+   "test_mse": 0.03679177561634415,
+   "param_norm": 77.8543027568163,
+   "same_as": []
+  },
+  "epoch_50": {
+   "milestone_epoch": 50,
+   "checkpoint_epoch": 50,
+   "train_mse": 0.013957950478233774,
+   "train_errors": 6209,
+   "test_acc": 0.7995543945912723,
+   "test_mse": 0.030164484259827838,
+   "param_norm": 30.35578296859985,
+   "same_as": []
+  },
+  "epoch_100": {
+   "milestone_epoch": 100,
+   "checkpoint_epoch": 100,
+   "train_mse": 0.010835100502504177,
+   "train_errors": 4998,
+   "test_acc": 0.791679471419791,
+   "test_mse": 0.03219513723857651,
+   "param_norm": 40.635395074277156,
+   "same_as": []
+  },
+  "epoch_150": {
+   "milestone_epoch": 150,
+   "checkpoint_epoch": 150,
+   "train_mse": 0.009620561478925404,
+   "train_errors": 4528,
+   "test_acc": 0.7868776889981561,
+   "test_mse": 0.03365826174764761,
+   "param_norm": 47.96618488921722,
+   "same_as": []
+  },
+  "epoch_200": {
+   "milestone_epoch": 200,
+   "checkpoint_epoch": 200,
+   "train_mse": 0.009081619007866958,
+   "train_errors": 4320,
+   "test_acc": 0.7834972341733252,
+   "test_mse": 0.03446495821945669,
+   "param_norm": 53.623641470094206,
+   "same_as": []
+  },
+  "epoch_250": {
+   "milestone_epoch": 250,
+   "checkpoint_epoch": 250,
+   "train_mse": 0.008656371366668875,
+   "train_errors": 4263,
+   "test_acc": 0.7846880762138906,
+   "test_mse": 0.0349004937793861,
+   "param_norm": 58.43880484726291,
+   "same_as": []
+  }
+ },
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": [
+    {
+     "layer": 1,
+     "status": "excluded",
+     "note": "frozen block: displacement fixed to zero, atomic factorization skipped (NOT a measured zero-dimensional kernel)"
+    },
+    {
+     "layer": 2,
+     "n_in_aug": 65,
+     "n_out": 64,
+     "p": 4160,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 65,
+      "1e-09": 65,
+      "1e-12": 65
+     },
+     "r_d": {
+      "1e-06": 64,
+      "1e-09": 64,
+      "1e-12": 64
+     },
+     "rank_J": {
+      "1e-06": 4160,
+      "1e-09": 4160,
+      "1e-12": 4160
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 1950,
+      "0.001": 95,
+      "0.0001": 4,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 3654,
+      "0.01": 1907,
+      "0.001": 88,
+      "0.0001": 4,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 487431,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "seconds": 259.63227343559265,
+     "status": "computed",
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": 3,
+     "n_in_aug": 65,
+     "n_out": 64,
+     "p": 4160,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 65,
+      "1e-09": 65,
+      "1e-12": 65
+     },
+     "r_d": {
+      "1e-06": 64,
+      "1e-09": 64,
+      "1e-12": 64
+     },
+     "rank_J": {
+      "1e-06": 3324,
+      "1e-09": 3327,
+      "1e-12": 3327
+     },
+     "gap_J": {
+      "1e-06": 1.2167616930124117,
+      "1e-09": 955235570.8818432,
+      "1e-12": 955235570.8818432
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_d": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 3209,
+      "0.001": 1545,
+      "0.0001": 994,
+      "1e-05": 868,
+      "1e-06": 836,
+      "1e-07": 833,
+      "1e-08": 833,
+      "1e-09": 833,
+      "1e-10": 833,
+      "1e-11": 833,
+      "1e-12": 833
+     },
+     "k_abs": {
+      "0.1": 3285,
+      "0.01": 1616,
+      "0.001": 1004,
+      "0.0001": 868,
+      "1e-05": 837,
+      "1e-06": 833,
+      "1e-07": 833,
+      "1e-08": 833,
+      "1e-09": 833,
+      "1e-10": 833
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 587871,
+     "components@1e-06": {
+      "dim_K": 836,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 836
+     },
+     "components@1e-09": {
+      "dim_K": 833,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 833
+     },
+     "components@1e-12": {
+      "dim_K": 833,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 833
+     },
+     "seconds": 217.21417498588562,
+     "status": "computed",
+     "dead_share": {
+      "downstream_null_from_dead": 0,
+      "feature_null_next_from_dead": 0
+     }
+    },
+    {
+     "layer": "readout",
+     "n_in_aug": 65,
+     "n_out": 10,
+     "p": 650,
+     "rows": 100000,
+     "counting_nullity": 0,
+     "r_h": {
+      "1e-06": 65,
+      "1e-09": 65,
+      "1e-12": 65
+     },
+     "r_d": {
+      "1e-06": 10,
+      "1e-09": 10,
+      "1e-12": 10
+     },
+     "rank_J": {
+      "1e-06": 650,
+      "1e-09": 650,
+      "1e-12": 650
+     },
+     "gap_J": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "gap_h": {
+      "1e-06": null,
+      "1e-09": null,
+      "1e-12": null
+     },
+     "k_rel": {
+      "0.01": 170,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0,
+      "1e-11": 0,
+      "1e-12": 0
+     },
+     "k_abs": {
+      "0.1": 280,
+      "0.01": 0,
+      "0.001": 0,
+      "0.0001": 0,
+      "1e-05": 0,
+      "1e-06": 0,
+      "1e-07": 0,
+      "1e-08": 0,
+      "1e-09": 0,
+      "1e-10": 0
+     },
+     "activation": "relu",
+     "dead_units": 0,
+     "dead_units_meaning": "zero feature (ReLU)",
+     "units_never_positive": 0,
+     "units_derivative_below_1e-9": 0,
+     "exact_zero_derivatives": 587871,
+     "components@1e-06": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-09": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "components@1e-12": {
+      "dim_K": 0,
+      "feature_null": 0,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "status": "computed"
+    }
+   ],
+   "computed_blocks": [
+    2,
+    3,
+    "readout"
+   ],
+   "excluded_blocks": [
+    1
+   ],
+   "block_selection": [
+    "2",
+    "3",
+    "readout"
+   ]
+  }
+ }
+}

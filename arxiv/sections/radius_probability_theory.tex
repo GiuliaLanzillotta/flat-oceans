@@ -1,0 +1,50 @@
+\subsubsection{Probabilistic radius guarantees}
+\label{app:radius-confidence}
+Fix the data, reference parameters and a nonzero subspace $M$. Write
+$D_v(t)=\|F_X(\theta_0+tv)-F_X(\theta_0)\|_X$ for the output change along a unit direction $v$. For an invariant subspace this equals $\|A_X^{\rm tr}(tv)\|_X$. The directional failure probability is
+\[
+ p(r,\varepsilon)=\Pr_{v\sim\operatorname{Unif}(S(M))}
+ \left[\sup_{0\le t\le r}D_v(t)>\varepsilon\right].
+\]
+Thus $p(r,\varepsilon)\le\delta$ means that at least a fraction $1-\delta$ of directions preserve the outputs within tolerance along their entire segment of length $r$.
+
+For fixed radii $0<r_1<\cdots<r_m$, let
+\[
+ Y_j(v)=\max_{h\le j}D_v(r_h),\qquad
+ p_j(\varepsilon)=\Pr_v[Y_j(v)>\varepsilon].
+\]
+The grid probability satisfies $p_j(\varepsilon)\le p(r_j,\varepsilon)$. A statistical upper bound on $p_j$ therefore certifies the tested grid; extending it to the continuous ray requires a bound between grid points. For example, if $|D_v(t)-D_v(t')|\le L|t-t'|$ uniformly in $v$ and $\Delta$ is the largest grid spacing (including $r_0=0$), then
+\[
+ p(r_j,\varepsilon)\le p_j(\varepsilon-L\Delta/2)
+ \qquad (\varepsilon\ge L\Delta/2).
+\]
+Indeed, every point lies within $\Delta/2$ of a tested point or the origin, where $D_v(0)=0$.
+
+\begin{proposition}[Simultaneous directional certificates]
+\label{prop:probabilistic-radius}
+Consider $K$ fixed checkpoint--space--radius comparisons at a fixed tolerance. In each comparison, sample $n$ independent uniform directions and observe $k$ failures. For total confidence error $\alpha\in(0,1)$, put $\eta=\alpha/K$ and
+\[
+ \overline p(k,n)=
+ \begin{cases}
+ \operatorname{Beta}^{-1}(1-\eta;k+1,n-k),&k<n,\\
+ 1,&k=n.
+ \end{cases}
+\]
+Here $\operatorname{Beta}^{-1}(q;a,b)$ is the $q$-quantile of the beta distribution with shape parameters $a,b$. With probability at least $1-\alpha$ over the sampled directions, every reported grid failure probability is at most its bound $\overline p$.
+\end{proposition}
+\begin{proof}
+For each comparison the indicators are independent Bernoulli variables with failure probability $p_j$, so their sum is binomial. For $k<n$, the stated bound solves
+\[
+ \Pr_{Z\sim\operatorname{Binomial}(n,\overline p)}[Z\le k]=\eta.
+\]
+Inverting this binomial test gives the one-sided Clopper--Pearson bound with coverage at least $1-\eta$ \citep{clopper1934confidence}. A union bound over the $K$ comparisons gives simultaneous coverage at least $1-K\eta=1-\alpha$. Independence between comparisons is unnecessary.
+\end{proof}
+
+For an allowed failure fraction $\delta$, define
+\[
+ R^{\rm grid}_{M,\delta}(\varepsilon)
+ =\max\bigl(\{0\}\cup\{r_j:p_j(\varepsilon)\le\delta\}\bigr),\qquad
+ \widehat R_{M,\delta}(\varepsilon)
+ =\max\bigl(\{0\}\cup\{r_j:\overline p_j\le\delta\}\bigr).
+\]
+On the simultaneous event, $\widehat R_{M,\delta}\le R^{\rm grid}_{M,\delta}$, including when the radius is selected after viewing the scan. The guarantee concerns random directions in the fixed space; it does not assert preservation along every direction or on unseen data.

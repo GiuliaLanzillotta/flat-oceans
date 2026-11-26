@@ -1,0 +1,464 @@
+{
+ "source": "../reviews/2026-11-17_coverage_sweep/coverage_sweep.json",
+ "generated_by": "scripts/analysis/hgn_fixed_ocean_figure.py",
+ "generated_at": "2026-11-22 02:31:42",
+ "protocol": {
+  "thresholds": [
+   1e-14,
+   1e-13,
+   1e-12,
+   1e-11,
+   1e-10,
+   1e-09,
+   1e-08,
+   1e-07,
+   1e-06,
+   1e-05,
+   0.0001
+  ],
+  "space": "fixed saved bottom-up compatible invariant subspace; no approximate construction",
+  "coverage": "sum ||Q_O^T q_j||^2 / target dimension",
+  "selection": "absolute eigenvalue <= tau for both H and G",
+  "precision": "float64 CPU; classifications float64",
+  "new_experiments": false
+ },
+ "postprocessing_only": true,
+ "coverage_definition": "||Q_O^T Q_target||_F^2 / dim(target)",
+ "caption": "Coverage of the spectral bands H_tau (|lambda_H| <= tau, two-sided; left) and G_tau (lambda_G <= tau; right) by the FIXED saved exact bottom-up ocean Q_O of each seed, over tau = 1e-14..1e-4. Coverage = ||Q_O^T Q_target||_F^2 / dim(target) (projection mass over the whole band dimension, NOT the fraction of Q_O inside the band). Dashed lines: the dimension-matched random-subspace expectation k/p (k = ocean dimension 3619/4573/4072 for seeds 0/1/2, p = 25418). Lower panels: band target dimensions. RESOLUTION QUALIFICATION: band membership |lambda| <= tau is a float64 numerical convention of the saved eigensolves, not an exact algebraic kernel statement. The eigensolver noise floor is ~1e-14 in these units (seed 0: min lambda_G = -2.0e-14, min lambda_H = -1.8e-01; seed 1: min lambda_G = -1.0e-15, min lambda_H = -4.2e-02; seed 2: min lambda_G = -2.9e-14, min lambda_H = -5.0e-01), so labels at tau near 1e-14 count eigenvalues whose zero/sign classification is below numerical resolution; small-tau cells characterize the numerical near-null bands only. H carries genuinely negative O(1e-1) eigenvalues outside the bands; G is PSD to roundoff. The ocean is the fixed exact construction (no approximate construction enters this figure).",
+ "resolution_qualification": "near-zero eigenvalue band labels are float64 numerical conventions (solver noise floor ~1e-14; seed 0: min lambda_G = -2.0e-14, min lambda_H = -1.8e-01; seed 1: min lambda_G = -1.0e-15, min lambda_H = -4.2e-02; seed 2: min lambda_G = -2.9e-14, min lambda_H = -5.0e-01), not exact algebraic kernel theorems",
+ "figure": "memos/figures/hgn_fixed_ocean_coverage.png",
+ "seeds": {
+  "0": {
+   "ocean_dimension": 3619,
+   "p": 25418,
+   "k_over_p_baseline": 0.14237941616177513,
+   "basis_orthogonality_max": 9.325873406851315e-15,
+   "sides": {
+    "H": {
+     "negative_eigenvalue_min": -0.17801267249626201,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 9.769962616701378e-15,
+      "sampled_basis_orthogonality_max_error": 1.354472090042691e-14,
+      "independent_local_vs_global_mass_max_error": 2.220446049250313e-16,
+      "sampled_tight_projection_complement_identity_max_error": 9.992007222939762e-16,
+      "sampled_tight_outside_norm_max": 4.808687472665882e-05
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 3200,
+       "coverage": 0.9999999999904577,
+       "ocean_in_target_mass_fraction": 0.884222160809468
+      },
+      "1e-13": {
+       "target_dim": 3201,
+       "coverage": 0.9996877102995408,
+       "ocean_in_target_mass_fraction": 0.8842222604777094
+      },
+      "1e-12": {
+       "target_dim": 3202,
+       "coverage": 0.9993755597982047,
+       "ocean_in_target_mass_fraction": 0.8842223107139684
+      },
+      "1e-11": {
+       "target_dim": 3212,
+       "coverage": 0.9962805805240296,
+       "ocean_in_target_mass_fraction": 0.8842368678207193
+      },
+      "1e-10": {
+       "target_dim": 3253,
+       "coverage": 0.9840143839938593,
+       "ocean_in_target_mass_fraction": 0.8844981462094569
+      },
+      "1e-09": {
+       "target_dim": 3791,
+       "coverage": 0.8447070935996907,
+       "ocean_in_target_mass_fraction": 0.8848534379210907
+      },
+      "1e-08": {
+       "target_dim": 7505,
+       "coverage": 0.4283572924665475,
+       "ocean_in_target_mass_fraction": 0.8883176236422877
+      },
+      "1e-07": {
+       "target_dim": 11974,
+       "coverage": 0.27335217614211943,
+       "ocean_in_target_mass_fraction": 0.904426349026178
+      },
+      "1e-06": {
+       "target_dim": 16242,
+       "coverage": 0.20779063376182913,
+       "ocean_in_target_mass_fraction": 0.9325602303287176
+      },
+      "1e-05": {
+       "target_dim": 20340,
+       "coverage": 0.17030712177379248,
+       "ocean_in_target_mass_fraction": 0.9571834365512404
+      },
+      "0.0001": {
+       "target_dim": 22993,
+       "coverage": 0.1535169102866358,
+       "ocean_in_target_mass_fraction": 0.9753562636696925
+      }
+     }
+    },
+    "G": {
+     "negative_eigenvalue_min": -2.0157894905869e-14,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 9.103828801926284e-15,
+      "sampled_basis_orthogonality_max_error": 7.105427357601002e-15,
+      "independent_local_vs_global_mass_max_error": 2.220446049250313e-16,
+      "sampled_tight_projection_complement_identity_max_error": 2.1094246971454964e-15,
+      "sampled_tight_outside_norm_max": 0.9999656326541685
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 3836,
+       "coverage": 0.9434273609889543,
+       "ocean_in_target_mass_fraction": 0.9999965064254294
+      },
+      "1e-13": {
+       "target_dim": 3860,
+       "coverage": 0.937564749212407,
+       "ocean_in_target_mass_fraction": 0.9999999811991962
+      },
+      "1e-12": {
+       "target_dim": 3890,
+       "coverage": 0.9303341856952351,
+       "ocean_in_target_mass_fraction": 0.9999999951241958
+      },
+      "1e-11": {
+       "target_dim": 4009,
+       "coverage": 0.902718882389166,
+       "ocean_in_target_mass_fraction": 0.9999999998613336
+      },
+      "1e-10": {
+       "target_dim": 5079,
+       "coverage": 0.7125418389089002,
+       "ocean_in_target_mass_fraction": 0.9999999999497939
+      },
+      "1e-09": {
+       "target_dim": 8346,
+       "coverage": 0.433620896237718,
+       "ocean_in_target_mass_fraction": 0.9999999999999984
+      },
+      "1e-08": {
+       "target_dim": 13098,
+       "coverage": 0.2763017254542679,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-07": {
+       "target_dim": 17841,
+       "coverage": 0.20284737402611966,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-06": {
+       "target_dim": 21304,
+       "coverage": 0.16987420202778825,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-05": {
+       "target_dim": 23428,
+       "coverage": 0.1544732798360936,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "0.0001": {
+       "target_dim": 24283,
+       "coverage": 0.14903430383395794,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      }
+     }
+    }
+   }
+  },
+  "1": {
+   "ocean_dimension": 4573,
+   "p": 25418,
+   "k_over_p_baseline": 0.17991187347548981,
+   "basis_orthogonality_max": 1.2434497875801753e-14,
+   "sides": {
+    "H": {
+     "negative_eigenvalue_min": -0.042497380175470195,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 8.104628079763643e-15,
+      "sampled_basis_orthogonality_max_error": 1.687538997430238e-14,
+      "independent_local_vs_global_mass_max_error": 3.3306690738754696e-16,
+      "sampled_tight_projection_complement_identity_max_error": 1.776356846532425e-15,
+      "sampled_tight_outside_norm_max": 2.413294835025087e-05
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 4116,
+       "coverage": 0.9999999999977546,
+       "ocean_in_target_mass_fraction": 0.9000656024471371
+      },
+      "1e-13": {
+       "target_dim": 4117,
+       "coverage": 0.9999970330372356,
+       "ocean_in_target_mass_fraction": 0.9002816061697572
+      },
+      "1e-12": {
+       "target_dim": 4121,
+       "coverage": 0.9990382306294812,
+       "ocean_in_target_mass_fraction": 0.9002922695001294
+      },
+      "1e-11": {
+       "target_dim": 4136,
+       "coverage": 0.9961724670193888,
+       "ocean_in_target_mass_fraction": 0.900977328579093
+      },
+      "1e-10": {
+       "target_dim": 4196,
+       "coverage": 0.987514495667143,
+       "ocean_in_target_mass_fraction": 0.9061033946685615
+      },
+      "1e-09": {
+       "target_dim": 5526,
+       "coverage": 0.7508612041239354,
+       "ocean_in_target_mass_fraction": 0.9073385116966689
+      },
+      "1e-08": {
+       "target_dim": 11024,
+       "coverage": 0.3787106365612514,
+       "ocean_in_target_mass_fraction": 0.9129468745793212
+      },
+      "1e-07": {
+       "target_dim": 16014,
+       "coverage": 0.2668072569708081,
+       "ocean_in_target_mass_fraction": 0.9343213236672909
+      },
+      "1e-06": {
+       "target_dim": 19549,
+       "coverage": 0.2243605873309571,
+       "ocean_in_target_mass_fraction": 0.95911330018213
+      },
+      "1e-05": {
+       "target_dim": 22481,
+       "coverage": 0.19879248853895862,
+       "ocean_in_target_mass_fraction": 0.9772696118181344
+      },
+      "0.0001": {
+       "target_dim": 23892,
+       "coverage": 0.18951720208599893,
+       "ocean_in_target_mass_fraction": 0.9901476038134018
+      }
+     }
+    },
+    "G": {
+     "negative_eigenvalue_min": -1.0191460060593042e-15,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 1.0658141036401503e-14,
+      "sampled_basis_orthogonality_max_error": 9.992007221626409e-15,
+      "independent_local_vs_global_mass_max_error": 2.220446049250313e-16,
+      "sampled_tight_projection_complement_identity_max_error": 2.1094237471066298e-15,
+      "sampled_tight_outside_norm_max": 0.9999812955914167
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 4753,
+       "coverage": 0.9621291367533361,
+       "ocean_in_target_mass_fraction": 0.9999999534197697
+      },
+      "1e-13": {
+       "target_dim": 4755,
+       "coverage": 0.9617244748539678,
+       "ocean_in_target_mass_fraction": 0.9999999733064984
+      },
+      "1e-12": {
+       "target_dim": 4768,
+       "coverage": 0.9591023489324636,
+       "ocean_in_target_mass_fraction": 0.9999999999365814
+      },
+      "1e-11": {
+       "target_dim": 4793,
+       "coverage": 0.9540997287552335,
+       "ocean_in_target_mass_fraction": 0.9999999999833445
+      },
+      "1e-10": {
+       "target_dim": 4876,
+       "coverage": 0.9378589007229466,
+       "ocean_in_target_mass_fraction": 0.9999999999836185
+      },
+      "1e-09": {
+       "target_dim": 8083,
+       "coverage": 0.5657552888767723,
+       "ocean_in_target_mass_fraction": 0.9999999999980211
+      },
+      "1e-08": {
+       "target_dim": 14492,
+       "coverage": 0.3155534087772565,
+       "ocean_in_target_mass_fraction": 1.0000000000000004
+      },
+      "1e-07": {
+       "target_dim": 19635,
+       "coverage": 0.232900432900433,
+       "ocean_in_target_mass_fraction": 1.0000000000000004
+      },
+      "1e-06": {
+       "target_dim": 22535,
+       "coverage": 0.20292877745728874,
+       "ocean_in_target_mass_fraction": 1.0000000000000004
+      },
+      "1e-05": {
+       "target_dim": 23778,
+       "coverage": 0.19232063251745318,
+       "ocean_in_target_mass_fraction": 1.0000000000000004
+      },
+      "0.0001": {
+       "target_dim": 24247,
+       "coverage": 0.18860065162700548,
+       "ocean_in_target_mass_fraction": 1.0000000000000004
+      }
+     }
+    }
+   }
+  },
+  "2": {
+   "ocean_dimension": 4072,
+   "p": 25418,
+   "k_over_p_baseline": 0.1602014320560233,
+   "basis_orthogonality_max": 9.658940314238862e-15,
+   "sides": {
+    "H": {
+     "negative_eigenvalue_min": -0.5007483183608031,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 1.2545520178264269e-14,
+      "sampled_basis_orthogonality_max_error": 1.4432899320127035e-14,
+      "independent_local_vs_global_mass_max_error": 2.220446049250313e-16,
+      "sampled_tight_projection_complement_identity_max_error": 1.5543122344903809e-15,
+      "sampled_tight_outside_norm_max": 6.618863860130667e-05
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 3434,
+       "coverage": 0.9999999999720645,
+       "ocean_in_target_mass_fraction": 0.8433202357328264
+      },
+      "1e-13": {
+       "target_dim": 3434,
+       "coverage": 0.9999999999720645,
+       "ocean_in_target_mass_fraction": 0.8433202357328264
+      },
+      "1e-12": {
+       "target_dim": 3437,
+       "coverage": 0.9991324087136458,
+       "ocean_in_target_mass_fraction": 0.8433246779834973
+      },
+      "1e-11": {
+       "target_dim": 3450,
+       "coverage": 0.9954376379945158,
+       "ocean_in_target_mass_fraction": 0.8433840498725637
+      },
+      "1e-10": {
+       "target_dim": 3486,
+       "coverage": 0.9857849253268078,
+       "ocean_in_target_mass_fraction": 0.8439209846977535
+      },
+      "1e-09": {
+       "target_dim": 4374,
+       "coverage": 0.7866282428880343,
+       "ocean_in_target_mass_fraction": 0.8449685497034043
+      },
+      "1e-08": {
+       "target_dim": 7607,
+       "coverage": 0.4559578237174137,
+       "ocean_in_target_mass_fraction": 0.8517856495624672
+      },
+      "1e-07": {
+       "target_dim": 12005,
+       "coverage": 0.2957417284518065,
+       "ocean_in_target_mass_fraction": 0.8719006508015563
+      },
+      "1e-06": {
+       "target_dim": 16478,
+       "coverage": 0.22553482998797936,
+       "ocean_in_target_mass_fraction": 0.9126628017047946
+      },
+      "1e-05": {
+       "target_dim": 19982,
+       "coverage": 0.1937972262868176,
+       "ocean_in_target_mass_fraction": 0.9509961138662055
+      },
+      "0.0001": {
+       "target_dim": 22306,
+       "coverage": 0.17923289319126273,
+       "ocean_in_target_mass_fraction": 0.9818194782721775
+      }
+     }
+    },
+    "G": {
+     "negative_eigenvalue_min": -2.8534930494421426e-14,
+     "checks": {
+      "parent_count_mask_matches": true,
+      "all_column_norm_max_error": 1.4210854715202004e-14,
+      "sampled_basis_orthogonality_max_error": 9.547918011776346e-15,
+      "independent_local_vs_global_mass_max_error": 2.220446049250313e-16,
+      "sampled_tight_projection_complement_identity_max_error": 1.8850127303314846e-15,
+      "sampled_tight_outside_norm_max": 0.9348457626734377
+     },
+     "cells": {
+      "1e-14": {
+       "target_dim": 4281,
+       "coverage": 0.9506054486446875,
+       "ocean_in_target_mass_fraction": 0.999396347163042
+      },
+      "1e-13": {
+       "target_dim": 4318,
+       "coverage": 0.9430224135477743,
+       "ocean_in_target_mass_fraction": 0.9999928245823402
+      },
+      "1e-12": {
+       "target_dim": 4381,
+       "coverage": 0.9294678952605724,
+       "ocean_in_target_mass_fraction": 0.9999997173714557
+      },
+      "1e-11": {
+       "target_dim": 4633,
+       "coverage": 0.8789121128233782,
+       "ocean_in_target_mass_fraction": 0.9999999554790548
+      },
+      "1e-10": {
+       "target_dim": 6557,
+       "coverage": 0.6210157082206408,
+       "ocean_in_target_mass_fraction": 0.9999999997059779
+      },
+      "1e-09": {
+       "target_dim": 9714,
+       "coverage": 0.4191887996705375,
+       "ocean_in_target_mass_fraction": 0.9999999999999022
+      },
+      "1e-08": {
+       "target_dim": 13463,
+       "coverage": 0.3024585902102058,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-07": {
+       "target_dim": 17727,
+       "coverage": 0.22970609804253403,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-06": {
+       "target_dim": 21501,
+       "coverage": 0.1893865401609228,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "1e-05": {
+       "target_dim": 23655,
+       "coverage": 0.17214119636440503,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      },
+      "0.0001": {
+       "target_dim": 24271,
+       "coverage": 0.16777223847389894,
+       "ocean_in_target_mass_fraction": 1.0000000000000002
+      }
+     }
+    }
+   }
+  }
+ }
+}

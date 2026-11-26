@@ -1,0 +1,5180 @@
+{
+ "family": "cnn",
+ "seed": 2,
+ "spawn": 200,
+ "p": 45114,
+ "disp_norm": 18.061522890605534,
+ "eps_grid": [
+  0.1,
+  0.01,
+  0.001,
+  0.0001,
+  1e-05,
+  1e-06,
+  1e-07,
+  1e-08,
+  1e-09,
+  1e-10
+ ],
+ "scope": "FIRST-ORDER SENSITIVITY DIAGNOSTIC (PI 2026-11-16): per-layer Jacobian-tail threshold sweep from authenticated stored factors; ABSOLUTE exposure cutoff sigma/sqrt(s) = ||J_ell v||_X per unit parameter length, identical at both endpoints; tails include numerical-kernel directions; NO angular filtering. A spectral threshold is NOT a finite-radius output tolerance; this diagnostic does not replace the compatible invariant-subspace construction and does not establish finite-radius flatness. Conventions: memos/2026-11-16_jtail_sweep_conventions.md.",
+ "statistics_convention": "controls reported as exceedance counts among 256 draws (plus-one MC estimate 1/257)",
+ "validation": {
+  "conv1": {
+   "A": {
+    "columns": [
+     12,
+     52,
+     72,
+     89,
+     99,
+     103,
+     106,
+     145
+    ],
+    "stored_expo": [
+     0.22333085790319146,
+     0.05812831073612354,
+     0.03911607778272962,
+     0.029614231655252884,
+     0.02513277398451003,
+     0.02382228094716653,
+     0.02278091277870049,
+     0.011135459958347433
+    ],
+    "jvp_expo": [
+     0.22333085882964346,
+     0.05812831059898028,
+     0.03911607766594076,
+     0.02961423148256776,
+     0.02513277395257817,
+     0.023822280936517608,
+     0.02278091259897364,
+     0.011135459892149552
+    ],
+    "abs_diff_max": 9.264519984508723e-10,
+    "abs_diff_over_sigma0rate": 1.787522061591582e-09
+   },
+   "B": {
+    "columns": [
+     12,
+     52,
+     72,
+     89,
+     99,
+     103,
+     106,
+     145
+    ],
+    "stored_expo": [
+     0.19494869183998628,
+     0.05285670184043883,
+     0.035911815168589524,
+     0.02685565485343706,
+     0.022479512516615962,
+     0.02144959610665743,
+     0.020436342718197532,
+     0.010161376414432648
+    ],
+    "jvp_expo": [
+     0.1949486910053296,
+     0.052856701947320915,
+     0.03591181520986046,
+     0.026855654657766206,
+     0.0224795125364721,
+     0.021449596137712773,
+     0.02043634280151465,
+     0.010161376351596207
+    ],
+    "abs_diff_max": 8.346566771066932e-10,
+    "abs_diff_over_sigma0rate": 1.8075331465433276e-09
+   }
+  },
+  "conv2": {
+   "A": {
+    "columns": [
+     546,
+     625,
+     946,
+     1044,
+     1233,
+     1495,
+     1852,
+     2319
+    ],
+    "stored_expo": [
+     0.006536707962564439,
+     0.005444998562030858,
+     0.002864162444757857,
+     0.0024140595485503884,
+     0.0017631829780943315,
+     0.0011695566694491049,
+     0.0006788843227519227,
+     8.471688265722504e-05
+    ],
+    "jvp_expo": [
+     0.006536707958675271,
+     0.005444998564308903,
+     0.0028641624410266717,
+     0.0024140595478155612,
+     0.0017631829772198778,
+     0.0011695566693019617,
+     0.0006788843232036,
+     8.471688348107808e-05
+    ],
+    "abs_diff_max": 3.889167633774893e-12,
+    "abs_diff_over_sigma0rate": 1.1842728493307847e-11
+   },
+   "B": {
+    "columns": [
+     546,
+     625,
+     946,
+     1044,
+     1233,
+     1495,
+     1852,
+     2319
+    ],
+    "stored_expo": [
+     0.00590401411210889,
+     0.00491837858823862,
+     0.002597334407397842,
+     0.002189164856255356,
+     0.0016006749440311905,
+     0.0010674629438979602,
+     0.0006183189814132231,
+     6.741751841936794e-05
+    ],
+    "jvp_expo": [
+     0.005904014112195192,
+     0.004918378591504612,
+     0.002597334409608746,
+     0.0021891648526696805,
+     0.0016006749438180249,
+     0.0010674629428494523,
+     0.0006183189817374277,
+     6.741751789902634e-05
+    ],
+    "abs_diff_max": 3.5856755932484052e-12,
+    "abs_diff_over_sigma0rate": 1.2880685559446806e-11
+   }
+  },
+  "conv3": {
+   "A": {
+    "columns": [
+     625,
+     939,
+     989,
+     1451,
+     1524,
+     1532,
+     1579,
+     4138
+    ],
+    "stored_expo": [
+     0.012479067082179282,
+     0.0080875091420908,
+     0.007597724478657686,
+     0.004538139009201536,
+     0.004211501294773341,
+     0.0041831584174485265,
+     0.003989738466150647,
+     0.0005619443031392278
+    ],
+    "jvp_expo": [
+     0.01247906707856179,
+     0.008087509144447603,
+     0.007597724474765963,
+     0.00453813900914161,
+     0.004211501291423853,
+     0.004183158418849182,
+     0.003989738463533585,
+     0.0005619443027232959
+    ],
+    "abs_diff_max": 3.8917228814550064e-12,
+    "abs_diff_over_sigma0rate": 1.582133685861094e-11
+   },
+   "B": {
+    "columns": [
+     625,
+     939,
+     989,
+     1451,
+     1524,
+     1532,
+     1579,
+     4138
+    ],
+    "stored_expo": [
+     0.011284304895289787,
+     0.007296205369592653,
+     0.0068728112869834365,
+     0.004109106472049116,
+     0.0038201375070649607,
+     0.003788788679414052,
+     0.0036185238719927677,
+     0.0004934245024058503
+    ],
+    "jvp_expo": [
+     0.011284304892638545,
+     0.0072962053644081365,
+     0.0068728112816622425,
+     0.00410910647299574,
+     0.0038201375046061545,
+     0.0037887886826675266,
+     0.003618523872650309,
+     0.0004934245021946725
+    ],
+    "abs_diff_max": 5.321194006258079e-12,
+    "abs_diff_over_sigma0rate": 2.7690413390047976e-11
+   }
+  },
+  "conv4": {
+   "A": {
+    "columns": [
+     98,
+     1896,
+     2128,
+     2794,
+     4753,
+     5897,
+     6482,
+     9215
+    ],
+    "stored_expo": [
+     0.03997255419520214,
+     0.003596409293984994,
+     0.0030358429313317625,
+     0.001992546624126167,
+     0.0008003519824203647,
+     0.0005154557684404659,
+     0.0004153701334681117,
+     0.00011336588261641474
+    ],
+    "jvp_expo": [
+     0.03997255420321667,
+     0.003596409295055319,
+     0.0030358429317777855,
+     0.0019925466223041847,
+     0.0008003519821168206,
+     0.000515455768753054,
+     0.00041537013358640423,
+     0.00011336588224030255
+    ],
+    "abs_diff_max": 8.014533481315311e-12,
+    "abs_diff_over_sigma0rate": 3.194531772217003e-11
+   },
+   "B": {
+    "columns": [
+     98,
+     1896,
+     2128,
+     2794,
+     4753,
+     5897,
+     6482,
+     9215
+    ],
+    "stored_expo": [
+     0.03712080687324944,
+     0.0032844350284301736,
+     0.0027762860773218935,
+     0.0018287147888596783,
+     0.000716065991333652,
+     0.00045149764791472066,
+     0.00036012402098220086,
+     9.663261566866891e-05
+    ],
+    "jvp_expo": [
+     0.0371208068819131,
+     0.0032844350273924,
+     0.0027762860792112072,
+     0.0018287147894151946,
+     0.0007160659913422188,
+     0.00045149764794751203,
+     0.0003601240210161229,
+     9.663261568381415e-05
+    ],
+    "abs_diff_max": 8.663660067131929e-12,
+    "abs_diff_over_sigma0rate": 3.5802551738174235e-11
+   }
+  },
+  "conv5": {
+   "A": {
+    "columns": [
+     3604,
+     3760,
+     6857,
+     13618,
+     13791,
+     14344,
+     14361,
+     15309,
+     16274,
+     16958,
+     17412,
+     17443,
+     17597,
+     17966,
+     18299,
+     18338
+    ],
+    "stored_expo": [
+     0.004781694845261401,
+     0.0043795883837093,
+     0.0007417881417699488,
+     5.175338801049521e-05,
+     4.768807464659728e-05,
+     3.536304284468286e-05,
+     3.4999151578042444e-05,
+     1.4564301173970887e-05,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16,
+     2.047388399198317e-16
+    ],
+    "jvp_expo": [
+     0.004781694842210777,
+     0.0043795883878987515,
+     0.0007417881414519377,
+     5.17533879342108e-05,
+     4.76880746377172e-05,
+     3.536304285284534e-05,
+     3.4999151631379526e-05,
+     1.45643010801809e-05,
+     2.7325921509866123e-16,
+     1.9709046572946705e-16,
+     1.5298066852755989e-16,
+     1.13328420750049e-16,
+     8.167449678899813e-17,
+     8.94098342520582e-17,
+     5.722998283397269e-17,
+     3.712168871766164e-17
+    ],
+    "abs_diff_max": 4.18945173691343e-12,
+    "abs_diff_over_sigma0rate": 1.7816160314489827e-12
+   },
+   "B": {
+    "columns": [
+     1308,
+     1656,
+     2737,
+     4294,
+     8113,
+     8695,
+     12582,
+     13221,
+     16579,
+     16864,
+     17021,
+     17157,
+     17415,
+     17513,
+     18245,
+     18350
+    ],
+    "stored_expo": [
+     0.01855929284559975,
+     0.014397056274785904,
+     0.007405509540634454,
+     0.003077583619042248,
+     0.00035800356895963464,
+     0.00027514951434720516,
+     7.159297447305681e-05,
+     5.74555538285064e-05,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16,
+     1.918103924489443e-16
+    ],
+    "jvp_expo": [
+     0.018559292864937484,
+     0.014397056269134317,
+     0.007405509551019464,
+     0.003077583619615976,
+     0.00035800356887429253,
+     0.0002751495143247349,
+     7.159297448050635e-05,
+     5.745555377158235e-05,
+     4.250490475719743e-16,
+     1.9322196862781935e-16,
+     1.6878545762725626e-16,
+     1.3552207018504227e-16,
+     1.0221530221016022e-16,
+     1.0300987889769548e-16,
+     4.6943511863216514e-17,
+     6.013724280907268e-17
+    ],
+    "abs_diff_max": 1.9337732803936802e-11,
+    "abs_diff_over_sigma0rate": 8.515444226296944e-12
+   }
+  },
+  "readout": {
+   "A": {
+    "columns": [
+     2955,
+     4279,
+     4368,
+     4421,
+     4877,
+     4985,
+     5352,
+     6212,
+     7017,
+     7183,
+     7306,
+     8129,
+     8901,
+     9278,
+     9982,
+     10058
+    ],
+    "stored_expo": [
+     0.006393523760600907,
+     0.0026078292429987542,
+     0.0024356355894935926,
+     0.002377734395601967,
+     0.001612126237630081,
+     0.001473399447431204,
+     0.000980832453263597,
+     0.00035020512577779895,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16,
+     2.0484361075990994e-16
+    ],
+    "jvp_expo": [
+     0.006393523750017028,
+     0.0026078292660725796,
+     0.0024356355957195937,
+     0.0023777343867719225,
+     0.0016121262100950453,
+     0.001473399447387054,
+     0.0009808324502503171,
+     0.0003502051264316116,
+     5.37599352707738e-16,
+     2.0008409884933286e-16,
+     1.6615535465688265e-16,
+     5.2891981833112696e-17,
+     3.5508973298426525e-18,
+     5.7517329314799085e-31,
+     7.727990661757547e-46,
+     3.8084593177659786e-46
+    ],
+    "abs_diff_max": 2.7535035666478858e-11,
+    "abs_diff_over_sigma0rate": 1.245300894115703e-11
+   },
+   "B": {
+    "columns": [
+     100,
+     792,
+     1502,
+     1954,
+     2241,
+     2873,
+     5255,
+     6993,
+     7318,
+     7642,
+     7747,
+     7750,
+     7993,
+     8563,
+     8666,
+     9602
+    ],
+    "stored_expo": [
+     0.3825468307226062,
+     0.04970909439874542,
+     0.024083866230586327,
+     0.014904185538143752,
+     0.011593018923977636,
+     0.007545878320318404,
+     0.001457749578718614,
+     2.653201122552086e-05,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16,
+     1.9525992655338538e-16
+    ],
+    "jvp_expo": [
+     0.3825468327544673,
+     0.04970909479969343,
+     0.024083866357935874,
+     0.014904185639590438,
+     0.011593019118015696,
+     0.0075458783713823925,
+     0.0014577495831459121,
+     2.653201063656897e-05,
+     4.239504888781237e-16,
+     1.5526939923646095e-16,
+     1.2746212713804485e-16,
+     1.6472410979624008e-16,
+     8.532239565406027e-17,
+     3.093360459592707e-17,
+     2.8163178115297577e-17,
+     2.0571492765883005e-23
+    ],
+    "abs_diff_max": 2.03186112379683e-09,
+    "abs_diff_over_sigma0rate": 9.554941081468928e-10
+   }
+  }
+ },
+ "blocks": {
+  "conv1": {
+   "n": 160,
+   "block_norm_frac_of_d": 0.011253236240718693,
+   "sigma0_rate": {
+    "A": 0.5182884275151121,
+    "B": 0.4617656272046052
+   },
+   "declared_rank_abs_rate": {
+    "A": 0.006051921337203479,
+    "B": 0.005416365521373583
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      31,
+      29
+     ],
+     "tail_dims": [
+      129,
+      131
+     ],
+     "tail_fraction_of_n": [
+      0.80625,
+      0.81875
+     ],
+     "slice_orthonormality_max_err": 1.733170662543415e-08,
+     "principal_angles": {
+      "zeros_count": 100,
+      "smallest_nonzero_angle_deg": 1.9069777174289448,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9888861069361293,
+      "random_expectation_mean_sq_cos": 0.81875,
+      "excess_over_random": 0.17013610693612935,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9631704993810043,
+       "sq_mass_frac": 0.9276974108778532,
+       "ctrl_mean": 0.8963311100061688,
+       "ctrl_p5": 0.8545408796338205,
+       "ctrl_p50": 0.8976830090917628,
+       "ctrl_p95": 0.9339300343516812,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9654788383389589,
+       "sq_mass_frac": 0.9321493872803455,
+       "ctrl_mean": 0.9041001625671821,
+       "ctrl_p5": 0.8624323700102665,
+       "ctrl_p50": 0.9066682287768117,
+       "ctrl_p95": 0.9389374042772477,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9586672365215344,
+       "sq_mass_frac": 0.9190428703798356,
+       "ctrl_mean": 0.8913222890891505,
+       "ctrl_p5": 0.8502738862185371,
+       "ctrl_p50": 0.8934227807186237,
+       "ctrl_p95": 0.9290637366635476,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9530291498743674,
+       "sq_mass_frac": 0.9082645605102594,
+       "ctrl_mean": 0.8915698462273643,
+       "ctrl_p5": 0.8525187953040376,
+       "ctrl_p50": 0.8946502958854945,
+       "ctrl_p95": 0.9288377846597496,
+       "ctrl_exceedances_of_256": 1
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      151,
+      146
+     ],
+     "tail_dims": [
+      9,
+      14
+     ],
+     "tail_fraction_of_n": [
+      0.05625,
+      0.0875
+     ],
+     "slice_orthonormality_max_err": 4.9199216034523374e-08,
+     "principal_angles": {
+      "zeros_count": 0,
+      "smallest_nonzero_angle_deg": 7.975834912245931,
+      "median_angle_deg": 12.514674617237402,
+      "mean_sq_cos": 0.9107536850418566,
+      "random_expectation_mean_sq_cos": 0.0875,
+      "excess_over_random": 0.8232536850418566,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.27707821846502334,
+       "sq_mass_frac": 0.0767723391477512,
+       "ctrl_mean": 0.2310471800342664,
+       "ctrl_p5": 0.1388926101080624,
+       "ctrl_p50": 0.23186435209548878,
+       "ctrl_p95": 0.31911399914838623,
+       "ctrl_exceedances_of_256": 56
+      },
+      "PB_d": {
+       "norm_frac": 0.36631962279707464,
+       "sq_mass_frac": 0.13419006604619105,
+       "ctrl_mean": 0.29379766031255494,
+       "ctrl_p5": 0.20470742128587952,
+       "ctrl_p50": 0.2912786357846705,
+       "ctrl_p95": 0.38632318566884455,
+       "ctrl_exceedances_of_256": 26
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.2647953087066412,
+       "sq_mass_frac": 0.07011655551304541,
+       "ctrl_mean": 0.22038501233062802,
+       "ctrl_p5": 0.13145799595480523,
+       "ctrl_p50": 0.22136494711920113,
+       "ctrl_p95": 0.30703454424508775,
+       "ctrl_exceedances_of_256": 52
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.27400742516352566,
+       "sq_mass_frac": 0.07508006904474512,
+       "ctrl_mean": 0.21963302273841712,
+       "ctrl_p5": 0.13829706392610952,
+       "ctrl_p50": 0.2205957398708039,
+       "ctrl_p95": 0.3077127681732785,
+       "ctrl_exceedances_of_256": 41
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      160,
+      160
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    }
+   }
+  },
+  "conv2": {
+   "n": 2320,
+   "block_norm_frac_of_d": 0.1302806354749983,
+   "sigma0_rate": {
+    "A": 0.3284013169745979,
+    "B": 0.2783761451748692
+   },
+   "declared_rank_abs_rate": {
+    "A": 8.471688265722504e-05,
+    "B": 6.741751841936794e-05
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      25,
+      22
+     ],
+     "tail_dims": [
+      2295,
+      2298
+     ],
+     "tail_fraction_of_n": [
+      0.9892241379310345,
+      0.9905172413793103
+     ],
+     "slice_orthonormality_max_err": 1.3593384418086885e-08,
+     "principal_angles": {
+      "zeros_count": 2273,
+      "smallest_nonzero_angle_deg": 5.873732117521167,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.999421235088659,
+      "random_expectation_mean_sq_cos": 0.9905172413793103,
+      "excess_over_random": 0.00890399370934869,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9992643118699079,
+       "sq_mass_frac": 0.9985291649768406,
+       "ctrl_mean": 0.9945478958922686,
+       "ctrl_p5": 0.9913889984995675,
+       "ctrl_p50": 0.9946933820205465,
+       "ctrl_p95": 0.9967692357749329,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9993263401112652,
+       "sq_mass_frac": 0.9986531340401761,
+       "ctrl_mean": 0.9952129745367513,
+       "ctrl_p5": 0.9924360438083241,
+       "ctrl_p50": 0.995382628448912,
+       "ctrl_p95": 0.997181720634825,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9991847468310483,
+       "sq_mass_frac": 0.9983701582998261,
+       "ctrl_mean": 0.994260295847842,
+       "ctrl_p5": 0.9911148067610107,
+       "ctrl_p50": 0.9943977068475067,
+       "ctrl_p95": 0.9964910746301883,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9991875218404341,
+       "sq_mass_frac": 0.998375703801628,
+       "ctrl_mean": 0.9942816805412876,
+       "ctrl_p5": 0.9912343065306644,
+       "ctrl_p50": 0.9944827227162346,
+       "ctrl_p95": 0.9965886414403868,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      389,
+      357
+     ],
+     "tail_dims": [
+      1931,
+      1963
+     ],
+     "tail_fraction_of_n": [
+      0.8323275862068965,
+      0.8461206896551724
+     ],
+     "slice_orthonormality_max_err": 1.3593384418086885e-08,
+     "principal_angles": {
+      "zeros_count": 1574,
+      "smallest_nonzero_angle_deg": 1.3925612050381369,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9654402207223306,
+      "random_expectation_mean_sq_cos": 0.8461206896551724,
+      "excess_over_random": 0.1193195310671582,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9698507288813378,
+       "sq_mass_frac": 0.9406104363116623,
+       "ctrl_mean": 0.9114623838748326,
+       "ctrl_p5": 0.9012920122603003,
+       "ctrl_p50": 0.9116767016607665,
+       "ctrl_p95": 0.9208192100543564,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9770298306743175,
+       "sq_mass_frac": 0.9545872900274854,
+       "ctrl_mean": 0.9195917178401112,
+       "ctrl_p5": 0.9093208261403753,
+       "ctrl_p50": 0.9200983891858794,
+       "ctrl_p95": 0.9276741803170108,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9603232971660648,
+       "sq_mass_frac": 0.9222208350799019,
+       "ctrl_mean": 0.895818446232967,
+       "ctrl_p5": 0.8857195104786998,
+       "ctrl_p50": 0.8959245741152033,
+       "ctrl_p95": 0.9052862279593437,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9616995462268324,
+       "sq_mass_frac": 0.9248660172128954,
+       "ctrl_mean": 0.8961974449156618,
+       "ctrl_p5": 0.8856800981964487,
+       "ctrl_p50": 0.8967041538956716,
+       "ctrl_p95": 0.9057430081343314,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      1598,
+      1538
+     ],
+     "tail_dims": [
+      722,
+      782
+     ],
+     "tail_fraction_of_n": [
+      0.3112068965517241,
+      0.33706896551724136
+     ],
+     "slice_orthonormality_max_err": 4.585784074695454e-08,
+     "principal_angles": {
+      "zeros_count": 0,
+      "smallest_nonzero_angle_deg": 1.6046329177293226,
+      "median_angle_deg": 21.072667744664212,
+      "mean_sq_cos": 0.739397325413755,
+      "random_expectation_mean_sq_cos": 0.33706896551724136,
+      "excess_over_random": 0.40232835989651367,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.6876610008349173,
+       "sq_mass_frac": 0.4728776520692802,
+       "ctrl_mean": 0.5568069750579365,
+       "ctrl_p5": 0.5377454679933575,
+       "ctrl_p50": 0.5571573158445547,
+       "ctrl_p95": 0.5775472991527869,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.7226498766530277,
+       "sq_mass_frac": 0.5222228442266361,
+       "ctrl_mean": 0.5792042077787871,
+       "ctrl_p5": 0.5594046121320583,
+       "ctrl_p50": 0.5795739697735695,
+       "ctrl_p95": 0.5991039141218327,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.6205487080478124,
+       "sq_mass_frac": 0.3850806990598091,
+       "ctrl_mean": 0.47845439222821395,
+       "ctrl_p5": 0.45895675061092134,
+       "ctrl_p50": 0.47920997312542213,
+       "ctrl_p95": 0.49847754809114564,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.6288490259468016,
+       "sq_mass_frac": 0.3954510974342411,
+       "ctrl_mean": 0.47878180440421536,
+       "ctrl_p5": 0.45771369770740566,
+       "ctrl_p50": 0.47972082131231497,
+       "ctrl_p95": 0.4967454760047739,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      2319,
+      2319
+     ],
+     "tail_dims": [
+      1,
+      1
+     ],
+     "tail_fraction_of_n": [
+      0.0004310344827586207,
+      0.0004310344827586207
+     ],
+     "slice_orthonormality_max_err": 1.9448454402493098e-08,
+     "principal_angles": {
+      "zeros_count": 0,
+      "smallest_nonzero_angle_deg": 12.59206691572387,
+      "median_angle_deg": 12.59206691572387,
+      "mean_sq_cos": 0.9524724616227414,
+      "random_expectation_mean_sq_cos": 0.0004310344827586207,
+      "excess_over_random": 0.9520414271399827,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.07951708509812472,
+       "sq_mass_frac": 0.006322966822502408,
+       "ctrl_mean": 0.016861022704668337,
+       "ctrl_p5": 0.0010445845811066397,
+       "ctrl_p50": 0.012905776860455447,
+       "ctrl_p95": 0.041343609429214945,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.06330097979252822,
+       "sq_mass_frac": 0.004007014042694066,
+       "ctrl_mean": 0.017176820149615052,
+       "ctrl_p5": 0.0009911580860912646,
+       "ctrl_p50": 0.013247912600160991,
+       "ctrl_p95": 0.04384109199742079,
+       "ctrl_exceedances_of_256": 1
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.07760445582609875,
+       "sq_mass_frac": 0.006022451564064912,
+       "ctrl_mean": 0.016455463502624564,
+       "ctrl_p5": 0.001019459124804186,
+       "ctrl_p50": 0.012595353426660284,
+       "ctrl_p95": 0.040349169083370474,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.06177839964066361,
+       "sq_mass_frac": 0.0038165706621615457,
+       "ctrl_mean": 0.016763665637352064,
+       "ctrl_p5": 0.0009673177342643443,
+       "ctrl_p50": 0.012929260205762787,
+       "ctrl_p95": 0.04278658104466578,
+       "ctrl_exceedances_of_256": 1
+      }
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      2320,
+      2320
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    }
+   }
+  },
+  "conv3": {
+   "n": 4640,
+   "block_norm_frac_of_d": 0.19518552443218887,
+   "sigma0_rate": {
+    "A": 0.2459793958142603,
+    "B": 0.19216737328199415
+   },
+   "declared_rank_abs_rate": {
+    "A": 0.00022606212931940546,
+    "B": 0.0002077933685367607
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      19,
+      14
+     ],
+     "tail_dims": [
+      4621,
+      4626
+     ],
+     "tail_fraction_of_n": [
+      0.9959051724137931,
+      0.9969827586206896
+     ],
+     "slice_orthonormality_max_err": 5.144310755156312e-09,
+     "principal_angles": {
+      "zeros_count": 4607,
+      "smallest_nonzero_angle_deg": 10.384782071669612,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9995670381264313,
+      "random_expectation_mean_sq_cos": 0.9969827586206896,
+      "excess_over_random": 0.0025842795057416934,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.999338345303957,
+       "sq_mass_frac": 0.9986771283948509,
+       "ctrl_mean": 0.9979399099834249,
+       "ctrl_p5": 0.9966552347514189,
+       "ctrl_p50": 0.9980716674362488,
+       "ctrl_p95": 0.9989247720544114,
+       "ctrl_exceedances_of_256": 1
+      },
+      "PB_d": {
+       "norm_frac": 0.999768184050374,
+       "sq_mass_frac": 0.9995364218393826,
+       "ctrl_mean": 0.9984902463068652,
+       "ctrl_p5": 0.9974317762700906,
+       "ctrl_p50": 0.9985785957191275,
+       "ctrl_p95": 0.9993031686595536,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.999266287158183,
+       "sq_mass_frac": 0.9985331126509003,
+       "ctrl_mean": 0.9977197615971634,
+       "ctrl_p5": 0.9963484955190067,
+       "ctrl_p50": 0.997848703665008,
+       "ctrl_p95": 0.9987438295508841,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9994358632313737,
+       "sq_mass_frac": 0.998872044713041,
+       "ctrl_mean": 0.9977287698311561,
+       "ctrl_p5": 0.9965352659050494,
+       "ctrl_p50": 0.9978121223534526,
+       "ctrl_p95": 0.9987467799888428,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      779,
+      705
+     ],
+     "tail_dims": [
+      3861,
+      3935
+     ],
+     "tail_fraction_of_n": [
+      0.8321120689655173,
+      0.8480603448275862
+     ],
+     "slice_orthonormality_max_err": 5.835004812659861e-09,
+     "principal_angles": {
+      "zeros_count": 3156,
+      "smallest_nonzero_angle_deg": 2.706167529875646,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9396204621053492,
+      "random_expectation_mean_sq_cos": 0.8480603448275862,
+      "excess_over_random": 0.09156011727776303,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.962816286136736,
+       "sq_mass_frac": 0.927015200850137,
+       "ctrl_mean": 0.9122358852416098,
+       "ctrl_p5": 0.9059398954723129,
+       "ctrl_p50": 0.9123527583370559,
+       "ctrl_p95": 0.9182213849432508,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9706910870763081,
+       "sq_mass_frac": 0.9422411865293848,
+       "ctrl_mean": 0.9211234415014156,
+       "ctrl_p5": 0.9148145592759278,
+       "ctrl_p50": 0.9212900485657796,
+       "ctrl_p95": 0.9267449767876478,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9437736930178353,
+       "sq_mass_frac": 0.8907087836325233,
+       "ctrl_mean": 0.8843597506466863,
+       "ctrl_p5": 0.8773471980945883,
+       "ctrl_p50": 0.884162583393233,
+       "ctrl_p95": 0.891307941262403,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9453150888246012,
+       "sq_mass_frac": 0.8936206171594637,
+       "ctrl_mean": 0.8844377282059047,
+       "ctrl_p5": 0.8771052113608462,
+       "ctrl_p50": 0.8844519958521277,
+       "ctrl_p95": 0.8911911484082679,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      3333,
+      3177
+     ],
+     "tail_dims": [
+      1307,
+      1463
+     ],
+     "tail_fraction_of_n": [
+      0.2816810344827586,
+      0.31530172413793106
+     ],
+     "slice_orthonormality_max_err": 4.168760048273157e-08,
+     "principal_angles": {
+      "zeros_count": 0,
+      "smallest_nonzero_angle_deg": 6.6480788433885705,
+      "median_angle_deg": 31.026606052518723,
+      "mean_sq_cos": 0.6357154449336031,
+      "random_expectation_mean_sq_cos": 0.31530172413793106,
+      "excess_over_random": 0.32041372079567204,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.6527279965403994,
+       "sq_mass_frac": 0.42605383746764364,
+       "ctrl_mean": 0.5306072636746357,
+       "ctrl_p5": 0.5170831460398652,
+       "ctrl_p50": 0.5302654474516568,
+       "ctrl_p95": 0.5448589881446737,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.6835151475900542,
+       "sq_mass_frac": 0.46719295698505353,
+       "ctrl_mean": 0.5622901376719471,
+       "ctrl_p5": 0.5485459805724662,
+       "ctrl_p50": 0.562651332743286,
+       "ctrl_p95": 0.5753836481679957,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.5370674440541012,
+       "sq_mass_frac": 0.28844143946280515,
+       "ctrl_mean": 0.4230617905413598,
+       "ctrl_p5": 0.41001426751975334,
+       "ctrl_p50": 0.4227829697100639,
+       "ctrl_p95": 0.43594926424930375,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.5384315919418129,
+       "sq_mass_frac": 0.2899085792009949,
+       "ctrl_mean": 0.4234472400051317,
+       "ctrl_p5": 0.41119297234229196,
+       "ctrl_p50": 0.42359058176682,
+       "ctrl_p95": 0.4360621775112471,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      4640,
+      4640
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    }
+   }
+  },
+  "conv4": {
+   "n": 9248,
+   "block_norm_frac_of_d": 0.33604541324609405,
+   "sigma0_rate": {
+    "A": 0.2508828852797175,
+    "B": 0.2419844297828179
+   },
+   "declared_rank_abs_rate": {
+    "A": 3.577491842467792e-05,
+    "B": 3.0156592099581256e-05
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      18,
+      14
+     ],
+     "tail_dims": [
+      9230,
+      9234
+     ],
+     "tail_fraction_of_n": [
+      0.9980536332179931,
+      0.9984861591695502
+     ],
+     "slice_orthonormality_max_err": 6.190766121960678e-09,
+     "principal_angles": {
+      "zeros_count": 9216,
+      "smallest_nonzero_angle_deg": 8.63052019825707,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9997649433439577,
+      "random_expectation_mean_sq_cos": 0.9984861591695502,
+      "excess_over_random": 0.0012787841744075212,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9998747860697618,
+       "sq_mass_frac": 0.9997495878180519,
+       "ctrl_mean": 0.9990374147950761,
+       "ctrl_p5": 0.9984454502966139,
+       "ctrl_p50": 0.9990499422104919,
+       "ctrl_p95": 0.9994884245373999,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9999401299375783,
+       "sq_mass_frac": 0.999880263459581,
+       "ctrl_mean": 0.9992527354152628,
+       "ctrl_p5": 0.9987432559294411,
+       "ctrl_p50": 0.9992902986926242,
+       "ctrl_p95": 0.9996701745642427,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9998256938771491,
+       "sq_mass_frac": 0.9996514181369227,
+       "ctrl_mean": 0.9989194878451585,
+       "ctrl_p5": 0.9983514314995852,
+       "ctrl_p50": 0.9989423044941629,
+       "ctrl_p95": 0.9993634956426107,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.99984559805215,
+       "sq_mass_frac": 0.9996912199442615,
+       "ctrl_mean": 0.9989189081566012,
+       "ctrl_p5": 0.9983652976003152,
+       "ctrl_p50": 0.9989477592544197,
+       "ctrl_p95": 0.9994058693218346,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      796,
+      717
+     ],
+     "tail_dims": [
+      8452,
+      8531
+     ],
+     "tail_fraction_of_n": [
+      0.9139273356401384,
+      0.922469723183391
+     ],
+     "slice_orthonormality_max_err": 7.451559813631548e-09,
+     "principal_angles": {
+      "zeros_count": 7735,
+      "smallest_nonzero_angle_deg": 3.233756742374184,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9673744184314306,
+      "random_expectation_mean_sq_cos": 0.922469723183391,
+      "excess_over_random": 0.04490469524803953,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9827970850061255,
+       "sq_mass_frac": 0.9658901102965375,
+       "ctrl_mean": 0.955834898044696,
+       "ctrl_p5": 0.9526584218956733,
+       "ctrl_p50": 0.9558157970542757,
+       "ctrl_p95": 0.9595527096666678,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9849242641249658,
+       "sq_mass_frac": 0.9700758060621054,
+       "ctrl_mean": 0.9602486407884363,
+       "ctrl_p5": 0.9565766736616972,
+       "ctrl_p50": 0.9603099796309121,
+       "ctrl_p95": 0.9634539513178167,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9733256514607749,
+       "sq_mass_frac": 0.9473628237915418,
+       "ctrl_mean": 0.9401056483459983,
+       "ctrl_p5": 0.9363975525485452,
+       "ctrl_p50": 0.9400618962477914,
+       "ctrl_p95": 0.9440113616515066,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9731825938076367,
+       "sq_mass_frac": 0.9470843608901597,
+       "ctrl_mean": 0.9400913170361405,
+       "ctrl_p5": 0.936084676818181,
+       "ctrl_p50": 0.9402517064990767,
+       "ctrl_p95": 0.9440570543159519,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      4216,
+      3990
+     ],
+     "tail_dims": [
+      5032,
+      5258
+     ],
+     "tail_fraction_of_n": [
+      0.5441176470588235,
+      0.5685553633217993
+     ],
+     "slice_orthonormality_max_err": 7.451559813631548e-09,
+     "principal_angles": {
+      "zeros_count": 1042,
+      "smallest_nonzero_angle_deg": 0.47934548068311505,
+      "median_angle_deg": 14.19323382625762,
+      "mean_sq_cos": 0.7709539571415237,
+      "random_expectation_mean_sq_cos": 0.5685553633217993,
+      "excess_over_random": 0.20239859381972436,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8336337638653764,
+       "sq_mass_frac": 0.6949452522563541,
+       "ctrl_mean": 0.7378944268550663,
+       "ctrl_p5": 0.7302279225542838,
+       "ctrl_p50": 0.7378322346209698,
+       "ctrl_p95": 0.7455606124503142,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8417806941580405,
+       "sq_mass_frac": 0.7085947370571924,
+       "ctrl_mean": 0.753924794467733,
+       "ctrl_p5": 0.7470145832281043,
+       "ctrl_p50": 0.7540543581325838,
+       "ctrl_p95": 0.761177461997713,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.7478266083923503,
+       "sq_mass_frac": 0.5592446362196056,
+       "ctrl_mean": 0.6478621401724938,
+       "ctrl_p5": 0.6399820084319867,
+       "ctrl_p50": 0.6478020433801766,
+       "ctrl_p95": 0.6557111548370093,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.7463071106266675,
+       "sq_mass_frac": 0.556974303371925,
+       "ctrl_mean": 0.6475688276962339,
+       "ctrl_p5": 0.6386560404531983,
+       "ctrl_p50": 0.6477170867318931,
+       "ctrl_p95": 0.6553603777366113,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      9237,
+      9203
+     ],
+     "tail_dims": [
+      11,
+      45
+     ],
+     "tail_fraction_of_n": [
+      0.001189446366782007,
+      0.004865916955017301
+     ],
+     "slice_orthonormality_max_err": 4.882965676245021e-08,
+     "principal_angles": {
+      "zeros_count": 0,
+      "smallest_nonzero_angle_deg": 10.453065856740764,
+      "median_angle_deg": 38.47324391373507,
+      "mean_sq_cos": 0.6493491419265239,
+      "random_expectation_mean_sq_cos": 0.004865916955017301,
+      "excess_over_random": 0.6444832249715067,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.11033315385035795,
+       "sq_mass_frac": 0.012173404838566758,
+       "ctrl_mean": 0.03334367189151537,
+       "ctrl_p5": 0.021545124499055518,
+       "ctrl_p50": 0.03281101955777138,
+       "ctrl_p95": 0.04627114662510018,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.15934145980595407,
+       "sq_mass_frac": 0.025389700813092476,
+       "ctrl_mean": 0.06955981087034013,
+       "ctrl_p5": 0.05779803505591187,
+       "ctrl_p50": 0.06935562841314655,
+       "ctrl_p95": 0.08213840956497655,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.08895557255790199,
+       "sq_mass_frac": 0.007913093889104165,
+       "ctrl_mean": 0.026802802939042462,
+       "ctrl_p5": 0.017392137379515137,
+       "ctrl_p50": 0.026602754531844824,
+       "ctrl_p95": 0.03668855598054194,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.07164689942380248,
+       "sq_mass_frac": 0.005133278197044468,
+       "ctrl_mean": 0.02683696404152809,
+       "ctrl_p5": 0.016364317670960516,
+       "ctrl_p50": 0.027069543323787935,
+       "ctrl_p95": 0.036906841741106526,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      9248,
+      9248
+     ],
+     "tail_dims": [
+      0,
+      0
+     ],
+     "tail_fraction_of_n": [
+      0.0,
+      0.0
+     ],
+     "note": "zero-dimensional tails at BOTH endpoints: all four overlaps exactly zero (genuine zeros, not missing/uncomputed); zero contribution to the full-network aggregation",
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.0,
+       "sq_mass_frac": 0.0,
+       "exact_zero": true,
+       "ctrl_mean": 0.0,
+       "ctrl_p5": 0.0,
+       "ctrl_p50": 0.0,
+       "ctrl_p95": 0.0,
+       "ctrl_exceedances_of_256": null,
+       "ctrl_note": "quantity exactly zero for displacement and all controls; exceedance count degenerate"
+      }
+     },
+     "principal_angles": {
+      "note": "no principal angles: at least one tail is zero-dimensional"
+     }
+    }
+   }
+  },
+  "conv5": {
+   "n": 18496,
+   "block_norm_frac_of_d": 0.8488911234421183,
+   "sigma0_rate": {
+    "A": 2.3514896941661227,
+    "B": 2.2709012342795973
+   },
+   "declared_rank_abs_rate": {
+    "A": 1.0911679950237604e-08,
+    "B": 7.892537275805961e-09
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      143,
+      135
+     ],
+     "tail_dims": [
+      18353,
+      18361
+     ],
+     "tail_fraction_of_n": [
+      0.992268598615917,
+      0.9927011245674741
+     ],
+     "slice_orthonormality_max_err": 2.533326770581823e-08,
+     "principal_angles": {
+      "zeros_count": 18218,
+      "smallest_nonzero_angle_deg": 2.9549181202825126,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9996555133802503,
+      "random_expectation_mean_sq_cos": 0.9927011245674741,
+      "excess_over_random": 0.006954388812776213,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9999923994739265,
+       "sq_mass_frac": 0.999984799005621,
+       "ctrl_mean": 0.9961428275572728,
+       "ctrl_p5": 0.995365630888672,
+       "ctrl_p50": 0.9961855927223862,
+       "ctrl_p95": 0.9968494216542089,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9999904595539405,
+       "sq_mass_frac": 0.9999809191989011,
+       "ctrl_mean": 0.9963600570472785,
+       "ctrl_p5": 0.9956058121904067,
+       "ctrl_p50": 0.9963938368689285,
+       "ctrl_p95": 0.9970141521134009,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9999878986556637,
+       "sq_mass_frac": 0.99997579745777,
+       "ctrl_mean": 0.9959730678437629,
+       "ctrl_p5": 0.9951891993946256,
+       "ctrl_p50": 0.9960195428895684,
+       "ctrl_p95": 0.9966875990766363,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9999854521652239,
+       "sq_mass_frac": 0.9999709045420874,
+       "ctrl_mean": 0.9959689623645727,
+       "ctrl_p5": 0.9952062678708669,
+       "ctrl_p50": 0.9959905701011327,
+       "ctrl_p95": 0.9966667878080956,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      2293,
+      2226
+     ],
+     "tail_dims": [
+      16203,
+      16270
+     ],
+     "tail_fraction_of_n": [
+      0.8760272491349481,
+      0.8796496539792388
+     ],
+     "slice_orthonormality_max_err": 2.533326770581823e-08,
+     "principal_angles": {
+      "zeros_count": 13977,
+      "smallest_nonzero_angle_deg": 0.08270351240298858,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9811266068491459,
+      "random_expectation_mean_sq_cos": 0.8796496539792388,
+      "excess_over_random": 0.1014769528699071,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.997238622469937,
+       "sq_mass_frac": 0.9944848701457375,
+       "ctrl_mean": 0.9359002221898982,
+       "ctrl_p5": 0.9329904014379511,
+       "ctrl_p50": 0.9359509233778474,
+       "ctrl_p95": 0.9388018134722793,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9975307582915705,
+       "sq_mass_frac": 0.9950676137377555,
+       "ctrl_mean": 0.9379016256079373,
+       "ctrl_p5": 0.9351147482821857,
+       "ctrl_p50": 0.9378869757109316,
+       "ctrl_p95": 0.9408667160264171,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9947041840045396,
+       "sq_mass_frac": 0.989436413676137,
+       "ctrl_mean": 0.9270238998267067,
+       "ctrl_p5": 0.924194252306933,
+       "ctrl_p50": 0.9270893717487902,
+       "ctrl_p95": 0.9302994354073465,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9946173722862381,
+       "sq_mass_frac": 0.9892637172535812,
+       "ctrl_mean": 0.9270395691214786,
+       "ctrl_p5": 0.9240289812976377,
+       "ctrl_p50": 0.9270211700569885,
+       "ctrl_p95": 0.9300325926402194,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      6324,
+      6232
+     ],
+     "tail_dims": [
+      12172,
+      12264
+     ],
+     "tail_fraction_of_n": [
+      0.6580882352941176,
+      0.6630622837370242
+     ],
+     "slice_orthonormality_max_err": 2.533326770581823e-08,
+     "principal_angles": {
+      "zeros_count": 5940,
+      "smallest_nonzero_angle_deg": 0.003949339288685684,
+      "median_angle_deg": 0.04983029865648827,
+      "mean_sq_cos": 0.9124584881418488,
+      "random_expectation_mean_sq_cos": 0.6630622837370242,
+      "excess_over_random": 0.24939620440482457,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9744449204424199,
+       "sq_mass_frac": 0.949542902976034,
+       "ctrl_mean": 0.8109276745515915,
+       "ctrl_p5": 0.8061180774688035,
+       "ctrl_p50": 0.8108765957388065,
+       "ctrl_p95": 0.8156697947341087,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9738792984572703,
+       "sq_mass_frac": 0.9484408879636249,
+       "ctrl_mean": 0.814204806833404,
+       "ctrl_p5": 0.8094443661537443,
+       "ctrl_p50": 0.8143229211837958,
+       "ctrl_p95": 0.8189465396618285,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.953723463897123,
+       "sq_mass_frac": 0.909588445587927,
+       "ctrl_mean": 0.7746393521052051,
+       "ctrl_p5": 0.7691369192361946,
+       "ctrl_p50": 0.7746498820165827,
+       "ctrl_p95": 0.7793966054058025,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.953555024047605,
+       "sq_mass_frac": 0.9092671838864285,
+       "ctrl_mean": 0.7746965825565715,
+       "ctrl_p5": 0.7697186821963264,
+       "ctrl_p50": 0.7749531696757621,
+       "ctrl_p95": 0.7791798230348752,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      11893,
+      11545
+     ],
+     "tail_dims": [
+      6603,
+      6951
+     ],
+     "tail_fraction_of_n": [
+      0.356996107266436,
+      0.3758109861591695
+     ],
+     "slice_orthonormality_max_err": 6.930148777062328e-08,
+     "principal_angles": {
+      "zeros_count": 1601,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 7.775565735415385,
+      "mean_sq_cos": 0.8083552082604982,
+      "random_expectation_mean_sq_cos": 0.3758109861591695,
+      "excess_over_random": 0.4325442221013287,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8504714011214376,
+       "sq_mass_frac": 0.7233016041254612,
+       "ctrl_mean": 0.5972961225374823,
+       "ctrl_p5": 0.5908504785745109,
+       "ctrl_p50": 0.597279136499196,
+       "ctrl_p95": 0.6038521244216395,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8645437417397756,
+       "sq_mass_frac": 0.7474358813814117,
+       "ctrl_mean": 0.6127309250658528,
+       "ctrl_p5": 0.6059671421597197,
+       "ctrl_p50": 0.6127645708392776,
+       "ctrl_p95": 0.6194716451756701,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.787188107507737,
+       "sq_mass_frac": 0.6196651166016126,
+       "ctrl_mean": 0.5368892024780768,
+       "ctrl_p5": 0.5303519357181186,
+       "ctrl_p50": 0.5368327903903178,
+       "ctrl_p95": 0.5437843779122766,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.7852335741295007,
+       "sq_mass_frac": 0.61659176594019,
+       "ctrl_mean": 0.5369034798746115,
+       "ctrl_p5": 0.5305723196063573,
+       "ctrl_p50": 0.5366191546691526,
+       "ctrl_p95": 0.5438963672655163,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      15530,
+      15708
+     ],
+     "tail_dims": [
+      2966,
+      2788
+     ],
+     "tail_fraction_of_n": [
+      0.16035899653979238,
+      0.15073529411764705
+     ],
+     "slice_orthonormality_max_err": 6.930148777062328e-08,
+     "principal_angles": {
+      "zeros_count": 941,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.909095910416423e-06,
+      "mean_sq_cos": 0.8381708464443146,
+      "random_expectation_mean_sq_cos": 0.16035899653979238,
+      "excess_over_random": 0.6778118499045223,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.6034717479165237,
+       "sq_mass_frac": 0.36417815053342434,
+       "ctrl_mean": 0.4001151883968552,
+       "ctrl_p5": 0.3921538505649076,
+       "ctrl_p50": 0.4003875032608692,
+       "ctrl_p95": 0.40748277374325115,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.5900685866387254,
+       "sq_mass_frac": 0.348180936937823,
+       "ctrl_mean": 0.3878331642885364,
+       "ctrl_p5": 0.38001460230372913,
+       "ctrl_p50": 0.38817015948986194,
+       "ctrl_p95": 0.3951728417641121,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.5197219999158061,
+       "sq_mass_frac": 0.2701109571964852,
+       "ctrl_mean": 0.35514176016178234,
+       "ctrl_p5": 0.34749985725091603,
+       "ctrl_p50": 0.3552987472421139,
+       "ctrl_p95": 0.3627115216061104,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.521459497948517,
+       "sq_mass_frac": 0.27192000800071936,
+       "ctrl_mean": 0.35515450356840017,
+       "ctrl_p5": 0.3475871030310599,
+       "ctrl_p50": 0.3553379585969537,
+       "ctrl_p95": 0.3629129648664021,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      15973,
+      16104
+     ],
+     "tail_dims": [
+      2523,
+      2392
+     ],
+     "tail_fraction_of_n": [
+      0.13640787197231835,
+      0.12932525951557095
+     ],
+     "slice_orthonormality_max_err": 6.930148777062328e-08,
+     "principal_angles": {
+      "zeros_count": 962,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.2074182697257333e-06,
+      "mean_sq_cos": 0.8814160855609539,
+      "random_expectation_mean_sq_cos": 0.13640787197231835,
+      "excess_over_random": 0.7450082135886356,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.5088966150651506,
+       "sq_mass_frac": 0.2589757648247681,
+       "ctrl_mean": 0.3691522679939567,
+       "ctrl_p5": 0.3618470355173142,
+       "ctrl_p50": 0.36937717610281884,
+       "ctrl_p95": 0.37654263477641736,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.500271299138691,
+       "sq_mass_frac": 0.2502713727419136,
+       "ctrl_mean": 0.35943082179214647,
+       "ctrl_p5": 0.351808257807835,
+       "ctrl_p50": 0.35932958489543104,
+       "ctrl_p95": 0.3664750489894187,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.46790780703944046,
+       "sq_mass_frac": 0.21893771588845826,
+       "ctrl_mean": 0.3374211447691526,
+       "ctrl_p5": 0.3301402973426048,
+       "ctrl_p50": 0.3373419077774774,
+       "ctrl_p95": 0.34488418238238155,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.4680327936496172,
+       "sq_mass_frac": 0.21905469593146515,
+       "ctrl_mean": 0.3374898913047272,
+       "ctrl_p5": 0.33012009172784507,
+       "ctrl_p50": 0.33772909996510014,
+       "ctrl_p95": 0.3448583273518943,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      16018,
+      16141
+     ],
+     "tail_dims": [
+      2478,
+      2355
+     ],
+     "tail_fraction_of_n": [
+      0.1339749134948097,
+      0.1273248269896194
+     ],
+     "slice_orthonormality_max_err": 4.398071151712202e-08,
+     "principal_angles": {
+      "zeros_count": 921,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.4787793334710982e-06,
+      "mean_sq_cos": 0.8845933189630236,
+      "random_expectation_mean_sq_cos": 0.1339749134948097,
+      "excess_over_random": 0.7506184054682139,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.4998171461830331,
+       "sq_mass_frac": 0.24981717961855146,
+       "ctrl_mean": 0.36586482374833873,
+       "ctrl_p5": 0.35833275496710365,
+       "ctrl_p50": 0.3657236621968816,
+       "ctrl_p95": 0.3736048259232294,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.4877165498131055,
+       "sq_mass_frac": 0.23786743296159946,
+       "ctrl_mean": 0.3566661599270358,
+       "ctrl_p5": 0.34871301686289613,
+       "ctrl_p50": 0.3566719197353378,
+       "ctrl_p95": 0.36394573028028254,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.4581058400959056,
+       "sq_mass_frac": 0.20986096072997543,
+       "ctrl_mean": 0.33540634656501145,
+       "ctrl_p5": 0.32835029143827754,
+       "ctrl_p50": 0.335506635506981,
+       "ctrl_p95": 0.3426441003320577,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.45808064920102215,
+       "sq_mass_frac": 0.2098378811724299,
+       "ctrl_mean": 0.33547300369707467,
+       "ctrl_p5": 0.32808086103071066,
+       "ctrl_p50": 0.33543563738358806,
+       "ctrl_p95": 0.34267479147192914,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      16023,
+      16143
+     ],
+     "tail_dims": [
+      2473,
+      2353
+     ],
+     "tail_fraction_of_n": [
+      0.1337045847750865,
+      0.1272166955017301
+     ],
+     "slice_orthonormality_max_err": 4.398071151712202e-08,
+     "principal_angles": {
+      "zeros_count": 938,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.2074182697257333e-06,
+      "mean_sq_cos": 0.8845234544073393,
+      "random_expectation_mean_sq_cos": 0.1337045847750865,
+      "excess_over_random": 0.7508188696322528,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.4995085680809456,
+       "sq_mass_frac": 0.2495088095862767,
+       "ctrl_mean": 0.3654850102397173,
+       "ctrl_p5": 0.3579442223303422,
+       "ctrl_p50": 0.36541122662574954,
+       "ctrl_p95": 0.37315939865194925,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.4875752907347438,
+       "sq_mass_frac": 0.23772966413506996,
+       "ctrl_mean": 0.3564913016801646,
+       "ctrl_p5": 0.3485189687558393,
+       "ctrl_p50": 0.3565696300541391,
+       "ctrl_p95": 0.3638107982324676,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.4579567891065242,
+       "sq_mass_frac": 0.2097244206887575,
+       "ctrl_mean": 0.33522848467377614,
+       "ctrl_p5": 0.32826417480085296,
+       "ctrl_p50": 0.3352952748672285,
+       "ctrl_p95": 0.3425549277980964,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.45794052086485715,
+       "sq_mass_frac": 0.20970952064997667,
+       "ctrl_mean": 0.33529320331248746,
+       "ctrl_p5": 0.32792731929720265,
+       "ctrl_p50": 0.3351883334083719,
+       "ctrl_p95": 0.3426048529483482,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      16023,
+      16144
+     ],
+     "tail_dims": [
+      2473,
+      2352
+     ],
+     "tail_fraction_of_n": [
+      0.1337045847750865,
+      0.12716262975778547
+     ],
+     "slice_orthonormality_max_err": 1.1879386363489175e-14,
+     "principal_angles": {
+      "zeros_count": 987,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.2074182697257333e-06,
+      "mean_sq_cos": 0.8844789783815407,
+      "random_expectation_mean_sq_cos": 0.1337045847750865,
+      "excess_over_random": 0.7507743936064541,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.4995085680809456,
+       "sq_mass_frac": 0.2495088095862767,
+       "ctrl_mean": 0.3654850102397173,
+       "ctrl_p5": 0.3579442223303422,
+       "ctrl_p50": 0.36541122662574954,
+       "ctrl_p95": 0.37315939865194925,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.4875679035262821,
+       "sq_mass_frac": 0.23772246054901391,
+       "ctrl_mean": 0.3564095218146155,
+       "ctrl_p5": 0.3484335261225404,
+       "ctrl_p50": 0.35649340079800423,
+       "ctrl_p95": 0.3637521371607323,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.45795124177349034,
+       "sq_mass_frac": 0.2097193398418818,
+       "ctrl_mean": 0.33514213066375453,
+       "ctrl_p5": 0.3281251956175369,
+       "ctrl_p50": 0.335227183017898,
+       "ctrl_p95": 0.34254250019614424,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.45793275105930487,
+       "sq_mass_frac": 0.20970240449274327,
+       "ctrl_mean": 0.33520720652111946,
+       "ctrl_p5": 0.3278980531811998,
+       "ctrl_p50": 0.335095858421954,
+       "ctrl_p95": 0.3425417612517303,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      16023,
+      16144
+     ],
+     "tail_dims": [
+      2473,
+      2352
+     ],
+     "tail_fraction_of_n": [
+      0.1337045847750865,
+      0.12716262975778547
+     ],
+     "slice_orthonormality_max_err": 1.1879386363489175e-14,
+     "principal_angles": {
+      "zeros_count": 987,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 1.2074182697257333e-06,
+      "mean_sq_cos": 0.8844789783815407,
+      "random_expectation_mean_sq_cos": 0.1337045847750865,
+      "excess_over_random": 0.7507743936064541,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.4995085680809456,
+       "sq_mass_frac": 0.2495088095862767,
+       "ctrl_mean": 0.3654850102397173,
+       "ctrl_p5": 0.3579442223303422,
+       "ctrl_p50": 0.36541122662574954,
+       "ctrl_p95": 0.37315939865194925,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.4875679035262821,
+       "sq_mass_frac": 0.23772246054901391,
+       "ctrl_mean": 0.3564095218146155,
+       "ctrl_p5": 0.3484335261225404,
+       "ctrl_p50": 0.35649340079800423,
+       "ctrl_p95": 0.3637521371607323,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.45795124177349034,
+       "sq_mass_frac": 0.2097193398418818,
+       "ctrl_mean": 0.33514213066375453,
+       "ctrl_p5": 0.3281251956175369,
+       "ctrl_p50": 0.335227183017898,
+       "ctrl_p95": 0.34254250019614424,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.45793275105930487,
+       "sq_mass_frac": 0.20970240449274327,
+       "ctrl_mean": 0.33520720652111946,
+       "ctrl_p5": 0.3278980531811998,
+       "ctrl_p50": 0.335095858421954,
+       "ctrl_p95": 0.3425417612517303,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    }
+   }
+  },
+  "readout": {
+   "n": 10250,
+   "block_norm_frac_of_d": 0.33355700041208997,
+   "sigma0_rate": {
+    "A": 2.2111150643661652,
+    "B": 2.1265030380328227
+   },
+   "declared_rank_abs_rate": {
+    "A": 1.1717943543638908e-05,
+    "B": 9.051784445619305e-07
+   },
+   "by_eps": {
+    "0.1": {
+     "retained_dims": [
+      370,
+      370
+     ],
+     "tail_dims": [
+      9880,
+      9880
+     ],
+     "tail_fraction_of_n": [
+      0.9639024390243902,
+      0.9639024390243902
+     ],
+     "slice_orthonormality_max_err": 4.7341714104476296e-08,
+     "principal_angles": {
+      "zeros_count": 9510,
+      "smallest_nonzero_angle_deg": 0.49460232866864634,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9986980971137918,
+      "random_expectation_mean_sq_cos": 0.9639024390243902,
+      "excess_over_random": 0.03479565808940155,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9999887863581304,
+       "sq_mass_frac": 0.9999775728420065,
+       "ctrl_mean": 0.98174882914981,
+       "ctrl_p5": 0.9795071009396884,
+       "ctrl_p50": 0.9817787743590315,
+       "ctrl_p95": 0.9836311375975614,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9999883902864265,
+       "sq_mass_frac": 0.9999767807076384,
+       "ctrl_mean": 0.9817556379518968,
+       "ctrl_p5": 0.9796425233900169,
+       "ctrl_p50": 0.9817087160911022,
+       "ctrl_p95": 0.9836812861427353,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9999875883397185,
+       "sq_mass_frac": 0.9999751768334862,
+       "ctrl_mean": 0.9811259227350353,
+       "ctrl_p5": 0.9788448486595669,
+       "ctrl_p50": 0.9811732606839466,
+       "ctrl_p95": 0.9829634597970165,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9999873873845835,
+       "sq_mass_frac": 0.999974774928245,
+       "ctrl_mean": 0.9811258548173714,
+       "ctrl_p5": 0.9789527566018523,
+       "ctrl_p50": 0.9811031847493326,
+       "ctrl_p95": 0.9830330356568362,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.01": {
+     "retained_dims": [
+      2380,
+      2430
+     ],
+     "tail_dims": [
+      7870,
+      7820
+     ],
+     "tail_fraction_of_n": [
+      0.7678048780487805,
+      0.7629268292682927
+     ],
+     "slice_orthonormality_max_err": 5.5352221361992804e-08,
+     "principal_angles": {
+      "zeros_count": 5440,
+      "smallest_nonzero_angle_deg": 0.009349403926150933,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.9836266161878975,
+      "random_expectation_mean_sq_cos": 0.7678048780487805,
+      "excess_over_random": 0.21582173813911698,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9984788403748736,
+       "sq_mass_frac": 0.9969599946763522,
+       "ctrl_mean": 0.8762495682156106,
+       "ctrl_p5": 0.8709321710072169,
+       "ctrl_p50": 0.87640602620413,
+       "ctrl_p95": 0.8814522179725507,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9985814225603373,
+       "sq_mass_frac": 0.997164857482627,
+       "ctrl_mean": 0.8736484547436466,
+       "ctrl_p5": 0.8681318327657039,
+       "ctrl_p50": 0.8739921157559034,
+       "ctrl_p95": 0.8786922256279939,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9979344835944717,
+       "sq_mass_frac": 0.9958732335469649,
+       "ctrl_mean": 0.8663871797156169,
+       "ctrl_p5": 0.8605042053031827,
+       "ctrl_p50": 0.8665108878188621,
+       "ctrl_p95": 0.8715139658163464,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9978903881253356,
+       "sq_mass_frac": 0.9957852267129329,
+       "ctrl_mean": 0.8664511320346135,
+       "ctrl_p5": 0.8608214066125902,
+       "ctrl_p50": 0.8666393322743674,
+       "ctrl_p95": 0.8716145183749495,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.001": {
+     "retained_dims": [
+      5340,
+      5700
+     ],
+     "tail_dims": [
+      4910,
+      4550
+     ],
+     "tail_fraction_of_n": [
+      0.4790243902439024,
+      0.44390243902439025
+     ],
+     "slice_orthonormality_max_err": 8.028587816788502e-08,
+     "principal_angles": {
+      "zeros_count": 1624,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 2.2588727439225514e-06,
+      "mean_sq_cos": 0.9278644574336391,
+      "random_expectation_mean_sq_cos": 0.4790243902439024,
+      "excess_over_random": 0.4488400671897367,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.9567620212346409,
+       "sq_mass_frac": 0.9153935652769956,
+       "ctrl_mean": 0.6926912817127945,
+       "ctrl_p5": 0.6846379422261097,
+       "ctrl_p50": 0.692851219815243,
+       "ctrl_p95": 0.7002338218181458,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.9440691477256067,
+       "sq_mass_frac": 0.8912665556873534,
+       "ctrl_mean": 0.6666543898575247,
+       "ctrl_p5": 0.6581242552378551,
+       "ctrl_p50": 0.6666114436046191,
+       "ctrl_p95": 0.6747266188621355,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.9288702462647253,
+       "sq_mass_frac": 0.8627999343958913,
+       "ctrl_mean": 0.6422738558702175,
+       "ctrl_p5": 0.6343686486174172,
+       "ctrl_p50": 0.6421410098589841,
+       "ctrl_p95": 0.650672243118065,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.9290058741401311,
+       "sq_mass_frac": 0.8630519141868692,
+       "ctrl_mean": 0.6422091462507391,
+       "ctrl_p5": 0.6342903559500164,
+       "ctrl_p50": 0.6421720014596635,
+       "ctrl_p95": 0.650446708817998,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "0.0001": {
+     "retained_dims": [
+      6580,
+      6860
+     ],
+     "tail_dims": [
+      3670,
+      3390
+     ],
+     "tail_fraction_of_n": [
+      0.35804878048780486,
+      0.3307317073170732
+     ],
+     "slice_orthonormality_max_err": 7.415039404712331e-08,
+     "principal_angles": {
+      "zeros_count": 1562,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 8.537736462515939e-07,
+      "mean_sq_cos": 0.880851889546472,
+      "random_expectation_mean_sq_cos": 0.35804878048780486,
+      "excess_over_random": 0.5228031090586671,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.881230848210386,
+       "sq_mass_frac": 0.7765678078375964,
+       "ctrl_mean": 0.5989778384571852,
+       "ctrl_p5": 0.5894966850248985,
+       "ctrl_p50": 0.5988836140973601,
+       "ctrl_p95": 0.6077071985606305,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.87410584839088,
+       "sq_mass_frac": 0.7640610341911401,
+       "ctrl_mean": 0.575899738689666,
+       "ctrl_p5": 0.5662823964164334,
+       "ctrl_p50": 0.5757845906425003,
+       "ctrl_p95": 0.5844133849521586,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8251220407127008,
+       "sq_mass_frac": 0.6808263820698919,
+       "ctrl_mean": 0.540552033076408,
+       "ctrl_p5": 0.531270926742281,
+       "ctrl_p50": 0.5404642491797912,
+       "ctrl_p95": 0.5493461355999951,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8236147317909365,
+       "sq_mass_frac": 0.6783412264230562,
+       "ctrl_mean": 0.5405427511776038,
+       "ctrl_p5": 0.531401999723577,
+       "ctrl_p50": 0.5406933024238904,
+       "ctrl_p95": 0.5495673652078327,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-05": {
+     "retained_dims": [
+      6770,
+      7030
+     ],
+     "tail_dims": [
+      3480,
+      3220
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.31414634146341464
+     ],
+     "slice_orthonormality_max_err": 5.5193618564430835e-08,
+     "principal_angles": {
+      "zeros_count": 1542,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 8.537736462515939e-07,
+      "mean_sq_cos": 0.8908639609255086,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5513517658035574,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8621852787846889,
+       "sq_mass_frac": 0.7433634549530317,
+       "ctrl_mean": 0.5615080729351917,
+       "ctrl_p5": 0.551796324202489,
+       "ctrl_p50": 0.5615947210367231,
+       "ctrl_p95": 0.5704936707411454,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8060270555469831,
+       "sq_mass_frac": 0.6496796142737393,
+       "ctrl_mean": 0.5298667617258923,
+       "ctrl_p5": 0.5194318331442694,
+       "ctrl_p50": 0.5301067939088772,
+       "ctrl_p95": 0.5395213088257776,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8045752620287908,
+       "sq_mass_frac": 0.6473413522686974,
+       "ctrl_mean": 0.5298769043486949,
+       "ctrl_p5": 0.5196198488052334,
+       "ctrl_p50": 0.5301661474017374,
+       "ctrl_p95": 0.5394805002969407,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-06": {
+     "retained_dims": [
+      6770,
+      7040
+     ],
+     "tail_dims": [
+      3480,
+      3210
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.3131707317073171
+     ],
+     "slice_orthonormality_max_err": 5.5193618564430835e-08,
+     "principal_angles": {
+      "zeros_count": 1564,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 8.537736462515939e-07,
+      "mean_sq_cos": 0.8905536850898351,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5510414899678839,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8596796403858182,
+       "sq_mass_frac": 0.7390490840938898,
+       "ctrl_mean": 0.5605984481895597,
+       "ctrl_p5": 0.5508294770695369,
+       "ctrl_p50": 0.5606092666152479,
+       "ctrl_p95": 0.569569211045106,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8035040138186849,
+       "sq_mass_frac": 0.6456187002227373,
+       "ctrl_mean": 0.5289199270729095,
+       "ctrl_p5": 0.5188304636303885,
+       "ctrl_p50": 0.5291026960920913,
+       "ctrl_p95": 0.5381373396011653,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8019153237743609,
+       "sq_mass_frac": 0.6430681865041381,
+       "ctrl_mean": 0.528921852893617,
+       "ctrl_p5": 0.5188245426590312,
+       "ctrl_p50": 0.5292841708639675,
+       "ctrl_p95": 0.5380546796658512,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-07": {
+     "retained_dims": [
+      6770,
+      7050
+     ],
+     "tail_dims": [
+      3480,
+      3200
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.3121951219512195
+     ],
+     "slice_orthonormality_max_err": 7.105427357601002e-15,
+     "principal_angles": {
+      "zeros_count": 1606,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.8902116654036984,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5506994702817471,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8583356002683498,
+       "sq_mass_frac": 0.7367400026880283,
+       "ctrl_mean": 0.5597699173529078,
+       "ctrl_p5": 0.5503876798421925,
+       "ctrl_p50": 0.5596460287275906,
+       "ctrl_p95": 0.5688574761927758,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8020658980515787,
+       "sq_mass_frac": 0.6433097048172854,
+       "ctrl_mean": 0.5280416636754197,
+       "ctrl_p5": 0.5179210101295065,
+       "ctrl_p50": 0.5280933702533694,
+       "ctrl_p95": 0.5375773726498836,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8004743004184248,
+       "sq_mass_frac": 0.6407591056303666,
+       "ctrl_mean": 0.5280436272018514,
+       "ctrl_p5": 0.5180309285676772,
+       "ctrl_p50": 0.528191423281682,
+       "ctrl_p95": 0.5375545068281217,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-08": {
+     "retained_dims": [
+      6770,
+      7050
+     ],
+     "tail_dims": [
+      3480,
+      3200
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.3121951219512195
+     ],
+     "slice_orthonormality_max_err": 7.105427357601002e-15,
+     "principal_angles": {
+      "zeros_count": 1606,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.8902116654036984,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5506994702817471,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8583356002683498,
+       "sq_mass_frac": 0.7367400026880283,
+       "ctrl_mean": 0.5597699173529078,
+       "ctrl_p5": 0.5503876798421925,
+       "ctrl_p50": 0.5596460287275906,
+       "ctrl_p95": 0.5688574761927758,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8020658980515787,
+       "sq_mass_frac": 0.6433097048172854,
+       "ctrl_mean": 0.5280416636754197,
+       "ctrl_p5": 0.5179210101295065,
+       "ctrl_p50": 0.5280933702533694,
+       "ctrl_p95": 0.5375773726498836,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8004743004184248,
+       "sq_mass_frac": 0.6407591056303666,
+       "ctrl_mean": 0.5280436272018514,
+       "ctrl_p5": 0.5180309285676772,
+       "ctrl_p50": 0.528191423281682,
+       "ctrl_p95": 0.5375545068281217,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-09": {
+     "retained_dims": [
+      6770,
+      7050
+     ],
+     "tail_dims": [
+      3480,
+      3200
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.3121951219512195
+     ],
+     "slice_orthonormality_max_err": 7.105427357601002e-15,
+     "principal_angles": {
+      "zeros_count": 1606,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.8902116654036984,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5506994702817471,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8583356002683498,
+       "sq_mass_frac": 0.7367400026880283,
+       "ctrl_mean": 0.5597699173529078,
+       "ctrl_p5": 0.5503876798421925,
+       "ctrl_p50": 0.5596460287275906,
+       "ctrl_p95": 0.5688574761927758,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8020658980515787,
+       "sq_mass_frac": 0.6433097048172854,
+       "ctrl_mean": 0.5280416636754197,
+       "ctrl_p5": 0.5179210101295065,
+       "ctrl_p50": 0.5280933702533694,
+       "ctrl_p95": 0.5375773726498836,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8004743004184248,
+       "sq_mass_frac": 0.6407591056303666,
+       "ctrl_mean": 0.5280436272018514,
+       "ctrl_p5": 0.5180309285676772,
+       "ctrl_p50": 0.528191423281682,
+       "ctrl_p95": 0.5375545068281217,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    },
+    "1e-10": {
+     "retained_dims": [
+      6770,
+      7050
+     ],
+     "tail_dims": [
+      3480,
+      3200
+     ],
+     "tail_fraction_of_n": [
+      0.33951219512195124,
+      0.3121951219512195
+     ],
+     "slice_orthonormality_max_err": 7.105427357601002e-15,
+     "principal_angles": {
+      "zeros_count": 1606,
+      "smallest_nonzero_angle_deg": 8.537736462515939e-07,
+      "median_angle_deg": 0.0,
+      "mean_sq_cos": 0.8902116654036984,
+      "random_expectation_mean_sq_cos": 0.33951219512195124,
+      "excess_over_random": 0.5506994702817471,
+      "fp32_floor_note": "angles below ~1e-4 rad unresolved by fp32 storage (outside fp64 kernel columns)"
+     },
+     "displacement": {
+      "PA_d": {
+       "norm_frac": 0.8637494294256638,
+       "sq_mass_frac": 0.7460630768331598,
+       "ctrl_mean": 0.5831651903207887,
+       "ctrl_p5": 0.5730802931599666,
+       "ctrl_p50": 0.5833840800547216,
+       "ctrl_p95": 0.5922787725199092,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_d": {
+       "norm_frac": 0.8583356002683498,
+       "sq_mass_frac": 0.7367400026880283,
+       "ctrl_mean": 0.5597699173529078,
+       "ctrl_p5": 0.5503876798421925,
+       "ctrl_p50": 0.5596460287275906,
+       "ctrl_p95": 0.5688574761927758,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PB_PA_d": {
+       "norm_frac": 0.8020658980515787,
+       "sq_mass_frac": 0.6433097048172854,
+       "ctrl_mean": 0.5280416636754197,
+       "ctrl_p5": 0.5179210101295065,
+       "ctrl_p50": 0.5280933702533694,
+       "ctrl_p95": 0.5375773726498836,
+       "ctrl_exceedances_of_256": 0
+      },
+      "PA_PB_d": {
+       "norm_frac": 0.8004743004184248,
+       "sq_mass_frac": 0.6407591056303666,
+       "ctrl_mean": 0.5280436272018514,
+       "ctrl_p5": 0.5180309285676772,
+       "ctrl_p50": 0.528191423281682,
+       "ctrl_p95": 0.5375545068281217,
+       "ctrl_exceedances_of_256": 0
+      }
+     }
+    }
+   }
+  }
+ },
+ "full_network": {
+  "0.1": {
+   "PA_d": {
+    "norm_frac": 0.9999368749709393,
+    "sq_mass_frac": 0.9998737539266479,
+    "ctrl_isotropic": {
+     "p50": 0.9932609684114473,
+     "p95": 0.9938707682964594,
+     "max": 0.9942164540082284,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9949278199110179,
+     "p95": 0.9954657690955655,
+     "max": 0.9957948838027957,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.9999605149374955,
+    "sq_mass_frac": 0.9999210314340612,
+    "ctrl_isotropic": {
+     "p50": 0.9935166592535989,
+     "p95": 0.9940674118742546,
+     "max": 0.9943498692824261,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9951459603445725,
+     "p95": 0.9956668027857835,
+     "max": 0.9959149870769366,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.9999233137112561,
+    "sq_mass_frac": 0.999846633303299,
+    "ctrl_isotropic": {
+     "p50": 0.9929774137508061,
+     "p95": 0.9935681239312528,
+     "max": 0.9939526754745673,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9947146196755379,
+     "p95": 0.9952470056506003,
+     "max": 0.9955934582607454,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.9999295970160333,
+    "sq_mass_frac": 0.9998591989886468,
+    "ctrl_isotropic": {
+     "p50": 0.9929709441909158,
+     "p95": 0.9935615401574808,
+     "max": 0.9938478962418655,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.994719392593715,
+     "p95": 0.9952413714622286,
+     "max": 0.9955310465892151,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "0.01": {
+   "PA_d": {
+    "norm_frac": 0.9939467290899785,
+    "sq_mass_frac": 0.9879301002686671,
+    "ctrl_isotropic": {
+     "p50": 0.9216118192828788,
+     "p95": 0.923544613772171,
+     "max": 0.924613317031317,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.930374761208778,
+     "p95": 0.9326045791402802,
+     "max": 0.9352663772957732,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.994821629749477,
+    "sq_mass_frac": 0.9896700750174054,
+    "ctrl_isotropic": {
+     "p50": 0.9241756040524992,
+     "p95": 0.9258355590978328,
+     "max": 0.9271997974382638,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9325684581146572,
+     "p95": 0.9347998355649724,
+     "max": 0.9363116458118046,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.9901428258924918,
+    "sq_mass_frac": 0.9803828156663693,
+    "ctrl_isotropic": {
+     "p50": 0.9087085890157277,
+     "p95": 0.9108058878724357,
+     "max": 0.9121939578410009,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9197072496801775,
+     "p95": 0.9221769554466749,
+     "max": 0.924133334814186,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.9901381665856703,
+    "sq_mass_frac": 0.9803735889296327,
+    "ctrl_isotropic": {
+     "p50": 0.9088441035187819,
+     "p95": 0.9106084396291965,
+     "max": 0.9123946055786971,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.9197507961056313,
+     "p95": 0.9220666406392619,
+     "max": 0.924053201521113,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "0.001": {
+   "PA_d": {
+    "norm_frac": 0.9427822332015314,
+    "sq_mass_frac": 0.8888383392404667,
+    "ctrl_isotropic": {
+     "p50": 0.7315463116782304,
+     "p95": 0.7353958226527811,
+     "max": 0.7378713578936081,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.777757160367466,
+     "p95": 0.7817085550350757,
+     "max": 0.7841926606184649,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.9430302496439337,
+    "sq_mass_frac": 0.8893060517434999,
+    "ctrl_isotropic": {
+     "p50": 0.7340722212293862,
+     "p95": 0.7374462920703388,
+     "max": 0.7413413909630586,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.7804166949509515,
+     "p95": 0.7842044834034356,
+     "max": 0.7865682099223305,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.9122159162194221,
+    "sq_mass_frac": 0.8321378778040397,
+    "ctrl_isotropic": {
+     "p50": 0.6753129780109057,
+     "p95": 0.6788245575801974,
+     "max": 0.68145056520048,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.7324669508302158,
+     "p95": 0.7361983688242089,
+     "max": 0.739205027791947,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.912090969920717,
+    "sq_mass_frac": 0.8319099374109143,
+    "ctrl_isotropic": {
+     "p50": 0.675464908027233,
+     "p95": 0.6786942437669147,
+     "max": 0.681946572208915,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.7326014656609043,
+     "p95": 0.7360433536953344,
+     "max": 0.7393153669793592,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "0.0001": {
+   "PA_d": {
+    "norm_frac": 0.7804524173827802,
+    "sq_mass_frac": 0.6091059757986252,
+    "ctrl_isotropic": {
+     "p50": 0.4776270873294779,
+     "p95": 0.48186168066701524,
+     "max": 0.486315813501904,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.5451189121628799,
+     "p95": 0.5504227762853732,
+     "max": 0.5522473099977542,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.7915549128135845,
+    "sq_mass_frac": 0.6265591799993213,
+    "ctrl_isotropic": {
+     "p50": 0.47981521468144306,
+     "p95": 0.4845414260268852,
+     "max": 0.4893545237552364,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.5548640607799641,
+     "p95": 0.5608014389094467,
+     "max": 0.563804546635866,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.7233847042770826,
+    "sq_mass_frac": 0.5232854303820422,
+    "ctrl_isotropic": {
+     "p50": 0.42971883811955913,
+     "p95": 0.4343203669649684,
+     "max": 0.4390311206958281,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.4900089725060142,
+     "p95": 0.49593539360409,
+     "max": 0.497783613919458,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.7214172646765686,
+    "sq_mass_frac": 0.5204428697734222,
+    "ctrl_isotropic": {
+     "p50": 0.4297100319031175,
+     "p95": 0.4341950492079568,
+     "max": 0.4389045546177026,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.4900799048117668,
+     "p95": 0.49615138371709494,
+     "max": 0.49977333136397206,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-05": {
+   "PA_d": {
+    "norm_frac": 0.5877412986690103,
+    "sq_mass_frac": 0.3454398341611347,
+    "ctrl_isotropic": {
+     "p50": 0.3781808382889464,
+     "p95": 0.3827369953669612,
+     "max": 0.389122522149492,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.39141007683420254,
+     "p95": 0.3971408661892649,
+     "max": 0.402110975264709,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.577591224995394,
+    "sq_mass_frac": 0.3336116231916798,
+    "ctrl_isotropic": {
+     "p50": 0.36533897541228877,
+     "p95": 0.3700793509414524,
+     "max": 0.37565783535241115,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.378937742540585,
+     "p95": 0.38448485486548245,
+     "max": 0.3901944665878757,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.5166525390799737,
+    "sq_mass_frac": 0.2669298461377837,
+    "ctrl_isotropic": {
+     "p50": 0.34008683471256795,
+     "p95": 0.3445756290046617,
+     "max": 0.34787187999793306,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3496027595074847,
+     "p95": 0.3553970137799604,
+     "max": 0.35856353137654917,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.5176613967416372,
+    "sq_mass_frac": 0.2679733216765028,
+    "ctrl_isotropic": {
+     "p50": 0.3398877297370349,
+     "p95": 0.3447889653090547,
+     "max": 0.3482087079758245,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3495757783639732,
+     "p95": 0.3554105913933194,
+     "max": 0.359344639998949,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-06": {
+   "PA_d": {
+    "norm_frac": 0.5192584107262057,
+    "sq_mass_frac": 0.26962929710990496,
+    "ctrl_isotropic": {
+     "p50": 0.3651187004269449,
+     "p95": 0.36972987772355126,
+     "max": 0.37491058276635075,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3688884959476926,
+     "p95": 0.3743917204312772,
+     "max": 0.3770935360276372,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.5124220847574493,
+    "sq_mass_frac": 0.26257639294717056,
+    "ctrl_isotropic": {
+     "p50": 0.3529336760203249,
+     "p95": 0.3576672188642814,
+     "max": 0.3635052021953479,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3581549584927993,
+     "p95": 0.3636571985953204,
+     "max": 0.3671011004924856,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.47916778286815986,
+    "sq_mass_frac": 0.229601764138788,
+    "ctrl_isotropic": {
+     "p50": 0.3321345034196368,
+     "p95": 0.33690675679295484,
+     "max": 0.3406998267257797,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.33673298754444947,
+     "p95": 0.34234995331582285,
+     "max": 0.3462933754654308,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.47895959223546836,
+    "sq_mass_frac": 0.22940229099436613,
+    "ctrl_isotropic": {
+     "p50": 0.3321518338536045,
+     "p95": 0.3367539586905429,
+     "max": 0.34097542235363354,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.33677815583897064,
+     "p95": 0.34236234071307275,
+     "max": 0.34625108457703146,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-07": {
+   "PA_d": {
+    "norm_frac": 0.512863990543006,
+    "sq_mass_frac": 0.26302947279569655,
+    "ctrl_isotropic": {
+     "p50": 0.36374752828596546,
+     "p95": 0.36825378903502176,
+     "max": 0.37328530003801147,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3664791124694012,
+     "p95": 0.37234346174016764,
+     "max": 0.3753210905536657,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.5033696501797708,
+    "sq_mass_frac": 0.2533810047221048,
+    "ctrl_isotropic": {
+     "p50": 0.35135946586751926,
+     "p95": 0.35618305084813895,
+     "max": 0.3617840200740825,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.35583431626830464,
+     "p95": 0.36165688846083166,
+     "max": 0.36538944075548946,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.4720211948838761,
+    "sq_mass_frac": 0.22280400841960216,
+    "ctrl_isotropic": {
+     "p50": 0.33105186571351297,
+     "p95": 0.33577498503122033,
+     "max": 0.33899477321210575,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3348977236614913,
+     "p95": 0.3409021347735646,
+     "max": 0.3443861113425224,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.47170286893054564,
+    "sq_mass_frac": 0.2225035965573075,
+    "ctrl_isotropic": {
+     "p50": 0.3310285143749182,
+     "p95": 0.3357430562660085,
+     "max": 0.33940407542829054,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3350392747782859,
+     "p95": 0.3407483720779976,
+     "max": 0.3446206252487501,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-08": {
+   "PA_d": {
+    "norm_frac": 0.5126473021225352,
+    "sq_mass_frac": 0.2628072563735139,
+    "ctrl_isotropic": {
+     "p50": 0.36355940644633533,
+     "p95": 0.3680825751455794,
+     "max": 0.37304916484712225,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.36622129281603033,
+     "p95": 0.3721225845650612,
+     "max": 0.3749721014768433,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.5032710266667388,
+    "sq_mass_frac": 0.25328172628219336,
+    "ctrl_isotropic": {
+     "p50": 0.35130346408572155,
+     "p95": 0.3561391884362788,
+     "max": 0.3617740168388963,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.35571255056707174,
+     "p95": 0.36153292677357535,
+     "max": 0.36499149175451123,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.47191695822699375,
+    "sq_mass_frac": 0.22270561546221818,
+    "ctrl_isotropic": {
+     "p50": 0.3309144933497973,
+     "p95": 0.33570167036756454,
+     "max": 0.338991795917461,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3347215303932437,
+     "p95": 0.3408527652067195,
+     "max": 0.3443396315518306,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.4716048111429296,
+    "sq_mass_frac": 0.22241109789315833,
+    "ctrl_isotropic": {
+     "p50": 0.3309925741986124,
+     "p95": 0.33569825931628244,
+     "max": 0.33939414055819245,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3349049215950749,
+     "p95": 0.34063014315848,
+     "max": 0.3445769027943052,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-09": {
+   "PA_d": {
+    "norm_frac": 0.5126473021225352,
+    "sq_mass_frac": 0.2628072563735139,
+    "ctrl_isotropic": {
+     "p50": 0.36355940644633533,
+     "p95": 0.3680825751455794,
+     "max": 0.37304916484712225,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.36622129281603033,
+     "p95": 0.3721225845650612,
+     "max": 0.3749721014768433,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.5032658693591483,
+    "sq_mass_frac": 0.2532765352618193,
+    "ctrl_isotropic": {
+     "p50": 0.3512667469825481,
+     "p95": 0.35600527993119546,
+     "max": 0.36176748271093456,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3556462650733476,
+     "p95": 0.3615270103663908,
+     "max": 0.36456449341043373,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.47191307899014356,
+    "sq_mass_frac": 0.22270195412195748,
+    "ctrl_isotropic": {
+     "p50": 0.3308800057161243,
+     "p95": 0.3356803082771126,
+     "max": 0.3389775955144487,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3346936258882205,
+     "p95": 0.34084307225299537,
+     "max": 0.34428360786324064,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.47159937433737653,
+    "sq_mass_frac": 0.222405969875405,
+    "ctrl_isotropic": {
+     "p50": 0.33096157012410876,
+     "p95": 0.3356839298494606,
+     "max": 0.33938725650288115,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.33485234398110075,
+     "p95": 0.34062399034330154,
+     "max": 0.34452525406478096,
+     "exceedances_of_256": 0
+    }
+   }
+  },
+  "1e-10": {
+   "PA_d": {
+    "norm_frac": 0.5126473021225352,
+    "sq_mass_frac": 0.2628072563735139,
+    "ctrl_isotropic": {
+     "p50": 0.36355940644633533,
+     "p95": 0.3680825751455794,
+     "max": 0.37304916484712225,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.36622129281603033,
+     "p95": 0.3721225845650612,
+     "max": 0.3749721014768433,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_d": {
+    "norm_frac": 0.5032658693591483,
+    "sq_mass_frac": 0.2532765352618193,
+    "ctrl_isotropic": {
+     "p50": 0.3512667469825481,
+     "p95": 0.35600527993119546,
+     "max": 0.36176748271093456,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3556462650733476,
+     "p95": 0.3615270103663908,
+     "max": 0.36456449341043373,
+     "exceedances_of_256": 0
+    }
+   },
+   "PB_PA_d": {
+    "norm_frac": 0.47191307899014356,
+    "sq_mass_frac": 0.22270195412195748,
+    "ctrl_isotropic": {
+     "p50": 0.3308800057161243,
+     "p95": 0.3356803082771126,
+     "max": 0.3389775955144487,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.3346936258882205,
+     "p95": 0.34084307225299537,
+     "max": 0.34428360786324064,
+     "exceedances_of_256": 0
+    }
+   },
+   "PA_PB_d": {
+    "norm_frac": 0.47159937433737653,
+    "sq_mass_frac": 0.222405969875405,
+    "ctrl_isotropic": {
+     "p50": 0.33096157012410876,
+     "p95": 0.3356839298494606,
+     "max": 0.33938725650288115,
+     "exceedances_of_256": 0
+    },
+    "ctrl_layer_length_matched": {
+     "p50": 0.33485234398110075,
+     "p95": 0.34062399034330154,
+     "max": 0.34452525406478096,
+     "exceedances_of_256": 0
+    }
+   }
+  }
+ },
+ "controls_generator_seed": 2031,
+ "runtime_s": 385.5,
+ "corrections": {
+  "2026-11-16_empty_tail_aggregation": {
+   "description": "original run skipped (block, eps) cells where either endpoint tail was zero-dimensional; both-empty cells relabelled as genuine exact zeros; one-empty cells' P_non d and control projections computed from the authenticated stored factors and added to the full-network aggregation; full_network re-aggregated at every eps after verifying the reconstruction reproduced the original record exactly",
+   "both_empty_cells_relabelled": [
+    [
+     "conv1",
+     "0.001"
+    ],
+    [
+     "conv1",
+     "0.0001"
+    ],
+    [
+     "conv1",
+     "1e-05"
+    ],
+    [
+     "conv1",
+     "1e-06"
+    ],
+    [
+     "conv1",
+     "1e-07"
+    ],
+    [
+     "conv1",
+     "1e-08"
+    ],
+    [
+     "conv1",
+     "1e-09"
+    ],
+    [
+     "conv1",
+     "1e-10"
+    ],
+    [
+     "conv2",
+     "1e-05"
+    ],
+    [
+     "conv2",
+     "1e-06"
+    ],
+    [
+     "conv2",
+     "1e-07"
+    ],
+    [
+     "conv2",
+     "1e-08"
+    ],
+    [
+     "conv2",
+     "1e-09"
+    ],
+    [
+     "conv2",
+     "1e-10"
+    ],
+    [
+     "conv3",
+     "0.0001"
+    ],
+    [
+     "conv3",
+     "1e-05"
+    ],
+    [
+     "conv3",
+     "1e-06"
+    ],
+    [
+     "conv3",
+     "1e-07"
+    ],
+    [
+     "conv3",
+     "1e-08"
+    ],
+    [
+     "conv3",
+     "1e-09"
+    ],
+    [
+     "conv3",
+     "1e-10"
+    ],
+    [
+     "conv4",
+     "1e-05"
+    ],
+    [
+     "conv4",
+     "1e-06"
+    ],
+    [
+     "conv4",
+     "1e-07"
+    ],
+    [
+     "conv4",
+     "1e-08"
+    ],
+    [
+     "conv4",
+     "1e-09"
+    ],
+    [
+     "conv4",
+     "1e-10"
+    ]
+   ],
+   "one_empty_cells_computed": [],
+   "original_backup": "jtail_sweep_cnn_s2_e200.json.pre_empty_tail_fix"
+  }
+ }
+}

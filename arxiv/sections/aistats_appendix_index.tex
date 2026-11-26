@@ -1,0 +1,34 @@
+\makeatletter
+\begingroup
+\setcounter{tocdepth}{3}
+\def\@pnumwidth{1.8em}
+\def\@tocrmarg{2.2em}
+\renewcommand*{\l@section}[2]{\addvspace{.7em}{\bfseries\@dottedtocline{1}{0em}{1.6em}{#1}{#2}}}
+\renewcommand*{\l@subsection}[2]{\@dottedtocline{2}{.4em}{2.8em}{#1}{#2}}
+\renewcommand*{\l@subsubsection}[2]{\@dottedtocline{3}{.9em}{3.4em}{#1}{#2}}
+\begin{center}{\Large\bfseries Appendix contents}\end{center}
+\vspace{.5em}
+\noindent
+\begin{minipage}[t]{.485\linewidth}
+\fontsize{10}{12}\selectfont
+\@starttoc{apxleft}
+\end{minipage}\hfill
+\begin{minipage}[t]{.485\linewidth}
+\fontsize{10}{12}\selectfont
+\@starttoc{apxright}
+\end{minipage}
+\endgroup
+\clearpage
+
+\newcommand{\AppendixContentsRecord}[2]{%
+  \ifnum\value{section}<3\def\apxcontentsfile{apxleft}%
+  \else\def\apxcontentsfile{apxright}\fi
+  \addtocontents{\apxcontentsfile}{\protect\contentsline{#1}%
+    {\protect\numberline{\csname the#1\endcsname}#2}{\thepage}{\@currentHref}}}
+\let\AppendixOriginalSection\section
+\let\AppendixOriginalSubsection\subsection
+\let\AppendixOriginalSubsubsection\subsubsection
+\renewcommand{\section}[1]{\AppendixOriginalSection{#1}\AppendixContentsRecord{section}{#1}}
+\renewcommand{\subsection}[1]{\AppendixOriginalSubsection{#1}\AppendixContentsRecord{subsection}{#1}}
+\renewcommand{\subsubsection}[1]{\AppendixOriginalSubsubsection{#1}\AppendixContentsRecord{subsubsection}{#1}}
+\makeatother

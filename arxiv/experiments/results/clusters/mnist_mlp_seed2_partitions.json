@@ -1,0 +1,2020 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+ "results": {
+  "high_accuracy": {
+   "epoch": 40,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "6a7f44a96d732bce14508219a9f52ef183584d6e84bdcf763ac558172269f746",
+       "phase": "partitions"
+      },
+      "digest": "955fe62f063f861ece9aa6d9e2a45806804be238a0feca4e75ffb136c1d3ba62"
+     },
+     "rank_J": 12256,
+     "rank_J_ladder": {
+      "1e-06": 12256,
+      "1e-09": 12256,
+      "1e-12": 12256
+     },
+     "gap_J": 7485914066.935536,
+     "sigma1": 61.0754108640152,
+     "r_h": 129,
+     "r_d": 125,
+     "delta_joint": 3869,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "6a7f44a96d732bce14508219a9f52ef183584d6e84bdcf763ac558172269f746",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 1.3e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 16125,
+       "dim_P_ladder": {
+        "1e-06": 16125,
+        "1e-09": 16125,
+        "1e-12": 16125
+       },
+       "dim_P_gap": 76395303637322.11,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3869,
+       "across": 0,
+       "across_share_of_delta": 0.0
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        6.5,
+        7983
+       ],
+       "purity": 0.2997,
+       "purity_random_baseline": 0.10573999999999999,
+       "ARI_labels": 0.10641145673359488,
+       "NMI_labels": 0.4242164213231221,
+       "AMI_labels": 0.42268773308315405,
+       "assignment_sha256": "f7757bdb354c43aada61a173871bfba6e4b2841eb68596b42883b109ff1db238",
+       "dim_P": 16125,
+       "dim_P_ladder": {
+        "1e-06": 16125,
+        "1e-09": 16125,
+        "1e-12": 16125
+       },
+       "dim_P_gap": 7742908899372.807,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3869,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "stability_ARI_over_seeds": 0.27385455146872134
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1153,
+       "purity_random_baseline": 0.11398,
+       "ARI_labels": 2.1707307307307308e-05,
+       "NMI_labels": 0.0018064180713894163,
+       "AMI_labels": 4.40260948583677e-05,
+       "assignment_sha256": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+       "dim_P": 16125,
+       "dim_P_ladder": {
+        "1e-06": 16125,
+        "1e-09": 16125,
+        "1e-12": 16125
+       },
+       "dim_P_gap": 39444086669075.67,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3869,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of labels (same group sizes)"
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        6.5,
+        7983
+       ],
+       "purity": 0.1061,
+       "purity_random_baseline": 0.10588000000000002,
+       "ARI_labels": -1.2712787022066378e-05,
+       "NMI_labels": 0.0025842733347904764,
+       "AMI_labels": -6.383569120166599e-05,
+       "assignment_sha256": "421f863e381ebae9d6952b5de4e0a6549a34559e5ce8d99a5d9266da65b5e2d9",
+       "dim_P": 16125,
+       "dim_P_ladder": {
+        "1e-06": 16125,
+        "1e-09": 16125,
+        "1e-12": 16125
+       },
+       "dim_P_gap": 1156578601880.845,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3869,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of kmeans_D (same group sizes)"
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.10641145673359488,
+        "AMI": 0.4226877330831491
+       },
+       "random_labels": {
+        "ARI": -2.946750366265537e-05,
+        "AMI": -0.00013231049243790833
+       },
+       "random_kmeans_D": {
+        "ARI": 0.007008827257449018,
+        "AMI": -4.90346545587396e-05
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "f7757bdb354c43aada61a173871bfba6e4b2841eb68596b42883b109ff1db238",
+        "random_labels": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+        "random_kmeans_D": "421f863e381ebae9d6952b5de4e0a6549a34559e5ce8d99a5d9266da65b5e2d9"
+       }
+      }
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "a1cee971aa34b457677ad8f82911f62ae77ae4d92477606789eaaf928cb3ee7b",
+       "phase": "partitions"
+      },
+      "digest": "77d9e00c0672b17da0f1d427b5d9fea11bc2a1fef3216ed379df8d631ae766e2"
+     },
+     "rank_J": 9505,
+     "rank_J_ladder": {
+      "1e-06": 9413,
+      "1e-09": 9505,
+      "1e-12": 9505
+     },
+     "gap_J": 12669923.0194771,
+     "sigma1": 315.7291695652455,
+     "r_h": 126,
+     "r_d": 108,
+     "delta_joint": 4103,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "a1cee971aa34b457677ad8f82911f62ae77ae4d92477606789eaaf928cb3ee7b",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.0e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 12938,
+       "dim_P_ladder": {
+        "1e-06": 12938,
+        "1e-09": 12938,
+        "1e-12": 12938
+       },
+       "dim_P_gap": 181070992984.72888,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3433,
+       "across": 670,
+       "across_share_of_delta": 0.16329514989032415,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.0
+       }
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        994,
+        1000.0,
+        1011
+       ],
+       "purity": 0.9979,
+       "purity_random_baseline": 0.11486,
+       "ARI_labels": 0.9953312824421943,
+       "NMI_labels": 0.9932771111317348,
+       "AMI_labels": 0.9932652412990205,
+       "assignment_sha256": "03ea261b246b73a2fba75e6c4c66e8e8762a01572c989c4f6b406c8309bbca70",
+       "dim_P": 12887,
+       "dim_P_ladder": {
+        "1e-06": 12887,
+        "1e-09": 12887,
+        "1e-12": 12887
+       },
+       "dim_P_gap": 338158664970.9046,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3382,
+       "across": 721,
+       "across_share_of_delta": 0.1757250792103339,
+       "stability_ARI_over_seeds": 0.8651231490359607,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.10578167696302411
+       }
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1132,
+       "purity_random_baseline": 0.11341999999999999,
+       "ARI_labels": -0.00015422882882882883,
+       "NMI_labels": 0.0014641561189486635,
+       "AMI_labels": -0.0002988401489040023,
+       "assignment_sha256": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+       "dim_P": 13477,
+       "dim_P_ladder": {
+        "1e-06": 13477,
+        "1e-09": 13477,
+        "1e-12": 13477
+       },
+       "dim_P_gap": 2596402236226.404,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3972,
+       "across": 131,
+       "across_share_of_delta": 0.03192785766512308,
+       "control": "matched random partition of labels (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.0002049833833833834
+       }
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        994,
+        1000.0,
+        1011
+       ],
+       "purity": 0.1183,
+       "purity_random_baseline": 0.11496000000000002,
+       "ARI_labels": 0.00025198100810027314,
+       "NMI_labels": 0.0022244994953170938,
+       "AMI_labels": 0.0004628418940204961,
+       "assignment_sha256": "ad7671ff87f7a2268621d7997a526e0f42ce24fff01e5b5ca5256644ea9b995c",
+       "dim_P": 13478,
+       "dim_P_ladder": {
+        "1e-06": 13478,
+        "1e-09": 13478,
+        "1e-12": 13478
+       },
+       "dim_P_gap": 4878139306007.86,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3973,
+       "across": 130,
+       "across_share_of_delta": 0.031684133560809166,
+       "control": "matched random partition of kmeans_D (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.2460360736465162e-06
+       }
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.9953312824421943,
+        "AMI": 0.9932652412990203
+       },
+       "random_labels": {
+        "ARI": -0.00013258404072877036,
+        "AMI": -0.0002565628469135132
+       },
+       "random_kmeans_D": {
+        "ARI": 0.00024404038971515734,
+        "AMI": 0.0004491719788303076
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "03ea261b246b73a2fba75e6c4c66e8e8762a01572c989c4f6b406c8309bbca70",
+        "random_labels": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+        "random_kmeans_D": "ad7671ff87f7a2268621d7997a526e0f42ce24fff01e5b5ca5256644ea9b995c"
+       }
+      }
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0040.pt",
+    "checkpoint_sha256": "d88348b7d51fa8fa513e68d562a9cb656eaefdcb20a01a186ba8b97bb9b01849",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "93e4b17ee98fb354d9e7d46fc64f953a16e8c33193a939746aec43003faaf54d"
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+       "phase": "partitions"
+      },
+      "digest": "e247cf059799edc977e5c429c2fbfb0ea71129472b86836c200a69e79efdb924"
+     },
+     "rank_J": 5576,
+     "rank_J_ladder": {
+      "1e-06": 5574,
+      "1e-09": 5576,
+      "1e-12": 5576
+     },
+     "gap_J": 451570127.4523701,
+     "sigma1": 12.1189168570478,
+     "r_h": 129,
+     "r_d": 76,
+     "delta_joint": 4228,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+     "factor_status": "identity verified",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 9804,
+       "dim_P_ladder": {
+        "1e-06": 9804,
+        "1e-09": 9804,
+        "1e-12": 9804
+       },
+       "dim_P_gap": 42023965842523.53,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 4228,
+       "across": 0,
+       "across_share_of_delta": 0.0
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        1.0,
+        9979
+       ],
+       "purity": 0.1015,
+       "purity_random_baseline": 0.10118,
+       "ARI_labels": 9.422880202642189e-07,
+       "NMI_labels": 0.0030927780028278985,
+       "AMI_labels": 0.000753224568201835,
+       "assignment_sha256": "1b0a2a331ce301bc2292d91e205ec8ffc1b0a112a3fcf21141c993fc24c66449",
+       "dim_P": 9548,
+       "dim_P_ladder": {
+        "1e-06": 9548,
+        "1e-09": 9548,
+        "1e-12": 9548
+       },
+       "dim_P_gap": 23033598441996.914,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3972,
+       "across": 256,
+       "across_share_of_delta": 0.06054872280037843,
+       "stability_ARI_over_seeds": 0.7388024177740808
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1153,
+       "purity_random_baseline": 0.11398,
+       "ARI_labels": 2.1707307307307308e-05,
+       "NMI_labels": 0.0018064180713894163,
+       "AMI_labels": 4.40260948583677e-05,
+       "assignment_sha256": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+       "dim_P": 9804,
+       "dim_P_ladder": {
+        "1e-06": 9804,
+        "1e-09": 9804,
+        "1e-12": 9804
+       },
+       "dim_P_gap": 25256002876215.445,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 4228,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of labels (same group sizes)"
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        1.0,
+        9979
+       ],
+       "purity": 0.1012,
+       "purity_random_baseline": 0.10111999999999999,
+       "ARI_labels": 5.460909820425865e-09,
+       "NMI_labels": 0.002443520991263805,
+       "AMI_labels": 0.00010244387275037107,
+       "assignment_sha256": "0ab87633b6a281795fb7a0442997c5f54bebc968162c5e798346b32eb244068c",
+       "dim_P": 9804,
+       "dim_P_ladder": {
+        "1e-06": 9804,
+        "1e-09": 9804,
+        "1e-12": 9804
+       },
+       "dim_P_gap": 147360767772113.4,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 4228,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of kmeans_D (same group sizes)"
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 9.422880202642189e-07,
+        "AMI": 0.0007532245682008071
+       },
+       "random_labels": {
+        "ARI": 2.2851498373561468e-07,
+        "AMI": 0.0002968627524980622
+       },
+       "random_kmeans_D": {
+        "ARI": -0.002101130308673637,
+        "AMI": -0.0015145897648723868
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "1b0a2a331ce301bc2292d91e205ec8ffc1b0a112a3fcf21141c993fc24c66449",
+        "random_labels": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+        "random_kmeans_D": "0ab87633b6a281795fb7a0442997c5f54bebc968162c5e798346b32eb244068c"
+       }
+      }
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+       "phase": "partitions"
+      },
+      "digest": "30a23a05f42834593d96c737408aedd362050c4aa90704a16e0bc00709e2c886"
+     },
+     "rank_J": 1507,
+     "rank_J_ladder": {
+      "1e-06": 1347,
+      "1e-09": 1507,
+      "1e-12": 1507
+     },
+     "gap_J": 2584611.5847324254,
+     "sigma1": 846.9637108210104,
+     "r_h": 76,
+     "r_d": 53,
+     "delta_joint": 2521,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 2310,
+       "dim_P_ladder": {
+        "1e-06": 2310,
+        "1e-09": 2310,
+        "1e-12": 2310
+       },
+       "dim_P_gap": 539165469370.70197,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 803,
+       "across": 1718,
+       "across_share_of_delta": 0.6814756049186831,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.0
+       }
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        998,
+        1000.0,
+        1003
+       ],
+       "purity": 0.9994,
+       "purity_random_baseline": 0.11478,
+       "ARI_labels": 0.9986660225899052,
+       "NMI_labels": 0.9979394013454509,
+       "AMI_labels": 0.9979357631901614,
+       "assignment_sha256": "12a467da48935293e509598b0bc5265a66be172ab92e477c7e0003d1e1aa5034",
+       "dim_P": 2343,
+       "dim_P_ladder": {
+        "1e-06": 2343,
+        "1e-09": 2343,
+        "1e-12": 2343
+       },
+       "dim_P_gap": 344202630614.81134,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 836,
+       "across": 1685,
+       "across_share_of_delta": 0.6683855612852043,
+       "stability_ARI_over_seeds": 1.0,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 9.885833209810945e-07
+       }
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1132,
+       "purity_random_baseline": 0.11341999999999999,
+       "ARI_labels": -0.00015422882882882883,
+       "NMI_labels": 0.0014641561189486635,
+       "AMI_labels": -0.0002988401489040023,
+       "assignment_sha256": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+       "dim_P": 3840,
+       "dim_P_ladder": {
+        "1e-06": 3840,
+        "1e-09": 3840,
+        "1e-12": 3840
+       },
+       "dim_P_gap": 487659220552.95154,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2333,
+       "across": 188,
+       "across_share_of_delta": 0.0745735819119397,
+       "control": "matched random partition of labels (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.0002049833833833834
+       }
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        998,
+        1000.0,
+        1003
+       ],
+       "purity": 0.1184,
+       "purity_random_baseline": 0.1149,
+       "ARI_labels": 0.0002448192233434829,
+       "NMI_labels": 0.0022099495443032202,
+       "AMI_labels": 0.00044826968404035577,
+       "assignment_sha256": "611061eea9ed1b921aea47b6d61c751c7b7a48ef2a53323a7caafeecc5ef2999",
+       "dim_P": 3835,
+       "dim_P_ladder": {
+        "1e-06": 3835,
+        "1e-09": 3835,
+        "1e-12": 3835
+       },
+       "dim_P_gap": 931182118036.9021,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2328,
+       "across": 193,
+       "across_share_of_delta": 0.07655692185640618,
+       "control": "matched random partition of kmeans_D (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 7.655292026637765e-07
+       }
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.9986660225899052,
+        "AMI": 0.9979357631901616
+       },
+       "random_labels": {
+        "ARI": -0.00014397485966538017,
+        "AMI": -0.00027885247777186727
+       },
+       "random_kmeans_D": {
+        "ARI": 0.0002463984037571201,
+        "AMI": 0.00045246661438635787
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "12a467da48935293e509598b0bc5265a66be172ab92e477c7e0003d1e1aa5034",
+        "random_labels": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+        "random_kmeans_D": "611061eea9ed1b921aea47b6d61c751c7b7a48ef2a53323a7caafeecc5ef2999"
+       }
+      }
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "921d8f7e5d9035056018705737bd56f62cb00243bfe5aae77093f09f2fc9a90d"
+   }
+  },
+  "mse_interpolation": {
+   "epoch": 50,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0050.pt",
+      "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "87d133d23c4f244090ada95e2d1d3dc177a9b0d47965f84dd5a63947d7bc0d6a",
+       "phase": "partitions"
+      },
+      "digest": "de23d4e28efb4791bb30f28484ba63830b7e986af76bb062eb59a897e5a2a26e"
+     },
+     "rank_J": 11648,
+     "rank_J_ladder": {
+      "1e-06": 11647,
+      "1e-09": 11648,
+      "1e-12": 11648
+     },
+     "gap_J": 278021439.51904994,
+     "sigma1": 64.00084302048427,
+     "r_h": 129,
+     "r_d": 119,
+     "delta_joint": 3703,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "87d133d23c4f244090ada95e2d1d3dc177a9b0d47965f84dd5a63947d7bc0d6a",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.1e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 15351,
+       "dim_P_ladder": {
+        "1e-06": 15351,
+        "1e-09": 15351,
+        "1e-12": 15351
+       },
+       "dim_P_gap": 34490032374823.957,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3703,
+       "across": 0,
+       "across_share_of_delta": 0.0
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        59.0,
+        6995
+       ],
+       "purity": 0.4,
+       "purity_random_baseline": 0.10729999999999999,
+       "ARI_labels": 0.17822571070344145,
+       "NMI_labels": 0.5675618634532644,
+       "AMI_labels": 0.5666481484849483,
+       "assignment_sha256": "5d07b0956a384cbd33d55bd7a5b11272a26b7147a89b6ced807eb193946d9f8f",
+       "dim_P": 15351,
+       "dim_P_ladder": {
+        "1e-06": 15351,
+        "1e-09": 15351,
+        "1e-12": 15351
+       },
+       "dim_P_gap": 42662669113236.516,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3703,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "stability_ARI_over_seeds": 0.5879479776038784
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1153,
+       "purity_random_baseline": 0.11398,
+       "ARI_labels": 2.1707307307307308e-05,
+       "NMI_labels": 0.0018064180713894163,
+       "AMI_labels": 4.40260948583677e-05,
+       "assignment_sha256": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+       "dim_P": 15351,
+       "dim_P_ladder": {
+        "1e-06": 15351,
+        "1e-09": 15351,
+        "1e-12": 15351
+       },
+       "dim_P_gap": 47146868234524.484,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3703,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of labels (same group sizes)"
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        59.0,
+        6995
+       ],
+       "purity": 0.1086,
+       "purity_random_baseline": 0.10786,
+       "ARI_labels": 1.5548209978697093e-05,
+       "NMI_labels": 0.002219554156213062,
+       "AMI_labels": 0.00011130594355309169,
+       "assignment_sha256": "50a77d452954f82eed441ffd5f96f825814b6a5b1d425f9a6fbb5e8fcc017897",
+       "dim_P": 15351,
+       "dim_P_ladder": {
+        "1e-06": 15351,
+        "1e-09": 15351,
+        "1e-12": 15351
+       },
+       "dim_P_gap": 8318229056187.339,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3703,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of kmeans_D (same group sizes)"
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.17822571070344145,
+        "AMI": 0.5666481484849483
+       },
+       "random_labels": {
+        "ARI": -3.249997217568475e-05,
+        "AMI": -0.00022189506656620486
+       },
+       "random_kmeans_D": {
+        "ARI": 0.012102890408436477,
+        "AMI": -0.0004983545277102915
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "5d07b0956a384cbd33d55bd7a5b11272a26b7147a89b6ced807eb193946d9f8f",
+        "random_labels": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+        "random_kmeans_D": "50a77d452954f82eed441ffd5f96f825814b6a5b1d425f9a6fbb5e8fcc017897"
+       }
+      }
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0050.pt",
+      "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "4f36865c0f7e3da7380514a119d26c9dc385a59ed69e84e18ff1e2047cdc0b05",
+       "phase": "partitions"
+      },
+      "digest": "6d46870a52a30b2d8d1f67e276d8076afb50183cc38affafbe9d77baf2bed028"
+     },
+     "rank_J": 8723,
+     "rank_J_ladder": {
+      "1e-06": 8582,
+      "1e-09": 8723,
+      "1e-12": 8723
+     },
+     "gap_J": 2674507.5768078673,
+     "sigma1": 327.7117424121581,
+     "r_h": 120,
+     "r_d": 105,
+     "delta_joint": 3877,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "4f36865c0f7e3da7380514a119d26c9dc385a59ed69e84e18ff1e2047cdc0b05",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.5e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 11678,
+       "dim_P_ladder": {
+        "1e-06": 11678,
+        "1e-09": 11678,
+        "1e-12": 11678
+       },
+       "dim_P_gap": 456795671281.2195,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2955,
+       "across": 922,
+       "across_share_of_delta": 0.23781274181067835,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.0
+       }
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        992,
+        1001.0,
+        1007
+       ],
+       "purity": 0.998,
+       "purity_random_baseline": 0.11483999999999998,
+       "ARI_labels": 0.9955598167426489,
+       "NMI_labels": 0.9938621463763839,
+       "AMI_labels": 0.9938513094748369,
+       "assignment_sha256": "39802d142c0cbe956cfb2cad54034435729cd2a322bad5a93e56e907a1180924",
+       "dim_P": 11596,
+       "dim_P_ladder": {
+        "1e-06": 11596,
+        "1e-09": 11596,
+        "1e-12": 11596
+       },
+       "dim_P_gap": 25524785527.335194,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2873,
+       "across": 1004,
+       "across_share_of_delta": 0.25896311581119424,
+       "stability_ARI_over_seeds": 1.0,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.1778366320135057
+       }
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1132,
+       "purity_random_baseline": 0.11341999999999999,
+       "ARI_labels": -0.00015422882882882883,
+       "NMI_labels": 0.0014641561189486635,
+       "AMI_labels": -0.0002988401489040023,
+       "assignment_sha256": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+       "dim_P": 12490,
+       "dim_P_ladder": {
+        "1e-06": 12490,
+        "1e-09": 12490,
+        "1e-12": 12490
+       },
+       "dim_P_gap": 4529410636302.636,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3767,
+       "across": 110,
+       "across_share_of_delta": 0.028372452927521278,
+       "control": "matched random partition of labels (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.0002049833833833834
+       }
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        992,
+        1001.0,
+        1007
+       ],
+       "purity": 0.1182,
+       "purity_random_baseline": 0.11492,
+       "ARI_labels": 0.00024546410014187665,
+       "NMI_labels": 0.0022134179684991915,
+       "AMI_labels": 0.000451741066844732,
+       "assignment_sha256": "4ae66fe90b45149071178dc43c2468630d9e13270010d066b1e36be1d9c8bd1a",
+       "dim_P": 12499,
+       "dim_P_ladder": {
+        "1e-06": 12499,
+        "1e-09": 12499,
+        "1e-12": 12499
+       },
+       "dim_P_gap": 845816500152.4033,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3776,
+       "across": 101,
+       "across_share_of_delta": 0.026051070415269537,
+       "control": "matched random partition of kmeans_D (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 4.8446722219345936e-05
+       }
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.9955598167426489,
+        "AMI": 0.993851309474837
+       },
+       "random_labels": {
+        "ARI": -0.00014532896618913064,
+        "AMI": -0.0002814946876860476
+       },
+       "random_kmeans_D": {
+        "ARI": 0.00022767039121781367,
+        "AMI": 0.0004189333647958816
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "39802d142c0cbe956cfb2cad54034435729cd2a322bad5a93e56e907a1180924",
+        "random_labels": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+        "random_kmeans_D": "4ae66fe90b45149071178dc43c2468630d9e13270010d066b1e36be1d9c8bd1a"
+       }
+      }
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0050.pt",
+    "checkpoint_sha256": "e7892536fa916edea6c32369ea9829e144287e3ce60ee90023175c136956b6a4",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "a15912ad242ac5c7c607555fb05aeb39bf44e76a1e4f287e89119d069a814d9d"
+   }
+  },
+  "epoch_100": {
+   "epoch": 100,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0100.pt",
+      "checkpoint_sha256": "d573ba7b2227781115235ec49995be384191c176db0a421df943e8620d0dbf44",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "08599e41012c467437d03545da7f0646397b60df5abb3823d24358f8b78d0702",
+       "phase": "partitions"
+      },
+      "digest": "40ff0a3356b685879f421eeaf8b7c8c2d7d199936642e947df0519f7e4ba58ee"
+     },
+     "rank_J": 10748,
+     "rank_J_ladder": {
+      "1e-06": 10743,
+      "1e-09": 10748,
+      "1e-12": 10748
+     },
+     "gap_J": 223945082.64524364,
+     "sigma1": 87.2244853725765,
+     "r_h": 129,
+     "r_d": 112,
+     "delta_joint": 3700,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "08599e41012c467437d03545da7f0646397b60df5abb3823d24358f8b78d0702",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.2e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 14448,
+       "dim_P_ladder": {
+        "1e-06": 14448,
+        "1e-09": 14448,
+        "1e-12": 14448
+       },
+       "dim_P_gap": 28344092223438.1,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3700,
+       "across": 0,
+       "across_share_of_delta": 0.0
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        2.0,
+        6977
+       ],
+       "purity": 0.3001,
+       "purity_random_baseline": 0.10658000000000001,
+       "ARI_labels": 0.16957255358291803,
+       "NMI_labels": 0.49592090431301966,
+       "AMI_labels": 0.49494801119869214,
+       "assignment_sha256": "fed33b0057806e3c06ededc79c0c81a4f0510a9401413df95c2e1fef2892dd08",
+       "dim_P": 14448,
+       "dim_P_ladder": {
+        "1e-06": 14448,
+        "1e-09": 14448,
+        "1e-12": 14448
+       },
+       "dim_P_gap": 2478607501317.251,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3700,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "stability_ARI_over_seeds": 0.4902295753561992
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1153,
+       "purity_random_baseline": 0.11398,
+       "ARI_labels": 2.1707307307307308e-05,
+       "NMI_labels": 0.0018064180713894163,
+       "AMI_labels": 4.40260948583677e-05,
+       "assignment_sha256": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+       "dim_P": 14448,
+       "dim_P_ladder": {
+        "1e-06": 14448,
+        "1e-09": 14448,
+        "1e-12": 14448
+       },
+       "dim_P_gap": 28102295469340.637,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3700,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of labels (same group sizes)"
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        2.0,
+        6977
+       ],
+       "purity": 0.1069,
+       "purity_random_baseline": 0.10713999999999999,
+       "ARI_labels": 1.2991770727677119e-05,
+       "NMI_labels": 0.002164762480132608,
+       "AMI_labels": 0.00023889997140579263,
+       "assignment_sha256": "ea784661d86b019e273c155550999f59d1d4b18c63e812aada14f4f34859992a",
+       "dim_P": 14448,
+       "dim_P_ladder": {
+        "1e-06": 14448,
+        "1e-09": 14448,
+        "1e-12": 14448
+       },
+       "dim_P_gap": 8716054058951.379,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3700,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of kmeans_D (same group sizes)"
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.16957255358291803,
+        "AMI": 0.49494801119868664
+       },
+       "random_labels": {
+        "ARI": 5.063942396529421e-06,
+        "AMI": 4.586241457222385e-05
+       },
+       "random_kmeans_D": {
+        "ARI": 0.00204898124819514,
+        "AMI": 0.0006279483292146828
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "fed33b0057806e3c06ededc79c0c81a4f0510a9401413df95c2e1fef2892dd08",
+        "random_labels": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+        "random_kmeans_D": "ea784661d86b019e273c155550999f59d1d4b18c63e812aada14f4f34859992a"
+       }
+      }
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0100.pt",
+      "checkpoint_sha256": "d573ba7b2227781115235ec49995be384191c176db0a421df943e8620d0dbf44",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "00e311f4a0a458f70834f976f71947c310c12d241119aeb5a64f1e358755c8c9",
+       "phase": "partitions"
+      },
+      "digest": "d216a6b8d2be5167e350aa4409c745ea3224cdb2cc0145cfe6a330a56c1512de"
+     },
+     "rank_J": 6489,
+     "rank_J_ladder": {
+      "1e-06": 6380,
+      "1e-09": 6489,
+      "1e-12": 6489
+     },
+     "gap_J": 1465986.8441040392,
+     "sigma1": 450.0936302534533,
+     "r_h": 113,
+     "r_d": 89,
+     "delta_joint": 3568,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "00e311f4a0a458f70834f976f71947c310c12d241119aeb5a64f1e358755c8c9",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 7.4e-09)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 9008,
+       "dim_P_ladder": {
+        "1e-06": 9008,
+        "1e-09": 9008,
+        "1e-12": 9008
+       },
+       "dim_P_gap": 20689063201.41873,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2519,
+       "across": 1049,
+       "across_share_of_delta": 0.29400224215246634,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.0
+       }
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        996,
+        1000.5,
+        1006
+       ],
+       "purity": 0.9987,
+       "purity_random_baseline": 0.11474000000000002,
+       "ARI_labels": 0.997111965051172,
+       "NMI_labels": 0.9957991376449628,
+       "AMI_labels": 0.9957917206749635,
+       "assignment_sha256": "5811d412ec2fe5fb23492f50d7ec8cb69591d854baa547a91ffcfbf376ef2584",
+       "dim_P": 8844,
+       "dim_P_ladder": {
+        "1e-06": 8844,
+        "1e-09": 8844,
+        "1e-12": 8844
+       },
+       "dim_P_gap": 6016788772.341851,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 2355,
+       "across": 1213,
+       "across_share_of_delta": 0.3399663677130045,
+       "stability_ARI_over_seeds": 0.9305702969698254,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.16957371756929998
+       }
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1132,
+       "purity_random_baseline": 0.11341999999999999,
+       "ARI_labels": -0.00015422882882882883,
+       "NMI_labels": 0.0014641561189486635,
+       "AMI_labels": -0.0002988401489040023,
+       "assignment_sha256": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+       "dim_P": 9919,
+       "dim_P_ladder": {
+        "1e-06": 9919,
+        "1e-09": 9919,
+        "1e-12": 9919
+       },
+       "dim_P_gap": 13725467218837.547,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3430,
+       "across": 138,
+       "across_share_of_delta": 0.03867713004484305,
+       "control": "matched random partition of labels (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.0002049833833833834
+       }
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        996,
+        1000.5,
+        1006
+       ],
+       "purity": 0.1185,
+       "purity_random_baseline": 0.11496000000000002,
+       "ARI_labels": 0.0002584758716239494,
+       "NMI_labels": 0.002234613328321461,
+       "AMI_labels": 0.0004729759991653502,
+       "assignment_sha256": "eec8796f69e16e695af433169012a9550364fd90dc37891806e9ff66acbd0ce4",
+       "dim_P": 9912,
+       "dim_P_ladder": {
+        "1e-06": 9912,
+        "1e-09": 9912,
+        "1e-12": 9912
+       },
+       "dim_P_gap": 14321978387497.75,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3423,
+       "across": 145,
+       "across_share_of_delta": 0.0406390134529148,
+       "control": "matched random partition of kmeans_D (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 7.749969808952431e-07
+       }
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.997111965051172,
+        "AMI": 0.9957917206749635
+       },
+       "random_labels": {
+        "ARI": -0.0001516697978773012,
+        "AMI": -0.0002933136542986367
+       },
+       "random_kmeans_D": {
+        "ARI": 0.00024880044671844867,
+        "AMI": 0.00045479540715713453
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "5811d412ec2fe5fb23492f50d7ec8cb69591d854baa547a91ffcfbf376ef2584",
+        "random_labels": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+        "random_kmeans_D": "eec8796f69e16e695af433169012a9550364fd90dc37891806e9ff66acbd0ce4"
+       }
+      }
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0100.pt",
+    "checkpoint_sha256": "d573ba7b2227781115235ec49995be384191c176db0a421df943e8620d0dbf44",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "aad34e50054dfa9324c48b240c9305f4e4b7d367f60a1025a682366369b8aa9a"
+   }
+  },
+  "epoch_250": {
+   "epoch": 250,
+   "layers": {
+    "2": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0250.pt",
+      "checkpoint_sha256": "2a58be5cde6fba8a6be8cf938095b1994330ee9f37534e3adaaa061aa9b84bd9",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 2,
+       "factor_sha256": "ab30ebc941bc996926994d223a28c37518bcf89db3ba15cdee244e463032c5ca",
+       "phase": "partitions"
+      },
+      "digest": "90132bc2be7d61a81722e1592390a3fde5f9881b04afbf391b07b21be104ff11"
+     },
+     "rank_J": 8839,
+     "rank_J_ladder": {
+      "1e-06": 8839,
+      "1e-09": 8839,
+      "1e-12": 8839
+     },
+     "gap_J": 210304458.58425936,
+     "sigma1": 4.939979162946026,
+     "r_h": 129,
+     "r_d": 99,
+     "delta_joint": 3932,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "ab30ebc941bc996926994d223a28c37518bcf89db3ba15cdee244e463032c5ca",
+     "factor_status": "identity verified",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 12771,
+       "dim_P_ladder": {
+        "1e-06": 12771,
+        "1e-09": 12771,
+        "1e-12": 12771
+       },
+       "dim_P_gap": 48993945398892.92,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3932,
+       "across": 0,
+       "across_share_of_delta": 0.0
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        1.0,
+        9990
+       ],
+       "purity": 0.1009,
+       "purity_random_baseline": 0.10090000000000002,
+       "ARI_labels": 1.799377439226739e-08,
+       "NMI_labels": 0.001871835649980824,
+       "AMI_labels": -1.1956878442942746e-05,
+       "assignment_sha256": "e4e8e2d7a16553fecbf6d9ca2810a09f7cb0daad9f4981e3006c5bf47487d8dc",
+       "dim_P": 12644,
+       "dim_P_ladder": {
+        "1e-06": 12644,
+        "1e-09": 12644,
+        "1e-12": 12644
+       },
+       "dim_P_gap": 10563432325174.098,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3805,
+       "across": 127,
+       "across_share_of_delta": 0.03229908443540183,
+       "stability_ARI_over_seeds": 0.444607618643517
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1153,
+       "purity_random_baseline": 0.11398,
+       "ARI_labels": 2.1707307307307308e-05,
+       "NMI_labels": 0.0018064180713894163,
+       "AMI_labels": 4.40260948583677e-05,
+       "assignment_sha256": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+       "dim_P": 12771,
+       "dim_P_ladder": {
+        "1e-06": 12771,
+        "1e-09": 12771,
+        "1e-12": 12771
+       },
+       "dim_P_gap": 53169366101941.664,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3932,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of labels (same group sizes)"
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1,
+        1.0,
+        9990
+       ],
+       "purity": 0.1009,
+       "purity_random_baseline": 0.10094,
+       "ARI_labels": 6.25173453272542e-08,
+       "NMI_labels": 0.001871922303944201,
+       "AMI_labels": -1.1870060935349085e-05,
+       "assignment_sha256": "46165753b2a2f4732ef2b8426b59a3f329efa6db646b139cbff4661a9ffee2ad",
+       "dim_P": 12771,
+       "dim_P_ladder": {
+        "1e-06": 12771,
+        "1e-09": 12771,
+        "1e-12": 12771
+       },
+       "dim_P_gap": 125706305186830.27,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3932,
+       "across": 0,
+       "across_share_of_delta": 0.0,
+       "control": "matched random partition of kmeans_D (same group sizes)"
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 1.799377439226739e-08,
+        "AMI": -1.1956878443542462e-05
+       },
+       "random_labels": {
+        "ARI": -2.6529796542719405e-08,
+        "AMI": -1.2043609047281935e-05
+       },
+       "random_kmeans_D": {
+        "ARI": -0.0010005197130710337,
+        "AMI": -0.0009596014175789953
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "e4e8e2d7a16553fecbf6d9ca2810a09f7cb0daad9f4981e3006c5bf47487d8dc",
+        "random_labels": "d5a3f04c2eb7c4b7d32f35cb6bc94b4ef754f940cc8a0f1db68f34157b846a9f",
+        "random_kmeans_D": "46165753b2a2f4732ef2b8426b59a3f329efa6db646b139cbff4661a9ffee2ad"
+       }
+      }
+     }
+    },
+    "3": {
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0250.pt",
+      "checkpoint_sha256": "2a58be5cde6fba8a6be8cf938095b1994330ee9f37534e3adaaa061aa9b84bd9",
+      "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+       "rtol": 1e-09,
+       "ladder": [
+        1e-06,
+        1e-09,
+        1e-12
+       ],
+       "km_seeds": [
+        0,
+        1,
+        2
+       ],
+       "layer": 3,
+       "factor_sha256": "7fc80d3ca1ffeb82666657b7183e16dd78474fa5a87d7365d0f6d71f64c7e6e6",
+       "phase": "partitions"
+      },
+      "digest": "009bb449b9fc8ecd13eebfe94ab1cbe29a0e8062032231dada6823c910ba33fb"
+     },
+     "rank_J": 3215,
+     "rank_J_ladder": {
+      "1e-06": 2892,
+      "1e-09": 3215,
+      "1e-12": 3216
+     },
+     "gap_J": 74.9268120861007,
+     "sigma1": 644.4769840216549,
+     "r_h": 100,
+     "r_d": 65,
+     "delta_joint": 3285,
+     "rank_source": "stored factor (identity manifest checked)",
+     "factor_sha256": "7fc80d3ca1ffeb82666657b7183e16dd78474fa5a87d7365d0f6d71f64c7e6e6",
+     "factor_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.2e-08)",
+     "10": {
+      "applicable_kinds": [
+       "labels",
+       "kmeans_D",
+       "random_labels",
+       "random_kmeans_D"
+      ],
+      "inapplicable_kinds": [],
+      "labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 1.0,
+       "purity_random_baseline": 0.11479999999999999,
+       "ARI_labels": 1.0,
+       "NMI_labels": 1.0,
+       "AMI_labels": 1.0,
+       "assignment_sha256": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+       "dim_P": 4553,
+       "dim_P_ladder": {
+        "1e-06": 4553,
+        "1e-09": 4553,
+        "1e-12": 4583
+       },
+       "dim_P_gap": 26662111066.55961,
+       "dim_P_resolved": false,
+       "inequalities_hold": true,
+       "within": 1338,
+       "across": 1947,
+       "across_share_of_delta": 0.5926940639269407,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 1.0
+       }
+      },
+      "kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        997,
+        1000.0,
+        1003
+       ],
+       "purity": 0.9994,
+       "purity_random_baseline": 0.11478000000000002,
+       "ARI_labels": 0.998666467671733,
+       "NMI_labels": 0.9979996507640582,
+       "AMI_labels": 0.9979961189838832,
+       "assignment_sha256": "f5e2dd40a0cbaf4fb31c17bfa6145fe9532031a41686dec2b81c52e97bd73391",
+       "dim_P": 4448,
+       "dim_P_ladder": {
+        "1e-06": 4448,
+        "1e-09": 4448,
+        "1e-12": 4474
+       },
+       "dim_P_gap": 144614606297.26993,
+       "dim_P_resolved": false,
+       "inequalities_hold": true,
+       "within": 1233,
+       "across": 2052,
+       "across_share_of_delta": 0.6246575342465753,
+       "stability_ARI_over_seeds": 0.9129687949022506,
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": -2.481686438091581e-07
+       }
+      },
+      "random_labels": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        1000,
+        1000.0,
+        1000
+       ],
+       "purity": 0.1132,
+       "purity_random_baseline": 0.11341999999999999,
+       "ARI_labels": -0.00015422882882882883,
+       "NMI_labels": 0.0014641561189486635,
+       "AMI_labels": -0.0002988401489040023,
+       "assignment_sha256": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+       "dim_P": 6310,
+       "dim_P_ladder": {
+        "1e-06": 6310,
+        "1e-09": 6310,
+        "1e-12": 6310
+       },
+       "dim_P_gap": 23953898785.50018,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3095,
+       "across": 190,
+       "across_share_of_delta": 0.0578386605783866,
+       "control": "matched random partition of labels (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": 0.0002049833833833834
+       }
+      },
+      "random_kmeans_D": {
+       "n_groups": 10,
+       "sizes_min_median_max": [
+        997,
+        1000.0,
+        1003
+       ],
+       "purity": 0.1186,
+       "purity_random_baseline": 0.11494000000000001,
+       "ARI_labels": 0.00025500615678626556,
+       "NMI_labels": 0.002228262996226076,
+       "AMI_labels": 0.00046661539161022665,
+       "assignment_sha256": "fcc3ee2a4c0987faf9d10d5e35030828210d07fad192bf900bd46d05da6dff16",
+       "dim_P": 6297,
+       "dim_P_ladder": {
+        "1e-06": 6297,
+        "1e-09": 6297,
+        "1e-12": 6297
+       },
+       "dim_P_gap": 821452563516.0306,
+       "dim_P_resolved": true,
+       "inequalities_hold": true,
+       "within": 3082,
+       "across": 203,
+       "across_share_of_delta": 0.06179604261796043,
+       "control": "matched random partition of kmeans_D (same group sizes)",
+       "ARI_with_previous_layer": {
+        "layer": 2,
+        "ARI": -3.8173938919209975e-07
+       }
+      },
+      "D_cluster_comparisons": {
+       "labels": {
+        "ARI": 0.998666467671733,
+        "AMI": 0.9979961189838834
+       },
+       "random_labels": {
+        "ARI": -0.00014691076710306392,
+        "AMI": -0.0002842195681340992
+       },
+       "random_kmeans_D": {
+        "ARI": 0.0002483112250403021,
+        "AMI": 0.00045339597693744825
+       },
+       "assignment_sha256": {
+        "labels": "ffc4fc638de00588a4625ae51cb275aab7a1bd832480f957f80ee3515be245dd",
+        "kmeans_D": "f5e2dd40a0cbaf4fb31c17bfa6145fe9532031a41686dec2b81c52e97bd73391",
+        "random_labels": "336a49d0f0e20f168145f5c8e7903a8850c04142c02eeb97adf8637c52a11b36",
+        "random_kmeans_D": "fcc3ee2a4c0987faf9d10d5e35030828210d07fad192bf900bd46d05da6dff16"
+       }
+      }
+     }
+    }
+   },
+   "stage_identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0250.pt",
+    "checkpoint_sha256": "2a58be5cde6fba8a6be8cf938095b1994330ee9f37534e3adaaa061aa9b84bd9",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "EXPERIMENTS_PLAN.md Section 0.6 items 3 and 5 (2026-09-24); identifier clusters-v2",
+     "rtol": 1e-09,
+     "ladder": [
+      1e-06,
+      1e-09,
+      1e-12
+     ],
+     "km_seeds": [
+      0,
+      1,
+      2
+     ]
+    },
+    "digest": "b5a0774b83c40ee8303a398b8a245bfb4c4cf39edd3ce316fb20bbf199321717"
+   }
+  }
+ }
+}

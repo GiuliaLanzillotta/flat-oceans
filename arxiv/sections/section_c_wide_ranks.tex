@@ -1,0 +1,12 @@
+\begin{table}[!htbp]\centering
+\caption{Width-512 ReLU MLP at epoch 500, 10,000 analysis images. A resolved numerical rank determines the corresponding nullity; a rank lower bound gives only a nullity upper bound.}\label{tab:c-wide-ranks}
+\small\begin{tabular}{llrrr}\toprule
+Layer & Seed & Parameters & Rank & Kernel dimension\\\midrule
+L2 & 0 & 262656 & $\ge8192$ & $\le254464$\\
+L3 & 0 & 262656 & $560$ & $262096$\\
+Readout & 0 & 5130 & $360$ & $4770$\\
+L2 & 1 & 262656 & $\ge8192$ & $\le254464$\\
+L3 & 1 & 262656 & $659$ & $261997$\\
+Readout & 1 & 5130 & $430$ & $4700$\\
+\bottomrule\end{tabular}\end{table}
+\FloatBarrier

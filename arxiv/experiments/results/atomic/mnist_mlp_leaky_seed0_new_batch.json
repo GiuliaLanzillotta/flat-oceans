@@ -1,0 +1,2343 @@
+{
+ "protocol": "EXPERIMENTS_PLAN.md amendment 2026-09-17, result 5; identifier new-batch-exposure-v1",
+ "rank_tolerance": "1e-09",
+ "stages": {
+  "mse_interpolation": {
+   "epoch": 66,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0066.pt",
+      "checkpoint_sha256": "9350ec3ab393f88acbc73d8e749ee3cf744d104127c263c6ac5c6957f11e7be0",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "7610c67f6f2d41584f084375e8fe2741e37d4d575df36e74cc19ec885b53350f",
+        "3": "38eafa7b42f5c2c380d8f56e1a858de86385509e11f922dfe9310db5aa9df6bd",
+        "readout": "808396da7a4d8b70aa38c11696d4abc2ada241d4f2178ae16bf65048982cbd11"
+       }
+      },
+      "digest": "0561f59d0068617402f9a3a56b3f40b48574c015951649d989c11137be8aeb98"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "9350ec3ab393f88acbc73d8e749ee3cf744d104127c263c6ac5c6957f11e7be0",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 6255,
+       "dim_K_old_ladder": {
+        "1e-06": 6269,
+        "1e-09": 6255,
+        "1e-12": 6255
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 5972,
+       "exposed_by_new_batch": 283,
+       "exposed_fraction": 0.04524380495603517,
+       "components_old": {
+        "dim_K": 6255,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 5868
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 5972,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5972
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 923427055.372651,
+       "dim_K_union_ladder": {
+        "1e-06": 5978,
+        "1e-09": 5972,
+        "1e-12": 5972
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 14880,
+        "0.001": 8366,
+        "0.0001": 180,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16470,
+        "0.01": 15292,
+        "0.001": 9861,
+        "0.0001": 431,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 2,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 786.031955242157
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 10534,
+        "1e-09": 10540,
+        "1e-12": 10540
+       },
+       "gap_J": {
+        "1e-06": 1.0986928052319345,
+        "1e-09": 923427055.372651,
+        "1e-12": 923427055.372651
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15486,
+        "0.001": 13093,
+        "0.0001": 9819,
+        "1e-05": 6720,
+        "1e-06": 5978,
+        "1e-07": 5972,
+        "1e-08": 5972,
+        "1e-09": 5972,
+        "1e-10": 5972,
+        "1e-11": 5972,
+        "1e-12": 5972
+       },
+       "k_abs": {
+        "0.1": 16109,
+        "0.01": 14320,
+        "0.001": 11532,
+        "0.0001": 7875,
+        "1e-05": 6108,
+        "1e-06": 5972,
+        "1e-07": 5972,
+        "1e-08": 5972,
+        "1e-09": 5972,
+        "1e-10": 5972
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 5978,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5978
+       },
+       "components@1e-09": {
+        "dim_K": 5972,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5972
+       },
+       "components@1e-12": {
+        "dim_K": 5972,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5972
+       },
+       "seconds": 816.9237771034241
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 380,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 930,
+        "0.01": 20,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0066.pt",
+      "checkpoint_sha256": "9350ec3ab393f88acbc73d8e749ee3cf744d104127c263c6ac5c6957f11e7be0",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "7610c67f6f2d41584f084375e8fe2741e37d4d575df36e74cc19ec885b53350f",
+        "3": "38eafa7b42f5c2c380d8f56e1a858de86385509e11f922dfe9310db5aa9df6bd",
+        "readout": "808396da7a4d8b70aa38c11696d4abc2ada241d4f2178ae16bf65048982cbd11"
+       }
+      },
+      "digest": "d773f8f35aa2829b80293daf08a4d0842d81deb2fa4b664fb3d6798b1814082c"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "9350ec3ab393f88acbc73d8e749ee3cf744d104127c263c6ac5c6957f11e7be0",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 6255,
+       "dim_K_old_ladder": {
+        "1e-06": 6269,
+        "1e-09": 6255,
+        "1e-12": 6255
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 5923,
+       "exposed_by_new_batch": 332,
+       "exposed_fraction": 0.0530775379696243,
+       "components_old": {
+        "dim_K": 6255,
+        "feature_null": 0,
+        "downstream_null": 387,
+        "deficit": 5868
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 5923,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5923
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 1559958882.7873118,
+       "dim_K_union_ladder": {
+        "1e-06": 5924,
+        "1e-09": 5923,
+        "1e-12": 5923
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 14104,
+        "0.001": 8012,
+        "0.0001": 171,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16409,
+        "0.01": 14501,
+        "0.001": 9269,
+        "0.0001": 380,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 2,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 962.2742757797241
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 10588,
+        "1e-09": 10589,
+        "1e-12": 10589
+       },
+       "gap_J": {
+        "1e-06": 1.2872312089141242,
+        "1e-09": 1559958882.7873118,
+        "1e-12": 1559958882.7873118
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15417,
+        "0.001": 12402,
+        "0.0001": 8989,
+        "1e-05": 6330,
+        "1e-06": 5924,
+        "1e-07": 5923,
+        "1e-08": 5923,
+        "1e-09": 5923,
+        "1e-10": 5923,
+        "1e-11": 5923,
+        "1e-12": 5923
+       },
+       "k_abs": {
+        "0.1": 16103,
+        "0.01": 13979,
+        "0.001": 10694,
+        "0.0001": 7225,
+        "1e-05": 5975,
+        "1e-06": 5923,
+        "1e-07": 5923,
+        "1e-08": 5923,
+        "1e-09": 5923,
+        "1e-10": 5923
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 4,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 5924,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5924
+       },
+       "components@1e-09": {
+        "dim_K": 5923,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5923
+       },
+       "components@1e-12": {
+        "dim_K": 5923,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5923
+       },
+       "seconds": 919.3806960582733
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 390,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 920,
+        "0.01": 20,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 4,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  },
+  "high_accuracy": {
+   "epoch": 40,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "f850bc0a0f3c27e8e0ae15bdfc88e4e1cf90a672135fb28b6b975f8aa2c37344",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "caea39dab914f1d5e08904501ece3fc11fd3fe51acec19284b93e91327c03122",
+        "3": "6042e52f9589a781fe8fb95bb9c9ea415a3e366289598930b5d65e7e3deadbf3",
+        "readout": "295af904beb26ae81c86feef989bd500355fff6be6915f99d2f9f9c03e12df9b"
+       }
+      },
+      "digest": "2cbf291dc4c389077fbbe787d21078034408663385bf48a60f73e621292636a7"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "f850bc0a0f3c27e8e0ae15bdfc88e4e1cf90a672135fb28b6b975f8aa2c37344",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 5036,
+       "dim_K_old_ladder": {
+        "1e-06": 5036,
+        "1e-09": 5036,
+        "1e-12": 5036
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 4543,
+       "exposed_by_new_batch": 493,
+       "exposed_fraction": 0.09789515488482924,
+       "components_old": {
+        "dim_K": 5036,
+        "feature_null": 0,
+        "downstream_null": 258,
+        "deficit": 4778
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 4543,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4543
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 3964101132.770042,
+       "dim_K_union_ladder": {
+        "1e-06": 4543,
+        "1e-09": 4543,
+        "1e-12": 4543
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 12612,
+        "0.001": 2376,
+        "0.0001": 11,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16428,
+        "0.01": 13640,
+        "0.001": 4036,
+        "0.0001": 24,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 0,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 1123.4755880832672
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 11969,
+        "1e-09": 11969,
+        "1e-12": 11969
+       },
+       "gap_J": {
+        "1e-06": 3964101132.770042,
+        "1e-09": 3964101132.770042,
+        "1e-12": 3964101132.770042
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15372,
+        "0.001": 11398,
+        "0.0001": 6129,
+        "1e-05": 4596,
+        "1e-06": 4543,
+        "1e-07": 4543,
+        "1e-08": 4543,
+        "1e-09": 4543,
+        "1e-10": 4543,
+        "1e-11": 4543,
+        "1e-12": 4543
+       },
+       "k_abs": {
+        "0.1": 16169,
+        "0.01": 13940,
+        "0.001": 8662,
+        "0.0001": 4948,
+        "1e-05": 4550,
+        "1e-06": 4543,
+        "1e-07": 4543,
+        "1e-08": 4543,
+        "1e-09": 4543,
+        "1e-10": 4543
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 4543,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4543
+       },
+       "components@1e-09": {
+        "dim_K": 4543,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4543
+       },
+       "components@1e-12": {
+        "dim_K": 4543,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4543
+       },
+       "seconds": 975.318238735199
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 290,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 820,
+        "0.01": 10,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0040.pt",
+      "checkpoint_sha256": "f850bc0a0f3c27e8e0ae15bdfc88e4e1cf90a672135fb28b6b975f8aa2c37344",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "caea39dab914f1d5e08904501ece3fc11fd3fe51acec19284b93e91327c03122",
+        "3": "6042e52f9589a781fe8fb95bb9c9ea415a3e366289598930b5d65e7e3deadbf3",
+        "readout": "295af904beb26ae81c86feef989bd500355fff6be6915f99d2f9f9c03e12df9b"
+       }
+      },
+      "digest": "9f1925f059394848970729f49c475e15f08cd72bdfe2c4a7aa20e63552010354"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "f850bc0a0f3c27e8e0ae15bdfc88e4e1cf90a672135fb28b6b975f8aa2c37344",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 5036,
+       "dim_K_old_ladder": {
+        "1e-06": 5036,
+        "1e-09": 5036,
+        "1e-12": 5036
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 4513,
+       "exposed_by_new_batch": 523,
+       "exposed_fraction": 0.10385226370135028,
+       "components_old": {
+        "dim_K": 5036,
+        "feature_null": 0,
+        "downstream_null": 258,
+        "deficit": 4778
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 4513,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4513
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 7509415594.293395,
+       "dim_K_union_ladder": {
+        "1e-06": 4513,
+        "1e-09": 4513,
+        "1e-12": 4513
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 12178,
+        "0.001": 2374,
+        "0.0001": 11,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16379,
+        "0.01": 13092,
+        "0.001": 3787,
+        "0.0001": 21,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 2,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 1056.3858206272125
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 11999,
+        "1e-09": 11999,
+        "1e-12": 11999
+       },
+       "gap_J": {
+        "1e-06": 7509415594.293395,
+        "1e-09": 7509415594.293395,
+        "1e-12": 7509415594.293395
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15308,
+        "0.001": 10928,
+        "0.0001": 5678,
+        "1e-05": 4529,
+        "1e-06": 4513,
+        "1e-07": 4513,
+        "1e-08": 4513,
+        "1e-09": 4513,
+        "1e-10": 4513,
+        "1e-11": 4513,
+        "1e-12": 4513
+       },
+       "k_abs": {
+        "0.1": 16162,
+        "0.01": 13738,
+        "0.001": 8135,
+        "0.0001": 4713,
+        "1e-05": 4513,
+        "1e-06": 4513,
+        "1e-07": 4513,
+        "1e-08": 4513,
+        "1e-09": 4513,
+        "1e-10": 4513
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 4513,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4513
+       },
+       "components@1e-09": {
+        "dim_K": 4513,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4513
+       },
+       "components@1e-12": {
+        "dim_K": 4513,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4513
+       },
+       "seconds": 930.4728891849518
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 290,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 820,
+        "0.01": 20,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  },
+  "late_endpoint": {
+   "epoch": 500,
+   "batches": {
+    "comparison": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "8c7549d3972c51db839957b6187c224aeca6faeb47e037766f8437a452fbf8c4",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "comparison",
+       "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+       "baseline_factor_sha256": {
+        "2": "d54d02f54558de5ff0aa7c2a1984b3aa7be835ee9bb35ac71716a3e71d8139a0",
+        "3": "c21e5547589523222644264aaf92204188f64548994618f674618c3c1e0d5a99",
+        "readout": "b9ccc0e2061457aea001c9b4132b9c1252b19b667a42d2527b4af7e54df8dcbe"
+       }
+      },
+      "digest": "5394b560876064ff1b2e0158da7bc816ee0b46d75b86f07f1644c295e22c462e"
+     },
+     "new_index_sha256": "d80e80a31ebfa50d67cdd56d4ae3085d67402dfc561f5859251ad4b5cd4fb9cd",
+     "checkpoint_sha256": "8c7549d3972c51db839957b6187c224aeca6faeb47e037766f8437a452fbf8c4",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 5080,
+       "dim_K_old_ladder": {
+        "1e-06": 5477,
+        "1e-09": 5080,
+        "1e-12": 5080
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 4676,
+       "exposed_by_new_batch": 404,
+       "exposed_fraction": 0.07952755905511812,
+       "components_old": {
+        "dim_K": 5080,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5080
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 4676,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4676
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 43969779.7619894,
+       "dim_K_union_ladder": {
+        "1e-06": 5033,
+        "1e-09": 4676,
+        "1e-12": 4676
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "results/atomic (component split only; rank from the factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 16094,
+        "0.001": 14465,
+        "0.0001": 3587,
+        "1e-05": 19,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16477,
+        "0.01": 16272,
+        "0.001": 15120,
+        "0.0001": 7520,
+        "1e-05": 79,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 6,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 742.0348989963531
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 11479,
+        "1e-09": 11836,
+        "1e-12": 11836
+       },
+       "gap_J": {
+        "1e-06": 1.0017702101728065,
+        "1e-09": 43969779.7619894,
+        "1e-12": 43969779.7619894
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15658,
+        "0.001": 14122,
+        "0.0001": 12055,
+        "1e-05": 7463,
+        "1e-06": 5033,
+        "1e-07": 4698,
+        "1e-08": 4676,
+        "1e-09": 4676,
+        "1e-10": 4676,
+        "1e-11": 4676,
+        "1e-12": 4676
+       },
+       "k_abs": {
+        "0.1": 16011,
+        "0.01": 14632,
+        "0.001": 12937,
+        "0.0001": 8766,
+        "1e-05": 5419,
+        "1e-06": 4722,
+        "1e-07": 4678,
+        "1e-08": 4676,
+        "1e-09": 4676,
+        "1e-10": 4676
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 4,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 5033,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5033
+       },
+       "components@1e-09": {
+        "dim_K": 4676,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4676
+       },
+       "components@1e-12": {
+        "dim_K": 4676,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4676
+       },
+       "seconds": 726.141996383667
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 720,
+        "0.001": 40,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 900,
+        "0.01": 190,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 4,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    },
+    "test": {
+     "n_new": 10000,
+     "identity": {
+      "identity_version": 1,
+      "checkpoint": "checkpoints/epoch_0500.pt",
+      "checkpoint_sha256": "8c7549d3972c51db839957b6187c224aeca6faeb47e037766f8437a452fbf8c4",
+      "preprocessing_sha256": "bcdbf4244a241102d10f43a87748d06999edac788d66ac11e6a3e9c50e0a7046",
+      "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+      "analysis_size": 10000,
+      "analysis_dtype": "float64",
+      "config": {
+       "protocol": "new-batch-exposure-v2",
+       "rank_tolerance": "1e-09",
+       "batch": "test",
+       "new_index_sha256": "test set, natural order",
+       "baseline_factor_sha256": {
+        "2": "d54d02f54558de5ff0aa7c2a1984b3aa7be835ee9bb35ac71716a3e71d8139a0",
+        "3": "c21e5547589523222644264aaf92204188f64548994618f674618c3c1e0d5a99",
+        "readout": "b9ccc0e2061457aea001c9b4132b9c1252b19b667a42d2527b4af7e54df8dcbe"
+       }
+      },
+      "digest": "17f49ba19281a062b103260ac8b33d969ef711e8828a0b44dc396cfc265f47d8"
+     },
+     "new_index_sha256": "test set, natural order",
+     "checkpoint_sha256": "8c7549d3972c51db839957b6187c224aeca6faeb47e037766f8437a452fbf8c4",
+     "summary": {
+      "2": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      },
+      "3": {
+       "dim_K_old": 5080,
+       "dim_K_old_ladder": {
+        "1e-06": 5477,
+        "1e-09": 5080,
+        "1e-12": 5080
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 4625,
+       "exposed_by_new_batch": 455,
+       "exposed_fraction": 0.08956692913385826,
+       "components_old": {
+        "dim_K": 5080,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 5080
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 4625,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4625
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": 102859948.40290135,
+       "dim_K_union_ladder": {
+        "1e-06": 4882,
+        "1e-09": 4625,
+        "1e-12": 4625
+       }
+      },
+      "readout": {
+       "dim_K_old": 0,
+       "dim_K_old_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       },
+       "baseline_source": "stored factor (identity verified)",
+       "dim_K_union": 0,
+       "exposed_by_new_batch": 0,
+       "exposed_fraction": null,
+       "components_old": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components_old_source": "UNVERIFIED: results/atomic record without identity manifest (component split and dead-unit count only; the rank and dim K come from the authenticated factor)",
+       "components_union": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "dead_units_old": 0,
+       "dead_units_union": 0,
+       "gap_union": null,
+       "dim_K_union_ladder": {
+        "1e-06": 0,
+        "1e-09": 0,
+        "1e-12": 0
+       }
+      }
+     },
+     "layers_union": {
+      "2": {
+       "layer": 2,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 16512,
+        "1e-09": 16512,
+        "1e-12": 16512
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15431,
+        "0.001": 13823,
+        "0.0001": 3452,
+        "1e-05": 17,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 16446,
+        "0.01": 15643,
+        "0.001": 14422,
+        "0.0001": 7151,
+        "1e-05": 74,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 5,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "seconds": 488.3579988479614
+      },
+      "3": {
+       "layer": 3,
+       "n_in_aug": 129,
+       "n_out": 128,
+       "p": 16512,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 128,
+        "1e-09": 128,
+        "1e-12": 128
+       },
+       "rank_J": {
+        "1e-06": 11630,
+        "1e-09": 11887,
+        "1e-12": 11887
+       },
+       "gap_J": {
+        "1e-06": 1.0027932483918762,
+        "1e-09": 102859948.40290135,
+        "1e-12": 102859948.40290135
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_d": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 15601,
+        "0.001": 13564,
+        "0.0001": 11366,
+        "1e-05": 6917,
+        "1e-06": 4882,
+        "1e-07": 4639,
+        "1e-08": 4625,
+        "1e-09": 4625,
+        "1e-10": 4625,
+        "1e-11": 4625,
+        "1e-12": 4625
+       },
+       "k_abs": {
+        "0.1": 16001,
+        "0.01": 14254,
+        "0.001": 12248,
+        "0.0001": 8165,
+        "1e-05": 5178,
+        "1e-06": 4658,
+        "1e-07": 4625,
+        "1e-08": 4625,
+        "1e-09": 4625,
+        "1e-10": 4625
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 4882,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4882
+       },
+       "components@1e-09": {
+        "dim_K": 4625,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4625
+       },
+       "components@1e-12": {
+        "dim_K": 4625,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 4625
+       },
+       "seconds": 487.3550169467926
+      },
+      "readout": {
+       "layer": "readout",
+       "n_in_aug": 129,
+       "n_out": 10,
+       "p": 1290,
+       "rows": 200000,
+       "counting_nullity": 0,
+       "r_h": {
+        "1e-06": 129,
+        "1e-09": 129,
+        "1e-12": 129
+       },
+       "r_d": {
+        "1e-06": 10,
+        "1e-09": 10,
+        "1e-12": 10
+       },
+       "rank_J": {
+        "1e-06": 1290,
+        "1e-09": 1290,
+        "1e-12": 1290
+       },
+       "gap_J": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "gap_h": {
+        "1e-06": null,
+        "1e-09": null,
+        "1e-12": null
+       },
+       "k_rel": {
+        "0.01": 740,
+        "0.001": 40,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0,
+        "1e-11": 0,
+        "1e-12": 0
+       },
+       "k_abs": {
+        "0.1": 910,
+        "0.01": 210,
+        "0.001": 0,
+        "0.0001": 0,
+        "1e-05": 0,
+        "1e-06": 0,
+        "1e-07": 0,
+        "1e-08": 0,
+        "1e-09": 0,
+        "1e-10": 0
+       },
+       "activation": "leaky",
+       "dead_units": 0,
+       "dead_units_meaning": "derivative underflows to zero on every sample; numerical, not analytic",
+       "units_never_positive": 3,
+       "units_derivative_below_1e-9": 0,
+       "exact_zero_derivatives": 0,
+       "components@1e-06": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-09": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       },
+       "components@1e-12": {
+        "dim_K": 0,
+        "feature_null": 0,
+        "downstream_null": 0,
+        "deficit": 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

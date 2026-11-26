@@ -1,0 +1,116 @@
+{
+  "seed": 0,
+  "n": 256,
+  "radii": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7,
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    7.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0,
+    50.0,
+    100.0
+  ],
+  "taus": [
+    1e-14,
+    1e-12,
+    1e-10,
+    1e-08,
+    1e-06,
+    0.0001
+  ],
+  "dimensions": {
+    "H_1e-14": 3200,
+    "H_1e-12": 3202,
+    "H_1e-10": 3253,
+    "H_1e-08": 7505,
+    "H_1e-06": 16242,
+    "H_0.0001": 22993,
+    "ocean": 3619,
+    "generic": 25418
+  },
+  "validation": {
+    "H_1e-14": {
+      "combination_norm_error": 4.3298697960381105e-15,
+      "HVP_residual": 2.1768870669794397e-15,
+      "max_abs_eigenvalue": 6.443776684433209e-18,
+      "forward_error_r0.001": 1.2434497875801753e-14,
+      "forward_error_r100": 5.8548721426632255e-12
+    },
+    "H_1e-12": {
+      "combination_norm_error": 4.551914400963142e-15,
+      "HVP_residual": 2.2915219781382013e-15,
+      "max_abs_eigenvalue": 1.0485290271242832e-13,
+      "forward_error_r0.001": 1.199040866595169e-14,
+      "forward_error_r100": 7.958078640513122e-12
+    },
+    "H_1e-10": {
+      "combination_norm_error": 3.774758283725532e-15,
+      "HVP_residual": 1.7363481417423195e-14,
+      "max_abs_eigenvalue": 9.646395390673003e-11,
+      "forward_error_r0.001": 2.0650148258027912e-14,
+      "forward_error_r100": 5.115907697472721e-12
+    },
+    "H_1e-08": {
+      "combination_norm_error": 6.8833827526759706e-15,
+      "HVP_residual": 1.2926122826215312e-13,
+      "max_abs_eigenvalue": 9.999811427630537e-09,
+      "forward_error_r0.001": 1.0658141036401503e-14,
+      "forward_error_r100": 2.2737367544323206e-12
+    },
+    "H_1e-06": {
+      "combination_norm_error": 6.439293542825908e-15,
+      "HVP_residual": 9.780011650078122e-14,
+      "max_abs_eigenvalue": 9.997719592482221e-07,
+      "forward_error_r0.001": 1.0658141036401503e-14,
+      "forward_error_r100": 8.100187187665142e-13
+    },
+    "H_0.0001": {
+      "combination_norm_error": 1.0436096431476471e-14,
+      "HVP_residual": 8.348913815965533e-14,
+      "max_abs_eigenvalue": 9.982869735975518e-05,
+      "forward_error_r0.001": 1.509903313490213e-14,
+      "forward_error_r100": 1.3642420526593924e-12
+    },
+    "ocean": {
+      "combination_norm_error": 3.3306690738754696e-15,
+      "forward_error_r0.001": 7.105427357601002e-15,
+      "forward_error_r100": 1.3642420526593924e-12
+    },
+    "generic": {
+      "forward_error_r0.001": 1.0658141036401503e-14,
+      "forward_error_r100": 2.0321522242738865e-12
+    }
+  },
+  "provenance": {
+    "checkpoint_sha256": "ae4e372212215c1028a34ee6a15a4111523a2cc7dc130da15309d13b9e372dc6",
+    "analysis_indices_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "eigensystem": "results/hessian_gn/hgn_cov_w64_seed0_mats.pt",
+    "eigensystem_bytes": 24355125338,
+    "eigenvalues_sha256": "af7fa6545784a1bdcf68aa15b45a70dc40d262cb76de3c29ac9b86a4158ad745",
+    "script_sha256": "bdd7b5b8142ff18366f5232c35bbfc823c531c1def06c8549d03d602be8045c0"
+  },
+  "runtime_s": 269.6987404823303,
+  "protocol": {
+    "directions": "normalized iid Gaussian coordinates in each orthonormal space; coupled across nested bands only",
+    "H_band": "abs(lambda_H)<=tau; two-sided absolute eigenvalues; loss=sum_outputs/s",
+    "drift": "sqrt(sum_i ||F(theta+rv)-F(theta)||^2/s)",
+    "loss_mse": "mean over samples and outputs",
+    "precision": "float64",
+    "epsilon": 0.001,
+    "failure": "any tested radius <=r exceeds epsilon; no between-grid guarantee"
+  }
+}

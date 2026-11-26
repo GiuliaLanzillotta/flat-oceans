@@ -1,0 +1,29 @@
+{
+ "protocol": "p1_first_layer_frozen_cert",
+ "run": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub1000/seed_1",
+ "results": {
+  "late_endpoint": {
+   "epoch": 500,
+   "layers": [
+    {
+     "layer": 1,
+     "status": "excluded",
+     "p": 32896,
+     "note": "first-layer-frozen: input layer held fixed (large counting kernel on a small subset)"
+    },
+    {
+     "layer": 2,
+     "p": 16512
+    },
+    {
+     "layer": 3,
+     "p": 16512
+    },
+    {
+     "layer": "readout",
+     "p": 1290
+    }
+   ]
+  }
+ }
+}

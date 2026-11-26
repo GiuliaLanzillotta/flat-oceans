@@ -1,0 +1,182 @@
+{
+ "protocol": "interp-exposure-v1 (PI spec 2026-11-23; clean-to-pure-noise interpolation; new-batch-exposure layer coverage, rank rule 1e-9)",
+ "rank_tolerance": "1e-09",
+ "epoch": 500,
+ "manifest": {
+  "spec": "PI 2026-11-23 interpolation ablation",
+  "protocol": "interp-exposure-v1: x_i(alpha) = (1-alpha) * y_i + alpha * z_i in RAW [0,1] pixel coordinates, THEN the saved MNIST centering + PCA-256 + scaling (apply_preprocessing with the run's own preprocessing.pt); same original X every condition, Y_alpha only; REPLACES the additive-noise sweep in the planned paper figure (results/newinput/ preserved untouched; SVHN remains a separate comparison)",
+  "alphas": [
+   "0.0",
+   "0.1",
+   "0.2",
+   "0.3",
+   "0.4",
+   "0.5",
+   "0.6",
+   "0.7",
+   "0.8",
+   "0.9",
+   "1.0"
+  ],
+  "noise": "z_i ~ U[0,1]^784 per test image, torch.rand, fp64, single fixed Generator seed 20261123; REUSED across all interpolation steps AND all model seeds",
+  "noise_seed": 20261123,
+  "z_sha256": "06e7833907bc32b55f2452181d42e83bd8ef78fe392e28d77c44b6ae46bad98d",
+  "mnist_raw_sha": {
+   "train_x": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db",
+   "train_y": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5",
+   "test_x": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7",
+   "test_y": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2"
+  },
+  "clean_y01_sha256": "66a1790b97c8e5364c6b703f03902cb548dcb6c22113b17ca209b037fdaf5549",
+  "clean_reference": "results/atomic/mnist_mlp_seed<sd>_new_batch.json late_endpoint/batches/test (authenticated; alpha=0 must reproduce it exactly, dims per block)",
+  "rank_rule": "relative 1e-09; union rank resolved iff gap >= 10; unresolved cells keep their ladder ranges (1e-6/1e-9/1e-12) and band counts, thresholds NEVER changed",
+  "decisions": {
+   "partial_runs": "any --alphas invocation writes mnist_mlp_seed<sd>_interp_partial_<tag>.json, never the full-record filename (one job per output file); the full run recomputes every condition into its own file",
+   "alpha0_recomputed": "alpha=0 recomputed, not copied; its raw input is bitwise identical to the clean test batch of the new-batch records ((1-0)*y01 + 0*z == y01; (raw01*255)/255 round-trip bitwise exact, verified 2026-11-23)",
+   "gate_qualification": "unresolved gaps are QUALIFIED flags with ladder ranges, not hard gate failures: at alpha=0 the gap equals the accepted clean reference's own gap (PI acceptance memos/2026-11-16_newinput_gate_acceptance.md); the strict outcome is preserved in seed<sd>_gate.json (strict_pass)"
+  }
+ },
+ "partial": {
+  "tag": "0p0",
+  "alphas": [
+   "0.0"
+  ]
+ },
+ "conditions": {
+  "0.0": {
+   "alpha": 0.0,
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "interp-exposure-v1",
+     "alpha": "0.0",
+     "input_sha256": "66a1790b97c8e5364c6b703f03902cb548dcb6c22113b17ca209b037fdaf5549",
+     "noise_u01_sha256": "06e7833907bc32b55f2452181d42e83bd8ef78fe392e28d77c44b6ae46bad98d",
+     "clean_y01_sha256": "66a1790b97c8e5364c6b703f03902cb548dcb6c22113b17ca209b037fdaf5549",
+     "baseline_factor_sha256": {
+      "2": "0f0acc0f6817e37cbd9ef59b4ca083f15ad95e8b9cb3c22f46277e128f3bffb5",
+      "3": "ae2fadf28e574d8aaf589697c4e4284b369aa5f24836b8589e53574fa8a5189d",
+      "readout": "3d50abc3cbc3209f7a971f8f225649c6aafd27b1b1022facca882a62447c67c2"
+     }
+    },
+    "digest": "0a2f4d56ca160e9c77034670db8768dc0d53aa5e7a0af5d05b2faa605dd88fd0"
+   },
+   "summary": {
+    "2": {
+     "dim_K_X": 9583,
+     "dim_K_X_ladder": {
+      "1e-06": 9585,
+      "1e-09": 9583,
+      "1e-12": 9583
+     },
+     "rank_X": 6929,
+     "rank_union": 7466,
+     "p": 16512,
+     "dim_K_union": 9046,
+     "dim_K_union_ladder": {
+      "1e-06": 9055,
+      "1e-09": 9046,
+      "1e-12": 9046
+     },
+     "exposed": 537,
+     "exposed_fraction": 0.05603673171240739,
+     "components_union": {
+      "dim_K": 9046,
+      "feature_null": 0,
+      "downstream_null": 5031,
+      "deficit": 4015
+     },
+     "gap_union": 5914632.386427984,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "0f0acc0f6817e37cbd9ef59b4ca083f15ad95e8b9cb3c22f46277e128f3bffb5",
+     "baseline_status": "identity verified",
+     "spectra_file": "results/newinput_interp/mnist_mlp_seed0_a0.0_spectra.npz",
+     "seconds": 482.7
+    },
+    "3": {
+     "dim_K_X": 14696,
+     "dim_K_X_ladder": {
+      "1e-06": 14933,
+      "1e-09": 14696,
+      "1e-12": 14695
+     },
+     "rank_X": 1816,
+     "rank_union": 2220,
+     "p": 16512,
+     "dim_K_union": 14292,
+     "dim_K_union_ladder": {
+      "1e-06": 14500,
+      "1e-09": 14292,
+      "1e-12": 14290
+     },
+     "exposed": 404,
+     "exposed_fraction": 0.027490473598258028,
+     "components_union": {
+      "dim_K": 14292,
+      "feature_null": 4992,
+      "downstream_null": 5760,
+      "deficit": 3540
+     },
+     "gap_union": 6.297525368028411,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "ae2fadf28e574d8aaf589697c4e4284b369aa5f24836b8589e53574fa8a5189d",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.9e-08)",
+     "spectra_file": "results/newinput_interp/mnist_mlp_seed0_a0.0_spectra.npz",
+     "seconds": 475.7,
+     "cutoff_sensitivity": {
+      "dim_K_union_range": [
+       14290,
+       14500
+      ],
+      "band_sv_within_decade_of_cut": 7,
+      "exposed_fraction_uncertainty": 0.00047632008709853023,
+      "note": "union rank gap < 10: dimension determined only to within the ladder range/band; QUALIFIED, threshold NOT changed (precedent results/newinput/seed0_gate.json)"
+     }
+    },
+    "readout": {
+     "dim_K_X": 780,
+     "dim_K_X_ladder": {
+      "1e-06": 780,
+      "1e-09": 780,
+      "1e-12": 780
+     },
+     "rank_X": 510,
+     "rank_union": 630,
+     "p": 1290,
+     "dim_K_union": 660,
+     "dim_K_union_ladder": {
+      "1e-06": 660,
+      "1e-09": 660,
+      "1e-12": 660
+     },
+     "exposed": 120,
+     "exposed_fraction": 0.15384615384615385,
+     "components_union": {
+      "dim_K": 660,
+      "feature_null": 660,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "gap_union": 6351456177.519679,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "3d50abc3cbc3209f7a971f8f225649c6aafd27b1b1022facca882a62447c67c2",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.4e-08)",
+     "spectra_file": "results/newinput_interp/mnist_mlp_seed0_a0.0_spectra.npz",
+     "seconds": 7.9
+    }
+   },
+   "input_sha256": {
+    "y_alpha": "66a1790b97c8e5364c6b703f03902cb548dcb6c22113b17ca209b037fdaf5549",
+    "noise_u01": "06e7833907bc32b55f2452181d42e83bd8ef78fe392e28d77c44b6ae46bad98d",
+    "clean_y01": "66a1790b97c8e5364c6b703f03902cb548dcb6c22113b17ca209b037fdaf5549"
+   },
+   "seconds": 966.6
+  }
+ }
+}

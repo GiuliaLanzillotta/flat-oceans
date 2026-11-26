@@ -1,0 +1,351 @@
+{
+ "pilot": "ResNet downstream-contraction pilot: layer4.2.conv3 + fc on the authenticated 10k cache (gates l42fc/l41/l40 production)",
+ "cache_identity": {
+  "n": 10000,
+  "index_sha256": "9e1c19b3fdc185411bd1a987deb6a9fda2531116aac060a84c4d878854d1c099",
+  "checkpoint_sha256": "0c1c6274b69b70bca558431371f60c247b65069c447387deaeaa2fd5fda89fb0",
+  "xin_sha256": "3132fa8d121d2a101770cd82a5960a607247e9934e86476bdbd5953046731ddd",
+  "storage": {
+   "xin_dtype": "float32",
+   "rationale": "10000 x 1024 x 14 x 14 fp32 = 8.0 GB on disk (fp64 would be 16 GB); consumers use the fp64-read path (resnet_common_lib.open_xin/xin_chunk) and form all operators in float64. The fp32 file is the defined study input; see rounding_effect for the (recorded) difference to the unrounded fp64 forward.",
+   "forward_dtype": "float64 (full net and local layer4+fc path)"
+  },
+  "auth_elapsed_s": 5.2,
+  "authentication": {
+   "cache_dir": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/cache10k",
+   "checked": {
+    "xin": {
+     "file": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/cache10k/xin_fp32.npy",
+     "stored": "3132fa8d121d2a101770cd82a5960a607247e9934e86476bdbd5953046731ddd",
+     "recomputed": "3132fa8d121d2a101770cd82a5960a607247e9934e86476bdbd5953046731ddd",
+     "pass": true
+    },
+    "ref_local": {
+     "file": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/cache10k/ref_logits_local_fp64.pt",
+     "stored": "a471ee0691c421f26478d8a159a8aa5591f8e2d822366d4f0b50711c7d6c1311",
+     "recomputed": "a471ee0691c421f26478d8a159a8aa5591f8e2d822366d4f0b50711c7d6c1311",
+     "pass": true
+    },
+    "ref_fullnet": {
+     "file": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/cache10k/ref_logits_fullnet_fp64.pt",
+     "stored": "eb3aca39a4317be70c3274b80ec5127c175a77a59112f7f69c45e88de67bd5fb",
+     "recomputed": "eb3aca39a4317be70c3274b80ec5127c175a77a59112f7f69c45e88de67bd5fb",
+     "pass": true
+    },
+    "census": {
+     "file": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/cache10k/gate_census.pt",
+     "stored": "40f69dbcfa0a8cf1625835acd56bdb9baa0b29327db2d9336a5db191d3da924d",
+     "recomputed": "40f69dbcfa0a8cf1625835acd56bdb9baa0b29327db2d9336a5db191d3da924d",
+     "pass": true
+    },
+    "checkpoint": {
+     "file": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/runs/ftresnet_resisc45/ckpt_ft_resnet_lr1e-4_confirm_s0.pt",
+     "stored": "0c1c6274b69b70bca558431371f60c247b65069c447387deaeaa2fd5fda89fb0",
+     "recomputed": "0c1c6274b69b70bca558431371f60c247b65069c447387deaeaa2fd5fda89fb0",
+     "pass": true
+    }
+   },
+   "pass": true
+  }
+ },
+ "a_frozen_r0_identity": {
+  "n": 10000,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "pass": true,
+  "note": "frozen forward (fixed base gates) at r=0 from the cached fp32 X_in (fp64-read path) vs the cache's fp64 local base reference AND vs the same-pass actual local forward",
+  "frozen_forward_validation_record": {
+   "path": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/resnet/frozen_forward_validation.json",
+   "PASS": true,
+   "frozen_base_vs_original_fullnet": {
+    "max_abs": 5.329070518200751e-15,
+    "max_rel": 2.732643387978626e-16,
+    "rms_rel_X": 2.2426397011175797e-16,
+    "note": "original torchvision fp64 forward vs frozen forward (shared bn_affine); differs only by BN-affine rounding (a*z+off vs fused batch_norm)"
+   },
+   "ckpt": "/local/home/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/runs/ftresnet_resisc45/ckpt_ft_resnet_lr1e-4_confirm_s0.pt"
+  },
+  "elapsed_s": 172.8
+ },
+ "benchmark_l42conv3": {
+  "chunk": 100,
+  "full_pass_s": 842.1,
+  "g_contraction_s": 94.6,
+  "g_contraction_ms_per_example": 9.455052995681763,
+  "full_pass_ms_per_example": 84.21236999034882,
+  "peak_gpu_mem_GB": 15.658409984,
+  "n_patches": 490000,
+  "base_logits_vs_cache_max_rel": 0.0,
+  "note": "one full 10k pass: fp64 states walk + 45-VJP downstream contraction (real remaining network) + H/fc Gram accumulation; downstream marginal Gram is 2048x2048 activation-space"
+ },
+ "c_spectra_reproducibility": {
+  "definition": "max |lambda_A - lambda_B| / lambda_max over the full eigenvalue spectrum (CPU/LAPACK eigvalsh), two independent chunk orders (forward vs reversed)",
+  "D_gram_l42conv3": 2.0028943219097523e-15,
+  "H_gram_l42conv3": 5.776249320089453e-16,
+  "H_gram_fc_aug": 3.8085791543033824e-16,
+  "pass": true,
+  "elapsed_s": 781.4
+ },
+ "b_D_validation_vjp": {
+  "n_triples": 12,
+  "n_nonzero_columns": 6,
+  "D_column_scale": 0.06625798215021057,
+  "max_err_over_D_scale": 1.3090675415107658e-17,
+  "max_cross_example_leakage": 0.0,
+  "triples": [
+   {
+    "example_in_chunk": 0,
+    "channel": 928,
+    "position": 39,
+    "kind": "active",
+    "col_norm": 0.0200791479246175,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 65,
+    "channel": 490,
+    "position": 44,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 49,
+    "channel": 1168,
+    "position": 26,
+    "kind": "active",
+    "col_norm": 0.02639964468664179,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 97,
+    "channel": 1168,
+    "position": 8,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 89,
+    "channel": 1357,
+    "position": 40,
+    "kind": "active",
+    "col_norm": 0.020387605042458696,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 80,
+    "channel": 441,
+    "position": 16,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 11,
+    "channel": 11,
+    "position": 23,
+    "kind": "active",
+    "col_norm": 0.021956450548627902,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 61,
+    "channel": 673,
+    "position": 19,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 70,
+    "channel": 301,
+    "position": 11,
+    "kind": "active",
+    "col_norm": 0.02462143170011093,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 47,
+    "channel": 865,
+    "position": 33,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 76,
+    "channel": 1013,
+    "position": 38,
+    "kind": "active",
+    "col_norm": 0.01854758176719706,
+    "max_abs_err": 8.673617379884035e-19,
+    "err_over_D_scale": 1.3090675415107658e-17,
+    "cross_example_leakage": 0.0
+   },
+   {
+    "example_in_chunk": 14,
+    "channel": 1681,
+    "position": 32,
+    "kind": "uniform",
+    "col_norm": 0.0,
+    "max_abs_err": 0.0,
+    "err_over_D_scale": 0.0,
+    "cross_example_leakage": 0.0
+   }
+  ],
+  "pass": true,
+  "note": "backward 45-VJP contraction rows vs independent forward-mode autograd JVP columns through the real remaining network, fp64; gated-off positions have exactly-zero columns in both routes",
+  "elapsed_s": 0.7
+ },
+ "pilot_operator_summaries": {
+  "l42conv3_downstream_marginal": {
+   "operator": "stacked D_(i,xi) over (i,xi,class), layer4.2.conv3 preactivation -> logits",
+   "units": "activation-to-output rate",
+   "dim": 2048,
+   "sigma0": 19.933111475818833,
+   "sigma_min": 1.530916608182811,
+   "rank_T1": {
+    "sigma0": 19.933111475818833,
+    "cutoff_rel": 1e-09,
+    "cutoff": 1.9933111475818835e-08,
+    "rank": 2048,
+    "null_dim": 0,
+    "gap": 76802691.34299427,
+    "gap_resolved": true,
+    "sigma_min": 1.530916608182811,
+    "note": "full numerical rank; gap = sigma_min/cutoff"
+   },
+   "tail_dim_abs_rate_1e-3_PRIMARY": 0,
+   "tail_dim_relX_rate_1e-3_recorded": 231,
+   "sigma_min_over_sqrtN": 0.01530916608182811
+  },
+  "l42conv3_patch_H": {
+   "operator": "stacked input patches p_(i,xi), layer4.2.conv3 (1x1: patches = a2 activations)",
+   "units": "feature-space rate",
+   "dim": 512,
+   "sigma0": 6220.606369129371,
+   "sigma_min": 17.313662156406693,
+   "rank_T1": {
+    "sigma0": 6220.606369129371,
+    "cutoff_rel": 1e-09,
+    "cutoff": 6.2206063691293715e-06,
+    "rank": 512,
+    "null_dim": 0,
+    "gap": 2783275.637296094,
+    "gap_resolved": true,
+    "sigma_min": 17.313662156406693,
+    "note": "full numerical rank; gap = sigma_min/cutoff"
+   },
+   "tail_dim_abs_rate_1e-3_PRIMARY": 0,
+   "tail_dim_relX_rate_1e-3_recorded": 0,
+   "sigma_min_over_sqrtN": 0.17313662156406692
+  },
+  "fc_patch_H_aug": {
+   "operator": "stacked augmented [pooled;1] features, fc readout",
+   "units": "feature-space rate",
+   "dim": 2049,
+   "sigma0": 1563.7544983985354,
+   "sigma_min": 5.394438776928536,
+   "rank_T1": {
+    "sigma0": 1563.7544983985354,
+    "cutoff_rel": 1e-09,
+    "cutoff": 1.5637544983985354e-06,
+    "rank": 2049,
+    "null_dim": 0,
+    "gap": 3449671.1487980126,
+    "gap_resolved": true,
+    "sigma_min": 5.394438776928536,
+    "note": "full numerical rank; gap = sigma_min/cutoff"
+   },
+   "tail_dim_abs_rate_1e-3_PRIMARY": 0,
+   "tail_dim_relX_rate_1e-3_recorded": 0,
+   "sigma_min_over_sqrtN": 0.05394438776928536
+  },
+  "fc_downstream": {
+   "statement": "STRUCTURALLY D = I at the readout: DN_additional = 0, N = FN (reviewer correction Sec. 2); no contraction needed"
+  },
+  "logits_rms_X": 23.79884289923196,
+  "N_examples": 10000,
+  "normalization": "rates sigma/sqrt(N), N = 10000 EXAMPLES (never patches)"
+ },
+ "timing_probes": {
+  "per_example_ms": {
+   "l42_conv1": {
+    "g_pass_ms_per_example": 36.03868007659912,
+    "fp32_tail_forward_ms_per_probe_example": 0.025325939059257507
+   },
+   "l40_conv1": {
+    "g_pass_ms_per_example": 130.77905774116516,
+    "fp32_tail_forward_ms_per_probe_example": 0.05039520561695099
+   }
+  },
+  "l42conv3_g_ms_per_example": 9.455052995681763,
+  "elapsed_s": 34.2
+ },
+ "projection_per_group": {
+  "l42fc": {
+   "assumptions": "3 conv layers/group (fc analytic); 2 g-passes per layer (operator + Jv); battery sets per layer = 1 generic + 2 per nonempty approximate family (worst case FN-A + DN-A nonempty -> 5 sets); timing from the measured per-example probes at the group's deepest downstream (upper bound)",
+   "g_passes_h": 0.6,
+   "battery_per_set_h": 0.18,
+   "battery_worst_case_5sets_per_layer_h": 2.7,
+   "worst_case_total_h": 5.3
+  },
+  "l41": {
+   "assumptions": "3 conv layers/group (fc analytic); 2 g-passes per layer (operator + Jv); battery sets per layer = 1 generic + 2 per nonempty approximate family (worst case FN-A + DN-A nonempty -> 5 sets); timing from the measured per-example probes at the group's deepest downstream (upper bound)",
+   "g_passes_h": 0.6,
+   "battery_per_set_h": 0.18,
+   "battery_worst_case_5sets_per_layer_h": 2.7,
+   "worst_case_total_h": 5.3
+  },
+  "l40": {
+   "assumptions": "3 conv layers/group (fc analytic); 2 g-passes per layer (operator + Jv); battery sets per layer = 1 generic + 2 per nonempty approximate family (worst case FN-A + DN-A nonempty -> 5 sets); timing from the measured per-example probes at the group's deepest downstream (upper bound)",
+   "g_passes_h": 2.18,
+   "battery_per_set_h": 0.36,
+   "battery_worst_case_5sets_per_layer_h": 5.38,
+   "worst_case_total_h": 9.6
+  }
+ },
+ "projection_note": "worst_case_total_h adds ~2 h for operators/eigh/SEL certification; battery hours scale DOWN with genuinely empty families (genuine zeros cost ~0); SEL certification cost depends on the gate census and is bounded by the subset-certificate design in the study script",
+ "gates": {
+  "cache_authentication": true,
+  "a_frozen_r0_identity": true,
+  "b_D_validation_vjp": true,
+  "c_spectra_reproducibility": true
+ },
+ "PASS": true,
+ "meta": {
+  "script": "scripts/analysis/resnet_contraction_pilot.py",
+  "date": "2026-11-22",
+  "torch": "2.5.1+cu124",
+  "git_rev": "f226d1aca78398935e94cee1f628be7f605588b0",
+  "spec": [
+   "memos/2026-11-17_reviewer_protocol_corrections.md#2",
+   "memos/2026-11-22_two_day_completion_plan.md#common-vit-and-resnet-measurements",
+   "memos/2026-11-17_vit_resnet_standardization_spec.md#2"
+  ],
+  "device": "cuda",
+  "chunk": 100,
+  "elapsed_s": 1838.4
+ }
+}

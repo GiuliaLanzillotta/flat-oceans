@@ -1,0 +1,59 @@
+{
+  "tag": "smoke",
+  "N": 800,
+  "ncls": 45,
+  "val_acc": 0.9573333333333334,
+  "test_acc": 0.9555555555555556,
+  "local_vs_full_forward_rel_err": 1.1672091915215788e-07,
+  "RGRID": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "layer": "layer4.2.conv3",
+  "gated_mean_patch": {
+    "Cout": 2048,
+    "Cin": 512,
+    "sv_top_med": 1.8708286407639707,
+    "sv_min_med": 0.0,
+    "tail_dim_1e-2_total": 660393
+  },
+  "families": {
+    "downstream_null": [
+      1.4727240341017023e-05,
+      2.5435967472731136e-05,
+      3.944183117710054e-05,
+      5.39551219844725e-05,
+      6.718804070260376e-05,
+      6.721218960592523e-05,
+      7.769151125103235e-05,
+      0.0002581365988589823
+    ],
+    "downstream_tail": [
+      1.6108733689179644e-05,
+      2.5756400646059774e-05,
+      4.185894795227796e-05,
+      5.374047759687528e-05,
+      6.471035158028826e-05,
+      6.679804209852591e-05,
+      7.49512473703362e-05,
+      0.00027477159164845943
+    ],
+    "random": [
+      1.7816428226069547e-05,
+      3.39420948876068e-05,
+      6.525534263346344e-05,
+      0.00014879055379424244,
+      0.00045310481800697744,
+      0.0013485095696523786,
+      0.004463324788957834,
+      0.013751981779932976
+    ]
+  },
+  "CAVEATS": "v2a: conv3 DOWNSTREAM-null only (feeds readout directly). Per-channel gated-mean-patch construction respects avgpool + relu-gate (fixed at base) + weight sharing + eval BN. The downstream-null STRICTLY CONTAINS the feature-null. Directions validated by the local forward (cross-checked to full net in v1). Smallest-singular per-channel = APPROXIMATE downstream direction (full rank at N=4000 -> no exact downstream-null). Random control single draw; sampled channel mixing. conv1/conv2 downstream (through further nonlinear layers) and multilayer branches are v2b."
+}

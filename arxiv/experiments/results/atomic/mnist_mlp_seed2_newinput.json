@@ -1,0 +1,336 @@
+{
+ "protocol": "newinput-exposure-v1 (PI spec 2026-11-16; new-batch-exposure layer coverage, rank rule 1e-9)",
+ "rank_tolerance": "1e-09",
+ "epoch": 500,
+ "manifest": {
+  "spec": "PI 2026-11-16: clip(y + sigma z, 0, 1) in [0,1] pixel space BEFORE preprocessing; one z paired across sigmas and model seeds; SVHN first 10,000 test images (natural order), BT.601 grayscale, adaptive-avg-pool 32->28; saved MNIST centering + PCA-256 + scaling for every condition",
+  "mnist_raw_sha": {
+   "train_x": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db",
+   "train_y": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5",
+   "test_x": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7",
+   "test_y": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2"
+  },
+  "noise_seed": 20261116,
+  "z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+  "noisy_sha256": {
+   "0.05": "e6126eaf3d8c30728088ed33697b516f7d551ebb7b36b080b0b0a91ff167151d",
+   "0.1": "70be5c7afa945aa46c7be1afe2dedc819d50a3ce11c47f216ab1186257907580",
+   "0.2": "6c5d18f9c6bc54a78b4d9f292fb2e51d4ea8f69cce4c78603da70815f66e4957"
+  },
+  "svhn_file": "/local/home/glanzillo/datasets/SVHN/test_32x32.mat",
+  "svhn_file_sha256": "cdce80dfb2a2c4c6160906d0bd7c68ec5a99d7ca4831afa54f09182025b6a75b",
+  "svhn_selection": "first 10000, natural order",
+  "svhn_gray28_sha256": "d833cd4c84bb19b6fa584b0e36671f0883e9462c0684a27d7c308b45918ad733",
+  "clean_arm": "REUSED authenticated reference: results/atomic/*_new_batch.json (batch 'test')"
+ },
+ "conditions": {
+  "noisy0.05": {
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "newinput-exposure-v1",
+     "condition": "noisy0.05",
+     "input_sha256": "e6126eaf3d8c30728088ed33697b516f7d551ebb7b36b080b0b0a91ff167151d",
+     "noise_z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+     "baseline_factor_sha256": {
+      "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+      "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+      "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+     }
+    },
+    "digest": "a67df36d18585776890158404cac68e6f3f39af06f6280c99628bd6cf03c7356"
+   },
+   "summary": {
+    "2": {
+     "dim_K_X": 10936,
+     "dim_K_union": 10506,
+     "exposed": 430,
+     "exposed_fraction": 0.039319678127286026,
+     "components_union": {
+      "dim_K": 10506,
+      "feature_null": 0,
+      "downstream_null": 5676,
+      "deficit": 4830
+     },
+     "gap_union": 75139665.31815428,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+     "baseline_status": "identity verified",
+     "seconds": null
+    },
+    "3": {
+     "dim_K_X": 15005,
+     "dim_K_union": 14507,
+     "exposed": 498,
+     "exposed_fraction": 0.033188937020993,
+     "components_union": {
+      "dim_K": 14507,
+      "feature_null": 5632,
+      "downstream_null": 5610,
+      "deficit": 3265
+     },
+     "gap_union": 6657841.5832491005,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08)",
+     "seconds": null
+    },
+    "readout": {
+     "dim_K_X": 760,
+     "dim_K_union": 670,
+     "exposed": 90,
+     "exposed_fraction": 0.11842105263157894,
+     "components_union": {
+      "dim_K": 670,
+      "feature_null": 670,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "gap_union": 9075355857.845106,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08)",
+     "seconds": null
+    }
+   },
+   "seconds": 1063.5
+  },
+  "noisy0.1": {
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "newinput-exposure-v1",
+     "condition": "noisy0.1",
+     "input_sha256": "70be5c7afa945aa46c7be1afe2dedc819d50a3ce11c47f216ab1186257907580",
+     "noise_z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+     "baseline_factor_sha256": {
+      "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+      "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+      "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+     }
+    },
+    "digest": "3e5721c453564f8e5ddb88a862c1d4dab487401280214e0e8b2c4a7ef910bb4c"
+   },
+   "summary": {
+    "2": {
+     "dim_K_X": 10936,
+     "dim_K_union": 10500,
+     "exposed": 436,
+     "exposed_fraction": 0.039868324798829555,
+     "components_union": {
+      "dim_K": 10500,
+      "feature_null": 0,
+      "downstream_null": 5805,
+      "deficit": 4695
+     },
+     "gap_union": 6903687.111010353,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+     "baseline_status": "identity verified",
+     "seconds": null
+    },
+    "3": {
+     "dim_K_X": 15005,
+     "dim_K_union": 14437,
+     "exposed": 568,
+     "exposed_fraction": 0.03785404865044985,
+     "components_union": {
+      "dim_K": 14437,
+      "feature_null": 5760,
+      "downstream_null": 5544,
+      "deficit": 3133
+     },
+     "gap_union": 1782769.1083918032,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08)",
+     "seconds": null
+    },
+    "readout": {
+     "dim_K_X": 760,
+     "dim_K_union": 670,
+     "exposed": 90,
+     "exposed_fraction": 0.11842105263157894,
+     "components_union": {
+      "dim_K": 670,
+      "feature_null": 670,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "gap_union": 6282346427.872512,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08)",
+     "seconds": null
+    }
+   },
+   "seconds": 998.7
+  },
+  "noisy0.2": {
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "newinput-exposure-v1",
+     "condition": "noisy0.2",
+     "input_sha256": "6c5d18f9c6bc54a78b4d9f292fb2e51d4ea8f69cce4c78603da70815f66e4957",
+     "noise_z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+     "baseline_factor_sha256": {
+      "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+      "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+      "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+     }
+    },
+    "digest": "5e48886c5ba0b6f39893bccabeb7bd04ddc3c739596a0766030a1431ae047933"
+   },
+   "summary": {
+    "2": {
+     "dim_K_X": 10936,
+     "dim_K_union": 10576,
+     "exposed": 360,
+     "exposed_fraction": 0.03291880029261156,
+     "components_union": {
+      "dim_K": 10576,
+      "feature_null": 0,
+      "downstream_null": 6063,
+      "deficit": 4513
+     },
+     "gap_union": 103568792.23008323,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+     "baseline_status": "identity verified",
+     "seconds": null
+    },
+    "3": {
+     "dim_K_X": 15005,
+     "dim_K_union": 14225,
+     "exposed": 780,
+     "exposed_fraction": 0.05198267244251916,
+     "components_union": {
+      "dim_K": 14225,
+      "feature_null": 6016,
+      "downstream_null": 5412,
+      "deficit": 2797
+     },
+     "gap_union": 20.515317915300127,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08)",
+     "seconds": null
+    },
+    "readout": {
+     "dim_K_X": 760,
+     "dim_K_union": 670,
+     "exposed": 90,
+     "exposed_fraction": 0.11842105263157894,
+     "components_union": {
+      "dim_K": 670,
+      "feature_null": 670,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "gap_union": 10355087522.725874,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08)",
+     "seconds": null
+    }
+   },
+   "seconds": 1046.4
+  },
+  "svhn": {
+   "identity": {
+    "identity_version": 1,
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "preprocessing_sha256": "fb9055ad2b279dd6d5f9c788e5fc20915f03a5e2efc2a4d54019b9ebc4a888c7",
+    "analysis_index_sha256": "c05bcf1b4cbfd82612b39f521daab2e457f583476c15931b1e48636ae6f3a33e",
+    "analysis_size": 10000,
+    "analysis_dtype": "float64",
+    "config": {
+     "protocol": "newinput-exposure-v1",
+     "condition": "svhn",
+     "input_sha256": "d833cd4c84bb19b6fa584b0e36671f0883e9462c0684a27d7c308b45918ad733",
+     "noise_z_sha256": "35debe2dd24a6f3598d70eb84a3f10b5bfb71f74b208a369b69c4fa65f7b4921",
+     "baseline_factor_sha256": {
+      "2": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+      "3": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+      "readout": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806"
+     }
+    },
+    "digest": "23ddf893ef8d3203bae781547d346d4ab1f571f0d4992326e1617dd564a7ff1f"
+   },
+   "summary": {
+    "2": {
+     "dim_K_X": 10936,
+     "dim_K_union": 10753,
+     "exposed": 183,
+     "exposed_fraction": 0.016733723482077544,
+     "components_union": {
+      "dim_K": 10753,
+      "feature_null": 0,
+      "downstream_null": 5676,
+      "deficit": 5077
+     },
+     "gap_union": 14092696.06254576,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "b0a7bb3d243a97e1a88e2aeb07eabb1e4cce96cb08fef444a630923543c03b4f",
+     "baseline_status": "identity verified",
+     "seconds": null
+    },
+    "3": {
+     "dim_K_X": 15005,
+     "dim_K_union": 14510,
+     "exposed": 495,
+     "exposed_fraction": 0.032989003665444855,
+     "components_union": {
+      "dim_K": 14510,
+      "feature_null": 5632,
+      "downstream_null": 5780,
+      "deficit": 3098
+     },
+     "gap_union": 28.594123057967348,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "488a211d99fb6867d0919423e33db96563904c4193637eed4677bb8bf12d495e",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.8e-08)",
+     "seconds": null
+    },
+    "readout": {
+     "dim_K_X": 760,
+     "dim_K_union": 690,
+     "exposed": 70,
+     "exposed_fraction": 0.09210526315789473,
+     "components_union": {
+      "dim_K": 690,
+      "feature_null": 690,
+      "downstream_null": 0,
+      "deficit": 0
+     },
+     "gap_union": 13081519551.625404,
+     "gap_note": "rank resolved iff gap >= 10",
+     "baseline_factor_sha256": "edd9ae4a1127cac7eebb23fede3a8cb360fb36cd075b118a4cb19c2b699d0806",
+     "baseline_status": "legacy, audited (audit v2: kernel columns within 2.0 x rank scale, spectral consistency 2.6e-08)",
+     "seconds": null
+    }
+   },
+   "seconds": 971.3
+  }
+ }
+}

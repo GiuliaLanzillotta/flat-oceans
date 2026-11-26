@@ -1,0 +1,3371 @@
+{
+ "meta": {
+  "model": "mnist_mlp width128",
+  "epoch": 500,
+  "tol": "1e-09",
+  "subset_seed": 30000,
+  "exposure_seed": 40000,
+  "seed_loop_outer": true,
+  "N_ascending": true,
+  "conditions": {
+   "subsample": "mnist_mlp (full data) restricted to subset",
+   "retrain": "mnist_mlp_p1_sub<N> (trained on subset)"
+  },
+  "reconciled_from": "results/analysis/p1_counting_nullity.json",
+  "source_sha256": "735ff68d755a4af7d466b3db38ac1562cbecd9066f69aef689a99a43d37293f5",
+  "treatment": "P5 rank interval + resolved + method + bound status + provenance",
+  "note": "reader-wrapper; the source p1_counting_nullity.json is NEVER modified",
+  "unresolved_ranks": [
+   "subsample N5000_seed0 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "subsample N5000_seed0 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "subsample N5000_seed2 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "subsample N5000_seed2 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed0 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed0 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed1 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed1 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed2 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N2000_seed2 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed0 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed0 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed1 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed1 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed2 fit layer1: rank>=16512 (dim_K<=16384, cap-limited)",
+   "retrain N5000_seed2 exp layer1: rank>=16512 (dim_K<=16384, cap-limited)"
+  ]
+ },
+ "subsample": {
+  "N1000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 3843,
+     "rank_status": "exact",
+     "rank_interval": [
+      3843,
+      3843
+     ],
+     "resolved": true,
+     "dim_K": 29053,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29053
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 3583,
+     "rank_status": "exact",
+     "rank_interval": [
+      3583,
+      3583
+     ],
+     "resolved": true,
+     "dim_K": 12929,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 65,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 4802,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 1073,
+     "rank_status": "exact",
+     "rank_interval": [
+      1073,
+      1073
+     ],
+     "resolved": true,
+     "dim_K": 15439,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 66,
+     "r_d": 39,
+     "feature_null": 8064,
+     "downstream_null": 5874,
+     "deficit": 1501,
+     "dead_units": 89
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 400,
+     "rank_status": "exact",
+     "rank_interval": [
+      400,
+      400
+     ],
+     "resolved": true,
+     "dim_K": 890,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 40,
+     "feature_null": 890,
+     "deficit": 0,
+     "dead_units": 89
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 3840,
+     "rank_status": "exact",
+     "rank_interval": [
+      3840,
+      3840
+     ],
+     "resolved": true,
+     "dim_K": 29056,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29056
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 3555,
+     "rank_status": "exact",
+     "rank_interval": [
+      3555,
+      3555
+     ],
+     "resolved": true,
+     "dim_K": 12957,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 65,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 4830,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 1042,
+     "rank_status": "exact",
+     "rank_interval": [
+      1042,
+      1042
+     ],
+     "resolved": true,
+     "dim_K": 15470,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 66,
+     "r_d": 43,
+     "feature_null": 8064,
+     "downstream_null": 5610,
+     "deficit": 1796,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 440,
+     "rank_status": "exact",
+     "rank_interval": [
+      440,
+      440
+     ],
+     "resolved": true,
+     "dim_K": 850,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 44,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   }
+  },
+  "N1000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "67796d38239d5477266bec4cb6ac649145d63f274a2858d5295bd27b2a7829e8",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 2941,
+     "rank_status": "exact",
+     "rank_interval": [
+      2941,
+      2941
+     ],
+     "resolved": true,
+     "dim_K": 29955,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29955
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 2886,
+     "rank_status": "exact",
+     "rank_interval": [
+      2886,
+      2886
+     ],
+     "resolved": true,
+     "dim_K": 13626,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 55,
+     "feature_null": 0,
+     "downstream_null": 9417,
+     "deficit": 4209,
+     "dead_units": 73
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 664,
+     "rank_status": "exact",
+     "rank_interval": [
+      664,
+      664
+     ],
+     "resolved": true,
+     "dim_K": 15848,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 56,
+     "r_d": 32,
+     "feature_null": 9344,
+     "downstream_null": 5376,
+     "deficit": 1128,
+     "dead_units": 96
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 330,
+     "rank_status": "exact",
+     "rank_interval": [
+      330,
+      330
+     ],
+     "resolved": true,
+     "dim_K": 960,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 33,
+     "feature_null": 960,
+     "deficit": 0,
+     "dead_units": 96
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 2937,
+     "rank_status": "exact",
+     "rank_interval": [
+      2937,
+      2937
+     ],
+     "resolved": true,
+     "dim_K": 29959,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 29959
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 2866,
+     "rank_status": "exact",
+     "rank_interval": [
+      2866,
+      2866
+     ],
+     "resolved": true,
+     "dim_K": 13646,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 55,
+     "feature_null": 0,
+     "downstream_null": 9417,
+     "deficit": 4229,
+     "dead_units": 73
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 711,
+     "rank_status": "exact",
+     "rank_interval": [
+      711,
+      711
+     ],
+     "resolved": true,
+     "dim_K": 15801,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 55,
+     "r_d": 37,
+     "feature_null": 9472,
+     "downstream_null": 5005,
+     "deficit": 1324,
+     "dead_units": 91
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 380,
+     "rank_status": "exact",
+     "rank_interval": [
+      380,
+      380
+     ],
+     "resolved": true,
+     "dim_K": 910,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 38,
+     "feature_null": 910,
+     "deficit": 0,
+     "dead_units": 91
+    }
+   }
+  },
+  "N1000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 3949,
+     "rank_status": "exact",
+     "rank_interval": [
+      3949,
+      3949
+     ],
+     "resolved": true,
+     "dim_K": 28947,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 28947
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 3230,
+     "rank_status": "exact",
+     "rank_interval": [
+      3230,
+      3230
+     ],
+     "resolved": true,
+     "dim_K": 13282,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 53,
+     "feature_null": 0,
+     "downstream_null": 9675,
+     "deficit": 3607,
+     "dead_units": 75
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 941,
+     "rank_status": "exact",
+     "rank_interval": [
+      941,
+      941
+     ],
+     "resolved": true,
+     "dim_K": 15571,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 54,
+     "r_d": 43,
+     "feature_null": 9600,
+     "downstream_null": 4590,
+     "deficit": 1381,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 440,
+     "rank_status": "exact",
+     "rank_interval": [
+      440,
+      440
+     ],
+     "resolved": true,
+     "dim_K": 850,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 44,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 3941,
+     "rank_status": "exact",
+     "rank_interval": [
+      3941,
+      3941
+     ],
+     "resolved": true,
+     "dim_K": 28955,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 28955
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 3198,
+     "rank_status": "exact",
+     "rank_interval": [
+      3198,
+      3198
+     ],
+     "resolved": true,
+     "dim_K": 13314,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 56,
+     "feature_null": 0,
+     "downstream_null": 9288,
+     "deficit": 4026,
+     "dead_units": 72
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 982,
+     "rank_status": "exact",
+     "rank_interval": [
+      982,
+      982
+     ],
+     "resolved": true,
+     "dim_K": 15530,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 57,
+     "r_d": 52,
+     "feature_null": 9216,
+     "downstream_null": 4332,
+     "deficit": 1982,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 500,
+     "rank_status": "exact",
+     "rank_interval": [
+      500,
+      500
+     ],
+     "resolved": true,
+     "dim_K": 790,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 50,
+     "feature_null": 790,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  },
+  "N2000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 7635,
+     "rank_status": "exact",
+     "rank_interval": [
+      7635,
+      7635
+     ],
+     "resolved": true,
+     "dim_K": 25261,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 25261
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 5283,
+     "rank_status": "exact",
+     "rank_interval": [
+      5283,
+      5283
+     ],
+     "resolved": true,
+     "dim_K": 11229,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 70,
+     "feature_null": 0,
+     "downstream_null": 7482,
+     "deficit": 3747,
+     "dead_units": 58
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1311,
+     "rank_status": "exact",
+     "rank_interval": [
+      1311,
+      1311
+     ],
+     "resolved": true,
+     "dim_K": 15201,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 71,
+     "r_d": 43,
+     "feature_null": 7424,
+     "downstream_null": 6035,
+     "deficit": 1742,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 420,
+     "rank_status": "exact",
+     "rank_interval": [
+      420,
+      420
+     ],
+     "resolved": true,
+     "dim_K": 870,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 42,
+     "feature_null": 870,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 7636,
+     "rank_status": "exact",
+     "rank_interval": [
+      7636,
+      7636
+     ],
+     "resolved": true,
+     "dim_K": 25260,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 25260
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 5229,
+     "rank_status": "exact",
+     "rank_interval": [
+      5229,
+      5229
+     ],
+     "resolved": true,
+     "dim_K": 11283,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 68,
+     "feature_null": 0,
+     "downstream_null": 7740,
+     "deficit": 3543,
+     "dead_units": 60
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1334,
+     "rank_status": "exact",
+     "rank_interval": [
+      1334,
+      1334
+     ],
+     "resolved": true,
+     "dim_K": 15178,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 69,
+     "r_d": 47,
+     "feature_null": 7680,
+     "downstream_null": 5589,
+     "deficit": 1909,
+     "dead_units": 81
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 460,
+     "rank_status": "exact",
+     "rank_interval": [
+      460,
+      460
+     ],
+     "resolved": true,
+     "dim_K": 830,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 46,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 81
+    }
+   }
+  },
+  "N2000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "67796d38239d5477266bec4cb6ac649145d63f274a2858d5295bd27b2a7829e8",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 5878,
+     "rank_status": "exact",
+     "rank_interval": [
+      5878,
+      5878
+     ],
+     "resolved": true,
+     "dim_K": 27018,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 27018
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 4377,
+     "rank_status": "exact",
+     "rank_interval": [
+      4377,
+      4377
+     ],
+     "resolved": true,
+     "dim_K": 12135,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 61,
+     "feature_null": 0,
+     "downstream_null": 8643,
+     "deficit": 3492,
+     "dead_units": 67
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 793,
+     "rank_status": "exact",
+     "rank_interval": [
+      793,
+      793
+     ],
+     "resolved": true,
+     "dim_K": 15719,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 62,
+     "r_d": 32,
+     "feature_null": 8576,
+     "downstream_null": 5952,
+     "deficit": 1191,
+     "dead_units": 96
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 330,
+     "rank_status": "exact",
+     "rank_interval": [
+      330,
+      330
+     ],
+     "resolved": true,
+     "dim_K": 960,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 33,
+     "feature_null": 960,
+     "deficit": 0,
+     "dead_units": 96
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 5871,
+     "rank_status": "exact",
+     "rank_interval": [
+      5871,
+      5871
+     ],
+     "resolved": true,
+     "dim_K": 27025,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 27025
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 4287,
+     "rank_status": "exact",
+     "rank_interval": [
+      4287,
+      4287
+     ],
+     "resolved": true,
+     "dim_K": 12225,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 57,
+     "feature_null": 0,
+     "downstream_null": 9159,
+     "deficit": 3066,
+     "dead_units": 71
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 905,
+     "rank_status": "exact",
+     "rank_interval": [
+      905,
+      905
+     ],
+     "resolved": true,
+     "dim_K": 15607,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 57,
+     "r_d": 37,
+     "feature_null": 9216,
+     "downstream_null": 5187,
+     "deficit": 1204,
+     "dead_units": 91
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 380,
+     "rank_status": "exact",
+     "rank_interval": [
+      380,
+      380
+     ],
+     "resolved": true,
+     "dim_K": 910,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 38,
+     "feature_null": 910,
+     "deficit": 0,
+     "dead_units": 91
+    }
+   }
+  },
+  "N2000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 7909,
+     "rank_status": "exact",
+     "rank_interval": [
+      7909,
+      7909
+     ],
+     "resolved": true,
+     "dim_K": 24987,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 24987
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 4306,
+     "rank_status": "exact",
+     "rank_interval": [
+      4306,
+      4306
+     ],
+     "resolved": true,
+     "dim_K": 12206,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 59,
+     "feature_null": 0,
+     "downstream_null": 8901,
+     "deficit": 3305,
+     "dead_units": 69
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1130,
+     "rank_status": "exact",
+     "rank_interval": [
+      1130,
+      1130
+     ],
+     "resolved": true,
+     "dim_K": 15382,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 60,
+     "r_d": 43,
+     "feature_null": 8832,
+     "downstream_null": 5100,
+     "deficit": 1450,
+     "dead_units": 85
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 440,
+     "rank_status": "exact",
+     "rank_interval": [
+      440,
+      440
+     ],
+     "resolved": true,
+     "dim_K": 850,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 44,
+     "feature_null": 850,
+     "deficit": 0,
+     "dead_units": 85
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 7920,
+     "rank_status": "exact",
+     "rank_interval": [
+      7920,
+      7920
+     ],
+     "resolved": true,
+     "dim_K": 24976,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 24976
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 4309,
+     "rank_status": "exact",
+     "rank_interval": [
+      4309,
+      4309
+     ],
+     "resolved": true,
+     "dim_K": 12203,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 60,
+     "feature_null": 0,
+     "downstream_null": 8772,
+     "deficit": 3431,
+     "dead_units": 68
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1208,
+     "rank_status": "exact",
+     "rank_interval": [
+      1208,
+      1208
+     ],
+     "resolved": true,
+     "dim_K": 15304,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 61,
+     "r_d": 52,
+     "feature_null": 8704,
+     "downstream_null": 4636,
+     "deficit": 1964,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 510,
+     "rank_status": "exact",
+     "rank_interval": [
+      510,
+      510
+     ],
+     "resolved": true,
+     "dim_K": 780,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 51,
+     "feature_null": 780,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  },
+  "N5000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "228e0cf78ce30fdbe9c6666f84bc296d26e36636a9712ab592b861319a1aef0d",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 6332,
+     "rank_status": "exact",
+     "rank_interval": [
+      6332,
+      6332
+     ],
+     "resolved": true,
+     "dim_K": 10180,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 74,
+     "feature_null": 0,
+     "downstream_null": 6966,
+     "deficit": 3214,
+     "dead_units": 54
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1573,
+     "rank_status": "exact",
+     "rank_interval": [
+      1573,
+      1573
+     ],
+     "resolved": true,
+     "dim_K": 14939,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 75,
+     "r_d": 46,
+     "feature_null": 6912,
+     "downstream_null": 6150,
+     "deficit": 1877,
+     "dead_units": 82
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 460,
+     "rank_status": "exact",
+     "rank_interval": [
+      460,
+      460
+     ],
+     "resolved": true,
+     "dim_K": 830,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 46,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 82
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 6276,
+     "rank_status": "exact",
+     "rank_interval": [
+      6276,
+      6276
+     ],
+     "resolved": true,
+     "dim_K": 10236,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 70,
+     "feature_null": 0,
+     "downstream_null": 7482,
+     "deficit": 2754,
+     "dead_units": 58
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1673,
+     "rank_status": "exact",
+     "rank_interval": [
+      1673,
+      1673
+     ],
+     "resolved": true,
+     "dim_K": 14839,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 71,
+     "r_d": 51,
+     "feature_null": 7424,
+     "downstream_null": 5467,
+     "deficit": 1948,
+     "dead_units": 77
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 500,
+     "rank_status": "exact",
+     "rank_interval": [
+      500,
+      500
+     ],
+     "resolved": true,
+     "dim_K": 790,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 50,
+     "feature_null": 790,
+     "deficit": 0,
+     "dead_units": 77
+    }
+   }
+  },
+  "N5000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "67796d38239d5477266bec4cb6ac649145d63f274a2858d5295bd27b2a7829e8",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 14686,
+     "rank_status": "exact",
+     "rank_interval": [
+      14686,
+      14686
+     ],
+     "resolved": true,
+     "dim_K": 18210,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 18210
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 5497,
+     "rank_status": "exact",
+     "rank_interval": [
+      5497,
+      5497
+     ],
+     "resolved": true,
+     "dim_K": 11015,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 66,
+     "feature_null": 0,
+     "downstream_null": 7998,
+     "deficit": 3017,
+     "dead_units": 62
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1020,
+     "rank_status": "exact",
+     "rank_interval": [
+      1020,
+      1020
+     ],
+     "resolved": true,
+     "dim_K": 15492,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 67,
+     "r_d": 35,
+     "feature_null": 7936,
+     "downstream_null": 6231,
+     "deficit": 1325,
+     "dead_units": 93
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 350,
+     "rank_status": "exact",
+     "rank_interval": [
+      350,
+      350
+     ],
+     "resolved": true,
+     "dim_K": 940,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 35,
+     "feature_null": 940,
+     "deficit": 0,
+     "dead_units": 93
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 14711,
+     "rank_status": "exact",
+     "rank_interval": [
+      14711,
+      14711
+     ],
+     "resolved": true,
+     "dim_K": 18185,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 18185
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 5324,
+     "rank_status": "exact",
+     "rank_interval": [
+      5324,
+      5324
+     ],
+     "resolved": true,
+     "dim_K": 11188,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 61,
+     "feature_null": 0,
+     "downstream_null": 8643,
+     "deficit": 2545,
+     "dead_units": 67
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1153,
+     "rank_status": "exact",
+     "rank_interval": [
+      1153,
+      1153
+     ],
+     "resolved": true,
+     "dim_K": 15359,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 62,
+     "r_d": 38,
+     "feature_null": 8576,
+     "downstream_null": 5580,
+     "deficit": 1203,
+     "dead_units": 90
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 390,
+     "rank_status": "exact",
+     "rank_interval": [
+      390,
+      390
+     ],
+     "resolved": true,
+     "dim_K": 900,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 39,
+     "feature_null": 900,
+     "deficit": 0,
+     "dead_units": 90
+    }
+   }
+  },
+  "N5000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "34f899469638face29797034f240458fd33e530088076cd3b112c9b4be8799ee",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 5073,
+     "rank_status": "exact",
+     "rank_interval": [
+      5073,
+      5073
+     ],
+     "resolved": true,
+     "dim_K": 11439,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 64,
+     "feature_null": 0,
+     "downstream_null": 8256,
+     "deficit": 3183,
+     "dead_units": 64
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1348,
+     "rank_status": "exact",
+     "rank_interval": [
+      1348,
+      1348
+     ],
+     "resolved": true,
+     "dim_K": 15164,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 65,
+     "r_d": 45,
+     "feature_null": 8192,
+     "downstream_null": 5395,
+     "deficit": 1577,
+     "dead_units": 83
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 460,
+     "rank_status": "exact",
+     "rank_interval": [
+      460,
+      460
+     ],
+     "resolved": true,
+     "dim_K": 830,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 46,
+     "feature_null": 830,
+     "deficit": 0,
+     "dead_units": 83
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 5014,
+     "rank_status": "exact",
+     "rank_interval": [
+      5014,
+      5014
+     ],
+     "resolved": true,
+     "dim_K": 11498,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 65,
+     "feature_null": 0,
+     "downstream_null": 8127,
+     "deficit": 3371,
+     "dead_units": 63
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1519,
+     "rank_status": "exact",
+     "rank_interval": [
+      1519,
+      1519
+     ],
+     "resolved": true,
+     "dim_K": 14993,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 66,
+     "r_d": 52,
+     "feature_null": 8064,
+     "downstream_null": 5016,
+     "deficit": 1913,
+     "dead_units": 76
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 530,
+     "rank_status": "exact",
+     "rank_interval": [
+      530,
+      530
+     ],
+     "resolved": true,
+     "dim_K": 760,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 53,
+     "feature_null": 760,
+     "deficit": 0,
+     "dead_units": 76
+    }
+   }
+  }
+ },
+ "retrain": {
+  "N1000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub1000/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "729625e2c453939dfa2fe8ee948b5e7fb8ee83b7e27cb578610f7e61ec3007be",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 127,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 6383,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1280,
+     "rank_status": "exact",
+     "rank_interval": [
+      1280,
+      1280
+     ],
+     "resolved": true,
+     "dim_K": 10,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 128,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 127,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 6383,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1280,
+     "rank_status": "exact",
+     "rank_interval": [
+      1280,
+      1280
+     ],
+     "resolved": true,
+     "dim_K": 10,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 128,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   }
+  },
+  "N1000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub1000/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "68b69f5de26b1948b303b1dad595114ef1d558dd5d9c3c7437f1013f7028c555",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N1000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub1000/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "4396758bf542e45a94b8685df3a1fef1fa39fe421e569e766eebb4f2fd0218ba",
+    "fit_index_sha256": "8468fe6e560b2cc3dedd6ebfb20bcd217b5dc1b17a5be8d95680b270f1466eb4",
+    "exp_index_sha256_testset": "393e54888af6a502408303d6669882854989b04d62cd6a82616c0db222fdf427",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 10000,
+     "counting_nullity": 22896,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 22896,
+     "dim_K_status": "exact",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 22896
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 10000,
+     "counting_nullity": 6512,
+     "rank": 10000,
+     "rank_status": "exact",
+     "rank_interval": [
+      10000,
+      10000
+     ],
+     "resolved": true,
+     "dim_K": 6512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 6512,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 10000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N2000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub2000/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "077566ca7f35fb969931d00ff88d3be4222ec88a2d02d2a503d5c25438264013",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 15899,
+     "rank_status": "exact",
+     "rank_interval": [
+      15899,
+      15899
+     ],
+     "resolved": true,
+     "dim_K": 613,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 613,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 15758,
+     "rank_status": "exact",
+     "rank_interval": [
+      15758,
+      15758
+     ],
+     "resolved": true,
+     "dim_K": 754,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 754,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16000,
+     "rank_status": "exact",
+     "rank_interval": [
+      16000,
+      16000
+     ],
+     "resolved": true,
+     "dim_K": 512,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 512,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 15912,
+     "rank_status": "exact",
+     "rank_interval": [
+      15912,
+      15912
+     ],
+     "resolved": true,
+     "dim_K": 600,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 600,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N2000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub2000/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "f2b473784684cfd18fb8673a26fbe125c5fe0b3a69f278f1589d5335344e187d",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16167,
+     "rank_status": "exact",
+     "rank_interval": [
+      16167,
+      16167
+     ],
+     "resolved": true,
+     "dim_K": 345,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 345,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 15282,
+     "rank_status": "exact",
+     "rank_interval": [
+      15282,
+      15282
+     ],
+     "resolved": true,
+     "dim_K": 1230,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1230,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16228,
+     "rank_status": "exact",
+     "rank_interval": [
+      16228,
+      16228
+     ],
+     "resolved": true,
+     "dim_K": 284,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 284,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 15394,
+     "rank_status": "exact",
+     "rank_interval": [
+      15394,
+      15394
+     ],
+     "resolved": true,
+     "dim_K": 1118,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1118,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N2000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub2000/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "4ad25b5744d7e7b0e2783bbd2af222eb8784a1c10a8f006f6349f089e2d6129f",
+    "fit_index_sha256": "f943b5a5280c08a6e8d7c9fc803858d1906da07d13019fe91e0b27257556b6d3",
+    "exp_index_sha256_testset": "2f877f412944de40bba14ca9db737238f9db66633470f874264dbe528e17846c",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16076,
+     "rank_status": "exact",
+     "rank_interval": [
+      16076,
+      16076
+     ],
+     "resolved": true,
+     "dim_K": 436,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 436,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16046,
+     "rank_status": "exact",
+     "rank_interval": [
+      16046,
+      16046
+     ],
+     "resolved": true,
+     "dim_K": 466,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 466,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 20000,
+     "counting_nullity": 12896,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      20000
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16091,
+     "rank_status": "exact",
+     "rank_interval": [
+      16091,
+      16091
+     ],
+     "resolved": true,
+     "dim_K": 421,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 421,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 16108,
+     "rank_status": "exact",
+     "rank_interval": [
+      16108,
+      16108
+     ],
+     "resolved": true,
+     "dim_K": 404,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 404,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 20000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N5000_seed0": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub5000/seed_0",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "d6c6ecf6433d5eda138ddeb0489abb3e0f27e621ea1d3b82f4b7ad1dcf777e9b",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16075,
+     "rank_status": "exact",
+     "rank_interval": [
+      16075,
+      16075
+     ],
+     "resolved": true,
+     "dim_K": 437,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 437,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 14476,
+     "rank_status": "exact",
+     "rank_interval": [
+      14476,
+      14476
+     ],
+     "resolved": true,
+     "dim_K": 2036,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 126,
+     "feature_null": 0,
+     "downstream_null": 258,
+     "deficit": 1778,
+     "dead_units": 2
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1270,
+     "rank_status": "exact",
+     "rank_interval": [
+      1270,
+      1270
+     ],
+     "resolved": true,
+     "dim_K": 20,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 127,
+     "feature_null": 20,
+     "deficit": 0,
+     "dead_units": 2
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16135,
+     "rank_status": "exact",
+     "rank_interval": [
+      16135,
+      16135
+     ],
+     "resolved": true,
+     "dim_K": 377,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 377,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 14836,
+     "rank_status": "exact",
+     "rank_interval": [
+      14836,
+      14836
+     ],
+     "resolved": true,
+     "dim_K": 1676,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 127,
+     "feature_null": 0,
+     "downstream_null": 129,
+     "deficit": 1547,
+     "dead_units": 1
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1280,
+     "rank_status": "exact",
+     "rank_interval": [
+      1280,
+      1280
+     ],
+     "resolved": true,
+     "dim_K": 10,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 128,
+     "feature_null": 10,
+     "deficit": 0,
+     "dead_units": 1
+    }
+   }
+  },
+  "N5000_seed1": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub5000/seed_1",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "1803935a3bce56961f7f4babd23b877db568f4cf44770083d4ad2859561f92a1",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16219,
+     "rank_status": "exact",
+     "rank_interval": [
+      16219,
+      16219
+     ],
+     "resolved": true,
+     "dim_K": 293,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 293,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 15207,
+     "rank_status": "exact",
+     "rank_interval": [
+      15207,
+      15207
+     ],
+     "resolved": true,
+     "dim_K": 1305,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1305,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16294,
+     "rank_status": "exact",
+     "rank_interval": [
+      16294,
+      16294
+     ],
+     "resolved": true,
+     "dim_K": 218,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 218,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 15457,
+     "rank_status": "exact",
+     "rank_interval": [
+      15457,
+      15457
+     ],
+     "resolved": true,
+     "dim_K": 1055,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 1055,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  },
+  "N5000_seed2": {
+   "provenance": {
+    "run_dir": "/pub/hofmann-scratch/glanzillo/projects_mixed/flat_ocean/new/paper/experiments/results/tier1_models/mnist_mlp_p1_sub5000/seed_2",
+    "checkpoint": "checkpoints/epoch_0500.pt",
+    "checkpoint_sha256": "446e022d55930f4a372dd2c2f7781fa055f0d667b8572839cb21faee5f9d7bbe",
+    "fit_index_sha256": "0d15dd944d611450faebc7152580953f38677e0641416d8a62a4e17b6310b0eb",
+    "exp_index_sha256_testset": "4eadb6ad95ee46f4ff607b4ad9631f5cf96fd6b0e03e526af663000343cb84c0",
+    "epoch": 500,
+    "tol": "1e-09"
+   },
+   "fit": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16191,
+     "rank_status": "exact",
+     "rank_interval": [
+      16191,
+      16191
+     ],
+     "resolved": true,
+     "dim_K": 321,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 321,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 15781,
+     "rank_status": "exact",
+     "rank_interval": [
+      15781,
+      15781
+     ],
+     "resolved": true,
+     "dim_K": 731,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 731,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   },
+   "exp": {
+    "layer1": {
+     "p": 32896,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16512,
+     "rank_status": "lower_bound",
+     "rank_interval": [
+      16512,
+      32896
+     ],
+     "resolved": false,
+     "dim_K": 16384,
+     "dim_K_status": "upper_bound",
+     "method": "matrix_free_randomized",
+     "omitted_range_bound": "not_serialized_in_source",
+     "r_h": 257,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 16384
+    },
+    "layer2": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16252,
+     "rank_status": "exact",
+     "rank_interval": [
+      16252,
+      16252
+     ],
+     "resolved": true,
+     "dim_K": 260,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 260,
+     "dead_units": 0
+    },
+    "layer3": {
+     "p": 16512,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 16063,
+     "rank_status": "exact",
+     "rank_interval": [
+      16063,
+      16063
+     ],
+     "resolved": true,
+     "dim_K": 449,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "r_d": 128,
+     "feature_null": 0,
+     "downstream_null": 0,
+     "deficit": 449,
+     "dead_units": 0
+    },
+    "readout": {
+     "p": 1290,
+     "rows": 50000,
+     "counting_nullity": 0,
+     "rank": 1290,
+     "rank_status": "exact",
+     "rank_interval": [
+      1290,
+      1290
+     ],
+     "resolved": true,
+     "dim_K": 0,
+     "dim_K_status": "exact",
+     "method": "exact_dense_svd",
+     "omitted_range_bound": 0.0,
+     "r_h": 129,
+     "feature_null": 0,
+     "deficit": 0,
+     "dead_units": 0
+    }
+   }
+  }
+ }
+}

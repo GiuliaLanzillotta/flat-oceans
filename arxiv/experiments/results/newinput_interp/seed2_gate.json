@@ -1,0 +1,61 @@
+{
+ "passed": true,
+ "strict_pass": true,
+ "failures": [],
+ "qualified_flags": [],
+ "alpha0_reproduction": {
+  "2": {
+   "dim_K_X": [
+    10936,
+    10936
+   ],
+   "dim_K_union": [
+    10516,
+    10516
+   ],
+   "exposed": [
+    420,
+    420
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "3": {
+   "dim_K_X": [
+    15005,
+    15005
+   ],
+   "dim_K_union": [
+    14565,
+    14565
+   ],
+   "exposed": [
+    440,
+    440
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  },
+  "readout": {
+   "dim_K_X": [
+    760,
+    760
+   ],
+   "dim_K_union": [
+    680,
+    680
+   ],
+   "exposed": [
+    80,
+    80
+   ],
+   "gap_union_equal_float": true,
+   "exact": true
+  }
+ },
+ "sources": [
+  "results/newinput_interp/mnist_mlp_seed2_interp.json"
+ ],
+ "label": "computed + automatically checked",
+ "policy": "hard failures: alpha=0 non-reproduction, union > X, negative exposure, missing identity or missing qualification; gap < 10 cells are QUALIFIED flags with ladder ranges (recorded, thresholds unchanged; precedent results/newinput/seed0_gate.json)"
+}

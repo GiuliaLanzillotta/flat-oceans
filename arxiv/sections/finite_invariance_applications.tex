@@ -1,0 +1,28 @@
+\subsection{Applications}
+\label{app:finite-invariance-uses}
+
+We give procedures to identify and construct a large region in which parameters can change while the network's outputs on an existing dataset remain controlled. Given reference parameters $\theta_0\in\mathbb R^p$, an orthonormal basis $Q\in\mathbb R^{p\times k}$ and a radius $r>0$ define such a region when
+\begin{equation}
+\mathcal O_{Q,r}=\{\theta_0+Qu:u\in\mathbb R^k,\ \|u\|_2\le r\},
+\qquad
+\sup_{\|u\|_2\le r}\|F_X(\theta_0+Qu)-F_X(\theta_0)\|_X\le\varepsilon.
+\label{eq:operational-ocean}
+\end{equation}
+Both the dimension $k$ and the radius $r$ describe the available functional freedom. The applications below describe how this freedom could be used. We leave the development of algorithms in the specific areas to future work. 
+
+\paragraph{Continual learning and adaptation.}
+Several continual learning algorithms seek to optimize a new-task objective while preserving performance on old tasks. Orthogonal Gradient Descent \citep{farajtabar2020ogd} uses output-gradient constraints, and Elastic Weight Consolidation \citep{kirkpatrick2017ewc} uses Fisher-weighted penalties to discourage changes to important parameters. The flat ocean construction provides a finite region with explicit output-preservation control. Gradient Projection Memory's activation projections \citep{saha2021gpm} are closely related to our feature-null component. Our framework adds downstream and sample-pairing freedom and compatibility across layers, potentially enlarging the space available to fit new tasks.
+
+\paragraph{Bayesian inference.}
+Local Laplace approximations use curvature, often approximated by the GGN, to estimate posterior uncertainty \citep{daxberger2021laplace,immer2021linearization}. The flat directions are particularly consequential: weak likelihood curvature permits greater parameter uncertainty, yet small eigenvalues can be difficult to resolve accurately and are sensitive to numerical errors and curvature approximations. With an isotropic Gaussian prior of precision $\alpha>0$, a GGN eigenvalue $\lambda$ gives approximate posterior variance $(\lambda+\alpha)^{-1}$. Errors in small $\lambda$ can therefore substantially distort uncertainty when the prior precision is also small. Moreover, local curvature alone does not determine how far a flat direction extends. Flat oceans supply complementary information about finite regions over which the likelihood remains constant or controlled, potentially improving the quality of posterior approximations for neural network based models. 
+
+\paragraph{Model editing and compression.}
+Let $C:\mathbb R^p\to\mathbb R$ be an objective favoring a desired parameter property, such as smaller norms or sparsity. We can search for that property within the output-preserving region by solving
+\begin{equation}
+\min_{u\in\mathbb R^k,\ \|u\|_2\le r} C(\theta_0+Qu).
+\label{eq:ocean-secondary-objective}
+\end{equation}
+Every feasible edit satisfies the output constraint in Equation~\ref{eq:operational-ocean}. For example, curvature-based pruning already exploits local loss information \citep{lecun1989brain}. The convexity of flat oceans makes it possible to run optimization programs over them.
+
+\paragraph{Network analysis.}
+The atomic decomposition identifies how features, downstream propagation and sample pairing create redundancy. The frozen/activation-remainder decomposition separates mixed-weight interactions from activation changes, providing a tool for studying finite updates even outside invariant regions.
